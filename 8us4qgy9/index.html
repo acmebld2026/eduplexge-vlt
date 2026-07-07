@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <title>VLT-5G 초기상담 결과지</title>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -80,6 +80,10 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 /* 타입 해설 */
 .type-box{background:var(--sky);border-radius:12px;padding:22px 24px;font-size:14.5px}
 .type-box b{color:var(--navy)}
+.type-insights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.type-insight{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(32,69,112,.06)}
+.type-insight .label{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.02em;margin-bottom:8px}
+.type-insight p{font-size:13.5px;color:var(--sub);line-height:1.75}
 .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 .pc{border-radius:12px;padding:18px 20px;font-size:14px}
 .pc.pros{background:var(--green-soft)}
@@ -103,8 +107,8 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .state .icon{font-size:26px}
 .state .t{font-weight:800;margin:6px 0 8px;color:var(--navy)}
 .state p{font-size:13.5px;color:var(--sub);text-align:left}
-.observe{margin-top:14px;background:#fff;border:1px dashed var(--blue);border-radius:12px;padding:16px 20px;font-size:14px}
-.observe b{color:var(--blue)}
+.observe{margin-top:16px;background:linear-gradient(135deg,#fff,var(--accent-soft));border:1px solid #f0cda8;border-left:6px solid var(--accent);border-radius:12px;padding:18px 20px;font-size:14.2px;box-shadow:0 8px 22px rgba(232,131,58,.08)}
+.observe b{display:block;color:#b05f1d;font-size:13.5px;letter-spacing:.06em;margin-bottom:6px}
 
 /* ===== 솔루션 로드맵 ===== */
 .road{position:relative;margin:10px 0 0;padding-left:26px}
@@ -144,20 +148,26 @@ table.price .nm b{display:block}
 table.price .nm small{color:var(--sub);font-size:12.5px}
 table.price .amt{white-space:nowrap;font-weight:700;text-align:right}
 .recommend-tag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:1px}
-.package-panel{margin-top:22px;border:1.5px solid var(--blue);border-radius:14px;overflow:hidden;background:#fff}
-.package-head{background:var(--blue);color:#fff;padding:12px 18px;font-weight:800;font-size:15px}
-.package-body{padding:16px 18px}
-.package-note{font-size:12.5px;color:var(--sub);background:var(--sky2);border-radius:8px;padding:9px 12px;margin-bottom:12px}
+.package-panel{margin-top:22px;border:1px solid #d7e4f0;border-radius:14px;overflow:hidden;background:var(--sky2);box-shadow:0 10px 26px rgba(27,58,92,.07)}
+.package-head{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:13px 18px;font-weight:900;font-size:15px;letter-spacing:.02em}
+.package-body{padding:16px}
+.package-note{font-size:12.8px;color:var(--navy);background:#fff;border:1px solid #e5ecf3;border-radius:8px;padding:10px 12px;margin-bottom:12px}
 .package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.package-card{border:1px solid #e5ecf3;border-radius:8px;padding:13px 14px;background:#fff}
-.package-card b{display:block;color:var(--navy);font-size:13.8px;margin-bottom:4px}
+.package-card{border:1px solid #dfe8f1;border-radius:10px;padding:14px 15px;background:#fff}
+.package-card.wide{grid-column:1/-1}
+.package-card b{display:flex;align-items:center;gap:7px;color:var(--navy);font-size:13.8px;margin-bottom:5px}
+.package-card b::before{content:"";width:6px;height:18px;border-radius:999px;background:var(--blue);display:inline-block;flex:0 0 auto}
 .package-card span{display:block;color:var(--sub);font-size:13px;line-height:1.55}
-.package-list{display:grid;grid-template-columns:1fr;gap:6px;margin-top:8px}
-.package-list span{background:var(--sky2);border:1px solid #e5ecf3;border-radius:7px;padding:7px 9px;font-size:12.5px;color:var(--navy);font-weight:700}
-.package-option{background:var(--sky2);border:1px solid #e5ecf3;border-radius:8px;padding:9px 10px}
-.package-option strong{display:block;color:var(--navy);font-size:13px;line-height:1.35;margin-bottom:2px}
-.package-option em{display:block;font-style:normal;color:var(--blue);font-size:12.5px;font-weight:800;line-height:1.35;margin-bottom:3px}
+.package-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+.package-list span{background:var(--sky2);border:1px solid #e5ecf3;border-radius:8px;padding:8px 10px;font-size:12.5px;color:var(--navy);font-weight:700}
+.package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.package-option{background:linear-gradient(180deg,#fff,var(--sky2));border:1px solid #dbe7f2;border-radius:10px;padding:11px 12px;min-height:112px}
+.package-option strong{display:block;color:var(--navy);font-size:14px;line-height:1.35;margin-bottom:4px}
+.package-option em{display:block;font-style:normal;color:var(--blue);font-size:12.5px;font-weight:900;line-height:1.38;margin-bottom:5px}
 .package-option small{display:block;color:var(--sub);font-size:12px;font-weight:600;line-height:1.45}
+.package-footer{grid-column:1/-1;border:1px solid #f0cda8;background:var(--accent-soft);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.package-footer b{color:#b05f1d;font-size:13.5px;white-space:nowrap}
+.package-footer span{color:#6d4a28;font-size:13.5px;font-weight:800;text-align:right}
 
 /* ===== 클로징 ===== */
 .closing{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:16px;padding:30px 32px;font-size:15px}
@@ -181,9 +191,10 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   h2{font-size:20px;line-height:1.3}
   .lead{font-size:14px}
   .toolbar{padding:7px 10px}
-  .summary-grid,.pros-cons,.state-grid,.program-grid{grid-template-columns:1fr}
+  .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid{grid-template-columns:1fr}
   .factor{grid-template-columns:110px 1fr 70px}
-  .package-grid,.package-list{grid-template-columns:1fr}
+  .package-grid{grid-template-columns:1fr}
+  .package-list:not(.option-grid){grid-template-columns:1fr}
   table.price,table.price thead,table.price tbody,table.price tr,table.price td{display:block;width:100%!important}
   table.price thead{display:none}
   table.price tr{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px;background:#fff}
@@ -197,6 +208,13 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   .package-card{padding:12px}
   .package-card span,.package-list span,.package-option{overflow-wrap:anywhere;word-break:keep-all}
   .package-list span{font-size:12px;line-height:1.45}
+  .package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .package-option{padding:9px 8px;min-height:126px}
+  .package-option strong{font-size:12.6px}
+  .package-option em{font-size:11.4px}
+  .package-option small{font-size:11px}
+  .package-footer{display:block}
+  .package-footer span{display:block;text-align:left;margin-top:4px}
   .closing{padding:24px 20px}
   footer{padding:20px 18px}
 }
@@ -261,10 +279,11 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 
 <!-- ══════════════════ 3. 타입 해설 ══════════════════ -->
 <section id="sec-type">
-  <span class="sec-label">TYPE PROFILE</span>
+  <span class="sec-label">학습 DNA 타입 프로파일</span>
   <h2 id="type-title"></h2>
   <p class="lead">VLT-5G의 16개 학습 성향 타입 중 우리 아이에게 해당하는 프로파일입니다.</p>
   <div class="type-box" id="type-desc"></div>
+  <div class="type-insights" id="type-insights"></div>
   <div class="pros-cons">
     <div class="pc pros"><div class="t">이 타입의 강점</div><ul id="type-pros"></ul></div>
     <div class="pc cons"><div class="t">주의 깊게 봐야 할 지점</div><ul id="type-cons"></ul></div>
@@ -427,6 +446,11 @@ const REPORT_DATA = {
   type: {
     title: "TYPE 6 — '마음먹으면 금방'이라는 갑옷을 입은 아이 (+기저에 밝은 낙천 기질)",
     desc: "'이번엔 컨디션이 좀 별로였어. 내가 진짜 맘먹고 하면 금방이지!' — 이 타입의 속마음입니다. 겉으로는 자신감이 넘치지만, 그 뒤에는 기대만큼 되지 않는 현실에 대한 불안이 있습니다. 현재를 직면하는 순간 자존감이 흔들릴까 봐, '나는 원래 되는 아이'라는 갑옷으로 스스로를 방어합니다. 다그치면 방어기제만 높아집니다 — 필요한 것은 냉철한 지적이 아니라 <b>자존심을 지켜주면서 현실을 정확히 마주하게 돕는 따뜻한 내 편</b>입니다.<br><br>연후의 기저 타입(10번)은 밝고 사교적인 낙천 기질입니다. 문제가 생겨도 금세 잊고, 지적은 바로 수용하지만 행동이 오래가지 않습니다. 이 조합의 좋은 소식: 매니저와의 관계 형성이 빠르고, <b>실천력이 붙고 과목 거부감이 풀리면 3타입으로 올라가며, 1~3타입 구간이 곧 인서울권</b>입니다. 검사상 기초 멘탈리티는 A- — 그릇은 이미 준비되어 있습니다.",
+    insights: [
+      { label:"XCM 핵심 메커니즘", body:"TYPE 6은 자신감이 없는 아이가 아니라, 실패를 정면으로 보면 자존심이 흔들리는 아이입니다. 그래서 ‘마음먹으면 할 수 있다’는 말이 가능성의 표현이면서 동시에 현실 직면을 미루는 방어막으로 작동합니다." },
+      { label:"연후에게 보이는 증거", body:"기초 멘탈리티 A-와 자신감은 분명한 자산이지만, 국어·수학 기반 누수, CHAMP 사고력 저하, 계획·지속성 약점이 함께 나타납니다. 본인·아버님·어머님이 서로 다른 타입 카드를 고른 장면도 자기상과 현실상이 아직 통합되지 않았다는 신호입니다." },
+      { label:"관리 처방", body:"연후에게는 압박을 키우는 방식보다 자존심을 지켜 주면서 객관 좌표를 매일 확인하게 하는 구조가 필요합니다. 작은 목표를 공식화하고 바로 완수시키며, 국어·수학 기반 복구와 루틴 관리를 동시에 붙이는 것이 핵심입니다." }
+    ],
     pros: [
       "기초 멘탈리티 A- — 자신감·자기존재인정이 단단한 그릇",
       "이성 역량 모두 보통 — 역량이 아니라 방법의 문제라는 진단",
@@ -466,7 +490,7 @@ const REPORT_DATA = {
     { icon:"📚", title:"학습", body:"이성 역량은 모두 보통 — 머리의 문제가 아닙니다. 그러나 국어·수학 기반이 '하'로 무너져 있고, 이해 없는 암기 공부(CHAMP H -43)로 연비가 나오지 않는 상태입니다." },
     { icon:"🧭", title:"태도", body:"ESTP — 순발력과 회전력이 있고 문제 해결이 빠르지만, 계획은 '그때 가서'. 자립 에고가 높아 정답을 정해주면 밀어냅니다. 미루기와 '마음만 먹으면' 합리화가 실행을 막고 있습니다." }
   ],
-  observation: "<b>상담 중 관찰:</b> 이날은 아버님까지 세 분이 함께 오셨습니다. 16개 타입 카드에서 '연후와 가까운 것'을 고르는 시간 — 본인은 5번, 아버님은 10번, 어머님은 16번을 골랐고 실제 결과는 6번(기저 10번)이었습니다. 아버님의 직관이 아이의 기저 기질을 정확히 짚은 것도 인상적이었지만, 세 사람이 서로 다른 연후를 보고 있다는 사실 자체가 오늘 상담의 가장 중요한 발견입니다. '인서울 하려면 몇 등?'이라는 질문에 '전국 4만 명?'이라고 답할 만큼 입시 좌표는 아직 흐릿합니다 — 좌표를 함께 그려줄 어른이 필요합니다.",
+  observation: "<b>핵심 관찰</b>연후는 현실을 전혀 모르는 아이가 아니라, 현실을 정확히 마주하는 순간 자존심이 흔들릴까 봐 목표와 실행을 흐리게 두는 아이입니다. 본인·아버님·어머님이 각각 다른 타입 카드를 고른 장면은 단순한 재미가 아니라, 집에서 보이는 연후와 스스로 믿고 싶은 연후, 실제 검사에서 드러난 연후가 아직 하나로 통합되지 않았다는 신호입니다. “마음먹으면 할 수 있다”는 말은 가능성의 표현이기도 하지만, 지금은 실행을 미루는 방어막으로도 작동합니다. 따라서 연후에게 필요한 것은 더 강한 압박이 아니라, 자존심을 지켜 주면서도 국어·수학 기반과 입시 좌표를 정확히 마주하게 하는 외부 구조, 그리고 작은 완수 경험을 매일 쌓게 하는 관리입니다.",
 
   roadmap: [
     { when: "1단계 · 지금 ~ 수요일", title: "시작 결정 — 가정 대화와 회신",
@@ -535,25 +559,24 @@ const REPORT_DATA = {
     rows: [
       { name:"정기 상담 (주 1~2회)", desc:"담당 매니저의 전반 트래킹 — 기본 프로그램", amt:"월 350,000원", rec:true },
       { name:"학습 관리 (학기 중)", desc:"등원일 학습 관리 — 시작·중간·마무리 점검, 주말은 추가 과금 없이 이용", amt:"일 15,000원", rec:true },
-      { name:"방학 썸머스쿨 패키지", desc:"개별 목표에 맞춰 마음·성장·도전·참길음반 중 선택하고, 반별 체류 시간과 개별지도 콤마 패키지를 편성합니다.", amt:"패키지 선택 외 추가 과금 없음", rec:true },
+      { name:"방학 썸머스쿨 패키지", desc:"개별 목표에 맞춰 마음·성장·도전·참길음반 중 선택하고, 반별 체류 시간과 개별지도 콤마 패키지를 편성합니다.", amt:"패키지 선택시 추가 관리비 없음", rec:true },
       { name:"수학 개별지도 (몰입형 단과학습훈련 패키지)", desc:"공통수학 매일 1회 + 중등 수학 주 3회 권장. 다른 학원식 수업과 달리 자기주도학습 역량을 향상시키기 위한 몰입형 단과학습훈련 패키지로, 횟수 등록 후 차감하고 역량 상승 시 축소합니다.", amt:"90분 33,000원", rec:true },
       { name:"제휴 컨텐츠", desc:"기본 학습 운영에 포함되는 필수 항목", amt:"월 10,000원", rec:false },
       { name:"셀프리더 2권", desc:"초기 학습 계획 관리를 위한 필수 플래너", amt:"15,000원", rec:false }
     ],
-    note: "※ 학기 중 상담+관리 풀 이용 시 월 약 65만 원 수준입니다. 방학 썸머스쿨은 패키지 선택 외 방학 추가 비용이 발생하지 않습니다. 수학 개별지도는 기반 복구를 위해 기본 권장 구성으로 두되, 초기 총액과 횟수는 시작 시점과 실제 필요 단원에 맞춰 조정합니다.",
+    note: "※ 학기 중 상담+관리 풀 이용 시 월 약 65만 원 수준입니다. 패키지 선택시 방학 추가 관리 비용은 발생하지 않습니다. 수학 개별지도는 기반 복구를 위해 기본 권장 구성으로 두되, 초기 총액과 횟수는 시작 시점과 실제 필요 단원에 맞춰 조정합니다.",
     package: {
       title: "패키지 세팅",
       note: "아래 내용은 현재 제안드리는 시작 운영안입니다. 최종 등록 전 일정·과목·횟수는 학생 상황에 맞춰 조정할 수 있습니다.",
       items: [
         { name:"등록 형태", value:"상담&관리+개별지도 Premium" },
         { name:"방학 PG", value:"꽉 찬 썸머스쿨 반 편성 · 썸머스쿨 20일 · 2026년 7월 20일-8월 14일 기준" },
-        { name:"방학 반", value:"현재 제안은 참길음반 기준입니다. 개별 목표에 따른 꽉 찬 여름을 전략적으로 선택하여 운용합니다.", lines:[
+        { name:"방학 반", value:"현재 제안은 참길음반 기준입니다. 개별 목표에 따른 꽉 찬 여름을 전략적으로 선택하여 운용합니다.", wide:true, lines:[
           { title:"마음길음반", meta:"~5과목 · 13:00-18:00 (5H)", desc:"개별지도 콤마 선택 주 5회 패키지", example:"예) 수학3 + 영어독해2" },
           { title:"성장길음1,2반", meta:"~9과목 · 08:00-17:00 또는 13:00-22:00 (9H)", desc:"개별지도 콤마 선택 주 7~10회 패키지", example:"예) 미적3 + 사문2 + 생윤2" },
           { title:"도전길음반", meta:"~12과목 · 08:00-20:00 (12H)", desc:"개별지도 콤마 선택 주 10회 패키지", example:"예) 미적분5 + 탐구3 + 국어문법2 / 약논수학5 + 약논국어5" },
           { title:"참길음반", meta:"~14과목 · 08:00-22:00 (14H)", desc:"개별지도 콤마 선택 주 10~15회 패키지", example:"예) 미적5 + 물리3 + 화학3 / 약논수학5 + 약논국어5 + 탐구3 + 탐구2" }
         ] },
-        { name:"방학 비용 기준", value:"패키지 선택 외 방학 추가 비용 과금은 발생하지 않습니다." },
         { name:"목표 트랙", value:"취약과목 트랙 — 국어·수학 기반 복구와 실행 습관 교정" },
         { name:"개별지도 방향", value:"기본 권장 구성입니다. 공통수학 매일 1회와 중등수학 주 3회 복구안을 기준으로 시작 후 조정합니다." },
         { name:"썸머 콤마 시간표", value:"중첩 편성이 가능하므로 선택 항목이 아니라 시간표 확인용입니다.", lines:[
@@ -563,7 +586,8 @@ const REPORT_DATA = {
           "D콤마 18:25-19:55",
           "E콤마 20:00-21:30",
           "클리닉타임 21:30 이후"
-        ]}
+        ]},
+        { name:"방학 비용 기준", value:"패키지 선택시 방학 추가 관리 비용은 발생하지 않습니다.", footer:true }
       ]
     }
   },
@@ -574,7 +598,7 @@ const REPORT_DATA = {
     contacts: [ "에듀플렉스 길음점 · 원장 김병수", "상담문의 02-2135-1672", "카카오톡 채널로 회신", { label:"홈페이지 eduplexge.sangsangplex.com", href:"https://eduplexge.sangsangplex.com" }, "회신 기한: 수요일 이전 (다음 주 투입 가능)" ]
   },
 
-  footer: "본 결과지는 VLT-5G 검사 결과(2026-07-05)와 초기상담(2026-07-06, 학생·학부모 동석) 내용을 바탕으로 작성되었으며, 학생의 성장 상황에 따라 매니지먼트 전략은 지속적으로 조정됩니다."
+  footer: "본 결과지는 VLT-5G 검사 결과(2026-07-05)와 초기상담(2026-07-06) 내용을 바탕으로 작성되었으며, 학생의 성장 상황에 따라 매니지먼트 전략은 지속적으로 조정됩니다."
 };
 
 /* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
@@ -628,6 +652,7 @@ const REPORT_DATA = {
   // 타입
   $("type-title").textContent = D.type.title;
   $("type-desc").innerHTML = D.type.desc;
+  $("type-insights").innerHTML = (D.type.insights || []).map(i=>`<div class="type-insight"><div class="label">${i.label}</div><p>${i.body}</p></div>`).join("");
   $("type-pros").innerHTML = D.type.pros.map(p=>`<li>${p}</li>`).join("");
   $("type-cons").innerHTML = D.type.cons.map(p=>`<li>${p}</li>`).join("");
 
@@ -681,12 +706,21 @@ const REPORT_DATA = {
   };
   $("package-title").textContent = packageCfg.title || "패키지 세팅";
   $("package-note").textContent = packageCfg.note || "";
-  $("package-items").innerHTML = (packageCfg.items || []).map(item =>
-    `<div class="package-card">
+  const packageItems = packageCfg.items || [];
+  const packageCards = packageItems.filter(item => !item.footer);
+  const packageFooters = packageItems.filter(item => item.footer);
+  $("package-items").innerHTML =
+    packageCards.map(item => {
+      const hasOptionLines = item.lines?.some(line => typeof line === "object");
+      return `<div class="package-card ${item.wide ? "wide" : ""}">
       <b>${item.name}</b>
       <span>${item.value || ""}</span>
-      ${item.lines?.length ? `<div class="package-list">${item.lines.map(renderPackageLine).join("")}</div>` : ""}
-    </div>`).join("");
+      ${item.lines?.length ? `<div class="package-list ${hasOptionLines ? "option-grid" : ""}">${item.lines.map(renderPackageLine).join("")}</div>` : ""}
+    </div>`;
+    }).join("") +
+    packageFooters.map(item =>
+      `<div class="package-footer"><b>${item.name}</b><span>${item.value || ""}</span></div>`
+    ).join("");
 
   // 클로징
   const renderContact = c => {
