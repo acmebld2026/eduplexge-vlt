@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>VLT-5G 초기상담 결과지</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#1b3a5c; --blue:#2f6fb1; --sky:#e8f1fa; --sky2:#f4f8fc;
+  --accent:#e8833a; --accent-soft:#fdf1e7;
+  --green:#3a8a5f; --green-soft:#e9f5ee;
+  --red:#c0504d; --red-soft:#faeceb;
+  --ink:#22303c; --sub:#5a6b7b; --line:#d9e2ec;
+  --lv1:#c0392b; --lv2:#e67e22; --lv3:#f1c40f; --lv4:#7fb3d5; --lv5:#2e86c1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif;color:var(--ink);background:#eef2f6;line-height:1.65;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 0 24px rgba(27,58,92,.08)}
+
+/* ===== 헤더 ===== */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#28527e 60%,var(--blue) 100%);color:#fff;padding:44px 48px 36px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.hero .brand{font-size:13px;letter-spacing:.14em;opacity:.85;font-weight:600}
+.branch-logo{display:none;width:min(260px,72vw);height:auto;background:rgba(255,255,255,.96);border-radius:8px;padding:8px 12px;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.hero h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.02em}
+.hero .sub{font-size:15px;opacity:.92}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:14px;position:relative;z-index:1}
+.hero .meta b{opacity:.75;font-weight:600;margin-right:6px}
+.typechips{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.typechip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(2px);border-radius:999px;padding:7px 18px;font-size:14px;font-weight:700}
+.typechip small{font-weight:500;opacity:.8;margin-right:6px}
+
+/* ===== 공통 섹션 ===== */
+section{padding:40px 48px;border-bottom:1px solid var(--line)}
+.sec-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);background:var(--sky);border-radius:4px;padding:4px 10px;margin-bottom:12px}
+h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.lead{color:var(--sub);font-size:14.5px;margin-bottom:22px}
+h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
+
+/* 요약 카드 */
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sumcard{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--sky2)}
+.sumcard .t{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.06em;margin-bottom:8px}
+.sumcard p{font-size:14.5px}
+.sumcard.full{grid-column:1/-1;background:var(--accent-soft);border-color:#f2c9a3}
+.sumcard.full .t{color:var(--accent)}
+.expertise{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;font-size:13.5px;color:var(--sub)}
+.expertise b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:4px}
+
+/* 프로그램 구조 */
+.program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.program-card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:#fff}
+.program-card .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--blue);background:var(--sky);border-radius:4px;padding:3px 8px;margin-bottom:8px}
+.program-card .program-title{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.program-card p{font-size:13.7px;color:var(--sub)}
+.program-card ul{margin:10px 0 0 18px;font-size:13px;color:var(--ink)}
+.program-card li{margin:4px 0}
+
+/* ===== 검사 결과 시각화 ===== */
+.factor-wrap{margin-top:8px}
+.factor{display:grid;grid-template-columns:150px 1fr 84px;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed #e5ecf3;cursor:pointer;transition:background .15s}
+.factor:hover{background:var(--sky2)}
+.factor .name{font-size:14px;font-weight:700}
+.factor .name small{display:block;font-weight:500;color:var(--sub);font-size:11.5px}
+.bar{height:14px;background:#edf2f7;border-radius:7px;overflow:hidden;position:relative}
+.bar i{display:block;height:100%;width:0;border-radius:7px;transition:width 1s cubic-bezier(.2,.7,.3,1)}
+.factor .grade{font-size:12.5px;font-weight:800;text-align:right;white-space:nowrap}
+.factor-detail{display:none;grid-column:1/-1;background:var(--sky2);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13.5px;color:var(--sub);margin:2px 0 8px}
+.factor.open .factor-detail{display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--sub)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.legend .l1::before{background:var(--lv1)}.legend .l2::before{background:var(--lv2)}.legend .l3::before{background:var(--lv3)}.legend .l4::before{background:var(--lv4)}.legend .l5::before{background:var(--lv5)}
+.hint{font-size:12px;color:var(--sub);margin-top:10px}
+
+/* 타입 해설 */
+.type-box{background:var(--sky);border-radius:12px;padding:22px 24px;font-size:14.5px}
+.type-box b{color:var(--navy)}
+.type-insights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.type-insight{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(32,69,112,.06)}
+.type-insight .label{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.02em;margin-bottom:8px}
+.type-insight p{font-size:13.5px;color:var(--sub);line-height:1.75}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.pc{border-radius:12px;padding:18px 20px;font-size:14px}
+.pc.pros{background:var(--green-soft)}
+.pc.cons{background:var(--red-soft)}
+.pc .t{font-weight:800;margin-bottom:8px}
+.pc.pros .t{color:var(--green)}
+.pc.cons .t{color:var(--red)}
+.pc li{margin:6px 0 6px 18px}
+
+/* ===== 걸림돌 ===== */
+.stone{display:flex;gap:16px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px;background:#fff}
+.stone .num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--red-soft);color:var(--red);font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
+.stone h4{font-size:15.5px;margin-bottom:4px}
+.stone p{font-size:14px;color:var(--sub)}
+.quote{margin-top:8px;background:var(--sky2);border-left:3px solid var(--blue);padding:8px 12px;border-radius:0 8px 8px 0;font-size:13px;color:var(--navy);font-style:italic}
+.quote small{display:block;font-style:normal;color:var(--sub);margin-top:2px}
+
+/* ===== 현재 상태 3축 ===== */
+.state-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.state{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--sky2);text-align:center}
+.state .icon{font-size:26px}
+.state .t{font-weight:800;margin:6px 0 8px;color:var(--navy)}
+.state p{font-size:13.5px;color:var(--sub);text-align:left}
+.observe{margin-top:16px;background:linear-gradient(135deg,#fff,var(--accent-soft));border:1px solid #f0cda8;border-left:6px solid var(--accent);border-radius:12px;padding:18px 20px;font-size:14.2px;box-shadow:0 8px 22px rgba(232,131,58,.08)}
+.observe b{display:block;color:#b05f1d;font-size:13.5px;letter-spacing:.06em;margin-bottom:6px}
+
+/* ===== 솔루션 로드맵 ===== */
+.road{position:relative;margin:10px 0 0;padding-left:26px}
+.road::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--blue),var(--green));border-radius:2px}
+.phase{position:relative;margin-bottom:22px}
+.phase::before{content:"";position:absolute;left:-24px;top:5px;width:13px;height:13px;border-radius:50%;background:#fff;border:3.5px solid var(--blue)}
+.phase:last-child::before{border-color:var(--green)}
+.phase .when{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.05em}
+.phase:last-child .when{color:var(--green)}
+.phase h4{font-size:16px;margin:2px 0 6px}
+.phase p{font-size:14px;color:var(--sub)}
+.phase ul{margin:8px 0 0 18px;font-size:14px}
+.phase li{margin:4px 0}
+.phase .why{margin-top:8px;font-size:13px;background:var(--sky2);border-radius:8px;padding:8px 12px;color:var(--navy)}
+
+/* ===== 합의 내용 ===== */
+.agree{list-style:none}
+.agree li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed #e5ecf3;font-size:14.5px}
+.agree .chk{flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:1px}
+
+/* ===== 결정 필요 사항 ===== */
+.decide{border:2px solid var(--accent);border-radius:14px;padding:20px 22px;margin-bottom:14px;background:var(--accent-soft)}
+.decide h4{font-size:15.5px;color:#b05f1d;margin-bottom:6px}
+.decide h4 .badge{display:inline-block;font-size:11px;background:var(--accent);color:#fff;border-radius:4px;padding:2px 8px;margin-right:8px;vertical-align:2px;letter-spacing:.05em}
+.decide p{font-size:14px}
+.decide .options{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.decide .opt{flex:1;min-width:200px;background:#fff;border:1px solid #eccfae;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.decide .opt b{display:block;color:#b05f1d;margin-bottom:4px;font-size:13.5px}
+
+/* ===== 비용 ===== */
+.price-note{font-size:13px;color:var(--sub);margin-bottom:16px}
+table.price{width:100%;border-collapse:collapse;font-size:14px}
+table.price th{background:var(--navy);color:#fff;font-weight:700;padding:10px 12px;text-align:left;font-size:13.5px}
+table.price td{border-bottom:1px solid var(--line);padding:11px 12px;vertical-align:top}
+table.price tr.rec td{background:var(--sky)}
+table.price .nm b{display:block}
+table.price .nm small{color:var(--sub);font-size:12.5px}
+table.price .amt{white-space:nowrap;font-weight:700;text-align:right}
+.recommend-tag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:1px}
+.package-panel{margin-top:22px;border:1px solid #d7e4f0;border-radius:14px;overflow:hidden;background:var(--sky2);box-shadow:0 10px 26px rgba(27,58,92,.07)}
+.package-head{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:13px 18px;font-weight:900;font-size:15px;letter-spacing:.02em}
+.package-body{padding:16px}
+.package-note{font-size:12.8px;color:var(--navy);background:#fff;border:1px solid #e5ecf3;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.package-card{border:1px solid #dfe8f1;border-radius:10px;padding:14px 15px;background:#fff}
+.package-card.wide{grid-column:1/-1}
+.package-card b{display:flex;align-items:center;gap:7px;color:var(--navy);font-size:13.8px;margin-bottom:5px}
+.package-card b::before{content:"";width:6px;height:18px;border-radius:999px;background:var(--blue);display:inline-block;flex:0 0 auto}
+.package-card span{display:block;color:var(--sub);font-size:13px;line-height:1.55}
+.package-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+.package-list span{background:var(--sky2);border:1px solid #e5ecf3;border-radius:8px;padding:8px 10px;font-size:12.5px;color:var(--navy);font-weight:700}
+.package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.package-option{background:linear-gradient(180deg,#fff,var(--sky2));border:1px solid #dbe7f2;border-radius:10px;padding:11px 12px;min-height:112px}
+.package-option strong{display:block;color:var(--navy);font-size:14px;line-height:1.35;margin-bottom:4px}
+.package-option em{display:block;font-style:normal;color:var(--blue);font-size:12.5px;font-weight:900;line-height:1.38;margin-bottom:5px}
+.package-option small{display:block;color:var(--sub);font-size:12px;font-weight:600;line-height:1.45}
+.package-footer{grid-column:1/-1;border:1px solid #f0cda8;background:var(--accent-soft);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.package-footer b{color:#b05f1d;font-size:13.5px;white-space:nowrap}
+.package-footer span{color:#6d4a28;font-size:13.5px;font-weight:800;text-align:right}
+
+/* ===== 클로징 ===== */
+.closing{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:16px;padding:30px 32px;font-size:15px}
+.closing h3{color:#fff;margin:0 0 10px;font-size:19px}
+.closing .contact{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.25);font-size:14px;display:flex;gap:8px 30px;flex-wrap:wrap}
+.closing a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+/* ===== 유틸 ===== */
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;gap:4px;padding:8px 16px;overflow-x:auto}
+.toolbar a{font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap}
+.toolbar a:hover{background:var(--sky);color:var(--blue)}
+.toolbar .print-btn{margin-left:auto;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:6px 16px;font-size:12.5px;font-weight:700;cursor:pointer}
+footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
+
+@media (max-width:700px){
+  body{background:#fff;overflow-x:hidden}
+  .wrap{width:100%;max-width:none;box-shadow:none}
+  section{padding:28px 18px}
+  .hero{padding:30px 20px 26px}
+  .hero h1{font-size:25px;line-height:1.25}
+  h2{font-size:20px;line-height:1.3}
+  .lead{font-size:14px}
+  .toolbar{padding:7px 10px}
+  .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid{grid-template-columns:1fr}
+  .factor{grid-template-columns:110px 1fr 70px}
+  .package-grid{grid-template-columns:1fr}
+  .package-list:not(.option-grid){grid-template-columns:1fr}
+  table.price,table.price thead,table.price tbody,table.price tr,table.price td{display:block;width:100%!important}
+  table.price thead{display:none}
+  table.price tr{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px;background:#fff}
+  table.price tr.rec{background:var(--sky)}
+  table.price td{border-bottom:none;padding:10px 12px}
+  table.price td:first-child{padding-bottom:4px}
+  table.price td:nth-child(2){padding-top:0;font-size:13px!important}
+  table.price .amt{text-align:left;white-space:normal;background:rgba(47,111,177,.07);border-top:1px dashed #d9e2ec;color:var(--navy);line-height:1.45}
+  .recommend-tag{margin-left:6px}
+  .package-body{padding:14px}
+  .package-card{padding:12px}
+  .package-card span,.package-list span,.package-option{overflow-wrap:anywhere;word-break:keep-all}
+  .package-list span{font-size:12px;line-height:1.45}
+  .package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .package-option{padding:9px 8px;min-height:126px}
+  .package-option strong{font-size:12.6px}
+  .package-option em{font-size:11.4px}
+  .package-option small{font-size:11px}
+  .package-footer{display:block}
+  .package-footer span{display:block;text-align:left;margin-top:4px}
+  .closing{padding:24px 20px}
+  footer{padding:20px 18px}
+}
+@media print{
+  body{background:#fff}
+  .toolbar{display:none}
+  .wrap{box-shadow:none;max-width:none}
+  section{page-break-inside:avoid;padding:26px 34px}
+  .hero{padding:34px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══════════════════ 헤더 ══════════════════ -->
+<header class="hero">
+  <div class="hero-top">
+    <img class="branch-logo" id="branch-logo" alt="에듀플렉스 에듀코치 길음점 로고">
+    <div class="brand">EDUPLEX · VLT-5G 학습 DNA 검사</div>
+  </div>
+  <h1 id="rpt-title">초기상담 결과 보고서</h1>
+  <div class="sub" id="rpt-subtitle"></div>
+  <div class="meta" id="rpt-meta"></div>
+  <div class="typechips" id="rpt-types"></div>
+</header>
+
+<nav class="toolbar">
+  <a href="#sec-summary">요약</a>
+  <a href="#sec-test">검사 결과</a>
+  <a href="#sec-type">타입 해설</a>
+  <a href="#sec-stones">걸림돌</a>
+  <a href="#sec-state">현재 상태</a>
+  <a href="#sec-solution">솔루션</a>
+  <a href="#sec-program">프로그램 구조</a>
+  <a href="#sec-agree">합의 내용</a>
+  <a href="#sec-decide">결정해주실 부분</a>
+  <a href="#sec-price">프로그램·비용</a>
+  <button class="print-btn" onclick="window.print()">인쇄 / PDF 저장</button>
+</nav>
+
+<!-- ══════════════════ 1. 한눈에 보는 요약 ══════════════════ -->
+<section id="sec-summary">
+  <span class="sec-label">SUMMARY</span>
+  <h2>한눈에 보는 상담 결과</h2>
+  <p class="lead">검사 결과와 원장 상담 내용을 종합한 핵심 요약입니다.</p>
+  <div class="summary-grid" id="summary-grid"></div>
+  <div class="expertise" id="expertise-box"></div>
+</section>
+
+<!-- ══════════════════ 2. 검사 결과 ══════════════════ -->
+<section id="sec-test">
+  <span class="sec-label">VLT-5G TEST</span>
+  <h2>VLT-5G 검사 결과</h2>
+  <p class="lead">자기주도학습 역량을 구성하는 9가지 핵심 요소를 진단했습니다. 각 항목을 누르면 우리 아이에 대한 세부 해석을 볼 수 있습니다.</p>
+  <div class="factor-wrap" id="factor-list"></div>
+  <div class="legend">
+    <span class="l1">부족</span><span class="l2">미흡</span><span class="l3">준수</span><span class="l4">우수</span><span class="l5">매우 우수</span>
+  </div>
+  <p class="hint">※ 각 막대를 클릭하면 해당 요소에 대한 상세 해석이 열립니다. 별표(★)는 매니지먼트 개입 중요도입니다.</p>
+</section>
+
+<!-- ══════════════════ 3. 타입 해설 ══════════════════ -->
+<section id="sec-type">
+  <span class="sec-label">학습 DNA 타입 프로파일</span>
+  <h2 id="type-title"></h2>
+  <p class="lead">VLT-5G의 16개 학습 성향 타입 중 우리 아이에게 해당하는 프로파일입니다.</p>
+  <div class="type-box" id="type-desc"></div>
+  <div class="type-insights" id="type-insights"></div>
+  <div class="pros-cons">
+    <div class="pc pros"><div class="t">이 타입의 강점</div><ul id="type-pros"></ul></div>
+    <div class="pc cons"><div class="t">주의 깊게 봐야 할 지점</div><ul id="type-cons"></ul></div>
+  </div>
+</section>
+
+<!-- ══════════════════ 4. 걸림돌 ══════════════════ -->
+<section id="sec-stones">
+  <span class="sec-label">OBSTACLES</span>
+  <h2>지금 아이가 마주하고 있는 걸림돌</h2>
+  <p class="lead">검사 결과와 상담에서 실제로 확인된, 성장을 가로막고 있는 지점들입니다.</p>
+  <div id="stones"></div>
+</section>
+
+<!-- ══════════════════ 5. 현재 핵심 상태 ══════════════════ -->
+<section id="sec-state">
+  <span class="sec-label">CURRENT STATE</span>
+  <h2>아이의 현재 핵심 상태</h2>
+  <p class="lead">정서 · 학습 · 태도 세 축으로 정리한 현재 좌표입니다.</p>
+  <div class="state-grid" id="states"></div>
+  <div class="observe" id="observe"></div>
+</section>
+
+<!-- ══════════════════ 6. 솔루션 ══════════════════ -->
+<section id="sec-solution">
+  <span class="sec-label">SOLUTION ROADMAP</span>
+  <h2>앞으로 필요한 솔루션</h2>
+  <p class="lead">타입별 매니지먼트 전략(XCM16)에 근거해, 시기별로 무엇을 어떻게 도울지 설계했습니다.</p>
+  <div class="road" id="roadmap"></div>
+</section>
+
+<!-- ══════════════════ 7. 프로그램 구조 ══════════════════ -->
+<section id="sec-program">
+  <span class="sec-label">PROGRAM MODEL</span>
+  <h2>에듀플렉스 프로그램 구조</h2>
+  <p class="lead" id="program-lead"></p>
+  <div class="program-grid" id="program-cards"></div>
+</section>
+
+<!-- ══════════════════ 7. 합의 내용 ══════════════════ -->
+<section id="sec-agree">
+  <span class="sec-label">AGREED</span>
+  <h2>상담에서 함께 합의한 내용</h2>
+  <p class="lead">상담 중 학부모님과 서로 확인하고 동의한 사항입니다.</p>
+  <ul class="agree" id="agreements"></ul>
+</section>
+
+<!-- ══════════════════ 8. 결정해주실 부분 ══════════════════ -->
+<section id="sec-decide">
+  <span class="sec-label">YOUR DECISION</span>
+  <h2>고민해주셔야 하는 부분 — 용기 내어 결정해주세요</h2>
+  <p class="lead">아이의 방향을 바꾸는 일은 부모님의 결단에서 시작됩니다. 아래 사항은 저희가 대신 정할 수 없는, 부모님의 몫으로 남겨드리는 결정입니다.</p>
+  <div id="decisions"></div>
+</section>
+
+<!-- ══════════════════ 9. 프로그램 · 비용 ══════════════════ -->
+<section id="sec-price">
+  <span class="sec-label">PROGRAM & PRICING</span>
+  <h2>제안 프로그램 구성과 비용</h2>
+  <p class="lead" id="price-lead"></p>
+  <table class="price">
+    <thead><tr><th style="width:44%">구성 요소</th><th>내용</th><th style="width:16%;text-align:right">비용</th></tr></thead>
+    <tbody id="price-rows"></tbody>
+  </table>
+  <p class="price-note" id="price-note"></p>
+
+  <div class="package-panel">
+    <div class="package-head" id="package-title">패키지 세팅</div>
+    <div class="package-body">
+      <div class="package-note" id="package-note"></div>
+      <div class="package-grid" id="package-items"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 10. 클로징 ══════════════════ -->
+<section>
+  <div class="closing">
+    <h3 id="closing-title"></h3>
+    <p id="closing-msg"></p>
+    <div class="contact" id="closing-contact"></div>
+  </div>
+</section>
+
+<footer id="rpt-footer"></footer>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   학생별 데이터
+═══════════════════════════════════════════════════════════════ */
+const REPORT_DATA = {
+  meta: {
+    student: "권용성",
+    school: "선덕고등학교 2학년 (18세)",
+    testDate: "2026. 07. 04",
+    counselDate: "2026. 07. 04",
+    counselor: "에듀플렉스 길음점 원장 김병수",
+    branch: "에듀플렉스 길음점",
+    phone: "02-2135-1672",
+    homepage: "https://eduplexge.sangsangplex.com"
+  },
+  brand: {
+    logo: "file:///C:/dev/VLT5G/LOGO/1%20%EA%B8%B8%EC%9D%8C%EB%A1%9C%EA%B3%A0.png",
+    logoAlt: "에듀플렉스 에듀코치 길음점 로고"
+  },
+  types: { primary: "TYPE 3. 학원키즈", secondary: "체계적 수행·자립심은 이미 히든 TYPE 2에 근접 — 국어와 뾰족한 방향만 채우면 2단계 진입" },
+
+  summary: [
+    { title: "학습 타입", body: "완벽에 가까운 학습 시스템 위에서 최상위권을 지키고 있는 성실한 학생입니다. 겉모습은 전형적인 '학원키즈'지만, 부모학습통제가 오히려 낮게(-30) 나올 만큼 이미 자율적으로 공부하고 있어 이 타입의 전형적인 그늘은 거의 없습니다." },
+    { title: "현재 성적대 · 잠재력", body: "물리·화학·생명·영어·수학 전 과목 상위권. 요약 프로파일 <b>기초멘탈리티 S · 학습력 A+</b> — 학습계획·성실성·학습성찰이 모두 최고 수준(+43~+48)입니다. 다만 국어만 모의고사 3등급까지 흔들리는 유일한 약점입니다." },
+    { title: "가장 큰 걸림돌", body: "국어 79점(3등급), 20문제 중 8개 오답 — 선지소거 근거 없이 '찍는' 패턴이 확인됐습니다. 진로는 '회사원'이라는 막연한 워딩에 머물러 있고, 상위 2%의 폭발적 에너지로 70~80% 출력을 유지하며 번아웃 위험군에 있습니다." },
+    { title: "핵심 솔루션 방향", body: "학원은 그대로 유지하되, 국어 체화 트래킹과 진로·생기부 전략을 정교하게 컨트롤. 겨울방학까지 정시·수시 갈림길을 결단하고, 슬럼프 대응 강령을 가족이 미리 합의." },
+    { title: "오늘 상담의 결론", body: "용성이는 걱정할 아이가 아니라 마지막 한 끗을 채워줄 컨트롤타워가 필요한 아이입니다. 7월 21일부터 기존 학원 스케줄(수요일 저녁)을 유지하며 에듀플렉스 상담·관리를 병행하기로 확정했고, 7월 등록비는 330,000원(반달 상담+관리 7회+장기체류 5일분)으로 안내드렸습니다.", full: true }
+  ],
+  expertise: {
+    title: "에듀플렉스 길음점의 진단·관리 전문성",
+    body: "이 결과지는 VLT-5G 검사, XCM16 학습 타입, 초기상담에서 확인한 학습 상황과 운영 기준을 종합해 만든 실행 설계입니다. 용성이는 완성도가 높은 학생이기 때문에, 대다수 학생과 달리 '일상 회복'이 아니라 국어 전략·생기부 방향·번아웃 관리라는 상위 단계의 정교한 컨트롤이 필요해 상담·관리·입시 컨설팅까지 하나의 흐름으로 정리했습니다."
+  },
+
+  program: {
+    lead: "에듀플렉스 길음점의 상담·관리·입시 컨설팅·국어 클리닉 운영을 학부모님이 한눈에 보실 수 있도록 정리했습니다. 아래 구성은 7월 21일 등원을 기준으로 하며, 학원 스케줄에 맞춰 세부 시간표를 조정합니다.",
+    cards: [
+      { tag:"상담 Coaching", title:"진로·생기부 방향을 잡는 1:1 전략 상담", body:"국어 전략, 진로 워딩 구체화, 슬럼프 대응 강령까지 함께 설계하는 상담입니다. 단순 성적 점검이 아니라 뾰족한 방향을 만드는 데 집중합니다.", bullets:["주 1~2회 상담으로 진로·학습 전략 점검", "생기부 방향성·산업공학 세부 전공 좁히기", "번아웃·슬럼프 대응 강령 사전 설계"] },
+      { tag:"관리 Training", title:"가벼운 밀도의 매일 체크", body:"이미 자기주도가 잡혀 있는 만큼 무겁게 개입하기보다, 시작-중간-마무리 점검으로 리듬만 잡아주는 경량 관리입니다.", bullets:["방학 중 장기 체류 학습 + 학기 중 경량 관리", "기존 학원 스케줄(수요일 저녁)과 충돌 없이 병행", "국어 체화 트래킹은 겨울방학부터 본격 시작"] },
+      { tag:"입시 컨설팅 Center", title:"은행사거리 입시센터 연계", body:"원장급 컨설턴트들이 상주하는 별도 공간에서 생기부·원서 전략을 단발성으로 점검할 수 있습니다.", bullets:["평일 시간이 어려운 경우 주말 운영 센터 이용 가능", "방학 체류 학습 데이터를 그대로 이관해 연결", "연고대 종합전형 vs 정시 갈림길 전략 수립"] },
+      { tag:"국어 클리닉 Reading", title:"선지 소거·지문 동선 훈련", body:"1타 강사 인강으로 개념을 체화한 뒤, 최적의 문제 풀이 동선을 스스로 설계하는 훈련까지 이어갑니다.", bullets:["겨울방학 3~4개월 집중 투자로 안정화", "지문 유형별 동선 설계 + 선지 근거 판단 훈련", "인강 패스 구매 후 체화 여부를 트래킹 관리"] }
+    ]
+  },
+
+  factors: [
+    { name:"생의 에너지", sub:"기대지향 +48(상위 2%) · 불안경계 +29", level:4.5, grade:"좋음", stars:3,
+      detail:"성공에 대한 강렬한 갈망과 실패에 대한 민감한 반응이 공존해 폭발적인 에너지를 냅니다(기대지향 상위 2%). 상위권 성적을 유지하는 힘이지만 과열될 수 있어, 결과와 상관없이 여유를 가질 수 있도록 쉼표를 찍어주는 역할이 필요합니다." },
+    { name:"내적 태도", sub:"자신감 +36 · 자기긍정 +37 · 자기존재인정 +37 · 호기심 -2", level:4.5, grade:"좋음", stars:1,
+      detail:"흔들리지 않는 멘탈과 뛰어난 능력을 가진 '리더형'입니다. 자기가 무엇을 위해 사는지 알고 자신을 사랑할 줄 압니다. 다만 호기심만 보통 수준으로, 협업·소통 경험을 늘려 진정한 리더십을 함양할 시기입니다." },
+    { name:"외적 태도", sub:"낙관성 -1 · 능동성 -9 · 친화성 +37", level:3.5, grade:"다소좋음", stars:1,
+      detail:"사람들과 어울리는 것을 즐기며 상황에 유연하게 대처하는 친화력이 강점입니다. 학교생활과 교우관계가 좋지만 학습에서는 기분에 따른 편차가 있을 수 있어, 면학 분위기가 좋은 환경 노출과 시간 관리 훈련이 도움이 됩니다." },
+    { name:"감정 역량", sub:"감정조절 -5 · 시험안정감 -29 · 부모정서지지 +27", level:3, grade:"보통", stars:4,
+      detail:"가정의 정서적 지지가 다소높음(+27)으로 든든한 힘이 되고 있습니다. 다만 시험안정감이 다소낮음(-29) — 시험을 보다 흔들리면 기능이 확 꺾이고 회복이 오래 걸릴 수 있습니다. 결과와 상관없이 변함없는 사랑을 표현해 주시는 것이 불안을 낮추는 열쇠입니다." },
+    { name:"이성 역량", sub:"집중력 +7 · 어휘력 +9 · 논리력 -8", level:3, grade:"보통", stars:2,
+      detail:"집중력·어휘력·논리력 세 요소가 균형 잡힌 상태로, 학습에 있어 큰 결격 사유가 없는 무난한 모습입니다. 현재의 좋은 성적은 이 안정적인 이성역량 덕분이며, 최상위권 도약을 위해서는 어느 한 분야의 강점을 더 키울 필요가 있습니다 — 심도 있는 독서·토론을 추천합니다." },
+    { name:"기반 학습", sub:"국어 중 · 사회 상 · 영어 상 · 수학 상 · 과학 상", level:4, grade:"다소좋음", stars:5,
+      detail:"모든 주요 과목에서 최상위권 성적을 거두고 있는 엘리트 학생입니다. 다만 기반 학습의 핵심인 국어가 중위권이라는 점이 유일한 잠재적 불안 요소입니다. 최상위권 경쟁에서는 국어의 고차원적 어휘력과 독해력이 변별력을 가르는 마지막 단추가 됩니다." },
+    { name:"상황인식", sub:"학습필요인식 -1 · 자기실력파악 -3", level:3, grade:"보통", stars:2,
+      detail:"공부의 필요성도 어느 정도 인식하고 있고, 자신의 실력도 대략적으로 파악하고 있는 가장 일반적인 상태입니다. 다만 확고한 목표 의식이나 치밀한 자기 분석은 부족해, '적당히 하는 공부'에서 벗어나는 구체화 작업이 필요합니다." },
+    { name:"목표의식", sub:"진로목표 +11 · 진학목표 +40 · 시험목표 -20", level:3, grade:"보통", stars:4,
+      detail:"지망하는 상급 학교는 어느 정도 정해졌지만(진학목표 다소높음), 시험목표는 유동적이라 상황에 타협하며 공부할 가능성이 있습니다. 단기 실행 계획이 느슨해지면 최상의 결과에서 2%가 부족할 수 있어, 매 시험 명확한 점수 가이드라인 설정이 필요합니다." },
+    { name:"체계적 수행", sub:"학습계획 +45 · 성실성 +43 · 학습성찰 +48", level:5, grade:"매우우수", stars:0,
+      detail:"강약점을 고려한 정교한 계획, 어떤 유혹에도 흔들리지 않는 강한 끈기, 맞춘 문제까지 철저히 점검하는 완벽한 성찰 능력을 모두 갖춘 최고 수준의 상태입니다. 현재의 완벽한 학습 루틴을 유지할 수 있도록 아낌없이 칭찬해 주시고 지치지 않도록 조력해 주세요." },
+    { name:"학습자율성", sub:"학습자립심 +45 · 사교육의존 +32 · 부모학습통제 -30", level:3, grade:"다소 아쉬움", stars:3,
+      detail:"스스로 목표를 세우고 어려운 문제를 해결할 탁월한 능력이 있으면서도, 완벽을 기하려는 불안감에 사교육을 과하게 의존하는 상태입니다. 학원 덕분이 아니라 본인이 잘해서 나오는 성적이라는 구분감과 자기효능감을 심어주는 것이 필요합니다." },
+    { name:"CHAMP 학습법", sub:"C(이해) +12 · H(사고) +47 · A(정리) +9 · M(암기) +1 · P(문제해결) -14", level:4, grade:"다소좋음", stars:2,
+      detail:"사고력(H)이 +47로 특히 우수해 발전 가능성이 매우 큽니다. 현재 성적이 최상위권이 아니라면 학습의 '양'이나 '치열함'이 부족했기 때문일 수 있습니다. 스스로 정한 한계선을 넘는 고난도 문제에 도전하면 잠재된 사고력이 깨어나며 성적이 수직 상승할 것입니다." },
+    { name:"주인의식 · 자아정체성", sub:"내적책임감 +24 · 외적책임감 +45 · 주도성 +40 · 자기이해 +24 · 자기서사 +27", level:4.5, grade:"좋음", stars:2,
+      detail:"자신의 삶의 주인으로서 책임감 있게 행동하고, 타인의 기대에도 부응하며 스스로 할 일을 찾는 이상적인 학생입니다. 다만 높은 외적 책임감으로 거절을 잘 못해 무리할 수 있으니, 자신의 한계를 인정하고 '아니오'라고 말할 수 있는 자기 돌봄도 필요합니다." }
+  ],
+
+  type: {
+    title: "TYPE 3. 학원키즈 — 완벽한 시스템 위에서, 이제는 스스로 뾰족해질 시간",
+    desc: "'학원 숙제 완벽하게 해가면 성적은 잘 나올거야. 혼자 끙끙대는 건 비효율적이지.' — 이 타입의 속마음입니다. 학교가 끝나기 무섭게 학원·과외로 밤늦게까지 빈틈없는 스케줄을 소화하는, 누구보다 성실하고 모범적인 학생입니다. 어릴 때부터 짜여진 스케줄과 어려운 문제는 주변 사람이 해결해서 알려주는 교육에 익숙해져, 혼자 끙끙대며 고민하는 시간을 '낭비'라고 여기는 경향이 있습니다.<br><br>용성이의 경우 이 타입의 전형적인 그늘(부모의 과도한 통제, 수동적 모범생 연기)은 거의 없습니다. 오히려 부모학습통제가 다소낮음(-30)으로 확인되어 본인의 판단으로 자율적으로 공부하고 있고, 학습계획·성실성·학습성찰이 모두 최고 수준(+43~+48)입니다. 상담 중 확인된 원장 판정 기준으로는 이미 <b>히든 TYPE 2(자기주도 학습형)에 근접한 상태</b> — 국어 성적만 안정됐어도 2타입이 나왔을 가능성이 높습니다. 지금 남은 것은 사교육을 도구로 인식하는 구분감과, 스스로 뾰족한 방향을 설정하는 마지막 한 걸음입니다.",
+    insights: [
+      { label:"XCM 핵심 메커니즘", body:"TYPE 3는 게으르거나 수동적인 아이가 아니라, 완벽한 시스템 안에서 최선을 다해온 아이입니다. 병목은 성실성이 아니라 '내가 잘해서 나온 성적'이라는 자기효능감의 구분감과, 스스로 판을 짜는 마지막 주도성입니다." },
+      { label:"용성이에게 보이는 증거", body:"체계적 수행(+45/+43/+48)과 학습자립심(+45)이 이미 최상위권인데도 사교육의존(+32)이 함께 높습니다. 원장 판정으로는 히든 타입도 2타입 수준 — 본인이 선택과 집중을 통해 판을 짤 줄 알게 되면 1타입까지 열려 있는 위치입니다." },
+      { label:"관리 처방", body:"지금 상태에서 학원을 정리하는 것은 오히려 위험합니다. 필요한 것은 국어라는 마지막 단추, 뾰족한 생기부 전략, 그리고 70~80% 출력으로 달리고 있는 번아웃 위험을 관리해 줄 정교한 컨트롤타워입니다." }
+    ],
+    pros: [
+      "학습계획 +45 · 성실성 +43 · 학습성찰 +48 — 체계적 수행 전 항목 최고 수준",
+      "기대지향 +48(상위 2%) — 성공에 대한 강렬한 갈망과 폭발적 실행력",
+      "학습자립심 +45, 부모학습통제 -30 — 이미 자율적으로 공부하는 구조",
+      "물리·화학·생명·영어·수학 전 과목 상위권 — 국어를 제외하면 흠잡을 데 없음",
+      "CHAMP 사고력(H) +47 — 심화 사고로 도약할 잠재력이 이미 확인됨"
+    ],
+    cons: [
+      "국어 모의고사 79점(3등급), 20문제 중 8개 오답 — 선지소거 근거 없이 '찍는' 패턴",
+      "호기심 -2 — 성적대에 비해 낮아 킬러문항 앞에서 멈출 위험",
+      "사교육의존 +32 — 학원 덕분이라는 인식과 본인 실력의 구분감 부족",
+      "시험안정감 -29 — 한번 흔들리면 회복이 오래 걸리는 번아웃 위험군",
+      "진로 워딩이 '회사원'에 머물러 생기부 방향성이 뾰족하지 않음"
+    ]
+  },
+
+  stones: [
+    { title: "국어만 유독 흔들리는 이유 — 선지 소거가 아니라 '찍기'였다",
+      body: "국어 모의고사 79점(3등급), 20문제 중 8개 오답. 1학년 때부터 1~2등급을 오가던 국어가 이번엔 3등급까지 떨어졌습니다. 지문에 무작위로 쳐진 동그라미들은 근거 있는 표시가 아니라 그냥 표시일 뿐 — 선지 소거의 기술이나 근거 판단의 흔적이 보이지 않습니다. 수학·영어는 안정적인데 국어만 낙차가 큰 이유입니다.",
+      quote: "국어를 8개 틀렸어요… 근데 이제 그 동그라미를 왜 했는지 알 수가 없어요. 그냥 아무거나 동그라미가 있어요.", quoteSrc: "원장 진단" },
+    { title: "'회사원'이라고만 써놓은 생기부 — 아직 뾰족하지 않다",
+      body: "산업공학 계열을 목표로 하지만 진로란에는 '회사원'이라고만 적혀 있습니다. 넓게 잡아둔 계열 설정이 전략적 여지인지, 정말 방향이 없는 것인지 본인도 구분하지 못하는 상태입니다. 연고대 종합전형은 전교 상위 10% 수준의 뾰족한 생기부가 필요한데, 지금은 '무난하게 간을 보는' 상태에 가깝습니다.",
+      quote: "지금 여기 진로에 회사원이라고 써놨어요… 그러니까 본인도 모르는 거죠.", quoteSrc: "원장 진단" },
+    { title: "70~80% 출력으로 달리는 마라톤 — 번아웃 위험군",
+      body: "기대지향 +48(상위 2%), 불안경계 +29 — 군인처럼 절제된 방식으로 폭발적인 에너지를 태우는 상태입니다. 이미 간당간당하게 버거운 출력으로 계속 뛰고 있어, 고3 모의고사에서 한 번이라도 꺾이는 순간이 오면 큰 타격이 될 수 있습니다. 감정을 겉으로 표현하지 않고 혼자 삼키는 성향이라, 부모님도 힘든 정도를 가늠하기 어렵습니다.",
+      quote: "이 정도로 계속 뛰면 넘어지는 거거든요. 마라톤을 지금 계속 힘들게 뛰고 있으니까.", quoteSrc: "원장 진단" },
+    { title: "사교육 덕분에 성적이 나온다는 착각",
+      body: "사교육의존 +32. 학원과 자신을 동일시하는 경향이 있어, 실제로는 본인이 잘해서 나오는 성적인데 그 구분이 없는 상태입니다. 유치원 때부터 다닌 영어 학원을 고2가 되어서야 처음 바꿀 정도로, 익숙한 것을 바꾸는 데 보수적인 면도 함께 확인됐습니다.",
+      quote: "누구의 누가 잘하여서 내 성적이 지금 나오는가를 구분감이 없어요… 학원 덕분에 내가 성적이 잘 나오고 있다.", quoteSrc: "원장 진단" },
+    { title: "호기심 -2, 성적 대비 낮은 지적 갈망 — 킬러문항 앞에서 멈춘다",
+      body: "학습계획·성실성·학습성찰은 모두 최고 수준(+43~+48)인데 호기심만 평균 이하입니다. 주어진 문제집은 완벽하게 소화하지만, '왜 그런지' 스스로 파고들며 한 문제에 오래 매달리는 경험은 부족합니다. 지금 방식으로는 중난이도 문항까지는 잡아도 최상위 변별 문항(킬러)에서 막힐 수 있습니다.",
+      quote: "얘도 그러니까 이게 본연의 모습이 아닐 수도 있어요… 그러면 나중에 이제 중킬러까지는 잡아도 킬러가 안 잡힐 수 있다.", quoteSrc: "원장 진단" }
+  ],
+
+  states: [
+    { icon:"💙", title:"정서", body:"기대지향 상위 2%, 부모정서지지 +27로 에너지는 넘치지만, 시험안정감 -29로 한번 흔들리면 회복이 오래 걸립니다. 감정을 내색하지 않고 혼자 삼키는 스타일이라 겉으로는 안정적으로 보여도 내면은 70~80% 출력의 번아웃 위험군입니다." },
+    { icon:"📚", title:"학습", body:"학습계획 +45·성실성 +43·학습성찰 +48 — 거의 완벽한 체계적 수행을 보이고 있습니다. 국어만 예외적으로 불안정(3등급까지 하락)하고, 호기심 부족으로 심화 사고 확장에는 한계가 있습니다." },
+    { icon:"🧭", title:"태도", body:"내적·외적 책임감, 주도성 모두 다소높음~높음 — 이상적인 태도를 갖췄습니다. 다만 산업공학이라는 진로가 아직 '회사원' 수준의 막연함에 머물러 있어 생기부의 뾰족함이 부족합니다." }
+  ],
+  observation: "<b>핵심 관찰</b>용성이는 부족해서 도움이 필요한 아이가 아니라, 이미 완성도 높은 시스템 위에서 마지막 한 끗을 채워야 할 아이입니다. 학습계획·성실성·학습성찰 모두 최고 수준이고, 국어를 제외한 전 과목이 상위권입니다. 다만 사교육과 본인의 실력을 구분하지 못하는 인식, '회사원'에 머물러 있는 막연한 진로 워딩, 그리고 상위 2%의 폭발적 에너지로 70~80% 출력을 유지하며 쌓이고 있는 번아웃 위험이 함께 확인됐습니다. 지금 용성이에게 필요한 것은 수업을 더 얹는 것이 아니라, 국어라는 마지막 단추와 뾰족한 방향을 잡아 줄 정교한 컨트롤타워입니다.",
+
+  roadmap: [
+    { when: "1단계 · 지금 ~ 7/21 등원", title: "국어 현황 확인 + 진로·생기부 컨설팅 시작",
+      body: "여름방학 등원(7/21)에 맞춰 기존 학원 스케줄과 충돌 없는 시간표를 먼저 확정합니다.",
+      items: [
+        "학원 시간표(수요일 저녁) 확인 후 타임테이블 완성 — 21일 등원 전 확정",
+        "국어 모의고사 오답 패턴(선지소거 부재) 1차 점검",
+        "진로 워딩 '회사원' → 산업공학 세부 분야로 좁히는 대화 시작"
+      ],
+      why: "왜 지금인가 — 방학이 시행착오를 열 수 있는 물리적 시간이 확보되는 유일한 구간이며, 개학 후에는 내신 관리가 다시 우선순위가 됩니다." },
+    { when: "2단계 · 여름방학 ~ 2학기", title: "선지 소거 훈련 + 슬럼프 대응 강령 합의",
+      body: "국어 클리닉은 내신 우선 원칙 아래 가볍게 트래킹하고, 가족은 번아웃 대비 대화를 미리 나눕니다.",
+      items: [
+        "지문 유형별 동선 설계와 선지 근거 판단 훈련 예비 트래킹",
+        "슬럼프가 오기 전에 '어떻게 버틸지' 가족이 미리 약속 정하기",
+        "생기부 방향에 맞춰 학교 프로젝트(리로스쿨 등) 퀄리티 점검"
+      ],
+      why: "왜 필요한가 — 시험안정감 -29, 감정을 내색하지 않는 성향이 겹치면 슬럼프가 와도 알아채기 어렵습니다. 미리 정한 강령이 있어야 흔들려도 빠르게 버틸 수 있습니다." },
+    { when: "3단계 · 겨울방학 (고2→고3)", title: "국어 3~4개월 집중 투자 + 정시·수시 갈림길 결단",
+      body: "이 겨울이 학원에서 뽑아낼 수 있는 마지막 퍼포먼스 구간입니다. 국어 커리큘럼을 확정하고 입시 전략의 방향을 정합니다.",
+      items: [
+        "1타 강사 인강 커리큘럼 확정 + 체화 트래킹 3~4개월 집중",
+        "연고대 종합전형 올인 vs 정시 중심 전략, 내년 상반기까지 결단",
+        "정기 재검사로 히든 TYPE 2 → 본타입 2 진입 여부 확인"
+      ],
+      why: "왜 겨울인가 — 여름 이후로는 학습 흐름이 끊길 위험이 있어, 겨울부터 여름까지 이어지는 체계적 계획이 핵심이라는 것이 원장의 진단입니다." }
+  ],
+
+  agreements: [
+    "등록 확정: <b>7월 21일부터 에듀플렉스 길음점 등원 시작</b>, 기존 학원(수요일 저녁)과 충돌 없는 시간표로 세팅",
+    "국어 클리닉(선지 소거·지문 동선 훈련)은 겨울방학부터 본격 시작 — 지금은 내신 관리를 우선한다는 데 공감",
+    "생기부·진로 컨설팅은 은행사거리 입시센터 또는 정기 상담으로 병행 검토",
+    "현재 상태에서 <b>학원을 정리하는 것은 오히려 위험</b>하다는 데 공감 — 기존 학원은 그대로 유지",
+    "번아웃 신호가 보이면 미리 합의한 '슬럼프 강령'으로 대응하기로 함 (가정 내 사전 대화 필요)",
+    "7월 등록비 <b>330,000원</b>(상담 반달분 175,000원 + 관리 7회 105,000원 + 장기체류 5일분 50,000원) 확인",
+    "학원 시간표를 사전에 전달해 21일 타임테이블을 확정하기로 함, 서명은 학생 등원일에 함께 진행"
+  ],
+
+  decisions: [
+    { badge:"결정 1", title:"생기부 방향 — 산업공학, 어디까지 좁힐 것인가",
+      body:"연고대 종합전형을 노릴지, 정시 중심으로 갈지 내년 상반기까지 결단이 필요합니다. 종합전형은 전교 상위 10% 수준의 뾰족한 생기부가 필요한 '품이 많이 드는' 길이고, 지금의 정시 경쟁력은 이미 내신 전형보다 유리할 수 있다는 것이 원장의 진단입니다.",
+      options:[
+        { t:"권장", d:"정시 경쟁력을 유지하며 생기부는 컴팩트하게 1~2개 강점만 뾰족하게 다듬기" },
+        { t:"대안", d:"연고대 종합전형에 집중 투자 — 전교 10% 수준 내신 방어 + 생기부 빌드업에 품 들이기" }
+      ]},
+    { badge:"결정 2", title:"겨울방학 국어 인강 커리큘럼 선택",
+      body:"1타 강사 중 누구의 커리큘럼을 태울지, 겨울부터 3~4개월 집중 투자를 시작할지 결정이 필요합니다. 이 결정은 국어 3등급 낙차를 안정화할 수 있는 유일한 시간 창구입니다.",
+      options:[
+        { t:"1안", d:"상담 후 원장 추천 커리큘럼으로 겨울방학 집중 투자" },
+        { t:"2안", d:"기존 학림 국어를 유지하며 클리닉만 병행 (효과는 제한적일 수 있음)" }
+      ]},
+    { badge:"결정 3", title:"번아웃 대비 — 슬럼프가 오기 전에 가족이 강령을 정해둘 것",
+      body:"용성이는 감정을 잘 내색하지 않는 성향이라, 슬럼프가 와도 가족이 알아채기 어렵습니다. \"슬럼프가 오면 우리는 어떻게 할까?\"를 슬럼프가 오기 전에 미리 이야기해 두는 것이 필요합니다. 이것은 저희가 대신할 수 없는, 가정에서 나눠주셔야 하는 대화입니다.",
+      options:[] }
+  ],
+
+  pricing: {
+    lead: "상담에서 안내드린 길음점 기준 비용입니다. 용성이에게 필요한 것은 수업을 더 쌓는 방식이 아니라, 이미 완성된 시스템 위에 국어와 진로 전략을 정교하게 얹는 컨트롤타워입니다.",
+    rows: [
+      { name:"정기 상담", desc:"진로·생기부 전략, 국어 학습법 점검, 번아웃·슬럼프 대응 코칭. 월 350,000원 기준이며 7월은 21일 시작으로 반달분 산정", amt:"월 350,000원 (7월 175,000원)", rec:true },
+      { name:"체류 학습 관리", desc:"등원일 학습 관리 — 시작·중간·마무리 점검. 학원 스케줄과 겹치지 않는 날에 배치", amt:"1회 15,000원", rec:true },
+      { name:"방학 장기체류 추가", desc:"방학 중 장시간 체류 학습에 대한 추가 산정 (7월 기준 5일분)", amt:"5일분 50,000원", rec:false },
+      { name:"입시 컨설팅 (은행사거리 센터)", desc:"원장급 컨설턴트의 생기부·원서 전략 점검. 평일 시간이 어려우면 주말 이용 가능", amt:"필요 시 별도 안내", rec:false }
+    ],
+    note: "※ 7월 등록 예시 기준 합계는 330,000원(175,000 + 105,000 + 50,000)입니다. 8월 전체 기간은 등원 일수에 따라 약 600,000~700,000원 수준으로 예상되며, 정확한 금액은 최종 시간표 확정 후 안내드립니다.",
+    package: {
+      title: "7월 등록 비용 산출 (실제 상담 기준)",
+      note: "7월 21일부터 반달 등록을 기준으로 안내드린 금액입니다. 8월 전체 기간은 등원 일수에 따라 별도 산정됩니다.",
+      items: [
+        { name:"정기 상담", value:"월 350,000원 기준의 반달분 175,000원 (7/21 시작)" },
+        { name:"체류 학습 관리", value:"15,000원 × 7회 = 105,000원" },
+        { name:"방학 장기체류 추가", value:"5일분 50,000원" },
+        { name:"8월 예상", value:"등원 일수에 따라 약 600,000~700,000원 수준으로 예상됩니다 (가정용 참고치이며 확정 금액 아님).", wide:true },
+        { name:"7월 합계", value:"175,000 + 105,000 + 50,000 = 330,000원", footer:true }
+      ]
+    }
+  },
+
+  closing: {
+    title: "용성이에게 필요한 것은 더 많은 학원이 아니라, 국어라는 마지막 단추와 뾰족한 방향입니다.",
+    msg: "검사가 확인해 준 사실은 분명합니다 — 학습계획·성실성·학습성찰 모두 최고 수준, 상위 2%의 성취욕구, 그리고 이미 자율적으로 공부하는 구조까지. 재료는 이미 완성되어 있습니다. 지금 필요한 것은 국어라는 마지막 단추를 채우는 일과, '회사원'에 머물러 있는 진로를 뾰족하게 좁히는 일, 그리고 70~80% 출력으로 달리고 있는 지금의 페이스를 관리해 줄 컨트롤타워입니다. 7월 21일 첫 등원을 시작으로 기존 학원 스케줄은 그대로 유지하면서 국어 체화 트래킹과 진로·생기부 전략을 함께 챙기겠습니다. 궁금하신 점은 편하게 카카오톡으로 연락 주세요.",
+    contacts: [ "에듀플렉스 길음점 · 원장 김병수", "상담문의 02-2135-1672", "카카오톡 채널로 회신", { label:"홈페이지 eduplexge.sangsangplex.com", href:"https://eduplexge.sangsangplex.com" }, "등원 시작: 7월 21일 (학원 시간표 사전 전달 요청)" ]
+  },
+
+  footer: "본 결과지는 VLT-5G 검사 결과(2026-07-04)와 초기상담(2026-07-04) 내용을 바탕으로 작성되었으며, 학생의 성장 상황에 따라 매니지먼트 전략은 지속적으로 조정됩니다."
+};
+
+/* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
+(function render(){
+  const D = REPORT_DATA, $ = id => document.getElementById(id);
+  const esc = s => s ?? "";
+
+  // 헤더
+  if (D.brand?.logo) {
+    const logo = $("branch-logo");
+    logo.src = D.brand.logo;
+    logo.alt = D.brand.logoAlt || "에듀플렉스 로고";
+    logo.style.display = "block";
+  }
+  $("rpt-subtitle").textContent = `${D.meta.student} 학생 · ${D.meta.school}`;
+  $("rpt-meta").innerHTML =
+    `<span><b>검사일</b>${D.meta.testDate}</span><span><b>상담일</b>${D.meta.counselDate}</span>`+
+    `<span><b>상담</b>${D.meta.counselor}</span>`;
+  $("rpt-types").innerHTML =
+    `<span class="typechip"><small>1순위</small>${D.types.primary}</span>`+
+    (D.types.secondary ? `<span class="typechip"><small>참고</small>${D.types.secondary}</span>` : "");
+
+  // 요약
+  $("summary-grid").innerHTML = D.summary.map(s =>
+    `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
+  $("expertise-box").innerHTML = D.expertise ? `<b>${D.expertise.title}</b>${D.expertise.body}` : "";
+
+  // 프로그램 구조
+  $("program-lead").textContent = D.program?.lead || "";
+  $("program-cards").innerHTML = (D.program?.cards || []).map(c =>
+    `<div class="program-card"><span class="tag">${c.tag}</span><div class="program-title">${c.title}</div>
+      <p>${c.body}</p>${c.bullets?.length ? `<ul>${c.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>` : ""}</div>`).join("");
+
+  // 9요소
+  const lvColor = l => l<=1.5?"var(--lv1)":l<=2.5?"var(--lv2)":l<=3.5?"var(--lv3)":l<=4.5?"var(--lv4)":"var(--lv5)";
+  $("factor-list").innerHTML = D.factors.map((f,i) =>
+    `<div class="factor" data-i="${i}">
+       <div class="name">${f.name}<small>${f.sub}</small></div>
+       <div class="bar"><i data-w="${f.level/5*100}" style="background:${lvColor(f.level)}"></i></div>
+       <div class="grade" style="color:${lvColor(f.level)}">${f.grade}${f.stars?`<br><span style="color:#b8860b;font-size:11px">${"★".repeat(f.stars)}</span>`:""}</div>
+       <div class="factor-detail">${f.detail}</div>
+     </div>`).join("");
+  document.querySelectorAll(".factor").forEach(el =>
+    el.addEventListener("click", () => el.classList.toggle("open")));
+  // 바 애니메이션
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w+"%"); io.unobserve(e.target); }
+  }), {threshold:.2});
+  io.observe($("factor-list"));
+
+  // 타입
+  $("type-title").textContent = D.type.title;
+  $("type-desc").innerHTML = D.type.desc;
+  $("type-insights").innerHTML = (D.type.insights || []).map(i=>`<div class="type-insight"><div class="label">${i.label}</div><p>${i.body}</p></div>`).join("");
+  $("type-pros").innerHTML = D.type.pros.map(p=>`<li>${p}</li>`).join("");
+  $("type-cons").innerHTML = D.type.cons.map(p=>`<li>${p}</li>`).join("");
+
+  // 걸림돌
+  $("stones").innerHTML = D.stones.map((s,i) =>
+    `<div class="stone"><div class="num">${i+1}</div><div>
+       <h4>${s.title}</h4><p>${s.body}</p>
+       ${s.quote?`<div class="quote">${s.quote}${s.quoteSrc?`<small>— ${s.quoteSrc}</small>`:""}</div>`:""}
+     </div></div>`).join("");
+
+  // 상태
+  $("states").innerHTML = D.states.map(s =>
+    `<div class="state"><div class="icon">${s.icon}</div><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
+  $("observe").innerHTML = D.observation;
+
+  // 로드맵
+  $("roadmap").innerHTML = D.roadmap.map(r =>
+    `<div class="phase"><div class="when">${r.when}</div><h4>${r.title}</h4><p>${r.body}</p>
+     <ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+     ${r.why?`<div class="why">${r.why}</div>`:""}</div>`).join("");
+
+  // 합의
+  $("agreements").innerHTML = D.agreements.map(a =>
+    `<li><span class="chk">✓</span><span>${a}</span></li>`).join("");
+
+  // 결정
+  $("decisions").innerHTML = D.decisions.map(d =>
+    `<div class="decide"><h4><span class="badge">${d.badge}</span>${d.title}</h4><p>${d.body}</p>
+     ${d.options.length?`<div class="options">${d.options.map(o=>`<div class="opt"><b>${o.t}</b>${o.d}</div>`).join("")}</div>`:""}
+    </div>`).join("");
+
+  // 비용
+  $("price-lead").textContent = D.pricing.lead;
+  $("price-rows").innerHTML = D.pricing.rows.map(r =>
+    `<tr class="${r.rec?"rec":""}"><td class="nm"><b>${r.name}${r.rec?'<span class="recommend-tag">권장</span>':""}</b></td>
+     <td style="font-size:13.5px;color:var(--sub)">${r.desc}</td><td class="amt">${r.amt}</td></tr>`).join("");
+  $("price-note").textContent = D.pricing.note;
+
+  // 패키지 세팅
+  const packageCfg = D.pricing.package || {};
+  const renderPackageLine = line => {
+    if (typeof line === "object") {
+      return `<div class="package-option">
+        <strong>${line.title || ""}</strong>
+        ${line.meta ? `<em>${line.meta}</em>` : ""}
+        ${line.desc ? `<small>${line.desc}</small>` : ""}
+        ${line.example ? `<small>${line.example}</small>` : ""}
+      </div>`;
+    }
+    return `<span>${line}</span>`;
+  };
+  $("package-title").textContent = packageCfg.title || "패키지 세팅";
+  $("package-note").textContent = packageCfg.note || "";
+  const packageItems = packageCfg.items || [];
+  const packageCards = packageItems.filter(item => !item.footer);
+  const packageFooters = packageItems.filter(item => item.footer);
+  $("package-items").innerHTML =
+    packageCards.map(item => {
+      const hasOptionLines = item.lines?.some(line => typeof line === "object");
+      return `<div class="package-card ${item.wide ? "wide" : ""}">
+      <b>${item.name}</b>
+      <span>${item.value || ""}</span>
+      ${item.lines?.length ? `<div class="package-list ${hasOptionLines ? "option-grid" : ""}">${item.lines.map(renderPackageLine).join("")}</div>` : ""}
+    </div>`;
+    }).join("") +
+    packageFooters.map(item =>
+      `<div class="package-footer"><b>${item.name}</b><span>${item.value || ""}</span></div>`
+    ).join("");
+
+  // 클로징
+  const renderContact = c => {
+    if (typeof c === "object") {
+      const href = c.href?.startsWith("http") ? c.href : `https://${c.href}`;
+      return `<span><a href="${href}" target="_blank" rel="noopener">${c.label}</a></span>`;
+    }
+    const text = String(c);
+    const match = text.match(/(https?:\/\/[^\s]+|eduplexge\.sangsangplex\.com)/);
+    if (!match) return `<span>${text}</span>`;
+    const href = match[1].startsWith("http") ? match[1] : `https://${match[1]}`;
+    return `<span>${text.replace(match[1], `<a href="${href}" target="_blank" rel="noopener">${match[1]}</a>`)}</span>`;
+  };
+  $("closing-title").textContent = D.closing.title;
+  $("closing-msg").textContent = D.closing.msg;
+  $("closing-contact").innerHTML = D.closing.contacts.map(renderContact).join("");
+  $("rpt-footer").textContent = D.footer;
+  document.title = `VLT-5G 초기상담 결과지 — ${D.meta.student}`;
+})();
+</script>
+</body>
+</html>
