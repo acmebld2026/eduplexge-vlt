@@ -471,7 +471,7 @@ const REPORT_DATA = {
   },
   "types": {
     "primary": "TYPE 8. 고집쟁이",
-    "secondary": "강한 계획·실행력을 유연한 수용과 심층 성찰로 확장하는 성장 방향"
+    "secondary": "TYPE 2. 모범생"
   },
   "summary": [
     {
@@ -1030,7 +1030,7 @@ const REPORT_DATA = {
     `<span><b>상담</b>${D.meta.counselor}</span>`;
   $("rpt-types").innerHTML =
     `<span class="typechip"><small>1순위</small>${D.types.primary}</span>`+
-    (D.types.secondary ? `<span class="typechip"><small>참고</small>${D.types.secondary}</span>` : "");
+    (D.types.secondary ? `<span class="typechip"><small>히든</small>${D.types.secondary}</span>` : "");
 
   // 요약
   $("summary-grid").innerHTML = D.summary.map(s =>
