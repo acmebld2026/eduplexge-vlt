@@ -618,10 +618,7 @@ const REPORT_DATA = {
       "action": "문장별 구문·어휘 확인-문단 기능 표시-한 문장 요약-선지 근거 위치 확인 순서를 고정합니다."
     }
   ],
-  "expertise": {
-    "title": "에듀플렉스 길음점의 진단·관리 전문성",
-    "body": "VLT-5G와 국영수 APT, 상담에서 확인한 성적·정서·생활 습관을 함께 읽어 수빈이의 높은 성찰을 실제 계획과 완주로 전환하는 실행 구조를 설계했습니다."
-  },
+  "expertise": null,
   "program": {
     "lead": "수빈이에게는 수업의 양보다 매일 시작하고 끝내는 관리 구조가 먼저입니다. 외부 국어·수학 일정은 유지하되 영어·과학 공백과 긴 자습 구간을 주간 계획 안에 배치합니다.",
     "cards": [
@@ -1010,7 +1007,7 @@ const REPORT_DATA = {
       "등록 및 시작 일정은 상담 후 확정"
     ]
   },
-  "footer": "본 결과지는 VLT-5G 검사 결과지 기반 해석, 초기상담과 한수빈 학생의 국어·영어·수학 APT 진단을 교차 검토해 작성했습니다. 실제 등록과 운영 구성은 상담 후 조정됩니다."
+  "footer": "에듀플렉스 길음점 · 한수빈 학생 초기상담 결과"
 };
 
 /* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
@@ -1036,7 +1033,7 @@ const REPORT_DATA = {
   // 요약
   $("summary-grid").innerHTML = D.summary.map(s =>
     `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
-  $("expertise-box").innerHTML = D.expertise ? `<b>${D.expertise.title}</b>${D.expertise.body}` : "";
+  D.expertise ? $("expertise-box").innerHTML = `<b>${D.expertise.title}</b>${D.expertise.body}` : $("expertise-box").remove();
 
   // 검사 결과지 기반 핵심 요약
   $("core-summary-title").textContent = D.coreSummary?.title || "검사 결과지 기반 핵심 요약";
