@@ -558,10 +558,7 @@ const REPORT_DATA = {
       "action": "현재 영어 학습 관계는 유지하고, 매 지문에 모르는 어휘·유의어 누적 → 구조 표시 → 선지별 근거 문장 확인 → 한글 한 문장 설명의 5분 복습을 붙입니다. 추가 수업보다 기존 수업의 흡수율을 높이는 것이 우선입니다."
     }
   ],
-  "expertise": {
-    "title": "에듀플렉스 길음점의 진단·관리 전문성",
-    "body": "이 결과지는 VLT-5G 검사, XCM16 학습 타입, 초기상담에서 확인한 학습 상황과 APT 국어·영어·수학 역량을 종합한 실행 설계입니다. 준현이에게 필요한 것은 수업을 더 많이 듣는 것이 아니라, 빠른 판단력과 좋은 학습 피지컬을 계획·구조화·오답 갈무리로 연결해 매일 스스로 완수하는 관리 구조입니다."
-  },
+  "expertise": null,
   "program": {
     "lead": "준현이의 첫 운영안은 상담&관리입니다. 7월에는 외부 국어·영어·수학 학원의 숙제량과 실제 자습 시간을 먼저 측정하고, 담당 매니저와 주간 계획을 세워 실행합니다. 개별지도는 처음부터 넣지 않고 미적분1이나 국어 어휘 학습에서 실제 막힘이 확인될 때 처방적으로 추가합니다.",
     "cards": [
@@ -950,7 +947,7 @@ const REPORT_DATA = {
       "담당 매니저 연락 후 7월 22일 전 OT 가능 일시 확정"
     ]
   },
-  "footer": "본 결과지는 VLT-5G 검사 결과지 기반 해석, 초기상담에서 확인한 학습 상황, 김준현 학생의 국어·영어·수학 APT 진단을 교차 검토해 작성했습니다. 실제 등원 일정과 프로그램 편성은 담당 매니저와의 OT 및 초기 2주 관찰 결과에 따라 조정됩니다."
+  "footer": "에듀플렉스 길음점 · 김준현 학생 초기상담 결과"
 };
 
 /* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
@@ -976,7 +973,7 @@ const REPORT_DATA = {
   // 요약
   $("summary-grid").innerHTML = D.summary.map(s =>
     `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
-  $("expertise-box").innerHTML = D.expertise ? `<b>${D.expertise.title}</b>${D.expertise.body}` : "";
+  D.expertise ? $("expertise-box").innerHTML = `<b>${D.expertise.title}</b>${D.expertise.body}` : $("expertise-box").remove();
 
   // 검사 결과지 기반 핵심 요약
   $("core-summary-title").textContent = D.coreSummary?.title || "검사 결과지 기반 핵심 요약";
