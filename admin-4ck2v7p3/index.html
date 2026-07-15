@@ -22,6 +22,19 @@
   a.manager{display:inline-block;word-break:keep-all;background:#e9f5ee;color:#2f6f4e;border-radius:7px;padding:6px 10px;font-size:13px}
   a.manager:hover{background:#d8eddf;text-decoration:none}
   .tag{display:inline-block;font-size:11px;font-weight:800;background:#e8f1fa;color:#2f6fb1;border-radius:4px;padding:2px 7px;margin-left:6px}
+  .apt-section{margin-top:34px}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
+  .section-head h2{font-size:19px;color:#1b3a5c}
+  .section-note{color:#6b7c8c;font-size:12.5px;text-align:right}
+  .apt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .apt-card{background:#fff;border:1px solid #dfe7ef;border-radius:10px;padding:15px;box-shadow:0 2px 7px rgba(0,0,0,.04)}
+  .apt-name{font-size:15px;font-weight:800;color:#263b4d;margin-bottom:11px}
+  .apt-links{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .apt-link{display:block;border-radius:7px;padding:7px 5px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:800;background:#edf4fb;color:#2f6fb1;border:1px solid #d8e7f5}
+  .apt-link:hover{background:#dcebf8}
+  .apt-empty{grid-column:1/-1;background:#fff;border-radius:10px;padding:20px;text-align:center;color:#6b7c8c}
+  @media(max-width:800px){.apt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.section-note{text-align:left}}
+  @media(max-width:520px){body{padding:24px 14px}.apt-grid{grid-template-columns:1fr}}
   footer{margin-top:24px;font-size:12px;color:#5a6b7b;text-align:center}
 </style>
 </head>
@@ -29,7 +42,7 @@
 <div class="wrap">
   <div class="warn">⚠️ 이 페이지는 원장·매니저 전용입니다. 링크를 학부모나 외부에 공유하지 마세요. 학부모께는 아래 표의 "학부모 전달 링크" 열만 카카오톡 등으로 개별 전달합니다. "매니저용 기록지"는 내부 운영용입니다.</div>
   <h1>에듀플렉스 길음점 — 초기상담 결과지 배포 현황</h1>
-  <div class="sub">마지막 갱신: 2026-07-13</div>
+  <div class="sub">마지막 갱신: 2026-07-15</div>
   <div class="table-scroll">
   <table>
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
@@ -88,10 +101,56 @@
         <td><a class="link" href="../h0au2d7t/">https://acmebld2026.github.io/eduplexge-vlt/h0au2d7t/</a></td>
         <td><a class="link manager" href="../h7ckqch0/">열기</a></td>
       </tr>
+      <tr>
+        <td>김준현 <span class="tag">계성고2</span></td>
+        <td>2026.07.14 · TYPE5 (7/22 시작)</td>
+        <td><a class="link" href="../ifirlhkv/">https://acmebld2026.github.io/eduplexge-vlt/ifirlhkv/</a></td>
+        <td><a class="link manager" href="../gc90fcxy/">열기</a></td>
+      </tr>
     </tbody>
   </table>
   </div>
+  <section class="apt-section" aria-labelledby="apt-title">
+    <div class="section-head">
+      <div>
+        <h2 id="apt-title">APT 검사지 링크</h2>
+        <div class="sub" style="margin-bottom:0">학생별 과목 원본 Google Sheets를 엽니다.</div>
+      </div>
+      <div class="section-note">내부 운영용 · 외부 공유 금지</div>
+    </div>
+    <div class="apt-grid" id="apt-links"></div>
+  </section>
   <footer>새 학생 결과지와 매니저용 기록지가 배포되면 이 표에 행을 추가합니다 — `결과지\배포_기록.md` 참조</footer>
 </div>
+<script>
+  // 새 링크를 받을 때 아래 배열에 학생 이름과 과목별 URL 한 묶음만 추가합니다.
+  const aptSheets = [
+    { name: "안시영", korean: "https://docs.google.com/spreadsheets/d/1GgoPQRbl8sef1Hr9Pv4k-whNO9fkDdZ5YXCMFFTrsjY/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/12Ivf398zPZdMOlfmuGFltNcB0dCJmSK547xUGtQq8n8/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1_fsaiOH8emSWBXD5iCqSp2GDsnFaB2XhZSbqvUpbENE/edit?usp=drive_link" },
+    { name: "이주은", korean: "https://docs.google.com/spreadsheets/d/151AeJqxHVuRi9FPHKqQ_Hwm8wzkEGRzZ7wU33Q3ov7I/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1LgHrZwPe7DtdHL0Qfj8pGJRaYpTXr-tZTafxgcbDPa4/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1Zw28JP2yqsmWIokIbAK7aAWZzSYV3bdz82zkJmGHvu4/edit?usp=drive_link" },
+    { name: "김준현", korean: "https://docs.google.com/spreadsheets/d/1GSon4m6Z578nk_vNvriUhYbkepEXs11Eb7ImM8rIrME/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1lGCPl4dCRwahIi5mIi9oVeEM9hQ6J0Qku3xV8DpDiAU/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1Q6ujyXCbIvz3vDuPMQNBCB7yd1LkqNLf68osv7iKsVc/edit?usp=sharing" },
+    { name: "이수민", korean: "https://docs.google.com/spreadsheets/d/1EbPmwl-MdDgV674tYp4rurIsKL_tqxHyp65c6yxe4l8/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1jsFahiMFI0wflgsAs2rAlwWnkUKx34Hynap9idytlvo/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1datK-psHtudhdbNbtmUXMGBapYfhLC6NepfcaurYk9U/edit?usp=sharing" },
+    { name: "이강인", korean: "https://docs.google.com/spreadsheets/d/1kIXZYWWcPY7HeRxe-xaFkkZ3RjycrqlatfAliCLlZ0w/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/12JB1HOjGDCnAQRKqi3bM9rISQs1wcKPveIG5J9FB_Xw/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1qU_VGa5nZ69h-J9i7ZqDMhWGkT9wJVrMSbVE2Zv2Ngg/edit?usp=sharing" },
+    { name: "문정우", korean: "https://docs.google.com/spreadsheets/d/1yr_r2bAM_iVSgjLOk6CLogqVV_8L2IV2Rp-cVHZX-3A/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1e1mzst49sbZqBduxS-UYV_TBjisIOn97EFMTm16WVCI/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/16EtttZ6SWMDpiWrR_ltoXlBCr16tEuK2UJsv8O355Jo/edit?usp=sharing" },
+    { name: "문성연", korean: "https://docs.google.com/spreadsheets/d/1D9uPADarFJwKW0RTAG4i87nIbdG4jGCKU-Nd4GNHU3w/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1vjpvu2IjZx2AapqoCg_1lykEE6OdLE2k5LRBuV1FH-s/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/10uWbmZU_M3Y4QLjy2NHuzC44e3IxSOrRrGLJLRPXr2E/edit?usp=sharing" },
+    { name: "조희성", korean: "https://docs.google.com/spreadsheets/d/1dVrIctuZWHxZh6psXFtu8ylzWTHXQ0WriEn3ykdcVnM/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1ezRBMY77qfAxNi6qLkHLq_crUZ_Md9pbrkknXQD74dM/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1qpzuGPGWs48VjLTC6nYDbYpqFZMgkaHjdmQK-TecjGQ/edit?usp=sharing" },
+    { name: "이다인", korean: "https://docs.google.com/spreadsheets/d/1MEsWICTaFSvarbn1bePzQ_zmN9969L3bqyQlt3CF1dQ/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1ULqFxXm4SnWpF_eXZE6OxXYkYhPH27_xEVpAagg07Sc/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1c8Lc6obpYi2gHc1JuHFMNAggtAqqR9LqAQB-oLf-eS4/edit?usp=sharing" },
+    { name: "김재원", korean: "https://docs.google.com/spreadsheets/d/1Tv26BhksH_wYFpVAjLgtesiYFohXcy6l8oCDD_lKwV4/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1zCaEYCS5wwk2W82au9bIwqrTb2pA0WrJwBiMIvt4rNM/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1SgPOMyW6-24Is8auJocTBykuNFvdmzT2TvDmI-Ak02I/edit?usp=sharing" },
+    { name: "김재현", korean: "https://docs.google.com/spreadsheets/d/1mHcf80L7duGBdncUvZPwLK4jiFuiVVxC_l4rb3TbV7c/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/18seIPgTebWxHkQRGa1UJ_oTb8UDT2wvzsZ2I-dW860Q/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1hG5u_jiP-vDrrbU8PMhFzDbvr_gdtGSc5kW27HOLJic/edit?usp=sharing" },
+    { name: "한수빈", korean: "https://docs.google.com/spreadsheets/d/1KM0b00GDE_AMRqRmAamJg_yMeB8sezfznTClyqj0Gqg/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1JqBJKI7A5dQKBypuFnHmrDcS8BksSvBNAqBnoBrtQ6o/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1D_JeBpiQGjn6zvMU4_S81RfccexEWSEJnNxt6WxNIMU/edit?usp=sharing" },
+    { name: "조영우10", korean: "https://docs.google.com/spreadsheets/d/1wjVis-_PQ_myD_PNsGJdsGUWhW14LIS__ZNzxmTKeZA/edit?gid=765685208#gid=765685208", math: "https://docs.google.com/spreadsheets/d/1rMmxkpYJoMtcOoeku5zLxaqjGYrQ7W7cgAoTc0LvTUY/edit?gid=1103795227#gid=1103795227", english: "https://docs.google.com/spreadsheets/d/1LN1VYdLlhPn4Fjrd4bqTjIUCHhKABrobO4KR4fmdoP8/edit?gid=164282451#gid=164282451" }
+  ];
+
+  const aptLinks = document.getElementById("apt-links");
+  aptLinks.innerHTML = aptSheets.map(({ name, korean, math, english }) => `
+    <article class="apt-card">
+      <div class="apt-name">${name}</div>
+      <div class="apt-links">
+        <a class="apt-link" href="${korean}" target="_blank" rel="noopener noreferrer">국어</a>
+        <a class="apt-link" href="${math}" target="_blank" rel="noopener noreferrer">수학</a>
+        <a class="apt-link" href="${english}" target="_blank" rel="noopener noreferrer">영어</a>
+      </div>
+    </article>
+  `).join("");
+</script>
 </body>
 </html>
