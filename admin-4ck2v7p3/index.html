@@ -30,6 +30,7 @@
   .apt-card{background:#fff;border:1px solid #dfe7ef;border-radius:10px;padding:15px;box-shadow:0 2px 7px rgba(0,0,0,.04)}
   .apt-name{font-size:15px;font-weight:800;color:#263b4d;margin-bottom:11px}
   .apt-links{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .mbti-links{grid-template-columns:repeat(2,1fr)}
   .apt-link{display:block;border-radius:7px;padding:7px 5px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:800;background:#edf4fb;color:#2f6fb1;border:1px solid #d8e7f5}
   .apt-link:hover{background:#dcebf8}
   .apt-empty{grid-column:1/-1;background:#fff;border-radius:10px;padding:20px;text-align:center;color:#6b7c8c}
@@ -144,6 +145,16 @@
     </div>
     <div class="apt-grid" id="apt-links"></div>
   </section>
+  <section class="apt-section" aria-labelledby="mbti-title">
+    <div class="section-head">
+      <div>
+        <h2 id="mbti-title">MBTI 검사지 링크</h2>
+        <div class="sub" style="margin-bottom:0">학생·학부모 원본 Google Sheets를 엽니다.</div>
+      </div>
+      <div class="section-note">내부 운영용 · 외부 공유 금지</div>
+    </div>
+    <div class="apt-grid" id="mbti-links"></div>
+  </section>
   <footer>새 학생 결과지와 매니저용 기록지가 배포되면 이 표에 행을 추가합니다 — `결과지\배포_기록.md` 참조</footer>
 </div>
 <script>
@@ -166,7 +177,13 @@
     { name: "박시현12", korean: "https://docs.google.com/spreadsheets/d/1wqsKHAfMHVVx26aLpMU-YnypPY1z8ukynUdgGS8LYJc/edit?gid=902294280#gid=902294280", math: "https://docs.google.com/spreadsheets/d/1YBYhouEq8J9-XiGJ7atnW8SFgApEhNyOcZNRoZL1eDQ/edit?gid=1784002904#gid=1784002904", english: "https://docs.google.com/spreadsheets/d/1cDj2pagJYQqF7NxRWPAG9N1rbMan-M47ORgPXixO9RM/edit?gid=1330005897#gid=1330005897" },
     { name: "김대양", korean: "https://docs.google.com/spreadsheets/d/1WTjhGTefSBqIdrzd9xXfYT76v-0mlkisbMtfHqK1La4/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1KNEb8YEEZ2SwoA3LrG4PZWIZnwXfb-XAgzxnO6Nouzo/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1sjzh52sIwKtgvhTUFDQa5m-MiHSqSau0b5mRGcrg1KE/edit?usp=sharing" },
     { name: "권용성09", korean: "https://docs.google.com/spreadsheets/d/1n5yBfB6RwLVAH03MZduGj5bzNZiWP2Y8Lj6F5efVpjk/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1olAa-B3GKiTUvX3E54yRYxNeR1AMgkVyC_91N9OiF-U/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1Fmys0lg9SrG-koChcniolUtz_yB3ZU6tyYXf5bWiftM/edit?usp=sharing" },
-    { name: "박소연08", korean: "https://docs.google.com/spreadsheets/d/1_Z9_Dzgj01cYz_4PuJm3fXIrnyCI5eQCabAdLQNIG1Q/edit?gid=427447535#gid=427447535", math: "https://docs.google.com/spreadsheets/d/1JAfn7Kgqc5TZjLmhxY_OlMU8ri6PxbBqDPLO-oarbjI/edit?gid=1851050300#gid=1851050300", english: "https://docs.google.com/spreadsheets/d/1vRlqJyWQVwz42kdQpn7YcSUM6k0EwRp5g8x0AgkpvDw/edit?gid=1712590936#gid=1712590936" }
+    { name: "박소연08", korean: "https://docs.google.com/spreadsheets/d/1_Z9_Dzgj01cYz_4PuJm3fXIrnyCI5eQCabAdLQNIG1Q/edit?gid=427447535#gid=427447535", math: "https://docs.google.com/spreadsheets/d/1JAfn7Kgqc5TZjLmhxY_OlMU8ri6PxbBqDPLO-oarbjI/edit?gid=1851050300#gid=1851050300", english: "https://docs.google.com/spreadsheets/d/1vRlqJyWQVwz42kdQpn7YcSUM6k0EwRp5g8x0AgkpvDw/edit?gid=1712590936#gid=1712590936" },
+    { name: "김리안", korean: "https://docs.google.com/spreadsheets/d/1orHXNZ9v4VBAusduMlSsKo6uYCZnwW2S4wXOKytPrIA/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/13-G_ImuKXb54nhHGR5Rou_R8UGq_kU3OBnvt8R17QJA/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1cs7lpCTCeRZVxSGrJKGYqwrPFCti2dUCNVsxprcn1RM/edit?usp=drive_link" }
+  ];
+
+  // 학생·학부모 MBTI 링크는 아래 배열에 한 묶음으로 추가합니다.
+  const mbtiSheets = [
+    { name: "김리안10", student: "https://docs.google.com/spreadsheets/d/13Ifjo5Yn5Cv1RbzVCfXvwaD9JV_ffPAvVHX8InZWpmk/edit?usp=drive_link", parent: "https://docs.google.com/spreadsheets/d/13vh1I2K9fc9KwWdTlBGJyf8Q3quZLghYM1NlvBRhCos/edit?usp=drive_link" }
   ];
 
   const aptLinks = document.getElementById("apt-links");
@@ -177,6 +194,17 @@
         <a class="apt-link" href="${korean}" target="_blank" rel="noopener noreferrer">국어</a>
         <a class="apt-link" href="${math}" target="_blank" rel="noopener noreferrer">수학</a>
         <a class="apt-link" href="${english}" target="_blank" rel="noopener noreferrer">영어</a>
+      </div>
+    </article>
+  `).join("");
+
+  const mbtiLinks = document.getElementById("mbti-links");
+  mbtiLinks.innerHTML = mbtiSheets.map(({ name, student, parent }) => `
+    <article class="apt-card">
+      <div class="apt-name">${name}</div>
+      <div class="apt-links mbti-links">
+        <a class="apt-link" href="${student}" target="_blank" rel="noopener noreferrer">학생</a>
+        <a class="apt-link" href="${parent}" target="_blank" rel="noopener noreferrer">학부모</a>
       </div>
     </article>
   `).join("");
