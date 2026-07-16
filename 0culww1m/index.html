@@ -60,6 +60,34 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .keyword-card.strength{border-top:4px solid var(--green)}.keyword-card.improve{border-top:4px solid var(--accent)}.keyword-card.growth{border-top:4px solid var(--blue)}
 .core-narrative{border-radius:12px;padding:20px 22px;background:linear-gradient(135deg,#f4f9ff,#fff8f0);font-size:14.5px;line-height:1.8}
 
+/* APT 국영수 역량 — 원본 결과지 상단 그래프를 5점 척도로 재구성 */
+.apt-summary-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.apt-summary-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:linear-gradient(135deg,#fff 0%,#f7fbff 100%);box-shadow:0 6px 18px rgba(22,58,95,.06)}
+.apt-card-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #e5edf5}
+.apt-card-head h3{font-size:19px;margin:0 0 4px;color:var(--navy)}
+.apt-card-head p{margin:0;font-size:13px;color:var(--sub)}
+.apt-lever{flex:0 0 230px;border-radius:9px;background:var(--navy);color:#fff;padding:10px 12px;font-size:12px;line-height:1.55}
+.apt-lever b{display:block;color:#a9d3ff;font-size:10.5px;letter-spacing:.09em;margin-bottom:2px}
+.apt-card-body{display:grid;grid-template-columns:minmax(320px,.9fr) 1.1fr;gap:22px;padding-top:16px}
+.apt-chart{position:relative;padding:2px 0 18px;align-self:start;min-width:0}
+.apt-chart::after{content:"";position:absolute;left:calc(42% + 29%);top:0;bottom:20px;border-left:1px dashed #a7b8c9;pointer-events:none}
+.apt-metric{display:grid;grid-template-columns:42% 1fr 30px;gap:8px;align-items:center;margin:9px 0}
+.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25}
+.apt-track{height:10px;background:#e7eef5;border-radius:999px;overflow:hidden}
+.apt-fill{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#77b2e7,var(--blue));transition:width .8s ease}
+.apt-metric.is-strong .apt-fill{background:linear-gradient(90deg,#5fb596,var(--green))}
+.apt-metric.is-focus .apt-fill{background:linear-gradient(90deg,#ffbd78,var(--accent))}
+.apt-score{font-size:12.5px;font-weight:900;color:var(--navy);text-align:right}
+.apt-scale{display:flex;justify-content:space-between;margin-left:42%;padding-left:8px;font-size:10px;color:#7b8997}
+.apt-scale span:nth-child(2){color:#657789;font-weight:700}
+.apt-story{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.apt-story-block{border-radius:9px;background:#fff;border:1px solid #e2eaf2;padding:12px 13px;font-size:13px;line-height:1.65;color:var(--sub)}
+.apt-story-block strong{display:block;color:var(--navy);font-size:11px;letter-spacing:.07em;margin-bottom:3px}
+.apt-story-block.diagnosis{grid-column:1/-1;border-left:4px solid var(--blue);color:var(--ink);font-weight:650}
+.apt-story-block.action{border-left:4px solid var(--green)}
+.apt-story-block.risk{border-left:4px solid var(--accent)}
+.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c}
+
 /* 프로그램 구조 */
 .program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .program-card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:#fff}
@@ -199,8 +227,17 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   h2{font-size:20px;line-height:1.3}
   .lead{font-size:14px}
   .toolbar{padding:7px 10px}
-  .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid{grid-template-columns:1fr}
-  .keyword-grid{grid-template-columns:1fr}
+  .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid,.keyword-grid,.apt-summary-grid{grid-template-columns:1fr}
+  .apt-card-head{display:block}
+  .apt-summary-card,.apt-card-head,.apt-card-body,.apt-chart,.apt-story{min-width:0;max-width:100%}
+  .apt-lever{margin-top:10px;width:auto;max-width:100%;overflow-wrap:anywhere;word-break:keep-all}
+  .apt-card-body{grid-template-columns:1fr;gap:10px}
+  .apt-story{grid-template-columns:1fr}
+  .apt-story-block{min-width:0;overflow-wrap:anywhere;word-break:keep-all}
+  .apt-story-block.diagnosis{grid-column:auto}
+  .apt-metric{grid-template-columns:44% 1fr 28px;gap:6px}
+  .apt-chart::after{left:72%}
+  .apt-scale{margin-left:44%}
   .factor{grid-template-columns:110px 1fr 70px}
   .package-grid{grid-template-columns:1fr}
   .package-list:not(.option-grid){grid-template-columns:1fr}
@@ -254,6 +291,7 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 <nav class="toolbar">
   <a href="#sec-summary">요약</a>
   <a href="#sec-core-summary">검사 핵심</a>
+  <a href="#sec-apt">국영수 APT</a>
   <a href="#sec-test">검사 결과</a>
   <a href="#sec-type">타입 해설</a>
   <a href="#sec-stones">걸림돌</a>
@@ -282,6 +320,14 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   <p class="basis-note" id="core-summary-basis"></p>
   <div class="keyword-grid" id="core-keywords"></div>
   <div class="core-narrative" id="core-narrative"></div>
+</section>
+
+<!-- ══════════════════ APT 국어·영어·수학 역량 ══════════════════ -->
+<section id="sec-apt">
+  <span class="sec-label">APT SUBJECT PROFILE</span>
+  <h2>국어·영어·수학 역량 분석 핵심 요약</h2>
+  <p class="lead">APT 결과지의 상위 역량 그래프와 우선 보완 지표를 함께 읽어, 현재의 강점이 성적으로 이어지는 조건과 가장 먼저 바꿔야 할 학습 행동을 시각화했습니다.</p>
+  <div class="apt-summary-grid" id="apt-summary-grid"></div>
 </section>
 
 <!-- ══════════════════ 2. 검사 결과 ══════════════════ -->
@@ -422,8 +468,37 @@ const REPORT_DATA = {
     strengthKeywords: ["기대지향 +48", "학습계획 +45", "성실성 +43", "학습성찰 +48", "학습자립심 +45", "사고력(H) +47", "부모정서지지 +27", "주도성 +40"],
     improveKeywords: ["시험안정감 -29", "사교육의존 +32", "국어 근거 독해", "선지 소거 절차", "호기심 -2", "진로 방향의 구체성", "감정 표현", "번아웃 위험"],
     growthKeywords: ["국어 지문 동선 설계", "오답 근거 설명", "산업공학 세부 진로 탐색", "생기부 주제 압축", "슬럼프 대응 강령", "학원과 자기 성취 구분", "회복 시간 기록", "수시·정시 전략 결정"],
-    narrative: "검사 결과지 기반으로 보면 용성이는 학습계획·성실성·학습성찰과 학습자립심이 모두 매우 높은, 이미 자기 관리 체계가 완성된 학생입니다. 기대지향과 사고력도 강해 상위권 성취를 지속할 힘이 충분합니다. 반면 시험안정감과 사교육의존, 국어의 근거 독해가 병목으로 남아 있어 성취가 흔들릴 때 회복이 늦어질 수 있습니다. 따라서 학습량을 더 얹기보다 국어의 지문 동선과 선지 소거를 절차화하고, 산업공학 진로를 구체화하며, 슬럼프 대응 원칙과 회복 시간을 미리 설계하는 것이 다음 성장 단계입니다."
+    narrative: "검사 결과지 기반으로 보면 용성이는 학습계획·성실성·학습성찰과 학습자립심이 모두 매우 높은, 이미 자기 관리 체계가 완성된 학생입니다. 기대지향과 사고력도 강해 상위권 성취를 지속할 힘이 충분합니다. APT에서도 국어 표현 해석 5.0, 수학 정형 응용 5.0, 영어 메타인지 4.5가 확인됐습니다. 반면 시험안정감과 사교육의존, 국어 어휘 활용 2.0·수학 조건 찾기 3.0·영어 근거 분석 3.0이 병목으로 남아 있습니다. 따라서 학습량을 더 얹기보다 근거와 조건을 표시하고 자기 말로 설명하는 절차를 고정하며, 산업공학 진로를 구체화하고 슬럼프 대응 원칙과 회복 시간을 미리 설계하는 것이 다음 성장 단계입니다."
   },
+  aptSummary: [
+    {
+      subject: "국어",
+      subtitle: "매우 높은 해석력에 어휘·근거 절차를 더하는 단계",
+      lever: "어휘를 정확히 대체하고 문단의 중심 근거를 표시하면 강한 표현 해석과 추론이 안정적인 국어 성적으로 연결됩니다.",
+      metrics: [{label:"정보 이해·분석",score:4.0},{label:"언어 구조·개념",score:3.3},{label:"표현 해석·효과",score:5.0,tone:"strong"},{label:"추론·문제 해결",score:4.4}],
+      diagnosis: "표현 해석·효과(5.0)와 추론·문제 해결(4.4)이 매우 높고 정보 이해·분석도 4.0입니다. 작품과 문제의 구조를 읽어내는 힘은 충분하지만, 보완 항목의 어휘 활용·대체(2.0)가 상위 역량과 크게 벌어져 있습니다.",
+      risk: "상담에서 확인된 모의고사 79점과 선지 소거 근거 부족을 함께 보면, 이해 자체보다 정확한 어휘와 근거를 남기지 않는 풀이 습관이 점수 변동을 만드는 것으로 보입니다. 감각만으로 풀면 낯선 선지에서 흔들릴 수 있습니다.",
+      action: "모르는 한자어·유의어·반의어를 대체어와 함께 누적하고, 문단 중심 문장 → 선지 근거 → 오답 소거 이유를 표시합니다. 맞힌 문제도 근거를 한 문장으로 설명하게 해 높은 해석력을 재현 가능한 절차로 바꿉니다."
+    },
+    {
+      subject: "수학",
+      subtitle: "완성도 높은 정형 문제 해결력을 조건 해석까지 확장",
+      lever: "조건을 빠짐없이 찾고 첫 식의 근거를 말로 설명하는 습관이 현재의 높은 수학 성취를 고난도 문제까지 이어 줍니다.",
+      metrics: [{label:"기본 연산·공식",score:4.4},{label:"상황 수식화",score:4.3},{label:"정형 응용 해결",score:5.0,tone:"strong"},{label:"전형적 풀이 절차",score:4.3}],
+      diagnosis: "정형화된 응용 문제 해결(5.0)을 중심으로 기본 연산·공식(4.4), 상황 수식화와 풀이 절차(각 4.3)가 모두 높습니다. 내신 2등급과도 일치하는 강한 프로필이며, 상대적 보완점은 문제에서 조건 찾기(3.0)입니다.",
+      risk: "전체 역량이 높아 익숙한 문제에서는 빠르게 풀 수 있지만, 조건이 복합적으로 숨겨진 문제에서 일부 조건을 놓치면 풀이 방향은 맞아도 마지막 정답이 흔들릴 수 있습니다. 문제량만 늘리면 이 작은 누수가 가려질 수 있습니다.",
+      action: "복합 문제에서 조건마다 번호를 붙이고 조건 수만큼 식이 반영됐는지 확인합니다. 첫 식을 세운 이유와 다른 표현으로 바꾼 과정을 말로 설명하고, 오답은 조건 누락·표현 전환·명제 판단으로 분류해 재도전합니다."
+    },
+    {
+      subject: "영어",
+      subtitle: "탁월한 전략 판단을 선지 근거의 정밀도로 완성",
+      lever: "근거 문장과 오답 선지의 차이를 짧게 기록하면 높은 메타인지와 지원 전략이 실전 정답률로 고정됩니다.",
+      metrics: [{label:"메타인지 전략",score:4.5,tone:"strong"},{label:"지원 전략",score:4.4},{label:"인지 전략",score:4.0},{label:"재정리 전략",score:4.0},{label:"근거 분석",score:3.0,tone:"focus"}],
+      diagnosis: "메타인지 전략(4.5), 지원 전략(4.4), 인지·재정리 전략(각 4.0)이 모두 높아 지문 난이도를 판단하고 필요한 전략을 선택하는 능력이 뚜렷합니다. 상대적 보완점은 선지의 근거 분석(3.0)입니다.",
+      risk: "내신·모의고사에서 약 2개 오답 수준으로 성취는 우수하지만, 고난도 빈칸·순서·요지 문항에서 전체 흐름을 맞게 읽고도 선지의 미세한 표현 차이를 근거 없이 결정하면 소수 오답이 반복될 수 있습니다.",
+      action: "매 지문에서 핵심 문장과 정답 근거를 표시하고, 오답 선지는 지문 표현과 무엇이 다른지 한 줄로 적습니다. 어휘 풀이와 동의 변형을 함께 누적해 현재 학원 수업의 흡수율과 실전 정밀도를 높입니다."
+    }
+  ],
   expertise: null,
 
   program: {
@@ -637,6 +712,28 @@ const REPORT_DATA = {
   $("core-keywords").innerHTML = keywordGroups.map(g =>
     `<div class="keyword-card ${g.cls}"><h3>${g.title}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
   $("core-narrative").textContent = D.coreSummary?.narrative || "";
+
+  // APT 국어·영어·수학 역량
+  $("apt-summary-grid").innerHTML = (D.aptSummary || []).map(a =>
+    `<article class="apt-summary-card">
+      <div class="apt-card-head">
+        <div><h3>${a.subject} APT</h3><p>${a.subtitle}</p></div>
+        <div class="apt-lever"><b>핵심 성장 레버</b>${a.lever}</div>
+      </div>
+      <div class="apt-card-body">
+        <div class="apt-chart" role="img" aria-label="${a.subject} APT 상위 지표 0점에서 5점 그래프, 기준선 3점">
+          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label">${m.label}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
+          <div class="apt-scale"><span>0</span><span>기준선 3.0</span><span>5.0</span></div>
+          <p class="apt-evidence-note">● 강점 지표 &nbsp; ● 우선 보완 지표 &nbsp; | &nbsp; APT 결과지 상위 역량 그래프 기반 재구성</p>
+        </div>
+        <div class="apt-story">
+          <div class="apt-story-block diagnosis"><strong>프로필 진단</strong>${a.diagnosis}</div>
+          <div class="apt-story-block risk"><strong>그대로 둘 때의 학습 리스크</strong>${a.risk}</div>
+          <div class="apt-story-block action"><strong>우선 실행 처방</strong>${a.action}</div>
+        </div>
+      </div>
+    </article>`).join("");
+  requestAnimationFrame(()=>document.querySelectorAll(".apt-fill").forEach(el=>el.style.width=el.dataset.w+"%"));
 
   // 프로그램 구조
   $("program-lead").textContent = D.program?.lead || "";
