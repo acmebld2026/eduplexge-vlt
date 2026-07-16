@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>VLT-5G 초기상담 결과지</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#1b3a5c; --blue:#2f6fb1; --sky:#e8f1fa; --sky2:#f4f8fc;
+  --accent:#e8833a; --accent-soft:#fdf1e7;
+  --green:#3a8a5f; --green-soft:#e9f5ee;
+  --red:#c0504d; --red-soft:#faeceb;
+  --ink:#22303c; --sub:#5a6b7b; --line:#d9e2ec;
+  --lv1:#c0392b; --lv2:#e67e22; --lv3:#f1c40f; --lv4:#7fb3d5; --lv5:#2e86c1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,"Malgun Gothic",sans-serif;color:var(--ink);background:#eef2f6;line-height:1.65;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 0 24px rgba(27,58,92,.08)}
+
+/* ===== 헤더 ===== */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#28527e 60%,var(--blue) 100%);color:#fff;padding:44px 48px 36px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.hero .brand{font-size:13px;letter-spacing:.14em;opacity:.85;font-weight:600}
+.branch-logo{display:block;width:min(260px,72vw);height:auto;background:rgba(255,255,255,.96);border-radius:8px;padding:8px 12px;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+.hero-print{position:absolute;top:26px;right:30px;z-index:3;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 14px;background:rgba(15,43,72,.78);color:#fff;font-size:12.5px;font-weight:800;line-height:1.4;white-space:nowrap;cursor:pointer;box-shadow:0 5px 14px rgba(0,0,0,.16);backdrop-filter:blur(4px)}
+.hero-print:hover{background:#102f50;transform:translateY(-1px)}
+.print-short{display:none}
+.hero h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.02em}
+.hero .sub{font-size:15px;opacity:.92}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:14px;position:relative;z-index:1}
+.hero .meta b{opacity:.75;font-weight:600;margin-right:6px}
+.typechips{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.typechip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(2px);border-radius:999px;padding:7px 18px;font-size:14px;font-weight:700}
+.typechip small{font-weight:500;opacity:.8;margin-right:6px}
+
+/* ===== 공통 섹션 ===== */
+section{padding:40px 48px;border-bottom:1px solid var(--line)}
+.sec-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--blue);background:var(--sky);border-radius:4px;padding:4px 10px;margin-bottom:12px}
+h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.lead{color:var(--sub);font-size:14.5px;margin-bottom:22px}
+h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
+
+/* 요약 카드 */
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sumcard{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--sky2)}
+.sumcard .t{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.06em;margin-bottom:8px}
+.sumcard p{font-size:14.5px}
+.sumcard.full{grid-column:1/-1;background:var(--accent-soft);border-color:#f2c9a3}
+.sumcard.full .t{color:var(--accent)}
+.expertise{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;font-size:13.5px;color:var(--sub)}
+.expertise b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:4px}
+
+/* 검사 결과지 기반 핵심 요약 */
+.basis-note{padding:13px 16px;border-left:4px solid var(--blue);border-radius:0 8px 8px 0;background:var(--sky2);color:var(--sub);font-size:13.5px;margin-bottom:18px}
+.keyword-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.keyword-card{border:1px solid var(--line);border-radius:10px;padding:16px;background:#fff}
+.keyword-card h3{font-size:14px;margin:0 0 10px}
+.keyword-card ul{margin:0 0 0 18px;font-size:13px;color:var(--sub)}
+.keyword-card li{margin:5px 0}
+.keyword-card.strength{border-top:4px solid var(--green)}
+.keyword-card.improve{border-top:4px solid var(--accent)}
+.keyword-card.growth{border-top:4px solid var(--blue)}
+.core-narrative{border-radius:12px;padding:20px 22px;background:linear-gradient(135deg,#f4f9ff,#fff8f0);font-size:14.5px;line-height:1.8}
+
+/* APT 국영수 역량 — 원본 결과지 상단 그래프를 5점 척도로 재구성 */
+.apt-summary-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.apt-summary-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:linear-gradient(135deg,#fff 0%,#f7fbff 100%);box-shadow:0 6px 18px rgba(22,58,95,.06)}
+.apt-card-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #e5edf5}
+.apt-card-head h3{font-size:19px;margin:0 0 4px;color:var(--navy)}
+.apt-card-head p{margin:0;font-size:13px;color:var(--sub)}
+.apt-lever{flex:0 0 230px;border-radius:9px;background:var(--navy);color:#fff;padding:10px 12px;font-size:12px;line-height:1.55}
+.apt-lever b{display:block;color:#a9d3ff;font-size:10.5px;letter-spacing:.09em;margin-bottom:2px}
+.apt-card-body{display:grid;grid-template-columns:minmax(320px,.9fr) 1.1fr;gap:22px;padding-top:16px}
+.apt-chart{position:relative;padding:2px 0 18px;align-self:start;min-width:0}
+.apt-chart::after{content:"";position:absolute;left:calc(42% + 29%);top:0;bottom:20px;border-left:1px dashed #a7b8c9;pointer-events:none}
+.apt-metric{display:grid;grid-template-columns:42% 1fr 30px;gap:8px;align-items:center;margin:9px 0}
+.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25}
+.apt-track{height:10px;background:#e7eef5;border-radius:999px;overflow:hidden}
+.apt-fill{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#77b2e7,var(--blue));transition:width .8s ease}
+.apt-metric.is-strong .apt-fill{background:linear-gradient(90deg,#5fb596,var(--green))}
+.apt-metric.is-focus .apt-fill{background:linear-gradient(90deg,#ffbd78,var(--accent))}
+.apt-score{font-size:12.5px;font-weight:900;color:var(--navy);text-align:right}
+.apt-scale{display:flex;justify-content:space-between;margin-left:42%;padding-left:8px;font-size:10px;color:#7b8997}
+.apt-scale span:nth-child(2){color:#657789;font-weight:700}
+.apt-story{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.apt-story-block{border-radius:9px;background:#fff;border:1px solid #e2eaf2;padding:12px 13px;font-size:13px;line-height:1.65;color:var(--sub)}
+.apt-story-block strong{display:block;color:var(--navy);font-size:11px;letter-spacing:.07em;margin-bottom:3px}
+.apt-story-block.diagnosis{grid-column:1/-1;border-left:4px solid var(--blue);color:var(--ink);font-weight:650}
+.apt-story-block.action{border-left:4px solid var(--green)}
+.apt-story-block.risk{border-left:4px solid var(--accent)}
+.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c}
+
+/* 프로그램 구조 */
+.program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.program-card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:#fff}
+.program-card .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--blue);background:var(--sky);border-radius:4px;padding:3px 8px;margin-bottom:8px}
+.program-card .program-title{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.program-card p{font-size:13.7px;color:var(--sub)}
+.program-card ul{margin:10px 0 0 18px;font-size:13px;color:var(--ink)}
+.program-card li{margin:4px 0}
+
+/* ===== 검사 결과 시각화 ===== */
+.factor-wrap{margin-top:8px}
+.factor{display:grid;grid-template-columns:150px 1fr 84px;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed #e5ecf3;cursor:pointer;transition:background .15s}
+.factor:hover{background:var(--sky2)}
+.factor .name{font-size:14px;font-weight:700}
+.factor .name small{display:block;font-weight:500;color:var(--sub);font-size:11.5px}
+.bar{height:14px;background:#edf2f7;border-radius:7px;overflow:hidden;position:relative}
+.bar i{display:block;height:100%;width:0;border-radius:7px;transition:width 1s cubic-bezier(.2,.7,.3,1)}
+.factor .grade{font-size:12.5px;font-weight:800;text-align:right;white-space:nowrap}
+.factor-detail{display:none;grid-column:1/-1;background:var(--sky2);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 16px;font-size:13.5px;color:var(--sub);margin:2px 0 8px}
+.factor.open .factor-detail{display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--sub)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.legend .l1::before{background:var(--lv1)}.legend .l2::before{background:var(--lv2)}.legend .l3::before{background:var(--lv3)}.legend .l4::before{background:var(--lv4)}.legend .l5::before{background:var(--lv5)}
+.hint{font-size:12px;color:var(--sub);margin-top:10px}
+
+/* 타입 해설 */
+.type-box{background:var(--sky);border-radius:12px;padding:22px 24px;font-size:14.5px}
+.type-box b{color:var(--navy)}
+.type-insights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.type-insight{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(32,69,112,.06)}
+.type-insight .label{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.02em;margin-bottom:8px}
+.type-insight p{font-size:13.5px;color:var(--sub);line-height:1.75}
+.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.pc{border-radius:12px;padding:18px 20px;font-size:14px}
+.pc.pros{background:var(--green-soft)}
+.pc.cons{background:var(--red-soft)}
+.pc .t{font-weight:800;margin-bottom:8px}
+.pc.pros .t{color:var(--green)}
+.pc.cons .t{color:var(--red)}
+.pc li{margin:6px 0 6px 18px}
+
+/* ===== 걸림돌 ===== */
+.stone{display:flex;gap:16px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px;background:#fff}
+.stone .num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--red-soft);color:var(--red);font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
+.stone h4{font-size:15.5px;margin-bottom:4px}
+.stone p{font-size:14px;color:var(--sub)}
+.quote{margin-top:8px;background:var(--sky2);border-left:3px solid var(--blue);padding:8px 12px;border-radius:0 8px 8px 0;font-size:13px;color:var(--navy);font-style:italic}
+.quote small{display:block;font-style:normal;color:var(--sub);margin-top:2px}
+
+/* ===== 현재 상태 3축 ===== */
+.state-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.state{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--sky2);text-align:center}
+.state .icon{font-size:26px}
+.state .t{font-weight:800;margin:6px 0 8px;color:var(--navy)}
+.state p{font-size:13.5px;color:var(--sub);text-align:left}
+.observe{margin-top:16px;background:linear-gradient(135deg,#fff,var(--accent-soft));border:1px solid #f0cda8;border-left:6px solid var(--accent);border-radius:12px;padding:18px 20px;font-size:14.2px;box-shadow:0 8px 22px rgba(232,131,58,.08)}
+.observe b{display:block;color:#b05f1d;font-size:13.5px;letter-spacing:.06em;margin-bottom:6px}
+
+/* ===== 솔루션 로드맵 ===== */
+.road{position:relative;margin:10px 0 0;padding-left:26px}
+.road::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--blue),var(--green));border-radius:2px}
+.phase{position:relative;margin-bottom:22px}
+.phase::before{content:"";position:absolute;left:-24px;top:5px;width:13px;height:13px;border-radius:50%;background:#fff;border:3.5px solid var(--blue)}
+.phase:last-child::before{border-color:var(--green)}
+.phase .when{font-size:12.5px;font-weight:800;color:var(--blue);letter-spacing:.05em}
+.phase:last-child .when{color:var(--green)}
+.phase h4{font-size:16px;margin:2px 0 6px}
+.phase p{font-size:14px;color:var(--sub)}
+.phase ul{margin:8px 0 0 18px;font-size:14px}
+.phase li{margin:4px 0}
+.phase .why{margin-top:8px;font-size:13px;background:var(--sky2);border-radius:8px;padding:8px 12px;color:var(--navy)}
+
+/* ===== 합의 내용 ===== */
+.agree{list-style:none}
+.agree li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed #e5ecf3;font-size:14.5px}
+.agree .chk{flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:1px}
+
+/* ===== 결정 필요 사항 ===== */
+.decide{border:2px solid var(--accent);border-radius:14px;padding:20px 22px;margin-bottom:14px;background:var(--accent-soft)}
+.decide h4{font-size:15.5px;color:#b05f1d;margin-bottom:6px}
+.decide h4 .badge{display:inline-block;font-size:11px;background:var(--accent);color:#fff;border-radius:4px;padding:2px 8px;margin-right:8px;vertical-align:2px;letter-spacing:.05em}
+.decide p{font-size:14px}
+.decide .options{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.decide .opt{flex:1;min-width:200px;background:#fff;border:1px solid #eccfae;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.decide .opt b{display:block;color:#b05f1d;margin-bottom:4px;font-size:13.5px}
+
+/* ===== 비용 ===== */
+.price-note{font-size:13px;color:var(--sub);margin-bottom:16px}
+table.price{width:100%;border-collapse:collapse;font-size:14px}
+table.price th{background:var(--navy);color:#fff;font-weight:700;padding:10px 12px;text-align:left;font-size:13.5px}
+table.price td{border-bottom:1px solid var(--line);padding:11px 12px;vertical-align:top}
+table.price tr.rec td{background:var(--sky)}
+table.price .nm b{display:block}
+table.price .nm small{color:var(--sub);font-size:12.5px}
+table.price .amt{white-space:nowrap;font-weight:700;text-align:right}
+.recommend-tag{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:1px}
+.package-panel{margin-top:22px;border:1px solid #d7e4f0;border-radius:14px;overflow:hidden;background:var(--sky2);box-shadow:0 10px 26px rgba(27,58,92,.07)}
+.package-head{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:13px 18px;font-weight:900;font-size:15px;letter-spacing:.02em}
+.package-body{padding:16px}
+.package-note{font-size:12.8px;color:var(--navy);background:#fff;border:1px solid #e5ecf3;border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.package-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.package-card{border:1px solid #dfe8f1;border-radius:10px;padding:14px 15px;background:#fff}
+.package-card.wide{grid-column:1/-1}
+.package-card b{display:flex;align-items:center;gap:7px;color:var(--navy);font-size:13.8px;margin-bottom:5px}
+.package-card b::before{content:"";width:6px;height:18px;border-radius:999px;background:var(--blue);display:inline-block;flex:0 0 auto}
+.package-card span{display:block;color:var(--sub);font-size:13px;line-height:1.55}
+.package-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:9px}
+.package-list span{background:var(--sky2);border:1px solid #e5ecf3;border-radius:8px;padding:8px 10px;font-size:12.5px;color:var(--navy);font-weight:700}
+.package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.package-option{background:linear-gradient(180deg,#fff,var(--sky2));border:1px solid #dbe7f2;border-radius:10px;padding:11px 12px;min-height:112px}
+.package-option strong{display:block;color:var(--navy);font-size:14px;line-height:1.35;margin-bottom:4px}
+.package-option em{display:block;font-style:normal;color:var(--blue);font-size:12.5px;font-weight:900;line-height:1.38;margin-bottom:5px}
+.package-option small{display:block;color:var(--sub);font-size:12px;font-weight:600;line-height:1.45}
+.package-footer{grid-column:1/-1;border:1px solid #f0cda8;background:var(--accent-soft);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.package-footer b{color:#b05f1d;font-size:13.5px;white-space:nowrap}
+.package-footer span{color:#6d4a28;font-size:13.5px;font-weight:800;text-align:right}
+
+/* ===== 클로징 ===== */
+.closing{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:16px;padding:30px 32px;font-size:15px}
+.closing h3{color:#fff;margin:0 0 10px;font-size:19px}
+.closing .contact{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.25);font-size:14px;display:flex;gap:8px 30px;flex-wrap:wrap}
+.closing a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+/* ===== 유틸 ===== */
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;padding:8px 12px;overflow:visible}
+.toolbar a{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--sub);text-decoration:none;padding:6px 10px;border-radius:999px;white-space:nowrap;line-height:1.4}
+.toolbar a:hover{background:var(--sky);color:var(--blue)}
+footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
+
+@media (max-width:700px){
+  body{background:#fff;overflow-x:hidden}
+  .wrap{width:100%;max-width:none;box-shadow:none}
+  section{padding:28px 18px}
+  .hero{width:100vw;max-width:100vw;padding:30px 20px 26px}
+  .hero h1{font-size:25px;line-height:1.25}
+  h2{font-size:20px;line-height:1.3}
+  .lead{font-size:14px}
+  .toolbar{flex-wrap:nowrap;justify-content:flex-start;gap:2px;padding:7px 8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
+  .toolbar::-webkit-scrollbar{display:none}
+  .toolbar a{padding:6px 9px}
+  .hero-print{top:15px;left:auto;right:14px;width:68px;padding:7px 6px;font-size:11px;text-align:center}
+  .hero-print .print-long{display:none}
+  .hero-print .print-short{display:inline}
+  .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid,.keyword-grid,.apt-summary-grid{grid-template-columns:1fr}
+  .apt-card-head{display:block}
+  .apt-summary-card,.apt-card-head,.apt-card-body,.apt-chart,.apt-story{min-width:0;max-width:100%}
+  .apt-lever{margin-top:10px;width:auto;max-width:100%;overflow-wrap:anywhere;word-break:keep-all}
+  .apt-card-body{grid-template-columns:1fr;gap:10px}
+  .apt-story{grid-template-columns:1fr}
+  .apt-story-block{min-width:0;overflow-wrap:anywhere;word-break:keep-all}
+  .apt-story-block.diagnosis{grid-column:auto}
+  .apt-metric{grid-template-columns:44% 1fr 28px;gap:6px}
+  .apt-chart::after{left:72%}
+  .apt-scale{margin-left:44%}
+  .factor{grid-template-columns:110px 1fr 70px}
+  .package-grid{grid-template-columns:1fr}
+  .package-list:not(.option-grid){grid-template-columns:1fr}
+  table.price,table.price thead,table.price tbody,table.price tr,table.price td{display:block;width:100%!important}
+  table.price thead{display:none}
+  table.price tr{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px;background:#fff}
+  table.price tr.rec{background:var(--sky)}
+  table.price td{border-bottom:none;padding:10px 12px}
+  table.price td:first-child{padding-bottom:4px}
+  table.price td:nth-child(2){padding-top:0;font-size:13px!important}
+  table.price .amt{text-align:left;white-space:normal;background:rgba(47,111,177,.07);border-top:1px dashed #d9e2ec;color:var(--navy);line-height:1.45}
+  .recommend-tag{margin-left:6px}
+  .package-body{padding:14px}
+  .package-card{padding:12px}
+  .package-card span,.package-list span,.package-option{overflow-wrap:anywhere;word-break:keep-all}
+  .package-list span{font-size:12px;line-height:1.45}
+  .package-list.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .package-option{padding:9px 8px;min-height:126px}
+  .package-option strong{font-size:12.6px}
+  .package-option em{font-size:11.4px}
+  .package-option small{font-size:11px}
+  .package-footer{display:block}
+  .package-footer span{display:block;text-align:left;margin-top:4px}
+  .closing{padding:24px 20px}
+  footer{padding:20px 18px}
+}
+@media print{
+  body{background:#fff}
+  .toolbar,.hero-print{display:none}
+  .wrap{box-shadow:none;max-width:none}
+  section{page-break-inside:avoid;padding:26px 34px}
+  .hero{padding:34px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══════════════════ 헤더 ══════════════════ -->
+<header class="hero">
+  <button class="hero-print" onclick="window.print()"><span class="print-long">인쇄 / PDF 저장</span><span class="print-short">PDF 저장</span></button>
+  <div class="hero-top">
+    <img class="branch-logo" id="branch-logo" src="https://acmebld2026.github.io/eduplexge-vlt/assets/gireum-branch-logo.png?v=20260715-2" onerror="this.onerror=null;this.src='../assets/gireum-branch-logo.png?v=20260715-2'" alt="에듀플렉스 에듀코치 길음점 로고">
+    <div class="brand">EDUPLEX · VLT-5G 학습 DNA 검사</div>
+  </div>
+  <h1 id="rpt-title">초기상담 결과 보고서</h1>
+  <div class="sub" id="rpt-subtitle"></div>
+  <div class="meta" id="rpt-meta"></div>
+  <div class="typechips" id="rpt-types"></div>
+</header>
+
+<nav class="toolbar">
+  <a href="#sec-summary">요약</a>
+  <a href="#sec-core-summary">검사 핵심</a>
+  <a href="#sec-apt">국영수 APT</a>
+  <a href="#sec-test">검사 결과</a>
+  <a href="#sec-type">타입 해설</a>
+  <a href="#sec-stones">걸림돌</a>
+  <a href="#sec-state">현재 상태</a>
+  <a href="#sec-solution">솔루션</a>
+  <a href="#sec-program">프로그램 구조</a>
+  <a href="#sec-agree">합의 내용</a>
+  <a href="#sec-decide">결정해주실 부분</a>
+  <a href="#sec-price">프로그램·비용</a>
+</nav>
+
+<!-- ══════════════════ 1. 한눈에 보는 요약 ══════════════════ -->
+<section id="sec-summary">
+  <span class="sec-label">SUMMARY</span>
+  <h2>한눈에 보는 상담 결과</h2>
+  <p class="lead">검사 결과와 원장 상담 내용을 종합한 핵심 요약입니다.</p>
+  <div class="summary-grid" id="summary-grid"></div>
+  <div class="expertise" id="expertise-box"></div>
+</section>
+
+<!-- ══════════════════ 검사 결과지 기반 핵심 요약 ══════════════════ -->
+<section id="sec-core-summary">
+  <span class="sec-label">CORE SUMMARY</span>
+  <h2 id="core-summary-title"></h2>
+  <p class="basis-note" id="core-summary-basis"></p>
+  <div class="keyword-grid" id="core-keywords"></div>
+  <div class="core-narrative" id="core-narrative"></div>
+</section>
+
+<!-- ══════════════════ APT 국어·영어·수학 역량 ══════════════════ -->
+<section id="sec-apt">
+  <span class="sec-label">APT SUBJECT PROFILE</span>
+  <h2>국어·영어·수학 역량 분석 핵심 요약</h2>
+  <p class="lead">APT 결과지의 상위 역량 그래프와 우선 보완 지표를 함께 읽어, 현재의 강점이 성적으로 이어지는 조건과 가장 먼저 바꿔야 할 학습 행동을 시각화했습니다.</p>
+  <div class="apt-summary-grid" id="apt-summary-grid"></div>
+</section>
+
+<!-- ══════════════════ 2. 검사 결과 ══════════════════ -->
+<section id="sec-test">
+  <span class="sec-label">VLT-5G TEST</span>
+  <h2>VLT-5G 검사 결과</h2>
+  <p class="lead">자기주도학습 역량을 구성하는 13개 진단 영역을 정리했습니다. 각 항목을 누르면 우리 아이에 대한 세부 해석을 볼 수 있습니다.</p>
+  <div class="factor-wrap" id="factor-list"></div>
+  <div class="legend">
+    <span class="l1">부족</span><span class="l2">미흡</span><span class="l3">준수</span><span class="l4">우수</span><span class="l5">매우 우수</span>
+  </div>
+  <p class="hint">※ 각 막대를 클릭하면 해당 요소에 대한 상세 해석이 열립니다. 별표(★)는 매니지먼트 개입 중요도입니다.</p>
+</section>
+
+<!-- ══════════════════ 3. 타입 해설 ══════════════════ -->
+<section id="sec-type">
+  <span class="sec-label">학습 DNA 타입 프로파일</span>
+  <h2 id="type-title"></h2>
+  <p class="lead">VLT-5G의 16개 학습 성향 타입 중 우리 아이에게 해당하는 프로파일입니다.</p>
+  <div class="type-box" id="type-desc"></div>
+  <div class="type-insights" id="type-insights"></div>
+  <div class="pros-cons">
+    <div class="pc pros"><div class="t">이 타입의 강점</div><ul id="type-pros"></ul></div>
+    <div class="pc cons"><div class="t">주의 깊게 봐야 할 지점</div><ul id="type-cons"></ul></div>
+  </div>
+</section>
+
+<!-- ══════════════════ 4. 걸림돌 ══════════════════ -->
+<section id="sec-stones">
+  <span class="sec-label">OBSTACLES</span>
+  <h2>지금 아이가 마주하고 있는 걸림돌</h2>
+  <p class="lead">검사 결과와 상담에서 실제로 확인된, 성장을 가로막고 있는 지점들입니다.</p>
+  <div id="stones"></div>
+</section>
+
+<!-- ══════════════════ 5. 현재 핵심 상태 ══════════════════ -->
+<section id="sec-state">
+  <span class="sec-label">CURRENT STATE</span>
+  <h2>아이의 현재 핵심 상태</h2>
+  <p class="lead">정서 · 학습 · 태도 세 축으로 정리한 현재 좌표입니다.</p>
+  <div class="state-grid" id="states"></div>
+  <div class="observe" id="observe"></div>
+</section>
+
+<!-- ══════════════════ 6. 솔루션 ══════════════════ -->
+<section id="sec-solution">
+  <span class="sec-label">SOLUTION ROADMAP</span>
+  <h2>앞으로 필요한 솔루션</h2>
+  <p class="lead">타입별 매니지먼트 전략(XCM16)에 근거해, 시기별로 무엇을 어떻게 도울지 설계했습니다.</p>
+  <div class="road" id="roadmap"></div>
+</section>
+
+<!-- ══════════════════ 7. 프로그램 구조 ══════════════════ -->
+<section id="sec-program">
+  <span class="sec-label">PROGRAM MODEL</span>
+  <h2>에듀플렉스 프로그램 구조</h2>
+  <p class="lead" id="program-lead"></p>
+  <div class="program-grid" id="program-cards"></div>
+</section>
+
+<!-- ══════════════════ 7. 합의 내용 ══════════════════ -->
+<section id="sec-agree">
+  <span class="sec-label">AGREED</span>
+  <h2>상담에서 함께 합의한 내용</h2>
+  <p class="lead">상담 중 학부모님·학생과 서로 확인하고 동의한 사항입니다.</p>
+  <ul class="agree" id="agreements"></ul>
+</section>
+
+<!-- ══════════════════ 8. 결정해주실 부분 ══════════════════ -->
+<section id="sec-decide">
+  <span class="sec-label">YOUR DECISION</span>
+  <h2>고민해주셔야 하는 부분 — 용기 내어 결정해주세요</h2>
+  <p class="lead">아이의 방향을 바꾸는 일은 부모님의 결단에서 시작됩니다. 아래 사항은 저희가 대신 정할 수 없는, 부모님의 몫으로 남겨드리는 결정입니다.</p>
+  <div id="decisions"></div>
+</section>
+
+<!-- ══════════════════ 9. 프로그램 · 비용 ══════════════════ -->
+<section id="sec-price">
+  <span class="sec-label">PROGRAM & PRICING</span>
+  <h2>제안 프로그램 구성과 비용</h2>
+  <p class="lead" id="price-lead"></p>
+  <table class="price">
+    <thead><tr><th style="width:44%">구성 요소</th><th>내용</th><th style="width:16%;text-align:right">비용</th></tr></thead>
+    <tbody id="price-rows"></tbody>
+  </table>
+  <p class="price-note" id="price-note"></p>
+
+  <div class="package-panel">
+    <div class="package-head" id="package-title">패키지 세팅</div>
+    <div class="package-body">
+      <div class="package-note" id="package-note"></div>
+      <div class="package-grid" id="package-items"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 10. 클로징 ══════════════════ -->
+<section>
+  <div class="closing">
+    <h3 id="closing-title"></h3>
+    <p id="closing-msg"></p>
+    <div class="contact" id="closing-contact"></div>
+  </div>
+</section>
+
+<footer id="rpt-footer"></footer>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   학생별 데이터
+   (아래는 TYPE 3 학원키즈 가상 예시 데이터입니다)
+   작성 가이드는 내부 문서를 참조합니다.
+═══════════════════════════════════════════════════════════════ */
+const REPORT_DATA = {
+  "meta": {
+    "student": "이다인",
+    "school": "서울국제고등학교 1학년",
+    "testDate": "2026.07.13",
+    "counselDate": "2026.07.16",
+    "counselor": "에듀플렉스 길음점 원장 김병수",
+    "branch": "에듀플렉스 길음점",
+    "phone": "상담 시 안내",
+    "homepage": "https://eduplexge.sangsangplex.com"
+  },
+  "brand": {
+    "logo": "https://acmebld2026.github.io/eduplexge-vlt/assets/gireum-branch-logo.png?v=20260715-2",
+    "logoAlt": "에듀플렉스 에듀코치 길음점 로고"
+  },
+  "types": {
+    "primary": "TYPE 2. 모범생",
+    "secondary": "HIDDEN TYPE 1. 엄친아 — 높은 자립심과 주도성을 계획·정리·완주로 연결할 때 드러나는 성장 방향"
+  },
+  "summary": [
+    {"title":"현재 위치","body":"서울국제고 1학년에서 1학기 성적 약 2.1등급을 유지하고 있습니다. 높은 이해력과 사고력, 영어 강점이 분명하지만 한 과목을 완벽하게 보려다 전체 회독과 마무리가 늦어지는 패턴이 있습니다."},
+    {"title":"가장 큰 자산","body":"VLT-5G에서 자신감 +49, 주도성 +49, 이해 +47, 사고 +49, 학습자립심 +45가 확인됐습니다. 스스로 목표를 받아들이고 빠르게 이해하는 힘은 국제고 환경에서 성장할 수 있는 강한 기반입니다."},
+    {"title":"핵심 병목","body":"집중력 -31, 학습계획 -41, 성실성 -23, 정리 -29, 문제해결 -26이 동시에 나타납니다. 능력 부족보다 시간 배분, 여러 번의 회독, 정리와 완주 절차가 성적 상승을 막고 있습니다."},
+    {"title":"국영수 진단","body":"국어는 언어 구조·개념 4.5, 수학은 기본 연산·공식 4.6, 영어는 메타인지·인지·재정리 전략 5.0으로 기반이 높습니다. 수학의 상황 수식화 3.4와 영어 어휘 풀이 3.4가 우선 보완점입니다."},
+    {"title":"오늘 상담의 결론","body":"2026년 7월 22일부터 8월 18일까지 방학 상담·관리를 시작합니다. 휴대전화 차단, 주간계획, 과목별 3회독, 활동 포트폴리오 기록을 고정하고, 상담 35만원과 관리 43만원을 합한 1개월 예상 총액은 78만원입니다.","full":true}
+  ],
+  "coreSummary": {
+    "title":"검사 결과지 기반 핵심 요약",
+    "basis":"VLT-5G 보고서, 초기상담 녹취, 국어·수학·영어 APT 결과를 교차 확인해 작성했습니다.",
+    "strengthKeywords":["자신감 +49·주도성 +49","이해 +47·사고 +49","학습자립심 +45","어휘력 +44","영어 APT 전략 5.0","국제고 환경 적응","학생회·봉사·영자신문 활동","높은 목표와 회복 자원"],
+    "improveKeywords":["집중력 -31","학습계획 -41","성실성 -23","정리 -29","문제해결 -26","한 번에 완벽히 하려는 속도 저하","휴대전화·딴생각","부모학습통제 +44"],
+    "growthKeywords":["주간계획-일일마감","과목별 3회독","조건→수식 번역","오답 원인 한 줄 기록","활동 주간 포트폴리오","경제·경영 진로 서사","디지털 기기 분리","실패를 허용하는 빠른 반복"],
+    "narrative":"다인이는 기대지향 +43, 자신감 +49, 주도성 +49와 함께 국어·사회·영어·수학 상 수준의 기반을 가진 학생입니다. CHAMP 이해 +47·사고 +49는 새로운 내용을 이해하고 연결하는 능력이 매우 높다는 뜻입니다. 반면 집중력 -31, 학습계획 -41, 정리 -29, 문제해결 -26은 ‘잘 이해하지만 정해진 시간 안에 여러 번 보고 끝까지 완성하는 힘’에서 손실이 생김을 보여줍니다. 높은 학습자립심 +45와 동시에 부모학습통제 +44가 높아, 외부 통제를 더하는 것보다 본인이 계획하고 결과를 설명하는 구조가 중요합니다. 이번 방학에는 3회독과 일일 마감, 디지털 기기 분리, 경제·경영 활동 기록을 고정해 TYPE 2의 완벽주의를 HIDDEN TYPE 1의 안정적인 자기주도성으로 전환합니다."
+  },
+  "aptSummary": [
+    {"subject":"국어","subtitle":"높은 개념 이해를 문학 표현과 근거 연결까지 확장","lever":"표현법과 문학 장치를 근거 문장에 연결하면 80점대 성취를 안정적으로 끌어올릴 수 있습니다.","metrics":[{"label":"정보 이해·분석","score":4.3,"tone":"strong"},{"label":"언어 구조·개념","score":4.5,"tone":"strong"},{"label":"표현 해석·효과","score":3.8,"tone":"focus"},{"label":"추론·문제 해결","score":3.9}],"diagnosis":"정보 이해·분석 4.3과 언어 구조·개념 4.5는 매우 높습니다. 표현 해석·효과 3.8이 상대적으로 낮아, 개념을 아는 것과 작품 속 장치의 효과를 정확히 설명하는 것 사이에 간극이 있습니다.","risk":"완벽하게 한 번 읽는 데 시간을 오래 쓰면 시험범위 전체의 반복과 문학 장치 정리가 늦어질 수 있습니다.","action":"1회차 구조 파악, 2회차 표현법·근거 표시, 3회차 주제와 선지 연결로 회독 목적을 나눕니다. 세부정보 적용과 문단 연결은 오답마다 근거 한 줄을 남깁니다."},
+    {"subject":"수학","subtitle":"강한 연산을 조건 수식화와 복합 개념 해결로 연결","lever":"문제의 조건을 식으로 번역하고 풀이 순서를 설명하는 훈련이 가장 큰 성적 상승 레버입니다.","metrics":[{"label":"기본 연산·공식","score":4.6,"tone":"strong"},{"label":"상황 수식화","score":3.4,"tone":"focus"},{"label":"정형 응용","score":4.0},{"label":"전형적 풀이 절차","score":3.5}],"diagnosis":"기본 연산·공식 4.6은 확실한 강점입니다. 상황 수식화 3.4와 풀이 절차 3.5가 낮아, 낯선 조건이나 복수 개념이 들어오면 출발점을 정하는 데 시간이 걸립니다.","risk":"중간고사 95.5점 이후 기말에서 하락한 흐름은 단순 연산보다 범위 확대와 시간 배분, 복합 조건 처리 점검이 필요함을 보여줍니다.","action":"조건에 번호를 붙이고 ‘조건→식→사용 개념→검산’ 네 칸을 오답에 남깁니다. 표현 변환 2.8, 조건 찾기·조건 수식화·복수개념 종합 3.0을 우선 훈련합니다."},
+    {"subject":"영어","subtitle":"최상위 전략 사용을 어휘 정밀도와 표시 습관으로 완성","lever":"이미 높은 읽기 전략에 어휘 풀이와 지문 표시를 더하면 강점을 안정적으로 유지할 수 있습니다.","metrics":[{"label":"메타인지","score":5.0,"tone":"strong"},{"label":"지원 전략","score":4.1},{"label":"인지 전략","score":5.0,"tone":"strong"},{"label":"재정리 전략","score":5.0,"tone":"strong"},{"label":"어휘 풀이","score":3.4,"tone":"focus"}],"diagnosis":"메타인지·인지·재정리 전략이 모두 5.0으로 독해 전략 선택과 재구성이 매우 뛰어납니다. 상대 약점은 어휘 풀이 3.4와 글에 표시하기 3.5입니다.","risk":"감각적으로 빠르게 이해해도 낯선 어휘와 미세한 선지 근거를 표시하지 않으면 고난도에서 한두 문항이 흔들릴 수 있습니다.","action":"모르는 어휘의 문맥 뜻과 유의어를 누적하고, 역접·인과·주장 문장에 최소 표시를 남깁니다. 매 지문을 한 문장으로 재정리해 강한 전략을 점수로 고정합니다."}
+  ],
+  "expertise": null,
+  "program": {"lead":"다인이의 방학 운영은 상담·관리 중심입니다. 학교·학원 일정을 한 화면에 모으고, 장시간 자습을 과목별 회독과 활동 기록으로 바꿉니다. 개별지도는 기존 외부 수업과 겹치지 않게 실제 막힘이 반복될 때만 별도 검토합니다.","cards":[
+    {"tag":"상담 Coaching","title":"입시 목표를 주간 행동으로 구체화","body":"서울대 경영학과 희망을 과목 선택, 성적, 활동, 독서와 연결합니다. 매주 무엇을 끝냈고 다음 주 무엇을 바꿀지 학생이 직접 설명합니다.","bullets":["경제·경영 진로 질문 구체화","AP 미시·거시경제·경제수학 준비","활동 주간 요약과 학생부 근거 축적"]},
+    {"tag":"관리 Training","title":"계획-3회독-마감의 반복 구조","body":"의무자습과 학원 사이 시간을 타임블록으로 나누고, 과목별 1·2·3회독의 목적을 다르게 설정합니다.","bullets":["START CHECK → DAILY CHECK → END CHECK","휴대전화 입실 즉시 분리","미완료 과업은 다음 블록 최우선 보완"]},
+    {"tag":"학습법 Learning","title":"완벽한 한 번보다 빠른 세 번","body":"모든 내용을 한 번에 완벽히 보려는 속도 저하를 줄이고, 구조-약점-실전의 세 단계로 시험범위를 반복합니다.","bullets":["국어 근거·표현 장치","수학 조건 수식화","영어 어휘·선지 근거"]},
+    {"tag":"방학 PG Season","title":"7/22~8/18 시간 자원 최적화","body":"캠프와 방문 일정, 학원·과외·교회 시간을 반영해 실제 가능한 자습 블록을 매주 다시 설정합니다.","bullets":["방학 관리 18회","장시간 관리 추가 16일","매주 일정 변경 즉시 반영"]}
+  ]},
+  "factors": [
+    {"name":"생의 에너지","sub":"기대지향 +43 · 불안경계 -18","level":4,"grade":"좋음","stars":2,"detail":"성취와 가능성을 향해 움직이는 힘이 높습니다. 비교나 실패의 불안을 키우기보다 작은 완료와 다음 행동을 확인할 때 에너지가 안정됩니다."},
+    {"name":"내적 태도","sub":"자신감 +49 · 자기긍정 +30 · 존재인정 +48 · 호기심 +41","level":5,"grade":"매우좋음","stars":1,"detail":"자기 가치감과 호기심, 도전 에너지가 매우 높습니다. 완벽하게 잘해야 한다는 압박보다 탐구하고 수정할 권리를 주면 강점이 더 크게 발휘됩니다."},
+    {"name":"외적 태도","sub":"낙관성 +36 · 능동성 +43 · 친화성 +28","level":4.5,"grade":"좋음","stars":1,"detail":"활동적이고 관계 형성이 좋으며 리더십 자원이 있습니다. 여러 활동을 벌인 뒤 기록과 마무리가 흩어지지 않게 주간 갈무리가 필요합니다."},
+    {"name":"감정 역량","sub":"감정조절 +29 · 시험안정감 +30 · 부모정서지지 +42","level":4.5,"grade":"좋음","stars":1,"detail":"정서적 기반과 시험 안정감이 좋습니다. 높은 기대가 자기비판으로 바뀌지 않도록 결과와 과정 피드백을 분리합니다."},
+    {"name":"이성 역량","sub":"집중력 -31 · 어휘력 +44 · 논리력 +23","level":3,"grade":"보통","stars":5,"detail":"어휘와 사고력은 높지만 딴생각과 주의 분산이 실제 수행을 끊습니다. 짧은 타임블록, 휴대전화 분리, 종료 기준이 효과적입니다."},
+    {"name":"기반 학습","sub":"국어·사회·영어·수학 상 · 과학 중상","level":4.5,"grade":"좋음","stars":1,"detail":"대부분 과목의 기반이 높습니다. CHAMP Test에서도 국어 85%, 영어 89%, 기초문장이해 86%로 확인돼 심화 학습으로 확장할 기반이 충분합니다."},
+    {"name":"상황인식","sub":"학습필요인식 +15 · 자기실력파악 -15","level":2.5,"grade":"다소보완","stars":4,"detail":"성적을 올리고 싶다는 의지는 있으나 과목별 시간·회독·오답 원인을 객관적으로 보는 습관이 약합니다. 주간 데이터로 자기 판단을 정교화합니다."},
+    {"name":"목표의식","sub":"진로목표 +21 · 진학목표 +15 · 시험목표 +37","level":4,"grade":"좋음","stars":2,"detail":"서울대 경영학과라는 방향과 시험 목표가 있습니다. 경제·경영에 대한 자신만의 질문과 활동 근거를 더 구체화해야 합니다."},
+    {"name":"체계적 수행","sub":"학습계획 -41 · 성실성 -23 · 학습성찰 +38","level":2,"grade":"보완필요","stars":5,"detail":"스스로 돌아보는 힘은 높지만 계획과 꾸준한 실행이 약합니다. 주간 계획을 하루 단위로 쪼개고 미완료를 이월하는 규칙이 핵심입니다."},
+    {"name":"학습자율성","sub":"학습자립심 +45 · 사교육의존 -46 · 부모학습통제 +44","level":3.5,"grade":"다소좋음","stars":4,"detail":"혼자 해낼 잠재력은 매우 높고 사교육 의존은 낮습니다. 부모 통제가 함께 높아, 본인이 선택하고 결과를 설명하는 공간을 넓혀야 합니다."},
+    {"name":"CHAMP 학습법","sub":"C +47 · H +49 · A -29 · M +19 · P -26","level":3,"grade":"보통","stars":5,"detail":"이해와 사고는 최상위지만 정리와 문제해결 과정이 약합니다. 이해한 내용을 표·도식·오답 절차로 남겨야 실제 시험 성과가 안정됩니다."},
+    {"name":"주인의식","sub":"내적책임감 +36 · 외적책임감 +26 · 주도성 +49","level":5,"grade":"매우좋음","stars":1,"detail":"책임감과 주도성이 큰 강점입니다. 학생회와 봉사·학술 활동에서 역할을 넓히되, 과도한 책임으로 학습과 회복이 밀리지 않게 균형을 잡습니다."},
+    {"name":"자아정체성","sub":"자기이해 +24 · 자기서사 +12","level":3.5,"grade":"다소좋음","stars":3,"detail":"자신의 성향을 이해하지만 경제·경영을 왜 공부하고 어떤 문제를 해결하고 싶은지는 더 구체화할 필요가 있습니다."}
+  ],
+  "type": {"title":"TYPE 2. 모범생 — 높은 기준과 성취력을 계획·완주로 안정시키는 단계","desc":"다인이는 책상에 오래 앉고 높은 성취를 만드는 힘이 있지만, 실수를 피하고 한 번에 완벽히 하려는 마음이 속도를 늦출 수 있습니다. 이번 검사에서는 TYPE 2 모범생이 확인됐고, 상담에서는 HIDDEN TYPE 1 엄친아의 높은 자립·주도 가능성도 확인됐습니다. 핵심은 더 오래 공부하는 것이 아니라 제한 시간 안에 1회차를 끝내고, 반복하면서 완성도를 높이는 경험입니다.","insights":[{"label":"XCM 핵심 메커니즘","body":"높은 기준과 실패 회피가 한 과목에 과도한 시간을 쓰게 만들면 전체 범위 완주가 늦어집니다. 빠른 초안과 반복을 허용해야 합니다."},{"label":"학생에게 보이는 증거","body":"시험 한 달 전부터 준비하지만 일부 과목은 한 번도 끝내지 못하고, 스스로 시간 활용이 약하다고 느낍니다. 계획표를 실제로 따르지 않는 점도 같은 패턴입니다."},{"label":"관리 처방","body":"주간 계획, 과목별 3회독, 종료 기준, 디지털 분리를 고정합니다. 결과보다 완료율과 수정 속도를 먼저 피드백합니다."}],"pros":["높은 이해력과 사고력","강한 자신감·주도성","국제고 환경 적응력","영어와 언어 기반 강점","다양한 교내외 활동"],"cons":["집중 분산과 딴생각","완벽주의로 인한 느린 회독","계획·정리·마감 약점","수학 조건 수식화 간극","부모 통제와 자율성 충돌 가능성"]},
+  "stones": [
+    {"title":"완벽한 한 번 때문에 전체를 못 끝내는 학습","body":"과목 하나를 깊고 정확하게 보려다 시험범위 전체 회독이 늦어집니다. 완성도를 반복으로 높이는 방식으로 바꿔야 합니다.","quote":"일부 과목은 시험 전 한 번도 다 못 보고 들어가기도 해요.","quoteSrc":"초기상담에서 확인한 학습 패턴"},
+    {"title":"시간은 있지만 계획과 종료 기준이 없음","body":"기숙사 의무자습 시간이 충분해도 과목별 시작·종료와 완료 기준이 없으면 체감 시간이 사라집니다.","quote":"시간이 없는 것보다 시간을 잘 못 쓰는 것 같아요.","quoteSrc":"학생 자기평가"},
+    {"title":"딴생각과 디지털 기기","body":"집중력 자기평가 5점과 VLT 집중력 -31이 일치합니다. 공부 공간에서 휴대전화와 강의 기기를 분리해야 합니다.","quote":"집중이 끊기는 이유는 딴생각이에요.","quoteSrc":"학생 응답"},
+    {"title":"수학의 조건 번역과 복합 개념","body":"연산은 강하지만 조건을 식으로 바꾸고 여러 개념을 연결하는 단계가 상대적으로 약합니다.","quote":"기본 연산 4.6 / 상황 수식화 3.4", "quoteSrc":"수학 APT 결과"},
+    {"title":"활동이 많지만 진로 서사가 흩어질 위험","body":"영자신문, 생태봉사, 학생회, 학술제 활동을 경제·경영의 질문과 연결해 매주 기록해야 학생부 서사가 선명해집니다.","quote":"경영학과는 희망하지만 구체적인 진로는 아직 고민 중이에요.","quoteSrc":"초기상담에서 확인한 진로 상태"}
+  ],
+  "states": [
+    {"icon":"⚡","title":"에너지","body":"자신감 +49, 호기심 +41, 능동성 +43, 주도성 +49의 활성형입니다. 목표가 구체적일수록 빠르게 움직입니다."},
+    {"icon":"🧠","title":"학습","body":"이해 +47, 사고 +49와 높은 국영수 APT가 강점입니다. 정리 -29, 문제해결 -26, 계획 -41이 성취를 제한합니다."},
+    {"icon":"🧭","title":"주도성","body":"학습자립심 +45와 부모학습통제 +44가 함께 높습니다. 외부 통제를 줄이고 학생이 계획과 결과를 설명하는 구조가 필요합니다."}
+  ],
+  "observation":"다인이는 공부를 못해서 관리가 필요한 학생이 아니라, 이미 높은 역량을 가진 학생이 자신의 시간과 완성도를 더 정교하게 운영하기 위해 관리가 필요한 학생입니다. 국제고의 높은 수준과 다양한 활동을 감당하려면 완벽한 한 번보다 빠른 세 번, 오래 앉기보다 명확한 종료 기준, 부모의 확인보다 학생의 자기보고가 중요합니다.",
+  "roadmap": [
+    {"when":"7/22~1주","title":"OT·시간표·디지털 규칙 세팅","body":"캠프, 학원, 과외, 교회, 방문 일정을 한 주 단위로 확정하고 실제 가능한 학습 블록을 배치합니다.","items":["입실 시 휴대전화 전원 종료·분리","의무자습 18:30~22:50 과목 배치","각 블록의 종료 기준과 이월 규칙 설정"],"why":"집중력과 시간 활용 문제는 의지보다 환경과 종료 기준을 먼저 바꿔야 합니다."},
+    {"when":"방학 2~3주","title":"과목별 3회독과 APT 약점 보완","body":"1회차 구조, 2회차 약점, 3회차 실전으로 목적을 나누고 완료율을 주간 상담에서 확인합니다.","items":["국어 표현법·근거 연결","수학 조건→식→풀이 절차","영어 어휘·표시·선지 근거","오답 원인과 다음 행동 한 줄 기록"],"why":"완벽주의를 반복 학습으로 전환하면 속도와 정확도를 동시에 높일 수 있습니다."},
+    {"when":"8월~학기 중","title":"경제·경영 진로 서사와 학습 루틴 통합","body":"교과와 활동을 경제·경영 질문으로 연결하고 학기 중에도 주간 기록과 계획을 유지합니다.","items":["AP 미시·거시경제·경제수학 사전 준비","영자신문·생태봉사·학생회 활동 주간 기록","국제고 연합 학술제 참여 근거 정리","월별 성적·활동·회복 균형 점검"],"why":"높은 성적만으로는 차별화가 어렵기 때문에 다인이만의 문제의식과 지속적인 활동 근거가 필요합니다."}
+  ],
+  "agreements": [
+    "방학 상담·관리 시작일은 <b>2026년 7월 22일</b>, 종료 예정일은 <b>8월 18일</b>로 설정",
+    "입실 시 휴대전화 전원을 끄고 분리하며, 온라인 강의는 관찰 가능한 별도 공간에서 이용",
+    "과목별 학습을 구조 파악-약점 보완-실전 점검의 <b>3회독</b>으로 운영",
+    "주간 계획을 일일 타임블록으로 나누고 미완료 과업은 다음 학습 블록 최우선으로 이월",
+    "영자신문·생태봉사·학생회·진로내비게이터·학술제 활동을 매주 AI 보조로 요약해 포트폴리오화",
+    "서울대 경영학과 희망을 AP 미시·거시경제, 경제수학, 교과·활동 선택과 연결",
+    "기존 플래너를 찾아 재사용하고 별도 구매는 필요한 경우에만 진행"
+  ],
+  "decisions": [
+    {"badge":"시작 전","title":"변동 일정까지 반영한 최종 시간표 확정","body":"시작 직후 캠프, 7월 24일 정오 외출, 7월 29일 방문 일정과 필라테스 가능 시간을 반영해 실제 등원·자습 시간을 확정합니다.","options":[{"t":"권장 · 주 단위 재세팅","d":"고정 학원 시간과 변동 일정을 나눠 매주 일요일 다음 주 시간표를 확정합니다."},{"t":"대안 · 기본 시간표 + 예외표","d":"기본 자습 블록은 유지하고 행사일만 별도의 축소 계획으로 운영합니다."}]},
+    {"badge":"첫 주","title":"영어 과외와 일요일 일정 세부 확인","body":"토요일 11:00~13:00 영어 과외는 확인됐으며, 금요일 추가 수업과 일요일 오후 일정은 첫 주 계획 전 확정합니다.","options":[{"t":"확정 일정 우선 반영","d":"확인된 수업만 고정하고 불확실한 시간은 자습 후보 블록으로 남깁니다."},{"t":"변경 즉시 재배치","d":"추가 일정이 확정되면 같은 주 총 자습량이 유지되도록 다른 블록을 옮깁니다."}]},
+    {"badge":"2주 후","title":"학습 데이터로 학기 중 운영안 결정","body":"회독 완료율, 집중 시간, 오답 원인을 확인해 학기 중 상담·관리 횟수와 필요한 과목 지원을 다시 정합니다.","options":[{"t":"상담·관리 유지","d":"계획과 마감이 성과로 연결되면 현재 구조를 학기 중 기숙사 일정에 맞게 축소 유지합니다."},{"t":"필요 영역만 보강","d":"수학 조건 수식화 등 반복 막힘이 남을 때만 최소 단위의 개별 지원을 검토합니다."}]}
+  ],
+  "pricing": {
+    "lead":"상담에서 최종 조정한 2026년 7월 22일~8월 18일 1개월 예상액입니다. 기존 외부 학원·과외 비용은 포함하지 않습니다.",
+    "rows":[
+      {"name":"정기 상담 1개월","desc":"주간 계획·학습법·진로·과목 우선순위 조정","amt":"350,000원","rec":true},
+      {"name":"기본 관리 18회","desc":"회당 15,000원 · 계획·집중·마감 점검","amt":"270,000원","rec":true},
+      {"name":"방학 장시간 관리 추가 16일","desc":"일 10,000원 · 장시간 체류일 추가 점검","amt":"160,000원","rec":true},
+      {"name":"기존 플래너 재사용","desc":"보유 플래너 확인 후 사용","amt":"0원","rec":false}
+    ],
+    "note":"※ 상담 350,000원 + 기본 관리 270,000원 + 방학 추가 관리 160,000원 = 1개월 예상 총액 780,000원입니다. 실제 이용일 변경이 있으면 최종 횟수에 맞춰 조정합니다.",
+    "package":{"title":"확정 운영 세팅","note":"방학에는 계획·집중·완주와 활동 기록을 함께 관리합니다.","items":[{"name":"등록 형태","value":"상담 1개월 + 기본 관리 18회 + 방학 추가 관리 16일"},{"name":"운영 기간","value":"2026.07.22~2026.08.18"},{"name":"핵심 학습 트랙","value":"3회독·수학 조건 수식화·국어 근거 독해·영어 어휘 정밀도"},{"name":"집중 환경","value":"휴대전화 전원 종료·분리, 온라인 강의 별도 관찰 공간"},{"name":"진로 트랙","value":"경제·경영 교과 선택과 교내외 활동의 주간 포트폴리오화"},{"name":"1개월 예상 총액","value":"780,000원","footer":true}]}
+  },
+  "closing": {"title":"다인이에게 필요한 것은 더 긴 공부가 아니라, 높은 역량이 끝까지 성과로 연결되는 운영 방식입니다.","msg":"다인이는 국제고의 높은 수준을 견딜 자신감, 이해력, 영어 역량, 주도성과 다양한 활동 자원을 이미 갖고 있습니다. 이번 여름에 휴대전화와 딴생각을 통제할 환경을 만들고, 한 번에 완벽히 하려는 부담을 세 번의 회독으로 나누며, 매주 학습과 활동을 자신의 말로 정리한다면 현재 2등급대 성취를 더 안정적으로 끌어올릴 수 있습니다. TYPE 2 모범생의 높은 기준을 HIDDEN TYPE 1 엄친아의 자기주도성과 완주력으로 연결하는 것이 이번 관리의 핵심입니다.","contacts":["에듀플렉스 길음점 · 원장 김병수",{"label":"홈페이지 eduplexge.sangsangplex.com","href":"https://eduplexge.sangsangplex.com"},"7월 22일 OT 및 방학 관리 시작" ]},
+  "footer":"에듀플렉스 길음점 · 이다인 학생 초기상담 결과"
+}
+;
+
+/* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
+(function render(){
+  const D = REPORT_DATA, $ = id => document.getElementById(id);
+  const esc = s => s ?? "";
+
+  // 헤더
+  if (D.brand?.logo) {
+    const logo = $("branch-logo");
+    logo.src = D.brand.logo;
+    logo.alt = D.brand.logoAlt || "에듀플렉스 로고";
+    logo.style.display = "block";
+  }
+  $("rpt-subtitle").textContent = `${D.meta.student} 학생 · ${D.meta.school}`;
+  $("rpt-meta").innerHTML =
+    `<span><b>검사일</b>${D.meta.testDate}</span><span><b>상담일</b>${D.meta.counselDate}</span>`+
+    `<span><b>상담</b>${D.meta.counselor}</span>`;
+  $("rpt-types").innerHTML =
+    `<span class="typechip"><small>1순위</small>${D.types.primary}</span>`+
+    (D.types.secondary ? `<span class="typechip"><small>참고</small>${D.types.secondary}</span>` : "");
+
+  // 요약
+  $("summary-grid").innerHTML = D.summary.map(s =>
+    `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
+  D.expertise ? $("expertise-box").innerHTML = `<b>${D.expertise.title}</b>${D.expertise.body}` : $("expertise-box").remove();
+
+  // 검사 결과지 기반 핵심 요약
+  $("core-summary-title").textContent = D.coreSummary?.title || "검사 결과지 기반 핵심 요약";
+  $("core-summary-basis").textContent = D.coreSummary?.basis || "";
+  const keywordGroups = [
+    { cls:"strength", title:"장점 키워드", items:D.coreSummary?.strengthKeywords || [] },
+    { cls:"improve", title:"보완점 키워드", items:D.coreSummary?.improveKeywords || [] },
+    { cls:"growth", title:"발전할 점 키워드", items:D.coreSummary?.growthKeywords || [] }
+  ];
+  $("core-keywords").innerHTML = keywordGroups.map(g =>
+    `<div class="keyword-card ${g.cls}"><h3>${g.title}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+  $("core-narrative").textContent = D.coreSummary?.narrative || "";
+
+  // APT 국어·영어·수학 역량
+  $("apt-summary-grid").innerHTML = (D.aptSummary || []).map(a =>
+    `<article class="apt-summary-card">
+      <div class="apt-card-head">
+        <div><h3>${a.subject} APT</h3><p>${a.subtitle}</p></div>
+        <div class="apt-lever"><b>핵심 성장 레버</b>${a.lever}</div>
+      </div>
+      <div class="apt-card-body">
+        <div class="apt-chart" role="img" aria-label="${a.subject} APT 역량별 5점 척도 그래프">
+          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label">${m.label}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
+          <div class="apt-scale"><span>0</span><span>기준선 3.0</span><span>5.0</span></div>
+          <p class="apt-evidence-note">● 강점 지표 &nbsp; ● 우선 보완 지표 &nbsp; | &nbsp; APT 결과지 상위 역량 그래프 기반 재구성</p>
+        </div>
+        <div class="apt-story">
+          <div class="apt-story-block diagnosis"><strong>프로필 진단</strong>${a.diagnosis}</div>
+          <div class="apt-story-block risk"><strong>그대로 둘 때의 학습 리스크</strong>${a.risk}</div>
+          <div class="apt-story-block action"><strong>우선 실행 처방</strong>${a.action}</div>
+        </div>
+      </div>
+    </article>`).join("");
+  requestAnimationFrame(()=>document.querySelectorAll(".apt-fill").forEach(el=>el.style.width=el.dataset.w+"%"));
+
+  // 프로그램 구조
+  $("program-lead").textContent = D.program?.lead || "";
+  $("program-cards").innerHTML = (D.program?.cards || []).map(c =>
+    `<div class="program-card"><span class="tag">${c.tag}</span><div class="program-title">${c.title}</div>
+      <p>${c.body}</p>${c.bullets?.length ? `<ul>${c.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>` : ""}</div>`).join("");
+
+  // 9요소
+  const lvColor = l => l<=1.5?"var(--lv1)":l<=2.5?"var(--lv2)":l<=3.5?"var(--lv3)":l<=4.5?"var(--lv4)":"var(--lv5)";
+  $("factor-list").innerHTML = D.factors.map((f,i) =>
+    `<div class="factor" data-i="${i}">
+       <div class="name">${f.name}<small>${f.sub}</small></div>
+       <div class="bar"><i data-w="${f.level/5*100}" style="background:${lvColor(f.level)}"></i></div>
+       <div class="grade" style="color:${lvColor(f.level)}">${f.grade}${f.stars?`<br><span style="color:#b8860b;font-size:11px">${"★".repeat(f.stars)}</span>`:""}</div>
+       <div class="factor-detail">${f.detail}</div>
+     </div>`).join("");
+  document.querySelectorAll(".factor").forEach(el =>
+    el.addEventListener("click", () => el.classList.toggle("open")));
+  // 바 애니메이션
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w+"%"); io.unobserve(e.target); }
+  }), {threshold:.2});
+  io.observe($("factor-list"));
+
+  // 타입
+  $("type-title").textContent = D.type.title;
+  $("type-desc").innerHTML = D.type.desc;
+  $("type-insights").innerHTML = (D.type.insights || []).map(i=>`<div class="type-insight"><div class="label">${i.label}</div><p>${i.body}</p></div>`).join("");
+  $("type-pros").innerHTML = D.type.pros.map(p=>`<li>${p}</li>`).join("");
+  $("type-cons").innerHTML = D.type.cons.map(p=>`<li>${p}</li>`).join("");
+
+  // 걸림돌
+  $("stones").innerHTML = D.stones.map((s,i) =>
+    `<div class="stone"><div class="num">${i+1}</div><div>
+       <h4>${s.title}</h4><p>${s.body}</p>
+       ${s.quote?`<div class="quote">${s.quote}${s.quoteSrc?`<small>— ${s.quoteSrc}</small>`:""}</div>`:""}
+     </div></div>`).join("");
+
+  // 상태
+  $("states").innerHTML = D.states.map(s =>
+    `<div class="state"><div class="icon">${s.icon}</div><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
+  $("observe").innerHTML = D.observation;
+
+  // 로드맵
+  $("roadmap").innerHTML = D.roadmap.map(r =>
+    `<div class="phase"><div class="when">${r.when}</div><h4>${r.title}</h4><p>${r.body}</p>
+     <ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul>
+     ${r.why?`<div class="why">${r.why}</div>`:""}</div>`).join("");
+
+  // 합의
+  $("agreements").innerHTML = D.agreements.map(a =>
+    `<li><span class="chk">✓</span><span>${a}</span></li>`).join("");
+
+  // 결정
+  $("decisions").innerHTML = D.decisions.map(d =>
+    `<div class="decide"><h4><span class="badge">${d.badge}</span>${d.title}</h4><p>${d.body}</p>
+     ${d.options?.length?`<div class="options">${d.options.map(o=>{const x=typeof o==="string"?{t:o,d:""}:o;return `<div class="opt"><b>${x.t||x.title||""}</b>${x.d||x.body||""}</div>`}).join("")}</div>`:""}
+    </div>`).join("");
+
+  // 비용
+  $("price-lead").textContent = D.pricing.lead;
+  $("price-rows").innerHTML = D.pricing.rows.map(r =>
+    `<tr class="${r.rec?"rec":""}"><td class="nm"><b>${r.name}${r.rec?'<span class="recommend-tag">권장</span>':""}</b></td>
+     <td style="font-size:13.5px;color:var(--sub)">${r.desc}</td><td class="amt">${r.amt}</td></tr>`).join("");
+  $("price-note").textContent = D.pricing.note;
+
+  // 패키지 세팅
+  const packageCfg = D.pricing.package || {};
+  const renderPackageLine = line => {
+    if (typeof line === "object") {
+      return `<div class="package-option">
+        <strong>${line.title || ""}</strong>
+        ${line.meta ? `<em>${line.meta}</em>` : ""}
+        ${line.desc ? `<small>${line.desc}</small>` : ""}
+        ${line.example ? `<small>${line.example}</small>` : ""}
+      </div>`;
+    }
+    return `<span>${line}</span>`;
+  };
+  $("package-title").textContent = packageCfg.title || "패키지 세팅";
+  $("package-note").textContent = packageCfg.note || "";
+  const packageItems = packageCfg.items || [];
+  const packageCards = packageItems.filter(item => !item.footer);
+  const packageFooters = packageItems.filter(item => item.footer);
+  $("package-items").innerHTML =
+    packageCards.map(item => {
+      const hasOptionLines = item.lines?.some(line => typeof line === "object");
+      return `<div class="package-card ${item.wide ? "wide" : ""}">
+      <b>${item.name}</b>
+      <span>${item.value || ""}</span>
+      ${item.lines?.length ? `<div class="package-list ${hasOptionLines ? "option-grid" : ""}">${item.lines.map(renderPackageLine).join("")}</div>` : ""}
+    </div>`;
+    }).join("") +
+    packageFooters.map(item =>
+      `<div class="package-footer"><b>${item.name}</b><span>${item.value || ""}</span></div>`
+    ).join("");
+
+  // 클로징
+  const renderContact = c => {
+    if (typeof c === "object") {
+      const href = c.href?.startsWith("http") ? c.href : `https://${c.href}`;
+      return `<span><a href="${href}" target="_blank" rel="noopener">${c.label}</a></span>`;
+    }
+    const text = String(c);
+    const match = text.match(/(https?:\/\/[^\s]+|eduplexge\.sangsangplex\.com)/);
+    if (!match) return `<span>${text}</span>`;
+    const href = match[1].startsWith("http") ? match[1] : `https://${match[1]}`;
+    return `<span>${text.replace(match[1], `<a href="${href}" target="_blank" rel="noopener">${match[1]}</a>`)}</span>`;
+  };
+  $("closing-title").textContent = D.closing.title;
+  $("closing-msg").textContent = D.closing.msg;
+  $("closing-contact").innerHTML = D.closing.contacts.map(renderContact).join("");
+  $("rpt-footer").textContent = D.footer;
+  document.title = `VLT-5G 초기상담 결과지 — ${D.meta.student}`;
+})();
+</script>
+</body>
+</html>
