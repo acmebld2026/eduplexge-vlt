@@ -1,7 +1,7 @@
 # VLT-5G 결과지 배포 Git 프로젝트 정리
 
 > 확인 기준: 2026-07-15 (KST)
-> 로컬 저장소: `C:\dev\VLT5G\결과지\배포`
+> 로컬 저장소: 임의의 경로에 clone 가능
 > 원격 저장소: `https://github.com/acmebld2026/eduplexge-vlt`
 
 ## 1. 프로젝트 목적
@@ -90,7 +90,8 @@ Git 상태와 실제 Pages 반영 상태는 같지 않으므로 별도로 확인
 ### 작업 시작 전
 
 ```powershell
-cd "C:\dev\VLT5G\결과지\배포"
+Set-Location <clone한 저장소 경로>
+pwsh ./scripts/verify-repository.ps1
 git status --short --branch
 git fetch origin
 git log --oneline --decorate -5
@@ -161,9 +162,9 @@ git push origin master
 
 ### 저장소 운영 보완 사항
 
-- `.gitignore`가 없다. 임시 파일, 편집기 파일, 로그 등이 실수로 포함되지 않도록 추가하는 편이 안전하다.
-- `.gitattributes`가 없다. 운영체제 간 줄바꿈 차이를 줄이려면 HTML과 Markdown의 줄바꿈 정책을 지정할 수 있다.
-- 자동 검수 워크플로가 없다. `file:///`, 금지 용어, `noindex` 누락, 잘못된 링크를 푸시 전에 검사하는 CI를 두는 것이 좋다.
+- `.gitignore`가 비공개 입력·출력, 매핑, 임시 파일과 로컬 의존성 디렉터리의 추적을 차단한다.
+- `.gitattributes`가 HTML, Markdown, PowerShell, YAML 파일의 LF 줄바꿈을 통일한다.
+- `scripts/verify-repository.ps1`와 GitHub Actions가 로컬 경로, 검색 차단 메타, 비공개 경로 추적 여부를 자동 검사한다.
 - 태그나 릴리스가 없다. 배포 시점을 명확히 보존하려면 안정 배포에 날짜 태그를 붙이는 방식을 고려할 수 있다.
 - 루트 `index.html`이 없어 사이트 기본 주소가 404다. 의도한 경우 유지해도 되지만, 운영 점검 시 장애로 오인되지 않도록 README에 명시하거나 정보 없는 안내 페이지를 둘 수 있다.
 
@@ -186,7 +187,8 @@ git push origin master
 
 - 저장소 내부 `README.md`: 결과지 작성과 배포 완료 기준
 - 저장소 내부 `AGENTS.md`: 다른 로컬에서도 pull 후 자동 적용되는 최우선 작업 지침
-- 저장소 외부 `..\배포_기록.md`: 비공개 학생·슬러그 매핑과 운영 기록
-- 저장소 외부 `..\결과지_생성_가이드.md`: 결과지 생성 상세 지침
+- `docs/PORTABLE_WORKFLOW.md`: 다른 PC의 clone, 비공개 입력자료, 검증·배포 절차
+- `references/xcm16-types.md`: 저장소 내부 공식 타입명 기준표
+- Git 비추적 `local-mapping\`: 비공개 학생·슬러그 매핑과 운영 기록
 
 비공개 매핑과 개인정보는 이 문서나 공개 저장소의 README에 복사하지 않는다.
