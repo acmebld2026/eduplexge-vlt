@@ -1,0 +1,21 @@
+name: Validate deployment repository
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository invariants
+        shell: pwsh
+        run: ./scripts/verify-repository.ps1
+      - name: Check whitespace errors
+        run: git diff --check HEAD^ HEAD

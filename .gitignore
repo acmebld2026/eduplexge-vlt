@@ -1,0 +1,23 @@
+# Student source material and local-only operational data
+private-input/
+private-output/
+local-mapping/
+
+# Temporary and generated files
+tmp/
+temp/
+*.tmp
+*.log
+*.bak
+*.local.*
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local dependency directories, if tooling is added later
+node_modules/
+.venv/
+__pycache__/
