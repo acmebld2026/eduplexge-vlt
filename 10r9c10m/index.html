@@ -88,7 +88,10 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .apt-chart{position:relative;padding:2px 0 18px;align-self:start;min-width:0}
 .apt-chart::after{content:"";position:absolute;left:calc(42% + 29%);top:0;bottom:20px;border-left:1px dashed #a7b8c9;pointer-events:none}
 .apt-metric{display:grid;grid-template-columns:42% 1fr 30px;gap:8px;align-items:center;margin:9px 0}
-.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25}
+.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.apt-status{display:inline-flex;align-items:center;border-radius:999px;padding:2px 6px;font-size:9.5px;font-weight:900;line-height:1.2;white-space:nowrap}
+.apt-status.is-strong{color:#176b4f;background:#def3ea;border:1px solid #a9d9c8}
+.apt-status.is-focus{color:#9b4e10;background:#fff0df;border:1px solid #f2c590}
 .apt-track{height:10px;background:#e7eef5;border-radius:999px;overflow:hidden}
 .apt-fill{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#77b2e7,var(--blue));transition:width .8s ease}
 .apt-metric.is-strong .apt-fill{background:linear-gradient(90deg,#5fb596,var(--green))}
@@ -102,7 +105,11 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .apt-story-block.diagnosis{grid-column:1/-1;border-left:4px solid var(--blue);color:var(--ink);font-weight:650}
 .apt-story-block.action{border-left:4px solid var(--green)}
 .apt-story-block.risk{border-left:4px solid var(--accent)}
-.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c}
+.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.apt-legend-item{display:inline-flex;align-items:center;gap:5px;font-weight:800}
+.apt-legend-item i{display:inline-block;width:10px;height:10px;border-radius:50%}
+.apt-legend-item.is-strong i{background:var(--green)}
+.apt-legend-item.is-focus i{background:var(--accent)}
 
 /* 프로그램 구조 */
 .program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -408,19 +415,19 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   <div class="program-grid" id="program-cards"></div>
 </section>
 
-<!-- ══════════════════ 7. 합의 내용 ══════════════════ -->
+<!-- ══════════════════ 7. 상담 정리 ══════════════════ -->
 <section id="sec-agree">
-  <span class="sec-label">AGREED</span>
-  <h2>상담에서 함께 합의한 내용</h2>
-  <p class="lead">상담 중 학부모님·학생과 서로 확인하고 동의한 사항입니다.</p>
-  <ul class="agree" id="agreements"></ul>
+  <span class="sec-label">CONSULTATION SUMMARY</span>
+  <h2>상담에서 확인한 현재 방향</h2>
+  <p class="lead">상담에서 확인된 교육 방향, 진단과 권고, 아직 가족이 결정해야 할 내용을 구분해 정리했습니다.</p>
+  <ul class="agree" id="consultation-summary"></ul>
 </section>
 
 <!-- ══════════════════ 8. 다음 단계 ══════════════════ -->
 <section id="sec-decide">
   <span class="sec-label">NEXT STEP</span>
   <h2>다음 단계 — 확인 순서와 결정 기준</h2>
-  <p class="lead">현재 확인된 내용과 상담 합의를 바탕으로, 앞으로 확인할 사항과 결정 기준을 순서대로 정리했습니다.</p>
+  <p class="lead">현재 확인된 내용과 상담 권고를 바탕으로, 앞으로 확인할 사항과 결정 기준을 순서대로 정리했습니다.</p>
   <div id="decisions"></div>
 </section>
 
@@ -886,13 +893,12 @@ const REPORT_DATA = {
       "why": "가르치는 진로와 자기주도 학습을 연결하기 위해서입니다."
     }
   ],
-  "agreements": [
-    "<b>백예림12은 성암여자중학교 2학년</b>",
-    "<b>메인 TYPE 4. 꼭두각시 / 히든 TYPE 13. 예민이</b>",
-    "<b>국어·역사는 핵심 강점, 수학·과학은 보완 과목</b>",
-    "<b>수학은 속도보다 개념 체계 복원</b>",
-    "<b>가정의 독서 중심 교육관 유지</b>",
-    "<b>수학 수업 여부는 가족 논의 후 결정</b>"
+  "consultationSummary": [
+    "<b>학부모 확인</b> — 독서와 글쓰기를 우선해 온 가정의 교육 방향을 유지합니다.",
+    "<b>진단 정리</b> — 국어·영어 강점은 유지하고 수학은 개념의 연결, 풀이 절차와 오답 마무리를 우선 보완합니다.",
+    "<b>상담 권고</b> — 전체 관리가 시급한 상태로 단정하지 않고, 예림이에게 맞는 수학 학습 방식을 먼저 마련합니다.",
+    "<b>가족 결정</b> — 수학 수업 진행 여부와 세부 시간표는 학생·가족이 충분히 검토한 뒤 확정합니다.",
+    "<b>검토 일정</b> — 진행을 선택하면 2026년 8월 둘째 주 시작 가능성을 놓고 8월 5일까지 회신하기로 했습니다."
   ],
   "decisions": [
     {
@@ -1049,9 +1055,9 @@ const REPORT_DATA = {
       </div>
       <div class="apt-card-body">
         <div class="apt-chart" role="img" aria-label="${a.subject} APT 역량별 5점 척도 그래프">
-          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label">${m.label}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
+          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label"><span>${m.label}</span>${m.tone==="strong"?'<span class="apt-status is-strong">강점</span>':m.tone==="focus"?'<span class="apt-status is-focus">우선 보완</span>':""}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
           <div class="apt-scale"><span>0</span><span>기준선 3.0</span><span>5.0</span></div>
-          <p class="apt-evidence-note">● 강점 지표 &nbsp; ● 우선 보완 지표 &nbsp; | &nbsp; APT 결과지 상위 역량 그래프 기반 재구성</p>
+          <p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span><span>APT 결과지 상위 역량 그래프 기반 재구성</span></p>
         </div>
         <div class="apt-story">
           <div class="apt-story-block diagnosis"><strong>프로필 진단</strong>${a.diagnosis}</div>
@@ -1110,8 +1116,8 @@ const REPORT_DATA = {
      <ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul>
      ${r.why?`<div class="why">${r.why}</div>`:""}</div>`).join("");
 
-  // 합의
-  $("agreements").innerHTML = D.agreements.map(a =>
+  // 상담 정리
+  $("consultation-summary").innerHTML = D.consultationSummary.map(a =>
     `<li><span class="chk">✓</span><span>${a}</span></li>`).join("");
 
   // 결정
