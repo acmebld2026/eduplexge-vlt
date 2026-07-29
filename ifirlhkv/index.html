@@ -80,7 +80,10 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .apt-chart{position:relative;padding:2px 0 18px;align-self:start;min-width:0}
 .apt-chart::after{content:"";position:absolute;left:calc(42% + 29%);top:0;bottom:20px;border-left:1px dashed #a7b8c9;pointer-events:none}
 .apt-metric{display:grid;grid-template-columns:42% 1fr 30px;gap:8px;align-items:center;margin:9px 0}
-.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25}
+.apt-metric-label{font-size:12.5px;font-weight:700;color:var(--ink);line-height:1.25;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.apt-status{display:inline-flex;align-items:center;border-radius:999px;padding:2px 6px;font-size:9.5px;font-weight:900;line-height:1.2;white-space:nowrap}
+.apt-status.is-strong{color:#176b4f;background:#def3ea;border:1px solid #a9d9c8}
+.apt-status.is-focus{color:#9b4e10;background:#fff0df;border:1px solid #f2c590}
 .apt-track{height:10px;background:#e7eef5;border-radius:999px;overflow:hidden}
 .apt-fill{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#77b2e7,var(--blue));transition:width .8s ease}
 .apt-metric.is-strong .apt-fill{background:linear-gradient(90deg,#5fb596,var(--green))}
@@ -94,7 +97,11 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .apt-story-block.diagnosis{grid-column:1/-1;border-left:4px solid var(--blue);color:var(--ink);font-weight:650}
 .apt-story-block.action{border-left:4px solid var(--green)}
 .apt-story-block.risk{border-left:4px solid var(--accent)}
-.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c}
+.apt-evidence-note{margin:12px 0 0;font-size:11.5px;color:#6f7e8c;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.apt-legend-item{display:inline-flex;align-items:center;gap:5px;font-weight:800}
+.apt-legend-item i{display:inline-block;width:10px;height:10px;border-radius:50%}
+.apt-legend-item.is-strong i{background:var(--green)}
+.apt-legend-item.is-focus i{background:var(--accent)}
 
 /* 프로그램 구조 */
 .program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -998,9 +1005,9 @@ const REPORT_DATA = {
       </div>
       <div class="apt-card-body">
         <div class="apt-chart" role="img" aria-label="${a.subject} APT 역량별 5점 척도 그래프">
-          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label">${m.label}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
+          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label"><span>${m.label}</span>${m.tone==="strong"?'<span class="apt-status is-strong">강점</span>':m.tone==="focus"?'<span class="apt-status is-focus">우선 보완</span>':""}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
           <div class="apt-scale"><span>0</span><span>기준선 3.0</span><span>5.0</span></div>
-          <p class="apt-evidence-note">● 강점 지표 &nbsp; ● 우선 보완 지표 &nbsp; | &nbsp; APT 결과지 상위 역량 그래프 기반 재구성</p>
+          <p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span><span>APT 결과지 상위 역량 그래프 기반 재구성</span></p>
         </div>
         <div class="apt-story">
           <div class="apt-story-block diagnosis"><strong>프로필 진단</strong>${a.diagnosis}</div>
