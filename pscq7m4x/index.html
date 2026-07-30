@@ -582,37 +582,7 @@ const REPORT_DATA = {
   "summary": [
     {
       "title": "현재 위치",
-      "body": "학교 성적은 국어 81·영어 61·수학 71·과학 67·사회 84점으로 확인됩니다. 학원 일정과 숙제는 이어가지만 복습과 과제 마무리, 스스로 세운 계획의 실행이 약해 투입한 시간만큼 성취가 남지 않는 상태입니다.",
-      "visual": {
-        "kind": "score",
-        "max": 100,
-        "unit": "점",
-        "metrics": [
-          {
-            "label": "국어",
-            "value": 81
-          },
-          {
-            "label": "영어",
-            "value": 61,
-            "tone": "focus"
-          },
-          {
-            "label": "수학",
-            "value": 71
-          },
-          {
-            "label": "과학",
-            "value": 67,
-            "tone": "focus"
-          },
-          {
-            "label": "사회",
-            "value": 84,
-            "tone": "strong"
-          }
-        ]
-      }
+      "body": "학원 일정과 숙제는 이어가지만 복습과 과제 마무리, 스스로 세운 계획의 실행이 약해 투입한 시간만큼 성취가 남지 않는 상태입니다."
     },
     {
       "title": "가장 큰 자산",
@@ -1391,7 +1361,6 @@ const REPORT_DATA = {
       return `<div class="sum-metric ${m.tone?`is-${m.tone}`:""}"><span class="sum-metric-label">${m.label}</span><span class="sum-track"><i class="sum-fill" style="width:${width}%"></i></span><span class="sum-value">${value}</span></div>`;
     }).join("");
     const scale = v.kind === "apt" ? `<div class="sum-scale-note"><span>0</span><span>기준 3.0</span><span>5.0</span></div>` :
-      v.kind === "score" ? `<div class="sum-scale-note"><span>0점</span><span>현재 학교 성적</span><span>100점</span></div>` :
       `<div class="sum-scale-note"><span>약</span><span>절대값 기준 시각화</span><span>강</span></div>`;
     return `<div class="sum-visual">${rows}${scale}</div>`;
   };
