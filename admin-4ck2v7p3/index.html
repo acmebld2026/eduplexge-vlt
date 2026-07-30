@@ -14,7 +14,7 @@
   h1{font-size:22px;margin-bottom:4px;color:#1b3a5c}
   .sub{color:#5a6b7b;font-size:14px;margin-bottom:28px}
   .table-scroll{overflow-x:auto;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-  table{width:100%;min-width:980px;border-collapse:collapse;background:#fff}
+  table{width:100%;min-width:1160px;border-collapse:collapse;background:#fff}
   th,td{padding:12px 14px;text-align:left;font-size:14px;border-bottom:1px solid #e5ecf3}
   th{background:#1b3a5c;color:#fff;font-size:12.5px}
   tr:last-child td{border-bottom:none}
@@ -22,6 +22,20 @@
   a.link:hover{text-decoration:underline}
   a.manager{display:inline-block;word-break:keep-all;background:#e9f5ee;color:#2f6f4e;border-radius:7px;padding:6px 10px;font-size:13px}
   a.manager:hover{background:#d8eddf;text-decoration:none}
+  .session-stack{display:grid;gap:7px;min-width:170px}
+  .session-link{
+    display:grid;grid-template-columns:auto 1fr;align-items:center;gap:8px;padding:8px 10px;
+    border:1px solid #ead9b6;border-radius:8px;background:#fff9ec;color:#725019;text-decoration:none
+  }
+  .session-link:hover{background:#fff2d5;border-color:#dfc58e}
+  .session-index{
+    display:grid;place-items:center;width:23px;height:23px;border-radius:7px;
+    background:#bd8628;color:#fff;font-size:10px;font-weight:900
+  }
+  .session-copy{display:grid;line-height:1.25}
+  .session-copy strong{font-size:12.5px}
+  .session-copy small{margin-top:3px;color:#8a7656;font-size:10.5px}
+  .session-empty{color:#9aa6b0;font-size:12px}
   .tag{display:inline-block;font-size:11px;font-weight:800;background:#e8f1fa;color:#2f6fb1;border-radius:4px;padding:2px 7px;margin-left:6px}
   .apt-section{margin-top:34px}
   .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
@@ -44,7 +58,7 @@
 <div class="wrap">
   <div class="warn">⚠️ 이 페이지는 원장·매니저 전용입니다. 링크를 학부모나 외부에 공유하지 마세요. 학부모께는 아래 표의 "학부모 전달 링크" 열만 카카오톡 등으로 개별 전달합니다. "매니저용 기록지"는 내부 운영용입니다.</div>
   <h1>에듀플렉스 길음점 — 초기상담 결과지 배포 현황</h1>
-  <div class="sub">마지막 갱신: 2026-07-24</div>
+  <div class="sub">마지막 갱신: 2026-07-30</div>
   <div class="table-scroll">
   <table>
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
@@ -246,9 +260,44 @@
     </div>
     <div class="apt-grid" id="mbti-links"></div>
   </section>
-  <footer>새 학생 결과지와 매니저용 기록지가 배포되면 이 표에 행을 추가합니다 — `결과지\배포_기록.md` 참조</footer>
+  <footer>새 학생 결과지·매니저 기록지·후속상담 세션이 배포되면 이 목록과 `결과지\배포_기록.md`를 함께 갱신합니다.</footer>
 </div>
 <script>
+  // 학생별 후속상담 정적 HTML은 아래 목록에 회차별로 추가합니다.
+  // 한 학생에게 sessions 항목을 더하면 같은 학생 행에 시간순으로 누적 표시됩니다.
+  const followupSessions = [
+    {
+      student: "양산하",
+      sessions: [
+        { date: "2026.07.30", title: "원장 면담 · 생활 루틴", href: "../vfhckbjz/" }
+      ]
+    }
+  ];
+
+  const resultTable = document.querySelector(".table-scroll table");
+  const sessionHeader = document.createElement("th");
+  sessionHeader.textContent = "후속상담 세션";
+  resultTable.tHead.rows[0].appendChild(sessionHeader);
+
+  const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
+  Array.from(resultTable.tBodies[0].rows).forEach((row) => {
+    const student = row.cells[0].textContent.trim().split(/\s+/)[0];
+    const sessions = sessionsByStudent.get(student) || [];
+    const cell = row.insertCell();
+
+    if (!sessions.length) {
+      cell.innerHTML = '<span class="session-empty">등록 세션 없음</span>';
+      return;
+    }
+
+    cell.innerHTML = `<div class="session-stack">${sessions.map(({ date, title, href }, index) => `
+      <a class="session-link" href="${href}">
+        <span class="session-index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="session-copy"><strong>${title}</strong><small>${date}</small></span>
+      </a>
+    `).join("")}</div>`;
+  });
+
   // 새 링크를 받을 때 아래 배열에 학생 이름과 과목별 URL 한 묶음만 추가합니다.
   const aptSheets = [
     { name: "안시영", korean: "https://docs.google.com/spreadsheets/d/1GgoPQRbl8sef1Hr9Pv4k-whNO9fkDdZ5YXCMFFTrsjY/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/12Ivf398zPZdMOlfmuGFltNcB0dCJmSK547xUGtQq8n8/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1_fsaiOH8emSWBXD5iCqSp2GDsnFaB2XhZSbqvUpbENE/edit?usp=drive_link" },
