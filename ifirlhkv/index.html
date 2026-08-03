@@ -53,6 +53,20 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .sumcard p{font-size:14.5px}
 .sumcard.full{grid-column:1/-1;background:var(--accent-soft);border-color:#f2c9a3}
 .sumcard.full .t{color:var(--accent)}
+.summary-metrics{margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}
+.summary-metric{display:grid;grid-template-columns:104px minmax(90px,1fr) 34px;gap:8px;align-items:center;margin:9px 0}
+.summary-metric-label{display:flex;align-items:center;gap:5px;min-width:0;font-size:11.5px;font-weight:800;color:var(--ink);line-height:1.25}
+.summary-metric-tag{flex:0 0 auto;border-radius:999px;padding:1px 5px;font-size:8.5px;font-weight:900;line-height:1.35}
+.summary-metric.is-asset .summary-metric-tag{color:#176b4f;background:#def3ea;border:1px solid #a9d9c8}
+.summary-metric.is-risk .summary-metric-tag{color:#9b3f3d;background:#fae6e5;border:1px solid #e7b8b5}
+.summary-metric-track{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,#e8eef4 0 49.5%,#8ea3b5 49.5% 50.5%,#e8eef4 50.5% 100%);overflow:hidden}
+.summary-metric-fill{position:absolute;top:0;bottom:0;border-radius:999px}
+.summary-metric.is-asset .summary-metric-fill{background:linear-gradient(90deg,#68b99c,var(--green))}
+.summary-metric.is-risk .summary-metric-fill{background:linear-gradient(90deg,var(--red),#e9895f)}
+.summary-metric-score{text-align:right;font-size:11.5px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums}
+.summary-axis{display:grid;grid-template-columns:104px 1fr 34px;gap:8px;margin-top:2px;color:#758594;font-size:9.5px}
+.summary-axis-scale{display:flex;justify-content:space-between}
+.summary-axis-scale span:nth-child(2){font-weight:800;color:#53687a}
 .expertise{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;font-size:13.5px;color:var(--sub)}
 .expertise b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:4px}
 
@@ -247,6 +261,8 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   .hero-print .print-long{display:none}
   .hero-print .print-short{display:inline}
   .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid,.keyword-grid,.apt-summary-grid{grid-template-columns:1fr}
+  .summary-metric{grid-template-columns:96px minmax(78px,1fr) 32px;gap:6px}
+  .summary-axis{grid-template-columns:96px 1fr 32px;gap:6px}
   .apt-card-head{display:block}
   .apt-summary-card,.apt-card-head,.apt-card-body,.apt-chart,.apt-story{min-width:0;max-width:100%}
   .apt-lever{margin-top:10px;width:auto;max-width:100%;overflow-wrap:anywhere;word-break:keep-all}
@@ -980,8 +996,21 @@ const REPORT_DATA = {
     (D.types.secondary ? `<span class="typechip"><small>참고</small>${D.types.secondary}</span>` : "");
 
   // 요약
-  $("summary-grid").innerHTML = D.summary.map(s =>
-    `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p></div>`).join("");
+  $("summary-grid").innerHTML = D.summary.map(s => {
+    const metrics = (s.metrics || []).map(m => {
+      const magnitude = Math.min(50, Math.abs(Number(m.score) || 0));
+      const left = Number(m.score) < 0 ? 50 - magnitude : 50;
+      const score = Number(m.score) > 0 ? `+${m.score}` : `${m.score}`;
+      const tag = m.tone === "asset" ? "자산" : "관리";
+      return `<div class="summary-metric is-${m.tone || "asset"}" role="img" aria-label="${m.label} ${score}, -50에서 +50 척도">
+        <span class="summary-metric-label"><span class="summary-metric-tag">${tag}</span><span>${m.label}</span></span>
+        <span class="summary-metric-track"><i class="summary-metric-fill" style="left:${left}%;width:${magnitude}%"></i></span>
+        <span class="summary-metric-score">${score}</span>
+      </div>`;
+    }).join("");
+    const chart = metrics ? `<div class="summary-metrics">${metrics}<div class="summary-axis"><span></span><span class="summary-axis-scale"><span>-50</span><span>0</span><span>+50</span></span><span></span></div></div>` : "";
+    return `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p>${chart}</div>`;
+  }).join("");
   D.expertise ? $("expertise-box").innerHTML = `<b>${D.expertise.title}</b>${D.expertise.body}` : $("expertise-box").remove();
 
   // 검사 결과지 기반 핵심 요약
