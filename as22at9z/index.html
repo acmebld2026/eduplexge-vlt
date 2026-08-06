@@ -10,9 +10,9 @@
 <main class="content">
 <section><h2>1. 자료 상태와 해석 경계</h2><table><tbody>
 <tr><th>확인 완료</th><td>VLT-5G 일반·내부 보고서 API, 학생 페이지, APT 국어·영어·수학 결과 및 2026-08-06 오프라인 스냅샷, CHAMP TEST 중3 하반기 응답 80문항, 공식 PDF·답안표, TIRO 초기상담 전체 원문</td></tr>
-<tr><th>CHAMP 수치</th><td>결과 페이지 표시는 정답률이 아니라 <b>표본 백분위</b>. 문항 정오 개수는 오답 유형 분석에만 별도로 사용</td></tr>
+<tr><th>CHAMP 수치</th><td>원본 VLT 보고서 최종 표시값과 API·문항 응답 원점수 정답률을 분리. 공개 표시값은 원본 보고서의 종합·LV·기초·심화·보완 CHAMP 전 항목을 사용</td></tr>
 <tr><th>TIRO 원문</th><td><code>iiCARybumsKFm</code>, 272문단·272세그먼트·11,065초 전체 보존. 실제 내방 상담은 2026-08-06 10:05~12:47 KST 구간으로 확인. 사전통화 <code>zBi5dX7zUWfPJ</code>도 별도 보존</td></tr>
-<tr><th>APT 확인</th><td>길음중학교 중3 손주환 학생의 국어·영어·수학 APT 결과를 확인. APT 5점 척도와 CHAMP 표본 백분위를 분리해 사용</td></tr>
+<tr><th>APT 확인</th><td>길음중학교 중3 손주환 학생의 국어·영어·수학 APT 결과를 확인. APT 5점 척도, CHAMP 원본 보고서 표시값, 문항 수행 원점수를 분리해 사용</td></tr>
 </tbody></table></section>
 <section><h2>2. 핵심 운영 판단</h2><div class="grid">
 <div class="card"><b>성장 자산</b><p>자기실력파악 +48, 학습필요인식 +38, 진학목표 +39, 집중력 +28, 어휘력 +29</p></div>
@@ -51,11 +51,11 @@
 </tbody></table></section>
 <section><h2>6. CHAMP TEST 결과와 오답</h2>
 <table><thead><tr><th>영역</th><th>결과 페이지</th><th>문항 응답 오답 수</th><th>우선 확인 기능</th></tr></thead><tbody>
-<tr><td>기초 문장이해력</td><td class="score strong">표본 백분위 90</td><td>2 / 20</td><td>문맥에 따른 다의어 의미 확정</td></tr>
-<tr><td>국어</td><td class="score focus">기본 60 · 심화 70</td><td>7 / 20</td><td>시적·상징적 의미, 중심·내용 일치, 인용, 설화 구조 통합</td></tr>
-<tr><td>영어</td><td class="score strong">기본 80 · 심화 80</td><td>4 / 20</td><td>과거완료·to부정사·가정법 구분, 그래프 정보 판독</td></tr>
-<tr><td>수학</td><td class="score strong">기본 80 · 심화 80</td><td>4 / 20</td><td>근호 식 변형, 이차방정식 조건, 함수식 전환, 닮음·넓이 관계</td></tr>
-</tbody></table><p>시험지는 API의 <b>중3·하반기</b> 표기를 우선해 <code>VLT4G_CT_중3_하_2015수학개정_200727.pdf</code>와 대조했습니다. 공식 답안표와 API 정답은 80문항 모두 일치했습니다.</p></section>
+<tr><td>기초 문장이해력</td><td class="score">종합 78</td><td>2 / 20 · 원점수 90%</td><td>문맥에 따른 다의어 의미 확정</td></tr>
+<tr><td>국어</td><td class="score strong">종합 83 · LV3 · 기초 67 · 심화 88 · 보완 C</td><td>7 / 20 · 원점수 65%</td><td>시적·상징적 의미, 중심·내용 일치, 인용, 설화 구조 통합</td></tr>
+<tr><td>영어</td><td class="score">종합 78 · LV3 · 기초 74 · 심화 80 · 보완 H/P</td><td>4 / 20 · 원점수 80%</td><td>과거완료·to부정사·가정법 구분, 그래프 정보 판독</td></tr>
+<tr><td>수학</td><td class="score">종합 81 · LV3 · 기초 78 · 심화 83 · 보완 P</td><td>4 / 20 · 원점수 80%</td><td>근호 식 변형, 이차방정식 조건, 함수식 전환, 닮음·넓이 관계</td></tr>
+</tbody></table><p>최종 표시값은 같은 학생·검사일의 VLT 원본 보고서 <b>기반 학습 - CHAMP Test</b> 페이지에서 확인했습니다. 문항 수행은 API의 <b>중3·하반기</b> 응답과 공식 답안표 80문항을 전수 대조했으며, 표시값과 원점수 정답률을 서로 환산하지 않습니다.</p></section>
 <section><h2>7. 에듀플렉스·개별지도 처방</h2><table><thead><tr><th>처방</th><th>기능 목표</th><th>매니저·교수자 행동</th><th>학생 산출물</th><th>성공 기준</th></tr></thead><tbody>
 <tr><td>상담&관리 검토</td><td>시간 운영과 완료 책임</td><td>휴식·운동·숙제·자기 복습의 타임블록을 학생과 조정</td><td>주간 계획, END CHECK, 학원 후 독립 재현</td><td>4주 계획 이행률과 자기 복습 시간 상승</td></tr>
 <tr><td>한 과목 개별지도 선행 검토</td><td>에듀플렉스 방식 체험과 기능 확인</td><td>최근 시험지·교재를 본 뒤 국어 또는 수학 중 한 과목만 후보화</td><td>근거 설명 또는 조건표·풀이 순서</td><td>10월 전후 단기 운영 후 세미나·매니지먼트 결정 자료 확보</td></tr>
