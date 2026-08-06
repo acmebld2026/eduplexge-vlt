@@ -61,6 +61,7 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .sumcard p{font-size:14.5px}
 .sumcard.full{grid-column:1/-1;background:var(--accent-soft);border-color:#f2c9a3}
 .sumcard.full .t{color:var(--accent)}
+.summary-hierarchy{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}.summary-hierarchy-row{display:grid;grid-template-columns:120px 105px 1fr;gap:8px;align-items:center}.summary-hierarchy-row span{min-width:0}.summary-hierarchy-row small{display:block;margin-bottom:1px;font-size:7.5px;font-weight:900;letter-spacing:.05em;opacity:.65}.summary-hierarchy-major,.summary-hierarchy-middle{border-radius:10px;padding:4px 8px;text-align:center;font-size:9.5px;font-weight:900}.summary-hierarchy-major{background:#e7f0fa;color:#225f97}.summary-hierarchy-middle{background:#eef4ef;color:#2d7358}.summary-hierarchy-minor{font-size:11.2px;font-weight:800;color:#45596d;line-height:1.45}.summary-hierarchy-arrow{display:none}
 .summary-metrics{margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}
 .summary-metric{display:grid;grid-template-columns:88px minmax(90px,1fr) 34px;gap:8px;align-items:center;margin:9px 0}
 .summary-metric-label{min-width:0;font-size:11.5px;font-weight:800;color:var(--ink);line-height:1.25}
@@ -138,6 +139,7 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .program-card p{font-size:13.7px;color:var(--sub)}
 .program-card ul{margin:10px 0 0 18px;font-size:13px;color:var(--ink)}
 .program-card li{margin:4px 0}
+.counseling-flow-wrap{margin:0 0 20px;padding:20px;border:1px solid #cedded;border-radius:16px;background:linear-gradient(145deg,#f3f8fd,#fff)}.counseling-flow-head{text-align:center;margin-bottom:14px}.counseling-flow-head span{color:var(--blue);font-size:9.5px;font-weight:900;letter-spacing:.13em}.counseling-flow-head h3{margin:5px 0 4px;font-size:20px}.counseling-flow-head p{margin:0;color:var(--sub);font-size:12.5px}.counseling-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.counseling-step{position:relative;border:1px solid #dce6ef;border-radius:12px;padding:14px;background:#fff}.counseling-step:not(:last-child)::after{content:"›";position:absolute;right:-8px;top:45%;z-index:2;color:#6d8baa;font-size:18px;font-weight:900}.counseling-step .step-no{display:block;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.08em}.counseling-step .step-category{display:block;margin:4px 0 7px;color:#6c7d8f;font-size:9.5px;font-weight:800;line-height:1.4}.counseling-step h4{margin:0 0 6px;color:var(--navy);font-size:13.5px;line-height:1.45}.counseling-step p{margin:0;color:var(--sub);font-size:11.5px;line-height:1.6}
 
 /* ===== 검사 결과 시각화 ===== */
 .factor-wrap{margin-top:8px}
@@ -220,7 +222,7 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .phase li{margin:4px 0}
 .phase .why{margin-top:8px;font-size:13px;background:var(--sky2);border-radius:8px;padding:8px 12px;color:var(--navy)}
 
-/* ===== 원장 해석상담 ===== */
+/* ===== 해석상담 핵심 ===== */
 .agree{list-style:none}
 .agree li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed #e5ecf3;font-size:14.5px}
 .agree .chk{flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:1px}
@@ -447,6 +449,8 @@ footer{color:#506476}
   .toolbar a{font-size:11px;padding:6px 8px}
   section{margin:0 8px 10px;padding:28px 18px;border-radius:18px}
   .temperament-dynamics{padding:18px 14px}.temperament-grid{grid-template-columns:1fr}
+  .summary-hierarchy-row{grid-template-columns:1fr;gap:4px;padding:8px 0;border-bottom:1px dashed #dce5ed}.summary-hierarchy-row:last-child{border-bottom:0}.summary-hierarchy-major,.summary-hierarchy-middle{text-align:left;width:max-content}.summary-hierarchy-minor{padding-left:5px}
+  .counseling-flow-wrap{padding:17px 13px}.counseling-flow{grid-template-columns:1fr}.counseling-step:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-13px}
 }
 @media (prefers-reduced-transparency:reduce),(prefers-contrast:more){
   body{background:#eef3f7}
@@ -491,7 +495,7 @@ footer{color:#506476}
   <a href="#sec-stones">걸림돌</a>
   <a href="#sec-state">현재 상태</a>
   <a href="#sec-solution">솔루션</a>
-    <a href="#sec-agree">원장 해석상담</a>
+    <a href="#sec-agree">해석상담 핵심</a>
   <a href="#sec-decide">결정해주실 부분</a>
 <a href="#sec-program">프로그램 구조</a>
   <a href="#sec-price">구성·비용</a>
@@ -501,7 +505,7 @@ footer{color:#506476}
 <section id="sec-summary">
   <span class="sec-label">SUMMARY</span>
   <h2>한눈에 보는 상담 결과</h2>
-  <p class="lead">VLT-5G, APT, CHAMP TEST와 초기상담에서 확인된 내용을 종합한 핵심 요약입니다.</p>
+  <p class="lead">VLT-5G, APT, CHAMP TEST와 해석상담에서 확인된 내용을 종합한 핵심 요약입니다.</p>
   <div class="summary-grid" id="summary-grid"></div>
   <div class="expertise" id="expertise-box"></div>
 </section>
@@ -600,11 +604,11 @@ footer{color:#506476}
 </section>
 
 
-<!-- ══════════════════ 7. 원장 해석상담 ══════════════════ -->
+<!-- ══════════════════ 7. 해석상담 핵심 ══════════════════ -->
 <section id="sec-agree">
   <span class="sec-label">COUNSELING IMPACT</span>
-  <h2>원장 해석상담 — 주환이가 가져가야 할 핵심</h2>
-  <p class="lead">검사에 담긴 의미를 원장이 주환이의 시간·진로·학습 선택과 연결해 정리한 내용입니다.</p>
+  <h2>해석상담에서 함께 짚은 핵심</h2>
+  <p class="lead">검사에 담긴 의미를 주환이의 시간·진로·학습 선택과 연결해 정리했습니다.</p>
   <ul class="agree" id="agreements"></ul>
 </section>
 
@@ -621,6 +625,10 @@ footer{color:#506476}
   <span class="sec-label">EDUPLEX LEARNING SYSTEM</span>
   <h2>상담·관리·개별지도 — 주환이를 돕는 방식</h2>
   <p class="lead" id="program-lead"></p>
+  <div class="counseling-flow-wrap">
+    <div class="counseling-flow-head"><span>COUNSELING PRIORITY FLOW</span><h3>정기상담에서 이어갈 우선순위</h3><p>현재 진단과 해석상담에서 확인된 주환이의 변화 순서입니다.</p></div>
+    <div class="counseling-flow" id="counseling-flow"></div>
+  </div>
   <div class="program-grid" id="program-cards"></div>
 </section>
 
@@ -688,7 +696,24 @@ const REPORT_DATA = {
     },
     {
       "title": "가장 큰 자산",
-      "body": "자기실력파악 +48, 학습필요인식 +38, 진학목표 +39, 집중력 +28, 어휘력 +29가 성장 출발점입니다.",
+      "body": "주환이의 강점은 서로 따로 떨어진 점수가 아닙니다. 현재 실력과 공부의 필요를 알아차리는 힘이 진학 의지와 연결되고, 집중력·어휘력이 그 선택을 실제 공부로 옮길 바탕이 됩니다. 상담에서 강조한 ‘같은 24시간을 어떻게 쓸 것인가’라는 질문에 스스로 답할 수 있는 출발점입니다.",
+      "hierarchy": [
+        {
+          "major": "학습 방식 및 태도",
+          "middle": "상황 인식",
+          "minor": "자기실력파악 +48 · 학습필요인식 +38"
+        },
+        {
+          "major": "학습 방식 및 태도",
+          "middle": "목표 의식",
+          "minor": "진학목표 +39"
+        },
+        {
+          "major": "학습력",
+          "middle": "이성 역량",
+          "minor": "집중력 +28 · 어휘력 +29"
+        }
+      ],
       "metrics": [
         {
           "label": "자기실력파악",
@@ -714,7 +739,24 @@ const REPORT_DATA = {
     },
     {
       "title": "핵심 병목",
-      "body": "학습계획 -40, 정리 A -46, 암기 M -38, 사고 H -31, 이해 C -28이 한 방향으로 모입니다. 문제는 풀어도 배운 내용을 구조화해 다음 시험까지 남기는 과정에서 누수가 생길 수 있습니다.",
+      "body": "핵심 병목도 한 점수의 문제가 아닙니다. 계획을 직접 세우는 힘이 약하면 학원 일정과 숙제가 하루를 먼저 차지하고, 배운 뒤 이해·사고·정리·암기에 쓸 시간이 밀립니다. 결국 수업을 성실히 들어도 자기 말로 설명하고 다시 풀어 다음 시험까지 남기는 과정에서 누수가 생깁니다. 그래서 수업을 더 채우기보다 자기학습 시간을 물리적으로 확보하는 일이 먼저입니다.",
+      "hierarchy": [
+        {
+          "major": "학습 방식 및 태도",
+          "middle": "체계적 수행",
+          "minor": "학습계획 -40"
+        },
+        {
+          "major": "학습 방식 및 태도",
+          "middle": "CHAMP 학습법",
+          "minor": "정리 A -46 · 암기 M -38 · 사고 H -31 · 이해 C -28"
+        },
+        {
+          "major": "학습 방식 및 태도",
+          "middle": "학습 자율성",
+          "minor": "배운 시간과 익히는 시간의 분리 부족"
+        }
+      ],
       "metrics": [
         {
           "label": "학습계획",
@@ -749,7 +791,7 @@ const REPORT_DATA = {
     },
     {
       "title": "상담 후 실행 방향",
-      "body": "원장은 누구에게나 같은 24시간과 ‘한 시간의 미래 가치’를 연결해 주환이가 시간 사용을 스스로 선택해야 하는 이유를 짚었습니다. 주환이도 숙제 시간과 남은 시간을 직접 구분해보겠다는 생각을 밝혔습니다. 국어·영어는 점차 자기학습으로 전환하는 사교육 다이어트를, 과목별 기능은 한 과목 개별지도로 정확히 교정하는 방향을 권했습니다.",
+      "body": "누구에게나 같은 24시간이 주어지고, 지금의 시간 선택이 미래의 ‘한 시간 가치’를 만든다는 관점에서 공부의 이유를 다시 연결했습니다. 주환이도 숙제에 쓰는 시간과 스스로 활용할 시간을 구분해보겠다는 생각을 밝혔습니다. 국어·영어는 도움받을 부분과 혼자 해낼 부분을 나누어 단계적으로 사교육을 덜어내고, 확보한 시간은 자기 복습과 수학·과학·사회에 재배치하는 방향을 권합니다. 필요한 과목 기능은 한 과목 개별지도에서 정확히 교정하는 구성이 적합합니다.",
       "full": true
     }
   ],
@@ -786,7 +828,7 @@ const REPORT_DATA = {
       "대학·직업 분야 실제 탐색",
       "졸업고사 후 단계적 사교육 다이어트"
     ],
-    "narrative": "검사 결과지 기반으로 보면, 주환이는 공부할 힘이 부족하기보다 그 힘을 어디에 얼마나 쓸지 스스로 결정하고 끝까지 자기 것으로 만드는 경험을 키워야 하는 상태에 가깝습니다. 국어·영어의 성취 기반과 충분히 생각해 답하는 태도는 분명한 자산입니다. 원장은 상담에서 누구에게나 같은 24시간이 주어지며, 지금 시간을 어떻게 쓰는지가 미래의 한 시간 가치를 바꾼다는 관점으로 공부의 이유를 다시 연결했습니다. 주환이도 숙제 시간과 남은 시간을 구분해보겠다는 생각을 밝혔습니다. 앞으로는 국어·영어를 한 과목씩 자기학습으로 전환해 시간을 확보하는 사교육 다이어트와, 수학·과학·사회에 그 시간을 재배치하는 연습이 필요합니다. 상담은 이 선택의 이유와 방향을 세우고, 관리는 계획을 실제 하루 행동으로 닫으며, 개별지도는 APT·CHAMP에서 확인된 과목 기능을 질문·설명·재풀이로 교정하는 역할을 맡습니다."
+    "narrative": "검사 결과지 기반으로 보면, 주환이는 공부할 힘이 부족하기보다 그 힘을 어디에 얼마나 쓸지 스스로 결정하고 끝까지 자기 것으로 만드는 경험을 키워야 하는 상태에 가깝습니다. 국어·영어의 성취 기반과 충분히 생각해 답하는 태도는 분명한 자산입니다. 이번 해석상담에서는 누구에게나 같은 24시간이 주어지며, 지금의 시간 선택이 미래의 한 시간 가치를 바꾼다는 관점으로 공부의 이유를 다시 연결했습니다. 주환이도 숙제 시간과 남은 시간을 구분해보겠다는 생각을 밝혔습니다. 국어·영어는 도움받을 부분과 혼자 해낼 부분을 나누어 한 과목씩 자기학습으로 전환하고, 그렇게 확보한 시간을 수학·과학·사회와 배운 내용을 익히는 데 재배치할 필요가 있습니다. 상담은 이 선택의 이유와 방향을 주환이의 말로 세우고, 관리는 계획한 시간과 실제 행동의 차이를 매일 닫으며, 개별지도는 과목별로 확인된 기능을 질문·설명·재풀이로 교정해 자기 힘으로 재현되도록 돕습니다."
   },
   "temperamentDynamics": {
     "title": "성향 조합이 학습에서 작동하는 방식",
@@ -817,8 +859,8 @@ const REPORT_DATA = {
         "body": "시험 불안이나 관계 반응이 한 방향으로 강하게 나타난다고 단정하기보다 준비도와 상황에 따라 달라질 가능성을 열어둡니다. 감정적 압박보다 선택지·완료 기준·결과물에 근거한 피드백이 적합합니다."
       }
     ],
-    "actionLabel": "상담·관리 연결",
-    "action": "상담에서는 왜 이 목표가 필요한지와 이번 주 선택을 주환이의 말로 정리하고, 관리에서는 같은 이해-사고-정리-회상 루틴을 실제 하루에 반복하게 합니다. 4·8·12주에는 계획 이행률뿐 아니라 독립 설명률·유사문제 전이·같은 오류 재발률을 함께 확인합니다."
+    "actionLabel": "주환이에게 필요한 상담·관리의 도움",
+    "action": "정기상담에서는 ‘왜 공부해야 하는가’에서 출발해 진로와 목표를 주환이의 말로 구체화하고, 어떤 사교육을 왜 남기거나 줄일지도 스스로 설명할 수 있도록 돕습니다. 관리는 등원 문진, 계획서 작성, 자기주도학습, 학습 확인, 마무리 점검의 흐름 안에서 계획 시간과 실제 시간을 비교하고 배운 내용을 자기 말로 설명하게 합니다. 4·8·12주에는 계획 이행률과 함께 독립 설명률·유사문제 전이·같은 오류 재발률을 확인합니다."
   },
   "aptSummary": [
     {
@@ -1002,32 +1044,60 @@ const REPORT_DATA = {
   ],
   "expertise": null,
   "program": {
-    "lead": "에듀플렉스의 세 프로그램은 같은 문제를 다른 방식으로 돕습니다. 상담은 공부의 이유와 선택을 세우고, 관리는 그 선택을 매일 실행하는 습관으로 만들며, 개별지도는 과목 안에서 막히는 판단 과정을 질문·설명·재풀이로 교정합니다. 주환이에게는 세 역할을 필요한 만큼 연결하는 구성을 추천합니다.",
+    "lead": "주환이에게 필요한 것은 시간을 더 채우는 수업이 아니라, 왜 공부하는지 스스로 납득하고 하루를 직접 설계하며 필요한 과목 기능만 정확히 보완하는 경험입니다. 정기상담은 이유와 방향을 세우고, 관리는 그 선택을 매일의 행동으로 완수하게 하며, 개별지도는 과목 안에서 막히는 판단 과정을 질문·설명·재풀이로 교정합니다.",
+    "counselingFlow": [
+      {
+        "step": "01",
+        "category": "정신·행동·태도 · 객관화/자기효능감",
+        "title": "수업 참여와 독립 학습을 구분합니다",
+        "body": "잘하고 있는 국어·영어와 누수가 있는 학습계획·CHAMP 과정을 함께 보며, ‘나는 못한다’가 아니라 어떤 도움은 필요하고 무엇은 혼자 해낼 수 있는지 정확히 말하게 합니다."
+      },
+      {
+        "step": "02",
+        "category": "진로 Lv0→Lv1 · 학습목표 및 행동 Lv0",
+        "title": "공부의 이유를 미래의 선택과 연결합니다",
+        "body": "강점·관심·가능한 역할을 실제 대학·직업 정보와 연결하고, 지금의 한 시간을 어디에 쓰는지가 미래의 선택 폭과 한 시간 가치를 어떻게 바꾸는지 자기 언어로 정리합니다."
+      },
+      {
+        "step": "03",
+        "category": "학습법 Lv0→Lv2 · 학습목표 및 행동 Lv1→Lv2",
+        "title": "배우는 시간과 익히는 시간을 다시 설계합니다",
+        "body": "학원에서 배운 것과 혼자 설명·재풀이해 익힌 것을 구분하고, 장기 목표를 이번 달·이번 주 행동으로 나눕니다. 국어·영어에서 확보한 시간을 자기 복습과 수학·과학·사회에 재배치합니다."
+      },
+      {
+        "step": "04",
+        "category": "주도성_자기조절 → 자기결정권/자기표현",
+        "title": "도움의 목적과 선택을 스스로 결정합니다",
+        "body": "사교육을 무조건 없애거나 유지하지 않습니다. 어떤 도움을 왜 받을지, 무엇을 혼자 해낼지, 완료 기준은 무엇인지 주환이가 선택하고 설명하며 자기 계획으로 목표를 수행하는 힘을 키웁니다."
+      }
+    ],
     "cards": [
       {
         "tag": "상담 Coaching",
-        "title": "왜 공부할지 정하고, 선택을 행동으로 연결하기",
-        "body": "초기 해석상담에서 김병수 원장이 세운 ‘같은 24시간과 한 시간의 가치’를, 프로그램 확정 후 배정되는 담당 매니저와의 1:1 상담에서 이어갑니다. 주환이가 원하는 삶·진로·사교육 다이어트 방향을 함께 정하고 이해 → 계획 → 실행 → 점검의 흐름으로 다음 행동을 선택하게 합니다.",
+        "title": "왜 공부할지 정하고, 자기 선택으로 연결하기",
+        "body": "프로그램 확정 후 배정되는 담당 매니저와의 정기상담은 동기·멘탈 관리와 진로상담을 주환이의 현재 단계에 맞춰 이어가는 과정입니다. ‘같은 24시간과 한 시간의 가치’에서 출발해 진로와 목표를 구체화하고, 이해 → 계획 → 실행 → 점검의 순서로 다음 행동을 주환이 스스로 선택하도록 돕습니다.",
         "bullets": [
-          "시간 사용과 공부 이유를 주환이의 말로 정리",
+          "현재 실력과 도움의 필요를 객관적으로 설명",
           "직업·학과 후보를 실제 정보로 탐색",
-          "선택한 목표를 이번 주 행동과 연결"
+          "장기 목표를 이번 달·이번 주 행동으로 연결",
+          "남길 사교육과 혼자 할 공부의 이유를 직접 선택"
         ]
       },
       {
         "tag": "관리 Training",
         "title": "상담에서 정한 선택을 매일의 완수 습관으로 만들기",
-        "body": "START CHECK에서 오늘의 계획을 확인하고, SELF STUDY에서 스스로 공부한 뒤, DAILY CHECK의 역질문·자기설명과 ENDING CHECK로 하루를 닫습니다. 계획 시간과 실제 시간을 비교해 ‘시키면 하는 공부’를 ‘내가 계획하고 끝내는 공부’로 바꿉니다.",
+        "body": "등원 후 문진상담으로 컨디션과 과제를 확인하고, 계획서를 작성한 뒤 학습실에서 자기주도학습을 진행합니다. 중간 학습 확인과 마무리 점검에서는 계획 시간과 실제 시간을 비교하고, 그날 배운 내용을 질문받아 자기 말로 설명합니다. 이렇게 ‘시키면 하는 공부’를 ‘내가 계획하고 끝내는 공부’로 바꾸도록 돕습니다.",
         "bullets": [
+          "문진상담 → 계획서 작성 → 자기주도학습",
           "휴식·운동·과제·자기 복습 타임블록",
           "수업 당일 3줄 정리와 무자료 설명",
-          "계획-실행 차이와 누적 회독 점검"
+          "데일리체크 → 미달성 보완 계획 → 마무리 공유"
         ]
       },
       {
         "tag": "개별지도 Tutoring",
         "title": "한 과목부터 질문·설명·재풀이로 판단 과정을 교정하기",
-        "body": "개별지도는 설명을 오래 듣는 수업이 아니라 90분 동안 1:3 순환 방식으로 질문받고, 스스로 풀고, 자기 말로 설명하는 수업입니다. 주환이에게는 한 과목부터 시작해 확인된 기능을 집중 교정하고, 4주 결과물로 유지·변경·종료를 판단하는 방식을 추천합니다.",
+        "body": "과목별 개별지도는 튜터링 매니저가 학습 전략과 계획을 설계하고, 과목별 튜터가 질문 중심으로 진행하는 90분 1:3 순환 수업입니다. 개념 안내 뒤에는 학생이 직접 생각하고 설명하는 시간을 충분히 두어, 배운 내용을 혼자 재현하는 힘을 키웁니다. 주환이에게는 한 과목부터 확인된 기능을 집중 교정하는 구성을 추천합니다.",
         "bullets": [
           "국어: 문맥·표현 효과 근거 설명",
           "수학: 조건 수식화와 풀이 절차 설명",
@@ -1116,7 +1186,7 @@ const REPORT_DATA = {
       "level": 3,
       "grade": "보통",
       "stars": 3,
-      "detail": "혼자 하는 힘과 외부 도움 활용이 모두 보통입니다. 관리자는 답을 정해 주기보다 선택지를 좁혀 주고 학생이 최종 선택과 완료 책임을 갖게 합니다."
+      "detail": "혼자 하는 힘과 외부 도움 활용이 모두 보통입니다. 정기상담에서는 도움받을 부분과 혼자 해낼 부분을 주환이가 직접 구분하고, 관리에서는 그 선택이 실제 계획과 완료 결과로 이어지도록 도움을 받을 수 있습니다."
     },
     {
       "name": "CHAMP 학습법",
@@ -1145,7 +1215,7 @@ const REPORT_DATA = {
   ],
   "type": {
     "title": "메인 TYPE 4. 꼭두각시 × 히든 TYPE 3. 학원키즈 — 외부 구조를 자기 공부로 전환할 시점",
-    "desc": "메인 TYPE 4는 학습 목표와 방법의 소유권이 학생보다 외부에 놓일 가능성을, 히든 TYPE 3은 수업·학원 일정에 맞춘 공부가 독립적인 자기 학습으로 충분히 내재화되지 않을 가능성을 보여주는 검사 가설입니다. 주환이는 성취 목표가 보이면 빠르게 움직이고 정해진 방식을 비교적 꾸준히 유지할 힘이 있어, 외부 구조 안의 수행 자체는 안정적으로 보일 수 있습니다. 문제는 익숙한 절차를 성실하게 반복하는 것이 곧 깊은 이해와 독립 전이를 뜻하지는 않는다는 점입니다. 낮은 학습계획과 이해-사고-정리-기억의 누수는 이 구분이 필요함을 보여줍니다. 반면 강한 시험 불안·관계 순응·부모 통제를 현재 사실로 단정할 근거는 없습니다. 에듀플렉스는 외부 구조를 갑자기 제거하지 않고, 학생 선택·독립 재현·전략 전환·완료 책임을 단계적으로 늘려 실제 작동 방식을 확인해야 합니다.",
+    "desc": "메인 TYPE 4는 학습 목표와 방법의 소유권이 학생보다 외부에 놓일 가능성을, 히든 TYPE 3은 수업·학원 일정에 맞춘 공부가 독립적인 자기 학습으로 충분히 내재화되지 않을 가능성을 보여주는 검사 가설입니다. 주환이는 성취 목표가 보이면 빠르게 움직이고 정해진 방식을 비교적 꾸준히 유지할 힘이 있어, 정해진 구조 안의 수행은 안정적으로 보일 수 있습니다. 다만 익숙한 절차를 성실하게 반복하는 것이 곧 깊은 이해와 독립 전이를 뜻하지는 않습니다. 낮은 학습계획과 이해-사고-정리-기억의 누수는 수업을 더 추가하기보다 배운 뒤 혼자 익힐 시간을 먼저 확보해야 한다는 점을 보여줍니다. 국어·영어는 도움받을 부분과 혼자 할 부분을 나누어 단계적으로 사교육을 덜어내고, 확보한 시간에는 자기 설명·재풀이와 수학·과학·사회 학습을 채우는 방향을 추천합니다. 에듀플렉스에서는 상담으로 선택의 이유를 세우고 관리로 계획과 완수를 훈련하며, 필요한 과목 기능은 개별지도로 보완할 수 있습니다.",
     "insights": [
       {
         "label": "메인 TYPE 4의 작동",
@@ -1160,8 +1230,8 @@ const REPORT_DATA = {
         "body": "성취 목표가 보이면 빠르게 참여하고 정해진 방식도 꾸준히 유지할 수 있어 외부 구조 안에서는 안정적으로 보일 수 있습니다. 다만 익숙한 방식의 반복이 독립 이해와 전이로 이어졌는지는 별도로 확인해야 합니다."
       },
       {
-        "label": "상담·관리 연결",
-        "body": "상담에서는 2~3개의 선택지 안에서 주환이가 우선순위와 완료 기준을 직접 고르게 합니다. 관리에서는 공통 루틴을 유지하되 매주 한 문항을 다른 풀이·근거·변형 문제로 바꾸고, 기존 방법과 새 방법의 차이를 설명하게 합니다."
+        "label": "시간의 주도권을 되찾는 도움",
+        "body": "정기상담은 현재 실력과 필요한 도움을 객관화한 뒤, 진로·장기 목표·이번 주 행동을 연결하고 사교육 선택의 이유를 주환이가 직접 말하도록 돕습니다. 관리는 그 선택을 계획서·자기주도학습·데일리체크·마무리 점검으로 반복해, 남이 짜준 일정이 아니라 자기 계획으로 하루를 끝내는 경험을 쌓게 합니다."
       }
     ],
     "pros": [
@@ -1330,13 +1400,13 @@ const REPORT_DATA = {
       "body": "국어·영어의 자기학습 가능성은 높지만, 국어 표현 해석·영어 문법과 자료 판독·수학 조건 수식화처럼 정확히 교정할 기능이 남아 있습니다. 개별지도에서는 답을 설명해주는 데 그치지 않고 역질문·자기설명·변형 문제로 판단 과정을 확인하고 수정합니다."
     }
   ],
-  "observation": "주환이는 질문을 받으면 충분히 고민하고 수치와 근거를 사용해 답했습니다. 특히 원장이 누구에게나 같은 24시간과 한 시간의 미래 가치를 연결하자, 주환이는 숙제 시간과 남은 시간을 직접 구분해보겠다는 생각을 밝혔습니다. 앞으로는 ‘얼마나 오래 앉아 있었는가’보다 배운 뒤 혼자 설명·재풀이한 시간, 수업 당일 누적한 회독, 오답 원인을 분류한 결과물을 봐야 합니다. 부모는 점수만 확인하기보다 주환이가 시간을 직접 선택하고 계획을 닫아가는 과정을 구체적으로 인정해주는 것이 좋습니다.",
+  "observation": "주환이는 질문을 받으면 충분히 고민하고 수치와 근거를 사용해 답했습니다. 누구에게나 같은 24시간이 주어지고 지금의 선택이 미래의 한 시간 가치를 만든다는 이야기를 나눈 뒤, 숙제에 쓰는 시간과 스스로 활용할 시간을 직접 구분해보겠다는 생각을 밝혔습니다. 앞으로는 ‘얼마나 오래 앉아 있었는가’보다 배운 뒤 혼자 설명·재풀이한 시간, 수업 당일 누적한 회독, 오답 원인을 분류한 결과물을 보는 것이 중요합니다. 부모님께서는 점수만 확인하기보다 주환이가 시간을 직접 선택하고 계획을 닫아가는 과정을 구체적으로 인정해주는 것이 좋습니다.",
   "roadmap": [
     {
       "when": "상담 직후~4주",
       "title": "시간 사용을 학생이 직접 다시 나누기",
       "program": "상담 + 관리",
-      "body": "원장 해석상담에서 주환이가 이해한 ‘같은 24시간과 한 시간의 가치’를 실제 하루 운영으로 옮깁니다. 휴식·운동을 먼저 정한 뒤 과제·자기 복습·사회·역사 누적 시간을 배치합니다.",
+      "body": "해석상담에서 함께 정리한 ‘같은 24시간과 한 시간의 가치’를 실제 하루 운영으로 옮깁니다. 휴식·운동을 먼저 정한 뒤 과제·자기 복습·사회·역사 누적 시간을 배치합니다.",
       "items": [
         "하루 휴식·운동 시간 먼저 확정",
         "배운 뒤 20~40분 무자료 재설명·재풀이",
@@ -1349,14 +1419,14 @@ const REPORT_DATA = {
       "when": "졸업고사 후",
       "title": "국어·영어부터 단계적 사교육 다이어트",
       "program": "상담 + 관리",
-      "body": "자기학습 가능성이 높은 국어·영어부터 한 과목씩 스스로 운영해보고, 확보한 시간을 수학·과학·사회에 재배치합니다. 한꺼번에 줄이지 않고 독립 수행 결과를 확인하며 단계적으로 전환합니다.",
+      "body": "자기학습 가능성이 높은 국어·영어부터 도움받을 부분과 혼자 해낼 부분을 나눕니다. 한 과목씩 스스로 운영해 확보한 시간은 수업 내용을 익히는 복습과 수학·과학·사회에 재배치합니다. 이는 학원을 무조건 줄이기 위한 선택이 아니라, 고등학교에서 필요한 시행착오와 독립 학습 시간을 실제로 확보하기 위한 단계적 전환입니다.",
       "items": [
         "과목별 도움받을 부분과 혼자 할 부분 구분",
         "배운 시간 대비 자기 복습 시간",
         "최근 시험 오답과 독립 재풀이",
         "사회·역사 누적 회독 변화"
       ],
-      "why": "원장은 국어·영어는 스스로 운영할 가능성이 높다고 보았고, 사교육을 즉시 끊기보다 졸업고사 뒤부터 단계적으로 줄이며 자기주도 시간을 확보하도록 권했습니다."
+      "why": "국어·영어는 현재 기반을 바탕으로 스스로 운영할 가능성이 높습니다. 사교육을 즉시 끊는 대신 졸업고사 뒤부터 과목별 필요를 다시 판단하고, 독립 설명·재풀이 결과가 유지되는 범위에서 단계적으로 조정해 자기주도 시간을 확보하도록 권합니다."
     },
     {
       "when": "10월~11월 검토",
@@ -1373,10 +1443,10 @@ const REPORT_DATA = {
     }
   ],
   "agreements": [
-    "<b>주환이의 인식 변화</b> 원장은 ‘시간은 금’이라는 말에서 출발해 누구에게나 같은 24시간과 한 시간의 미래 가치를 연결했습니다. 주환이는 쉬는 시간과 공부 시간을 남는 대로 쓰기보다 직접 구분해보겠다는 생각을 밝혔습니다.",
-    "<b>원장이 짚은 핵심</b> 수업에 성실히 참여한 것과 배운 내용을 혼자 익힌 것은 다릅니다. 고등학교에서는 배운 뒤 자기 설명·재풀이·회상에 더 많은 시간을 써야 성취가 누적됩니다.",
+    "<b>주환이의 인식 변화</b> ‘시간은 금’이라는 말에서 출발해 누구에게나 같은 24시간이 주어지고, 지금의 시간 선택이 미래의 한 시간 가치를 만든다는 점을 함께 생각했습니다. 주환이는 쉬는 시간과 공부 시간을 남는 대로 쓰기보다 직접 구분해보겠다는 생각을 밝혔습니다.",
+    "<b>상담에서 짚은 핵심</b> 수업에 성실히 참여한 것과 배운 내용을 혼자 익힌 것은 다릅니다. 고등학교에서는 배운 뒤 자기 설명·재풀이·회상에 더 많은 시간을 써야 성취가 누적됩니다.",
     "<b>사교육 다이어트 방향</b> 국어·영어는 현재 기반을 바탕으로 스스로 운영할 가능성이 높습니다. 졸업고사 뒤 한 과목씩 자기학습으로 전환해 확보한 시간을 수학·과학·사회에 재배치하는 방향을 권했습니다.",
-    "<b>원장 권고</b> 주환이에게는 시간을 대신 채워주는 수업보다, 상담으로 이유와 선택을 세우고 관리로 실행을 습관화하며 개별지도로 필요한 기능만 집중 교정하는 구성이 적합합니다.",
+    "<b>해석상담 권고</b> 주환이에게는 시간을 대신 채워주는 수업보다, 상담으로 이유와 선택을 세우고 관리로 실행을 습관화하며 개별지도로 필요한 기능만 집중 교정하는 구성이 적합합니다.",
     "<b>결정 상태</b> 등록·과목·횟수·시작일은 아직 확정하지 않았습니다. 프로그램이 확정되면 운영 구성에 맞춰 담당 매니저를 배정합니다."
   ],
   "decisions": [
@@ -1416,7 +1486,7 @@ const REPORT_DATA = {
       "body": "추천된 한 과목 개별지도와 예비고1 세미나를 경험한 뒤 상담·관리의 구성을 가족과 협의해 결정합니다.",
       "options": [
         {
-          "t": "원장 제안",
+          "t": "해석상담 제안",
           "d": "한 과목 개별지도 → 세미나 → 상담·관리 검토의 순서로 접근합니다."
         },
         {
@@ -1542,8 +1612,9 @@ const REPORT_DATA = {
         <span class="summary-metric-score">${score}</span>
       </div>`;
     }).join("");
+    const hierarchy = (s.hierarchy || []).length ? `<div class="summary-hierarchy">${s.hierarchy.map(h=>`<div class="summary-hierarchy-row"><span class="summary-hierarchy-major"><small>대분류</small>${h.major}</span><span class="summary-hierarchy-middle"><small>중분류</small>${h.middle}</span><span class="summary-hierarchy-minor"><small>소분류</small>${h.minor}</span></div>`).join("")}</div>` : "";
     const chart = metrics ? `<div class="summary-metrics">${metrics}<div class="summary-axis"><span></span><span class="summary-axis-scale"><span>-50</span><span>0</span><span>+50</span></span><span></span></div></div>` : "";
-    return `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p>${chart}</div>`;
+    return `<div class="sumcard${s.full?" full":""}"><div class="t">${s.title}</div><p>${s.body}</p>${hierarchy}${chart}</div>`;
   }).join("");
   D.expertise ? $("expertise-box").innerHTML = `<b>${D.expertise.title}</b>${D.expertise.body}` : $("expertise-box").remove();
 
@@ -1608,6 +1679,7 @@ const REPORT_DATA = {
 
   // 프로그램 구조
   $("program-lead").textContent = D.program?.lead || "";
+  $("counseling-flow").innerHTML = (D.program?.counselingFlow || []).map(f => `<article class="counseling-step"><span class="step-no">STEP ${f.step}</span><span class="step-category">${f.category}</span><h4>${f.title}</h4><p>${f.body}</p></article>`).join("");
   $("program-cards").innerHTML = (D.program?.cards || []).map(c =>
     `<div class="program-card"><span class="tag">${c.tag}</span><div class="program-title">${c.title}</div>
       <p>${c.body}</p>${c.bullets?.length ? `<ul>${c.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>` : ""}</div>`).join("");
