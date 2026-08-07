@@ -48,9 +48,16 @@
   .mbti-links{grid-template-columns:repeat(2,1fr)}
   .apt-link{display:block;border-radius:7px;padding:7px 5px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:800;background:#edf4fb;color:#2f6fb1;border:1px solid #d8e7f5}
   .apt-link:hover{background:#dcebf8}
+  .growth-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .growth-card{display:grid;gap:12px;background:linear-gradient(145deg,#fff,#f4f9fb);border:1px solid #cfe0e8;border-radius:12px;padding:17px;box-shadow:0 3px 10px rgba(22,68,87,.06)}
+  .growth-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#647987;font-size:11.5px}
+  .growth-meta strong{color:#22536b;font-size:15px}
+  .growth-summary{color:#506675;font-size:12.5px}
+  .growth-link{display:block;border-radius:8px;padding:9px 11px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:800;background:#176f82;color:#fff}
+  .growth-link:hover{background:#0f5a6b}
   .apt-empty{grid-column:1/-1;background:#fff;border-radius:10px;padding:20px;text-align:center;color:#6b7c8c}
-  @media(max-width:800px){.apt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.section-note{text-align:left}}
-  @media(max-width:520px){body{padding:24px 14px}.apt-grid{grid-template-columns:1fr}}
+  @media(max-width:800px){.apt-grid,.growth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.section-note{text-align:left}}
+  @media(max-width:520px){body{padding:24px 14px}.apt-grid,.growth-grid{grid-template-columns:1fr}}
   footer{margin-top:24px;font-size:12px;color:#5a6b7b;text-align:center}
 </style>
 </head>
@@ -58,7 +65,7 @@
 <div class="wrap">
   <div class="warn">⚠️ 이 페이지는 원장·매니저 전용입니다. 링크를 학부모나 외부에 공유하지 마세요. 학부모께는 아래 표의 "학부모 전달 링크" 열만 카카오톡 등으로 개별 전달합니다. "매니저용 기록지"는 내부 운영용입니다.</div>
   <h1>에듀플렉스 길음점 — 초기상담 결과지 배포 현황</h1>
-  <div class="sub">마지막 갱신: 2026-08-03</div>
+  <div class="sub">마지막 갱신: 2026-08-07</div>
   <div class="table-scroll">
   <table>
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
@@ -272,6 +279,16 @@
     </div>
     <div class="apt-grid" id="mbti-links"></div>
   </section>
+  <section class="apt-section" aria-labelledby="growth-history-title">
+    <div class="section-head">
+      <div>
+        <h2 id="growth-history-title">성장 히스토리 분석</h2>
+        <div class="sub" style="margin-bottom:0">상담·관리·개별지도 이력을 성장 단계와 후속 실행 기준으로 연결한 내부 분석자료입니다.</div>
+      </div>
+      <div class="section-note">내부 운영용 · 외부 공유 금지</div>
+    </div>
+    <div class="growth-grid" id="growth-history-links"></div>
+  </section>
   <footer>새 학생 결과지·매니저 기록지·후속상담 세션이 배포되면 이 목록과 `결과지\배포_기록.md`를 함께 갱신합니다.</footer>
 </div>
 <script>
@@ -284,6 +301,17 @@
         { date: "2026.07.30", title: "원장 면담 · 생활 루틴", href: "../vfhckbjz/" },
         { date: "2026.08.03", title: "원장 면담 · 스마트폰·기상·등원 실행 리셋", href: "../c5c0075e/" }
       ]
+    }
+  ];
+
+  // 학생별 에듀큐브 성장 히스토리 분석은 아래 목록에 추가합니다.
+  const growthHistoryReports = [
+    {
+      student: "이한송",
+      school: "월곡중2",
+      period: "2025.05.12~2026.08.07",
+      summary: "상담관리 60건 · 개별지도 182건 · 출결 227건을 성장 단계와 4·8·12주 실행 기준으로 연결",
+      href: "../05b26681/"
     }
   ];
 
@@ -372,6 +400,16 @@
         <a class="apt-link" href="${student}" target="_blank" rel="noopener noreferrer">학생</a>
         <a class="apt-link" href="${parent}" target="_blank" rel="noopener noreferrer">학부모</a>
       </div>
+    </article>
+  `).join("");
+
+  const growthHistoryLinks = document.getElementById("growth-history-links");
+  growthHistoryLinks.innerHTML = growthHistoryReports.map(({ student, school, period, summary, href }) => `
+    <article class="growth-card">
+      <div class="growth-meta"><strong>${student}</strong><span>${school}</span></div>
+      <div class="growth-summary">${summary}</div>
+      <div class="growth-meta"><span>분석 기간</span><span>${period}</span></div>
+      <a class="growth-link" href="${href}">성장 히스토리 열기</a>
     </article>
   `).join("");
 </script>
