@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#173f5f">
+  <title>예현 학생 학습 지속 상담 플로우 · 내부 운영용</title>
+  <style>
+    :root{
+      --ink:#17212b;--muted:#60717e;--line:#d8e3e8;--paper:#fff;--bg:#f2f5f7;
+      --navy:#173f5f;--teal:#167d77;--teal-soft:#e8f5f3;--blue:#376d9e;
+      --blue-soft:#eaf2fa;--amber:#9a650f;--amber-soft:#fff4dc;--red:#963f49;
+      --red-soft:#fff0f1;--shadow:0 12px 36px rgba(23,63,95,.09);--radius:18px
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.62}
+    button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1180px;margin:auto;padding:22px}
+    .hero{position:relative;overflow:hidden;padding:34px;border-radius:26px;background:linear-gradient(135deg,#12344f,#176a6c 72%,#218b7b);color:#fff;box-shadow:var(--shadow)}
+    .hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-90px;top:-150px;background:rgba(255,255,255,.1)}
+    .eyebrow{font-size:.8rem;font-weight:900;letter-spacing:.08em}.hero h1{margin:9px 0 8px;font-size:clamp(1.85rem,4vw,3rem);line-height:1.17;letter-spacing:-.04em}
+    .hero p{max-width:850px;margin:0;color:#e8f5f4}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.meta span{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);font-size:.83rem}
+    .guardrail{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:center;margin-top:14px;padding:17px 19px;border:1px solid #bcdad6;border-radius:16px;background:var(--teal-soft)}
+    .guardrail b{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--teal);color:#fff;font-size:1.1rem}.guardrail strong{display:block;color:#195450}.guardrail p{margin:2px 0 0;color:#426d69;font-size:.89rem}
+    .tabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;overflow:auto;margin:16px 0;padding:7px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);box-shadow:0 7px 22px rgba(23,63,95,.07)}
+    .tab{white-space:nowrap;border:0;border-radius:10px;background:transparent;color:var(--muted);padding:10px 14px;font-weight:900}.tab[aria-selected="true"]{background:var(--navy);color:#fff}
+    .panel{display:none}.panel.active{display:block}.head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:27px 2px 13px}.head h2{margin:0;color:var(--navy);font-size:1.48rem;letter-spacing:-.025em}.head p{margin:0;color:var(--muted);font-size:.89rem}
+    .grid{display:grid;gap:13px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.card{padding:19px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:0 7px 24px rgba(23,63,95,.05)}.card h3{margin:0 0 7px;color:var(--navy);font-size:1.04rem}.card p{margin:0;color:var(--muted)}
+    .metric strong{display:block;color:var(--teal);font-size:1.65rem}.metric span{display:block;color:var(--muted);font-size:.88rem}.badge{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:.73rem;font-weight:900}.fact{background:var(--teal-soft);color:#116a65}.report{background:var(--blue-soft);color:#315f8c}.hypothesis{background:var(--amber-soft);color:#80520d}.pending{background:var(--red-soft);color:#813741}
+    .status-table,.tracker{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.status-table th,.status-table td,.tracker th,.tracker td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:.87rem}.status-table th,.tracker th{background:#edf3f6;color:var(--navy);font-weight:900}.status-table tr:last-child td,.tracker tr:last-child td{border-bottom:0}
+    .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;counter-reset:flow}.flow>div{position:relative;min-height:128px;padding:14px 11px;border:1px solid var(--line);border-radius:14px;background:#fff}.flow>div:before{counter-increment:flow;content:counter(flow);display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:var(--navy);color:#fff;font-size:.75rem;font-weight:900}.flow>div:not(:last-child):after{content:"›";position:absolute;right:-10px;top:42%;z-index:2;color:var(--teal);font-size:1.5rem}.flow strong{display:block;margin:8px 0 3px;color:var(--navy);font-size:.9rem}.flow span{display:block;color:var(--muted);font-size:.78rem}
+    .phase{position:relative;padding-left:63px}.phase .n{position:absolute;left:0;top:0;display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--teal);color:#fff;font-weight:900}.phase h3{margin:0}.phase p{margin:3px 0 0}.script{padding:15px;border-radius:12px;background:#f0f8f7;color:#214e4b;font-weight:700;white-space:pre-line}.avoid{padding:13px;border-radius:12px;background:var(--red-soft);color:#74333a}.notice{padding:12px 14px;border-radius:12px;background:var(--amber-soft);color:#6d4c15;font-size:.88rem}
+    .question-list{margin:8px 0 0;padding-left:20px;color:var(--muted)}.question-list li{margin:7px 0}.choice{border-top:4px solid var(--teal)}.choice.warn{border-top-color:var(--amber)}.choice.stop{border-top-color:var(--red)}.choice ul{margin:9px 0 0;padding-left:20px;color:var(--muted)}
+    .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.btn{padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);font-weight:900}.btn.primary{border-color:var(--teal);background:var(--teal);color:#fff}
+    .tracker-wrap{overflow:auto}.tracker{min-width:1120px}.tracker input,.tracker select{width:100%;padding:6px;border:1px solid #d4dfe5;border-radius:7px}.tracker input[type="checkbox"]{width:18px;height:18px;accent-color:var(--teal)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field.full{grid-column:1/-1}.field label{display:block;margin-bottom:4px;color:var(--navy);font-size:.84rem;font-weight:900}.field input,.field textarea,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}.field textarea{min-height:92px;resize:vertical}.summary{margin-top:12px;padding:15px;border:1px solid #b7d8d4;border-radius:13px;background:var(--teal-soft);color:#214e4b;white-space:pre-wrap}.toast{position:fixed;right:20px;bottom:20px;z-index:50;padding:10px 14px;border-radius:10px;background:#17374d;color:#fff;opacity:0;transform:translateY(8px);transition:.2s}.toast.show{opacity:1;transform:none}.foot{text-align:center;margin:22px 0 6px;color:var(--muted);font-size:.76rem}
+    .admin-link{display:inline-flex;position:relative;z-index:2;margin-top:16px;padding:8px 12px;border-radius:10px;background:#fff;color:var(--navy);text-decoration:none;font-size:.83rem;font-weight:900}
+    @media(max-width:900px){.grid.two,.grid.three,.form-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow>div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-18px}.card{padding:16px}}
+    @media(max-width:600px){.shell{padding:11px}.hero{padding:23px 18px}.head{display:block}.head p{margin-top:4px}}
+    @media print{body{background:#fff}.shell{max-width:none;padding:0}.hero{box-shadow:none;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.tabs,.btns,.toast,.admin-link{display:none!important}.panel{display:block!important;break-before:page}.panel:first-of-type{break-before:auto}.card,.guardrail{box-shadow:none;break-inside:avoid}.tracker-wrap{overflow:visible}.tracker{min-width:0}th,td{font-size:7.5pt!important;padding:4px!important}.foot{display:none}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div class="eyebrow">INTERNAL · 학습 지속 의사결정 상담</div>
+    <h1>예현 학생 학습 지속 상담 플로우</h1>
+    <p>오전 기상·등원 약속을 지키지 못한 부담과 부모님에 대한 미안함이 “혼자 해보겠다”는 급한 중단 결정으로 이어졌는지 확인하고, 남은 입시 기간을 실제로 지킬 수 있는 선택과 점검 구조를 함께 정합니다.</p>
+    <div class="meta"><span>작성일 2026.08.11</span><span>진행 담당 매니저</span><span>학생 1:1 면담</span><span>내부 운영용</span></div>
+    <a class="admin-link" href="../admin-4ck2v7p3/">관리자 목록으로</a>
+  </header>
+
+  <div class="guardrail"><b>원칙</b><div><strong>감정은 수용하고, 결정은 행동 자료로 검증한다.</strong><p>계속 다니게 만드는 것이 상담의 목표가 아닙니다. 남는 선택과 떠나는 선택의 이익·비용을 예현 학생이 자기 말로 비교하고, “혼자 한다”는 계획이 실행 가능한지 짧고 공정한 기준으로 확인합니다.</p></div></div>
+
+  <nav class="tabs" aria-label="상담 플로우 메뉴">
+    <button class="tab" data-tab="brief" aria-selected="true">1. 상담 핵심</button>
+    <button class="tab" data-tab="flow" aria-selected="false">2. 실전 진행</button>
+    <button class="tab" data-tab="scripts" aria-selected="false">3. 질문·대화</button>
+    <button class="tab" data-tab="decision" aria-selected="false">4. 선택지 비교</button>
+    <button class="tab" data-tab="trial" aria-selected="false">5. 14일 검증</button>
+    <button class="tab" data-tab="handoff" aria-selected="false">6. 합의·인계</button>
+  </nav>
+
+  <section id="brief" class="panel active">
+    <div class="head"><div><h2>상담 전에 공유할 한 문장</h2><p>담당 매니저가 설득자나 심판이 아니라 공동 점검자의 위치를 잡습니다.</p></div></div>
+    <article class="card"><div class="script" id="openingScript">“예현아, 오늘은 네가 그만두면 안 된다고 밀어붙이려는 자리가 아니야. 네가 혼자 해보겠다는 선택이 정말 공부를 더 잘하기 위한 방법인지, 아니면 약속을 못 지킨 부담에서 잠깐 벗어나기 위한 방법인지 같이 확인하려고 해. 어느 쪽이든 네 마음은 충분히 듣고, 결정은 실행할 수 있는 계획으로 정하자.”</div><div class="btns"><button class="btn primary" data-copy="#openingScript">오프닝 복사</button></div></article>
+
+    <div class="grid three" style="margin-top:13px">
+      <article class="card metric"><strong>핵심 감정</strong><span>오전 약속 미이행에 대한 부담·미안함·실패감 가능성</span></article>
+      <article class="card metric"><strong>핵심 질문</strong><span>더 잘하기 위한 선택인가, 마음이 덜 불편해지는 선택인가</span></article>
+      <article class="card metric"><strong>상담 산출물</strong><span>7~14일 계획, 증빙, 점검일, 복귀·조정 조건</span></article>
+    </div>
+
+    <div class="head"><div><h2>확인된 내용과 아직 확인할 내용</h2></div></div>
+    <div class="tracker-wrap"><table class="status-table"><thead><tr><th>내용</th><th>현재 지위</th><th>상담 처리</th></tr></thead><tbody>
+      <tr><td>오전에 잘 일어나지 못하는 문제로 예현 학생이 부담을 느끼는 것으로 보임</td><td><span class="badge report">보호자 전달</span></td><td>예현 학생의 직접 표현과 실제 빈도·조건을 확인</td></tr>
+      <tr><td>어머니께 미안하고 비용이 많이 드는 것 같다고 말함</td><td><span class="badge report">보호자 전달</span></td><td>비용을 논박하지 말고, 미안함이 결정에 미치는 영향을 확인</td></tr>
+      <tr><td>혼자 공부해 보겠다는 의사를 표현함</td><td><span class="badge fact">학생 의사</span></td><td>‘혼자 공부’의 장소·시간·과목·점검 방법을 구체화</td></tr>
+      <tr><td>비용은 핑계이고 약속 실패를 피하려는 결정일 수 있음</td><td><span class="badge hypothesis">상담 가설</span></td><td>단정하지 않고 학생의 이익·손실 비교와 행동 계획으로 검증</td></tr>
+      <tr><td>에듀플렉스 중단이 학습에 더 유리한지 여부</td><td><span class="badge pending">미결정</span></td><td>최근 성과, 남은 기간, 혼자 할 때의 점검 장치를 함께 비교</td></tr>
+      <tr><td>지속·단기 실험·중단 중 최종 선택</td><td><span class="badge pending">면담 결정</span></td><td>학생이 선택하되 검증일과 실패 시 대응까지 함께 합의</td></tr>
+    </tbody></table></div>
+
+    <div class="head"><div><h2>상담에서 피할 압박</h2></div></div>
+    <div class="grid two">
+      <article class="card"><h3>쓰지 않을 표현</h3><div class="avoid">“비겁하다”, “헛소리다”, “불효다”, “돈이 아깝다”, “고3이 한가한 소리를 한다”, “혼자서는 절대 못 한다”</div></article>
+      <article class="card"><h3>바꿔 말할 기준</h3><p>“지금의 부담을 줄이는 선택인지, 성과를 높이는 선택인지 구분하자.” “혼자 하겠다는 계획을 믿지 않는 게 아니라, 네가 잘되도록 확인 방법까지 함께 만들자.”</p></article>
+    </div>
+  </section>
+
+  <section id="flow" class="panel">
+    <div class="head"><div><h2>25~35분 실전 상담 순서</h2><p>감정을 충분히 듣되, 결론 없는 설득전으로 늘어지지 않게 단계마다 산출물을 남깁니다.</p></div></div>
+    <div class="flow">
+      <div><strong>관계 열기</strong><span>결정을 막으려는 자리가 아님을 알리고 발언권을 학생에게 줌</span></div>
+      <div><strong>감정 이름 붙이기</strong><span>미안함·부담·실망·통제받는 느낌 중 실제 감정을 학생 말로 확인</span></div>
+      <div><strong>사건 복기</strong><span>전날 밤→기상→등원→결심까지의 순서를 평가 없이 재구성</span></div>
+      <div><strong>목적 구분</strong><span>공부 성과를 높이려는 선택과 불편한 감정을 피하려는 선택을 비교</span></div>
+      <div><strong>선택 설계</strong><span>지속·단기 독립 실험·중단 후 점검 중 하나를 실행 계획으로 구체화</span></div>
+      <div><strong>검증 약속</strong><span>증빙·연락·점검일·기준 미달 시 다음 행동을 문장으로 확정</span></div>
+    </div>
+
+    <div class="grid two" style="margin-top:14px">
+      <article class="card phase"><span class="n">1</span><h3>0~5분 · 먼저 다 듣기</h3><p>“왜 그만두고 싶은지 처음부터 네 말로 말해줘. 내가 중간에 반박하지 않고 먼저 들을게.” 요약한 뒤 “내가 이해한 게 맞아?”로 확인합니다.</p></article>
+      <article class="card phase"><span class="n">2</span><h3>5~10분 · 죄책감과 비용 분리</h3><p>부모님께 미안한 마음, 비용 부담, 오전 약속 실패, 프로그램 자체의 불만을 서로 다른 항목으로 나눕니다. 하나의 이유로 뭉뚱그리지 않습니다.</p></article>
+      <article class="card phase"><span class="n">3</span><h3>10~17분 · 혼자 공부의 실체 확인</h3><p>기상 목표가 아니라 실제 첫 공부 시작 시각, 장소, 과목 순서, 하루 산출물, 흔들렸을 때 점검받을 사람을 묻습니다.</p></article>
+      <article class="card phase"><span class="n">4</span><h3>17~23분 · 두 선택의 대가 비교</h3><p>에듀플렉스를 유지할 때 감수할 불편과 얻는 도움, 혼자 할 때 얻는 편안함과 포기하는 점검을 학생이 직접 적게 합니다.</p></article>
+      <article class="card phase"><span class="n">5</span><h3>23~30분 · 가장 작은 실행 합의</h3><p>유지한다면 오전 실패를 이유로 하루 전체를 버리지 않는 등원 규칙을, 혼자 한다면 7~14일간 같은 지표를 제출하는 규칙을 정합니다.</p></article>
+      <article class="card phase"><span class="n">6</span><h3>마지막 3분 · 관계 보존</h3><p>선택이 달라도 담당 매니저와의 관계가 끊기는 것은 아님을 알리고, 정해진 점검일에 평가가 아니라 결과를 함께 보기로 마칩니다.</p></article>
+    </div>
+  </section>
+
+  <section id="scripts" class="panel">
+    <div class="head"><div><h2>단계별 질문과 권장 발화</h2><p>질문은 한 번에 하나씩, 답을 유도하지 않고 실제 장면을 묻습니다.</p></div></div>
+    <div class="grid two">
+      <article class="card"><h3>1. 마음 확인</h3><ul class="question-list"><li>그만두고 싶다는 생각은 정확히 언제부터 커졌어?</li><li>오전에 못 일어난 날, 네가 너 자신에게 가장 많이 한 말은 뭐였어?</li><li>엄마에게 미안한 마음과 혼자 공부하고 싶은 마음 중 어느 쪽이 더 커?</li></ul><div class="script" id="emotionScript">“약속을 못 지킨 날이 쌓이면서 혼나서가 아니라, 네가 너 자신에게 실망한 느낌이 커진 것 같아. 내가 잘못 이해했다면 바로 고쳐줘.”</div><div class="btns"><button class="btn" data-copy="#emotionScript">발화 복사</button></div></article>
+      <article class="card"><h3>2. 비용 이야기 다루기</h3><ul class="question-list"><li>비용이 걱정된다는 말은 부모님 부담이 걱정된다는 뜻이야, 아니면 결과를 못 내는 네가 미안하다는 뜻이야?</li><li>비용 문제가 사라져도 그만두고 싶은 마음은 그대로일까?</li></ul><div class="script" id="costScript">“비용을 생각해 주는 마음은 알겠어. 다만 비용 결정은 부모님의 역할이고, 네 역할은 어떤 환경에서 남은 기간을 가장 잘 보낼 수 있는지 솔직하게 말하는 거야. 미안함 때문에 필요한 도움까지 끊지는 말자.”</div><div class="btns"><button class="btn" data-copy="#costScript">발화 복사</button></div></article>
+      <article class="card"><h3>3. ‘혼자 한다’ 구체화</h3><ul class="question-list"><li>혼자는 어디에서, 몇 시에 시작한다는 뜻이야?</li><li>첫 7일 동안 어떤 과목의 무엇을 끝낼 거야?</li><li>계획을 못 지킨 날은 누구에게, 어떤 자료로 점검받을 거야?</li><li>혼자 하면 지금보다 나아졌다고 판단할 숫자나 결과는 뭐야?</li></ul><div class="script" id="soloScript">“혼자 하는 걸 반대해서 묻는 게 아니야. 정말 더 나은 방식이라면 장소·시작 시각·완료량·점검 방법까지 설명할 수 있어야 해. 그 네 가지를 같이 적어 보자.”</div><div class="btns"><button class="btn" data-copy="#soloScript">발화 복사</button></div></article>
+      <article class="card"><h3>4. 목적 구분 질문</h3><ul class="question-list"><li>이 선택을 하면 공부가 더 잘되는 점은 무엇이야?</li><li>이 선택을 하면 마음이 편해지는 점은 무엇이야?</li><li>둘 중 하나만 얻을 수 있다면 지금 더 필요한 것은 무엇이야?</li></ul><div class="script" id="purposeScript">“혼자 공부하면 부담은 줄 수 있어. 그런데 부담이 줄어드는 것과 공부가 더 잘되는 것은 같은 말이 아니야. 네가 원하는 게 어느 쪽인지 구분한 다음 결정하자.”</div><div class="btns"><button class="btn" data-copy="#purposeScript">발화 복사</button></div></article>
+      <article class="card"><h3>5. 오전 실패 재설계</h3><ul class="question-list"><li>오전에 못 왔을 때 하루 전체를 포기하지 않으려면 두 번째 출발 시각은 몇 시가 현실적이야?</li><li>늦게라도 도착한 날 첫 20분에는 무엇부터 할까?</li></ul><div class="script" id="morningScript">“오전에 못 일어난 것을 성공으로 보지는 않겠지만, 그 실패 때문에 그날 전체를 버리는 규칙도 만들지 말자. 1차 시각을 놓치면 2차 시각에 출발하고, 도착하면 첫 20분 과제를 바로 시작하는 방식으로 다시 연결하자.”</div><div class="btns"><button class="btn" data-copy="#morningScript">발화 복사</button></div></article>
+      <article class="card"><h3>6. 마무리</h3><ul class="question-list"><li>오늘 정한 것 중 네가 실제로 지킬 수 있다고 느끼는 부분은?</li><li>지키기 어려울 것 같은 한 가지는?</li><li>점검일에 어떤 결과가 나오면 계속하거나 돌아오겠어?</li></ul><div class="script" id="closeScript">“네 선택을 존중한다는 건 결과를 묻지 않는다는 뜻은 아니야. 오늘 정한 기간에는 같은 기준으로 해보고, 점검일에는 잘잘못이 아니라 실제로 공부가 더 나아졌는지를 같이 보자.”</div><div class="btns"><button class="btn" data-copy="#closeScript">발화 복사</button></div></article>
+    </div>
+  </section>
+
+  <section id="decision" class="panel">
+    <div class="head"><div><h2>학생과 함께 비교할 세 가지 선택</h2><p>선택지를 늘어놓는 데서 끝내지 않고 각 선택의 성공 기준과 다음 행동을 함께 정합니다.</p></div></div>
+    <div class="grid three">
+      <article class="card choice"><span class="badge fact">권장 1안</span><h3 style="margin-top:8px">유지하되 등원 구조 조정</h3><p>관리 관계는 유지하고, 오전 미이행이 곧 하루 전체 실패가 되지 않도록 1차·2차 등원 시각과 첫 과제를 정합니다.</p><ul><li>최소 7일간 기존 관리 유지</li><li>1차 기상·출발 실패 시 2차 출발 적용</li><li>도착 후 첫 20분 과제 고정</li><li>오전 실패 원인과 실제 학습량만 기록</li></ul></article>
+      <article class="card choice warn"><span class="badge hypothesis">조건부 2안</span><h3 style="margin-top:8px">7~14일 혼자 공부 실험</h3><p>학생의 선택을 존중하되 ‘혼자 한다’를 감정적 선언이 아니라 결과를 볼 수 있는 단기 실험으로 운영합니다.</p><ul><li>시작일·종료일 사전 확정</li><li>매일 시작 시각·완료량·산출물 기록</li><li>담당 매니저에게 정해진 횟수만 인증</li><li>기준 미달 시 즉시 재협의</li></ul></article>
+      <article class="card choice stop"><span class="badge pending">비권장 3안</span><h3 style="margin-top:8px">즉시 중단 후 무점검</h3><p>당장의 부담은 줄지만 중요한 시기의 학습 공백과 자기평가 왜곡을 확인할 장치가 없어 가장 위험한 선택입니다.</p><ul><li>마지막 상담 없이 짐만 정리</li><li>구체적 일일 계획 없음</li><li>제3자의 점검 없음</li><li>무너진 뒤 도움 요청 시점 불명확</li></ul></article>
+    </div>
+
+    <div class="head"><div><h2>선택 비교표</h2></div></div>
+    <div class="tracker-wrap"><table class="status-table"><thead><tr><th>비교 항목</th><th>유지·조정</th><th>단기 독립 실험</th><th>즉시 무점검 중단</th></tr></thead><tbody>
+      <tr><td>당장 마음의 부담</td><td>일부 남음</td><td>일시적으로 줄 수 있음</td><td>가장 빨리 줄 수 있음</td></tr>
+      <tr><td>학습 시작 외부 구조</td><td>있음</td><td>학생이 새로 만들어야 함</td><td>없음</td></tr>
+      <tr><td>약속 이행 점검</td><td>담당 매니저가 확인</td><td>정해진 인증과 점검일로 확인</td><td>확인 장치 없음</td></tr>
+      <tr><td>오전 실패 뒤 회복</td><td>2차 출발 규칙 적용</td><td>학생이 대체 규칙을 설계</td><td>하루 전체 중단 위험</td></tr>
+      <tr><td>남은 기간 보호</td><td>높음</td><td>기준을 지키면 가능</td><td>가장 불확실</td></tr>
+    </tbody></table></div>
+
+    <div class="head"><div><h2>결정 규칙</h2></div></div>
+    <article class="card"><div class="script">1. 예현 학생이 유지에 동의하면, 오전 실패를 비난하는 대신 ‘2차 출발→도착→첫 20분’의 회복 행동을 7일간 확인합니다.
+
+2. 독립 실험을 선택하면, 기간·장소·시작 시각·과목별 완료량·인증 횟수·복귀 조건이 모두 적힌 경우에만 실험으로 인정합니다.
+
+3. 계획을 쓰지 않거나 점검을 전혀 받지 않겠다는 선택은 ‘혼자 공부 계획’이 아니라 ‘도움 중단’으로 구분해 위험을 정확히 알립니다.
+
+4. 어느 선택이든 학생의 인격이나 효도를 평가하지 않고, 남은 기간의 학습 결과와 회복 가능성만 판단합니다.</div></article>
+  </section>
+
+  <section id="trial" class="panel">
+    <div class="head"><div><h2>14일 독립 학습 검증표</h2><p>독립 실험을 선택했을 때 사용합니다. 유지·조정안을 선택하면 같은 표를 등원 회복 기록으로 바꿔 쓸 수 있습니다.</p></div><div class="btns"><button class="btn" id="saveTracker">저장</button><button class="btn" id="clearTracker">초기화</button></div></div>
+    <div class="notice">점수는 벌점이 아닙니다. 핵심은 일어난 시각이 아니라 실제 공부 시작, 계획 완료, 눈에 보이는 산출물, 실패 뒤 재시작입니다. 하루가 무너져도 다음 날 숨기지 않고 기록하면 실험은 계속할 수 있습니다.</div>
+    <div class="tracker-wrap" style="margin-top:13px"><table class="tracker"><thead><tr><th>날짜</th><th>계획 시작</th><th>실제 시작</th><th>핵심 과목·목표</th><th>완료율 %</th><th>산출물</th><th>실패 뒤 재시작</th><th>담당 매니저 확인</th><th>학생 한 줄 복기</th></tr></thead><tbody id="trackerBody"></tbody></table></div>
+
+    <div class="head"><div><h2>권장 점검 기준</h2><p>학생과 협의해 숫자를 조정할 수 있으나, 점검 기준 자체를 없애지는 않습니다.</p></div></div>
+    <div class="grid three">
+      <article class="card metric"><strong>주간 완료율 70%</strong><span>계획을 과도하게 잡지 않고 실제 완료한 비율</span></article>
+      <article class="card metric"><strong>7일 중 5일</strong><span>합의한 시간 범위 안에 첫 공부를 시작한 날</span></article>
+      <article class="card metric"><strong>인증 3회 이상</strong><span>플래너·오답·문제풀이 등 실제 산출물 확인</span></article>
+    </div>
+    <div class="grid two" style="margin-top:13px">
+      <article class="card"><h3>즉시 재협의 조건</h3><ul class="question-list"><li>3일 연속 실제 공부 기록이 없음</li><li>주간 핵심 과제 완료율이 50% 미만</li><li>인증을 숨기거나 연락을 끊는 방식이 반복됨</li><li>학생이 직접 다시 도움이 필요하다고 요청함</li></ul></article>
+      <article class="card"><h3>실험 성공 뒤 선택</h3><ul class="question-list"><li>독립 구조를 유지하며 주 1회만 점검</li><li>특정 과목 또는 시간대만 에듀플렉스 도움 유지</li><li>입시 일정에 맞춰 관리 강도를 다시 높임</li><li>성공 기준을 2주 더 재현한 뒤 최종 결정</li></ul></article>
+    </div>
+  </section>
+
+  <section id="handoff" class="panel">
+    <div class="head"><div><h2>상담 합의와 담당 매니저 인계</h2><p>면담 직후 학생 앞에서 읽고, 서로 다르게 이해한 부분을 수정합니다.</p></div></div>
+    <article class="card"><div class="form-grid">
+      <div class="field"><label for="sessionDate">상담일</label><input id="sessionDate" type="date" value="2026-08-11"></div>
+      <div class="field"><label for="reviewDate">점검일</label><input id="reviewDate" type="date" value="2026-08-25"></div>
+      <div class="field full"><label for="studentReason">예현 학생이 직접 말한 중단·변경 이유</label><textarea id="studentReason" placeholder="학생의 표현을 판단 없이 기록"></textarea></div>
+      <div class="field"><label for="decisionValue">오늘 선택</label><select id="decisionValue"><option>면담 후 결정</option><option>에듀플렉스 유지·등원 구조 조정</option><option>7일 독립 학습 실험</option><option>14일 독립 학습 실험</option><option>중단 후 고정 점검일 유지</option></select></div>
+      <div class="field"><label for="proofRule">인증·점검 빈도</label><input id="proofRule" value="주 3회, 플래너와 핵심 과목 산출물"></div>
+      <div class="field"><label for="firstStart">매일 1차 공부 시작 시각</label><input id="firstStart" placeholder="예: 오전 10:00"></div>
+      <div class="field"><label for="secondStart">실패 시 2차 시작 시각</label><input id="secondStart" placeholder="예: 오후 1:00"></div>
+      <div class="field full"><label for="dailyOutput">매일 남길 핵심 산출물</label><textarea id="dailyOutput" placeholder="예: 국어 비문학 2지문 근거 표시, 수학 오답 5문항 재풀이, 영어 단어 누적 시험"></textarea></div>
+      <div class="field full"><label for="returnRule">재협의·복귀 조건</label><textarea id="returnRule">3일 연속 실제 공부 기록이 없거나, 주간 핵심 과제 완료율이 50% 미만이거나, 예현 학생이 도움을 요청하면 즉시 담당 매니저와 재협의한다.</textarea></div>
+      <div class="field full"><label for="parentRole">보호자 역할</label><textarea id="parentRole">반복 설득이나 비용·미안함을 압박하지 않고, 합의한 점검일까지 생활 안전과 사실만 확인한다. 학습 평가는 담당 매니저와 정해진 점검일에 함께 한다.</textarea></div>
+      <div class="field full"><label for="managerRole">담당 매니저 역할</label><textarea id="managerRole">학생의 선택을 평가하지 않고 같은 항목으로 실행을 확인한다. 약속 미이행 시 비난보다 실패 전후 장면과 재시작 행동을 복기한다.</textarea></div>
+      <div class="field full"><label for="notes">추가 메모</label><textarea id="notes"></textarea></div>
+    </div><div class="btns"><button class="btn primary" id="makeSummary">인계문 만들기</button><button class="btn" id="copySummary">인계문 복사</button></div><div class="summary" id="summary">면담 내용을 입력한 뒤 인계문 만들기를 누르십시오.</div></article>
+
+    <div class="head"><div><h2>보호자에게 전달할 짧은 안내</h2></div></div>
+    <article class="card"><div class="script" id="parentScript">“예현 학생이 느끼는 부담과 혼자 해보고 싶은 이유를 먼저 확인했습니다. 오늘은 죄책감으로 결론을 내리기보다, 선택한 방식이 실제 학습으로 이어지는지 볼 수 있도록 기간·시작 시각·산출물·점검일을 정했습니다. 보호자께서는 합의일까지 반복 설득을 줄이고 생활 안전과 사실만 확인해 주시고, 학습 결과는 정해진 점검일에 담당 매니저와 함께 보겠습니다.”</div><div class="btns"><button class="btn primary" data-copy="#parentScript">보호자 안내 복사</button></div></article>
+  </section>
+
+  <p class="foot">에듀플렉스 길음점 · 예현 학생 학습 지속 상담 플로우 · 내부 운영용</p>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+  const KEY='eduplex-yehyeon-study-continuity-20260811-v1';
+  let state={tracker:{},form:{}};
+  try{state={...state,...(JSON.parse(localStorage.getItem(KEY))||{})}}catch(e){}
+  const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+  function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),1700)}
+  async function copyText(text){try{await navigator.clipboard.writeText(text)}catch(e){const area=document.createElement('textarea');area.value=text;document.body.append(area);area.select();document.execCommand('copy');area.remove()}toast('복사했습니다.')}
+  $$('.tab').forEach(button=>button.addEventListener('click',()=>{$$('.tab').forEach(x=>x.setAttribute('aria-selected',String(x===button)));$$('.panel').forEach(panel=>panel.classList.toggle('active',panel.id===button.dataset.tab));scrollTo({top:0,behavior:'smooth'})}));
+  $$('[data-copy]').forEach(button=>button.addEventListener('click',()=>copyText($(button.dataset.copy).innerText)));
+
+  const pad=n=>String(n).padStart(2,'0');
+  function trialDays(){const result=[],start=new Date('2026-08-11T12:00:00'),week=['일','월','화','수','목','금','토'];for(let i=0;i<14;i++){const day=new Date(start);day.setDate(start.getDate()+i);const key=`${day.getFullYear()}-${pad(day.getMonth()+1)}-${pad(day.getDate())}`;result.push({key,label:`${pad(day.getMonth()+1)}.${pad(day.getDate())} (${week[day.getDay()]})`})}return result}
+  function renderTracker(){
+    $('#trackerBody').innerHTML=trialDays().map(({key,label})=>{const row=state.tracker[key]||{};return `<tr data-key="${key}"><td>${label}</td><td><input data-field="plan" value="${esc(row.plan)}" placeholder="10:00"></td><td><input data-field="actual" value="${esc(row.actual)}"></td><td><input data-field="target" value="${esc(row.target)}"></td><td><input data-field="rate" type="number" min="0" max="100" value="${esc(row.rate)}"></td><td><input data-field="output" value="${esc(row.output)}"></td><td style="text-align:center"><input data-field="restart" type="checkbox" ${row.restart?'checked':''}></td><td style="text-align:center"><input data-field="checked" type="checkbox" ${row.checked?'checked':''}></td><td><input data-field="review" value="${esc(row.review)}"></td></tr>`}).join('');
+    $$('#trackerBody input').forEach(input=>input.addEventListener('change',()=>{const key=input.closest('tr').dataset.key;state.tracker[key]=state.tracker[key]||{};state.tracker[key][input.dataset.field]=input.type==='checkbox'?input.checked:input.value;save()}));
+  }
+  $('#saveTracker').addEventListener('click',()=>{save();toast('저장했습니다.')});
+  $('#clearTracker').addEventListener('click',()=>{if(confirm('14일 기록을 초기화할까요?')){state.tracker={};save();renderTracker()}});
+
+  const formIds=['sessionDate','reviewDate','studentReason','decisionValue','proofRule','firstStart','secondStart','dailyOutput','returnRule','parentRole','managerRole','notes'];
+  function captureForm(){formIds.forEach(id=>state.form[id]=$('#'+id).value);save()}
+  function loadForm(){formIds.forEach(id=>{if(state.form[id]!==undefined)$('#'+id).value=state.form[id]});if(state.form.summary)$('#summary').textContent=state.form.summary}
+  $('#makeSummary').addEventListener('click',()=>{captureForm();const f=state.form;const summary=`예현 학생 학습 지속 상담 인계\n\n1. 상담일: ${f.sessionDate||'미정'}\n2. 점검일: ${f.reviewDate||'미정'}\n3. 학생이 직접 말한 이유: ${f.studentReason||'면담에서 기록 필요'}\n4. 오늘 선택: ${f.decisionValue||'면담 후 결정'}\n5. 1차 시작 / 실패 시 2차 시작: ${f.firstStart||'미정'} / ${f.secondStart||'미정'}\n6. 매일 산출물: ${f.dailyOutput||'면담에서 확정 필요'}\n7. 인증·점검: ${f.proofRule||'미정'}\n8. 재협의·복귀 조건: ${f.returnRule||'미정'}\n9. 보호자 역할: ${f.parentRole||'미정'}\n10. 담당 매니저 역할: ${f.managerRole||'미정'}\n11. 추가 메모: ${f.notes||'없음'}\n\n핵심: 예현 학생의 감정은 수용하되, 학습 방식의 적합성은 시작 시각·완료율·산출물·재시작 행동으로 확인한다.`;state.form.summary=summary;save();$('#summary').textContent=summary;toast('인계문을 만들었습니다.')});
+  $('#copySummary').addEventListener('click',()=>copyText($('#summary').innerText));
+  renderTracker();loadForm();
+  if(new URLSearchParams(location.search).get('qa')==='1'){
+    const checks={tabs:$$('.tab').length===6,days:$$('#trackerBody tr').length===14,noindex:document.head.innerHTML.includes('noindex'),term:document.body.innerText.includes('에듀플렉스'),forbidden:!/(비겁|헛소리|불효)/.test(document.body.innerText.replace('“비겁하다”, “헛소리다”, “불효다”',''))};
+    console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail';
+  }
+</script>
+</body>
+</html>
