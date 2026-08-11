@@ -469,8 +469,8 @@ footer{color:#506476}
 }
 
 
-/* vlt5g-13-sections-2026-08-11.2 */
-body[data-layout-contract="vlt5g-13-sections-2026-08-11.2"]{scroll-behavior:smooth}
+/* vlt5g-13-sections-2026-08-11.3 */
+body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smooth}
 .subject-profile-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;box-shadow:0 10px 28px rgba(18,52,86,.045)}
 .subject-profile-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:16px;border-bottom:1px solid #e4ebf2}
 .subject-profile-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
@@ -502,7 +502,7 @@ body[data-layout-contract="vlt5g-13-sections-2026-08-11.2"]{scroll-behavior:smoo
 
 </style>
 </head>
-<body data-layout-contract="vlt5g-13-sections-2026-08-11.2">
+<body data-layout-contract="vlt5g-13-sections-2026-08-11.3">
 <div class="wrap">
 
 <!-- ══════════════════ 헤더 ══════════════════ -->
@@ -1171,7 +1171,7 @@ const REPORT_DATA = {
       "foot": "반복 검사 전에는 성장 단계나 다음 타입을 예측하지 않고, 4·8·12주의 행동 재현률로 변화만 확인합니다."
     },
     "competencyBranches": {
-      "title": "박소연에게 필요한 성장 갈래",
+      "title": "박소연 학생에게 필요한 성장 갈래",
       "lead": "각 갈래는 상담·관리·개별지도에서 같은 목표를 다른 행동으로 연습합니다.",
       "branches": [
         {
@@ -1752,7 +1752,7 @@ const REPORT_DATA = {
   $("route-core-tracks").innerHTML = (growth?.core?.tracks || []).map(t=>`<span>${t}</span>`).join("");
   $("route-foot").textContent = growth?.foot || "";
   const branchSet = D.type.competencyBranches;
-  $("competency-title").textContent = branchSet?.title || "키워야 할 역량 갈래 세트";
+  $("competency-title").textContent = branchSet?.title || ((D.meta.student || "").replace(/\d+$/, "") + " 학생에게 필요한 성장 갈래");
   $("competency-lead").textContent = branchSet?.lead || "";
   $("competency-branches").innerHTML = (branchSet?.branches || []).map(b=>`<article class="competency-branch tone-${b.tone || "blue"}"><div class="branch-head"><h4>${b.title}</h4><span class="branch-route">${b.route}</span></div><div class="branch-domains">${(b.domains || []).map(d=>`<span>${d}</span>`).join("")}</div><ol class="branch-path">${b.path.map(p=>`<li>${p}</li>`).join("")}</ol><div class="branch-signal"><b>확인 지표</b> · ${b.signal}</div></article>`).join("");
 
@@ -1845,7 +1845,7 @@ const REPORT_DATA = {
 })();
 </script>
 
-<script data-layout-renderer="2026-08-11.2">
+<script data-layout-renderer="2026-08-11.3">
 (function applyLayoutContract(){
   const D = REPORT_DATA, $ = id => document.getElementById(id);
   const order = {"국어":0,"영어":1,"수학":2,"기초문장이해":0};
