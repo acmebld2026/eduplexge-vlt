@@ -1293,7 +1293,7 @@ const REPORT_DATA = {
       "foot": "타입을 바꾸는 것이 목표가 아니라, 경로에 적힌 역량을 실제 학습 행동으로 만드는 것이 목표입니다."
     },
     "competencyBranches": {
-      "title": "키워야 할 역량 갈래 세트",
+      "title": "손주환 학생에게 필요한 성장 갈래",
       "lead": "TYPE 4와 TYPE 3에서 직접 이어지는 네 경로를 주환이의 계획·복습·오답 행동으로 바꿔 관리합니다.",
       "branches": [
         {
@@ -1719,7 +1719,7 @@ const REPORT_DATA = {
   $("route-core-tracks").innerHTML = (growth?.core?.tracks || []).map(t=>`<span>${t}</span>`).join("");
   $("route-foot").textContent = growth?.foot || "";
   const branchSet = D.type.competencyBranches;
-  $("competency-title").textContent = branchSet?.title || "키워야 할 역량 갈래 세트";
+  $("competency-title").textContent = branchSet?.title || ((D.meta.student || "").replace(/\d+$/, "") + " 학생에게 필요한 성장 갈래");
   $("competency-lead").textContent = branchSet?.lead || "";
   $("competency-branches").innerHTML = (branchSet?.branches || []).map(b=>`<article class="competency-branch tone-${b.tone || "blue"}"><div class="branch-head"><h4>${b.title}</h4><span class="branch-route">${b.route}</span></div><div class="branch-domains">${(b.domains || []).map(d=>`<span>${d}</span>`).join("")}</div><ol class="branch-path">${b.path.map(p=>`<li>${p}</li>`).join("")}</ol><div class="branch-signal"><b>확인 지표</b> · ${b.signal}</div></article>`).join("");
 
