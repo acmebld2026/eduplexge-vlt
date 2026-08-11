@@ -102,7 +102,12 @@
 - 근거 데이터는 `확인된 강점·보완 패턴 → 학습 장면의 의미 → 방치 시 리스크 → 구체적 실행 → 확인할 변화`의 학부모용 맥락으로 재구성한다. 그래프 항목명은 `종합`, `기초문제`, `심화문제`, `LV`, `보완 CHAMP`처럼 짧게 쓴다.
 - 배포 전에 본문과 접근성 문구를 검색하여 위 내부용 표현이 남아 있으면 배포하지 않는다.
 
-- 표준은 `ifirlhkv/index.html`의 `REPORT_DATA` 기반 13개 섹션, 레이아웃, 카드·표·그래프, 모바일·인쇄 스타일이다.
+- 최신 표준의 단일 원본은 private 저장소 `분석/VLT5G_학부모용_HTML_13섹션_작성지침.md`이며, 손주환11 `ce0pf81k/index.html`은 시각 언어와 정보 밀도의 참조 사례다. 다른 로컬에서는 private 저장소 매니페스트와 Student 검증을 통과한 뒤 이 배포 저장소를 수정한다.
+- 13개 최상위 섹션은 `SUMMARY → CORE SUMMARY → APT SUBJECT PROFILE(CHAMP 포함) → VLT-5G TEST → LEARNING DNA TYPE PROFILE → OBSTACLES → CURRENT STATE → SOLUTION ROADMAP → COUNSELING IMPACT → NEXT STEP → EDUPLEX COACHING SYSTEM → PROGRAM & REVIEW → CLOSING MESSAGE` 순서다.
+- SUMMARY 카드의 DOM·반응형 순서는 `현재 위치 → CHAMP TEST 기반 과목 역량 체크 → 핵심 병목 → 핵심 자산`이며, 핵심 병목과 핵심 자산의 막대 그래프를 생략하지 않는다.
+- APT·CHAMP 과목 카드는 성장 레버 전체 폭, 상부 `그래프/프로필 진단` 2분할, 하부 `그대로 둘 때의 학습 리스크/상담·관리 전략/개별지도 전략` 3분할과 프로그램 배지를 유지한다.
+- VLT-5G는 개입 중요도 별 4개 이상만 노출하고, 현재 상태와 개입 중요도를 분리하며 TOP3를 `1순위/2순위/3순위` 프레임으로 강조한다.
+- 학습 DNA에는 메인·히든 타입, `TYPE GROWTH MAP`, `GROWTH BRANCH SET`을 모두 표시한다. OBSTACLES에는 확인 발화, 프로그램 배지, 구체 도움을 함께 표시한다.
 - 학생별 데이터와 분석만 교체하고 임의 축약 템플릿을 만들지 않는다.
 - VLT 세목의 `장점`, `보완점`, `발전할 점`을 빠짐없이 포집해 `검사 결과지 기반` 핵심 요약으로 연결한다.
 - 국어·수학·영어 APT 상위 지표를 동일한 0~5 척도와 기준선으로 재구성한다.
