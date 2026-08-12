@@ -469,8 +469,8 @@ footer{color:#506476}
 }
 
 
-/* vlt5g-13-sections-2026-08-11.3 */
-body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smooth}
+/* vlt5g-13-sections-2026-08-12.1 */
+body[data-layout-contract="vlt5g-13-sections-2026-08-12.1"]{scroll-behavior:smooth}
 .subject-profile-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;box-shadow:0 10px 28px rgba(18,52,86,.045)}
 .subject-profile-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:16px;border-bottom:1px solid #e4ebf2}
 .subject-profile-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
@@ -500,9 +500,27 @@ body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smoo
 @media(max-width:700px){.summary-grid{grid-template-columns:1fr}.subject-profile-card{padding:16px}.stone-signals{grid-template-columns:1fr}.vlt-bipolar{grid-template-columns:32px 1fr 32px}}
 @media print{.subject-profile-card,.subject-panel,.vlt-factor-row,.stone-help,.stone-signals{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}.vlt-factor-row:hover{transform:none;box-shadow:none}}
 
+
+/* 2026-08-12.1 closing impact card */
+.closing-impact{position:relative;overflow:hidden;padding:38px;background:radial-gradient(circle at 88% 12%,rgba(104,205,181,.24),transparent 30%),linear-gradient(135deg,#102b46 0%,#194f78 55%,#216a75 100%)}
+.closing-impact::after{content:"";position:absolute;right:-70px;bottom:-95px;width:250px;height:250px;border:1px solid rgba(255,255,255,.14);border-radius:50%}
+.closing-kicker{position:relative;z-index:1;margin-bottom:9px;color:#9fe2d1;font-size:10px;font-weight:900;letter-spacing:.18em}
+.closing-impact h3{position:relative;z-index:1;max-width:820px;margin:0 0 12px;font-size:25px;line-height:1.42;letter-spacing:-.025em}
+.closing-intro{position:relative;z-index:1;max-width:800px;margin:0;color:rgba(255,255,255,.83);font-size:14px;line-height:1.72}
+.closing-journey{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+.closing-stage{min-height:196px;padding:20px 21px;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.closing-stage span{display:inline-flex;margin-bottom:9px;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.14);color:#bcebdc;font-size:10px;font-weight:900;letter-spacing:.04em}
+.closing-stage p{margin:0;color:rgba(255,255,255,.92);font-size:13.2px;line-height:1.78}
+.stage-turn{border-color:rgba(255,194,114,.42)}.stage-turn span{color:#ffd3a0}
+.stage-direction{border-color:rgba(138,202,255,.42)}.stage-direction span{color:#b9dcff}
+.stage-expectation{border-color:rgba(138,225,179,.48)}.stage-expectation span{color:#aee8c9}
+.closing-impact .contact{position:relative;z-index:1;align-items:center}.closing-impact .contact span:last-child a{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid rgba(255,255,255,.44);border-radius:999px;background:rgba(255,255,255,.12);text-decoration:none}
+@media(max-width:700px){.closing-impact{padding:27px 20px}.closing-impact h3{font-size:21px}.closing-journey{grid-template-columns:1fr}.closing-stage{min-height:0;padding:17px}.closing-impact .contact{display:grid;grid-template-columns:1fr}.closing-impact .contact span:last-child a{justify-content:center}}
+@media print{.closing-impact,.closing-stage{print-color-adjust:exact;-webkit-print-color-adjust:exact}.closing-journey{grid-template-columns:repeat(2,minmax(0,1fr))}.closing-stage{min-height:0;break-inside:avoid}}
+
 </style>
 </head>
-<body data-layout-contract="vlt5g-13-sections-2026-08-11.3">
+<body data-layout-contract="vlt5g-13-sections-2026-08-12.1">
 <div class="wrap">
 
 <!-- ══════════════════ 헤더 ══════════════════ -->
@@ -655,10 +673,10 @@ body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smoo
 <!-- ══════════════════ 7. 프로그램 구조 ══════════════════ -->
 <section id="sec-program">
   <span class="sec-label">EDUPLEX COACHING SYSTEM</span>
-  <h2>상담·관리·개별지도 — 건을 돕는 방식</h2>
+  <h2>상담·관리·개별지도 — 왕건 학생을 돕는 방식</h2>
   <p class="lead" id="program-lead"></p>
   <div class="counseling-flow-wrap">
-    <div class="counseling-flow-head"><span>COUNSELING PRIORITY FLOW</span><h3>정기상담에서 이어갈 우선순위</h3><p>현재 진단과 해석상담에서 확인된 건의 변화 순서입니다.</p></div>
+    <div class="counseling-flow-head"><span>COUNSELING PRIORITY FLOW</span><h3>정기상담에서 이어갈 우선순위</h3><p>현재 진단과 해석상담에서 확인된 왕건 학생의 변화 순서입니다.</p></div>
     <div class="counseling-flow" id="counseling-flow"></div>
   </div>
   <div class="program-grid" id="program-cards"></div>
@@ -687,9 +705,16 @@ body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smoo
 <!-- ══════════════════ 13. 클로징 ══════════════════ -->
 <section id="sec-closing">
   <span class="sec-label closing-label">CLOSING MESSAGE</span>
-  <div class="closing">
+  <div class="closing closing-impact">
+    <div class="closing-kicker">THE NEXT CHAPTER</div>
     <h3 id="closing-title"></h3>
-    <p id="closing-msg"></p>
+    <p class="closing-intro" id="closing-msg"></p>
+    <div class="closing-journey" aria-label="왕건 학생의 기존 서사부터 기대 변화까지">
+      <article class="closing-stage stage-story"><span>01 · 기존 서사</span><p id="closing-story"></p></article>
+      <article class="closing-stage stage-turn"><span>02 · 현재 전환점</span><p id="closing-turning"></p></article>
+      <article class="closing-stage stage-direction"><span>03 · 앞으로의 방향</span><p id="closing-direction"></p></article>
+      <article class="closing-stage stage-expectation"><span>04 · 기대 변화</span><p id="closing-expectation"></p></article>
+    </div>
     <div class="contact" id="closing-contact"></div>
   </div>
 </section>
@@ -705,7 +730,7 @@ body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smoo
 ═══════════════════════════════════════════════════════════════ */
 const REPORT_DATA = {
   "meta": {
-    "student": "건10",
+    "student": "왕건10",
     "school": "고등학교 1학년",
     "testDate": "2026.08.07",
     "counselDate": "2026.08.12",
@@ -725,7 +750,7 @@ const REPORT_DATA = {
   "summary": [
     {
       "title": "현재 위치",
-      "body": "건은 첫 학기의 학습 시간을 충분히 확보하지 못했고, 학원에서 배운 뒤 혼자 익히는 과정도 이어지지 않았다고 이해했습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력이 높아진 경험이 있습니다. 이번 변화는 좋아하는 활동을 없애는 일이 아니라, 기타에서 이미 확인한 ‘시간을 투자하고 반복하면 성장한다’는 원리를 학업으로 옮기는 일입니다."
+      "body": "왕건 학생은 첫 학기의 학습 시간을 충분히 확보하지 못했고, 학원에서 배운 뒤 혼자 익히는 과정도 이어지지 않았다고 이해했습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력이 높아진 경험이 있습니다. 이번 변화는 좋아하는 활동을 없애는 일이 아니라, 기타에서 이미 확인한 ‘시간을 투자하고 반복하면 성장한다’는 원리를 학업으로 옮기는 일입니다."
     },
     {
       "title": "CHAMP TEST 기반 과목 역량 체크",
@@ -771,7 +796,7 @@ const REPORT_DATA = {
     },
     {
       "title": "핵심 자산",
-      "body": "건은 관심 분야에 시간을 투자해 실제 성장을 만들어 본 경험이 있고, 영어에서는 재정리와 자기 점검 역량이 강점으로 나타났습니다. 공부의 필요성도 인식하고 있으며 부모의 정서적 지지는 변화가 흔들릴 때 다시 시작할 수 있는 보호 요인입니다.",
+      "body": "왕건 학생은 관심 분야에 시간을 투자해 실제 성장을 만들어 본 경험이 있고, 영어에서는 재정리와 자기 점검 역량이 강점으로 나타났습니다. 공부의 필요성도 인식하고 있으며 부모의 정서적 지지는 변화가 흔들릴 때 다시 시작할 수 있는 보호 요인입니다.",
       "hierarchy": [
         {
           "major": "방향·정서",
@@ -849,7 +874,7 @@ const REPORT_DATA = {
       "객관적 피드백 · 학습 효율성 이해 · 커리큘럼 수용",
       "현실 직시 · 맞춤형 학습 전략 · 정서적 격려"
     ],
-    "narrative": "건은 첫 학기를 스스로 ‘성실하지 못했다’고 표현했고, 공부보다 원하는 활동을 먼저 했으며 실제 학습 시간이 부족했다는 점을 받아들였습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력을 높인 경험은 시간을 투자하면 능력이 자란다는 확실한 자기 증거입니다. 이번 상담에서는 그 경험을 없애야 할 취미가 아니라 공부로 옮길 수 있는 성장 모델로 연결했습니다. 현재 핵심 병목은 재능 부족보다 절대 학습 시간, 배운 뒤 익히는 과정의 단절, 문장과 조건을 구조화하는 부담입니다. 국어 APT의 언어 구조·개념 이해 1.0과 수학 APT의 풀이 절차 1.6은 과목 수행의 근거 독해와 심화 전이 어려움과 같은 방향입니다. 반면 영어 APT의 재정리 5.0과 메타인지 4.5는 현재 성취를 지지하는 자산입니다. 8월 18일부터 상담·관리로 주간 시간 블록과 계획-실행-점검을 세우고, 초기 2주에는 수학 개별지도를 주 4회 운영해 기초 빈틈과 조건 해석을 보완합니다. 기타와 배구는 먼저 시간표에 보장하되, 남은 학습 블록은 건이 직접 책임지는 구조로 바꿉니다."
+    "narrative": "왕건 학생은 첫 학기를 스스로 ‘성실하지 못했다’고 표현했고, 공부보다 원하는 활동을 먼저 했으며 실제 학습 시간이 부족했다는 점을 받아들였습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력을 높인 경험은 시간을 투자하면 능력이 자란다는 확실한 자기 증거입니다. 이번 상담에서는 그 경험을 없애야 할 취미가 아니라 공부로 옮길 수 있는 성장 모델로 연결했습니다. 현재 핵심 병목은 재능 부족보다 절대 학습 시간, 배운 뒤 익히는 과정의 단절, 문장과 조건을 구조화하는 부담입니다. 국어 APT의 언어 구조·개념 이해 1.0과 수학 APT의 풀이 절차 1.6은 과목 수행의 근거 독해와 심화 전이 어려움과 같은 방향입니다. 반면 영어 APT의 재정리 5.0과 메타인지 4.5는 현재 성취를 지지하는 자산입니다. 8월 18일부터 상담·관리로 주간 시간 블록과 계획-실행-점검을 세우고, 초기 2주에는 수학 개별지도를 주 4회 운영해 기초 빈틈과 조건 해석을 보완합니다. 기타와 배구는 먼저 시간표에 보장하되, 남은 학습 블록은 왕건 학생이 직접 책임지는 구조로 바꿉니다."
   },
   "temperamentDynamics": {
     "title": "성향 조합이 학습에서 작동할 수 있는 방식",
@@ -984,7 +1009,7 @@ const REPORT_DATA = {
   ],
   "expertise": null,
   "program": {
-    "lead": "기존 도움은 먼저 목적을 확인하고, 수업 뒤 건이 혼자 설명·재풀이할 수 있는지 살핍니다. 배운 뒤 익히는 물리적 시간을 확보한 다음, 시간을 국어 구조 독해와 수학 조건 해석에 재배치하고 2~4주 산출물에 따라 유지·감량·전환합니다. 상담에서 정한 행동을 관리에서 일상화하고, 개별지도에서 과목 기능을 연습합니다.",
+    "lead": "기존 도움은 먼저 목적을 확인하고, 수업 뒤 왕건 학생이 혼자 설명·재풀이할 수 있는지 살핍니다. 배운 뒤 익히는 물리적 시간을 확보한 다음, 시간을 국어 구조 독해와 수학 조건 해석에 재배치하고 2~4주 산출물에 따라 유지·감량·전환합니다. 상담에서 정한 행동을 관리에서 일상화하고, 개별지도에서 과목 기능을 연습합니다.",
     "cards": [
       {
         "tag": "상담 Coaching",
@@ -1009,7 +1034,7 @@ const REPORT_DATA = {
       {
         "tag": "개별지도 Tutoring",
         "title": "수학 우선 운영 · 국어 추천",
-        "body": "90분 1:3 순환에서 설명량을 늘리기보다 건의 판단 과정을 확인하고 독립 수행으로 전환합니다.",
+        "body": "90분 1:3 순환에서 설명량을 늘리기보다 왕건 학생의 판단 과정을 확인하고 독립 수행으로 전환합니다.",
         "bullets": [
           "순환: 질문→독립 풀이→자기설명→변형 문제",
           "수학: 조건 표·풀이 계획·재풀이",
@@ -1176,7 +1201,7 @@ const REPORT_DATA = {
       "foot": "반복 검사 전에는 성장 단계나 다음 타입을 만들지 않고, 4·8·12주의 행동 재현률로 변화만 확인합니다."
     },
     "competencyBranches": {
-      "title": "건 학생에게 필요한 성장 갈래",
+      "title": "왕건 학생에게 필요한 성장 갈래",
       "lead": "각 갈래는 상담·관리·개별지도에서 같은 목표를 서로 다른 행동으로 연습합니다.",
       "branches": [
         {
@@ -1260,7 +1285,7 @@ const REPORT_DATA = {
     },
     {
       "title": "취미와 학습을 경쟁시키면 시간 계획이 다시 무너짐",
-      "body": "기타와 배구는 건의 강점과 회복 자원이므로 없애기보다 먼저 일정에 보장하고 남은 학습 블록을 책임지는 편이 적절합니다.",
+      "body": "기타와 배구는 왕건 학생의 강점과 회복 자원이므로 없애기보다 먼저 일정에 보장하고 남은 학습 블록을 책임지는 편이 적절합니다.",
       "program": "상담·관리",
       "help": "주간표에 취미와 특별 일정을 먼저 넣고, 빠진 학습 블록은 다른 날이나 토요일 보완 블록으로 이동합니다.",
       "studentOutput": "취미·학습이 함께 들어간 주간 시간표 · 보완 블록 기록",
@@ -1289,7 +1314,7 @@ const REPORT_DATA = {
       "body": "국어는 구조·근거 독해, 수학은 조건 해석·풀이 절차·심화 전이가 핵심 기능 병목입니다. 그대로 두면 문제 수를 늘려도 같은 오류가 반복될 수 있습니다. 초기에는 수학 개별지도를 운영하고 국어 개별지도를 추천하며, 영어는 2~4주 근거 설명 지표가 개선되지 않으면 연결합니다."
     }
   ],
-  "observation": "상담에서 건이는 기타 연습에 시간을 투자해 실력이 높아진 경험과, 공부에는 충분한 시간을 투자하지 않았다는 차이를 이해했습니다. 가장 먼저 확인할 변화는 ① 기타·배구를 포함한 주간 시간 블록을 스스로 책임지는지, ② 배운 뒤 익히는 시간을 실제로 확보하는지, ③ 수학 시험의 조급함과 영어 시험의 긴장 속에서도 다음 행동으로 복귀하는지입니다.",
+  "observation": "상담에서 왕건 학생은 기타 연습에 시간을 투자해 실력이 높아진 경험과, 공부에는 충분한 시간을 투자하지 않았다는 차이를 이해했습니다. 가장 먼저 확인할 변화는 ① 기타·배구를 포함한 주간 시간 블록을 스스로 책임지는지, ② 배운 뒤 익히는 시간을 실제로 확보하는지, ③ 수학 시험의 조급함과 영어 시험의 긴장 속에서도 다음 행동으로 복귀하는지입니다.",
   "roadmap": [
     {
       "when": "초기 1~2주",
@@ -1327,7 +1352,7 @@ const REPORT_DATA = {
         "배운 뒤 24·72시간 회상",
         "도움 요청 전에 스스로 시도한 과정 기록"
       ],
-      "why": "개별지도는 설명량을 늘리는 수업이 아니라 건이의 판단 과정이 실제로 바뀌는지 확인하는 수업이어야 합니다.",
+      "why": "개별지도는 설명량을 늘리는 수업이 아니라 왕건 학생의 판단 과정이 실제로 바뀌는지 확인하는 수업이어야 합니다.",
       "programLabel": "상담·관리"
     },
     {
@@ -1346,7 +1371,7 @@ const REPORT_DATA = {
   ],
   "agreements": [
     "<b>학생·학부모 확인</b> · 첫 학기의 핵심 문제는 재능 부족보다 실제 학습 시간과 배운 뒤 익히는 과정의 부족이라는 점을 함께 이해했습니다.",
-    "<b>최종 합의</b> · 기타·배구 활동은 중단하지 않고 먼저 일정에 넣되, 남은 학습 블록을 주간표에 정하고 건이 직접 책임집니다.",
+    "<b>최종 합의</b> · 기타·배구 활동은 중단하지 않고 먼저 일정에 넣되, 남은 학습 블록을 주간표에 정하고 왕건 학생이 직접 책임집니다.",
     "<b>최종 합의</b> · 2026년 8월 18일부터 상담·관리 프로그램을 시작하고, 초기 2주 동안 상담 4회와 관리 9일을 진행합니다.",
     "<b>최종 합의</b> · 초기 2주 수학 개별지도는 총 8회, 주 4회로 시작합니다. 독립 학습 효율과 수업 사이 익힘 시간이 확보되면 다음 달 횟수와 과목을 다시 조정합니다.",
     "<b>운영 기준</b> · 특별 일정으로 빠진 학습 블록은 다른 날이나 토요일 보완 시간으로 이동하며, 프로그램 확정 후 운영 구성에 맞춰 담당 매니저를 배정합니다."
@@ -1456,13 +1481,21 @@ const REPORT_DATA = {
     }
   },
   "closing": {
-    "title": "기타에서 증명한 성장의 원리를, 이제 공부의 작은 완주로 옮깁니다.",
-    "msg": "건은 좋아하는 분야에 시간을 투자해 실제로 성장해 본 학생입니다. 지금 필요한 것은 그 관심을 없애는 일이 아니라, 취미와 학습 시간을 함께 설계하고 배운 내용을 혼자 설명·재풀이해 자기 것으로 만드는 경험입니다. 8월 18일부터 상담·관리와 수학 개별지도를 시작하고, 2주·4주·8주·12주의 산출물로 지원 강도를 조정하겠습니다.",
+    "title": "기타에 쏟은 시간이 실력이 되었듯, 이제 왕건 학생의 공부도 ‘배운 뒤 익혀 끝내는 시간’으로 달라집니다.",
+    "msg": "관심을 없애는 변화가 아니라, 이미 증명한 성장 방식을 학업의 독립 완주로 옮기는 변화입니다.",
+    "story": "왕건 학생은 재즈·블루스 기타에 약 1년 반 동안 시간을 투자하며 실력이 높아지는 경험을 직접 만들었습니다. 좋아하는 분야에서는 시간과 반복이 성장을 만든다는 사실을 이미 알고 있는 학생입니다. 다만 첫 학기 공부에서는 원하는 활동이 먼저였고, 수업 뒤 혼자 설명하고 재풀이하며 자기 것으로 만드는 시간이 충분히 이어지지 않았습니다.",
+    "turningPoint": "이번 상담에서 왕건 학생은 공부가 막힌 이유를 재능 부족이 아니라 ‘실제 학습 시간’과 ‘배운 뒤 익히는 과정’의 부족으로 다시 이해했습니다. 국어의 문장 구조와 근거 독해, 수학의 조건 해석과 풀이 절차는 서로 떨어진 약점이 아니라, 읽고 조직하고 끝까지 설명하는 공통 과정의 병목으로 연결했습니다. 기타에서의 성장 경험은 취미를 포기해야 한다는 근거가 아니라 공부도 바꿀 수 있다는 가장 강한 자기 증거가 되었습니다.",
+    "direction": "기타와 배구는 먼저 주간표에 보장하고, 그 뒤의 학습 블록은 왕건 학생이 직접 선택하고 마감합니다. 8월 18일부터 상담에서는 관심을 공부 이유와 주간 행동으로 연결하고, 관리에서는 계획시간·실제시간·즉시 채점·오류 수정·30초 설명을 매일 남깁니다. 초기 2주 수학 개별지도 8회에서는 조건을 표로 바꾸고 풀이 계획을 먼저 말한 뒤, 독립 풀이와 변형 문제까지 이어지는 경험을 만듭니다.",
+    "expectation": "2주에는 취미와 공부가 함께 들어간 주간표와 빠진 학습의 보완 기록이 남아야 합니다. 4주에는 계획 완수율과 국어 근거 설명, 수학 풀이 계획 설명이 눈에 보이기 시작해야 합니다. 8주에는 처음 보는 지문과 변형 문제에서도 같은 절차를 혼자 재현하고, 12주에는 외부 도움의 양보다 왕건 학생이 스스로 선택·설명·완료하는 범위가 넓어졌는지로 다음 지원 강도를 결정합니다.",
+    "homepage": {
+      "label": "에듀플렉스 길음 홈페이지",
+      "href": "https://eduplexge.sangsangplex.com"
+    },
     "contacts": [
       "에듀플렉스 길음 · 김병수 원장"
     ]
   },
-  "footer": "에듀플렉스 길음 · 건 학생 VLT-5G 초기 진단 결과지 · 2026.08.12",
+  "footer": "에듀플렉스 길음 · 왕건 학생 VLT-5G 초기 진단 결과지 · 2026.08.12",
   "champSummary": [
     {
       "subject": "기초문장이해",
@@ -1602,7 +1635,7 @@ const REPORT_DATA = {
     logo.alt = D.brand.logoAlt || "에듀플렉스 로고";
     logo.style.display = "block";
   }
-  $("rpt-subtitle").textContent = `${D.meta.student} 학생 · ${D.meta.school}`;
+  $("rpt-subtitle").textContent = `${D.meta.student.replace(/\d+$/, "")} 학생 · ${D.meta.school}`;
   $("rpt-meta").innerHTML =
     `<span><b>검사일</b>${D.meta.testDate}</span><span><b>상담일</b>${D.meta.counselDate}</span>`+
     `<span><b>상담</b>${D.meta.counselor}</span>`;
@@ -1816,13 +1849,17 @@ const REPORT_DATA = {
   };
   $("closing-title").textContent = D.closing.title;
   $("closing-msg").textContent = D.closing.msg;
-  $("closing-contact").innerHTML = D.closing.contacts.map(renderContact).join("");
+  $("closing-story").textContent = D.closing.story;
+  $("closing-turning").textContent = D.closing.turningPoint;
+  $("closing-direction").textContent = D.closing.direction;
+  $("closing-expectation").textContent = D.closing.expectation;
+  $("closing-contact").innerHTML = [...D.closing.contacts, D.closing.homepage].map(renderContact).join("");
   $("rpt-footer").textContent = D.footer;
   document.title = "VLT-5G 초기 진단 결과지_왕건10";
 })();
 </script>
 
-<script data-layout-renderer="2026-08-11.3">
+<script data-layout-renderer="2026-08-12.1">
 (function applyLayoutContract(){
   const D = REPORT_DATA, $ = id => document.getElementById(id);
   const order = {"국어":0,"영어":1,"수학":2,"기초문장이해":0};
