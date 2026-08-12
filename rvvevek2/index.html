@@ -61,23 +61,28 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .sumcard p{font-size:14.5px}
 .sumcard.full{grid-column:1/-1;background:var(--accent-soft);border-color:#f2c9a3}
 .sumcard.full .t{color:var(--accent)}
-.summary-hierarchy{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}.summary-hierarchy-row{display:grid;grid-template-columns:120px 105px 1fr;gap:8px;align-items:center}.summary-hierarchy-row small{display:block;margin-bottom:1px;font-size:7.5px;font-weight:900;letter-spacing:.05em;opacity:.65}.summary-hierarchy-major,.summary-hierarchy-middle{border-radius:10px;padding:4px 8px;text-align:center;font-size:9.5px;font-weight:900}.summary-hierarchy-major{background:#e7f0fa;color:#225f97}.summary-hierarchy-middle{background:#eef4ef;color:#2d7358}.summary-hierarchy-minor{font-size:11.2px;font-weight:800;color:#45596d;line-height:1.45}
+.summary-hierarchy{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}.summary-hierarchy-row{display:grid;grid-template-columns:120px 105px 1fr;gap:8px;align-items:center}.summary-hierarchy-row span{min-width:0}.summary-hierarchy-row small{display:block;margin-bottom:1px;font-size:7.5px;font-weight:900;letter-spacing:.05em;opacity:.65}.summary-hierarchy-major,.summary-hierarchy-middle{border-radius:10px;padding:4px 8px;text-align:center;font-size:9.5px;font-weight:900}.summary-hierarchy-major{background:#e7f0fa;color:#225f97}.summary-hierarchy-middle{background:#eef4ef;color:#2d7358}.summary-hierarchy-minor{font-size:11.2px;font-weight:800;color:#45596d;line-height:1.45}.summary-hierarchy-arrow{display:none}
 .summary-metrics{margin-top:14px;padding-top:12px;border-top:1px dashed #cfdae5}
-.summary-metric{display:grid;grid-template-columns:104px minmax(90px,1fr) 34px;gap:8px;align-items:center;margin:9px 0}
-.summary-metric-label{display:flex;align-items:center;gap:5px;min-width:0;font-size:11.5px;font-weight:800;color:var(--ink);line-height:1.25}
-.summary-metric-tag{flex:0 0 auto;border-radius:999px;padding:1px 5px;font-size:8.5px;font-weight:900;line-height:1.35}
-.summary-metric.is-asset .summary-metric-tag{color:#176b4f;background:#def3ea;border:1px solid #a9d9c8}
-.summary-metric.is-risk .summary-metric-tag{color:#9b3f3d;background:#fae6e5;border:1px solid #e7b8b5}
+.summary-metric{display:grid;grid-template-columns:88px minmax(90px,1fr) 34px;gap:8px;align-items:center;margin:9px 0}
+.summary-metric-label{min-width:0;font-size:11.5px;font-weight:800;color:var(--ink);line-height:1.25}
 .summary-metric-track{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,#e8eef4 0 49.5%,#8ea3b5 49.5% 50.5%,#e8eef4 50.5% 100%);overflow:hidden}
 .summary-metric-fill{position:absolute;top:0;bottom:0;border-radius:999px}
 .summary-metric.is-asset .summary-metric-fill{background:linear-gradient(90deg,#68b99c,var(--green))}
 .summary-metric.is-risk .summary-metric-fill{background:linear-gradient(90deg,var(--red),#e9895f)}
 .summary-metric-score{text-align:right;font-size:11.5px;font-weight:900;color:var(--navy);font-variant-numeric:tabular-nums}
-.summary-axis{display:grid;grid-template-columns:104px 1fr 34px;gap:8px;margin-top:2px;color:#758594;font-size:9.5px}
+.summary-axis{display:grid;grid-template-columns:88px 1fr 34px;gap:8px;margin-top:2px;color:#758594;font-size:9.5px}
 .summary-axis-scale{display:flex;justify-content:space-between}
 .summary-axis-scale span:nth-child(2){font-weight:800;color:#53687a}
 .expertise{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;font-size:13.5px;color:var(--sub)}
 .expertise b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:4px}
+
+.subject-profile-divider{margin:32px 0 16px;padding-top:28px;border-top:1px solid var(--line)}
+.subject-profile-divider h3{margin:5px 0 7px;font-size:22px;color:var(--navy)}
+.subject-profile-divider p{margin:0;color:var(--sub);font-size:14px;line-height:1.75}
+.champ-chart::after{left:calc(42% + 24%)}
+
+.program-link-badge,.stone-program{display:inline-flex;align-items:center;width:max-content;border-radius:999px;padding:4px 9px;background:#e8f1fb;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.04em}
+.phase .program-link-badge{margin:7px 0 2px}.stone .stone-program{margin:0 0 7px}
 
 /* 검사 결과지 기반 핵심 요약 */
 .basis-note{padding:13px 16px;border-left:4px solid var(--blue);border-radius:0 8px 8px 0;background:var(--sky2);color:var(--sub);font-size:13.5px;margin-bottom:18px}
@@ -126,14 +131,15 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .apt-legend-item.is-strong i{background:var(--green)}
 .apt-legend-item.is-focus i{background:var(--accent)}
 
-/* 지원 구조 */
-.program-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* 프로그램 구조 */
+.program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .program-card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:#fff}
 .program-card .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--blue);background:var(--sky);border-radius:4px;padding:3px 8px;margin-bottom:8px}
 .program-card .program-title{font-size:15.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
 .program-card p{font-size:13.7px;color:var(--sub)}
 .program-card ul{margin:10px 0 0 18px;font-size:13px;color:var(--ink)}
 .program-card li{margin:4px 0}
+.counseling-flow-wrap{margin:0 0 20px;padding:20px;border:1px solid #cedded;border-radius:16px;background:linear-gradient(145deg,#f3f8fd,#fff)}.counseling-flow-head{text-align:center;margin-bottom:14px}.counseling-flow-head span{color:var(--blue);font-size:9.5px;font-weight:900;letter-spacing:.13em}.counseling-flow-head h3{margin:5px 0 4px;font-size:20px}.counseling-flow-head p{margin:0;color:var(--sub);font-size:12.5px}.counseling-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.counseling-step{position:relative;border:1px solid #dce6ef;border-radius:12px;padding:14px;background:#fff}.counseling-step:not(:last-child)::after{content:"›";position:absolute;right:-8px;top:45%;z-index:2;color:#6d8baa;font-size:18px;font-weight:900}.counseling-step .step-no{display:block;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.08em}.counseling-step .step-category{display:block;margin:4px 0 7px;color:#6c7d8f;font-size:9.5px;font-weight:800;line-height:1.4}.counseling-step h4{margin:0 0 6px;color:var(--navy);font-size:13.5px;line-height:1.45}.counseling-step p{margin:0;color:var(--sub);font-size:11.5px;line-height:1.6}
 
 /* ===== 검사 결과 시각화 ===== */
 .factor-wrap{margin-top:8px}
@@ -154,7 +160,7 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 /* 타입 해설 */
 .type-box{background:var(--sky);border-radius:12px;padding:22px 24px;font-size:14.5px}
 .type-box b{color:var(--navy)}
-.type-insights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.type-insights{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
 .type-insight{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;box-shadow:0 8px 22px rgba(32,69,112,.06)}
 .type-insight .label{font-size:12px;font-weight:900;color:var(--blue);letter-spacing:.02em;margin-bottom:8px}
 .type-insight p{font-size:13.5px;color:var(--sub);line-height:1.75}
@@ -166,6 +172,24 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .pc.pros .t{color:var(--green)}
 .pc.cons .t{color:var(--red)}
 .pc li{margin:6px 0 6px 18px}
+
+/* 타입 성장 플로우와 역량 갈래 */
+.type-growth{margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
+.growth-head{text-align:center;margin-bottom:18px}.growth-head .kicker{display:inline-block;color:var(--blue);font-size:10.5px;font-weight:900;letter-spacing:.14em}.growth-head h3{margin:5px 0 7px;color:var(--navy);font-size:22px}.growth-head p{max-width:720px;margin:0 auto;color:var(--sub);font-size:13.5px;line-height:1.7}
+.route-network{display:grid;grid-template-columns:minmax(150px,.9fr) 28px minmax(220px,1.25fr) 28px minmax(150px,.9fr);gap:12px;align-items:center;padding:22px;border:1px solid #dcdff1;border-radius:18px;background:linear-gradient(145deg,#f2f2ff,#fbfcff 55%,#f5f9fd);box-shadow:0 10px 24px rgba(47,70,163,.08)}
+.route-column-label{display:block;margin-bottom:9px;color:#67738b;font-size:9.5px;font-weight:900;letter-spacing:.12em;text-align:center}.route-nodes{display:grid;gap:10px}.route-node-card{text-align:center}.route-hex{display:flex;flex-direction:column;align-items:center;justify-content:center;width:126px;height:108px;margin:0 auto;padding:19px 15px;clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%);background:linear-gradient(145deg,#31425e,#132f50);color:#fff;filter:drop-shadow(0 8px 9px rgba(23,58,94,.16))}.route-hex.tone-hidden{background:linear-gradient(145deg,#437fd1,#244d98)}.route-hex.tone-target{background:linear-gradient(145deg,#5278c9,#294e9b)}.route-hex.tone-target-light{background:linear-gradient(145deg,#7b92c9,#4e6ba8)}.route-hex small{font-size:9px;font-weight:900;letter-spacing:.08em;opacity:.82}.route-hex b{margin:2px 0 1px;font-size:18px;line-height:1}.route-hex span{font-size:11px;font-weight:800}.route-node-note{display:block;margin:3px auto 0;max-width:155px;color:#5e6c80;font-size:10px;line-height:1.45}
+.route-arrow{color:#6d82b4;font-size:25px;font-weight:900;text-align:center}.route-core{position:relative;min-height:198px;border:1px solid #cdd8ed;border-radius:16px;padding:20px;background:#fff;box-shadow:0 8px 20px rgba(43,69,126,.08);text-align:center}.route-core .core-label{display:inline-flex;border-radius:999px;padding:4px 10px;background:#2f46a3;color:#fff;font-size:9.5px;font-weight:900;letter-spacing:.1em}.route-core h4{margin:10px 0 6px;color:#233b78;font-size:20px}.route-core p{margin:0;color:#59697b;font-size:12px;line-height:1.65}.route-core-tracks{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:14px}.route-core-tracks span{border-radius:9px;padding:8px 6px;background:#eef1ff;color:#354b91;font-size:10.5px;font-weight:900}.route-foot{margin:12px 0 0;text-align:center;color:#657184;font-size:11.5px;font-weight:700}
+.competency-set{margin-top:26px;border-radius:16px;padding:22px;background:linear-gradient(145deg,#f1f2ff,#fff9f1);border:1px solid #dcdff1}
+.competency-hub{text-align:center;margin:0 auto 16px;max-width:680px}.competency-hub .hub-label{display:inline-block;border-radius:999px;padding:4px 10px;background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em}.competency-hub h3{margin:7px 0 5px;color:var(--navy);font-size:21px}.competency-hub p{margin:0;color:var(--sub);font-size:13px;line-height:1.7}
+.competency-branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.competency-branch{position:relative;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:13px;padding:17px 18px;background:#fff;box-shadow:0 7px 18px rgba(25,63,99,.06)}
+.competency-branch.tone-green{border-top-color:var(--green)}.competency-branch.tone-orange{border-top-color:var(--accent)}.competency-branch.tone-navy{border-top-color:var(--navy)}
+.branch-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}.branch-head h4{margin:0;color:var(--navy);font-size:15px;line-height:1.4}.branch-route{flex:0 0 auto;border-radius:999px;padding:3px 8px;background:#eaf3fb;color:var(--blue);font-size:9.5px;font-weight:900}.tone-green .branch-route{background:#e6f4ed;color:var(--green)}.tone-orange .branch-route{background:#fff0e3;color:#b96325}.tone-navy .branch-route{background:#e8edf3;color:var(--navy)}.branch-domains{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 11px}.branch-domains span{border-radius:999px;padding:3px 7px;background:#f0f2fa;color:#586a87;font-size:9.5px;font-weight:800}
+.branch-path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;list-style:none;margin:0;padding:0}.branch-path li{display:inline-flex;align-items:center;border-radius:8px;padding:6px 8px;background:#f4f7fa;color:#415364;font-size:11.5px;font-weight:700}.branch-path li:not(:last-child)::after{content:"›";margin-left:8px;color:#7992a8;font-size:15px;font-weight:900}
+.branch-signal{margin-top:12px;padding-top:10px;border-top:1px dashed #d6e0e9;color:var(--sub);font-size:11.5px}.branch-signal b{color:var(--navy)}
+@media(max-width:700px){.route-network{grid-template-columns:1fr;padding:18px 14px}.route-arrow{transform:rotate(90deg)}.route-nodes{grid-template-columns:1fr 1fr}.route-hex{width:118px;height:102px}.route-core{min-height:0}.competency-branches{grid-template-columns:1fr}.competency-set{padding:18px 14px}.branch-path{display:grid;grid-template-columns:1fr}.branch-path li{justify-content:space-between}.branch-path li:not(:last-child)::after{content:"↓"}}
+@media(max-width:390px){.route-nodes{grid-template-columns:1fr}.route-hex{width:132px;height:112px}.route-core-tracks{grid-template-columns:1fr}}
+@media print{.route-network,.route-core,.competency-branch{break-inside:avoid}}
 
 /* ===== 걸림돌 ===== */
 .stone{display:flex;gap:16px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px;background:#fff}
@@ -198,7 +222,7 @@ h3{font-size:16px;font-weight:700;margin:26px 0 12px;color:var(--navy)}
 .phase li{margin:4px 0}
 .phase .why{margin-top:8px;font-size:13px;background:var(--sky2);border-radius:8px;padding:8px 12px;color:var(--navy)}
 
-/* ===== 합의 내용 ===== */
+/* ===== 해석상담 핵심 ===== */
 .agree{list-style:none}
 .agree li{display:flex;gap:12px;align-items:flex-start;padding:12px 4px;border-bottom:1px dashed #e5ecf3;font-size:14.5px}
 .agree .chk{flex:0 0 24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:1px}
@@ -270,8 +294,8 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   .hero-print .print-long{display:none}
   .hero-print .print-short{display:inline}
   .summary-grid,.type-insights,.pros-cons,.state-grid,.program-grid,.keyword-grid,.apt-summary-grid{grid-template-columns:1fr}
-  .summary-metric{grid-template-columns:96px minmax(78px,1fr) 32px;gap:6px}
-  .summary-axis{grid-template-columns:96px 1fr 32px;gap:6px}
+  .summary-metric{grid-template-columns:82px minmax(78px,1fr) 32px;gap:6px}
+  .summary-axis{grid-template-columns:82px 1fr 32px;gap:6px}
   .apt-card-head{display:block}
   .apt-summary-card,.apt-card-head,.apt-card-body,.apt-chart,.apt-story{min-width:0;max-width:100%}
   .apt-lever{margin-top:10px;width:auto;max-width:100%;overflow-wrap:anywhere;word-break:keep-all}
@@ -316,18 +340,169 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   .hero{padding:34px}
 }
 
-.temperament-dynamics{margin-top:22px;padding:22px;border:1px solid #d6e2ed;border-radius:18px;background:linear-gradient(145deg,#eef6ff,#fbfdff)}
-.temperament-head{text-align:center;max-width:720px;margin:0 auto 16px}.temperament-head>span{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.14em}.temperament-head h3{margin:5px 0 6px;font-size:20px;color:var(--navy)}.temperament-head p{margin:0;color:var(--sub);font-size:13px;line-height:1.7}
-.temperament-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.temperament-card{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:13px;padding:16px 17px;background:#fff}.temperament-card.tone-green{border-top-color:var(--green)}.temperament-card.tone-orange{border-top-color:var(--accent)}.temperament-card.tone-navy{border-top-color:var(--navy)}.temperament-card>span{display:inline-block;margin-bottom:6px;color:var(--blue);font-size:10px;font-weight:900}.temperament-card h4{margin:0 0 6px;color:var(--navy);font-size:14.5px}.temperament-card p{margin:0;color:var(--sub);font-size:12.8px;line-height:1.7}
-.temperament-action{margin-top:12px;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:12px 14px;background:#fff}.temperament-action b{display:block;color:var(--navy);font-size:12px;margin-bottom:3px}.temperament-action p{margin:0;font-size:13.3px;line-height:1.7}
-.program-link-badge{display:inline-flex;margin:0 0 6px;border-radius:999px;padding:4px 9px;background:#e8f1fb;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.04em}
-.champ-raw-score{display:inline-flex;margin-top:8px;border-radius:999px;padding:5px 9px;background:#e8f4ed;color:#237054;font-size:11px;font-weight:900}.apt-story-block.pattern{border-left-color:#2d7358;background:#f1f8f4}
-@media(max-width:700px){html,body{overflow-x:hidden}.wrap,section{min-width:0;max-width:100vw;overflow-x:hidden}.hero{width:auto!important;max-width:100%;margin-left:0;margin-right:0}.hero .meta{gap:8px 14px}.hero .meta span{min-width:0}.summary-grid{display:block!important;width:100%;min-width:0;max-width:100%}.sumcard{width:100%;min-width:0;max-width:100%;margin-bottom:14px;overflow:hidden}.summary-hierarchy,.summary-hierarchy-row{min-width:0;max-width:100%}.sumcard p,.lead{max-width:100%;overflow-wrap:anywhere;word-break:break-all}.summary-hierarchy-row{grid-template-columns:1fr;gap:4px;padding:8px 0;border-bottom:1px dashed #dce5ed}.summary-hierarchy-major,.summary-hierarchy-middle{text-align:left;width:max-content;max-width:100%}.summary-hierarchy-minor{overflow-wrap:anywhere;word-break:break-all}.temperament-grid{grid-template-columns:1fr}}
-@media print{.temperament-card{break-inside:avoid}}
+/* ===== GLASSMORPHISM DESIGN SYSTEM ===== */
+:root{
+  --glass-surface:rgba(255,255,255,.78);
+  --glass-surface-strong:rgba(255,255,255,.91);
+  --glass-line:rgba(255,255,255,.76);
+  --glass-shadow:0 18px 46px rgba(32,67,104,.12),inset 0 1px 0 rgba(255,255,255,.82);
+  --glass-blur:blur(20px) saturate(1.16);
+}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 8% 3%,rgba(92,165,224,.23),transparent 31rem),
+    radial-gradient(circle at 92% 18%,rgba(91,194,156,.18),transparent 28rem),
+    radial-gradient(circle at 76% 82%,rgba(242,164,102,.16),transparent 30rem),
+    linear-gradient(145deg,#e9f1f8 0%,#f6f9fc 47%,#edf4f6 100%);
+  background-attachment:fixed;
+}
+.wrap{max-width:1080px;background:transparent;box-shadow:none;padding-bottom:28px}
+.hero{
+  margin:16px 16px 0;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:30px 30px 24px 24px;
+  background:
+    radial-gradient(circle at 86% 8%,rgba(255,255,255,.18),transparent 24rem),
+    linear-gradient(135deg,rgba(18,52,86,.97),rgba(43,104,164,.93));
+  box-shadow:0 24px 58px rgba(22,57,92,.24),inset 0 1px 0 rgba(255,255,255,.18);
+}
+.branch-logo{border:1px solid rgba(255,255,255,.72);background:rgba(255,255,255,.91);box-shadow:0 10px 28px rgba(5,31,57,.18),inset 0 1px 0 #fff}
+.hero-print,.typechip{-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2)}
+.typechip{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.42);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.toolbar{
+  width:calc(100% - 48px);
+  margin:-16px auto 16px;
+  top:12px;
+  z-index:80;
+  flex-wrap:nowrap;
+  justify-content:flex-start;
+  gap:3px;
+  padding:9px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  overscroll-behavior-x:contain;
+  scrollbar-width:none;
+  scroll-snap-type:x proximity;
+  border:1px solid var(--glass-line);
+  border-radius:20px;
+  background:rgba(248,252,255,.82);
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
+  box-shadow:0 16px 38px rgba(31,65,101,.15),inset 0 1px 0 rgba(255,255,255,.9);
+}
+@supports (justify-content:safe center){.toolbar{justify-content:safe center}}
+.toolbar::-webkit-scrollbar{display:none}
+.toolbar a{
+  scroll-snap-align:center;
+  font-size:11.5px;
+  padding:7px 9px;
+  border:1px solid transparent;
+  color:#4d6073;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+}
+.toolbar a:hover,.toolbar a:focus-visible{
+  color:var(--navy);
+  background:rgba(255,255,255,.82);
+  border-color:rgba(71,128,181,.2);
+  box-shadow:0 5px 14px rgba(37,77,116,.09),inset 0 1px 0 #fff;
+  outline:none;
+  transform:translateY(-1px);
+}
+section{
+  margin:0 16px 16px;
+  padding:40px 42px;
+  border:1px solid var(--glass-line);
+  border-radius:24px;
+  background:var(--glass-surface);
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
+  box-shadow:var(--glass-shadow);
+}
+.sec-label{border:1px solid rgba(83,144,197,.17);border-radius:999px;background:rgba(228,241,252,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.sumcard:not(.full),.keyword-card,.apt-summary-card,.program-card,.type-insight,.stone,.state,.route-core,.competency-branch,.apt-story-block,.package-card,.package-option,.decide .opt,.expertise{
+  border-color:rgba(201,216,231,.78);
+  background:var(--glass-surface-strong);
+  box-shadow:0 10px 26px rgba(35,71,108,.07),inset 0 1px 0 rgba(255,255,255,.96);
+}
+.sumcard.full{background:linear-gradient(135deg,rgba(255,247,239,.93),rgba(255,255,255,.84));border-color:rgba(236,181,129,.62)}
+.basis-note,.factor-detail,.phase .why,.quote{background:rgba(240,247,253,.78)}
+.core-narrative,.type-box,.route-network,.competency-set,.package-panel{
+  border:1px solid rgba(210,220,235,.78);
+  background:linear-gradient(135deg,rgba(241,247,255,.82),rgba(255,250,244,.72));
+  box-shadow:0 14px 34px rgba(36,70,107,.08),inset 0 1px 0 rgba(255,255,255,.92);
+}
+.apt-lever,.package-head{box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 8px 20px rgba(24,58,91,.12)}
+.bar,.apt-track,.summary-metric-track{box-shadow:inset 0 1px 2px rgba(27,58,92,.11)}
+.closing{border:1px solid rgba(255,255,255,.24);box-shadow:0 18px 42px rgba(23,58,92,.2),inset 0 1px 0 rgba(255,255,255,.17)}
+.temperament-dynamics{margin-top:22px;padding:22px;border:1px solid rgba(205,218,232,.82);border-radius:18px;background:linear-gradient(145deg,rgba(238,246,255,.88),rgba(250,253,255,.78));box-shadow:0 14px 34px rgba(36,70,107,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+.temperament-head{text-align:center;max-width:720px;margin:0 auto 16px}.temperament-head>span{display:inline-block;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.14em}.temperament-head h3{margin:5px 0 6px;font-size:20px;color:var(--navy)}.temperament-head p{margin:0;color:var(--sub);font-size:13px;line-height:1.7}
+.temperament-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.temperament-card{border:1px solid rgba(205,218,232,.86);border-top:4px solid var(--blue);border-radius:13px;padding:16px 17px;background:rgba(255,255,255,.9);box-shadow:0 8px 20px rgba(35,71,108,.06),inset 0 1px 0 #fff}.temperament-card.tone-green{border-top-color:var(--green)}.temperament-card.tone-orange{border-top-color:var(--accent)}.temperament-card.tone-navy{border-top-color:var(--navy)}.temperament-card>span{display:inline-block;margin-bottom:6px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.08em}.temperament-card.tone-green>span{color:var(--green)}.temperament-card.tone-orange>span{color:#b76325}.temperament-card.tone-navy>span{color:var(--navy)}.temperament-card h4{margin:0 0 6px;color:var(--navy);font-size:14.5px;line-height:1.45}.temperament-card p{margin:0;color:var(--sub);font-size:12.8px;line-height:1.7}
+.temperament-action{margin-top:12px;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:12px 14px;background:rgba(255,255,255,.75)}.temperament-action b{display:block;color:var(--navy);font-size:12px;letter-spacing:.06em;margin-bottom:3px}.temperament-action p{margin:0;color:var(--ink);font-size:13.3px;line-height:1.7}
+footer{color:#506476}
+@media (max-width:980px) and (min-width:701px){.program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+  body{background:linear-gradient(145deg,#edf4fa,#f8fafc 48%,#eef5f3)}
+  .wrap{padding-bottom:10px}
+  .hero{width:auto;max-width:none;margin:0;border-width:0 0 1px;border-radius:0 0 22px 22px}
+  .toolbar{width:calc(100% - 16px);margin:-10px auto 10px;top:6px;gap:2px;padding:7px;justify-content:flex-start}
+  .toolbar a{font-size:11px;padding:6px 8px}
+  section{margin:0 8px 10px;padding:28px 18px;border-radius:18px}
+  .temperament-dynamics{padding:18px 14px}.temperament-grid{grid-template-columns:1fr}
+  .summary-hierarchy-row{grid-template-columns:1fr;gap:4px;padding:8px 0;border-bottom:1px dashed #dce5ed}.summary-hierarchy-row:last-child{border-bottom:0}.summary-hierarchy-major,.summary-hierarchy-middle{text-align:left;width:max-content}.summary-hierarchy-minor{padding-left:5px}
+  .counseling-flow-wrap{padding:17px 13px}.counseling-flow{grid-template-columns:1fr}.counseling-step:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-13px}
+}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more){
+  body{background:#eef3f7}
+  .toolbar,section,.hero-print,.typechip{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .toolbar,section{background:#fff;border-color:#cbd8e4}
+  .sumcard:not(.full),.keyword-card,.apt-summary-card,.program-card,.type-insight,.stone,.state,.route-core,.competency-branch,.apt-story-block,.package-card,.package-option,.decide .opt,.expertise{background:#fff}
+}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .toolbar,section{background:rgba(255,255,255,.97)}
+}
+@media print{
+  body{background:#fff}
+  .wrap{padding:0}
+  .hero{margin:0;border:0;border-radius:0;box-shadow:none}
+  section{margin:0;padding:26px 34px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:#fff;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+
+/* vlt5g-13-sections-2026-08-11.3 */
+body[data-layout-contract="vlt5g-13-sections-2026-08-11.3"]{scroll-behavior:smooth}
+.subject-profile-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;box-shadow:0 10px 28px rgba(18,52,86,.045)}
+.subject-profile-head{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:16px;border-bottom:1px solid #e4ebf2}
+.subject-profile-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.subject-profile-title h3{margin:0;color:var(--navy);font-size:20px}.subject-profile-title p{margin:5px 0 0;color:var(--sub);font-size:12.5px}
+.growth-lever-full{width:100%;border-radius:11px;padding:13px 15px;background:var(--navy);color:#fff;font-size:12.5px;line-height:1.65}
+.growth-lever-full b{display:block;margin-bottom:3px;color:#bfe0ff;font-size:10px;letter-spacing:.04em}
+.subject-upper-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;margin-top:16px;align-items:stretch}
+.subject-lower-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.subject-panel{border:1px solid #dce6ef;border-radius:11px;padding:15px;background:#fff;min-width:0}
+.subject-panel h4{margin:0 0 7px;color:var(--navy);font-size:13px}.subject-panel p{margin:0;color:var(--sub);font-size:12.3px;line-height:1.68}
+.subject-panel.diagnosis{border-left:4px solid var(--blue)}.subject-panel.risk{border-left:4px solid var(--accent)}
+.subject-panel.management{border-left:4px solid var(--blue)}.subject-panel.tutoring{border-left:4px solid var(--green)}
+.strategy-badge{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin:0 0 8px;border-radius:999px;padding:4px 9px;background:#e8f1fb;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.02em}
+.subject-panel.tutoring .strategy-badge{background:#e6f4ed;color:#287b58}.subject-panel.risk .strategy-badge{background:#fff0e5;color:#b75b1c}
+.subject-chart{padding:16px;border:1px solid #dce6ef;border-radius:11px;background:#f9fbfd}.subject-chart .apt-metric+.apt-metric{margin-top:9px}
+.vlt-contract-head{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0 8px}.vlt-contract-head span{flex:1 1 260px;border:1px solid #dce6ef;border-radius:10px;padding:10px 12px;background:#f8fbfd;color:var(--sub);font-size:11.5px}.vlt-contract-head b{display:block;color:var(--navy);margin-bottom:3px}
+.vlt-factor-row{border:1px solid #dfe7ef;border-radius:12px;padding:15px 16px;margin:10px 0;background:#fff;cursor:pointer;transition:.18s ease}
+.vlt-factor-row:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(19,55,89,.07)}.vlt-factor-row.is-ranked{border:2px solid #2f73b8;background:linear-gradient(135deg,#f5faff,#fff)}
+.vlt-factor-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start}.vlt-factor-title{display:flex;flex-wrap:wrap;gap:7px;align-items:center;color:var(--navy);font-size:15px;font-weight:900}.vlt-stars{color:#b8860b;letter-spacing:.04em}.vlt-factor-sub{grid-column:1/-1;color:var(--sub);font-size:11.5px;line-height:1.55}
+.vlt-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}.vlt-status-badge,.vlt-priority-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 9px;font-size:10px;font-weight:900;white-space:nowrap}.vlt-status-badge{background:#eef3f8;color:#50657a}.vlt-priority-badge{background:#dcecff;color:#195e9f}
+.vlt-bipolar{display:grid;grid-template-columns:42px 1fr 42px;gap:8px;align-items:center;margin-top:12px}.vlt-bipolar>span{color:#718399;font-size:9px;text-align:center}.vlt-bipolar-track{position:relative;height:9px;border-radius:999px;background:#e7edf3;overflow:visible}.vlt-bipolar-track .vlt-zero{position:absolute;left:50%;top:-4px;width:1px;height:17px;background:#91a5ba}.vlt-bipolar-track .vlt-range{position:absolute;top:0;height:9px;border-radius:999px;background:linear-gradient(90deg,#e86f58,#f4a260,#6db998,#2f8d65)}.vlt-bipolar-track .vlt-point{position:absolute;top:50%;width:11px;height:11px;border:2px solid #fff;border-radius:50%;background:var(--navy);box-shadow:0 1px 5px rgba(0,0,0,.22);transform:translate(-50%,-50%)}
+.vlt-factor-detail{display:none;margin-top:12px;padding:12px 14px;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;background:#edf5fc;color:var(--sub);font-size:12.5px;line-height:1.7}.vlt-factor-row.open .vlt-factor-detail{display:block}
+.stone-help{margin-top:10px;padding:11px 13px;border-radius:9px;background:#f3f8fc;color:var(--sub);font-size:12px;line-height:1.65}.stone-help b{color:var(--navy)}.stone-signals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.stone-signal{border:1px solid #dfe8f0;border-radius:8px;padding:9px;background:#fff;font-size:11.5px;color:var(--sub)}.stone-signal b{display:block;color:var(--blue);margin-bottom:2px}
+.state .program-link-badge{margin:8px auto 2px}.counseling-impact-lead{border-left:4px solid var(--blue);padding:12px 15px;background:#eef6fd;color:var(--navy)!important;font-weight:700}
+.closing-label{margin-bottom:14px}
+@media(max-width:900px){.subject-upper-grid{grid-template-columns:1fr}.subject-lower-grid{grid-template-columns:1fr}.subject-profile-title{display:block}.vlt-factor-head{grid-template-columns:1fr}.vlt-badges{justify-content:flex-start}}
+@media(max-width:700px){.summary-grid{grid-template-columns:1fr}.subject-profile-card{padding:16px}.stone-signals{grid-template-columns:1fr}.vlt-bipolar{grid-template-columns:32px 1fr 32px}}
+@media print{.subject-profile-card,.subject-panel,.vlt-factor-row,.stone-help,.stone-signals{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}.vlt-factor-row:hover{transform:none;box-shadow:none}}
 
 </style>
 </head>
-<body>
+<body data-layout-contract="vlt5g-13-sections-2026-08-11.3">
 <div class="wrap">
 
 <!-- ══════════════════ 헤더 ══════════════════ -->
@@ -337,7 +512,7 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
     <img class="branch-logo" id="branch-logo" src="https://acmebld2026.github.io/eduplexge-vlt/assets/gireum-branch-logo.png?v=20260715-2" onerror="this.onerror=null;this.src='../assets/gireum-branch-logo.png?v=20260715-2'" alt="에듀플렉스 에듀코치 길음점 로고">
     <div class="brand">EDUPLEX · VLT-5G 학습 DNA 검사</div>
   </div>
-  <h1 id="rpt-title">VLT-5G 초기 진단 결과지</h1>
+  <h1 id="rpt-title">초기상담 결과 보고서</h1>
   <div class="sub" id="rpt-subtitle"></div>
   <div class="meta" id="rpt-meta"></div>
   <div class="typechips" id="rpt-types"></div>
@@ -346,23 +521,23 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 <nav class="toolbar">
   <a href="#sec-summary">요약</a>
   <a href="#sec-core-summary">검사 핵심</a>
-  <a href="#sec-apt">국영수 APT</a>
+  <a href="#sec-apt">APT·CHAMP</a>
   <a href="#sec-test">검사 결과</a>
   <a href="#sec-type">타입 해설</a>
   <a href="#sec-stones">걸림돌</a>
   <a href="#sec-state">현재 상태</a>
   <a href="#sec-solution">솔루션</a>
-  <a href="#sec-program">지원 구조</a>
-  <a href="#sec-agree">합의 내용</a>
-  <a href="#sec-decide">합의된 시작과 다음 조정 기준</a>
-  <a href="#sec-price">초기 운영 구성</a>
+    <a href="#sec-agree">해석상담 핵심</a>
+  <a href="#sec-decide">결정해주실 부분</a>
+<a href="#sec-program">프로그램 구조</a>
+  <a href="#sec-price">구성·비용</a>
 </nav>
 
 <!-- ══════════════════ 1. 한눈에 보는 요약 ══════════════════ -->
 <section id="sec-summary">
   <span class="sec-label">SUMMARY</span>
-  <h2>한눈에 보는 해석상담 결과</h2>
-  <p class="lead">검사 결과와 2026년 8월 12일 김병수 원장의 해석상담에서 확인된 현재 모습과 지원 방향을 요약했습니다.</p>
+  <h2>한눈에 보는 상담 결과</h2>
+  <p class="lead">VLT-5G, APT, CHAMP TEST와 해석상담에서 확인된 내용을 종합한 핵심 요약입니다.</p>
   <div class="summary-grid" id="summary-grid"></div>
   <div class="expertise" id="expertise-box"></div>
 </section>
@@ -374,32 +549,42 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   <p class="basis-note" id="core-summary-basis"></p>
   <div class="keyword-grid" id="core-keywords"></div>
   <div class="core-narrative" id="core-narrative"></div>
-  <div class="temperament-dynamics"><div class="temperament-head"><span>LEARNING TEMPERAMENT</span><h3 id="temperament-title"></h3><p id="temperament-lead"></p></div><div class="temperament-grid" id="temperament-grid"></div><div class="temperament-action" id="temperament-action"></div></div>
+  <div class="temperament-dynamics" id="temperament-dynamics">
+    <div class="temperament-head"><span>LEARNING TEMPERAMENT</span><h3 id="temperament-title"></h3><p id="temperament-lead"></p></div>
+    <div class="temperament-grid" id="temperament-grid"></div>
+    <div class="temperament-action" id="temperament-action"></div>
+  </div>
 </section>
 
 <!-- ══════════════════ APT 국어·영어·수학 역량 ══════════════════ -->
 <section id="sec-apt">
   <span class="sec-label">APT SUBJECT PROFILE</span>
-  <h2>국어·영어·수학 역량 분석 핵심 요약</h2>
-  <p class="lead">APT 상위 역량 그래프와 우선 보완 지표를 함께 읽어, 현재의 강점이 성적으로 이어지는 조건과 가장 먼저 바꿔야 할 학습 행동을 시각화했습니다.</p>
+  <h2>APT 국어·영어·수학 역량 분석</h2>
+  <p class="lead">국어·영어·수학에서 잘하고 있는 기능과 먼저 보완할 기능을 나누어, 과목별 학습 방향을 정리했습니다.</p>
   <div class="apt-summary-grid" id="apt-summary-grid"></div>
+  <div class="subject-profile-divider">
+    <span class="sec-label">CHAMP TEST SUBJECT PROFILE</span>
+    <h3>CHAMP TEST 수행 결과</h3>
+    <p>과목별 강점과 놓치기 쉬운 지점을 연결해, 바로 적용할 학습 행동으로 정리했습니다.</p>
+  </div>
+  <div class="apt-summary-grid" id="champ-summary-grid"></div>
 </section>
 
 <!-- ══════════════════ 2. 검사 결과 ══════════════════ -->
 <section id="sec-test">
   <span class="sec-label">VLT-5G TEST</span>
   <h2>VLT-5G 검사 결과</h2>
-  <p class="lead">자기주도학습 역량을 구성하는 13개 진단 영역을 정리했습니다. 각 항목을 누르면 우리 아이에 대한 세부 해석을 볼 수 있습니다.</p>
-  <div class="factor-wrap" id="factor-list"></div>
-  <div class="legend">
+  <p class="lead">매니지먼트 개입 중요도가 별 4개 이상인 항목만 골라 현재 상태와 개입 우선순위를 분리해 정리했습니다. TOP3는 1순위·2순위·3순위로 강조했습니다.</p>
+  <div class="vlt-contract-head"><span><b>현재 상태</b>좋음·다소 좋음·보통·다소 좋지 않음·좋지 않음</span><span><b>매니지먼트 개입 중요도</b>별 4개 이상만 표시하며 TOP3는 별도 순위로 강조합니다.</span></div><div class="factor-wrap" id="factor-list"></div>
+  <div class="legend" hidden>
     <span class="l1">부족</span><span class="l2">미흡</span><span class="l3">준수</span><span class="l4">우수</span><span class="l5">매우 우수</span>
   </div>
-  <p class="hint">※ 각 막대를 클릭하면 해당 요소에 대한 상세 해석이 열립니다. 별표(★)는 매니지먼트 개입 중요도입니다.</p>
+  <p class="hint">※ 항목을 누르면 상세 해석이 열립니다. 현재 상태 배지와 매니지먼트 개입 중요도(★)는 서로 다른 기준입니다.</p>
 </section>
 
 <!-- ══════════════════ 3. 타입 해설 ══════════════════ -->
 <section id="sec-type">
-  <span class="sec-label">학습 DNA 타입 프로파일</span>
+  <span class="sec-label">LEARNING DNA TYPE PROFILE</span>
   <h2 id="type-title"></h2>
   <p class="lead">VLT-5G의 16개 학습 성향 타입 중 우리 아이에게 해당하는 프로파일입니다.</p>
   <div class="type-box" id="type-desc"></div>
@@ -408,13 +593,28 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
     <div class="pc pros"><div class="t">이 타입의 강점</div><ul id="type-pros"></ul></div>
     <div class="pc cons"><div class="t">주의 깊게 봐야 할 지점</div><ul id="type-cons"></ul></div>
   </div>
+  <div class="type-growth">
+    <div class="growth-head"><span class="kicker">TYPE GROWTH MAP</span><h3 id="growth-flow-title"></h3><p id="growth-flow-lead"></p></div>
+    <div class="route-network">
+      <div><span class="route-column-label">현재 함께 확인된 타입</span><div class="route-nodes" id="route-current"></div></div>
+      <div class="route-arrow" aria-hidden="true">→</div>
+      <article class="route-core"><span class="core-label" id="route-core-label"></span><h4 id="route-core-title"></h4><p id="route-core-body"></p><div class="route-core-tracks" id="route-core-tracks"></div></article>
+      <div class="route-arrow" aria-hidden="true">→</div>
+      <div><span class="route-column-label">이어지는 성장 방향</span><div class="route-nodes" id="route-targets"></div></div>
+    </div>
+    <p class="route-foot" id="route-foot"></p>
+    <div class="competency-set">
+      <div class="competency-hub"><span class="hub-label">GROWTH BRANCH SET</span><h3 id="competency-title"></h3><p id="competency-lead"></p></div>
+      <div class="competency-branches" id="competency-branches"></div>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════ 4. 걸림돌 ══════════════════ -->
 <section id="sec-stones">
   <span class="sec-label">OBSTACLES</span>
   <h2>지금 아이가 마주하고 있는 걸림돌</h2>
-  <p class="lead">검사와 실제 해석상담에서 함께 확인된 우선 지원 지점입니다.</p>
+  <p class="lead">검사 수치, 과목 수행, 초기상담에서 함께 확인된 우선 관리 지점입니다.</p>
   <div id="stones"></div>
 </section>
 
@@ -431,17 +631,16 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 <section id="sec-solution">
   <span class="sec-label">SOLUTION ROADMAP</span>
   <h2>앞으로 필요한 솔루션</h2>
-  <p class="lead">현재 확인된 역량과 타입 시퀀스를 바탕으로, 시기별 도움과 확인 지표를 정리했습니다.</p>
+  <p class="lead">타입별 매니지먼트 전략(XCM16)에 근거해, 시기별로 무엇을 어떻게 도울지 설계했습니다.</p>
   <div class="road" id="roadmap"></div>
 </section>
 
-<!-- ══════════════════ 7. 지원 구조 ══════════════════ -->
 
-<!-- ══════════════════ 7. 합의 내용 ══════════════════ -->
+<!-- ══════════════════ 7. 해석상담 핵심 ══════════════════ -->
 <section id="sec-agree">
-  <span class="sec-label">AGREED</span>
-  <h2>상담에서 함께 합의한 내용</h2>
-  <p class="lead">상담 중 학부모님·학생과 서로 확인하고 동의한 사항입니다.</p>
+  <span class="sec-label">COUNSELING IMPACT</span>
+  <h2>해석상담에서 함께 짚은 핵심</h2>
+  <p class="lead counseling-impact-lead" id="counseling-lead"></p>
   <ul class="agree" id="agreements"></ul>
 </section>
 
@@ -449,24 +648,29 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 <section id="sec-decide">
   <span class="sec-label">NEXT STEP</span>
   <h2>다음 단계 — 확인 순서와 결정 기준</h2>
-  <p class="lead">해석상담에서 합의한 시작 구성과 초기 운영 뒤 다시 조정할 기준을 정리했습니다.</p>
+  <p class="lead">현재 확인된 내용과 가족 결정 대기 사항을 바탕으로 다음 확인 시점과 판단 기준을 정리했습니다.</p>
   <div id="decisions"></div>
 </section>
 
+<!-- ══════════════════ 7. 프로그램 구조 ══════════════════ -->
 <section id="sec-program">
-  <span class="sec-label">EDUPLEX SUPPORT MODEL</span>
-  <h2>에듀플렉스 지원 구조</h2>
+  <span class="sec-label">EDUPLEX COACHING SYSTEM</span>
+  <h2>상담·관리·개별지도 — 건을 돕는 방식</h2>
   <p class="lead" id="program-lead"></p>
+  <div class="counseling-flow-wrap">
+    <div class="counseling-flow-head"><span>COUNSELING PRIORITY FLOW</span><h3>정기상담에서 이어갈 우선순위</h3><p>현재 진단과 해석상담에서 확인된 건의 변화 순서입니다.</p></div>
+    <div class="counseling-flow" id="counseling-flow"></div>
+  </div>
   <div class="program-grid" id="program-cards"></div>
 </section>
 
 <!-- ══════════════════ 9. 프로그램 · 비용 ══════════════════ -->
 <section id="sec-price">
   <span class="sec-label">PROGRAM & REVIEW</span>
-  <h2>초기 2주 프로그램 구성</h2>
+  <h2>프로그램 구성과 상담 당시 안내 기준</h2>
   <p class="lead" id="price-lead"></p>
   <table class="price">
-    <thead><tr><th style="width:44%">구성 요소</th><th>내용</th><th style="width:16%;text-align:right">합의 구성</th></tr></thead>
+    <thead><tr><th style="width:44%">구성 요소</th><th>내용</th><th style="width:16%;text-align:right">적용 기준</th></tr></thead>
     <tbody id="price-rows"></tbody>
   </table>
   <p class="price-note" id="price-note"></p>
@@ -480,8 +684,9 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
   </div>
 </section>
 
-<!-- ══════════════════ 10. 클로징 ══════════════════ -->
-<section>
+<!-- ══════════════════ 13. 클로징 ══════════════════ -->
+<section id="sec-closing">
+  <span class="sec-label closing-label">CLOSING MESSAGE</span>
   <div class="closing">
     <h3 id="closing-title"></h3>
     <p id="closing-msg"></p>
@@ -495,12 +700,12 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 <script>
 /* ═══════════════════════════════════════════════════════════════
    학생별 데이터
-   (아래는 TYPE 3 학원키즈 가상 예시 데이터입니다)
+   (아래는 왕건10 초기상담 확정 데이터입니다)
    작성 가이드는 내부 문서를 참조합니다.
 ═══════════════════════════════════════════════════════════════ */
 const REPORT_DATA = {
   "meta": {
-    "student": "왕건10",
+    "student": "건10",
     "school": "고등학교 1학년",
     "testDate": "2026.08.07",
     "counselDate": "2026.08.12",
@@ -514,61 +719,36 @@ const REPORT_DATA = {
     "logoAlt": "에듀플렉스 에듀코치 길음점 로고"
   },
   "types": {
-    "primary": "TYPE 15. 마니아",
-    "secondary": "TYPE 11. 성실이"
+    "primary": "메인 TYPE 15. 마니아",
+    "secondary": "히든 TYPE 11. 성실이"
   },
   "summary": [
     {
-      "title": "가능성의 출발점 · 기타로 이미 증명한 성장 경험",
-      "body": "건이는 재즈·블루스 기타를 1년 반 연습하며 이전보다 실력이 높아졌다고 확인했습니다. 학부모도 음악적 감각과 표현력을 또래보다 높은 강점으로 보았습니다. 해석상담에서는 이 경험을 ‘시간을 투자하면 능력이 실제로 자란다’는 자기 증거로 읽었고, 같은 원리를 학업에 옮기는 것이 변화의 출발점이라고 합의했습니다. 영어는 학교 2등급과 함께 APT 재정리 전략 5.0·메타인지 전략 4.5가 확인된 현재의 기준 과목입니다.",
-      "hierarchy": [
-        {
-          "major": "학습 방식 및 태도",
-          "middle": "상황인식",
-          "minor": "학습필요인식 +28 · 공부의 중요성 인식"
-        },
-        {
-          "major": "학습 수행",
-          "middle": "영어",
-          "minor": "APT 재정리 5.0 · 메타인지 4.5 · 학교 2등급"
-        },
-        {
-          "major": "학습 방법",
-          "middle": "기억",
-          "minor": "어휘 노트 작성 · 주 2회 복습 응답"
-        }
-      ],
-      "metrics": [
-        {
-          "label": "학습필요인식",
-          "score": 28,
-          "tone": "asset"
-        },
-        {
-          "label": "영어 종합",
-          "score": 44,
-          "tone": "asset"
-        },
-        {
-          "label": "어휘력",
-          "score": 22,
-          "tone": "asset"
-        }
-      ]
+      "title": "현재 위치",
+      "body": "건은 첫 학기의 학습 시간을 충분히 확보하지 못했고, 학원에서 배운 뒤 혼자 익히는 과정도 이어지지 않았다고 이해했습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력이 높아진 경험이 있습니다. 이번 변화는 좋아하는 활동을 없애는 일이 아니라, 기타에서 이미 확인한 ‘시간을 투자하고 반복하면 성장한다’는 원리를 학업으로 옮기는 일입니다."
     },
     {
-      "title": "1차 병목 · 공부한 시간이 아니라 배운 시간에 머묾",
-      "body": "건이는 첫 학기를 ‘성실하지 못했다’고 표현하며 원하는 활동을 공부보다 먼저 했고, 실제 공부 시간 자체가 적었다는 점을 인정했습니다. 학원에서는 수업을 듣고 숙제도 했지만 집에서 복습하며 자기 것으로 만드는 ‘익힘’이 이어지지 않았습니다. 계획-실행-채점-보완을 닫는 구조와 함께, 배운 뒤 혼자 익히는 시간을 확보하는 것이 1차 과제입니다.",
+      "title": "CHAMP TEST 기반 과목 역량 체크",
+      "body": "기초문장이해 종합 1, 국어 종합 4·LV0, 영어 종합 44·LV1, 수학 종합 26·LV0입니다. 영어는 현재의 기준 과목으로 활용할 수 있지만 근거 분석과 구조화가 더 필요합니다. 국어는 언어 구조와 근거 독해, 수학은 조건 해석과 심화 전이가 우선 보완 영역입니다."
+    },
+    {
+      "title": "핵심 병목",
+      "body": "가장 먼저 바꿀 것은 공부 재능이 아니라 절대 학습 시간과 계획-실행-채점-보완의 마감 구조입니다. 배우는 시간이 익히는 시간으로 이어지지 않으면서 국어의 문장·구조 이해와 수학의 절차·전이가 함께 막히고 있습니다.",
       "hierarchy": [
         {
-          "major": "학습 방식 및 태도",
+          "major": "실행·습관",
           "middle": "체계적 수행",
           "minor": "학습계획 -46 · 성실성 -46 · 학습성찰 -38"
         },
         {
-          "major": "167문항 응답",
-          "middle": "실행",
-          "minor": "무계획 학습 · 1시간 미만 자습 · 즉시 채점·오답 분석 부족"
+          "major": "실행·습관",
+          "middle": "학습자율성",
+          "minor": "학습자립심 -42 · 사교육의존 +39 · 부모학습통제 +44"
+        },
+        {
+          "major": "과목·기능",
+          "middle": "이성 역량",
+          "minor": "집중력 -43 · 논리력 -35 · 문장 관계와 조건 구조화 부담"
         }
       ],
       "metrics": [
@@ -578,102 +758,59 @@ const REPORT_DATA = {
           "tone": "risk"
         },
         {
-          "label": "성실성",
-          "score": -46,
-          "tone": "risk"
-        },
-        {
           "label": "학습자립심",
           "score": -42,
           "tone": "risk"
+        },
+        {
+          "label": "집중력",
+          "score": -43,
+          "tone": "risk"
         }
       ]
     },
     {
-      "title": "방향·정서 · 시험 불안과 외부 의존",
-      "body": "학생은 현재 스트레스를 8/10, 공부 동기를 2/10으로 적었습니다. 상담에서는 영어에서 잘하고 싶다는 압박이 시험 직전 긴장과 늦은 몰입으로 나타나고, 수학에서는 ‘언제 끝나지’라는 조급함이 집중을 흔든다고 설명했습니다. 부모의 정서적 지지는 충분한 편이므로 통제를 늘리기보다 계획을 학생이 선택하고 결과를 책임지는 구조로 옮겨야 합니다.",
+      "title": "핵심 자산",
+      "body": "건은 관심 분야에 시간을 투자해 실제 성장을 만들어 본 경험이 있고, 영어에서는 재정리와 자기 점검 역량이 강점으로 나타났습니다. 공부의 필요성도 인식하고 있으며 부모의 정서적 지지는 변화가 흔들릴 때 다시 시작할 수 있는 보호 요인입니다.",
       "hierarchy": [
         {
-          "major": "학습력",
-          "middle": "감정 역량",
-          "minor": "시험안정감 -45 · 시험 중 긴장·반추 응답"
+          "major": "방향·정서",
+          "middle": "성장 경험",
+          "minor": "재즈·블루스 기타 약 1년 반 연습 · 실력 향상 자각"
         },
         {
-          "major": "학습 방식 및 태도",
-          "middle": "학습자율성",
-          "minor": "학습자립심 -42 · 사교육의존 +39 · 부모학습통제 +44"
+          "major": "과목·기능",
+          "middle": "영어 학습 전략",
+          "minor": "재정리 전략 5.0 · 메타인지 전략 4.5"
         },
         {
-          "major": "기초 멘탈리티",
-          "middle": "내적 태도",
-          "minor": "자기긍정 -27 · 부모정서지지 +27"
+          "major": "방향·정서",
+          "middle": "변화의 기반",
+          "minor": "학습필요인식 +28 · 부모정서지지 +27"
         }
       ],
       "metrics": [
         {
-          "label": "시험안정감",
-          "score": -45,
-          "tone": "risk"
+          "label": "재정리 전략",
+          "score": 50,
+          "tone": "asset"
         },
         {
-          "label": "자기긍정",
-          "score": -27,
-          "tone": "risk"
+          "label": "메타인지 전략",
+          "score": 45,
+          "tone": "asset"
         },
         {
-          "label": "부모정서지지",
-          "score": 27,
+          "label": "학습필요인식",
+          "score": 28,
           "tone": "asset"
         }
       ]
-    },
-    {
-      "title": "과목·기능 · 국어 독해 절차와 수학 심화 전이",
-      "body": "APT와 CHAMP 수행을 함께 보면 국어는 언어 구조·개념 이해와 근거 읽기·요약이, 수학은 풀이 절차와 조건 해석·심화 전이가 같은 방향의 우선 병목입니다. 영어는 재정리와 메타인지가 강점이지만 근거 분석과 지문 구조화는 더 안정시켜야 합니다.",
-      "hierarchy": [
-        {
-          "major": "기초 문장 이해",
-          "middle": "문맥 읽기",
-          "minor": "11/20 · 문맥 어휘·관용 표현·담화 적합성 오답"
-        },
-        {
-          "major": "국어",
-          "middle": "구조·근거 독해",
-          "minor": "APT 언어 구조·개념 1.0 · CHAMP 5/20"
-        },
-        {
-          "major": "수학",
-          "middle": "풀이 절차·전이",
-          "minor": "APT 풀이 절차 1.6 · CHAMP 심화 1/10"
-        }
-      ],
-      "metrics": [
-        {
-          "label": "C 이해",
-          "score": -49,
-          "tone": "risk"
-        },
-        {
-          "label": "H 사고",
-          "score": -46,
-          "tone": "risk"
-        },
-        {
-          "label": "P 문제해결",
-          "score": -49,
-          "tone": "risk"
-        }
-      ]
-    },
-    {
-      "title": "통합 진단 한 문장",
-      "body": "건이는 관심 분야에 시간을 투자해 성장해 본 힘이 있지만, 학업에서는 학습 시간의 절대량과 배운 뒤 익히는 과정이 부족해 문장·어휘 기반의 이해와 수학의 심화 전이가 함께 막혀 있습니다. 8월 18일부터 상담·관리로 시간 사용과 실행 구조를 세우고, 초기 2주는 수학 개별지도 주 4회로 시작해 독립 학습 효율에 따라 감량하거나 필요한 과목으로 전환합니다.",
-      "full": true
     }
   ],
   "coreSummary": {
     "title": "검사 결과지 기반 핵심 요약",
-    "basis": "검사 결과지 기반 핵심 요약입니다. 응답 일관성이 낮은 성향은 고정된 성격으로 단정하지 않고, 해석상담의 실제 장면과 과목 수행에서 반복 확인된 학습 행동을 중심으로 정리했습니다.",
+    "basis": "검사 결과지 기반으로 각 세목의 장점·보완점·발전할 점을 실제 상담 장면과 과목 수행에 연결해 정리했습니다.",
     "strengthKeywords": [
       "보상 추구 · 위험 회피 · 균형 감각",
       "호기심 · 존재감",
@@ -712,7 +849,7 @@ const REPORT_DATA = {
       "객관적 피드백 · 학습 효율성 이해 · 커리큘럼 수용",
       "현실 직시 · 맞춤형 학습 전략 · 정서적 격려"
     ],
-    "narrative": "건이는 첫 학기를 스스로 ‘성실하지 못했다’고 표현했고, 공부보다 원하는 활동을 먼저 했다는 점과 실제 학습 시간이 부족했다는 점을 받아들였습니다. 반면 재즈·블루스 기타를 1년 반 연습하며 실력이 높아진 경험은 시간을 투자하면 능력이 자란다는 확실한 자기 증거입니다. 상담에서는 이 경험을 없애야 할 취미가 아니라 공부로 옮길 수 있는 성장 모델로 확인했습니다. 현재 핵심 병목은 재능 부족보다 학습 시간의 절대량, 배운 뒤 익히는 과정의 단절, 문장·어휘를 바탕으로 정보를 구조화하는 부담입니다. 국어 APT의 언어 구조·개념 이해 1.0과 수학 APT의 풀이 절차 1.6은 과목 수행에서 보인 근거 독해와 심화 전이의 어려움과 같은 방향입니다. 반면 영어 APT의 재정리 5.0과 메타인지 4.5는 현재의 성취를 지지하는 자산입니다. 따라서 8월 18일부터 상담·관리로 주간 시간 블록과 계획-실행-점검을 세우고, 초기 2주간 수학 개별지도 주 4회로 기초 빈틈과 조건 해석을 보완하기로 합의했습니다. 영어는 근거 분석과 지문 구조화를 관리하고, 국어의 언어 기반은 전 과목 학습 과정에서 함께 보완합니다."
+    "narrative": "건은 첫 학기를 스스로 ‘성실하지 못했다’고 표현했고, 공부보다 원하는 활동을 먼저 했으며 실제 학습 시간이 부족했다는 점을 받아들였습니다. 반면 재즈·블루스 기타를 약 1년 반 연습하며 실력을 높인 경험은 시간을 투자하면 능력이 자란다는 확실한 자기 증거입니다. 이번 상담에서는 그 경험을 없애야 할 취미가 아니라 공부로 옮길 수 있는 성장 모델로 연결했습니다. 현재 핵심 병목은 재능 부족보다 절대 학습 시간, 배운 뒤 익히는 과정의 단절, 문장과 조건을 구조화하는 부담입니다. 국어 APT의 언어 구조·개념 이해 1.0과 수학 APT의 풀이 절차 1.6은 과목 수행의 근거 독해와 심화 전이 어려움과 같은 방향입니다. 반면 영어 APT의 재정리 5.0과 메타인지 4.5는 현재 성취를 지지하는 자산입니다. 8월 18일부터 상담·관리로 주간 시간 블록과 계획-실행-점검을 세우고, 초기 2주에는 수학 개별지도를 주 4회 운영해 기초 빈틈과 조건 해석을 보완합니다. 기타와 배구는 먼저 시간표에 보장하되, 남은 학습 블록은 건이 직접 책임지는 구조로 바꿉니다."
   },
   "temperamentDynamics": {
     "title": "성향 조합이 학습에서 작동할 수 있는 방식",
@@ -773,7 +910,11 @@ const REPORT_DATA = {
       ],
       "diagnosis": "네 상위 역량이 모두 기준선 3.0보다 낮고, 그중 언어 구조와 개념 이해가 1.0으로 가장 낮습니다. 하위 역량에서도 세부 정보 적용, 주제 연결, 어휘 대체, 출제 의도 분석이 우선 보완으로 선택되어 있어, 읽은 내용을 구조화하고 근거로 답을 고르는 절차부터 다시 세울 필요가 있습니다.",
       "risk": "중심 문장과 세부 정보를 구분하지 못하면 지문을 반복해서 읽고도 감에 기대어 답을 고르게 되고, 영어 지문이나 수학 문장제의 조건 해석까지 함께 느려질 수 있습니다.",
-      "action": "국어 개별지도에서는 문단별 핵심어 표시 → 중심 문장 찾기 → 한 문장 요약 → 선택지 근거 반박 → 30초 자기설명을 고정합니다. 4주 뒤 처음 보는 글 10개 중 8개 이상에서 중심 내용과 근거를 스스로 설명하는지 확인합니다."
+      "action": "국어 개별지도에서는 문단별 핵심어 표시 → 중심 문장 찾기 → 한 문장 요약 → 선택지 근거 반박 → 30초 자기설명을 고정합니다. 4주 뒤 처음 보는 글 10개 중 8개 이상에서 중심 내용과 근거를 스스로 설명하는지 확인합니다.",
+      "managementStrategy": "관리에서는 국어 블록마다 핵심어 표시→중심 문장→한 문장 요약→선택지 근거를 남기고, 계획시간·실제시간과 오류 유형을 기록합니다.",
+      "tutoringStrategy": "국어 개별지도에서는 문단 관계를 역질문으로 확인하고 중심 문장·주제·선지 근거를 자기 말로 설명하는 도움을 받는 것을 추천합니다. 4주 뒤 처음 보는 글 10개 중 8개 이상에서 중심 내용과 근거를 독립 설명하는지 확인합니다.",
+      "managementProgramLabel": "관리 · 구조 독해 산출물",
+      "tutoringProgramLabel": "개별지도 추천 · 근거 독해"
     },
     {
       "subject": "영어",
@@ -802,7 +943,11 @@ const REPORT_DATA = {
       ],
       "diagnosis": "재정리 전략 5.0과 메타인지 전략 4.5는 현재 영어의 분명한 자산입니다. 반면 인지 전략은 3.1이고, 하위 역량에서는 근거 분석 2.5와 지문 구조화 3.0이 우선 보완으로 선택되었습니다. 지문 내용을 이해한 뒤에도 선택지의 근거를 끝까지 확인하는 과정에서 점수가 새어 나갈 수 있는 모습입니다.",
       "risk": "어휘와 전체 뜻에 기대어 빠르게 풀면 문장 삽입·순서·빈칸처럼 글의 연결과 선택지 근거를 묻는 문제에서 매력적인 오답을 걸러내기 어렵습니다.",
-      "action": "현재 영어 학습은 유지하면서 연결어와 전환 지점 표시 → 문단 기능 한 줄 정리 → 모든 선택지의 근거 문장 찾기 → 오답 이유 설명을 적용합니다. 4주 뒤 새 지문 10개 중 8개 이상에서 정답과 오답의 근거를 모두 말하는지 확인합니다."
+      "action": "현재 영어 학습은 유지하면서 연결어와 전환 지점 표시 → 문단 기능 한 줄 정리 → 모든 선택지의 근거 문장 찾기 → 오답 이유 설명을 적용합니다. 4주 뒤 새 지문 10개 중 8개 이상에서 정답과 오답의 근거를 모두 말하는지 확인합니다.",
+      "managementStrategy": "관리에서는 현재 영어 학습을 유지하면서 연결어·전환 지점 표시, 문단 기능 한 줄 정리, 정답과 오답의 근거 문장을 남기게 합니다.",
+      "tutoringStrategy": "현재 학습 방식에서 2~4주 동안 새 지문 10개 중 8개 이상에서 정답과 오답의 근거를 모두 설명하지 못하면 영어 개별지도로 지문 구조화와 근거 분석의 도움을 받는 것이 좋습니다.",
+      "managementProgramLabel": "관리 · 근거 설명 점검",
+      "tutoringProgramLabel": "개별지도 추천 · 2~4주 전환"
     },
     {
       "subject": "수학",
@@ -830,77 +975,68 @@ const REPORT_DATA = {
       ],
       "diagnosis": "연산과 공식 이해가 2.4로 상대적으로 높지만 네 상위 역량 모두 기준선 3.0 아래이며, 전형적 풀이 절차 활용이 1.6으로 가장 낮습니다. 하위 역량에서도 여러 개념의 연결, 두 단계 이상 사고, 실생활 문제 해결, 수학 기호·식·그래프 해석이 우선 보완으로 선택되어 단순 계산보다 조건을 조직하고 풀이 순서를 세우는 힘이 핵심 병목입니다.",
       "risk": "문제를 보자마자 계산부터 시작하면 조건이 많아지거나 유형이 조금만 바뀌어도 사용할 개념과 순서를 정하지 못해 풀이가 중단되고, 계산 실수까지 늘어날 수 있습니다.",
-      "action": "수학 개별지도에서는 구하는 것-주어진 조건-필요한 개념을 표로 정리하고, 풀이 단계를 말로 예고한 뒤 계산합니다. 예제 비교 → 자기설명 → 변형 문제 → 24·72시간 재풀이를 반복하며, 4주 뒤 다단계 문제 10개 중 7개 이상에서 풀이 계획을 먼저 설명하는지 확인합니다."
+      "action": "수학 개별지도에서는 구하는 것-주어진 조건-필요한 개념을 표로 정리하고, 풀이 단계를 말로 예고한 뒤 계산합니다. 예제 비교 → 자기설명 → 변형 문제 → 24·72시간 재풀이를 반복하며, 4주 뒤 다단계 문제 10개 중 7개 이상에서 풀이 계획을 먼저 설명하는지 확인합니다.",
+      "managementStrategy": "관리에서는 수업 뒤 구하는 것·주어진 조건·필요 개념을 표로 다시 쓰고, 24시간·72시간 뒤 재풀이와 오류 분류를 계획표에 남깁니다.",
+      "tutoringStrategy": "수학 개별지도에서는 질문→독립 풀이→자기설명→변형 문제 순환으로 조건 번역과 풀이 절차의 도움을 받는 것을 추천합니다. 4주 뒤 다단계 문제 10개 중 7개 이상에서 풀이 계획을 먼저 설명하는지 확인합니다.",
+      "managementProgramLabel": "관리 · 재풀이와 오류 분류",
+      "tutoringProgramLabel": "개별지도 추천·운영"
     }
   ],
   "expertise": null,
   "program": {
-    "lead": "상담에서는 기타에서 경험한 성장 원리를 공부 이유와 연결하고, 관리에서는 학교·기타·배구를 포함한 주간 시간표와 계획-실행-점검을 책임지게 합니다. 초기 2주는 수학 개별지도를 주 4회로 시작해 기초 빈틈과 조건 해석을 보완하고, 독립 학습 효율이 올라오면 횟수와 과목을 다시 조정합니다.",
+    "lead": "기존 도움은 먼저 목적을 확인하고, 수업 뒤 건이 혼자 설명·재풀이할 수 있는지 살핍니다. 배운 뒤 익히는 물리적 시간을 확보한 다음, 시간을 국어 구조 독해와 수학 조건 해석에 재배치하고 2~4주 산출물에 따라 유지·감량·전환합니다. 상담에서 정한 행동을 관리에서 일상화하고, 개별지도에서 과목 기능을 연습합니다.",
     "cards": [
       {
-        "tag": "COACHING",
-        "title": "상담 · 관심을 현실 목표로 연결",
-        "body": "공부가 중요하다는 인식을 실제 행동으로 옮길 수 있도록 관심-진로 후보-필요 과목-이번 주 행동을 학생의 말로 연결하고, 시험 불안이 올라올 때의 복귀 절차를 함께 정합니다.",
+        "tag": "상담 Coaching",
+        "title": "관심을 공부 이유와 주간 행동으로",
+        "body": "기타에서 확인한 성장 경험을 관심-진로 후보-필요 과목-이번 주 행동으로 연결하고 시험 부담이 올라올 때의 복귀 기준을 정합니다.",
         "bullets": [
-          "관심 직업 2개와 필요한 과목을 연결",
-          "현실적인 주간 행동 목표 1개를 선택",
-          "시험 전 긴장·시험 중 반추를 멈추는 복귀 문장 연습"
+          "성장 경험과 현재 위치 객관화",
+          "진로 후보와 공부 이유 연결",
+          "이번 주 한 행동을 학생이 선택·설명"
         ]
       },
       {
-        "tag": "TRAINING",
-        "title": "관리 · 계획-실행-마감을 매일 닫기",
-        "body": "등원할 때 핵심 과제 1~2개와 종료 기준을 정하고, 학습 뒤 즉시 채점·오류 분류·30초 자기설명·미달성 보완 계획을 남겨 외부 확인을 독립 실행으로 옮깁니다.",
+        "tag": "관리 Training",
+        "title": "배운 뒤 익히는 시간을 매일 마감",
+        "body": "등원 문진상담→계획서 작성→학습실 자기주도학습→학습 확인→마무리 점검의 5단계로 계획과 결과를 한 장에 남깁니다.",
         "bullets": [
-          "예상시간과 실제시간, 시작 지연 기록",
-          "즉시 채점과 내용·해석·절차·부주의 오류 분류",
-          "책을 덮은 자기설명과 24·72시간 재확인"
+          "계획시간·실제시간과 시작 지연 기록",
+          "즉시 채점·오류 분류·30초 자기설명",
+          "미달성 보완 계획과 24·72시간 재확인"
         ]
       },
       {
-        "tag": "TUTORING",
-        "title": "개별지도 · 초기 2주는 수학 주 4회",
-        "body": "상담에서 합의한 초기 시작 과목은 수학입니다. 기초 빈틈을 점검하고 조건-정의·공식-풀이 구조를 말로 설명하게 하며, 수업 사이의 개념 정리와 숙제까지 혼자 해낼 수 있는지를 함께 봅니다.",
+        "tag": "개별지도 Tutoring",
+        "title": "수학 우선 운영 · 국어 추천",
+        "body": "90분 1:3 순환에서 설명량을 늘리기보다 건의 판단 과정을 확인하고 독립 수행으로 전환합니다.",
         "bullets": [
-          "수학: 구하는 것-조건-정의·공식을 표로 번역",
-          "유사·변형 문제와 24·72시간 재풀이로 전이 확인",
-          "2주 뒤 독립 학습 효율에 따라 유지·감량·과목 전환"
+          "순환: 질문→독립 풀이→자기설명→변형 문제",
+          "수학: 조건 표·풀이 계획·재풀이",
+          "국어: 중심 문장·한 문장 요약·선지 근거"
+        ]
+      },
+      {
+        "tag": "리뷰 Review",
+        "title": "4·8·12주에 지원 강도를 조정",
+        "body": "같은 병목을 세 프로그램이 함께 해결하는지 학생 산출물로 확인하고 유지·증량·감량·변경·종료를 판단합니다.",
+        "bullets": [
+          "4주: 계획 완수율과 과목 설명률",
+          "8주: 새 지문·변형 문제로의 전이",
+          "12주: 유지·증량·감량·변경·종료"
         ]
       }
     ]
   },
   "factors": [
     {
-      "name": "생의 에너지",
-      "sub": "기대지향 +10 보통 · 불안경계 -6 보통",
-      "level": 3,
-      "grade": "보통",
-      "stars": 1,
-      "detail": "보상에 접근하는 힘과 위험을 살피는 힘이 한쪽으로 크게 치우치지 않았습니다. 현재 성취 경험이 적다면 큰 자극보다 바로 끝낼 수 있는 작은 목표가 행동 에너지를 다시 만드는 데 도움이 됩니다."
-    },
-    {
-      "name": "내적 태도",
-      "sub": "자신감 -4 · 자기긍정 -27 · 존재인정 +29 · 호기심 +25",
-      "level": 3,
-      "grade": "보통",
-      "stars": 3,
-      "detail": "호기심과 존재감은 비교적 살아 있으나 자기긍정이 이를 안정적으로 받쳐주지 못할 수 있습니다. 결과보다 탐구 과정과 스스로 끝낸 행동을 구체적으로 인정하는 피드백이 필요합니다."
-    },
-    {
-      "name": "외적 태도",
-      "sub": "낙관성 -37 · 능동성 +34 · 친화성 -42",
-      "level": 2.5,
-      "grade": "다소좋지않음",
-      "stars": 3,
-      "detail": "실패 가능성을 먼저 크게 보면서도 맡은 문제는 자기 방식으로 해결하려는 힘이 함께 나타날 수 있습니다. 혼자 감당하게 두기보다 선택권과 논리적인 이유를 주고, 필요한 도움을 요청하는 기준을 미리 정하는 편이 좋습니다."
-    },
-    {
       "name": "감정 역량",
       "sub": "감정조절 -5 · 시험안정감 -45 · 부모정서지지 +27",
       "level": 3,
       "grade": "보통",
       "stars": 4,
-      "detail": "부모가 생각을 존중하고 선택을 지지한다는 응답은 보호 요인입니다. 반면 시험에서는 심장이 뛰고, 모르는 내용만 나올까 걱정하며, 이미 푼 문제를 계속 생각한다고 응답했습니다. 시작 문항, 막혔을 때 넘기는 기준, 호흡과 복귀 문장을 사전에 연습합니다."
+      "detail": "부모가 생각을 존중하고 선택을 지지한다는 응답은 보호 요인입니다. 반면 시험에서는 심장이 뛰고, 모르는 내용만 나올까 걱정하며, 이미 푼 문제를 계속 생각한다고 응답했습니다. 시작 문항, 막혔을 때 넘기는 기준, 호흡과 복귀 문장을 사전에 연습합니다.",
+      "rank": ""
     },
     {
       "name": "이성 역량",
@@ -908,7 +1044,8 @@ const REPORT_DATA = {
       "level": 2.5,
       "grade": "다소좋지않음",
       "stars": 5,
-      "detail": "말로 표현하고 어휘를 다루는 자산은 있으나, 소음과 잡생각에 집중이 흔들리고 긴 글을 읽다 멈추는 응답이 함께 나타났습니다. CHAMP 문맥·담화 오답과도 이어지므로 핵심어 표시, 관계 설명, 한 문장 요약, 30초 자기설명을 고정합니다."
+      "detail": "말로 표현하고 어휘를 다루는 자산은 있으나, 소음과 잡생각에 집중이 흔들리고 긴 글을 읽다 멈추는 응답이 함께 나타났습니다. CHAMP 문맥·담화 오답과도 이어지므로 핵심어 표시, 관계 설명, 한 문장 요약, 30초 자기설명을 고정합니다.",
+      "rank": "3순위"
     },
     {
       "name": "기반 학습",
@@ -916,7 +1053,8 @@ const REPORT_DATA = {
       "level": 1.5,
       "grade": "좋지않음",
       "stars": 5,
-      "detail": "주요 과목의 기반이 전반적으로 낮게 나타났고 기초 문장 이해부터 부담이 큽니다. 현행 진도만 늘리기보다 교과 핵심어, 짧은 문장 이해, 기본 개념과 연산의 시작점을 실제 풀이로 다시 정해야 합니다."
+      "detail": "주요 과목의 기반이 전반적으로 낮게 나타났고 기초 문장 이해부터 부담이 큽니다. 현행 진도만 늘리기보다 교과 핵심어, 짧은 문장 이해, 기본 개념과 연산의 시작점을 실제 풀이로 다시 정해야 합니다.",
+      "rank": ""
     },
     {
       "name": "상황인식",
@@ -924,15 +1062,8 @@ const REPORT_DATA = {
       "level": 2.5,
       "grade": "다소좋지않음",
       "stars": 4,
-      "detail": "공부가 중요하다고 응답했지만 예상 점수와 실제 점수가 비슷하지 않고, 과제 소요시간을 정확히 예상하지 못하며, 아는 것과 모르는 것을 설명하기 어렵다고 응답했습니다. 예상-실제 결과-소요시간을 함께 기록해 현실적인 출발점을 찾습니다."
-    },
-    {
-      "name": "목표의식",
-      "sub": "진로목표 -36 · 진학목표 -8 · 시험목표 -20",
-      "level": 2.5,
-      "grade": "다소좋지않음",
-      "stars": 3,
-      "detail": "진로와 진학, 시험 목표가 아직 행동을 끌어갈 만큼 구체적이지 않을 수 있습니다. 관심사를 실제 직업과 과목으로 연결하고, 장기 목표보다 이번 주에 확인할 한 행동을 먼저 정합니다."
+      "detail": "공부가 중요하다고 응답했지만 예상 점수와 실제 점수가 비슷하지 않고, 과제 소요시간을 정확히 예상하지 못하며, 아는 것과 모르는 것을 설명하기 어렵다고 응답했습니다. 예상-실제 결과-소요시간을 함께 기록해 현실적인 출발점을 찾습니다.",
+      "rank": ""
     },
     {
       "name": "체계적 수행",
@@ -940,7 +1071,8 @@ const REPORT_DATA = {
       "level": 1.5,
       "grade": "좋지않음",
       "stars": 5,
-      "detail": "사전·일간·주간 계획을 거의 세우지 않고 그때 손에 잡히는 공부를 하며, 즉시 채점·오답 표시·틀린 이유 분석·전략 수정도 약하다고 응답했습니다. 하루 1~2개 핵심 과제와 종료 기준, 즉시 채점, 오류 분류, 다음 보완 계획을 같은 양식으로 반복합니다."
+      "detail": "사전·일간·주간 계획을 거의 세우지 않고 그때 손에 잡히는 공부를 하며, 즉시 채점·오답 표시·틀린 이유 분석·전략 수정도 약하다고 응답했습니다. 하루 1~2개 핵심 과제와 종료 기준, 즉시 채점, 오류 분류, 다음 보완 계획을 같은 양식으로 반복합니다.",
+      "rank": "1순위"
     },
     {
       "name": "학습자율성",
@@ -948,7 +1080,8 @@ const REPORT_DATA = {
       "level": 1.5,
       "grade": "좋지않음",
       "stars": 5,
-      "detail": "혼자 계획하기 어렵고, 지켜보거나 시켜야 공부하며, 학원·과외가 없으면 성적이 떨어질 것 같다고 응답했습니다. 기존 도움을 유지하더라도 배운 뒤 혼자 설명·재풀이하는 시간을 반드시 확보하고, 독립 수행이 확인되는 만큼 외부 확인을 단계적으로 줄입니다."
+      "detail": "혼자 계획하기 어렵고, 지켜보거나 시켜야 공부하며, 학원·과외가 없으면 성적이 떨어질 것 같다고 응답했습니다. 기존 도움을 유지하더라도 배운 뒤 혼자 설명·재풀이하는 시간을 반드시 확보하고, 독립 수행이 확인되는 만큼 외부 확인을 단계적으로 줄입니다.",
+      "rank": "2순위"
     },
     {
       "name": "CHAMP 학습법",
@@ -956,23 +1089,8 @@ const REPORT_DATA = {
       "level": 1.5,
       "grade": "좋지않음",
       "stars": 5,
-      "detail": "이해-사고-정리-기억-문제해결의 연결 중 이해, 사고, 정리, 문제해결이 특히 약하게 나타났습니다. 암기량을 늘리기보다 핵심어 뜻, 개념 사이의 이유, 구조화, 자기설명을 앞에 둡니다."
-    },
-    {
-      "name": "주인의식",
-      "sub": "내적책임감 +36 · 외적책임감 -42 · 주도성 -19",
-      "level": 2.5,
-      "grade": "다소좋지않음",
-      "stars": 3,
-      "detail": "자기 문제를 스스로 해결하려는 힘은 자산이 될 수 있지만 타인의 기준과 피드백을 받아들이는 과정이 약할 수 있습니다. 정답을 강요하기보다 근거를 비교하고 학생이 더 효율적인 방법을 선택하게 합니다."
-    },
-    {
-      "name": "자아정체성",
-      "sub": "자기이해 -17 · 자기서사 -5",
-      "level": 2.5,
-      "grade": "다소좋지않음",
-      "stars": 3,
-      "detail": "자신에 대한 이해와 경험을 의미로 연결하는 힘은 형성 중입니다. 실패를 피하거나 적당히 타협하기보다 현재 위치를 받아들이고, 관심과 노력의 결과를 한 문장으로 회고하는 연습이 필요합니다."
+      "detail": "이해-사고-정리-기억-문제해결의 연결 중 이해, 사고, 정리, 문제해결이 특히 약하게 나타났습니다. 암기량을 늘리기보다 핵심어 뜻, 개념 사이의 이유, 구조화, 자기설명을 앞에 둡니다.",
+      "rank": ""
     }
   ],
   "type": {
@@ -1009,45 +1127,166 @@ const REPORT_DATA = {
       "이해 없이 앉아 있거나 암기로 버티는 학습",
       "피드백과 다른 관점을 받아들이는 어려움",
       "시험 부담과 낮은 자기긍정이 만드는 회피"
-    ]
+    ],
+    "growthFlow": {
+      "title": "두 현재 타입을 관심의 힘과 독립 실행으로 잇는 성장 지도",
+      "lead": "메인과 히든 타입을 모두 현재 노드로 두고, 다음 타입을 예측하지 않으며 실제 행동으로 확인할 역량을 연결했습니다.",
+      "current": [
+        {
+          "role": "메인",
+          "type": "TYPE 15",
+          "name": "마니아",
+          "tone": "main",
+          "note": "관심 분야의 깊은 몰입을 학업의 작은 목표로 전이"
+        },
+        {
+          "role": "히든",
+          "type": "TYPE 11",
+          "name": "성실이",
+          "tone": "hidden",
+          "note": "시키는 일을 따르는 데서 이해·설명·마감으로 확장"
+        }
+      ],
+      "core": {
+        "label": "공통 성장축",
+        "title": "관심의 의미 × 독립 완수",
+        "body": "좋아하는 활동을 지키면서도 학습 시간을 직접 선택하고, 배운 것을 혼자 설명·재풀이해 결과물로 마감합니다.",
+        "tracks": [
+          "학습동기",
+          "학습습관",
+          "학습성과"
+        ]
+      },
+      "targets": [
+        {
+          "role": "성장 방향",
+          "type": "역량 1",
+          "name": "시간을 선택하는 힘",
+          "tone": "target",
+          "note": "기타·배구와 학습 블록을 함께 계획"
+        },
+        {
+          "role": "성장 방향",
+          "type": "역량 2",
+          "name": "배운 것을 익히는 힘",
+          "tone": "target",
+          "note": "설명·재풀이·오류 수정으로 마감"
+        }
+      ],
+      "foot": "반복 검사 전에는 성장 단계나 다음 타입을 만들지 않고, 4·8·12주의 행동 재현률로 변화만 확인합니다."
+    },
+    "competencyBranches": {
+      "title": "건 학생에게 필요한 성장 갈래",
+      "lead": "각 갈래는 상담·관리·개별지도에서 같은 목표를 서로 다른 행동으로 연습합니다.",
+      "branches": [
+        {
+          "title": "관심을 공부 이유로 연결",
+          "route": "TYPE 15 → 의미 연결",
+          "tone": "blue",
+          "domains": [
+            "학습동기",
+            "학습성과"
+          ],
+          "path": [
+            "기타 성장 경험 언어화",
+            "관심-진로 후보-필요 과목 연결",
+            "이번 주 한 행동 선택"
+          ],
+          "signal": "목표 설명률 · 선택한 행동 완수율"
+        },
+        {
+          "title": "성실함을 독립 마감으로 전환",
+          "route": "TYPE 11 → 실행 완수",
+          "tone": "orange",
+          "domains": [
+            "학습습관",
+            "학습성과"
+          ],
+          "path": [
+            "하루 핵심 과제 1~2개",
+            "계획시간·실제시간 기록",
+            "즉시 채점·오류 수정·마무리 설명"
+          ],
+          "signal": "계획 완수율 · 미완료 이월률"
+        },
+        {
+          "title": "과목 기능 독립 재현",
+          "route": "공통 성장축 → 수행",
+          "tone": "green",
+          "domains": [
+            "학습습관",
+            "학습성과"
+          ],
+          "path": [
+            "핵심어·조건 표시",
+            "도움 없이 자기설명",
+            "24~72시간 뒤 변형 문제 재도전"
+          ],
+          "signal": "독립 설명률 · 재도전 성공률"
+        }
+      ]
+    }
   },
   "stones": [
     {
-      "title": "관리 · 계획보다 작은 완료가 먼저",
+      "title": "배운 시간 뒤에 익히는 시간이 비어 있음",
+      "body": "학원 수업과 숙제를 해도 집에서 복습·자기설명·재풀이로 자기 것이 되는 시간이 이어지지 않았습니다.",
       "program": "관리",
-      "body": "무계획 학습, 1시간 미만의 자습, 늦은 채점과 오답 점검 부족이 함께 확인됐습니다. 하루 핵심 과제 1~2개, 예상·실제 시간, 즉시 채점, 오류 분류, 책을 덮은 설명을 같은 순서로 반복해 '끝내고 고친 경험'을 쌓아야 합니다."
+      "help": "하루 핵심 과제 1~2개와 종료 기준을 정하고 즉시 채점·오류 분류·30초 자기설명을 같은 순서로 마감합니다.",
+      "studentOutput": "일일 계획서 · 계획/실제시간 · 오류 분류 · 30초 설명",
+      "verification": "주간 완수율 70% 이상과 학습 직후 오류 분류 80% 이상",
+      "quote": "첫 학기는 성실하지 못했고 공부 시간이 적었어요.",
+      "quoteSrc": "학생 확인"
     },
     {
-      "title": "상담 · 현재 위치와 목표의 간격을 객관화",
+      "title": "공부 필요성은 알지만 목표가 행동으로 번역되지 않음",
+      "body": "공부가 중요하다는 인식은 있지만 관심사와 진로, 이번 주 공부 행동이 한 흐름으로 이어지지 않았습니다.",
       "program": "상담",
-      "body": "공부 필요성은 느끼지만 자신의 실제 수준과 적정 난도를 정확히 잡지 못할 수 있습니다. 예상 점수·실제 결과·소요시간을 비교하고, 관심사와 현실적인 진로 후보를 연결해 목표를 학생의 말로 정리합니다."
+      "help": "기타에서 경험한 성장 원리를 관심-진로 후보-필요 과목-이번 주 행동으로 연결하고 학생이 선택 이유를 설명하게 합니다.",
+      "studentOutput": "관심 진로 후보 2개 · 필요한 과목 · 이번 주 행동 목표",
+      "verification": "다음 상담에서 선택 이유와 완료 결과를 자기 말로 설명",
+      "quote": "기타는 시간을 들이니까 실력이 늘었어요.",
+      "quoteSrc": "학생 확인"
     },
     {
-      "title": "국어·수학 · 개별지도로 확인된 기능을 교정",
-      "program": "개별지도 권고",
-      "body": "국어 5/20, 수학 6/20과 문항별 오답 패턴에서 기능 결손이 확인됐습니다. 국어는 근거 읽기·요약·선택지 검토를, 수학은 선수 개념·조건 번역·풀이 구조를 개별지도에서 우선 교정하는 것을 추천합니다."
+      "title": "국어 구조 독해와 수학 심화 전이의 기능 결손",
+      "body": "국어는 언어 구조와 근거 독해, 수학은 조건 번역과 풀이 절차가 우선 병목으로 확인됐습니다.",
+      "program": "개별지도",
+      "help": "90분 1:3 안에서 질문→독립 풀이→자기설명→변형 문제로 판단 과정을 확인하고 교정합니다.",
+      "studentOutput": "국어 한 문장 요약·선지 근거 · 수학 조건 표·풀이 계획·재풀이",
+      "verification": "국어 근거 설명 8/10 · 수학 풀이 계획 설명 7/10",
+      "quote": "수학 문제를 풀 때 ‘언제 끝나지’라는 생각이 들어요.",
+      "quoteSrc": "학생 확인"
     },
     {
-      "title": "가정 · 통제량보다 독립 재현 시간을 확보",
-      "program": "가정 연계",
-      "body": "부모의 정서적 지지는 유지하되 학습 확인이 학생 대신 계획을 운영하지 않도록 역할을 나눕니다. 가정은 시작 시간과 종료 여부만 확인하고, 내용 점검과 오류 교정은 학생의 자기설명과 에듀플렉스 관리 기록으로 확인합니다."
+      "title": "취미와 학습을 경쟁시키면 시간 계획이 다시 무너짐",
+      "body": "기타와 배구는 건의 강점과 회복 자원이므로 없애기보다 먼저 일정에 보장하고 남은 학습 블록을 책임지는 편이 적절합니다.",
+      "program": "상담·관리",
+      "help": "주간표에 취미와 특별 일정을 먼저 넣고, 빠진 학습 블록은 다른 날이나 토요일 보완 블록으로 이동합니다.",
+      "studentOutput": "취미·학습이 함께 들어간 주간 시간표 · 보완 블록 기록",
+      "verification": "특별 일정이 생긴 주에도 계획된 학습 총량과 마감 유지",
+      "quote": "기타와 배구는 계속하고 싶어요.",
+      "quoteSrc": "학생 확인"
     }
   ],
   "states": [
     {
       "icon": "🧭",
       "title": "방향·정서",
-      "body": "공부가 중요하다는 인식은 있으나 원하는 진로·학과를 말하기 어렵고, 시험에서는 긴장과 이미 푼 문제에 대한 반추가 집중을 방해한다고 응답했습니다. 상담에서는 관심사-진로 후보-이번 주 행동을 연결하고 시험 중 복귀 문장을 함께 정합니다."
+      "programLabel": "상담 · 의미와 복귀 기준",
+      "body": "현재 스트레스 8/10, 공부 동기 2/10으로 적었고 시험에서는 긴장과 이미 푼 문제에 대한 반추가 집중을 방해합니다. 그대로 두면 시험 직전 압박과 늦은 몰입이 반복될 수 있습니다. 관심-진로 후보-이번 주 행동을 연결하고 막혔을 때의 복귀 문장을 정해, 다음 상담에서 선택 이유와 복귀 행동을 설명하는지 확인합니다."
     },
     {
       "icon": "✅",
       "title": "실행·습관",
-      "body": "무계획 학습, 1시간 미만 자습, 즉시 채점과 오답 분석 부족, 외부 확인 의존이 동시에 확인돼 실행 구조가 1차 병목입니다. 관리에서는 시작 신호, 종료 기준, 즉시 채점, 오류 분류, 다음 보완 계획을 고정합니다."
+      "programLabel": "관리 · 계획-실행-마감",
+      "body": "무계획 학습, 짧은 자습, 늦은 채점과 오답 점검 부족이 1차 병목입니다. 그대로 두면 배운 시간이 성취로 남지 않습니다. 등원 문진상담→계획서 작성→학습실 자기주도학습→학습 확인→마무리 점검을 반복하며 계획 완수율·오류 분류·이월률을 확인합니다."
     },
     {
       "icon": "🧩",
       "title": "과목·기능",
-      "body": "CHAMP 실제 수행은 기초 문장 이해 11/20, 국어 5/20, 영어 12/20, 수학 6/20입니다. 국어는 근거 독해 절차, 수학은 조건 해석과 심화 전이를 개별지도에서 우선 다루고, 영어는 구조 추론을 보완하는 기준 과목으로 활용합니다."
+      "programLabel": "개별지도 · 국어·수학 우선",
+      "body": "국어는 구조·근거 독해, 수학은 조건 해석·풀이 절차·심화 전이가 핵심 기능 병목입니다. 그대로 두면 문제 수를 늘려도 같은 오류가 반복될 수 있습니다. 초기에는 수학 개별지도를 운영하고 국어 개별지도를 추천하며, 영어는 2~4주 근거 설명 지표가 개선되지 않으면 연결합니다."
     }
   ],
   "observation": "상담에서 건이는 기타 연습에 시간을 투자해 실력이 높아진 경험과, 공부에는 충분한 시간을 투자하지 않았다는 차이를 이해했습니다. 가장 먼저 확인할 변화는 ① 기타·배구를 포함한 주간 시간 블록을 스스로 책임지는지, ② 배운 뒤 익히는 시간을 실제로 확보하는지, ③ 수학 시험의 조급함과 영어 시험의 긴장 속에서도 다음 행동으로 복귀하는지입니다.",
@@ -1055,20 +1294,19 @@ const REPORT_DATA = {
     {
       "when": "초기 1~2주",
       "title": "생활 조건과 오답 원인의 기준선 확인",
-      "program": "상담 4회 + 관리 9일 + 수학 개별지도 8회",
-      "body": "8월 18일 개학일부터 시작합니다. 초기 2주 동안 평일 등원을 기본으로 주간 시간 블록을 만들고, 수학은 주 4회 개별지도로 기초 빈틈과 조건 해석을 점검합니다. 오리엔테이션은 시작 전에 진행하는 방향으로 담당 매니저 배정 후 일정을 조율합니다.",
+      "body": "8월 18일부터 상담·관리와 수학 개별지도를 시작합니다. 초기 2주 동안 평일 등원을 기본으로 주간 시간 블록을 만들고, 수학은 주 4회로 기초 빈틈과 조건 해석을 점검합니다. 프로그램 확정 후 운영 구성에 맞춰 담당 매니저를 배정하고 시작 전 오리엔테이션 시간을 조율합니다.",
       "items": [
         "하루 시작 시간과 계획 완료율 기록",
         "수학 주 4회 수업과 수업 사이 개념 정리·숙제 시간 확보",
         "시험 전 긴장과 중단 뒤 복귀 행동 확인",
         "도움 없이 재현 가능한 과목·기능 구분"
       ],
-      "why": "수학은 기초 빈틈이 넓고 혼자 앉아 공부하는 효율이 아직 안정적이지 않아 초기에는 수업 빈도를 높이고, 독립 학습 효율이 올라가면 횟수를 줄이는 처방식 운영이 필요합니다."
+      "why": "수학은 기초 빈틈이 넓고 혼자 앉아 공부하는 효율이 아직 안정적이지 않아 초기에는 수업 빈도를 높이고, 독립 학습 효율이 올라가면 횟수를 줄이는 처방식 운영이 필요합니다.",
+      "programLabel": "상담·관리"
     },
     {
       "when": "4주",
       "title": "작은 완료와 학습 순서 정착",
-      "program": "상담 + 관리",
       "body": "관심과 공부 이유를 한 문장으로 정리하고, 하루 핵심 과제 1~2개를 계획-실행-설명-마감까지 닫는 루틴을 반복합니다.",
       "items": [
         "계획 완료율 70% 이상",
@@ -1076,12 +1314,12 @@ const REPORT_DATA = {
         "학습 직후 채점·오류 분류 80% 이상",
         "문단·개념 30초 자기설명 80% 이상"
       ],
-      "why": "점수보다 먼저 시작·완료·설명·복귀가 바뀌어야 학습 효능감과 성취가 안정적으로 따라옵니다."
+      "why": "점수보다 먼저 시작·완료·설명·복귀가 바뀌어야 학습 효능감과 성취가 안정적으로 따라옵니다.",
+      "programLabel": "상담·관리"
     },
     {
       "when": "8주",
       "title": "과목 기능과 독립 전이 확인",
-      "program": "관리 + 필요한 과목 개별지도",
       "body": "국어는 처음 보는 글의 근거 표시·한 문장 요약·선택지 검토를, 수학은 선수 개념·조건 번역·풀이 구조를 질문·독립 풀이·자기설명·변형 문제로 교정합니다.",
       "items": [
         "국어 새 지문의 근거 표시·요약 정확도 상승",
@@ -1089,12 +1327,12 @@ const REPORT_DATA = {
         "배운 뒤 24·72시간 회상",
         "도움 요청 전에 스스로 시도한 과정 기록"
       ],
-      "why": "개별지도는 설명량을 늘리는 수업이 아니라 건이의 판단 과정이 실제로 바뀌는지 확인하는 수업이어야 합니다."
+      "why": "개별지도는 설명량을 늘리는 수업이 아니라 건이의 판단 과정이 실제로 바뀌는지 확인하는 수업이어야 합니다.",
+      "programLabel": "상담·관리"
     },
     {
       "when": "12주",
       "title": "유지·감량·변경·종료 판단",
-      "program": "상담 점검",
       "body": "학생이 목표와 우선순위를 자기 말로 설명하고, 외부 확인 없이 계획·즉시 채점·오류 수정·자기설명을 유지하는지 평가해 지원 강도를 조정합니다.",
       "items": [
         "주간 계획을 학생이 직접 세우고 점검",
@@ -1102,17 +1340,16 @@ const REPORT_DATA = {
         "변화가 없는 개입의 원인 가설 재검토",
         "다음 12주 목표를 학생이 선택해 설명"
       ],
-      "why": "도움의 목적은 오래 붙잡아 두는 것이 아니라 혼자 계획하고 설명하고 복구할 수 있는 범위를 넓히는 데 있습니다."
+      "why": "도움의 목적은 오래 붙잡아 두는 것이 아니라 혼자 계획하고 설명하고 복구할 수 있는 범위를 넓히는 데 있습니다.",
+      "programLabel": "상담·관리"
     }
   ],
   "agreements": [
-    "공부가 안 된 핵심 원인을 재능 부족이 아니라 실제 학습 시간과 ‘배운 뒤 익히는 과정’의 부족으로 이해했습니다.",
-    "기타·배구 활동은 중단하지 않고 먼저 일정에 넣되, 남은 시간을 막연히 쓰는 방식에서 주간 학습 블록을 정하고 책임지는 방식으로 바꿉니다.",
-    "2026년 8월 18일 개학일부터 상담·관리 프로그램을 시작하고, 초기 2주 동안 상담 4회와 관리 9일을 진행합니다.",
-    "초기 2주 수학 개별지도는 총 8회, 주 4회로 시작합니다. 독립 학습 효율과 개념 정리 시간이 확보되면 다음 달부터 횟수와 과목을 다시 조정합니다.",
-    "평일에는 학교가 끝난 뒤 등원해 저녁 식사 시간을 포함하여 대체로 오후 5시부터 10시까지 학습하는 안을 기준으로 담당 매니저와 세부 일정을 확정합니다.",
-    "8월 22일 대구 배구 경기와 기타 일정처럼 특별 일정이 생기면 빠지는 것으로 끝내지 않고, 해당 학습 블록을 다른 날이나 토요일 보완 시간으로 옮깁니다.",
-    "오리엔테이션은 시작일 전에 미리 진행하는 방향으로 하며, 프로그램 확정 후 배정되는 담당 매니저가 연락해 정확한 시간을 조율합니다."
+    "<b>학생·학부모 확인</b> · 첫 학기의 핵심 문제는 재능 부족보다 실제 학습 시간과 배운 뒤 익히는 과정의 부족이라는 점을 함께 이해했습니다.",
+    "<b>최종 합의</b> · 기타·배구 활동은 중단하지 않고 먼저 일정에 넣되, 남은 학습 블록을 주간표에 정하고 건이 직접 책임집니다.",
+    "<b>최종 합의</b> · 2026년 8월 18일부터 상담·관리 프로그램을 시작하고, 초기 2주 동안 상담 4회와 관리 9일을 진행합니다.",
+    "<b>최종 합의</b> · 초기 2주 수학 개별지도는 총 8회, 주 4회로 시작합니다. 독립 학습 효율과 수업 사이 익힘 시간이 확보되면 다음 달 횟수와 과목을 다시 조정합니다.",
+    "<b>운영 기준</b> · 특별 일정으로 빠진 학습 블록은 다른 날이나 토요일 보완 시간으로 이동하며, 프로그램 확정 후 운영 구성에 맞춰 담당 매니저를 배정합니다."
   ],
   "decisions": [
     {
@@ -1162,11 +1399,11 @@ const REPORT_DATA = {
     }
   ],
   "pricing": {
-    "lead": "2026년 8월 12일 해석상담에서 확인한 초기 2주 운영 구성입니다. 총비용은 상담 현장에서 별도 안내되었으며, 이 결과지에는 녹취로 정확히 재확인되는 횟수와 운영 조건만 기록합니다.",
+    "lead": "2026년 8월 12일 해석상담에서 합의한 초기 2주 운영 구성입니다. 아래는 상담·관리·수학 개별지도의 횟수와 검토 기준을 정리한 것이며, 2주 뒤 독립 학습 효율과 학생 산출물에 따라 조정합니다.",
     "rows": [
       {
         "name": "상담",
-        "desc": "담당 매니저와 공부 이유, 주간 시간표, 실행 결과를 점검합니다.",
+        "desc": "공부 이유, 주간 시간표, 실행 결과와 시험 복귀 행동을 점검합니다.",
         "amt": "2주 · 4회",
         "rec": true
       },
@@ -1189,7 +1426,7 @@ const REPORT_DATA = {
         "rec": false
       }
     ],
-    "note": "담당 매니저는 프로그램 확정 후 운영 구성에 맞춰 배정합니다. 평일 등원 시각, OT 시각, 교재와 세부 수업 시간은 배정 연락 후 확정합니다.",
+    "note": "프로그램 확정 후 운영 구성에 맞춰 담당 매니저를 배정합니다. 평일 등원 시각, 오리엔테이션, 교재와 세부 수업 시간은 배정 연락 후 확정합니다.",
     "package": {
       "title": "초기 2주 합의 구성",
       "note": "상담에서 정한 시간 사용을 관리에서 일상화하고, 수학 개별지도에서 기초 빈틈과 판단 과정을 확인하는 연결 구조입니다.",
@@ -1219,21 +1456,141 @@ const REPORT_DATA = {
     }
   },
   "closing": {
-    "title": "관심의 힘을 현실의 작은 성취로 옮기는 것부터 시작합니다.",
-    "msg": "기타를 1년 반 연습해 실력을 높인 경험은 건이가 시간을 투자하면 성장할 수 있다는 이미 확인된 증거입니다. 이제 좋아하는 활동을 지키면서도 공부 시간을 먼저 설계하고, 배운 것을 익혀 자기 것으로 만드는 경험을 쌓습니다.",
-    "steps": [
-      "담당 매니저 배정 연락 후 시작 전 OT 일정 확정",
-      "8월 18일 상담·관리·수학 개별지도 시작",
-      "초기 2주 뒤 수행 데이터로 횟수·과목 재조정"
-    ],
+    "title": "기타에서 증명한 성장의 원리를, 이제 공부의 작은 완주로 옮깁니다.",
+    "msg": "건은 좋아하는 분야에 시간을 투자해 실제로 성장해 본 학생입니다. 지금 필요한 것은 그 관심을 없애는 일이 아니라, 취미와 학습 시간을 함께 설계하고 배운 내용을 혼자 설명·재풀이해 자기 것으로 만드는 경험입니다. 8월 18일부터 상담·관리와 수학 개별지도를 시작하고, 2주·4주·8주·12주의 산출물로 지원 강도를 조정하겠습니다.",
     "contacts": [
-      "에듀플렉스 길음"
+      "에듀플렉스 길음 · 김병수 원장"
     ]
   },
-  "footer": "에듀플렉스 길음 · 왕건10 VLT-5G 초기 진단 결과지 · 2026.08.12"
+  "footer": "에듀플렉스 길음 · 건 학생 VLT-5G 초기 진단 결과지 · 2026.08.12",
+  "champSummary": [
+    {
+      "subject": "기초문장이해",
+      "subtitle": "문장 관계와 문맥을 과목별 근거 읽기로 연결",
+      "lever": "종합 1의 현재 위치에서 핵심어 뜻, 문장 관계, 문맥상 역할을 자기 말로 바꾸는 절차를 전 과목에 공통 적용합니다.",
+      "metrics": [
+        {
+          "label": "종합",
+          "score": 1,
+          "tone": "focus"
+        }
+      ],
+      "overall": 1,
+      "level": "종합 1",
+      "basic": null,
+      "advanced": null,
+      "supplement": "—",
+      "diagnosis": "짧은 문장의 핵심어와 관계부터 부담이 확인됩니다. 국어 지문뿐 아니라 영어 문장과 수학 조건을 읽는 속도·정확도에도 영향을 줄 수 있어 공통 기초로 다룹니다.",
+      "risk": "핵심어 뜻과 문장 관계를 확인하지 않은 채 문제 수만 늘리면 과목이 달라져도 같은 읽기 오류가 반복되고, 배운 개념을 문제 조건에 연결하기 어려울 수 있습니다.",
+      "managementStrategy": "관리에서는 국어·영어·수학 공통으로 모르는 어휘, 핵심 조건, 문장 관계를 표시하고 한 문장씩 자기 말로 바꾼 산출물을 확인합니다.",
+      "tutoringStrategy": "국어·수학 개별지도에서는 문장을 끊어 관계를 설명한 뒤 선지 근거와 풀이 조건으로 연결하는 도움을 받는 것을 추천합니다.",
+      "managementProgramLabel": "관리 · 문장 근거 표시",
+      "tutoringProgramLabel": "개별지도 추천 · 과목 전이",
+      "action": "핵심어→문장 관계→자기 말 설명을 모든 과목의 시작 절차로 고정합니다."
+    },
+    {
+      "subject": "국어",
+      "subtitle": "종합 4·LV0에서 구조·근거 독해 재건",
+      "lever": "기초 20·심화 2·보완 M. 핵심어와 문단 관계를 구조화한 뒤 선지 근거를 설명하는 힘이 먼저입니다.",
+      "metrics": [
+        {
+          "label": "종합",
+          "score": 4,
+          "tone": "focus"
+        },
+        {
+          "label": "기초문제",
+          "score": 20
+        },
+        {
+          "label": "심화문제",
+          "score": 2,
+          "tone": "focus"
+        }
+      ],
+      "overall": 4,
+      "level": "LV0",
+      "basic": 20,
+      "advanced": 2,
+      "supplement": "M",
+      "diagnosis": "기초와 심화가 모두 낮고 APT의 언어 구조·개념 이해 1.0과 같은 방향입니다. 읽은 내용을 문단 구조로 묶고 답의 근거를 고르는 절차를 우선 재건해야 합니다.",
+      "risk": "지문을 반복해서 읽어도 핵심과 세부를 구분하지 못하면 감에 기대어 답을 고르게 되고, 난도가 올라갈수록 시간과 오답이 함께 늘어날 수 있습니다.",
+      "managementStrategy": "관리에서는 지문마다 핵심어·중심 문장·문단 역할·전체 주제·선지 근거를 남기고 도움 없이 30초 설명하는지 확인합니다.",
+      "tutoringStrategy": "국어 개별지도에서는 역질문과 자기설명으로 문단 관계와 선지 근거를 연결하는 도움을 받는 것을 추천합니다.",
+      "managementProgramLabel": "관리 · 구조 독해 점검",
+      "tutoringProgramLabel": "개별지도 추천 · 근거 독해",
+      "action": "문단별 핵심어→중심 문장→한 문장 요약→선지 근거 반박을 고정합니다."
+    },
+    {
+      "subject": "영어",
+      "subtitle": "종합 44·LV1에서 재정리 강점을 구조 추론으로 확장",
+      "lever": "기초 36·심화 53·보완 H·A. 잘하는 재정리를 연결어·문단 기능·선지 근거로 확장합니다.",
+      "metrics": [
+        {
+          "label": "종합",
+          "score": 44
+        },
+        {
+          "label": "기초문제",
+          "score": 36,
+          "tone": "focus"
+        },
+        {
+          "label": "심화문제",
+          "score": 53,
+          "tone": "strong"
+        }
+      ],
+      "overall": 44,
+      "level": "LV1",
+      "basic": 36,
+      "advanced": 53,
+      "supplement": "H·A",
+      "diagnosis": "심화가 기초보다 높고 APT 재정리 5.0·메타인지 4.5가 강점입니다. 다만 인지 전략 3.1과 근거 분석·지문 구조화의 보완 필요가 있어 성취가 흔들리지 않도록 절차를 고정해야 합니다.",
+      "risk": "전체 뜻과 어휘 감각에 기대어 빠르게 풀면 문장 삽입·순서·빈칸처럼 글의 연결과 근거를 묻는 문제에서 매력적인 오답을 걸러내기 어렵습니다.",
+      "managementStrategy": "관리에서는 연결어·전환 지점, 문단 기능, 정답과 오답의 근거 문장을 표시하고 무자료로 설명하게 합니다.",
+      "tutoringStrategy": "2~4주 동안 근거 설명이 안정되지 않으면 영어 개별지도로 지문 구조화와 선택지 근거 분석의 도움을 받는 것이 좋습니다.",
+      "managementProgramLabel": "관리 · 구조와 근거 점검",
+      "tutoringProgramLabel": "개별지도 추천 · 2~4주 전환",
+      "action": "현재 영어 학습을 유지하며 새 지문 10개 중 8개 이상에서 정답·오답 근거를 모두 설명하는지 확인합니다."
+    },
+    {
+      "subject": "수학",
+      "subtitle": "종합 26·LV0에서 조건 해석과 심화 전이 재건",
+      "lever": "기초 51·심화 15·보완 C·A. 조건을 말과 표로 번역한 뒤 풀이 순서를 설명하는 힘이 먼저입니다.",
+      "metrics": [
+        {
+          "label": "종합",
+          "score": 26
+        },
+        {
+          "label": "기초문제",
+          "score": 51,
+          "tone": "strong"
+        },
+        {
+          "label": "심화문제",
+          "score": 15,
+          "tone": "focus"
+        }
+      ],
+      "overall": 26,
+      "level": "LV0",
+      "basic": 51,
+      "advanced": 15,
+      "supplement": "C·A",
+      "diagnosis": "기초에 비해 심화가 크게 낮고 APT의 전형적 풀이 절차 1.6과 같은 방향입니다. 계산보다 조건을 조직하고 사용할 개념과 순서를 정하는 힘이 핵심 병목입니다.",
+      "risk": "문제를 보자마자 계산부터 시작하면 조건이 많아지거나 유형이 조금만 바뀌어도 풀이가 중단되고, 조급함 때문에 아는 문제의 계산까지 흔들릴 수 있습니다.",
+      "managementStrategy": "관리에서는 수업 뒤 조건 표, 풀이 계획, 오류 분류, 24·72시간 재풀이를 남기고 수업 사이 익힘 시간이 확보되는지 확인합니다.",
+      "tutoringStrategy": "수학 개별지도에서는 질문→독립 풀이→자기설명→변형 문제 순환으로 조건 해석과 풀이 절차를 지도합니다.",
+      "managementProgramLabel": "관리 · 재풀이 점검",
+      "tutoringProgramLabel": "개별지도 추천·운영",
+      "action": "초기 2주 주 4회로 시작하고 독립 풀이와 수업 사이 개념 정리 효율을 확인해 이후 횟수를 조정합니다."
+    }
+  ],
+  "counselingLead": "기타에서 이미 확인한 ‘시간을 투자하면 성장한다’는 경험을 공부의 실행 기준으로 옮기고, 배우는 시간 뒤에 혼자 익히는 시간을 확보하는 것이 이번 상담의 핵심입니다."
 };
 
-/* ═══════════════ 렌더링 (수정 불필요) ═══════════════ */
 (function render(){
   const D = REPORT_DATA, $ = id => document.getElementById(id);
   const esc = s => s ?? "";
@@ -1246,10 +1603,12 @@ const REPORT_DATA = {
     logo.style.display = "block";
   }
   $("rpt-subtitle").textContent = `${D.meta.student} 학생 · ${D.meta.school}`;
-  $("rpt-meta").innerHTML = `<span><b>검사일</b>${D.meta.testDate}</span><span><b>상담일</b>${D.meta.counselDate}</span><span><b>상담</b>${D.meta.counselor}</span>`;
+  $("rpt-meta").innerHTML =
+    `<span><b>검사일</b>${D.meta.testDate}</span><span><b>상담일</b>${D.meta.counselDate}</span>`+
+    `<span><b>상담</b>${D.meta.counselor}</span>`;
   $("rpt-types").innerHTML =
-    `<span class="typechip"><small>메인</small>${D.types.primary}</span>`+
-    (D.types.secondary ? `<span class="typechip"><small>히든</small>${D.types.secondary}</span>` : "");
+    `<span class="typechip"><small>1순위</small>${D.types.primary}</span>`+
+    (D.types.secondary ? `<span class="typechip"><small>참고</small>${D.types.secondary}</span>` : "");
 
   // 요약
   $("summary-grid").innerHTML = D.summary.map(s => {
@@ -1257,9 +1616,8 @@ const REPORT_DATA = {
       const magnitude = Math.min(50, Math.abs(Number(m.score) || 0));
       const left = Number(m.score) < 0 ? 50 - magnitude : 50;
       const score = Number(m.score) > 0 ? `+${m.score}` : `${m.score}`;
-      const tag = m.tone === "asset" ? "자산" : "관리";
       return `<div class="summary-metric is-${m.tone || "asset"}" role="img" aria-label="${m.label} ${score}, -50에서 +50 척도">
-        <span class="summary-metric-label"><span class="summary-metric-tag">${tag}</span><span>${m.label}</span></span>
+        <span class="summary-metric-label">${m.label}</span>
         <span class="summary-metric-track"><i class="summary-metric-fill" style="left:${left}%;width:${magnitude}%"></i></span>
         <span class="summary-metric-score">${score}</span>
       </div>`;
@@ -1282,10 +1640,10 @@ const REPORT_DATA = {
     `<div class="keyword-card ${g.cls}"><h3>${g.title}</h3><ul>${g.items.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
   $("core-narrative").textContent = D.coreSummary?.narrative || "";
   const temperament = D.temperamentDynamics;
-  $("temperament-title").textContent = temperament?.title || "";
+  $("temperament-title").textContent = temperament?.title || "성향 조합이 학습에서 작동하는 방식";
   $("temperament-lead").textContent = temperament?.lead || "";
   $("temperament-grid").innerHTML = (temperament?.cards || []).map(c=>`<article class="temperament-card tone-${c.tone || "blue"}"><span>${c.label}</span><h4>${c.title}</h4><p>${c.body}</p></article>`).join("");
-  $("temperament-action").innerHTML = `<b>${temperament?.actionLabel || "도움의 방식"}</b><p>${temperament?.action || ""}</p>`;
+  $("temperament-action").innerHTML = `<b>${temperament?.actionLabel || "프로그램 연결"}</b><p>${temperament?.action || ""}</p>`;
 
   // APT 국어·영어·수학 역량
   $("apt-summary-grid").innerHTML = (D.aptSummary || []).map(a =>
@@ -1298,19 +1656,40 @@ const REPORT_DATA = {
         <div class="apt-chart" role="img" aria-label="${a.subject} APT 역량별 5점 척도 그래프">
           ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label"><span>${m.label}</span>${m.tone==="strong"?'<span class="apt-status is-strong">강점</span>':m.tone==="focus"?'<span class="apt-status is-focus">우선 보완</span>':""}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score/5*100}"></i></span><span class="apt-score">${m.score.toFixed(1)}</span></div>`).join("")}
           <div class="apt-scale"><span>0</span><span>기준선 3.0</span><span>5.0</span></div>
-          <p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span><span>APT 상위 역량 5점 척도</span></p>
+          <p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span></p>
         </div>
         <div class="apt-story">
           <div class="apt-story-block diagnosis"><strong>프로필 진단</strong>${a.diagnosis}</div>
           <div class="apt-story-block risk"><strong>그대로 둘 때의 학습 리스크</strong>${a.risk}</div>
-          <div class="apt-story-block action"><strong>우선 실행 처방</strong>${a.action}</div>
+          <div class="apt-story-block action"><strong>${a.programLabel || "프로그램 연결"}</strong>${a.action}</div>
+        </div>
+      </div>
+    </article>`).join("");
+  // CHAMP TEST 과목별 수행 프로필
+  $("champ-summary-grid").innerHTML = (D.champSummary || []).map(a =>
+    `<article class="apt-summary-card">
+      <div class="apt-card-head">
+        <div><h3>${a.subject} CHAMP TEST</h3><p>${a.subtitle}</p></div>
+        <div class="apt-lever"><b>우선 학습 방향</b>${a.lever}</div>
+      </div>
+      <div class="apt-card-body">
+        <div class="apt-chart champ-chart" role="img" aria-label="${a.subject} CHAMP TEST 과목별 수행 그래프">
+          ${a.metrics.map(m=>`<div class="apt-metric ${m.tone?`is-${m.tone}`:""}"><span class="apt-metric-label"><span>${m.label}</span>${m.tone==="strong"?`<span class="apt-status is-strong">강점</span>`:m.tone==="focus"?`<span class="apt-status is-focus">우선 보완</span>`:""}</span><span class="apt-track"><i class="apt-fill" data-w="${m.score}"></i></span><span class="apt-score">${Math.round(m.score)}</span></div>`).join("")}
+          <div class="apt-scale"><span>0</span><span>50</span><span>100</span></div>
+          <p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span></p>
+        </div>
+        <div class="apt-story">
+          <div class="apt-story-block diagnosis"><b>현재 수행 해석</b><p>${a.diagnosis}</p></div>
+          <div class="apt-story-block risk"><b>그대로 둘 때의 학습 리스크</b><p>${a.risk}</p></div>
+          <div class="apt-story-block action"><b>${a.programLabel || "프로그램 연결"}</b><p>${a.action}</p></div>
         </div>
       </div>
     </article>`).join("");
   requestAnimationFrame(()=>document.querySelectorAll(".apt-fill").forEach(el=>el.style.width=el.dataset.w+"%"));
 
-  // 지원 구조
+  // 프로그램 구조
   $("program-lead").textContent = D.program?.lead || "";
+  $("counseling-flow").innerHTML = (D.program?.counselingFlow || []).map(f => `<article class="counseling-step"><span class="step-no">STEP ${f.step}</span><span class="step-category">${f.category}</span><h4>${f.title}</h4><p>${f.body}</p></article>`).join("");
   $("program-cards").innerHTML = (D.program?.cards || []).map(c =>
     `<div class="program-card"><span class="tag">${c.tag}</span><div class="program-title">${c.title}</div>
       <p>${c.body}</p>${c.bullets?.length ? `<ul>${c.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>` : ""}</div>`).join("");
@@ -1338,11 +1717,26 @@ const REPORT_DATA = {
   $("type-insights").innerHTML = (D.type.insights || []).map(i=>`<div class="type-insight"><div class="label">${i.label}</div><p>${i.body}</p></div>`).join("");
   $("type-pros").innerHTML = D.type.pros.map(p=>`<li>${p}</li>`).join("");
   $("type-cons").innerHTML = D.type.cons.map(p=>`<li>${p}</li>`).join("");
+  const growth = D.type.growthFlow;
+  $("growth-flow-title").textContent = growth?.title || "타입 성장 경로 지도";
+  $("growth-flow-lead").textContent = growth?.lead || "";
+  const routeNode = n=>`<div class="route-node-card"><div class="route-hex tone-${n.tone || "main"}"><small>${n.role}</small><b>${n.type}</b><span>${n.name}</span></div>${n.note ? `<span class="route-node-note">${n.note}</span>` : ""}</div>`;
+  $("route-current").innerHTML = (growth?.current || []).map(routeNode).join("");
+  $("route-targets").innerHTML = (growth?.targets || []).map(routeNode).join("");
+  $("route-core-label").textContent = growth?.core?.label || "공통 성장축";
+  $("route-core-title").textContent = growth?.core?.title || "자기주도학습";
+  $("route-core-body").textContent = growth?.core?.body || "";
+  $("route-core-tracks").innerHTML = (growth?.core?.tracks || []).map(t=>`<span>${t}</span>`).join("");
+  $("route-foot").textContent = growth?.foot || "";
+  const branchSet = D.type.competencyBranches;
+  $("competency-title").textContent = branchSet?.title || ((D.meta.student || "").replace(/\d+$/, "") + " 학생에게 필요한 성장 갈래");
+  $("competency-lead").textContent = branchSet?.lead || "";
+  $("competency-branches").innerHTML = (branchSet?.branches || []).map(b=>`<article class="competency-branch tone-${b.tone || "blue"}"><div class="branch-head"><h4>${b.title}</h4><span class="branch-route">${b.route}</span></div><div class="branch-domains">${(b.domains || []).map(d=>`<span>${d}</span>`).join("")}</div><ol class="branch-path">${b.path.map(p=>`<li>${p}</li>`).join("")}</ol><div class="branch-signal"><b>확인 지표</b> · ${b.signal}</div></article>`).join("");
 
   // 걸림돌
   $("stones").innerHTML = D.stones.map((s,i) =>
     `<div class="stone"><div class="num">${i+1}</div><div>
-       ${s.program?`<span class="program-link-badge">${s.program}</span>`:""}<h4>${s.title}</h4><p>${s.body}</p>
+       ${s.program?`<span class="stone-program">${s.program}</span>`:""}<h4>${s.title}</h4><p>${s.body}</p>
        ${s.quote?`<div class="quote">${s.quote}${s.quoteSrc?`<small>— ${s.quoteSrc}</small>`:""}</div>`:""}
      </div></div>`).join("");
 
@@ -1407,9 +1801,12 @@ const REPORT_DATA = {
 
   // 클로징
   const renderContact = c => {
-    if (typeof c === "object") {
-      const href = c.href?.startsWith("http") ? c.href : `https://${c.href}`;
-      return `<span><a href="${href}" target="_blank" rel="noopener">${c.label}</a></span>`;
+    if (typeof c === "object" && c) {
+      const text = [c.label, c.value].filter(Boolean).join(" ");
+      const rawHref = c.href || (/^(?:https?:\/\/|[a-z0-9.-]+\.[a-z]{2,})(?:\/|$)/i.test(String(c.value || "")) ? c.value : "");
+      if (!rawHref) return `<span>${text}</span>`;
+      const href = String(rawHref).startsWith("http") ? rawHref : `https://${rawHref}`;
+      return `<span><a href="${href}" target="_blank" rel="noopener">${text}</a></span>`;
     }
     const text = String(c);
     const match = text.match(/(https?:\/\/[^\s]+|eduplexge\.sangsangplex\.com)/);
@@ -1424,5 +1821,51 @@ const REPORT_DATA = {
   document.title = "VLT-5G 초기 진단 결과지_왕건10";
 })();
 </script>
+
+<script data-layout-renderer="2026-08-11.3">
+(function applyLayoutContract(){
+  const D = REPORT_DATA, $ = id => document.getElementById(id);
+  const order = {"국어":0,"영어":1,"수학":2,"기초문장이해":0};
+  const metricRows = (metrics, max, suffix) => metrics.map(m => {
+    const value = Number(m.score) || 0;
+    const width = Math.max(0, Math.min(100, value / max * 100));
+    const status = m.tone === "strong" ? '<span class="apt-status is-strong">강점</span>' : m.tone === "focus" ? '<span class="apt-status is-focus">우선 보완</span>' : '';
+    return '<div class="apt-metric '+(m.tone?'is-'+m.tone:'')+'"><span class="apt-metric-label"><span>'+m.label+'</span>'+status+'</span><span class="apt-track"><i class="apt-fill" style="width:'+width+'%"></i></span><span class="apt-score">'+(max===5?value.toFixed(1):Math.round(value))+suffix+'</span></div>';
+  }).join('');
+  const profileCard = (a, kind) => {
+    const max = kind === 'APT' ? 5 : 100;
+    const suffix = '';
+    const scale = kind === 'APT' ? '<span>0</span><span>기준선 3.0</span><span>5.0</span>' : '<span>0</span><span>50</span><span>100</span>';
+    return '<article class="subject-profile-card">'+
+      '<div class="subject-profile-head"><div class="subject-profile-title"><div><h3>'+a.subject+' '+kind+'</h3><p>'+a.subtitle+'</p></div></div><div class="growth-lever-full"><b>핵심 성장 레버</b>'+a.lever+'</div></div>'+
+      '<div class="subject-upper-grid"><div class="subject-chart" role="img" aria-label="'+a.subject+' '+kind+' 수행 그래프">'+metricRows(a.metrics,max,suffix)+'<div class="apt-scale">'+scale+'</div><p class="apt-evidence-note"><span class="apt-legend-item is-strong"><i></i>강점 지표</span><span class="apt-legend-item is-focus"><i></i>우선 보완 지표</span></p></div><div class="subject-panel diagnosis"><h4>프로필 진단</h4><p>'+a.diagnosis+'</p></div></div>'+
+      '<div class="subject-lower-grid"><div class="subject-panel risk"><span class="strategy-badge">학습 리스크</span><h4>그대로 둘 때의 학습 리스크</h4><p>'+a.risk+'</p></div><div class="subject-panel management"><span class="strategy-badge">'+a.managementProgramLabel+'</span><h4>상담·관리 전략</h4><p>'+a.managementStrategy+'</p></div><div class="subject-panel tutoring"><span class="strategy-badge">'+a.tutoringProgramLabel+'</span><h4>개별지도 전략</h4><p>'+a.tutoringStrategy+'</p></div></div>'+
+    '</article>';
+  };
+  $('apt-summary-grid').innerHTML = [...(D.aptSummary||[])].sort((a,b)=>(order[a.subject]??9)-(order[b.subject]??9)).map(a=>profileCard(a,'APT')).join('');
+  $('champ-summary-grid').innerHTML = [...(D.champSummary||[])].sort((a,b)=>(order[a.subject]??9)-(order[b.subject]??9)).map(a=>profileCard(a,'CHAMP TEST')).join('');
+
+  $('rpt-types').innerHTML = '<span class="typechip">'+D.types.primary+'</span><span class="typechip">'+D.types.secondary+'</span>';
+  const bipolar = sub => {
+    const values = [...String(sub).matchAll(/[+-]?\d+/g)].map(m=>Number(m[0])).filter(Number.isFinite);
+    if (!values.length) return {left:50,width:0,points:[]};
+    const positions = values.map(v=>Math.max(0,Math.min(100,v+50)));
+    const min = Math.min(...positions), max = Math.max(...positions);
+    return {left:min,width:Math.max(2,max-min),points:positions};
+  };
+  $('factor-list').innerHTML = (D.factors||[]).map(f=>{
+    const b = bipolar(f.sub);
+    const points = b.points.map(p=>'<i class="vlt-point" style="left:'+p+'%"></i>').join('');
+    return '<article class="vlt-factor-row '+(f.rank?'is-ranked':'')+'"><div class="vlt-factor-head"><div class="vlt-factor-title"><span>'+f.name+'</span><span class="vlt-stars">'+('★'.repeat(f.stars))+'</span></div><div class="vlt-badges"><span class="vlt-status-badge">현재 상태 · '+f.grade+'</span>'+(f.rank?'<span class="vlt-priority-badge">'+f.rank+'</span>':'')+'</div><div class="vlt-factor-sub">'+f.sub+'</div></div><div class="vlt-bipolar" role="img" aria-label="'+f.name+' 양극 지표 막대"><span>-50</span><div class="vlt-bipolar-track"><i class="vlt-zero"></i><i class="vlt-range" style="left:'+b.left+'%;width:'+b.width+'%"></i>'+points+'</div><span>+50</span></div><div class="vlt-factor-detail">'+f.detail+'</div></article>';
+  }).join('');
+  document.querySelectorAll('.vlt-factor-row').forEach(el=>el.addEventListener('click',()=>el.classList.toggle('open')));
+
+  $('stones').innerHTML = (D.stones||[]).map((s,i)=>'<div class="stone"><div class="num">'+(i+1)+'</div><div><span class="stone-program">'+s.program+'</span><h4>'+s.title+'</h4><p>'+s.body+'</p><div class="quote">'+s.quote+(s.quoteSrc?'<small>— '+s.quoteSrc+'</small>':'')+'</div><div class="stone-help"><b>구체 도움</b> · '+s.help+'</div><div class="stone-signals"><div class="stone-signal"><b>학생 산출물</b>'+s.studentOutput+'</div><div class="stone-signal"><b>확인 변화</b>'+s.verification+'</div></div></div></div>').join('');
+  $('states').innerHTML = (D.states||[]).map(s=>'<div class="state"><div class="icon">'+s.icon+'</div><div class="t">'+s.title+'</div><span class="program-link-badge">'+s.programLabel+'</span><p>'+s.body+'</p></div>').join('');
+  $('roadmap').innerHTML = (D.roadmap||[]).map(r=>'<div class="phase"><div class="when">'+r.when+'</div><span class="program-link-badge">'+r.programLabel+'</span><h4>'+r.title+'</h4><p>'+r.body+'</p><ul>'+r.items.map(i=>'<li>'+i+'</li>').join('')+'</ul><div class="why">'+r.why+'</div></div>').join('');
+  $('counseling-lead').textContent = D.counselingLead || '';
+})();
+</script>
+
 </body>
 </html>
