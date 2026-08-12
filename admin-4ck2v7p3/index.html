@@ -55,9 +55,15 @@
   .growth-summary{color:#506675;font-size:12.5px}
   .growth-link{display:block;border-radius:8px;padding:9px 11px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:800;background:#176f82;color:#fff}
   .growth-link:hover{background:#0f5a6b}
+  .tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .tool-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;background:linear-gradient(135deg,#173d54,#0d746e);border-radius:14px;padding:18px;color:#fff;box-shadow:0 7px 20px rgba(18,67,79,.14)}
+  .tool-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.14);font-size:13px;font-weight:900;letter-spacing:.05em}
+  .tool-copy strong{display:block;font-size:16px}.tool-copy span{display:block;margin-top:4px;color:#d8efee;font-size:12.5px}
+  .tool-link{display:inline-block;border-radius:9px;padding:9px 12px;background:#fff;color:#14556a;text-decoration:none;font-size:12.5px;font-weight:900;white-space:nowrap}
+  .tool-link:hover{background:#eaf8f6}
   .apt-empty{grid-column:1/-1;background:#fff;border-radius:10px;padding:20px;text-align:center;color:#6b7c8c}
-  @media(max-width:800px){.apt-grid,.growth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.section-note{text-align:left}}
-  @media(max-width:520px){body{padding:24px 14px}.apt-grid,.growth-grid{grid-template-columns:1fr}}
+  @media(max-width:800px){.apt-grid,.growth-grid,.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.section-note{text-align:left}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1;text-align:center}}
+  @media(max-width:520px){body{padding:24px 14px}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}}
   footer{margin-top:24px;font-size:12px;color:#5a6b7b;text-align:center}
 </style>
 </head>
@@ -65,7 +71,7 @@
 <div class="wrap">
   <div class="warn">⚠️ 이 페이지는 원장·매니저 전용입니다. 링크를 학부모나 외부에 공유하지 마세요. 학부모께는 아래 표의 "학부모 전달 링크" 열만 카카오톡 등으로 개별 전달합니다. "매니저용 기록지"는 내부 운영용입니다.</div>
   <h1>에듀플렉스 길음점 — 초기상담 결과지 배포 현황</h1>
-  <div class="sub">마지막 갱신: 2026-08-07</div>
+  <div class="sub">마지막 갱신: 2026-08-12</div>
   <div class="table-scroll">
   <table>
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
@@ -265,6 +271,22 @@
     </tbody>
   </table>
   </div>
+  <section class="apt-section" aria-labelledby="tools-title">
+    <div class="section-head">
+      <div>
+        <h2 id="tools-title">공통 운영 도구</h2>
+        <div class="sub" style="margin-bottom:0">원장·전체 매니저님이 학생별 상담에 공통으로 사용하는 내부 플레이북입니다.</div>
+      </div>
+      <div class="section-note">내부 운영용 · 외부 공유 금지</div>
+    </div>
+    <div class="tool-grid">
+      <article class="tool-card">
+        <div class="tool-mark">60+15</div>
+        <div class="tool-copy"><strong>VLT5G 해석상담 공통 플레이북</strong><span>실전 60분 · 선택형 15분 · 훈련 해설 · 합의문 생성</span></div>
+        <a class="tool-link" href="../64bzt3er/">플레이북 열기</a>
+      </article>
+    </div>
+  </section>
   <section class="apt-section" aria-labelledby="apt-title">
     <div class="section-head">
       <div>
