@@ -33,11 +33,11 @@
     .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:26px}.voice-card{margin:0;padding:23px;border-radius:14px;background:var(--navy);color:#fff}.voice-card blockquote{margin:0 0 12px;font-size:21px;font-weight:800;line-height:1.45}.voice-card figcaption{font-size:13.5px;color:#dcebf4}
     .method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.method-card{display:grid;grid-template-columns:38px 1fr;gap:13px;padding:18px;border-radius:12px;background:#f7fafc;border:1px solid var(--line)}.method-card>span{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--green);color:#fff;font-weight:900}.method-card p{font-size:13.5px}
     .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.metric-card{display:flex;min-height:130px;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;border-radius:12px;background:var(--sky)}.metric-card strong{color:var(--navy);font-size:27px;line-height:1.2}.metric-card b{margin-top:7px;font-size:13px}.metric-card span{margin-top:4px;color:var(--sub);font-size:11.5px}.participation-note{margin:14px 0 0;text-align:center;color:var(--sub);font-size:12.5px}
-    .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.plan-card{display:flex;flex-direction:column;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.plan-time{align-self:flex-start;padding:4px 9px;border-radius:999px;background:var(--mint);color:var(--green)}.plan-card ul{margin:8px 0 18px;padding-left:18px;color:var(--sub);font-size:13.5px}.plan-card li+li{margin-top:7px}.measure{margin:auto 0 0;padding:12px;border-radius:9px;background:var(--sand);font-size:12.5px}.measure b{display:block;margin-bottom:3px;color:#8f5b20}
+    .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.plan-card{display:flex;flex-direction:column;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.plan-card.seasonal{grid-column:1/-1;background:linear-gradient(135deg,#f2f8fb,#eef8f3);border-color:#bcd8d2}.plan-card.seasonal ul{columns:2;column-gap:34px}.plan-time{align-self:flex-start;padding:4px 9px;border-radius:999px;background:var(--mint);color:var(--green)}.plan-card ul{margin:8px 0 18px;padding-left:18px;color:var(--sub);font-size:13.5px}.plan-card li{break-inside:avoid}.plan-card li+li{margin-top:7px}.measure{margin:auto 0 0;padding:12px;border-radius:9px;background:var(--sand);font-size:12.5px}.measure b{display:block;margin-bottom:3px;color:#8f5b20}
     .family-box{padding:27px;border-radius:16px;background:linear-gradient(135deg,#e4f4ed,#edf6fb)}.family-box h3{margin:0 0 8px;font-size:20px}.family-box p{margin:0;color:var(--sub)}.family-prompt{margin-top:16px!important;padding:14px 16px;border-left:4px solid var(--green);background:#fff;color:var(--ink)!important;font-weight:800}
     .closing{padding:50px 58px;background:#f7f4ec;text-align:center}.closing h2{font-size:28px}.closing p{max-width:760px;margin:15px auto 0;color:#4e5963}.signature{margin-top:22px!important;color:var(--navy)!important;font-weight:850}.home-link{display:inline-flex;margin-top:22px;padding:10px 17px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:800}
     footer{padding:20px 30px;background:#122e49;color:#cbdde9;text-align:center;font-size:11.5px}
-    @media(max-width:760px){.hero,section,.closing{width:100%;padding-left:23px;padding-right:23px}.hero{padding-top:76px}h1{font-size:33px}h1,h2,h3,p,dd,figcaption{overflow-wrap:anywhere}.hero-lead{font-size:17px}.snapshot-grid,.growth-grid,.voice-grid,.method-grid,.plan-grid{grid-template-columns:minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-item{grid-template-columns:68px minmax(0,1fr);gap:12px}.journey-marker span{width:48px;height:48px}.journey-item:not(:last-child):before{left:23px;top:48px}.print-button{right:12px;top:14px;padding:6px 9px;font-size:10px}}
+    @media(max-width:760px){.hero,section,.closing{width:100%;padding-left:23px;padding-right:23px}.hero{padding-top:76px}h1{font-size:33px}h1,h2,h3,p,dd,figcaption{overflow-wrap:anywhere}.hero-lead{font-size:17px}.snapshot-grid,.growth-grid,.voice-grid,.method-grid,.plan-grid{grid-template-columns:minmax(0,1fr)}.plan-card.seasonal{grid-column:auto}.plan-card.seasonal ul{columns:1}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-item{grid-template-columns:68px minmax(0,1fr);gap:12px}.journey-marker span{width:48px;height:48px}.journey-item:not(:last-child):before{left:23px;top:48px}.print-button{right:12px;top:14px;padding:6px 9px;font-size:10px}}
     @media print{body{background:#fff}.page{max-width:none;box-shadow:none}.print-button{display:none}section,.growth-card,.plan-card,.method-card,.snapshot-card,.voice-card{break-inside:avoid}a{color:inherit;text-decoration:none}}
   </style>
 </head>
@@ -209,26 +209,32 @@
   </section>
 
   <section>
-    <p class="sec-kicker">NEXT 4 · 8 · 12 WEEKS</p>
-    <h2>다음 성장을 확인하는 방법</h2>
-    <p class="section-lead">공부 시간을 더 늘리는 것보다, 학생이 먼저 계획하고 학습 흔적을 남기며 학교 일정으로 옮기는 과정에 초점을 둡니다.</p>
+    <p class="sec-kicker">NEXT 4 · 8 · 12 WEEKS + WINTER</p>
+    <h2>다음 12주와 겨울방학의 성장 과정</h2>
+    <p class="section-lead">학생이 먼저 계획하고 설명·인출·적용의 흔적을 남긴 뒤, 수행평가와 기말고사를 거쳐 수능형 사고로 확장하는 과정에 초점을 둡니다.</p>
     <div class="plan-grid"><article class="plan-card">
               <p class="plan-time">앞으로 4주</p>
-              <h3>학생이 먼저 계획하고 학습 흔적을 남깁니다</h3>
-              <ul><li>매주 송민준 학생이 학교·학원·수행평가를 반영한 주간계획 초안을 먼저 작성합니다.</li><li>수학 풀이 이유, 국어 문단 역할, 영어 근거 문장 중 과목별 학습 흔적을 주 2회 남깁니다.</li><li>수행평가 마감·준비물·제출 상태를 한 표에서 관리합니다.</li></ul>
-              <p class="measure"><b>함께 확인할 변화</b>주간계획 초안 4회 · 학습 흔적 8회 이상 · 수행평가 누락 0건</p>
+              <h3>과목별 목표와 회독 계획을 학생이 먼저 세웁니다</h3>
+              <ul><li>송민준 학생이 과목별 목표와 회독 계획을 먼저 정하고, 임지혜 매니저는 검토와 질문으로 정리합니다.</li><li>국어는 ‘왜 이 문장이 근거인지’를 주 2회 이상 설명하고, 영어는 문장 분석과 5분할 인출을 연결합니다.</li><li>수학은 조건-개념-첫 식-단계로 풀이 이유를 설명하고, 물리는 빅뱅피직스 2회독과 ‘1등급 만들기’ 문제 적용을 병행합니다.</li><li>회독 후에는 실전과 비슷한 시간 배분 연습을 넣어 시험 당일의 불안을 낮춥니다.</li></ul>
+              <p class="measure"><b>함께 확인할 변화</b>학생 계획 4회 · 국어 근거 설명 8회 이상 · 영어 인출·수학 설명·물리 적용 기록 · 실전 시간 배분 연습</p>
             </article>
 <article class="plan-card">
               <p class="plan-time">앞으로 8주</p>
-              <h3>방학의 실행력을 학교 시험 운영으로 옮깁니다</h3>
-              <ul><li>시험 4주 전 과목별 목표와 회독 계획을 송민준 학생이 세웁니다.</li><li>국어·영어 오답은 지식·풀이 절차·시간·긴장으로 나누어 다시 봅니다.</li><li>수학은 답뿐 아니라 첫 식을 세운 이유를 말로 설명합니다.</li></ul>
-              <p class="measure"><b>함께 확인할 변화</b>시험계획 4주 유지 · 수행평가 감점 0건 · 같은 오답의 반복 감소</p>
+              <h3>수행평가의 미비와 누락을 0건으로 관리합니다</h3>
+              <ul><li>과목별 수행평가의 마감·준비물·제출 상태를 한 표에서 관리합니다.</li><li>진행도를 눈에 보이게 표시하고 셀프리더에 준비·진행·제출 상태를 기록합니다.</li><li>기말고사 예습성 회독은 낮은 강도로 이어 가되, 수행평가에 밀려 계획이 무너지지 않도록 매주 우선순위를 점검합니다.</li></ul>
+              <p class="measure"><b>함께 확인할 변화</b>수행평가 미비·누락 0건 · 모든 과목 진행도 가시화 · 셀프리더 기록 · 기말고사 회독 지속</p>
             </article>
 <article class="plan-card">
               <p class="plan-time">앞으로 12주</p>
               <h3>계획–실행–성찰–수정을 독립 운영합니다</h3>
-              <ul><li>임지혜 매니저는 시간표를 대신 작성하지 않고 우선순위와 과부하를 질문으로 점검합니다.</li><li>시험 결과를 점수만이 아니라 계획 적중도·오답 수정·정서 안정까지 함께 돌아봅니다.</li><li>다음 12주 목표를 송민준 학생이 직접 제안합니다.</li></ul>
-              <p class="measure"><b>함께 확인할 변화</b>학생 계획 4주 연속 제출 · 핵심 과제 80% 이상 · 시험 후 수정 행동 3개 이상</p>
+              <ul><li>송민준 학생이 한 주의 계획–실행–성찰–수정을 독립 운영하고 조정 이유를 설명합니다.</li><li>임지혜 매니저는 계획을 대신 수정하지 않고 우선순위와 과부하만 질문으로 점검합니다.</li><li>기말고사 후에는 점수뿐 아니라 계획 적중도·오답 전이·정서 안정까지 함께 돌아봅니다.</li><li>세부특기사항과 주제탐구보고서를 관리하고, 다음 12주인 겨울방학 목표를 송민준 학생이 직접 제안합니다.</li></ul>
+              <p class="measure"><b>함께 확인할 변화</b>독립 운영 4주 · 기말고사 통합 리뷰 · 세부특기사항·주제탐구보고서 진행표 · 겨울방학 목표 제안</p>
+            </article>
+<article class="plan-card seasonal">
+              <p class="plan-time">겨울방학</p>
+              <h3>수능형 사고와 긴 호흡의 학습으로 확장합니다</h3>
+              <ul><li>측정 가능한 겨울방학 목표 하나를 송민준 학생이 직접 세우고 매주 진척도를 기록합니다.</li><li>짧은 뽀모도로식 루틴에서 긴 호흡의 학습으로 확장하되, 회복과 수면 시간을 계획에 반드시 포함합니다.</li><li>국어는 수능 비문학·문학 지문을 매일 시간을 재어 풀고 문단 역할과 근거를 설명합니다.</li><li>영어는 빈칸·흐름 문항을 패러프레이징하고 오답을 5분할 분석·인출하며, 수학은 모의고사 유형의 풀이 이유와 복합 개념 적용을 설명합니다.</li></ul>
+              <p class="measure"><b>함께 확인할 변화</b>겨울방학 목표 트래킹 · 국어 일일 시간제한 풀이 · 영어 5분할 인출 · 수학 모의고사 설명 · 수면·회복 기록</p>
             </article></div>
   </section>
 
@@ -247,7 +253,7 @@
     <p class="signature">에듀플렉스 길음점 · 임지혜 매니저</p>
     <a class="home-link" href="https://eduplexge.sangsangplex.com" target="_blank" rel="noopener noreferrer">에듀플렉스 길음점 알아보기</a>
   </div>
-  <footer>에듀플렉스 성장기록부_송민준09 · 해석상담 김병수 원장 · 담당 임지혜 매니저</footer>
+  <footer>에듀플렉스 성장기록부_송민준09 · 담당 임지혜 매니저</footer>
 </main>
 </body>
 </html>
