@@ -107,6 +107,9 @@
   .session-index{display:grid;place-items:center;width:24px;height:24px;background:var(--pink);color:#fff;border:1px solid var(--ink);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:9px;font-weight:950}
   .session-copy{display:grid;line-height:1.25}.session-copy strong{font-size:11px}.session-copy small{margin-top:3px;color:#89596a;font-size:9.5px}
   .session-empty{color:#8d8a80;font-size:11px}
+  .preanalysis-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#f39a3c;color:var(--ink);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
+  .preanalysis-link:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+  .preanalysis-meta{display:block;margin-top:5px;color:#7a4b1e;font-size:9.5px;font-weight:800}
   .empty-state{margin-top:14px;border:2px dashed var(--line);padding:28px;text-align:center;color:var(--muted)}
   .empty-state strong{display:block;color:var(--ink);font-size:16px}.empty-state span{display:block;margin-top:5px;font-size:12px}
   .pager-shell,.resource-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px}
@@ -152,7 +155,7 @@
     .drawer>summary{padding:14px;align-items:flex-start}.drawer-heading p{display:none}.drawer-toggle span{display:none}.drawer-body{padding:14px}.control-deck{margin:-14px -14px 14px;padding:14px}
     .controls-primary{grid-template-columns:1fr}.field--search{grid-column:auto}.pager-shell,.resource-tools{align-items:flex-start;flex-direction:column}.pagination{justify-content:flex-start}
     .table-scroll{overflow:visible;border:0;background:transparent}table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
+    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
     a.link,a.manager{width:100%}.session-stack{min-width:0}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -426,6 +429,12 @@
         <td><a class="link manager" href="../snboe8tq/">열기</a></td>
       </tr>
       <tr>
+        <td>임규미12 <span class="tag">개운중2</span></td>
+        <td>2026.08.17 · TYPE6 + HIDDEN TYPE10 (해석상담 전 사전 분석)</td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+      </tr>
+      <tr>
         <td>고예현</td>
         <td>2026.08.11 · 학습 지속 상담</td>
         <td><span class="session-empty">—</span></td>
@@ -501,9 +510,14 @@
     </summary>
     <div class="drawer-body"><div class="growth-grid" id="growth-history-links"></div></div>
   </details>
-  <footer>새 학생 결과지·매니저 기록지·후속상담 세션이 배포되면 목록과 배포 기록을 함께 갱신합니다.</footer>
+  <footer>새 학생 사전 분석지·결과지·매니저 기록지·후속상담 세션이 배포되면 목록과 배포 기록을 함께 갱신합니다.</footer>
 </main>
 <script>
+  // 해석상담 전 학부모용 검토 초안은 최종 결과지와 분리된 전용 링크로 관리합니다.
+  const preAnalysisReports = [
+    { student: "임규미12", date: "2026.08.17", title: "학부모용 검토 초안", href: "../iyr70etd/" }
+  ];
+
   // 학생별 후속상담 정적 HTML은 아래 목록에 회차별로 추가합니다.
   // 한 학생에게 sessions 항목을 더하면 같은 학생 행에 시간순으로 누적 표시됩니다.
   const followupSessions = [
@@ -553,13 +567,24 @@
   ];
 
   const resultTable = document.getElementById("result-table");
+  const preAnalysisHeader = document.createElement("th");
+  preAnalysisHeader.textContent = "사전 분석지";
+  resultTable.tHead.rows[0].appendChild(preAnalysisHeader);
   const sessionHeader = document.createElement("th");
   sessionHeader.textContent = "후속상담 세션";
   resultTable.tHead.rows[0].appendChild(sessionHeader);
 
+  const preAnalysisByStudent = new Map(preAnalysisReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
+    const preAnalysis = preAnalysisByStudent.get(student) || preAnalysisByStudent.get(student.replace(/\d+$/, ""));
+    const preAnalysisCell = row.insertCell();
+    if (preAnalysis) {
+      preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전 분석지 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>`;
+    } else {
+      preAnalysisCell.innerHTML = '<span class="session-empty">등록 초안 없음</span>';
+    }
     const sessions = sessionsByStudent.get(student) || [];
     const cell = row.insertCell();
 
@@ -578,6 +603,7 @@
 
   // 새 링크를 받을 때 아래 배열에 학생 이름과 과목별 URL 한 묶음만 추가합니다.
   const aptSheets = [
+    { name: "임규미12", korean: "https://docs.google.com/spreadsheets/d/15PJxWONN4HxjDLwzNpo2iWaSOSKbkSqr4pTspHhqNNQ/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1ZxBJs-ZYhNeFiWal464EzpcUABYO13TAwjyo89Ajav8/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1mrTR-m5ylVlnU_Pb5LeRfChndgJPreOJb8u1_ChX_sQ/edit?usp=sharing" },
     { name: "왕건10", korean: "https://docs.google.com/spreadsheets/d/1HbT2DGEhiyefrlokCPMlcw5A7fNNnloVCj77Bg3bmR0/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1U0XrBx3XSI-MqtoBvBqcRWXxfBQPoYhkaXBuZygf5D4/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1BZQJx7omBiUvDBvcVElaX25wnI0CIqlFRSRoC57O7-M/edit?usp=drive_link" },
     { name: "안시영", korean: "https://docs.google.com/spreadsheets/d/1GgoPQRbl8sef1Hr9Pv4k-whNO9fkDdZ5YXCMFFTrsjY/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/12Ivf398zPZdMOlfmuGFltNcB0dCJmSK547xUGtQq8n8/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1_fsaiOH8emSWBXD5iCqSp2GDsnFaB2XhZSbqvUpbENE/edit?usp=drive_link" },
     { name: "이주은", korean: "https://docs.google.com/spreadsheets/d/151AeJqxHVuRi9FPHKqQ_Hwm8wzkEGRzZ7wU33Q3ov7I/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1LgHrZwPe7DtdHL0Qfj8pGJRaYpTXr-tZTafxgcbDPa4/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1Zw28JP2yqsmWIokIbAK7aAWZzSYV3bdz82zkJmGHvu4/edit?usp=drive_link" },
@@ -693,7 +719,7 @@
     return value.charAt(0).toUpperCase();
   }
 
-  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "후속상담"];
+  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전 분석지", "후속상담"];
   Array.from(resultTable.tHead.rows[0].cells).forEach((cell, index) => { cell.textContent = headers[index]; });
 
   resultRows.forEach((row, originalIndex) => {
@@ -704,6 +730,7 @@
     const dateMatch = detail.match(/\d{4}\.\d{2}\.\d{2}/);
     const parentLink = row.cells[2].querySelector("a");
     const managerLink = row.cells[3].querySelector("a");
+    const preAnalysis = preAnalysisByStudent.get(name) || preAnalysisByStudent.get(name.replace(/\d+$/, ""));
     const sessions = sessionsByStudent.get(name.replace(/\d+$/, "")) || sessionsByStudent.get(name) || [];
 
     if (parentLink) {
@@ -728,7 +755,7 @@
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,
-      searchText: `${name} ${school} ${detail}`.toLocaleLowerCase("ko-KR")
+      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""}`.toLocaleLowerCase("ko-KR")
     });
   });
 
