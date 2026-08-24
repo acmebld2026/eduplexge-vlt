@@ -110,6 +110,9 @@
   .preanalysis-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#f39a3c;color:var(--ink);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
   .preanalysis-link:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
   .preanalysis-meta{display:block;margin-top:5px;color:#7a4b1e;font-size:9.5px;font-weight:800}
+  .mbti-dynamics-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#d9f2ff;color:var(--blue-deep);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
+  .mbti-dynamics-link:hover{background:var(--green);transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+  .mbti-dynamics-meta{display:block;margin-top:5px;color:#315a73;font-size:9.5px;font-weight:800}
   .empty-state{margin-top:14px;border:2px dashed var(--line);padding:28px;text-align:center;color:var(--muted)}
   .empty-state strong{display:block;color:var(--ink);font-size:16px}.empty-state span{display:block;margin-top:5px;font-size:12px}
   .pager-shell,.resource-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px}
@@ -155,7 +158,7 @@
     .drawer>summary{padding:14px;align-items:flex-start}.drawer-heading p{display:none}.drawer-toggle span{display:none}.drawer-body{padding:14px}.control-deck{margin:-14px -14px 14px;padding:14px}
     .controls-primary{grid-template-columns:1fr}.field--search{grid-column:auto}.pager-shell,.resource-tools{align-items:flex-start;flex-direction:column}.pagination{justify-content:flex-start}
     .table-scroll{overflow:visible;border:0;background:transparent}table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
+    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:nth-child(6),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
     a.link,a.manager{width:100%}.session-stack{min-width:0}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -524,6 +527,11 @@
     { student: "임규미12", date: "2026.08.17", title: "학부모용 검토 초안", href: "../iyr70etd/" }
   ];
 
+  // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
+  const mbtiDynamicsReports = [
+    { student: "임규미12", date: "2026.08.24", title: "GS형 가족 역동 · 소통매개", href: "../qqlfj590/" }
+  ];
+
   // 학생별 후속상담 정적 HTML은 아래 목록에 회차별로 추가합니다.
   // 한 학생에게 sessions 항목을 더하면 같은 학생 행에 시간순으로 누적 표시됩니다.
   const followupSessions = [
@@ -576,11 +584,15 @@
   const preAnalysisHeader = document.createElement("th");
   preAnalysisHeader.textContent = "사전 분석지";
   resultTable.tHead.rows[0].appendChild(preAnalysisHeader);
+  const mbtiDynamicsHeader = document.createElement("th");
+  mbtiDynamicsHeader.textContent = "MBTI 가족 역동";
+  resultTable.tHead.rows[0].appendChild(mbtiDynamicsHeader);
   const sessionHeader = document.createElement("th");
   sessionHeader.textContent = "후속상담 세션";
   resultTable.tHead.rows[0].appendChild(sessionHeader);
 
   const preAnalysisByStudent = new Map(preAnalysisReports.map((report) => [report.student, report]));
+  const mbtiDynamicsByStudent = new Map(mbtiDynamicsReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
@@ -590,6 +602,13 @@
       preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전 분석지 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>`;
     } else {
       preAnalysisCell.innerHTML = '<span class="session-empty">등록 초안 없음</span>';
+    }
+    const mbtiDynamics = mbtiDynamicsByStudent.get(student) || mbtiDynamicsByStudent.get(student.replace(/\d+$/, ""));
+    const mbtiDynamicsCell = row.insertCell();
+    if (mbtiDynamics) {
+      mbtiDynamicsCell.innerHTML = `<a class="mbti-dynamics-link" href="${mbtiDynamics.href}">가족 역동 열기</a><small class="mbti-dynamics-meta">${mbtiDynamics.date} · ${mbtiDynamics.title}</small>`;
+    } else {
+      mbtiDynamicsCell.innerHTML = '<span class="session-empty">등록 분석 없음</span>';
     }
     const sessions = sessionsByStudent.get(student) || [];
     const cell = row.insertCell();
@@ -726,7 +745,7 @@
     return value.charAt(0).toUpperCase();
   }
 
-  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전 분석지", "후속상담"];
+  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전 분석지", "MBTI 가족 역동", "후속상담"];
   Array.from(resultTable.tHead.rows[0].cells).forEach((cell, index) => { cell.textContent = headers[index]; });
 
   resultRows.forEach((row, originalIndex) => {
@@ -738,6 +757,7 @@
     const parentLink = row.cells[2].querySelector("a");
     const managerLink = row.cells[3].querySelector("a");
     const preAnalysis = preAnalysisByStudent.get(name) || preAnalysisByStudent.get(name.replace(/\d+$/, ""));
+    const mbtiDynamics = mbtiDynamicsByStudent.get(name) || mbtiDynamicsByStudent.get(name.replace(/\d+$/, ""));
     const sessions = sessionsByStudent.get(name.replace(/\d+$/, "")) || sessionsByStudent.get(name) || [];
 
     if (parentLink) {
@@ -762,7 +782,7 @@
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,
-      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""}`.toLocaleLowerCase("ko-KR")
+      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
     });
   });
 
