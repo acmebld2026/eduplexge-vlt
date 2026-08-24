@@ -112,6 +112,7 @@
   .preanalysis-meta{display:block;margin-top:5px;color:#7a4b1e;font-size:9.5px;font-weight:800}
   .mbti-dynamics-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#d9f2ff;color:var(--blue-deep);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
   .mbti-dynamics-link:hover{background:var(--green);transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+  .mbti-dynamics-actions{display:grid;gap:7px}.mbti-dynamics-link.parent{background:var(--green);color:var(--ink)}.mbti-dynamics-link.manager{background:#d9f2ff;color:var(--blue-deep)}
   .mbti-dynamics-meta{display:block;margin-top:5px;color:#315a73;font-size:9.5px;font-weight:800}
   .empty-state{margin-top:14px;border:2px dashed var(--line);padding:28px;text-align:center;color:var(--muted)}
   .empty-state strong{display:block;color:var(--ink);font-size:16px}.empty-state span{display:block;margin-top:5px;font-size:12px}
@@ -529,7 +530,7 @@
 
   // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
   const mbtiDynamicsReports = [
-    { student: "임규미12", date: "2026.08.24", title: "GS형 가족 역동 · 소통매개", href: "../qqlfj590/" }
+    { student: "임규미12", date: "2026.08.24", title: "GS형 가족 역동 · 소통매개", parentHref: "../yhengd7r/", managerHref: "../qqlfj590/" }
   ];
 
   // 학생별 후속상담 정적 HTML은 아래 목록에 회차별로 추가합니다.
@@ -606,7 +607,7 @@
     const mbtiDynamics = mbtiDynamicsByStudent.get(student) || mbtiDynamicsByStudent.get(student.replace(/\d+$/, ""));
     const mbtiDynamicsCell = row.insertCell();
     if (mbtiDynamics) {
-      mbtiDynamicsCell.innerHTML = `<a class="mbti-dynamics-link" href="${mbtiDynamics.href}">가족 역동 열기</a><small class="mbti-dynamics-meta">${mbtiDynamics.date} · ${mbtiDynamics.title}</small>`;
+      mbtiDynamicsCell.innerHTML = `<div class="mbti-dynamics-actions"><a class="mbti-dynamics-link parent" href="${mbtiDynamics.parentHref}">학부모 발송용</a><a class="mbti-dynamics-link manager" href="${mbtiDynamics.managerHref}">매니저용 🔒</a></div><small class="mbti-dynamics-meta">${mbtiDynamics.date} · ${mbtiDynamics.title}</small>`;
     } else {
       mbtiDynamicsCell.innerHTML = '<span class="session-empty">등록 분석 없음</span>';
     }
