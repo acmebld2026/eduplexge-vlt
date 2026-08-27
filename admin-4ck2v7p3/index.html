@@ -241,6 +241,12 @@
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
     <tbody>
       <tr>
+        <td>김다윤 <span class="tag">영훈고1</span></td>
+        <td>2026.05.26 · TYPE11 (김범수 담당 매니저)</td>
+        <td><span class="tag">초기 결과지 미배포</span></td>
+        <td><span class="tag">초기 기록지 미배포</span></td>
+      </tr>
+      <tr>
         <td>김대양 <span class="tag">계성고1</span></td>
         <td>2026.07.06 · TYPE4</td>
         <td><a class="link" href="../qv1hpyk1/">https://acmebld2026.github.io/eduplexge-vlt/qv1hpyk1/</a></td>
@@ -542,6 +548,12 @@
   // 학생별 후속상담 정적 HTML은 아래 목록에 회차별로 추가합니다.
   // 한 학생에게 sessions 항목을 더하면 같은 학생 행에 시간순으로 누적 표시됩니다.
   const followupSessions = [
+    {
+      student: "김다윤",
+      sessions: [
+        { date: "2026.08.27", title: "김범수 담당 매니저 미팅 · 수학 개별지도 주 5회→4회 운영 의사결정", href: "../pphgo040/" }
+      ]
+    },
     {
       student: "양산하",
       sessions: [

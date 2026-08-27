@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>김다윤10 후속상담 01 · 수학 개별지도 운영 의사결정 플로우</title>
+  <meta name="description" content="김다윤10 VLT 근거와 김범수 담당 매니저 미팅을 연결한 수학 개별지도 운영 플로우">
+  <style>
+    :root{--navy:#142d42;--blue:#236d91;--teal:#0b887e;--mint:#eaf8f5;--sky:#edf6fb;--amber:#d98e14;--amber-bg:#fff7e4;--red:#b44850;--red-bg:#fff0f1;--ink:#20303b;--muted:#657783;--line:#d9e4ea;--paper:#f4f7f9;--white:#fff;--shadow:0 14px 40px rgba(18,48,66,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif;line-height:1.7}.wrap{width:min(1160px,calc(100% - 28px));margin:0 auto 60px}.hero{position:relative;overflow:hidden;margin:18px 0 14px;padding:30px;border-radius:26px;background:linear-gradient(135deg,#112b41 0%,#185f78 58%,#0a8178 100%);color:#fff;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;right:-70px;top:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.08)}.admin-link{position:absolute;right:24px;top:24px;z-index:2;padding:8px 12px;border-radius:999px;background:#fff;color:#16475d;text-decoration:none;font-size:12px;font-weight:850}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.12em;color:#bff4e8}.hero h1{position:relative;margin:10px 0 6px;max-width:850px;font-size:clamp(25px,4vw,40px);line-height:1.25}.hero p{position:relative;margin:0;max-width:850px;color:#d9eef4}.hero-meta{position:relative;display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{display:inline-flex;padding:6px 11px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.10);font-size:12px;font-weight:750}.privacy{margin:0 0 14px;padding:11px 15px;border:1px solid #efd497;border-radius:14px;background:#fffaf0;color:#705019;font-size:13px}.tabs{position:sticky;top:0;z-index:10;display:flex;gap:7px;overflow:auto;padding:10px;background:rgba(244,247,249,.94);backdrop-filter:blur(10px)}.tab{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff;color:#536673;font:inherit;font-size:13px;font-weight:800;cursor:pointer}.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}.panel{display:none;margin-top:14px}.panel.active{display:block}.section{margin-bottom:14px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 8px 24px rgba(22,54,73,.05)}.head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}.head h2{margin:0;font-size:22px;color:var(--navy)}.head p{margin:4px 0 0;color:var(--muted);font-size:14px}.grid{display:grid;gap:12px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:17px;border:1px solid var(--line);border-radius:16px;background:#fff}.card h3{margin:0 0 7px;font-size:16px;color:var(--navy)}.card p{margin:0;color:#536673}.badge{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:850}.badge.fact{background:#e7f7f3;color:#087267}.badge.vlt{background:#eaf1fb;color:#315e9d}.badge.hypothesis{background:#fff3d8;color:#8c5b00}.badge.check{background:#ffe9e9;color:#a7383e}.callout{padding:18px;border-left:5px solid var(--teal);border-radius:13px;background:var(--mint)}.callout.amber{border-color:var(--amber);background:var(--amber-bg)}.callout.red{border-color:var(--red);background:var(--red-bg)}.callout p{margin:6px 0 0}.big-line{font-size:20px;font-weight:900;color:var(--navy)}ul,ol{padding-left:22px;margin:9px 0}li+li{margin-top:6px}.summary-band{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.decision{padding:20px;border:2px solid var(--teal);border-radius:18px;background:linear-gradient(135deg,#effbf8,#fff)}.decision .label{font-size:12px;font-weight:900;color:var(--teal);letter-spacing:.07em}.decision h3{margin:6px 0;color:var(--navy);font-size:24px}.decision p{margin:0}.why{display:grid;gap:8px}.why-item{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:11px;border:1px solid var(--line);border-radius:13px}.num{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#dfeef4;color:#155c75;font-weight:900}.why-item strong{display:block;color:var(--navy)}.evidence{overflow:auto}.evidence table,.tracker table{width:100%;border-collapse:collapse;min-width:860px}.evidence th,.evidence td,.tracker th,.tracker td{padding:11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:13px}.evidence th,.tracker th{background:#f2f6f8;color:#34515f;font-weight:850}.source-ref{color:#456774;font-size:12px}.chain{display:grid;gap:10px}.chain-step{display:grid;grid-template-columns:112px 1fr 180px;gap:14px;align-items:start;padding:17px;border:1px solid var(--line);border-radius:17px;background:#fff}.chain-key{padding:9px;border-radius:12px;background:var(--sky);text-align:center;color:#185a76;font-weight:900}.chain-step h3{margin:0 0 5px;color:var(--navy)}.chain-step p{margin:0;color:#526672}.chain-result{padding:10px;border-radius:12px;background:#f1faf8;color:#186c65;font-size:13px;font-weight:800}.flow{display:grid;gap:10px}.step{display:grid;grid-template-columns:100px 1fr;gap:15px;padding:17px;border:1px solid var(--line);border-radius:17px;background:#fff}.step-time{display:flex;align-items:center;justify-content:center;min-height:74px;border-radius:13px;background:var(--sky);color:#165877;font-size:13px;font-weight:900;text-align:center}.step h3{margin:0 0 5px;color:var(--navy)}.step p{margin:0;color:#50636f}.formula{margin-top:10px;padding:12px;border-radius:12px;background:#f2f7fa;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;color:#244858}.script{margin-top:10px;padding:14px 16px;border-radius:13px;background:#f2f7fa;color:#284452;font-size:14px}.script:before{content:"권장 발화";display:block;margin-bottom:4px;color:var(--teal);font-size:11px;font-weight:900}.script.long{font-size:15px;line-height:1.8}.do-not{color:#9a373c;text-decoration:line-through}.form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.field label{display:block;margin-bottom:4px;color:#48606c;font-size:12px;font-weight:850}.field input,.field textarea,.field select,.tracker input,.tracker select{width:100%;border:1px solid #cbd9e1;border-radius:9px;padding:9px;background:#fff;font:inherit;font-size:12px}.field textarea{min-height:78px;resize:vertical}.field.full{grid-column:1/-1}.field.half{grid-column:span 2}.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid #bcd0da;border-radius:10px;padding:9px 12px;background:#fff;color:#244858;font:inherit;font-size:12px;font-weight:850;cursor:pointer}.btn.primary{border-color:var(--teal);background:var(--teal);color:#fff}.calc-result{margin-top:12px;padding:15px;border-radius:13px;background:#f1f6f8;white-space:pre-wrap;font-size:13px}.tracker{overflow:auto}.tracker input[type=checkbox]{width:18px;height:18px}.source-card{padding:15px;border:1px solid var(--line);border-radius:15px;background:#f9fbfc}.source-card h3{margin:0 0 5px;color:var(--navy);font-size:15px}.source-card code{word-break:break-all;color:#375d70}.footer{padding:22px;text-align:center;color:#72828b;font-size:12px}@media(max-width:860px){.grid.three,.summary-band{grid-template-columns:1fr 1fr}.chain-step{grid-template-columns:100px 1fr}.chain-result{grid-column:2}.form-grid{grid-template-columns:1fr 1fr}.admin-link{position:relative;display:inline-block;right:auto;top:auto;margin-bottom:10px}.hero{padding:23px}}@media(max-width:620px){.wrap{width:min(100% - 18px,1160px)}.section{padding:18px}.grid.two,.grid.three,.summary-band,.form-grid{grid-template-columns:1fr}.field.half{grid-column:auto}.step,.chain-step{grid-template-columns:1fr}.chain-result{grid-column:auto}.step-time{min-height:auto;padding:9px}.hero h1{font-size:25px}}@media print{body{background:#fff}.wrap{width:100%;margin:0}.tabs,.admin-link,.btns,.privacy{display:none!important}.panel{display:block!important}.section,.hero{box-shadow:none;break-inside:avoid}.hero{border:1px solid #345;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.field input,.field textarea,.field select,.tracker input,.tracker select{border:0;padding:0}}
+    body{overflow-x:hidden}p,li,h1,h2,h3{overflow-wrap:anywhere}.wrap,.section,.card,.decision,.why-item{min-width:0}.tabs{max-width:100%}@media(max-width:620px){.wrap{width:calc(100% - 18px)}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <a class="admin-link" href="../admin-4ck2v7p3/">관리자 목록으로 돌아가기</a>
+    <div class="eyebrow">INTERNAL · 후속상담 세션 01</div>
+    <h1>수학 개별지도 주 5회→4회 조정<br>근거 기반 운영 의사결정 플로우</h1>
+    <p>김범수 담당 매니저 미팅에서 김다윤 학생을 설명한 맥락을 VLT 해석상담과 실제 운영 관찰에 연결해, 학부모 설명과 다음 실행까지 한 흐름으로 정리했습니다.</p>
+    <div class="hero-meta"><span class="pill">학생 김다윤10 · 영훈고1</span><span class="pill">담당 김범수 매니저</span><span class="pill">미팅 2026.08.27</span><span class="pill">VLT TYPE 11. 성실이</span><span class="pill">내부 운영용</span></div>
+  </header>
+  <div class="privacy"><b>내부 운영용</b> · 검색 제외 설정은 접근 제어가 아닙니다. 연락처, 학부모 메시지 원문, 검사 원문은 이 페이지에 넣지 않았습니다.</div>
+  <nav class="tabs" aria-label="후속상담 자료 탭">
+    <button class="tab" data-tab="context" aria-selected="true">맥락·결론</button>
+    <button class="tab" data-tab="evidence" aria-selected="false">VLT 근거사슬</button>
+    <button class="tab" data-tab="flow" aria-selected="false">의사결정 플로우</button>
+    <button class="tab" data-tab="scripts" aria-selected="false">학부모 설명</button>
+    <button class="tab" data-tab="action" aria-selected="false">실행·기록</button>
+    <button class="tab" data-tab="sources" aria-selected="false">근거 색인</button>
+  </nav>
+
+  <section id="context" class="panel active">
+    <article class="section">
+      <div class="head"><div><h2>미팅의 실제 질문</h2><p>횟수 하나를 뺄지보다, 담당 매니저가 처방의 이유와 변경 영향을 설명할 수 있는지가 핵심이었습니다.</p></div></div>
+      <div class="summary-band">
+        <div class="decision"><div class="label">미팅 최종 결론</div><h3>요청은 수용하되, 전략은 남긴다.</h3><p>9월에는 수학 개별지도를 주 4회로 우선 조정합니다. 다만 “어머니가 줄여 달라고 해서”로 끝내지 않고, 시험일까지 필요한 총 수업량·회독·독립 학습량을 다시 계산하여 2주 후 유지·추가·재증량을 판단합니다.</p></div>
+        <div class="why">
+          <div class="why-item"><span class="num">1</span><div><strong>요청 이유</strong>한 과목 비용 부담 + 숙제할 시간 필요</div></div>
+          <div class="why-item"><span class="num">2</span><div><strong>운영 질문</strong>줄인 하루가 숙제시간이 되는가, 수학 학습량만 줄어드는가</div></div>
+          <div class="why-item"><span class="num">3</span><div><strong>판단 단위</strong>주당 횟수가 아니라 시험일까지 필요한 총 콤마</div></div>
+          <div class="why-item"><span class="num">4</span><div><strong>다음 결정</strong>진도·숙제·재풀이·오답 설명으로 효과 재판정</div></div>
+        </div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="head"><div><h2>김병수 원장이 설명한 맥락</h2><p>김범수 담당 매니저가 학부모 요청을 학생 성장 전략으로 번역하는 과정을 네 층으로 나눴습니다.</p></div></div>
+      <div class="grid two">
+        <div class="card"><span class="badge fact">학부모 요청</span><h3>요청을 존중하고 우선 줄인다</h3><p>비용과 숙제시간에 대한 가족의 판단은 실제 제약입니다. 따라서 주 4회 조정 자체를 거부하는 것이 결론은 아닙니다.</p></div>
+        <div class="card"><span class="badge fact">담당 판단</span><h3>왜 5회였는지를 먼저 설명한다</h3><p>5회가 고정 매뉴얼이 아니라 현재 진도·회독·학생 출력에 따른 처방이었다는 근거가 담당 매니저에게 서 있어야 합니다.</p></div>
+        <div class="card"><span class="badge hypothesis">변경 영향</span><h3>감량의 대가를 투명하게 보여준다</h3><p>남은 주차마다 1회가 줄고 명절·휴원까지 겹치면 목표 회독이 밀릴 수 있습니다. 이 영향은 단원표로 계산해야 합니다.</p></div>
+        <div class="card"><span class="badge check">운영 조건</span><h3>빈 하루의 산출물을 약속한다</h3><p>줄인 하루에는 숙제·재풀이·오답 설명을 남기고, 2주 뒤 실제로 작동했는지 보고 유지 또는 보완합니다.</p></div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="callout amber"><div class="big-line">“주 5회가 정답”이 아니라 “목표까지 필요한 총량을 설명할 수 있어야 한다.”</div><p>이번 미팅은 횟수를 지키는 영업 논리가 아니라, 담당 매니저가 학생의 현재 기능을 측정하고 처방을 설계하는 역량을 다룬 운영 코칭이었습니다.</p></div>
+    </article>
+  </section>
+
+  <section id="evidence" class="panel">
+    <article class="section">
+      <div class="head"><div><h2>김다윤 VLT → 현재 운영 이슈 근거사슬</h2><p>타입만으로 결론내리지 않고, 검사 해석·학생 발화·방학 수행·오늘의 요청을 순서대로 연결합니다.</p></div></div>
+      <div class="chain">
+        <div class="chain-step"><div class="chain-key">TYPE 11<br>성실이</div><div><h3>핵심은 체류시간이 아니라 학습 효율</h3><p>초기 해석상담에서 11번째 타입으로 확인했지만, 상담자는 타입이 학생 전체를 완전히 설명하지 않으며 김다윤의 핵심 키워드는 ‘효율’이라고 제한했습니다.</p></div><div class="chain-result">횟수보다 실제 진도·이해·재현을 측정</div></div>
+        <div class="chain-step"><div class="chain-key">시작 병목</div><div><h3>시작은 어렵고, 시작 후 집중은 높다</h3><p>학생은 가장 힘든 단계가 시작이라고 답했습니다. 반면 시작 후 집중은 높고 집요함도 있을 수 있다고 해석했습니다.</p></div><div class="chain-result">수업 1회 감소 = 시작 장치 1회 감소 가능성</div></div>
+        <div class="chain-step"><div class="chain-key">느린 템포</div><div><h3>충분한 사고 시간이 필요하다</h3><p>논리력 -8이 언급되었고, 정해진 속도에 쫓기면 지치기 쉬워 학생 템포에서 출발해야 한다고 설명했습니다.</p></div><div class="chain-result">같은 진도를 더 적은 회기에 넣으면 밀도 상승</div></div>
+        <div class="chain-step"><div class="chain-key">동기 조건</div><div><h3>학습 호기심·효능감이 떨어질 때 외부 구조가 필요하다</h3><p>관심 없는 학습을 지루하고 피곤하게 느낄 수 있고, 단계적 성공 경험으로 효능감을 회복해야 한다고 해석했습니다.</p></div><div class="chain-result">“빈 날에 알아서 한다”를 가정하지 않고 실측</div></div>
+        <div class="chain-step"><div class="chain-key">수학 처방</div><div><h3>강의만으로 어렵다고 학생이 수학을 선택했다</h3><p>초기상담에서 수학과 영어 중 강의만으로 운영하기 어려운 과목으로 수학을 골랐고, 학생 템포를 기다리며 질문·풀이를 확인하는 개별지도를 권했습니다.</p></div><div class="chain-result">기능 필요 소멸이 아닌 운영 자원 재배치</div></div>
+        <div class="chain-step"><div class="chain-key">방학 수행</div><div><h3>수학 8콤마로 1회독, 숙제는 거의 수행</h3><p>오늘 미팅에서 김범수 매니저는 방학 중 수학 8콤마·영어 3콤마, 수학 1회독 완료, 숙제는 거의 모두 수행했다고 보고했습니다.</p></div><div class="chain-result">실제 수행 근거를 기준선으로 사용</div></div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="head"><div><h2>근거 강도와 사용 한계</h2><p>확인 사실, 운영 가설, 확인 전 수치를 섞지 않습니다.</p></div></div>
+      <div class="evidence"><table><thead><tr><th>구분</th><th>내용</th><th>운영 사용법</th><th>근거</th></tr></thead><tbody>
+        <tr><td><span class="badge fact">확인 사실</span></td><td>어머니가 주 5회→4회 조정을 요청했고, 이유는 비용 부담과 숙제시간 확보로 전달됨</td><td>요청은 수용하되 선택의 영향을 설명</td><td class="source-ref">E2 · 13:04:54~13:06:48</td></tr>
+        <tr><td><span class="badge fact">확인 사실</span></td><td>방학 수학 8콤마·영어 3콤마, 수학 1회독 완료, 숙제 거의 수행</td><td>주 4회 전환 전 기준선</td><td class="source-ref">E2 · 13:11:07~13:14:24</td></tr>
+        <tr><td><span class="badge vlt">VLT 근거</span></td><td>시작이 어렵고 시작 후 집중은 높음</td><td>빈 하루의 첫 시작 시각과 제출물을 확인</td><td class="source-ref">E1 · 20:01:14, 20:40:37</td></tr>
+        <tr><td><span class="badge vlt">VLT 근거</span></td><td>충분한 사고 시간과 학생 템포가 필요함</td><td>회기 감량 후 진도 지연·이해 누락을 측정</td><td class="source-ref">E1 · 20:13:36, 20:41:22</td></tr>
+        <tr><td><span class="badge hypothesis">운영 가설</span></td><td>빈 하루가 숙제시간으로 전환되지 않으면 수학 학습량만 감소할 수 있음</td><td>2주간 숙제·재풀이 산출물로 검증</td><td class="source-ref">E2 · 13:07:30~13:10:33</td></tr>
+        <tr><td><span class="badge check">확인 전</span></td><td>“출력 약 1/3”, “한 달분 후퇴”는 미팅의 체감 추정·설명 비유</td><td>학부모에게 확정 수치처럼 전달 금지</td><td class="source-ref">E2 · 13:17:50~13:20:47</td></tr>
+        <tr><td><span class="badge check">확인 전</span></td><td>시험일은 10월 6일 또는 7일로 언급됨</td><td>학교 일정표로 재확인 후 총 콤마 계산</td><td class="source-ref">E2 · 13:16:32~13:17:49</td></tr>
+      </tbody></table></div>
+    </article>
+  </section>
+
+  <section id="flow" class="panel">
+    <article class="section">
+      <div class="head"><div><h2>수학 개별지도 조정 의사결정 플로우</h2><p>요청 접수부터 2주 후 재판정까지, 담당 매니저가 실제로 밟을 순서입니다.</p></div></div>
+      <div class="flow">
+        <div class="step"><div class="step-time">STEP 1<br>요청 수용</div><div><h3>비용과 숙제시간이라는 가족의 제약을 인정한다</h3><p>방어하거나 5회를 고수하는 설명부터 시작하지 않습니다. “9월 주 4회 조정”을 먼저 확인합니다.</p><div class="script">말씀하신 비용 부담과 숙제시간 필요를 이해합니다. 9월은 주 4회로 조정해 운영하겠습니다.</div></div></div>
+        <div class="step"><div class="step-time">STEP 2<br>현재값 확인</div><div><h3>교실장과 단원표·현재 진도·1회독 완료 범위를 맞춘다</h3><p>학생의 현재 위치를 모르면 4회와 5회의 차이도 설명할 수 없습니다. 교재명, 단원, 현재 페이지, 단원평가 결과, 남은 범위를 적습니다.</p></div></div>
+        <div class="step"><div class="step-time">STEP 3<br>총량 계산</div><div><h3>시험일까지 필요한 총 콤마를 계산한다</h3><p>주당 횟수를 가격표처럼 설명하지 않고, 목표 회독을 완성하기 위한 총 수업량으로 바꿉니다.</p><div class="formula">필요 총 콤마 = 남은 단원 처리량 ÷ 회기당 확인 가능한 처리량 + 재평가·오답 보완 회기</div></div></div>
+        <div class="step"><div class="step-time">STEP 4<br>차이 계산</div><div><h3>주 4회 편성에서 생기는 부족분을 분리한다</h3><p>남은 주차마다 1회가 줄고, 명절·휴원·학생 일정이 겹치면 추가 손실이 생깁니다.</p><div class="formula">기본 감량 차이 = 남은 주차 × (5회 − 4회)<br>최종 차이 = 기본 감량 차이 + 휴일·결석 손실 − 보충 가능 회기</div></div></div>
+        <div class="step"><div class="step-time">STEP 5<br>대체 행동</div><div><h3>줄인 하루를 숙제·재풀이 산출물로 바꾼다</h3><p>과목·분량·예상시간을 시작 전에 정하고, 종료 후 풀이·오답 분류·자기설명 중 하나를 남깁니다. 수업 안에서는 혼자 막힌 숙제를 질문·자기설명으로 다룹니다.</p></div></div>
+        <div class="step"><div class="step-time">STEP 6<br>2주 판정</div><div><h3>느낌이 아니라 진도와 산출물로 유지·추가·재증량을 결정한다</h3><p>주 4회에서도 목표 진도와 숙제가 유지되면 감량을 유지합니다. 회독 지연·숙제 미완료·오답 설명 부재가 반복되면 시험 전 필요한 만큼만 보완합니다.</p></div></div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="grid three">
+        <div class="card"><span class="badge fact">주 4회 유지</span><h3>독립 학습이 대체됨</h3><p>주간 진도 충족, 숙제 90% 이상, 재풀이 산출물 확보, 오답 설명 가능.</p></div>
+        <div class="card"><span class="badge hypothesis">추가 콤마</span><h3>총량만 일부 부족</h3><p>학습 행동은 유지되지만 명절·시험 일정으로 필요한 총 회기만 부족할 때 한시 보완.</p></div>
+        <div class="card"><span class="badge check">재증량 검토</span><h3>빈 하루가 작동하지 않음</h3><p>시작 지연, 숙제 미완료, 진도 누적 지연이 2주 연속이면 주 5회 또는 다른 구조로 재설계.</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="scripts" class="panel">
+    <article class="section">
+      <div class="head"><div><h2>학부모 통화 권장 흐름</h2><p>수용 → 학생 근거 → 영향 → 대체 행동 → 재검토의 순서를 지킵니다.</p></div></div>
+      <div class="script long">어머님께서 말씀하신 비용 부담과 숙제시간 필요를 이해합니다. 9월에는 수학 개별지도를 주 4회로 조정해 운영하겠습니다. 다만 다윤이는 처음 검사와 실제 학습에서 시작까지 시간이 필요하고, 충분히 생각하면서 한 회독을 완성하는 방식이 더 잘 맞았습니다. 그래서 한 회를 줄이는 것이 실제 숙제시간으로 연결되는지, 시험 전 필요한 진도와 2회독이 유지되는지를 함께 보겠습니다. 교실장과 시험일까지 필요한 전체 수업량을 계산해 안내드리고, 줄인 하루에는 정해진 숙제·재풀이 결과를 남기겠습니다. 2주 운영 후 진도와 숙제 수행이 충분하면 4회를 유지하고, 부족하면 시험 전 필요한 만큼만 추가 보완을 상의드리겠습니다.</div>
+      <div class="btns"><button class="btn primary" data-copy=".script.long">통화문 복사</button></div>
+    </article>
+    <article class="section">
+      <div class="head"><div><h2>핵심 질문과 답변</h2></div></div>
+      <div class="grid two">
+        <div class="card"><h3>왜 5회였나요?</h3><div class="script">방학 동안 보인 다윤이의 진도 속도와 숙제 수행을 기준으로, 학기 중 시험 전까지 회독을 유지하기 위한 세팅이었습니다. 고정 규칙이 아니라 현재 목표에 맞춘 처방이었습니다.</div></div>
+        <div class="card"><h3>4회로 줄이면 안 되나요?</h3><div class="script">가능합니다. 다만 줄인 하루가 실제 숙제와 재풀이로 바뀌어야 같은 목표를 유지할 수 있습니다. 2주 동안 그 부분을 기록해 보겠습니다.</div></div>
+        <div class="card"><h3>숙제가 많아서 수업할 시간이 없어요</h3><div class="script">개별지도는 숙제와 완전히 분리된 강의가 아니라, 혼자 막힌 문제를 질문하고 자기 설명으로 다시 풀어내는 시간입니다. 수업 안에서 필요한 숙제 일부를 처리하도록 구성하겠습니다.</div></div>
+        <div class="card"><h3>비용을 더 쓰라는 뜻인가요?</h3><div class="script">비용을 늘리는 결론을 정한 것은 아닙니다. 시험일까지 필요한 총량을 먼저 계산하고, 주 4회와 독립 학습으로 가능한지 확인한 뒤 부족분이 있을 때만 한시 보완을 상의드리겠습니다.</div></div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="head"><div><h2>피해야 할 말</h2><p>타입을 낙인이나 강제 논리로 사용하지 않습니다.</p></div></div>
+      <div class="evidence"><table><thead><tr><th>피해야 할 표현</th><th>문제</th><th>대체 기준</th></tr></thead><tbody>
+        <tr><td class="do-not">고등학생은 원래 5회입니다.</td><td>학생별 처방 근거가 사라짐</td><td>시험일까지 필요한 총 콤마와 회독으로 설명</td></tr>
+        <tr><td class="do-not">비싸다고 줄이면 성적이 안 나옵니다.</td><td>가족 예산을 무시하고 결과를 단정</td><td>4회 전환의 영향과 대체 행동을 투명하게 설명</td></tr>
+        <tr><td class="do-not">VLT 11타입이라 많이 해야 합니다.</td><td>타입을 낙인·예언으로 사용</td><td>시작 시각, 진도, 숙제, 오답 설명 등 실제 행동 사용</td></tr>
+        <tr><td class="do-not">어머니가 원하시니 그냥 줄이겠습니다.</td><td>담당 매니저의 전략과 재검토 기준이 없음</td><td>요청 수용 + 2주 검증 + 유지·보완 기준</td></tr>
+        <tr><td class="do-not">출력이 1/3이라 한 달 뒤처집니다.</td><td>미팅의 체감 추정을 확정 수치로 오인</td><td>단원표와 실제 회기당 처리량으로 다시 계산</td></tr>
+      </tbody></table></div>
+    </article>
+  </section>
+
+  <section id="action" class="panel">
+    <article class="section">
+      <div class="head"><div><h2>통화 전 총 콤마 계산</h2><p>확정되지 않은 시험일·회기 수를 입력해 실제 차이를 확인합니다. 값은 이 브라우저에만 저장됩니다.</p></div></div>
+      <div class="form-grid">
+        <div class="field"><label for="examDate">시험 시작일</label><input id="examDate" type="date"></div>
+        <div class="field"><label for="weeksLeft">남은 주차</label><input id="weeksLeft" type="number" min="0" step="1" placeholder="학교 일정 확인"></div>
+        <div class="field"><label for="currentWeekly">현재 주당 콤마</label><input id="currentWeekly" type="number" value="5" min="0"></div>
+        <div class="field"><label for="proposedWeekly">조정 주당 콤마</label><input id="proposedWeekly" type="number" value="4" min="0"></div>
+        <div class="field"><label for="holidayLoss">휴일·결석 손실 콤마</label><input id="holidayLoss" type="number" value="0" min="0"></div>
+        <div class="field"><label for="makeup">보충 가능 콤마</label><input id="makeup" type="number" value="0" min="0"></div>
+        <div class="field"><label for="requiredTotal">목표 달성 필요 총 콤마</label><input id="requiredTotal" type="number" min="0" placeholder="단원표 계산"></div>
+        <div class="field"><label for="currentUnit">현재 단원·페이지</label><input id="currentUnit" placeholder="교실장 확인"></div>
+        <div class="field half"><label for="targetUnit">시험 전 목표 범위·회독</label><textarea id="targetUnit" placeholder="예: 시험 범위 2회독 + 오답 재평가"></textarea></div>
+        <div class="field half"><label for="selfStudyOutput">줄인 하루의 독립 학습 산출물</label><textarea id="selfStudyOutput" placeholder="문제 수·재풀이·오답 설명 기준"></textarea></div>
+      </div>
+      <div class="btns"><button class="btn primary" id="calc">차이 계산</button><button class="btn" id="savePlan">입력 저장</button><button class="btn" id="clearPlan">초기화</button></div>
+      <div class="calc-result" id="calcResult">학교 시험일과 단원표를 확인한 뒤 값을 입력하십시오.</div>
+    </article>
+    <article class="section">
+      <div class="head"><div><h2>6주 운영 기록</h2><p>개인정보 없이 수학 학습 행동만 기록합니다.</p></div></div>
+      <div class="tracker"><table><thead><tr><th>주차</th><th>실제 콤마</th><th>목표 진도</th><th>완료 진도</th><th>숙제 완료율</th><th>재풀이 산출물</th><th>오답 자기설명</th><th>판정</th></tr></thead><tbody id="trackerBody"></tbody></table></div>
+      <div class="btns"><button class="btn primary" id="saveTracker">기록 저장</button><button class="btn" id="clearTracker">기록 초기화</button></div>
+    </article>
+    <article class="section">
+      <div class="callout"><div class="big-line">2주 후 판정 규칙</div><p><b>유지:</b> 목표 진도 충족 + 숙제 90% 이상 + 재풀이·오답 설명 확보. <b>한시 보완:</b> 행동은 유지되나 휴일·일정 때문에 총 콤마만 부족. <b>재증량 검토:</b> 시작 지연·숙제 미완료·회독 지연이 반복.</p></div>
+    </article>
+  </section>
+
+  <section id="sources" class="panel">
+    <article class="section">
+      <div class="head"><div><h2>근거 원본과 시간 색인</h2><p>전체 녹취는 비공개 저장소에 보존합니다. 이 페이지에는 판단에 필요한 시간 색인만 노출합니다.</p></div></div>
+      <div class="grid two">
+        <div class="source-card"><h3>E1 · 김다윤 VLT 해석상담 전체 녹취</h3><p><code>noteGuid m3E9mLbe2jwWk</code><br>2026-05-26 · 112분 58초 · 전체 160문단</p><ul><li>20:01:14 시작 병목</li><li>20:13:36 처리 템포</li><li>20:29:56 학습 효능감</li><li>20:32:33 학습 호기심</li><li>20:40:37 시작 후 집중</li><li>20:41:22 논리력 -8</li><li>21:02:29 TYPE 11·효율</li><li>21:13:43 수학 개별지도 선택</li></ul></div>
+        <div class="source-card"><h3>E2 · 김범수 담당 매니저 MSC 전체 녹취</h3><p><code>noteGuid KGGmEQAzGBSnH</code><br>2026-08-27 · 42분 08초 · 전체 68문단·530세그먼트</p><ul><li>13:04:54 감량 요청과 이유</li><li>13:07:30 4회 전환의 핵심 질문</li><li>13:11:07 방학 8콤마·학기 5콤마</li><li>13:13:18 총 콤마 계산</li><li>13:23:52 요청 수용 + 영향 설명</li><li>13:33:23 처방 설계 역할</li><li>13:35:05 사전 계산·선설명</li></ul></div>
+        <div class="source-card"><h3>E3 · 공식 타입 명칭</h3><p><code>XCM16_type_split_manifest.txt</code><br>TYPE 11 공식 명칭: 성실이</p></div>
+        <div class="source-card"><h3>E4 · TYPE 11 심층 기준</h3><p><code>분석/XCM16_16타입_심층분석.md</code><br>체류시간과 실제 학습효과의 차이, 이해 사고력·메타인지·주도성 보완 기준</p></div>
+      </div>
+    </article>
+    <article class="section">
+      <div class="callout red"><strong>해석 제한:</strong> VLT는 학생을 고정적으로 규정하는 자료가 아닙니다. 오늘의 프로그램 조정은 TYPE 11이라는 이유만으로 정하지 않고, 김다윤 학생의 실제 회독·숙제·진도·독립 학습 산출물로 재검증합니다.</div>
+    </article>
+  </section>
+  <p class="footer">에듀플렉스 길음점 · 김다윤10 후속상담 세션 01 · 내부 운영용</p>
+</main>
+<script>
+const KEY='eduplex-kim-dayoon10-followup01-20260827-v1';
+const weekLabels=['08.31–09.06','09.07–09.13','09.14–09.20','09.21–09.27','09.28–10.04','10.05–10.11'];
+let state={plan:{},tracker:{}};try{state={...state,...(JSON.parse(localStorage.getItem(KEY))||{})}}catch(e){}
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+$$('.tab').forEach(b=>b.addEventListener('click',()=>{$$('.tab').forEach(x=>x.setAttribute('aria-selected',String(x===b)));$$('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.tab));scrollTo({top:0,behavior:'smooth'})}));
+$$('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const t=$(b.dataset.copy)?.innerText||'';try{await navigator.clipboard.writeText(t);b.textContent='복사됨'}catch(e){const x=document.createElement('textarea');x.value=t;document.body.append(x);x.select();document.execCommand('copy');x.remove()}}));
+const planIds=['examDate','weeksLeft','currentWeekly','proposedWeekly','holidayLoss','makeup','requiredTotal','currentUnit','targetUnit','selfStudyOutput'];
+function capturePlan(){planIds.forEach(id=>state.plan[id]=$('#'+id).value);save()}
+function loadPlan(){planIds.forEach(id=>{if(state.plan[id]!==undefined)$('#'+id).value=state.plan[id]})}
+$('#calc').addEventListener('click',()=>{capturePlan();const n=id=>Number($('#'+id).value||0),weeks=n('weeksLeft'),cur=n('currentWeekly'),pro=n('proposedWeekly'),hol=n('holidayLoss'),make=n('makeup'),req=n('requiredTotal');const curTotal=Math.max(0,weeks*cur-hol+make),proTotal=Math.max(0,weeks*pro-hol+make),gap=Math.max(0,curTotal-proTotal),short=req?Math.max(0,req-proTotal):null;$('#calcResult').textContent='현재 편성 예상 총 콤마: '+curTotal+'\n조정 편성 예상 총 콤마: '+proTotal+'\n주 5회 대비 기본 차이: '+gap+(short===null?'\n필요 총 콤마를 입력하면 목표 대비 부족분을 계산합니다.':'\n목표 대비 부족분: '+short+'\n※ 단원표와 실제 처리량으로 확정하십시오.')});
+$('#savePlan').addEventListener('click',capturePlan);$('#clearPlan').addEventListener('click',()=>{if(confirm('계산 입력을 초기화할까요?')){state.plan={};save();planIds.forEach(id=>$('#'+id).value=['currentWeekly','proposedWeekly','holidayLoss','makeup'].includes(id)?({currentWeekly:5,proposedWeekly:4,holidayLoss:0,makeup:0}[id]):'');$('#calcResult').textContent='학교 시험일과 단원표를 확인한 뒤 값을 입력하십시오.'}});
+function renderTracker(){$('#trackerBody').innerHTML=weekLabels.map((label,i)=>{const r=state.tracker[i]||{};return `<tr data-i="${i}"><td>${label}</td><td><input data-f="sessions" value="${esc(r.sessions)}" inputmode="numeric"></td><td><input data-f="goal" value="${esc(r.goal)}"></td><td><input data-f="done" value="${esc(r.done)}"></td><td><input data-f="homework" value="${esc(r.homework)}" placeholder="90%"></td><td><input data-f="retry" value="${esc(r.retry)}"></td><td><select data-f="explain"><option></option><option ${r.explain==='충족'?'selected':''}>충족</option><option ${r.explain==='부분'?'selected':''}>부분</option><option ${r.explain==='미충족'?'selected':''}>미충족</option></select></td><td><select data-f="decision"><option></option><option ${r.decision==='유지'?'selected':''}>유지</option><option ${r.decision==='한시 보완'?'selected':''}>한시 보완</option><option ${r.decision==='재증량 검토'?'selected':''}>재증량 검토</option></select></td></tr>`}).join('');$$('#trackerBody input,#trackerBody select').forEach(e=>e.addEventListener('change',()=>{const i=e.closest('tr').dataset.i;state.tracker[i]=state.tracker[i]||{};state.tracker[i][e.dataset.f]=e.value;save()}))}
+$('#saveTracker').addEventListener('click',save);$('#clearTracker').addEventListener('click',()=>{if(confirm('6주 기록을 초기화할까요?')){state.tracker={};save();renderTracker()}});
+loadPlan();renderTracker();
+if(new URLSearchParams(location.search).get('qa')==='1'){const checks={tabs:$$('.tab').length===6,panels:$$('.panel').length===6,noindex:document.head.innerHTML.includes('noindex'),admin:!!$('.admin-link'),noPhone:!document.body.innerText.includes('010-'),officialRole:document.body.innerText.includes('김범수 담당 매니저'),sources:document.body.innerText.includes('KGGmEQAzGBSnH'),tracker:$$('#trackerBody tr').length===6};console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail'}
+</script>
+</body>
+</html>
