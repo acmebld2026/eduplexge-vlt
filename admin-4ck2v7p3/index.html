@@ -469,6 +469,12 @@
         <td><a class="link manager" href="../a6mfg475/">열기</a></td>
       </tr>
       <tr>
+        <td>조연호15 <span class="tag">세검정초5</span></td>
+        <td>2026.09.12 · TYPE3 (9/16 해석상담 예정 · 사전보고서)</td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+      </tr>
+      <tr>
         <td>고예현</td>
         <td>2026.08.11 · 학습 지속 상담</td>
         <td><span class="session-empty">—</span></td>
@@ -544,12 +550,13 @@
     </summary>
     <div class="drawer-body"><div class="growth-grid" id="growth-history-links"></div></div>
   </details>
-  <footer>새 학생 사전 분석지·결과지·매니저 기록지·후속상담 세션이 배포되면 목록과 배포 기록을 함께 갱신합니다.</footer>
+  <footer>새 학생 사전보고서·결과지·매니저 기록지·후속상담 세션이 배포되면 목록과 배포 기록을 함께 갱신합니다.</footer>
 </main>
 <script>
-  // 해석상담 전 학부모용 검토 초안은 최종 결과지와 분리된 전용 링크로 관리합니다.
+  // 해석상담 전 학부모용 사전보고서는 최종 결과지와 분리된 전용 링크로 관리합니다.
   const preAnalysisReports = [
-    { student: "임규미12", date: "2026.08.17", title: "학부모용 검토 초안", href: "../iyr70etd/" }
+    { student: "임규미12", date: "2026.08.17", title: "학부모용 검토 초안", href: "../iyr70etd/" },
+    { student: "조연호15", date: "2026.09.12", title: "VLT-5G 해석상담 사전 보고서", href: "../chdvaxy7/" }
   ];
 
   // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
@@ -630,7 +637,7 @@
 
   const resultTable = document.getElementById("result-table");
   const preAnalysisHeader = document.createElement("th");
-  preAnalysisHeader.textContent = "사전 분석지";
+  preAnalysisHeader.textContent = "사전보고서";
   resultTable.tHead.rows[0].appendChild(preAnalysisHeader);
   const mbtiDynamicsHeader = document.createElement("th");
   mbtiDynamicsHeader.textContent = "MBTI 가족 역동";
@@ -647,7 +654,7 @@
     const preAnalysis = preAnalysisByStudent.get(student) || preAnalysisByStudent.get(student.replace(/\d+$/, ""));
     const preAnalysisCell = row.insertCell();
     if (preAnalysis) {
-      preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전 분석지 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>`;
+      preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전보고서 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>`;
     } else {
       preAnalysisCell.innerHTML = '<span class="session-empty">등록 초안 없음</span>';
     }
@@ -676,6 +683,7 @@
 
   // 새 링크를 받을 때 아래 배열에 학생 이름과 과목별 URL 한 묶음만 추가합니다.
   const aptSheets = [
+    { name: "조연호15", korean: "https://docs.google.com/spreadsheets/d/1exGfw5BFNxFko9g1fv1NR9yYfAtmh1hwhVDUhrxl9B4/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1bSYt3FP7QR3NvuEfQwLwcCzIqKfoA-6_j3eLKjEglxM/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1aKE2ZzybbkGTNnBnkRPQeK7Bh8u8v0MvVOro7qHwIJI/edit?usp=sharing" },
     { name: "임규미12", korean: "https://docs.google.com/spreadsheets/d/15PJxWONN4HxjDLwzNpo2iWaSOSKbkSqr4pTspHhqNNQ/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1ZxBJs-ZYhNeFiWal464EzpcUABYO13TAwjyo89Ajav8/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1mrTR-m5ylVlnU_Pb5LeRfChndgJPreOJb8u1_ChX_sQ/edit?usp=sharing" },
     { name: "손유찬09", korean: "https://docs.google.com/spreadsheets/d/1-S4P0YPo49E4bOs1_VN4HNRrB5YGlWmyKhW84P2aSes/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1SUG4bA4RoRLA_36X95Fe7pgFe3GIK0NmGhQctTGQV9o/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1swJisHod5Xj8cD0ba5uc_6uZHh2KSd00rvqPmDz-J4s/edit?usp=drive_link" },
     { name: "왕건10", korean: "https://docs.google.com/spreadsheets/d/1HbT2DGEhiyefrlokCPMlcw5A7fNNnloVCj77Bg3bmR0/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1U0XrBx3XSI-MqtoBvBqcRWXxfBQPoYhkaXBuZygf5D4/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1BZQJx7omBiUvDBvcVElaX25wnI0CIqlFRSRoC57O7-M/edit?usp=drive_link" },
@@ -794,7 +802,7 @@
     return value.charAt(0).toUpperCase();
   }
 
-  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전 분석지", "MBTI 가족 역동", "후속상담"];
+  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전보고서", "MBTI 가족 역동", "후속상담"];
   Array.from(resultTable.tHead.rows[0].cells).forEach((cell, index) => { cell.textContent = headers[index]; });
 
   resultRows.forEach((row, originalIndex) => {
