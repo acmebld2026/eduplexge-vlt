@@ -318,7 +318,7 @@ footer{padding:24px 48px;font-size:12px;color:var(--sub);text-align:center}
 .draft-banner{position:sticky;top:0;z-index:9999;padding:10px 16px;background:#7a2e11;color:#fff;border-bottom:3px solid #2c140b;font-weight:900;text-align:center}.draft-banner small{display:block;font-weight:700;opacity:.88}.draft-slot{display:block;margin:12px 0;padding:10px 12px;border:1px dashed #a33b16;border-radius:7px;background:#fff0e8;color:#8b2d0c;font-size:.9em;font-weight:800}.closing-stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.closing-stage{padding:14px;border:1px solid #d8e3ee;border-radius:7px;background:#fff}.closing-stage b{display:block;color:#173f67;margin-bottom:5px}@media(max-width:680px){.draft-banner{position:static}.closing-stages{grid-template-columns:1fr}}@media print{.draft-banner{position:static;background:#fff;color:#7a2e11;border:2px solid #7a2e11}.draft-slot{border-style:solid}}
 </style>
 </head>
-<body data-layout-contract="vlt5g-13-sections-2026-09-01.2"><div class="draft-banner" role="status">학부모용 검토 초안 · 최종 확정 전<small>실제 해석상담과 추가 자료 반영 후 최종본으로 교체됩니다.</small></div>
+<body data-layout-contract="vlt5g-13-sections-2026-09-14.1"><div class="draft-banner" role="status">학부모용 검토 초안 · 최종 확정 전<small>실제 해석상담과 추가 자료 반영 후 최종본으로 교체됩니다.</small></div>
 <div class="wrap">
 
 <!-- ══════════════════ 헤더 ══════════════════ -->
@@ -1357,7 +1357,15 @@ const REPORT_DATA = {
       "TENDENCY",
       "INTERNAL",
       "STUDY_FORMULA"
-    ]
+    ],
+    "displayOverride": {
+      "approved": true,
+      "enginePrimaryType": "TYPE_02",
+      "engineHiddenType": "TYPE_03",
+      "visiblePrimary": "TYPE 3. 학원키즈",
+      "visibleHidden": false,
+      "basis": "2026-09-14 TIRO 사전기록에서 김병수 원장이 높은 사회적 바람직성, 실제 오답 및 연령을 감안해 학부모용 출력을 TYPE 3으로 수정하고 히든 타입을 표시하지 않도록 지시함"
+    }
   },
   "tendencyDynamics": {
     "studentType": "ENFP",
