@@ -226,7 +226,7 @@
           <label class="field" for="school-filter"><span class="field-label">학교급</span><select id="school-filter"><option value="all">전체 학교급</option><option value="middle">중등</option><option value="high">고등</option><option value="other">기타·미표기</option></select></label>
           <label class="field" for="status-filter"><span class="field-label">기록 상태</span><select id="status-filter"><option value="all">전체 상태</option><option value="complete">결과지 완성</option><option value="followup">후속상담 있음</option><option value="pending">매니저 기록 대기</option></select></label>
           <label class="field field--secondary" for="type-filter"><span class="field-label">VLT 타입</span><select id="type-filter"><option value="all">전체 TYPE</option></select></label>
-          <label class="field field--secondary" for="sort-filter"><span class="field-label">정렬</span><select id="sort-filter"><option value="original">등록 순서</option><option value="newest">상담 최신순</option><option value="name">이름순</option></select></label>
+          <label class="field field--secondary" for="sort-filter"><span class="field-label">정렬</span><select id="sort-filter"><option value="original">등록 순서</option><option value="newest" selected>상담 최신순</option><option value="name">이름순</option></select></label>
           <label class="field field--secondary" for="page-size"><span class="field-label">한 페이지</span><select id="page-size"><option value="10">10건씩 보기</option><option value="20">20건씩 보기</option></select></label>
           <button class="reset-button" id="reset-filters" type="button">초기화</button>
         </div>
@@ -981,7 +981,7 @@
     controls.school.value = "all";
     controls.status.value = "all";
     controls.type.value = "all";
-    controls.sort.value = "original";
+    controls.sort.value = "newest";
     controls.pageSize.value = "10";
     activeInitial = "all";
     currentPage = 1;
