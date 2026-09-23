@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="시험대비 AIO 학부모 공유 HTML 작성 프롬프트 · 내부 운영용">
+<title>시험대비 AIO 학부모 공유 프롬프트 · 내부 운영용</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#f1f4f8; --text:#1c2230; --muted:#5b6475;
+  --line:#dfe3ea; --accent:#1f4e8c; --accent-soft:#e6eef8; --warn:#9a5b00; --warn-soft:#fff4e0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151b; --surface:#1a1f28; --surface-2:#222835; --text:#e7eaf0; --muted:#a2abbb;
+    --line:#2f3645; --accent:#8db4ea; --accent-soft:#1f2c40; --warn:#f0b75e; --warn-soft:#3a2e17;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:15px;line-height:1.7;word-break:keep-all;overflow-wrap:anywhere}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 56px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.admin-link{color:var(--accent);text-decoration:none;font-size:14px}
+.internal{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:8px 12px;font-size:13.5px;margin:12px 0 0}
+h1{font-size:24px;margin:18px 0 4px;line-height:1.35}
+.lead{color:var(--muted);margin:0 0 8px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px}
+h2{font-size:17px;margin:0 0 10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;width:140px}
+pre{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:14px;white-space:pre-wrap;font-size:13.5px;line-height:1.65;font-family:"Noto Sans KR",system-ui,sans-serif;margin:10px 0 0}
+.copy{font-family:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:6px;padding:4px 12px;cursor:pointer}
+.copy:hover{border-color:var(--accent);color:var(--accent)}
+ul{margin:0;padding-left:20px}
+li{margin:3px 0}
+a{color:var(--accent)}
+@media print{
+  .copy,.admin-link,.internal{display:none}
+  body{background:#fff}
+  section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="top">
+  <a class="admin-link" href="../admin-4ck2v7p3/">관리자 목록으로</a>
+</div>
+<p class="internal">내부 운영용 문서입니다. 학생·학부모에게 링크를 공유하지 않습니다.</p>
+
+<h1>시험대비 AIO → 학부모 공유 HTML 작성 프롬프트</h1>
+<p class="lead">학생의 시험 대비 AIO(2. 시험 목표 선언, 3. 고사 대비 로드맵)와 연휴 학습계획을 묶어 학부모님께 보낼 HTML을 만드는 AI 요청문입니다. 2026.09.23 한수빈 학생 작업 기준.</p>
+
+<section>
+  <h2>준비할 소스</h2>
+  <table>
+    <tr><th>시험 대비 AIO</th><td>학생별 개별 파일. 1. 기본정보 · 2. 시험 목표 선언 · 3. 고사 대비 로드맵 탭을 사용</td></tr>
+    <tr><th>연휴 학습계획</th><td>지점 공용 파일 "연휴 학습계획". 학생 이름 탭의 날짜별 시간표와 가장 우선순위 과목 목록을 사용</td></tr>
+    <tr><th>학생 이름</th><td>AIO·계획표 탭 이름과 같은 표기</td></tr>
+  </table>
+  <p style="margin:10px 0 0">완성 예시: <a href="../0jma3bnt/">한수빈 학생 2학기 중간고사 목표와 대비 로드맵</a></p>
+</section>
+
+<section>
+  <h2>프롬프트 <button class="copy" type="button" data-target="prompt">프롬프트 복사</button></h2>
+  <p class="lead">{ } 세 곳만 바꿔 넣으면 됩니다.</p>
+<pre id="prompt">학부모 공유용 HTML을 만들어줘. 아래 두 시트에서 {학생 이름} 학생 자료를 찾아서 하나의 문서로 합쳐줘.
+
+## 소스
+1. 시험 대비 AIO (학생 파일): {AIO 시트 주소}
+   - 1. 기본정보 탭: 학교, 학년, 이름, 분기(예: 2026학년도 2학기 중간고사), 응시 과목
+   - 2. 시험 목표 선언 탭: 과목별로 아래 항목을 가져온다.
+     - 지난 시험 피드백(아쉬운 점, 잘했던 점)
+     - 이번 시험 전략(개선할 점, 지속할 점)
+     - 구체적 실천 방안
+     - 직전 성적(원점수, 등급)과 목표 성적
+     - 단계별 학습 1~3단계(이것만은 꼭 해보자 / 여기까지는 할 수 있겠지? / 이번에 한 번 도전해볼까?)와 단계별 달성 시 예측 등급
+   - 3. 고사 대비 로드맵 탭: 아래 항목을 가져온다.
+     - 작성일, 매니저
+     - 전략과목, 취약과목
+     - 과목별 목표 등급
+     - 과목별 학습 방법(회독 순서)
+     - 학생별 전략, 학교별 전략
+     - 학습·정신·행동 전략
+     - 학생의 다짐, 학부모님 협력요청 사항
+2. 연휴 학습계획 (지점 공용 파일): {연휴 학습계획 시트 주소}
+   - {학생 이름} 탭에서 날짜별 시간표와 가장 우선순위 과목 목록을 가져온다.
+
+## 읽는 법
+- Google Drive 커넥터의 read_file_content로 읽는다. 결과가 크면 파일로 저장되니 Python으로 파싱한다.
+- 병합 셀은 같은 값이 칸마다 반복돼서 나온다. 행의 오른쪽 끝에 붙은 과목명이나 #N/A는 수식용 보조 열이니 무시한다.
+- 목표 선언 탭의 목표 성적 값은 "목표성적" 라벨 아래 행의 첫 칸에 있다. 쓰지 않은 과목 블록(#N/A)은 뺀다.
+- 로드맵 탭의 학습·정신·행동 전략은 과목별 내용이 아니라 학생 전체에 대한 전략이다. 세 칸이 각각 두 행씩 세로로 병합되어 있다.
+- 연휴 시간표는 1~4열이 날짜, 5~6열이 우선순위 과목 목록이다. 같은 내용이 이어지는 칸은 하나의 시간 블록으로 묶는다.
+
+## 작성 규칙
+- 시트 문장은 거의 그대로 옮긴다. 원문에 없는 해석, 추정, 보충 설명은 넣지 않는다.
+- 비어 있는 칸은 "—"로 표시한다. 칸이 통째로 비어 있으면 그 섹션을 뺀다.
+- 담당 매니저는 로드맵 탭에 적힌 이름을 우선한다. 기본정보 탭과 다르면 gireum 세계관으로 현재 담당자를 확인하고, 다르다는 사실을 보고한다.
+- 용어는 `&lt;이름&gt; 매니저`, `담당 매니저`로 쓴다. 학교 교사를 뜻하는 "교사"는 원문대로 둔다.
+
+## 문서 구성
+1. 표지: 에듀플렉스 길음점, 시험명, 학생(학교·학년), 담당 매니저, 작성일
+2. 학부모님께 드리는 짧은 인사말(합니다체)
+3. 한눈에 보는 목표: 과목별 직전 등급에서 목표 등급으로, 전략과목·취약과목 표시
+4. 시험 목표 선언: 과목 카드마다 피드백, 전략, 실천 방안, 단계별 학습 3단계와 예측 등급
+5. 고사 대비 로드맵: 학습·행동·마음가짐 전략, 과목별 회독 순서, 학생별 전략, 학교 출제 경향
+6. 연휴(또는 기간) 학습 계획: 우선순위 과목 목록, 날짜별 시간표 표(과목별 색 구분)
+7. 학생의 다짐, 학부모님 협력요청 사항(채워져 있을 때만)
+
+## 형식
+- 파일 하나로 된 HTML. 폰트는 Pretendard CDN, 나머지 CSS는 파일 안에 넣는다.
+- 휴대폰(375px)에서 읽기 좋게 만들고, A4 인쇄용 CSS를 넣는다.
+- Artifact로는 올리지 않는다. 로컬 파일로 먼저 만들어서 보여준다.
+- admin 적재까지 요청하면 VLT5G 배포 저장소(결과지\배포) AGENTS.md를 따른다.
+  - 새 8자리 슬러그 폴더에 넣고, robots noindex·OG 메타·파비콘을 넣는다. 학부모 공유용이라 admin 복귀 링크는 넣지 않는다.
+  - admin의 followupSessions에 해당 학생 객체의 "학생·학부모 공유용 · …" 회차로 연결한다.
+  - verify-repository를 통과시키고 push한 뒤 Pages 빌드와 HTTP 200을 확인한다.
+
+## 마지막 보고
+- 파일 경로(배포했다면 URL)
+- 비어 있어서 "—"로 둔 항목 목록
+- 소스끼리 다른 점(매니저 이름 등)과 해석이 애매했던 점</pre>
+</section>
+
+<section>
+  <h2>보내기 전 확인</h2>
+  <ul>
+    <li>국·영·수처럼 실천 방안이나 단계별 학습이 빈 과목이 있는지 확인하고, 필요하면 AIO를 먼저 채웁니다.</li>
+    <li>학부모님 협력요청 사항이 비어 있으면 문서에 나오지 않습니다.</li>
+    <li>공개 주소는 검색 노출만 막혀 있을 뿐 접근 제어가 아니므로, 링크는 해당 학부모님께만 보냅니다.</li>
+  </ul>
+</section>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var el = document.getElementById(btn.getAttribute('data-target'));
+    if (!el) return;
+    var text = el.innerText;
+    var done = function(){ var t = btn.textContent; btn.textContent = '복사됨'; setTimeout(function(){ btn.textContent = t; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){});
+    } else {
+      var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+</body>
+</html>
