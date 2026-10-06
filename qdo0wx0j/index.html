@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="vlt5g-board" content="qdo0wx0j">
+<title>이소윤14 매니저 기록지</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NmIzZDNlNjk3YjA4NDc1NTg1NmI1Y2E0YjY1MWE1MDUyMTAyNjI2ZGFiZmY4NjY2ODdkMGI2MmNmMjM1NDVjOQpzaXplIDI3NjkK">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--navy:#1b3a5c;--blue:#2f6fb1;--sky:#e8f1fa;--accent:#e8833a;--green:#3a8a5f;--red:#c0504d;--ink:#22303c;--sub:#5a6b7b;--line:#d9e2ec;--bg:#f2f5f9;--card:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 "Pretendard Variable",Pretendard,"Noto Sans KR","Malgun Gothic",system-ui,sans-serif;-webkit-text-size-adjust:100%;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--blue)}
+h1,h2,h3{margin:0;line-height:1.35}
+ul,ol{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:12px 16px 56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;break-inside:avoid}
+.k{font-size:11.5px;font-weight:800;letter-spacing:.02em;color:var(--sub);margin-bottom:4px}
+.sub-h{font-size:14px;color:var(--navy);margin:18px 0 8px}
+.empty-text{color:var(--sub);font-size:13px}
+
+/* nav */
+.m-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.m-nav-in{max-width:1080px;margin:0 auto;display:flex;gap:4px;padding:8px 12px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.m-nav-in::-webkit-scrollbar{display:none}
+.m-nav a{flex:0 0 auto;padding:5px 11px;border-radius:999px;font-size:13px;font-weight:700;color:var(--navy);text-decoration:none;border:1px solid transparent}
+.m-nav a:hover{background:var(--sky)}
+.m-nav a.on{background:var(--navy);color:#fff}
+.m-nav a.nav-back{background:var(--sky);color:var(--blue);margin-right:6px}
+.m-nav a.nav-board{background:var(--accent);color:#fff;margin-left:6px}
+
+/* section */
+.sec{margin-top:24px;scroll-margin-top:60px}
+.sec>h2{font-size:18px;color:var(--navy);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sec-no{font-size:11px;font-weight:800;background:var(--navy);color:#fff;border-radius:6px;padding:2px 7px;letter-spacing:.04em}
+
+/* badge / chip */
+.badge{display:inline-block;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:700;line-height:1.65;white-space:nowrap;border:1px solid transparent;vertical-align:middle}
+.badge--student{background:#e6ebf1;color:#3e5266;border-color:#cfd8e2}
+.badge--parent{background:#dcedfb;color:#1c5c96;border-color:#b9d8f2}
+.badge--diagnosis{background:#1b3a5c;color:#fff}
+.badge--advice{background:#fde6d0;color:#994a0c;border-color:#f6cba3}
+.badge--pending{background:#fff1b8;color:#6f5300;border-color:#ecd37a}
+.badge--agreed{background:#d9f0e2;color:#1f6a43;border-color:#aedcc0}
+.badge--later{background:#eceff2;color:#566675;border-color:#d6dce3}
+.badge--confirmed{background:#d9f0e2;color:#1f6a43;border-color:#aedcc0}
+.badge--strong{background:#fde6d0;color:#994a0c;border-color:#f6cba3}
+.badge--explore{background:#eceff2;color:#566675;border-color:#d6dce3}
+.badge--conflict{background:#f9dedd;color:#a03532;border-color:#eeb4b2}
+.badge--coaching{background:#dbeafe;color:#1d4f8f;border-color:#b6d1f5}
+.badge--training{background:#d9f0e2;color:#1f6a43;border-color:#aedcc0}
+.badge--tutoring{background:#ece4f7;color:#55389a;border-color:#d3c3ee}
+.badge--self{background:#eceff2;color:#566675;border-color:#d6dce3}
+.badge--core{background:#f9dedd;color:#a03532;border-color:#eeb4b2}
+.badge--keep{background:#dbeafe;color:#1d4f8f;border-color:#b6d1f5}
+.badge--minimum{background:#fff1b8;color:#6f5300;border-color:#ecd37a}
+.badge--drop{background:#eceff2;color:#566675;border-color:#d6dce3}
+.badge--done{background:#d9f0e2;color:#1f6a43;border-color:#aedcc0}
+.badge--now{background:#2f6fb1;color:#fff}
+.badge--next{background:#fde6d0;color:#994a0c;border-color:#f6cba3}
+.badge--planned{background:#eceff2;color:#566675;border-color:#d6dce3}
+.badge--blocked{background:#f9dedd;color:#a03532;border-color:#eeb4b2}
+.badge--owner-manager,.badge--owner-director,.badge--owner-desk,.badge--owner-family,.badge--owner-student{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.badge--warn{background:#fff8dc;color:#6f5300;border:1px solid #d9a800}
+.badge--risk{background:#fff;color:#a03532;border:1.5px solid var(--red)}
+.badge--private{background:#111;color:#fff;border:1px solid #fff}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12.5px;line-height:1.5;color:var(--ink);max-width:100%;overflow-wrap:anywhere}
+.chip--evidence{background:#f1f4f8;color:var(--sub);font-size:11px;padding:1px 8px;border-color:#e2e8ef}
+.chip--note{border-radius:10px;padding:5px 11px;background:#f7f9fc}
+.chip--due{background:#fff8ee;border-color:#f2d3ac;color:#8a4d12;font-weight:700}
+.chip-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+
+/* hero */
+.hero-top{background:linear-gradient(135deg,#1b3a5c 0%,#2a5a86 100%);color:#fff;border-radius:16px;padding:20px 22px}
+.eyebrow{font-size:11.5px;letter-spacing:.1em;font-weight:800;opacity:.9;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hero-top h1{font-size:28px;margin:8px 0 10px;font-weight:800}
+.h1-sub{font-size:15px;font-weight:600;opacity:.9;margin-left:4px}
+.hero-top .chip-row{margin-top:8px}
+.hero-top .chip{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
+.hero-top .chip--type{font-weight:700;background:rgba(255,255,255,.22)}
+.hero-top .chip--dday{background:#fff;color:var(--navy);border-color:#fff}
+.hero-top .chip--dday .dd-val{color:var(--accent);font-size:14px}
+.hero-top .chip--manager b{font-weight:800}
+.hero-top .badge--owner-manager{color:#fff;border-color:#fff}
+.hero-top .chip--onDark{background:transparent;border-color:rgba(255,255,255,.35);color:#dbe8f5}
+.contacts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px;font-size:14px}
+.contact-k{opacity:.8;margin-right:4px}
+.contact a{color:#fff;font-weight:800;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.6)}
+.hero-rail{margin-top:12px}
+.rail-title{font-size:11.5px;font-weight:800;color:var(--sub);margin-bottom:10px}
+.stage-rail{list-style:none;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.stage{position:relative;text-align:center;padding:0 3px}
+.stage::before{content:"";position:absolute;top:16px;left:-50%;width:100%;height:3px;background:var(--line)}
+.stage:first-child::before{display:none}
+.stage--done::before,.stage--now::before{background:var(--green)}
+.stage .dot{position:relative;z-index:1;display:grid;place-items:center;width:34px;height:34px;margin:0 auto 6px;border-radius:50%;background:#fff;border:3px solid var(--line);color:var(--sub);font-weight:800;font-size:13px}
+.stage--done .dot{background:var(--green);border-color:var(--green);color:#fff}
+.stage--now .dot{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 0 5px #2f6fb133}
+.stage--next .dot{border-color:var(--accent);color:var(--accent)}
+.st-body{display:flex;flex-direction:column;align-items:center;gap:2px}
+.st-body b{font-size:13px;color:var(--navy)}
+.st-date{font-size:11.5px;color:var(--sub);line-height:1.3;overflow-wrap:anywhere}
+.st-body .badge{font-size:10.5px;padding:0 7px;margin-top:2px}
+.alerts{display:grid;gap:8px;margin-top:12px}
+.alert-banner{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid;font-weight:600}
+.alert--warn{background:#fff8dc;border-color:#e3bd3a;color:#5f4700}
+.alert--risk{background:#fdeeee;border-color:#e39a98;color:#8b2a27}
+.alert-text{flex:1 1 240px;font-size:14px}
+.alert-ev{display:flex;gap:4px;flex-wrap:wrap}
+
+/* actions */
+.action-list{list-style:none;padding:6px 14px}
+.action{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.action:last-child{border-bottom:0}
+.action .box{flex:0 0 22px;height:22px;border-radius:6px;border:2px solid #9fb2c4;display:grid;place-items:center;font-size:14px;color:#fff;font-weight:900}
+.action.is-done .box{background:var(--green);border-color:var(--green)}
+.action.is-done .a-text{color:var(--sub);text-decoration:line-through}
+.a-text{flex:1 1 260px;font-weight:600;font-size:14.5px}
+.a-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+
+/* decision board */
+.decision-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.decision-col{background:#fff;border:1px solid var(--line);border-top:4px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.col--student{border-top-color:#7d91a5}.col--parent{border-top-color:#4a9ad8}.col--advice{border-top-color:var(--accent)}.col--pending{border-top-color:#d9a800}.col--agreed{border-top-color:var(--green)}
+.dec-head{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.dec-n{font-size:12px;font-weight:800;color:var(--sub);background:#eef2f6;border-radius:999px;padding:0 8px}
+.dec-item{background:#f8fafc;border:1px solid #e6edf3;border-radius:9px;padding:8px}
+.dec-text{font-size:13px;font-weight:600;line-height:1.5}
+.dec-ev{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(var(--n,6),minmax(0,1fr));gap:10px}
+.journey-step{position:relative;padding-top:26px}
+.journey-step::before{content:"";position:absolute;top:9px;left:-5px;right:-5px;height:4px;background:var(--line)}
+.journey-step:first-child::before{left:14px}
+.journey-step:last-child::before{right:calc(100% - 14px)}
+.js--done::before{background:var(--green)}
+.js--now::before{background:linear-gradient(90deg,var(--green),var(--blue))}
+.js-dot{position:absolute;top:2px;left:4px;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid #b8c5d2;z-index:1}
+.js--done .js-dot{border-color:var(--green);background:var(--green)}
+.js--now .js-dot{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px #2f6fb133}
+.js--next .js-dot{border-color:var(--accent)}
+.js-card{height:100%;padding:10px;display:flex;flex-direction:column;gap:5px}
+.js-date{font-size:12px;font-weight:800;color:var(--blue)}
+.js-title{font-size:13.5px;font-weight:800;color:var(--navy);line-height:1.4}
+.js-result{font-size:12.5px;color:var(--ink);line-height:1.5}
+.js-foot{margin-top:auto;padding-top:4px}
+.js-ev{display:flex;flex-wrap:wrap;gap:4px}
+
+/* kpi */
+.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kpi{background:#fff;border:1px solid var(--line);border-left:5px solid #9fb2c4;border-radius:12px;padding:12px 14px}
+.kpi--asset{border-left-color:var(--green)}.kpi--risk{border-left-color:var(--red)}.kpi--neutral{border-left-color:var(--blue)}
+.kpi-label{font-size:12px;font-weight:800;color:var(--sub)}
+.kpi-value{font-size:24px;font-weight:800;color:var(--navy);line-height:1.25;margin:2px 0;overflow-wrap:anywhere}
+.kpi--risk .kpi-value{color:#a03532}.kpi--asset .kpi-value{color:#1f6a43}
+.kpi-note{font-size:12.5px;color:var(--sub);line-height:1.45}
+
+/* profile meters */
+.meters{display:grid;gap:14px}
+.meter-group h3{font-size:14px;color:var(--navy);margin-bottom:6px}
+.meter-row{display:grid;grid-template-columns:150px minmax(0,1fr) 40px auto;gap:2px 12px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
+.meter-row:last-of-type{border-bottom:0}
+.m-name{font-weight:700;font-size:13.5px}
+.m-name small{font-weight:500;color:var(--sub);font-size:11.5px}
+.m-bar{position:relative;height:12px;border-radius:999px;background:#e9eef4;overflow:hidden}
+.m-fill{position:absolute;left:0;top:0;bottom:0;background:var(--blue);border-radius:999px}
+.meter--risk .m-fill{background:var(--red)}
+.meter--asset .m-fill{background:var(--green)}
+.m-mid{position:absolute;left:50%;top:0;bottom:0;width:2px;background:#fff;opacity:.9}
+.m-val{font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.m-lvl{display:flex;gap:6px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.lvl{display:inline-block;padding:1px 9px;border-radius:999px;font-size:11.5px;font-weight:800;white-space:nowrap;background:#eaf1f8;color:#274d76}
+.lvl--risk{background:#f9dedd;color:#a03532}.lvl--asset{background:#d9f0e2;color:#1f6a43}
+.m-note{grid-column:2 / -1;font-size:12px;color:var(--sub);line-height:1.45}
+.meter-legend{font-size:11.5px;color:var(--sub);margin-top:8px}
+.dyn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.dyn-head{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.dyn-title{font-weight:800;color:var(--navy);font-size:14px}
+
+/* flow nodes (dynamics / cause chain) */
+.flow{display:grid;align-items:stretch;gap:8px}
+.flow--3{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr)}
+.node{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#f8fafc;font-size:13px;line-height:1.5;font-weight:600}
+.node-k{display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;margin-bottom:2px}
+.node--cause{border-left:4px solid var(--navy)}.node--cause .node-k{color:var(--navy)}
+.node--scene{border-left:4px solid var(--blue)}.node--scene .node-k{color:var(--blue)}
+.node--effect{border-left:4px solid var(--accent)}.node--effect .node-k{color:#b4601a}
+.arr{align-self:center;font-size:20px;color:var(--sub);font-weight:800}
+.cause-chain{display:grid;gap:10px}
+.ci-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.ci-no{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:12px}
+.ci-progs{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.ci-ev{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+
+/* subjects */
+.subject-list{display:grid;gap:10px}
+.subject-row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px}
+.sr-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.sr-head h3{font-size:16px;color:var(--navy)}
+.sr-progs{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.prog-lbl{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--sub)}
+.prog-lbl b{color:var(--ink);font-size:13.5px}
+.prog-lbl .to b{color:#b4601a}
+.prog{position:relative;height:14px;margin:10px 0 8px;border-radius:999px;background:#e9eef4}
+.prog .fill{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--blue)}
+.prog .tgt{position:absolute;top:-5px;bottom:-5px;width:4px;margin-left:-2px;border-radius:2px;background:var(--accent)}
+.sr-facts{margin:6px 0}
+.sr-facts .chip{font-size:11.5px}
+.sr-check{display:flex;gap:8px;align-items:baseline;margin-top:8px;padding:8px 10px;background:#f2f8f4;border-radius:9px;font-size:13px}
+.sr-check .k{margin:0;color:#1f6a43;white-space:nowrap}
+.sr-ev{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.tactic{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.tactic li{display:flex;align-items:flex-start;gap:8px;position:relative;padding:6px 10px;background:#f4f8fc;border:1px solid #dbe6f1;border-radius:9px;font-size:13px;font-weight:600}
+.tactic li+li::before{content:"↓";position:absolute;top:-12px;left:16px;font-size:11px;color:var(--sub);font-weight:800}
+.tactic .n{flex:0 0 20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;margin-top:1px}
+.sr-skip,.sr-flags{display:flex;flex-direction:column;gap:5px;margin-top:8px;font-size:12.5px}
+.skip-item,.flag-item{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+
+/* program */
+.program-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pt-head{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.pt-head b{font-size:15px;color:var(--navy)}
+.pt-price{font-size:20px;font-weight:800;margin:6px 0 4px;color:var(--ink);overflow-wrap:anywhere}
+.pt-scope{font-size:12.5px;color:var(--sub);line-height:1.5}
+.week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.wk-col{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px;min-height:80px}
+.wk-day{font-weight:800;text-align:center;color:var(--navy);margin-bottom:4px}
+.wk-block{font-size:12px;background:#eef5fb;border-radius:6px;padding:4px 6px;margin-bottom:4px;display:flex;flex-direction:column;gap:2px}
+.wk-time{font-weight:800;color:var(--blue)}
+.wk-empty{text-align:center;color:var(--sub)}
+.week-grid-empty{display:grid;gap:8px;border-style:dashed}
+.wk-empty-head{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--navy)}
+.price-note{display:flex;gap:8px;align-items:flex-start;margin-top:10px;padding:9px 12px;border-radius:10px;background:#fffbea;border:1px solid #ecd37a;font-size:13px}
+.price-note .badge{flex:0 0 auto;margin-top:1px}
+
+/* playbook */
+.do-dont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dd-col h3{font-size:15px;margin-bottom:8px}
+.dd-do{border-top:4px solid var(--green)}.dd-do h3{color:#1f6a43}
+.dd-dont{border-top:4px solid var(--red)}.dd-dont h3{color:#a03532}
+.dd-col ul{list-style:none;padding:0;display:grid;gap:7px}
+.dd-col li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5}
+.dd-col li::before{position:absolute;left:0;top:0;font-weight:900}
+.dd-do li::before{content:"✓";color:var(--green)}
+.dd-dont li::before{content:"✕";color:var(--red)}
+
+/* checkpoints */
+.checkpoint-rail{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:10px;position:relative}
+.checkpoint{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.checkpoint::after{content:"";position:absolute;top:24px;right:-11px;width:12px;height:3px;background:var(--line)}
+.checkpoint:last-child::after{display:none}
+.cp-head{display:flex;align-items:center;gap:8px}
+.cp-dot{flex:0 0 26px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:12px}
+.cp-when{font-weight:800;color:var(--navy);font-size:14px;line-height:1.3}
+.checkpoint ul{padding-left:16px;font-size:12.5px;line-height:1.5;display:grid;gap:4px;margin-top:8px}
+
+/* evidence */
+.evidence-index summary{cursor:pointer;font-weight:800;color:var(--navy);font-size:14px}
+.evidence-index ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px;font-size:13px}
+.evidence-index code{background:#eef2f6;border-radius:5px;padding:0 5px;font-size:12px}
+.ev-range{color:var(--blue);font-weight:700}
+.ev-use{color:var(--sub)}
+.foot{margin-top:28px;text-align:center;font-size:12px;color:var(--sub)}
+
+/* responsive */
+@media (max-width:1040px){
+  .decision-board{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  .journey{grid-template-columns:1fr;gap:0}
+  .journey-step{padding:0 0 12px 34px}
+  .journey-step::before{top:8px;bottom:-8px;left:10px;right:auto;width:4px;height:auto}
+  .journey-step:first-child::before{left:10px}
+  .journey-step:last-child::before{display:none}
+  .js-dot{top:2px;left:3px}
+  .checkpoint-rail{grid-template-columns:1fr;gap:10px}
+  .checkpoint::after{display:none}
+  .subject-row{grid-template-columns:1fr}
+  .dyn-grid,.do-dont{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow--3{grid-template-columns:1fr}
+  .flow--3 .arr{transform:rotate(90deg);justify-self:center;line-height:1}
+}
+@media (max-width:700px){
+  .stage-rail{grid-template-columns:1fr}
+  .stage{display:flex;align-items:center;gap:12px;text-align:left;padding:0;min-height:48px}
+  .stage::before{top:-50%;left:16px;width:3px;height:100%}
+  .stage .dot{margin:0;flex:0 0 34px}
+  .st-body{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 10px}
+  .st-body .badge{margin-top:0}
+  .decision-board,.program-grid{grid-template-columns:1fr}
+  .week-grid{grid-template-columns:1fr}
+  .wk-col{min-height:0}
+  .hero-top{padding:16px}
+  .hero-top h1{font-size:23px}
+  .h1-sub{display:block;margin:2px 0 0;font-size:13.5px}
+  .kpi-value{font-size:20px}
+  .kpi{padding:10px 12px}
+  .meter-row{grid-template-columns:minmax(0,1fr) 36px;gap:4px 8px}
+  .m-bar{grid-column:1 / -1;grid-row:2}
+  .m-lvl{grid-column:1 / -1;justify-content:flex-start;grid-row:3}
+  .m-val{grid-column:2;grid-row:1}
+  .m-name{grid-column:1;grid-row:1}
+  .m-note{grid-column:1 / -1}
+  .sec>h2{font-size:17px}
+}
+@media (max-width:420px){
+  .wrap{padding:10px 12px 48px}
+  .kpi-grid{gap:8px}
+  .chip{font-size:12px}
+}
+
+/* print */
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:#fff;font-size:12px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .m-nav,button{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .sec{margin-top:16px;scroll-margin-top:0}
+  .card,.kpi,.decision-col,.dec-item,.journey-step,.cause-item,.subject-row,.program-tile,.checkpoint,.dd-col{break-inside:avoid;page-break-inside:avoid}
+  .sec>h2{break-after:avoid}
+  .decision-board{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .journey{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .journey-step::before{display:none}
+  .journey-step{padding-top:0}
+  .js-dot{display:none}
+  .checkpoint-rail{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .subject-row{grid-template-columns:1fr 1fr}
+  .flow--3{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr)}
+  .flow--3 .arr{transform:none}
+  .evidence-index summary{list-style:none}
+}
+</style>
+</head>
+<body>
+<nav class="m-nav" aria-label="섹션 이동"><div class="m-nav-in"><a class="nav-back" href="../admin-4ck2v7p3/">← 관리자 목록</a><a href="#m-actions">지금 할 일</a><a href="#m-decisions">결정 보드</a><a href="#m-timeline">상담 여정</a><a href="#m-snapshot">진단</a><a href="#m-profile">검사 지표</a><a href="#m-bottlenecks">병목 인과</a><a href="#m-subjects">과목 작전</a><a href="#m-program">프로그램·비용</a><a href="#m-playbook">플레이북</a><a href="#m-checkpoints">확인 지표</a><a href="#m-evidence">근거 색인</a><a class="nav-board" href="https://manager.sangsangplex.com/vlt5g/qdo0wx0j">협업 보드</a></div></nav>
+<main class="wrap">
+<section id="m-hero" class="hero">
+  <div class="hero-top">
+    <div class="eyebrow">INTERNAL · 매니저 전용 초기상담 기록지 <span class="badge badge--private">비공개 취급</span></div>
+    <h1>이소윤 <span class="h1-sub">장곡초등학교 6학년 · 2014년생</span></h1>
+    <div class="chip-row"><span class="chip">2027학년도 중1 진학</span><span class="chip">여</span><span class="chip">남매 중 둘째(오빠 재원)</span><span class="chip">배우·한예종 목표</span><span class="chip">학생 ESFP · 어머님 ISTP</span><span class="chip chip--type">메인 TYPE 15. 마니아</span><span class="chip chip--type">히든 TYPE 10. 오지랖</span></div>
+    <div class="chip-row"><span class="chip chip--manager"><span class="badge badge--owner-manager">담당 매니저</span><span class="badge badge--planned">예정</span><b>프로그램 확정 후 배정</b></span></div>
+    <div class="contacts"></div>
+  </div>
+  <div class="hero-rail card"><div class="rail-title">진행 단계</div><ol class="stage-rail"><li class="stage stage--done" aria-label="문의 완료"><span class="dot">✓</span><span class="st-body"><b>문의</b><span class="st-date">10/4 검사 등록</span><span class="badge badge--done">완료</span></span></li><li class="stage stage--done" aria-label="검사 완료"><span class="dot">✓</span><span class="st-body"><b>검사</b><span class="st-date">10/5</span><span class="badge badge--done">완료</span></span></li><li class="stage stage--done" aria-label="해석상담 완료"><span class="dot">✓</span><span class="st-body"><b>해석상담</b><span class="st-date">10/6</span><span class="badge badge--done">완료</span></span></li><li class="stage stage--done" aria-label="가족 상담 완료"><span class="dot">✓</span><span class="st-body"><b>가족 상담</b><span class="st-date">10/6 어머님 동석</span><span class="badge badge--done">완료</span></span></li><li class="stage stage--next" aria-label="OT·세팅 다음"><span class="dot">5</span><span class="st-body"><b>OT·세팅</b><span class="st-date">12월 말</span><span class="badge badge--next">다음</span></span></li><li class="stage stage--planned" aria-label="등록 예정"><span class="dot">6</span><span class="st-body"><b>등록</b><span class="st-date">세팅 뒤</span><span class="badge badge--planned">예정</span></span></li><li class="stage stage--planned" aria-label="운영 예정"><span class="dot">7</span><span class="st-body"><b>운영</b><span class="st-date">겨울방학(1월 초~)</span><span class="badge badge--planned">예정</span></span></li></ol></div>
+  <div class="alerts"><div class="alert-banner alert--warn" role="note"><span class="badge badge--warn">주의</span><span class="alert-text">응답일치율 10(낮음): 높은 자기평가(자신감 82·감정조절 80·진로성숙도 100)는 방향으로만 읽고, 상담·수행에서 확인된 것만 단정한다.</span><span class="alert-ev"><span class="chip chip--evidence">VLT 응답일치율 10</span><span class="chip chip--evidence">VLT 사회적 바람직성 79</span><span class="chip chip--evidence">기록 §5</span></span></div><div class="alert-banner alert--warn" role="note"><span class="badge badge--warn">주의</span><span class="alert-text">등록·결제 전 단계다. 과목·횟수·요일·등원 시간·수학 수업 여부는 12월 말 세팅에서 가족이 정한다. 비용은 상담에서 다루지 않았다.</span><span class="alert-ev"><span class="chip chip--evidence">원문 10/6 647행</span><span class="chip chip--evidence">기록 §9</span></span></div><div class="alert-banner alert--warn" role="note"><span class="badge badge--warn">주의</span><span class="alert-text">지적에 매우 민감하다(학부모 기록). ‘공부해라’가 쌓이면 공부를 싫어하게 될 위험이 있어 이유 설명이 먼저다.</span><span class="alert-ev"><span class="chip chip--evidence">원문 10/6 107행</span><span class="chip chip--evidence">기록 §6</span></span></div><div class="alert-banner alert--warn" role="note"><span class="badge badge--warn">주의</span><span class="alert-text">검사 화면의 나이 15세는 입력 오류다(실제 초6, 2014년생). 상위 멘탈리티는 이 검사 규격에서 측정하지 않는다.</span><span class="alert-ev"><span class="chip chip--evidence">원문 10/6 281행</span><span class="chip chip--evidence">기록 §1</span></span></div></div>
+</section>
+<section id="m-actions" class="sec"><h2><span class="sec-no">M2</span>지금 할 일</h2><ul class="action-list card"><li class="action " data-board-item="act-dd41f1fe9e" data-board-group="actions" data-board-label="학부모용 결과지 링크를 어머님께 카카오톡으로 보내기"><span class="box" aria-hidden="true"></span><span class="a-text">학부모용 결과지 링크를 어머님께 카카오톡으로 보내기</span><span class="a-meta"><span class="badge badge--owner-director">원장</span><span class="chip chip--due">10/7</span><span class="badge badge--now">진행 중</span></span></li><li class="action " data-board-item="act-0543b64705" data-board-group="actions" data-board-label="초기 상담 기록지 Google Sheets 학생 탭 작성·재조회"><span class="box" aria-hidden="true"></span><span class="a-text">초기 상담 기록지 Google Sheets 학생 탭 작성·재조회</span><span class="a-meta"><span class="badge badge--owner-desk">데스크</span><span class="badge badge--owner-director">원장</span><span class="chip chip--due">미작성</span><span class="badge badge--next">다음</span></span></li><li class="action " data-board-item="act-9172816c38" data-board-group="actions" data-board-label="EduCube 학생 나이 입력(15세) 바로잡기"><span class="box" aria-hidden="true"></span><span class="a-text">EduCube 학생 나이 입력(15세) 바로잡기</span><span class="a-meta"><span class="badge badge--owner-desk">데스크</span><span class="chip chip--due">10월 중</span><span class="badge badge--next">다음</span></span></li><li class="action " data-board-item="act-e64afddcec" data-board-group="actions" data-board-label="겨울방학 오전 운영 시간(8~10시 시작) 확정 후 어머님께 안내"><span class="box" aria-hidden="true"></span><span class="a-text">겨울방학 오전 운영 시간(8~10시 시작) 확정 후 어머님께 안내</span><span class="a-meta"><span class="badge badge--owner-director">원장</span><span class="chip chip--due">12월</span><span class="badge badge--planned">예정</span></span></li><li class="action " data-board-item="act-b0a5f5048b" data-board-group="actions" data-board-label="12월 중순까지 연락이 없으면 세팅 일정 확인 연락"><span class="box" aria-hidden="true"></span><span class="a-text">12월 중순까지 연락이 없으면 세팅 일정 확인 연락</span><span class="a-meta"><span class="badge badge--owner-director">원장</span><span class="chip chip--due">12월 중순</span><span class="badge badge--planned">예정</span></span></li><li class="action " data-board-item="act-fbf0687d02" data-board-group="actions" data-board-label="12월 말 세팅: 등록 여부·과목·횟수·요일·등원 시간·수학 수업"><span class="box" aria-hidden="true"></span><span class="a-text">12월 말 세팅: 등록 여부·과목·횟수·요일·등원 시간·수학 수업</span><span class="a-meta"><span class="badge badge--owner-director">원장</span><span class="badge badge--owner-family">가족</span><span class="chip chip--due">12월 말</span><span class="badge badge--planned">예정</span></span></li><li class="action " data-board-item="act-8b4ca2ce65" data-board-group="actions" data-board-label="프로그램 확정 뒤 담당 매니저 배정(이유를 설명해 주는 서포팅형)"><span class="box" aria-hidden="true"></span><span class="a-text">프로그램 확정 뒤 담당 매니저 배정(이유를 설명해 주는 서포팅형)</span><span class="a-meta"><span class="badge badge--owner-director">원장</span><span class="chip chip--due">세팅 뒤</span><span class="badge badge--planned">예정</span></span></li></ul></section>
+<section id="m-decisions" class="sec"><h2><span class="sec-no">M3</span>결정 보드</h2><div class="decision-board"><div class="decision-col col--student"><div class="dec-head"><span class="badge badge--student">학생 확인</span><span class="dec-n">7</span></div><div class="dec-item" data-board-item="dec-student-e1b7087020" data-board-group="decisions" data-board-label="공부 = 꼭 해야 하는 것, 이유는 가고 싶은 학교"><div class="dec-text">공부 = 꼭 해야 하는 것, 이유는 가고 싶은 학교</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 68행</span></div></div><div class="dec-item" data-board-item="dec-student-649ba93904" data-board-group="decisions" data-board-label="꿈: 배우 · 한예종(1~2등급이 필요하다고 앎)"><div class="dec-text">꿈: 배우 · 한예종(1~2등급이 필요하다고 앎)</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 71행</span></div></div><div class="dec-item" data-board-item="dec-student-5bd7ce6de6" data-board-group="decisions" data-board-label="관심사는 뮤지컬 공연(기록지에는 ‘없음’)"><div class="dec-text">관심사는 뮤지컬 공연(기록지에는 ‘없음’)</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 47행</span></div></div><div class="dec-item" data-board-item="dec-student-e4d94aa91a" data-board-group="decisions" data-board-label="CHAMP TEST는 좀 어려웠다"><div class="dec-text">CHAMP TEST는 좀 어려웠다</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 482행</span></div></div><div class="dec-item" data-board-item="dec-student-4a332c8540" data-board-group="decisions" data-board-label="공부하라는 말: 스트레스는 아니지만 싫다"><div class="dec-text">공부하라는 말: 스트레스는 아니지만 싫다</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 239행</span></div></div><div class="dec-item" data-board-item="dec-student-e31b7caeba" data-board-group="decisions" data-board-label="상담 뒤 소감: 공부 더 해야겠다"><div class="dec-text">상담 뒤 소감: 공부 더 해야겠다</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 542행</span></div></div><div class="dec-item" data-board-item="dec-student-ceaaf82f95" data-board-group="decisions" data-board-label="희망 매니저: 재미있는 여자 매니저"><div class="dec-text">희망 매니저: 재미있는 여자 매니저</div><div class="dec-ev"><span class="chip chip--evidence">기록 §9</span></div></div></div><div class="decision-col col--parent"><div class="dec-head"><span class="badge badge--parent">학부모 확인</span><span class="dec-n">7</span></div><div class="dec-item" data-board-item="dec-parent-611e9d8b3a" data-board-group="decisions" data-board-label="복직 뒤 겨울방학에 혼자 있는 시간이 걱정"><div class="dec-text">복직 뒤 겨울방학에 혼자 있는 시간이 걱정</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 593행</span></div></div><div class="dec-item" data-board-item="dec-parent-2e7d02e509" data-board-group="decisions" data-board-label="백지 상태이니 처음부터 잘 세팅하고 싶음"><div class="dec-text">백지 상태이니 처음부터 잘 세팅하고 싶음</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 602행</span></div></div><div class="dec-item" data-board-item="dec-parent-97eebc51d4" data-board-group="decisions" data-board-label="첫 단추만 끼워 주면 혼자 이어서 하는 편"><div class="dec-text">첫 단추만 끼워 주면 혼자 이어서 하는 편</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 617행</span></div></div><div class="dec-item" data-board-item="dec-parent-d073db2d2d" data-board-group="decisions" data-board-label="크게 시작하기보다 매니저 지도 아래, 부족하면 그때 개입"><div class="dec-text">크게 시작하기보다 매니저 지도 아래, 부족하면 그때 개입</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 620행</span></div></div><div class="dec-item" data-board-item="dec-parent-61714172f7" data-board-group="decisions" data-board-label="한글을 힘들게 배워 영어도 음소부터 시작"><div class="dec-text">한글을 힘들게 배워 영어도 음소부터 시작</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 608행</span></div></div><div class="dec-item" data-board-item="dec-parent-17a1f17295" data-board-group="decisions" data-board-label="틀린 문제 다시 풀기·지적을 매우 싫어함(기록지)"><div class="dec-text">틀린 문제 다시 풀기·지적을 매우 싫어함(기록지)</div><div class="dec-ev"><span class="chip chip--evidence">기록 §6</span></div></div><div class="dec-item" data-board-item="dec-parent-6efd81fb9e" data-board-group="decisions" data-board-label="희망 매니저: 아이와 케미가 맞는 분"><div class="dec-text">희망 매니저: 아이와 케미가 맞는 분</div><div class="dec-ev"><span class="chip chip--evidence">기록 §9</span></div></div></div><div class="decision-col col--advice"><div class="dec-head"><span class="badge badge--advice">원장 권고</span><span class="dec-n">6</span></div><div class="dec-item" data-board-item="dec-advice-1e7a4d2955" data-board-group="decisions" data-board-label="1순위는 공부를 싫어하지 않게 만드는 것"><div class="dec-text">1순위는 공부를 싫어하지 않게 만드는 것</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 104행</span></div></div><div class="dec-item" data-board-item="dec-advice-73daeb6f64" data-board-group="decisions" data-board-label="플래너·과목별 공부법·인강 듣는 법 훈련"><div class="dec-text">플래너·과목별 공부법·인강 듣는 법 훈련</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 620행</span></div></div><div class="dec-item" data-board-item="dec-advice-ad59e64086" data-board-group="decisions" data-board-label="개입은 부드럽고 점진적으로, 이유는 모두 설명"><div class="dec-text">개입은 부드럽고 점진적으로, 이유는 모두 설명</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 518행</span><span class="chip chip--evidence">원문 10/6 428행</span></div></div><div class="dec-item" data-board-item="dec-advice-c4695ffd37" data-board-group="decisions" data-board-label="수업이 필요하면 수학"><div class="dec-text">수업이 필요하면 수학</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 617행</span></div></div><div class="dec-item" data-board-item="dec-advice-bacfe2ce3f" data-board-group="decisions" data-board-label="화상 영어는 유지"><div class="dec-text">화상 영어는 유지</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 611행</span></div></div><div class="dec-item" data-board-item="dec-advice-e968cf45b5" data-board-group="decisions" data-board-label="주말 30분 주제 조사·발표(가족이 돌아가며 주제)"><div class="dec-text">주말 30분 주제 조사·발표(가족이 돌아가며 주제)</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 566행</span><span class="chip chip--evidence">원문 10/6 635행</span></div></div></div><div class="decision-col col--pending"><div class="dec-head"><span class="badge badge--pending">가족 결정 대기</span><span class="dec-n">3</span></div><div class="dec-item" data-board-item="dec-pending-0107adac9b" data-board-group="decisions" data-board-label="등록 여부와 과목·횟수·요일"><div class="dec-text">등록 여부와 과목·횟수·요일</div><div class="dec-ev"><span class="chip chip--evidence">기록 §9</span></div></div><div class="dec-item" data-board-item="dec-pending-4a36ff4c53" data-board-group="decisions" data-board-label="겨울방학 오전 등원 시간(운영 8~10시 검토 중)"><div class="dec-text">겨울방학 오전 등원 시간(운영 8~10시 검토 중)</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 596행</span></div></div><div class="dec-item" data-board-item="dec-pending-9b73f6b02d" data-board-group="decisions" data-board-label="수학 수업을 처음부터 넣을지 4주 뒤 정할지"><div class="dec-text">수학 수업을 처음부터 넣을지 4주 뒤 정할지</div><div class="dec-ev"><span class="chip chip--evidence">기록 §9</span></div></div></div><div class="decision-col col--agreed"><div class="dec-head"><span class="badge badge--agreed">최종 합의</span><span class="dec-n">2</span></div><div class="dec-item" data-board-item="dec-agreed-134bc792fd" data-board-group="decisions" data-board-label="단어 찾아보기(다시 만날 때까지 약속)"><div class="dec-text">단어 찾아보기(다시 만날 때까지 약속)</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 545행</span><span class="chip chip--evidence">원문 10/6 626행</span></div></div><div class="dec-item" data-board-item="dec-agreed-c859319917" data-board-group="decisions" data-board-label="겨울방학 전 연락해 12월 말 세팅"><div class="dec-text">겨울방학 전 연락해 12월 말 세팅</div><div class="dec-ev"><span class="chip chip--evidence">원문 10/6 638행</span><span class="chip chip--evidence">원문 10/6 647행</span></div></div></div></div></section>
+<section id="m-timeline" class="sec"><h2><span class="sec-no">M4</span>상담 여정</h2><div class="journey" style="--n:7"><div class="journey-step js--done"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">10/4</div><div class="js-title">검사 등록</div><div class="js-result">EduCube V3 345 등록(초등·중등 저학년 규격 184문항)</div><div class="js-foot"><span class="badge badge--done">완료</span></div><div class="js-ev"><span class="chip chip--evidence">기록 §1</span></div></div></div><div class="journey-step js--done"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">10/5</div><div class="js-title">검사 실시</div><div class="js-result">검사지·CHAMP·APT 3과목·MMTIC 실시. 사전기록지 낭독본 보존</div><div class="js-foot"><span class="badge badge--done">완료</span></div><div class="js-ev"><span class="chip chip--evidence">기록 §2</span></div></div></div><div class="journey-step js--done"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">10/6 낮</div><div class="js-title">사전보고서</div><div class="js-result">학부모용 사전보고서 9d40oqx0 배포(다른 환경에서 작성)</div><div class="js-foot"><span class="badge badge--done">완료</span></div><div class="js-ev"><span class="chip chip--evidence">기록 §2</span></div></div></div><div class="journey-step js--done"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">10/6 17:45</div><div class="js-title">해석상담(학생·어머님)</div><div class="js-result">곳간이 비어 있다는 관점, 단어 찾아보기 약속, 겨울 시작 의향 확인</div><div class="js-foot"><span class="badge badge--done">완료</span></div><div class="js-ev"><span class="chip chip--evidence">원문 10/6 407행</span><span class="chip chip--evidence">원문 10/6 545행</span></div></div></div><div class="journey-step js--next"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">12월 말</div><div class="js-title">프로그램 세팅</div><div class="js-result">오빠 픽업 날 30분 일찍 방문. 과목·횟수·요일·등원 시간 결정</div><div class="js-foot"><span class="badge badge--next">다음</span></div><div class="js-ev"><span class="chip chip--evidence">원문 10/6 647행</span></div></div></div><div class="journey-step js--planned"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">2027-01 초</div><div class="js-title">겨울방학 등원 시작</div><div class="js-result">종업식 뒤 오전 등원. 2주 차에 계획 한 블록·낱말 기록 확인</div><div class="js-foot"><span class="badge badge--planned">예정</span></div><div class="js-ev"><span class="chip chip--evidence">원문 10/6 590행</span><span class="chip chip--evidence">기록 §10</span></div></div></div><div class="journey-step js--planned"><span class="js-dot" aria-hidden="true"></span><div class="card js-card"><div class="js-date">등원 4주</div><div class="js-title">첫 점검</div><div class="js-result">국어 문단 주제 4/5, 수학 풀이 순서 설명 4/5 → 개별지도 연결 판단</div><div class="js-foot"><span class="badge badge--planned">예정</span></div><div class="js-ev"><span class="chip chip--evidence">기록 §9</span><span class="chip chip--evidence">기록 §10</span></div></div></div></div></section>
+<section id="m-snapshot" class="sec"><h2><span class="sec-no">M5</span>한눈에 보는 진단</h2><div class="kpi-grid"><div class="kpi kpi--neutral"><div class="kpi-label">메인 · 히든 타입</div><div class="kpi-value">TYPE 15 · 10</div><div class="kpi-note">마니아 / 오지랖 · 원형 문구를 행동으로 옮기지 않음</div></div><div class="kpi kpi--risk"><div class="kpi-label">1차 병목</div><div class="kpi-value">낱말 곳간</div><div class="kpi-note">기초문장이해 23 · 국 6 · 영 7 · 수 16(모두 LV0)</div></div><div class="kpi kpi--risk"><div class="kpi-label">2차 병목</div><div class="kpi-value">읽고 끝냄</div><div class="kpi-note">H 5 · P 12 · 학습성찰 17 · 자기실력파악 25</div></div><div class="kpi kpi--asset"><div class="kpi-label">핵심 자산</div><div class="kpi-value">논리력 99</div><div class="kpi-note">감정조절 80 · 부모정서지지 87 · 진로성숙도 100</div></div><div class="kpi kpi--risk"><div class="kpi-label">검사 신뢰성</div><div class="kpi-value">응답일치율 10</div><div class="kpi-note">낮음 — 높은 자기평가는 방향으로만</div></div><div class="kpi kpi--neutral"><div class="kpi-label">영역 등급</div><div class="kpi-value">A / C+ / C-</div><div class="kpi-note">기초 멘탈리티 / 학습력 / 학습 방식 및 태도</div></div></div></section>
+<section id="m-profile" class="sec"><h2><span class="sec-no">M6</span>검사 지표</h2><div class="meters card"><div class="meter-group"><h3>검사 신뢰성</h3><div class="meter-row meter--neutral"><div class="m-name">사회적 바람직성 <small>raw 29</small></div><div class="m-bar" role="img" aria-label="사회적 바람직성 79"><span class="m-fill" style="width:79%"></span><i class="m-mid"></i></div><div class="m-val">79</div><div class="m-lvl"><span class="lvl lvl--neutral">다소높음</span></div><div class="m-note">어린 학생의 발달 특성 범위로 봄</div></div><div class="meter-row meter--risk"><div class="m-name">응답일치율 <small>raw −40</small></div><div class="m-bar" role="img" aria-label="응답일치율 10"><span class="m-fill" style="width:10%"></span><i class="m-mid"></i></div><div class="m-val">10</div><div class="m-lvl"><span class="lvl lvl--risk">낮음</span></div><div class="m-note">문항 독해 + 겪어 보지 않은 학업 장면 문항이 겹친 가설 · 대충 응답 가설은 약함</div></div></div><div class="meter-group"><h3>Big Five</h3><div class="meter-row meter--neutral"><div class="m-name">외향성</div><div class="m-bar" role="img" aria-label="외향성 84"><span class="m-fill" style="width:84%"></span><i class="m-mid"></i></div><div class="m-val">84</div><div class="m-lvl"><span class="lvl lvl--neutral">다소높음</span></div><div class="m-note">인정·성취·관계 쪽으로 다가가는 힘</div></div><div class="meter-row meter--neutral"><div class="m-name">신경성</div><div class="m-bar" role="img" aria-label="신경성 49"><span class="m-fill" style="width:49%"></span><i class="m-mid"></i></div><div class="m-val">49</div><div class="m-lvl"><span class="lvl lvl--neutral">보통</span></div><div class="m-note">긴장은 평균 · 급해지지 않음</div></div><div class="meter-row meter--neutral"><div class="m-name">성실성</div><div class="m-bar" role="img" aria-label="성실성 58"><span class="m-fill" style="width:58%"></span><i class="m-mid"></i></div><div class="m-val">58</div><div class="m-lvl"><span class="lvl lvl--neutral">보통</span></div><div class="m-note">정해진 것은 무난히 따름</div></div><div class="meter-row meter--neutral"><div class="m-name">친화성</div><div class="m-bar" role="img" aria-label="친화성 48"><span class="m-fill" style="width:48%"></span><i class="m-mid"></i></div><div class="m-val">48</div><div class="m-lvl"><span class="lvl lvl--neutral">보통</span></div><div class="m-note">완충 지표 · 관계는 소속 욕구로 움직임</div></div><div class="meter-row meter--neutral"><div class="m-name">개방성</div><div class="m-bar" role="img" aria-label="개방성 31"><span class="m-fill" style="width:31%"></span><i class="m-mid"></i></div><div class="m-val">31</div><div class="m-lvl"><span class="lvl lvl--neutral">보통</span></div><div class="m-note">보통 하단 · 스스로 찾아 나서는 힘이 약함</div></div></div><div class="meter-legend">막대 가운데 눈금 = 50 · 값은 화면 표시값(0~100)</div></div><div class="dyn-grid"><div class="dyn-card card"><div class="dyn-head"><span class="badge badge--strong">강한 가설</span><span class="dyn-title">핵심 역동</span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">조합</span>외향성 84 × 신경성 49</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">작동</span>칭찬과 성취가 보이면 움직이고 ‘안 하면 큰일’에는 안 움직임</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">관리 포인트</span>작은 성취를 그날 인정, 위기감 대신 왜 하는지 설명</div></div></div><div class="dyn-card card"><div class="dyn-head"><span class="badge badge--strong">강한 가설</span><span class="dyn-title">핵심 역동</span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">조합</span>개방성 31 × 성실성 58</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">작동</span>정해진 것은 따르지만 모르는 말을 묻지 않고 지나감</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">관리 포인트</span>탐구를 요구하지 말고 ‘찾아보기’까지만 좁혀 습관화</div></div></div><div class="dyn-card card"><div class="dyn-head"><span class="badge badge--strong">강한 가설</span><span class="dyn-title">핵심 역동</span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">조합</span>소속과 사랑 77 × 자유 0·힘 5</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">작동</span>시키면 수긍하지만 마음이 움직이지 않은 채 따를 수 있음</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">관리 포인트</span>‘해라’를 쌓지 않기. 소속감·예쁨받는 관계로 견인</div></div></div></div></section>
+<section id="m-bottlenecks" class="sec"><h2><span class="sec-no">M7</span>병목 인과</h2><div class="cause-chain"><div class="cause-item card"><div class="ci-head"><span class="ci-no">1</span><span class="badge badge--confirmed">확인된 병목</span><span class="ci-progs"><span class="badge badge--training">관리</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>낱말·배경지식 공백(곳간)</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>결핍·연비 처음 들음 · 父·母 한자 못 읽음 · 왕건 시대 혼동 · ‘~하는 통에’ 오답</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>문장 이해 → 국어·사회 개념 학습 → 검사 문항 독해까지 연쇄(1차 병목)</div></div><div class="ci-ev"><span class="chip chip--evidence">VLT 기초문장이해 23</span><span class="chip chip--evidence">원문 10/6 125행</span><span class="chip chip--evidence">원문 10/6 167행</span><span class="chip chip--evidence">원문 10/6 467행</span></div></div><div class="cause-item card"><div class="ci-head"><span class="ci-no">2</span><span class="badge badge--confirmed">확인된 병목</span><span class="ci-progs"><span class="badge badge--training">관리</span><span class="badge badge--tutoring">개별지도</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>읽고 이해되면 끝내는 공부</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>원장: 쓱 읽어 이해되면 종결 · 틀린 문제 다시 보기 싫어함 · 시험 준비 1주 전</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>확인·정리·암기·다시 풀기가 빠져 배운 것이 꺼내지지 않음</div></div><div class="ci-ev"><span class="chip chip--evidence">VLT CHAMP H5·A22·M16·P12</span><span class="chip chip--evidence">VLT 학습성찰 17</span><span class="chip chip--evidence">원문 10/6 518행</span><span class="chip chip--evidence">기록 §6</span></div></div><div class="cause-item card"><div class="ci-head"><span class="ci-no">3</span><span class="badge badge--strong">강한 가설</span><span class="ci-progs"><span class="badge badge--coaching">상담</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>자기 실력을 확인해 본 경험 부재</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>자기실력파악 25 · CHAMP ‘좀 어려웠어요’ · 원장: 객관화 없이 낮은 점수를 만나면</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>중1 첫 시험 뒤 ‘나는 공부는 아니구나’로 밀어낼 위험</div></div><div class="ci-ev"><span class="chip chip--evidence">VLT 자기실력파악 25</span><span class="chip chip--evidence">원문 10/6 482행</span><span class="chip chip--evidence">원문 10/6 524행</span></div></div><div class="cause-item card"><div class="ci-head"><span class="ci-no">4</span><span class="badge badge--strong">강한 가설</span><span class="ci-progs"><span class="badge badge--coaching">상담</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>지적 민감 + 낮은 자유 욕구</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>학부모 기록: 지적을 매우 싫어함 · 학생: 공부하라는 말이 싫음 · 시키면 수긍</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>마음이 안 움직인 채 따르다 공부를 싫어하게 될 수 있음</div></div><div class="ci-ev"><span class="chip chip--evidence">원문 10/6 239행</span><span class="chip chip--evidence">원문 10/6 107행</span><span class="chip chip--evidence">원문 10/6 266행</span><span class="chip chip--evidence">기록 §6</span></div></div><div class="cause-item card"><div class="ci-head"><span class="ci-no">5</span><span class="badge badge--strong">강한 가설</span><span class="ci-progs"><span class="badge badge--training">관리</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>호기심 31(묻지 않는 습관)</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>원장: 안 물어보고 안 궁금해하는 상태 · 다니는 수업 이름의 뜻도 모름</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>찾아보기 전에 멈춰 낱말 공백이 계속 쌓임</div></div><div class="ci-ev"><span class="chip chip--evidence">VLT 호기심 31</span><span class="chip chip--evidence">원문 10/6 392행</span><span class="chip chip--evidence">원문 10/6 578행</span></div></div><div class="cause-item card"><div class="ci-head"><span class="ci-no">6</span><span class="badge badge--conflict">자료 불일치</span><span class="ci-progs"><span class="badge badge--coaching">상담</span></span></div><div class="flow flow--3"><div class="node node--cause"><span class="node-k">원인</span>성적 자기평가가 서로 다름</div><span class="arr">→</span><div class="node node--scene"><span class="node-k">장면</span>기록지 평균 85·영어 95·수학 90 ↔ 검사 자기보고 국·영·수 ‘하’ ↔ CHAMP LV0</div><span class="arr">→</span><div class="node node--effect"><span class="node-k">결과</span>초등 단원평가 점수와 표본 안 위치의 차이로 해석. 객관화 상담의 재료</div></div><div class="ci-ev"><span class="chip chip--evidence">기록 §6</span><span class="chip chip--evidence">원문 10/6 488행</span></div></div></div></section>
+<section id="m-subjects" class="sec"><h2><span class="sec-no">M8</span>과목 작전</h2><div class="subject-list"><article class="subject-row card">
+  <div class="sr-main">
+    <div class="sr-head"><h3>국어</h3><span class="badge badge--core">핵심</span><span class="sr-progs"><span class="badge badge--training">관리</span></span></div>
+    <div class="prog-lbl"><span>현재 <b>APT 표현 해석 2.3</b></span><span class="to">목표 <b>APT 기준선 3.0</b></span></div>
+    <div class="prog" role="img" aria-label="국어 현재 APT 표현 해석 2.3 목표 APT 기준선 3.0"><span class="fill" style="width:46.0%"></span><i class="tgt" style="left:60.0%"></i></div>
+    <div class="chip-row sr-facts"><span class="chip">CHAMP 종합 6% · LV0 · 기초 16 · 심화 4 · 보완 H·A</span><span class="chip">기초문장이해 23%</span><span class="chip">APT 문단 주제·세부 정보·어휘·출제 의도 2.0</span><span class="chip">국어 정답 5·6·7·9·18번(5/20)</span><span class="chip">기초문장 오답 2·5·8·9·10·13·17·20번</span></div>
+    <div class="sr-check"><span class="k">확인 지표</span><span>2주: 낱말 기록 주 3회 · 4주: 지문 5개 중 4개 문단 주제·근거 표시</span></div>
+    <div class="sr-ev"><span class="chip chip--evidence">원문 10/6 467행</span><span class="chip chip--evidence">원문 10/6 470행</span><span class="chip chip--evidence">기록 §8</span></div>
+  </div>
+  <div class="sr-side">
+    <div class="k">작전 순서</div>
+    <ol class="tactic"><li data-board-item="tac-5fbc770def" data-board-group="subjects" data-board-label="모르는 낱말 표시 → 찾기"><span class="n">1</span><span>모르는 낱말 표시 → 찾기</span></li><li data-board-item="tac-7771dcdc5e" data-board-group="subjects" data-board-label="뜻을 자기 말로 설명"><span class="n">2</span><span>뜻을 자기 말로 설명</span></li><li data-board-item="tac-d60c2422ee" data-board-group="subjects" data-board-label="문단 한 줄 주제 + 근거 표시"><span class="n">3</span><span>문단 한 줄 주제 + 근거 표시</span></li></ol>
+    
+    <div class="sr-flags"><span class="flag-item"><span class="badge badge--later">추후 검토</span><span>4주 뒤 문단 주제·근거 표시 4/5 미달이면 개별지도 연결</span></span></div>
+  </div>
+</article><article class="subject-row card">
+  <div class="sr-main">
+    <div class="sr-head"><h3>수학</h3><span class="badge badge--core">핵심</span><span class="sr-progs"><span class="badge badge--tutoring">개별지도</span><span class="badge badge--training">관리</span></span></div>
+    <div class="prog-lbl"><span>현재 <b>APT 유형 인지 2.7</b></span><span class="to">목표 <b>APT 기준선 3.0</b></span></div>
+    <div class="prog" role="img" aria-label="수학 현재 APT 유형 인지 2.7 목표 APT 기준선 3.0"><span class="fill" style="width:54.0%"></span><i class="tgt" style="left:60.0%"></i></div>
+    <div class="chip-row sr-facts"><span class="chip">CHAMP 종합 16% · LV0 · 기초 21 · 심화 16 · 보완 A·P</span><span class="chip">APT 여러 단계 풀이 2.3 · 유형별 풀이 2.5</span><span class="chip">정답 8/20: 모서리·원그래프·겉넓이·비·부피·대칭</span><span class="chip">오답: 분수 나눗셈·반올림·할인·평균·여러 단계 문장제</span><span class="chip">풀이 흔적 충실</span></div>
+    <div class="sr-check"><span class="k">확인 지표</span><span>4주: 대표 5문항 중 4문항 유형·순서 설명 · 8주: 바꾼 문제 독립 해결 70%</span></div>
+    <div class="sr-ev"><span class="chip chip--evidence">원문 10/6 482행</span><span class="chip chip--evidence">원문 10/6 617행</span><span class="chip chip--evidence">기록 §9</span></div>
+  </div>
+  <div class="sr-side">
+    <div class="k">작전 순서</div>
+    <ol class="tactic"><li data-board-item="tac-4a6eb54ec3" data-board-group="subjects" data-board-label="조건 밑줄 → 유형 말하기"><span class="n">1</span><span>조건 밑줄 → 유형 말하기</span></li><li data-board-item="tac-79bd66ce56" data-board-group="subjects" data-board-label="풀이 순서 말하기 → 혼자 풀기"><span class="n">2</span><span>풀이 순서 말하기 → 혼자 풀기</span></li><li data-board-item="tac-510debede2" data-board-group="subjects" data-board-label="조건을 바꾼 문제 · 다음 날 다시 풀기"><span class="n">3</span><span>조건을 바꾼 문제 · 다음 날 다시 풀기</span></li></ol>
+    
+    <div class="sr-flags"><span class="flag-item"><span class="badge badge--advice">원장 권고</span><span>수학 개별지도 추천(초6 2학기 누수 → 중1 1학기)</span></span><span class="flag-item"><span class="badge badge--pending">가족 결정 대기</span><span>처음부터 넣을지 4주 지표 뒤 연결할지는 세팅에서</span></span></div>
+  </div>
+</article><article class="subject-row card">
+  <div class="sr-main">
+    <div class="sr-head"><h3>영어</h3><span class="badge badge--keep">유지</span><span class="sr-progs"><span class="badge badge--training">관리</span></span></div>
+    <div class="prog-lbl"><span>현재 <b>APT 인지 전략 2.0</b></span><span class="to">목표 <b>APT 기준선 3.0</b></span></div>
+    <div class="prog" role="img" aria-label="영어 현재 APT 인지 전략 2.0 목표 APT 기준선 3.0"><span class="fill" style="width:40.0%"></span><i class="tgt" style="left:60.0%"></i></div>
+    <div class="chip-row sr-facts"><span class="chip">CHAMP 종합 7% · LV0 · 기초 18 · 심화 3 · 보완 C·P</span><span class="chip">정답 2·4·6·7·16번(5/20)</span><span class="chip">지문 문항 9·10·11·15·18·20번 등에 ‘모름’ 기재</span><span class="chip">기록지: 영어 95점, 읽는 게 재미있다</span><span class="chip">화상 수업 화·목·토 유지</span></div>
+    <div class="sr-check"><span class="k">확인 지표</span><span>주 2회 읽기 기록 · 8주: 배운 지문을 혼자 해석</span></div>
+    <div class="sr-ev"><span class="chip chip--evidence">원문 10/6 329행</span><span class="chip chip--evidence">원문 10/6 476행</span><span class="chip chip--evidence">원문 10/6 611행</span></div>
+  </div>
+  <div class="sr-side">
+    <div class="k">작전 순서</div>
+    <ol class="tactic"><li data-board-item="tac-aa0afd849a" data-board-group="subjects" data-board-label="배운 지문 소리 내어 읽기"><span class="n">1</span><span>배운 지문 소리 내어 읽기</span></li><li data-board-item="tac-6804659c22" data-board-group="subjects" data-board-label="모르는 단어 표시해 찾기"><span class="n">2</span><span>모르는 단어 표시해 찾기</span></li><li data-board-item="tac-e84ac02b84" data-board-group="subjects" data-board-label="한 문장씩 우리말로 말하기"><span class="n">3</span><span>한 문장씩 우리말로 말하기</span></li></ol>
+    
+    <div class="sr-flags"><span class="flag-item"><span class="badge badge--later">추후 검토</span><span>8주 뒤 배운 지문 해석이 불안정하면 개별지도 검토</span></span></div>
+  </div>
+</article><article class="subject-row card">
+  <div class="sr-main">
+    <div class="sr-head"><h3>사회</h3><span class="badge badge--minimum">최소선</span><span class="sr-progs"><span class="badge badge--training">관리</span></span></div>
+    <div class="prog-lbl"><span>현재 <b>자기보고 중 · 수행 자료 없음</b></span><span class="to">목표 <b>낱말부터</b></span></div>
+    <div class="prog" role="img" aria-label="사회 현재 자기보고 중 · 수행 자료 없음 목표 낱말부터"><span class="fill" style="width:0.0%"></span><i class="tgt" style="left:0.0%"></i></div>
+    <div class="chip-row sr-facts"><span class="chip">기록지: 싫어하는 과목 사회(85점, 어렵다)</span><span class="chip">왕건을 조선·고조선과 혼동</span></div>
+    <div class="sr-check"><span class="k">확인 지표</span><span>낱말 기록에 사회 낱말이 들어가는지 · 중1 첫 단원 뒤 다시 확인</span></div>
+    <div class="sr-ev"><span class="chip chip--evidence">원문 10/6 167행</span><span class="chip chip--evidence">원문 10/6 326행</span><span class="chip chip--evidence">원문 10/6 455행</span></div>
+  </div>
+  <div class="sr-side">
+    <div class="k">작전 순서</div>
+    <ol class="tactic"><li data-board-item="tac-ce10deede6" data-board-group="subjects" data-board-label="교과서 한 쪽의 낯선 낱말 찾기"><span class="n">1</span><span>교과서 한 쪽의 낯선 낱말 찾기</span></li><li data-board-item="tac-6febf289dd" data-board-group="subjects" data-board-label="인물을 시대 순서에 놓기"><span class="n">2</span><span>인물을 시대 순서에 놓기</span></li><li data-board-item="tac-046daab361" data-board-group="subjects" data-board-label="한 문장으로 말하기"><span class="n">3</span><span>한 문장으로 말하기</span></li></ol>
+    
+    
+  </div>
+</article><div class="meter-legend">막대 = 현재, 주황 눈금 = 목표(범위면 하한) · 영어는 9등급→1등급 기준</div></div></section>
+<section id="m-program" class="sec"><h2><span class="sec-no">M9</span>프로그램·일정·비용</h2><div class="program-grid"><div class="program-tile card" data-board-item="prg-f100d3d6d0" data-board-group="program" data-board-label="상담"><div class="pt-head"><b>상담</b><span class="badge badge--coaching">상담</span></div><div class="pt-price">12월 말 세팅에서 안내</div><div class="pt-scope">객관화 → 진로·공부 이유 → 목표·시행착오 → 감정 구분·자기결정</div></div><div class="program-tile card" data-board-item="prg-9011021c78" data-board-group="program" data-board-label="관리"><div class="pt-head"><b>관리</b><span class="badge badge--training">관리</span></div><div class="pt-price">12월 말 세팅에서 안내</div><div class="pt-scope">플래너·낱말 기록·개념 정리·오답 이유 한 줄. 규격은 지키되 이유 설명, 부드럽게</div></div><div class="program-tile card" data-board-item="prg-4983705789" data-board-group="program" data-board-label="수학 개별지도"><div class="pt-head"><b>수학 개별지도</b><span class="badge badge--tutoring">개별지도</span></div><div class="pt-price">12월 말 세팅에서 안내</div><div class="pt-scope">90분 1:3 · 초6 2학기 누수부터 · 권고이며 4주 지표로 연결 판단</div></div></div><h3 class="sub-h">주간 블록</h3><div class="week-grid-empty card"><div class="wk-empty-head"><span class="badge badge--planned">예정</span><b>OT에서 확정</b></div><div class="k">확인된 제약</div><div class="chip-row"><span class="chip chip--note">피아노 월·화·목·금(1시간 30분 이상, 시간은 자유)</span><span class="chip chip--note">화상 영어 화·목 18시, 토 20시(1시간)</span><span class="chip chip--note">글쓰기 수 15~20시(12월 종료 예정)</span><span class="chip chip--note">뮤지컬 극단 토 10~15시(2027-02까지)</span><span class="chip chip--note">종업식 2027-01 초 · 겨울방학 오전에 오빠와 함께 등원 희망</span><span class="chip chip--note">겨울 오전 운영 8~10시 시작은 검토 중(미확정)</span><span class="chip chip--note">어머님 10~11월 복직 예정</span></div></div><h3 class="sub-h">결제 규칙</h3><div class="chip-row"><span class="chip chip--note">등록·결제 전</span><span class="chip chip--note">비용은 상담에서 다루지 않음 → 세팅 때 가격정책 참조표 기준으로 안내</span><span class="chip chip--note">관리는 상담과 함께 운영(단독 운영 없음)</span></div><div class="price-note"><span class="badge badge--warn">주의</span><span>상담에서 금액을 안내하지 않았으므로 이 페이지에 금액을 적지 않았다. 세팅 때 내부용/가격정책_참조표.md의 초등 단가를 확인한다.</span></div></section>
+<section id="m-playbook" class="sec"><h2><span class="sec-no">M10</span>운영 플레이북</h2><div class="do-dont"><div class="dd-col dd-do card"><h3>해야 할 것</h3><ul><li>지시보다 이유를 먼저 설명한다(서포팅형, 길을 닦아 주는 방식)</li><li>질문 뒤 생각할 시간을 준다. 생각하고 답하는 습관이 강점이다</li><li>작은 성취를 그날 바로 짚어 인정한다(40점이 45점이 돼도)</li><li>낱말은 ‘찾아보기’까지만 요구한다</li><li>플래너는 스스로 정한 한 블록부터 시작한다</li><li>채점과 오답을 왜 하는지부터 설명한다</li><li>뮤지컬·무대 이야기를 먼저 듣고 공부와 잇는다</li></ul></div><div class="dd-col dd-dont card"><h3>하지 말 것</h3><ul><li>‘공부해라’를 되풀이하기</li><li>틀린 곳을 바로 지적하기(지적에 매우 민감)</li><li>낮은 CHAMP 수치로 겁주기</li><li>오빠와 비교하기</li><li>높은 자기평가 수치를 그대로 믿고 단정하기</li><li>처음부터 공부량과 수업을 크게 넣기</li><li>결제 전인데 등록이 끝난 것처럼 안내하기</li></ul></div></div><div class="pb-block"><h3 class="sub-h">가정 안내</h3><div class="chip-row"><span class="chip chip--note">모르는 말 찾아보기 → 어머님께 설명(약속)</span><span class="chip chip--note">‘숙제 했어?’ 대신 ‘뭘 도와줄까?’</span><span class="chip chip--note">주말 30분 주제 조사·발표</span><span class="chip chip--note">이동할 때 간판·낱말 뜻 묻기</span></div></div><div class="pb-block"><h3 class="sub-h">첫 주 규칙</h3><div class="chip-row"><span class="chip chip--note">등원 목적과 기본 규칙을 이유와 함께 안내</span><span class="chip chip--note">낱말 기록 방식 정하기(찾아보기까지만)</span><span class="chip chip--note">플래너 한 블록을 스스로 정하게 하기</span><span class="chip chip--note">귀·목걸이·입술을 만지는 행동은 제지하지 않기(집중을 유지하려는 행동)</span><span class="chip chip--note">수학 누수 단원 확인: 비와 비율·분수 나눗셈·평균</span><span class="chip chip--note">응답일치율이 낮은 이유(문항 독해)를 면담에서 확인</span></div></div></section>
+<section id="m-checkpoints" class="sec"><h2><span class="sec-no">M11</span>확인 지표</h2><div class="checkpoint-rail" style="--n:5"><div class="checkpoint"><div class="cp-head"><span class="cp-dot" aria-hidden="true">1</span><span class="cp-when">12월 말 세팅</span></div><ul><li data-board-item="cp-2b99e9f088" data-board-group="checkpoints" data-board-label="등록 여부·과목·횟수·요일">등록 여부·과목·횟수·요일</li><li data-board-item="cp-6e5ece4377" data-board-group="checkpoints" data-board-label="겨울방학 등원 시간">겨울방학 등원 시간</li><li data-board-item="cp-54d924fe34" data-board-group="checkpoints" data-board-label="수학 수업 여부">수학 수업 여부</li><li data-board-item="cp-e5375724d6" data-board-group="checkpoints" data-board-label="담당 매니저 배정">담당 매니저 배정</li></ul></div><div class="checkpoint"><div class="cp-head"><span class="cp-dot" aria-hidden="true">2</span><span class="cp-when">등원 2주</span></div><ul><li data-board-item="cp-88a69fdadb" data-board-group="checkpoints" data-board-label="스스로 정한 계획 한 블록이 주 3회 이상 남는가">스스로 정한 계획 한 블록이 주 3회 이상 남는가</li><li data-board-item="cp-592d4f8b4e" data-board-group="checkpoints" data-board-label="단어 찾아보기 기록이 주 3회 이상 남는가">단어 찾아보기 기록이 주 3회 이상 남는가</li></ul></div><div class="checkpoint"><div class="cp-head"><span class="cp-dot" aria-hidden="true">3</span><span class="cp-when">등원 4주</span></div><ul><li data-board-item="cp-0696eff9bf" data-board-group="checkpoints" data-board-label="국어 문단 주제·근거 표시 4/5">국어 문단 주제·근거 표시 4/5</li><li data-board-item="cp-6251191621" data-board-group="checkpoints" data-board-label="수학 유형·풀이 순서 설명 4/5">수학 유형·풀이 순서 설명 4/5</li><li data-board-item="cp-e4a2591954" data-board-group="checkpoints" data-board-label="오답 이유 한 줄 기록">오답 이유 한 줄 기록</li></ul></div><div class="checkpoint"><div class="cp-head"><span class="cp-dot" aria-hidden="true">4</span><span class="cp-when">등원 8주</span></div><ul><li data-board-item="cp-75730065a7" data-board-group="checkpoints" data-board-label="수학 바꾼 문제 독립 해결 70%">수학 바꾼 문제 독립 해결 70%</li><li data-board-item="cp-1224179b5f" data-board-group="checkpoints" data-board-label="영어 배운 지문 해석 안정">영어 배운 지문 해석 안정</li></ul></div><div class="checkpoint"><div class="cp-head"><span class="cp-dot" aria-hidden="true">5</span><span class="cp-when">등원 12주(중1 3월 말~4월)</span></div><ul><li data-board-item="cp-0ee2127d76" data-board-group="checkpoints" data-board-label="스스로 세운 계획과 점검의 비율">스스로 세운 계획과 점검의 비율</li><li data-board-item="cp-3b6507d7f4" data-board-group="checkpoints" data-board-label="첫 단원평가·수행평가 뒤 ‘왜 이 점수인지’ 설명하는가">첫 단원평가·수행평가 뒤 ‘왜 이 점수인지’ 설명하는가</li></ul></div></div></section>
+<section id="m-evidence" class="sec"><h2><span class="sec-no">M12</span>근거 색인</h2><details class="evidence-index card"><summary>근거 색인 (10건) — 눌러서 펼치기</summary><ul><li><b>TIRO 해석상담(학생·어머님)</b> <code>wNVd7KwopWQXG</code> <span class="ev-range">10/6 · 212문단 · 8,785초 · 화자 분리 없음</span> <span class="ev-use">학생·어머님 진술, 원장 해석·권고</span></li><li><b>TIRO 사전기록지 낭독</b> <code>NPrWZq67ty4p1</code> <span class="ev-range">10/5 · 12문단 · 451초</span> <span class="ev-use">사전기록 요약(검사지 원본이 우선)</span></li><li><b>EduCube VLT5G 검사(V3)</b> <code>report-v3 345</code> <span class="ev-range">184문항 · F001~F039 측정</span> <span class="ev-use">지표·병목·타입</span></li><li><b>EduCube 화면 대조 기록</b> <code>소스자료/이소윤14/educube-screen-verification-20261006.json</code> <span class="ev-range">CHAMP·신뢰성·Big Five·타입</span> <span class="ev-use">CHAMP 성취레벨 LV0, 불일치 0건</span></li><li><b>APT 결과 스냅샷</b> <code>소스자료/이소윤14/apt/apt-result-snapshot.json</code> <span class="ev-range">국어·영어·수학(수학은 초등 보정)</span> <span class="ev-use">과목 역량 수치</span></li><li><b>검사지 원본(학부모·학생)</b> <code>VLT5G보고서/검사지/이소윤14 학부모님 검사지.pdf · 학생 검사지.pdf</code> <span class="ev-range">4쪽 · 24쪽</span> <span class="ev-use">사전기록, CHAMP 풀이 흔적. 연락처는 원본에만 둠</span></li><li><b>CHAMP 문항 응답</b> <code>소스자료/이소윤14/educube-vlt5g/20261006T115116952Z/tests/345/ct-responses.json</code> <span class="ev-range">80문항</span> <span class="ev-use">문항 정오(표시값과 다른 층)</span></li><li><b>내부 관리 기록</b> <code>내부용/20261006_이소윤14_초기상담_내부관리기록.md</code> <span class="ev-range">§1~§10</span> <span class="ev-use">통합 진단·결정 상태·확인 시점</span></li><li><b>학부모용 결과지 데이터</b> <code>소스자료/이소윤14/parent-report-data.json</code> <span class="ev-range">타입·과목 수치</span> <span class="ev-use">학부모용과 숫자 일치 확인</span></li><li><b>가격정책 참조표</b> <code>내부용/가격정책_참조표.md</code> <span class="ev-range">초등 단가</span> <span class="ev-use">세팅 때 비용 안내</span></li></ul></details></section>
+<div class="foot">내부 운영용 · 매니저 전용 · 링크를 외부에 공유하지 않습니다</div>
+</main>
+<script>
+(function(){
+  try{
+    var pad=function(n){return n<10?"0"+n:""+n;};
+    var n=new Date();var t=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+    document.querySelectorAll("[data-dday]").forEach(function(el){
+      var p=el.getAttribute("data-dday").split("-");
+      var d=new Date(+p[0],+p[1]-1,+p[2]);
+      var diff=Math.round((d-t)/86400000);
+      var v=el.querySelector(".dd-val");
+      if(v) v.textContent=diff===0?"D-day":(diff>0?"D-"+diff:"D+"+(-diff));
+    });
+  }catch(e){}
+  try{
+    var det=document.querySelector("details.evidence-index");var was=false;
+    window.addEventListener("beforeprint",function(){if(det){was=det.open;det.open=true;}});
+    window.addEventListener("afterprint",function(){if(det){det.open=was;}});
+  }catch(e){}
+  try{
+    var links=[].slice.call(document.querySelectorAll(".m-nav a[href^='#']"));
+    var map={};links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a;});
+    if("IntersectionObserver" in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting){links.forEach(function(a){a.classList.remove("on");});var a=map[e.target.id];if(a)a.classList.add("on");}
+      });},{rootMargin:"-20% 0px -70% 0px"});
+      document.querySelectorAll("section.sec").forEach(function(s){io.observe(s);});
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
