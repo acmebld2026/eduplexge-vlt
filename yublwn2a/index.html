@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="VLT5G V3 중고등 해석상담 플레이북 · VLT5G_V3_MIDDLE_HIGH_260729 규격의 해석상담 60분 흐름에 큐브맵 해석과 등록상담 판정 기준을 연결한 내부 운영 플레이북">
+<meta name="color-scheme" content="light dark">
+<title>VLT5G V3 중고등 해석상담 플레이북 · 내부 운영용</title>
+<script>(function(){var t=null;try{t=localStorage.getItem('vlt5g-v3-playbook-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{color-scheme:light;
+--cl-canvas:#f2f3f5;--cl-surface:#ffffff;--cl-surface-2:#f7f8fa;--cl-fill:#e7e9ed;--cl-thumb:#ffffff;--cl-label:#0f1216;--cl-label-2:#454c57;--cl-label-3:#5f6672;--cl-separator:#e1e3e8;--cl-control:#7d8590;
+--cl-glass:rgba(248,249,251,.78);--cl-glass-solid:#f7f8fa;--cl-glass-specular:rgba(255,255,255,.95);--cl-glass-rim:rgba(15,18,22,.14);
+--edu-blue:#0081cc;--edu-blue-deep:#0054a7;--edu-yellow:#fff100;--cl-accent:#0054a7;--cl-on-accent:#ffffff;--cl-accent-tint:#e3edf8;--cl-highlight:#fff100;--cl-on-highlight:#0054a7;
+--cl-success:#2f7736;--cl-success-tint:#e6f3dd;--cl-info:#066a9e;--cl-info-tint:#e6f1f9;--cl-danger:#a71943;--cl-danger-tint:#fbe9ee;
+--cl-shadow-float:0 6px 24px rgba(15,18,22,.10),0 1px 2px rgba(15,18,22,.06);
+--radius-xs:8px;--radius-sm:12px;--radius-lg:24px;--radius-xl:28px;--radius-capsule:999px;
+--ease-smooth:cubic-bezier(.2,.8,.2,1);--ease-snappy:cubic-bezier(.3,1.25,.4,1)}</style>
+<link rel="stylesheet" href="../assets/clarity/tokens.css">
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cl-canvas);color:var(--cl-label);font-family:"Pretendard Variable",Pretendard,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--cl-accent)}
+:focus-visible{outline:2px solid var(--cl-info);outline-offset:2px}
+.shell{width:min(1220px,calc(100% - 40px));margin:0 auto 72px}
+.num{font-variant-numeric:tabular-nums}
+
+/* 머리 */
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px 0 6px}
+.lockup{display:flex;flex-direction:column;line-height:1.25}
+.lockup b{font-size:.9375rem;font-weight:700}
+.lockup span{font-size:.8125rem;color:var(--cl-label-3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 18px;border-radius:var(--radius-capsule);border:0;background:var(--cl-fill);color:var(--cl-label);font-size:.9375rem;font-weight:600;text-decoration:none;transition:transform .1s ease,background-color .2s ease}
+.btn:active{transform:scale(.96)}
+.btn--accent{background:var(--cl-accent);color:var(--cl-on-accent)}
+.btn--tinted{background:var(--cl-accent-tint);color:var(--cl-accent)}
+.btn--plain{background:transparent;color:var(--cl-accent);padding:0 10px}
+.btn--sm{min-height:36px;padding:0 14px;font-size:.875rem}
+.btn[disabled]{opacity:.4;cursor:default}
+.mast-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+.hero{padding:22px 0 18px}
+.eyebrow{font-size:.8125rem;font-weight:700;letter-spacing:.06em;color:var(--cl-label-3)}
+.hero h1{margin:6px 0 8px;font-size:clamp(1.75rem,4vw,2.125rem);line-height:1.22;letter-spacing:-.02em;font-weight:800}
+.hero p{margin:0;max-width:680px;color:var(--cl-label-2)}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.badge{display:inline-flex;align-items:center;gap:4px;min-height:26px;padding:2px 10px;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label-2);font-size:.8125rem;font-weight:600}
+.badge--accent{background:var(--cl-accent-tint);color:var(--cl-accent)}
+.badge--highlight{background:var(--cl-highlight);color:var(--cl-on-highlight)}
+.badge--info{background:var(--cl-info-tint);color:var(--cl-info)}
+.badge--success{background:var(--cl-success-tint);color:var(--cl-success)}
+.badge--danger{background:var(--cl-danger-tint);color:var(--cl-danger)}
+
+.versions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+.versions-label{font-size:.875rem;color:var(--cl-label-3);font-weight:600}
+.ver{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:var(--radius-capsule);background:var(--cl-surface);color:var(--cl-label-2);font-size:.875rem;font-weight:700;text-decoration:none}
+.ver[aria-current="page"]{background:var(--cl-accent);color:var(--cl-on-accent)}
+
+.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;border-radius:var(--radius-sm);font-size:.9375rem}
+.notice .sym{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font-size:.8125rem;font-weight:800}
+.notice--info{background:var(--cl-info-tint);color:var(--cl-label)}
+.notice--info .sym{background:var(--cl-info);color:var(--cl-surface)}
+.notice--danger{background:var(--cl-danger-tint);color:var(--cl-label)}
+.notice--danger .sym{background:var(--cl-danger);color:var(--cl-surface)}
+
+/* 기능 층: 유리 도구 막대 */
+.toolbar{position:sticky;top:10px;z-index:30;margin:16px 0 18px;padding:10px;border-radius:var(--radius-xl);background:var(--cl-glass);border:1px solid var(--cl-glass-rim);box-shadow:var(--cl-shadow-float),inset 0 1px 0 var(--cl-glass-specular);-webkit-backdrop-filter:blur(24px) saturate(1.8);backdrop-filter:blur(24px) saturate(1.8)}
+@media (prefers-reduced-transparency:reduce){.toolbar{background:var(--cl-glass-solid);-webkit-backdrop-filter:none;backdrop-filter:none}}
+.toolrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:3px;border-radius:var(--radius-capsule);background:var(--cl-fill);max-width:100%;overflow-x:auto}
+.seg button{min-height:38px;padding:0 14px;border:0;border-radius:var(--radius-capsule);background:transparent;color:var(--cl-label-2);font-size:.9375rem;font-weight:600;white-space:nowrap;transition:background-color .25s var(--ease-snappy),color .2s}
+.seg button[aria-selected="true"]{background:var(--cl-thumb);color:var(--cl-label);box-shadow:var(--cl-shadow-float)}
+.timer-box{display:flex;align-items:center;gap:6px;margin-left:auto}
+.timer{min-width:72px;text-align:center;font-weight:800;font-size:1.0625rem;font-variant-numeric:tabular-nums}
+.timer.over{color:var(--cl-info)}.timer.late{color:var(--cl-danger)}
+.progress-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:10px;padding:0 6px}
+.track{height:6px;border-radius:var(--radius-capsule);background:var(--cl-fill);overflow:hidden}
+.fill{width:0;height:100%;border-radius:inherit;background:var(--cl-accent);transition:width .5s var(--ease-smooth)}
+.progress-copy{font-size:.8125rem;color:var(--cl-label-3);font-weight:600}
+
+/* 콘텐츠 층 */
+.panel[hidden]{display:none}
+.live{display:grid;grid-template-columns:290px minmax(0,1fr);gap:16px;align-items:start}
+.rail{position:sticky;top:132px;padding:8px;border-radius:var(--radius-lg);background:var(--cl-surface)}
+.rail-title{margin:8px 10px 6px;font-size:.9375rem;font-weight:600;color:var(--cl-label-3)}
+.stage{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:center;width:100%;min-height:52px;margin:2px 0;padding:8px 10px;border:0;border-radius:16px;background:transparent;text-align:left}
+.stage:hover{background:var(--cl-surface-2)}
+.stage[aria-current="step"]{background:var(--cl-accent-tint)}
+.stage-num{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--cl-fill);color:var(--cl-label-2);font-size:.8125rem;font-weight:800}
+.stage.done .stage-num{background:var(--cl-success);color:var(--cl-surface)}
+.stage-name{display:block;font-size:.9375rem;font-weight:700;line-height:1.3}
+.stage-time{display:block;font-size:.8125rem;color:var(--cl-label-3)}
+.card{border-radius:var(--radius-lg);background:var(--cl-surface);padding:24px;margin-bottom:16px}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:14px}
+.card-head h2{margin:0;font-size:clamp(1.375rem,3vw,1.75rem);line-height:1.25;letter-spacing:-.01em}
+.card-head p{margin:6px 0 0;color:var(--cl-label-2);max-width:680px}
+.time-chip{flex:none;display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:var(--radius-capsule);background:var(--cl-accent-tint);color:var(--cl-accent);font-weight:700;font-size:.9375rem;font-variant-numeric:tabular-nums}
+.goal{padding:14px 16px;border-radius:16px;background:var(--cl-surface-2);color:var(--cl-label);font-weight:600}
+.lens{margin-top:10px;padding:12px 16px;border-radius:16px;background:var(--cl-info-tint);font-size:.9375rem}
+.lens b{color:var(--cl-info)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{padding:16px;border-radius:16px;background:var(--cl-surface-2)}
+.tile h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:1rem}
+.tile h3 .k{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:var(--cl-accent-tint);color:var(--cl-accent);font-size:.75rem;font-weight:800}
+.tile h3 .k.danger{background:var(--cl-danger-tint);color:var(--cl-danger)}
+.tile h3 .k.success{background:var(--cl-success-tint);color:var(--cl-success)}
+.tile ul{margin:0;padding-left:20px}.tile li{margin:4px 0}
+.tile.full{grid-column:1/-1}
+.tile p{margin:6px 0}
+.script{position:relative;padding:12px 14px;border-radius:12px;background:var(--cl-surface);color:var(--cl-label);border:1px solid var(--cl-separator)}
+.script-row{display:flex;justify-content:flex-end;margin-top:8px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.jump{display:flex;gap:6px;flex-wrap:wrap}
+.mini{padding:14px;border-radius:16px;background:var(--cl-surface-2)}
+.tile .mini{background:var(--cl-surface);border-radius:12px;padding:12px}
+.mini h4{margin:6px 0 4px;font-size:.9375rem}
+.mini p{margin:4px 0;font-size:.875rem;color:var(--cl-label-2)}
+.mini p b{color:var(--cl-label)}
+.section-title{margin:28px 0 10px;font-size:1.25rem;font-weight:800}
+.lead-note{margin:0 0 12px;color:var(--cl-label-2)}
+.table-wrap{overflow-x:auto;border-radius:16px;background:var(--cl-surface-2)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;font-size:.9375rem;border-bottom:1px solid var(--cl-separator)}
+th{font-size:.875rem;color:var(--cl-label-3);font-weight:700}
+tr:last-child td{border-bottom:0}
+th,td{overflow-wrap:normal}
+td:first-child b{white-space:nowrap}
+.layer-row td:first-child{font-weight:800;white-space:nowrap}
+.unmeasured td{color:var(--cl-label-3)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.flow span{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:var(--radius-capsule);background:var(--cl-surface-2);font-size:.9375rem;font-weight:600}
+.flow i{font-style:normal;color:var(--cl-label-3)}
+.steps10{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.step10{padding:14px;border-radius:16px;background:var(--cl-surface-2)}
+.step10 .no{font-weight:800;color:var(--cl-accent);font-variant-numeric:tabular-nums}
+.step10 h4{margin:4px 0;font-size:.9375rem}
+.step10 p{margin:4px 0;font-size:.8125rem;color:var(--cl-label-2)}
+details.fold{border-radius:16px;background:var(--cl-surface-2);margin-bottom:10px}
+details.fold summary{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;cursor:pointer;list-style:none;font-weight:700}
+details.fold summary::-webkit-details-marker{display:none}
+details.fold summary::after{content:"+";color:var(--cl-accent);font-weight:800}
+details.fold[open] summary::after{content:"−"}
+.fold-body{padding:0 16px 14px}
+.meta-row{padding:8px 0;border-top:1px solid var(--cl-separator)}
+.meta-row b{display:block;margin-bottom:2px;font-size:.8125rem;color:var(--cl-label-3)}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.field.full{grid-column:1/-1}
+.field label{display:block;margin-bottom:6px;font-size:.9375rem;font-weight:600}
+.field input,.field textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--cl-separator);border-radius:12px;background:var(--cl-surface-2)}
+.field input:focus,.field textarea:focus{outline:none;box-shadow:inset 0 0 0 2px var(--cl-info)}
+.field textarea{min-height:92px;resize:vertical}
+.field small{display:block;margin-top:4px;font-size:.8125rem;color:var(--cl-label-3)}
+.summary{margin-top:14px;min-height:160px;padding:16px;border-radius:16px;background:var(--cl-surface-2);white-space:pre-wrap;font-size:.9375rem}
+.save-status{font-size:.8125rem;color:var(--cl-label-3);font-weight:600}
+.toast{position:fixed;left:50%;bottom:24px;z-index:60;transform:translate(-50%,12px);padding:12px 18px;border-radius:var(--radius-capsule);background:var(--cl-glass-solid);color:var(--cl-label);box-shadow:var(--cl-shadow-float);border:1px solid var(--cl-glass-rim);opacity:0;pointer-events:none;transition:opacity .2s,transform .4s var(--ease-smooth)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.footer{padding:24px 0;color:var(--cl-label-3);font-size:.8125rem;text-align:center}
+.print-flow{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.btn:active{transform:none}}
+@media (max-width:980px){.steps10{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.live{grid-template-columns:1fr}.rail{position:relative;top:auto;display:flex;gap:4px;overflow-x:auto;padding:6px}.rail-title{display:none}.stage{min-width:220px}}
+@media (max-width:639px){.shell{width:calc(100% - 32px)}.card{padding:18px}.grid2,.grid3,.form{grid-template-columns:1fr}.field.full{grid-column:auto}.card-head{display:block}.time-chip{margin-top:8px}.timer-box{margin-left:0;width:100%;justify-content:space-between}.progress-row{grid-template-columns:1fr}.toolbar{position:relative;top:auto}.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-flow:row;width:100%;border-radius:22px}.seg button{padding:0 8px}.steps10{grid-template-columns:1fr}}
+@media print{
+:root,:root[data-theme]{color-scheme:light;--cl-canvas:#fff;--cl-surface:#fff;--cl-surface-2:#f7f8fa;--cl-label:#0f1216;--cl-label-2:#454c57;--cl-label-3:#5f6672;--cl-separator:#e1e3e8;--cl-accent:#0054a7;--cl-accent-tint:#e3edf8;--cl-info:#066a9e;--cl-info-tint:#e6f1f9}
+body{background:#fff;color:#000;font-size:11pt}
+.masthead .mast-actions,.notice,.toolbar,.actions,.script-row,.jump,.footer,.toast,.versions{display:none!important}
+.panel{display:none!important}
+.print-flow{display:block}
+.card{break-inside:avoid;border:1px solid #d0d4da;padding:14px;margin-bottom:10px}
+.agreement-print .print-flow{display:none}
+.agreement-print #agreementPanel{display:block!important}
+.agreement-print #agreementPanel .form,.agreement-print #agreementPanel .notice,.agreement-print #agreementPanel .actions{display:none!important}
+}</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="masthead">
+      <div class="lockup"><b>상상플렉스</b><span>에듀플렉스 에듀코치 길음점</span></div>
+      <div class="mast-actions"><button class="btn btn--sm" id="themeToggle" type="button">어두운 화면</button><a class="btn btn--tinted btn--sm" href="../admin-4ck2v7p3/">관리자 목록으로</a></div>
+    </div>
+    <div class="hero">
+      <div class="eyebrow">VLT5G · 해석상담 플레이북 · V3 중고등</div>
+      <h1>VLT5G V3 중고등 해석상담 플레이북</h1>
+      <p>중등·고등 규격(200문항·44요인)의 V3 결과를 큐브맵으로 읽고, 학교 시험과 등록상담 판정 기준까지 한 흐름으로 잇는 60분 실전 흐름입니다.</p>
+      <div class="pills"><span class="badge badge--accent">VLT5G_V3_MIDDLE_HIGH_260729</span><span class="badge">200문항 · 44요인</span><span class="badge">보고서 4종</span><span class="badge">큐브맵 해석</span><span class="badge">등록상담 패러다임</span><span class="badge">60분 + 선택 15분</span><span class="badge">김병수 원장 기준 · 전체 매니저님 공통 도구</span></div>
+      <nav class="versions" aria-label="플레이북 버전"><span class="versions-label">버전</span><a class="ver" href="../64bzt3er/">V2</a><a class="ver" href="../pf92xq9b/">V3 저학년</a><a class="ver" href="../yublwn2a/" aria-current="page">V3 중고등</a></nav>
+    </div>
+  </header>
+  <div class="notice notice--danger" role="note"><span class="sym" aria-hidden="true">!</span><div>내부 운영용 · 외부 공유 금지. 자유 입력은 서버로 보내지 않으며, 임시 저장을 눌렀을 때만 이 기기에 남습니다. 연락처·건강정보·검사지 원문은 입력하지 마세요.</div></div>
+
+  <div class="toolbar" aria-label="상담 도구">
+    <div class="toolrow">
+      <div class="seg" role="tablist" aria-label="플레이북 모드">
+        <button role="tab" id="tab-live" data-mode="live" aria-controls="livePanel" aria-selected="true">실전 60분</button>
+        <button role="tab" id="tab-training" data-mode="training" aria-controls="trainingPanel" aria-selected="false" tabindex="-1">훈련 해설</button>
+        <button role="tab" id="tab-registration" data-mode="registration" aria-controls="registrationPanel" aria-selected="false" tabindex="-1">등록상담 연계</button>
+        <button role="tab" id="tab-agreement" data-mode="agreement" aria-controls="agreementPanel" aria-selected="false" tabindex="-1">합의문</button>
+      </div>
+      <div class="timer-box"><span class="timer" id="timer" aria-live="off">00:00</span><button class="btn btn--sm" id="timerToggle" aria-pressed="false">시작</button><button class="btn btn--plain btn--sm" id="timerReset">시간 초기화</button></div>
+    </div>
+    <div class="progress-row"><div class="track" id="track" role="progressbar" aria-label="핵심 단계 진행률" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0"><div class="fill" id="fill"></div></div><div class="progress-copy" id="progressCopy">핵심 단계 0/7</div></div>
+  </div>
+
+  <main>
+    <section class="panel" id="livePanel" data-panel="live" role="tabpanel" aria-labelledby="tab-live">
+      <div class="live">
+        <nav class="rail" id="rail" aria-label="실전 상담 단계"></nav>
+        <div id="stepDetail"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="trainingPanel" data-panel="training" role="tabpanel" aria-labelledby="tab-training" hidden>
+      <article class="card">
+        <div class="card-head"><div><h2>V2와 달라진 점</h2><p>중등·고등 규격 학생에게만 이 플레이북을 씁니다. 검사 규격은 specVersionCode로만 판단합니다.</p></div><span class="badge badge--accent">200문항</span></div>
+        <div class="table-wrap"><table><thead><tr><th>항목</th><th>V2</th><th>V3 중고등</th></tr></thead><tbody><tr><td><b>문항·요인</b></td><td>167문항 V2 체계</td><td>200문항, 공개 요인 F001–F044 44개 (기초 멘탈리티·학습력·학습 방식 및 태도·상위 멘탈리티)</td></tr><tr><td><b>점수</b></td><td>가운데 0, ± 값</td><td>0–100, 가운데 50. 전체 중 어느 위치인지(백분위)로 설명</td></tr><tr><td><b>보고서</b></td><td>일반·내부 2종</td><td>일반(38쪽)·성향·내부·공부공식 4종</td></tr><tr><td><b>CHAMP</b></td><td>V2 보고서 표시값</td><td>기초문장이해 + 국어·영어·수학 종합·성취레벨(LV0–LV5)·기초·심화·보완 CHAMP(하위 2개). 렌더링 화면 표시값 기준</td></tr><tr><td><b>상담 흐름</b></td><td>16타입·3대 부재 중심</td><td>큐브맵(구조도·감정 입자도·두 엔진·화살표 역추적)과 등록상담 판정 기준을 단계마다 연결</td></tr><tr><td><b>혼용 금지</b></td><td>—</td><td>V2 결과 학생은 V2 플레이북을 씁니다. V2 수치와 V3 수치를 서로 변환하지 않습니다</td></tr></tbody></table></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>결과를 읽는 순서</h2><p>수치를 낭독하지 않고, 근거 있는 한 문장을 만들기 위한 순서입니다.</p></div></div>
+        <div class="grid3"><article class="mini"><span class="badge badge--accent num">1</span><h4>검사 규격 확인</h4><p>specVersionCode가 VLT5G_V3_MIDDLE_HIGH_260729, 200문항, 일반 보고서 vlt5g-general-report/v1인지 봅니다. 학년이나 문항 수로 추정하지 않습니다.</p></article><article class="mini"><span class="badge badge--accent num">2</span><h4>신뢰성 먼저</h4><p>내부 보고서의 사회적바람직성·응답일치율을 먼저 봅니다(화면값). 신뢰성이 낮으면 해석 강도를 낮추고 탐색 질문을 늘립니다.</p></article><article class="mini"><span class="badge badge--accent num">3</span><h4>마음의 바탕부터</h4><p>일반 보고서는 기초 멘탈리티 → 학습력 → 학습 방식 및 태도 → 상위 멘탈리티 순서로 읽습니다. 생의 에너지(살아가려는 기운)를 가장 먼저 봅니다.</p></article><article class="mini"><span class="badge badge--accent num">4</span><h4>강점에서 출발</h4><p>높은 요인이 가능하게 하는 행동을 먼저 연결하고, 빨간불은 화살표를 거슬러 뿌리 가설을 세웁니다. 44개를 하나씩 낭독하지 않습니다.</p></article><article class="mini"><span class="badge badge--accent num">5</span><h4>CHAMP는 화면값</h4><p>기초문장이해와 과목별 종합·성취레벨·기초·심화·보완 CHAMP를 렌더링 화면에서 확인합니다. API 원점수 정답률을 백분위로 쓰지 않습니다.</p></article><article class="mini"><span class="badge badge--accent num">6</span><h4>성향 보고서</h4><p>학생 프로필·학습, 학부모 프로필·양육, 역동, 욕구를 학부모 커뮤니케이션과 킹핀 확인에 씁니다.</p></article><article class="mini"><span class="badge badge--accent num">7</span><h4>공부공식 보고서</h4><p>첫 행동·전략 과목·백지 테스트 범위를 정하는 데 씁니다.</p></article></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>V3 대분류와 큐브맵 읽기</h2><p>마음의 바탕 → 생각하는 힘 → 습관과 태도 → 돌아보는 힘. 아래 단계가 단단해야 위 단계가 움직입니다.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>V3 대분류</th><th>중분류</th><th>큐브맵에서 읽는 자리</th><th>학부모 설명</th></tr></thead><tbody><tr class="layer-row"><td>기초 멘탈리티</td><td>생의 에너지 · 내적 태도 · 외적 태도 · 회복탄력성</td><td>L1–L2 바탕 · 생에 대한 애착, 정서 안정</td><td>마음의 바탕</td></tr><tr class="layer-row"><td>학습력</td><td>감정 역량(감정조절·시험안정감·부모정서지지) · 이성 역량(집중력·어휘력·논리력) · 기반 학습 · CHAMP Test</td><td>지능 센터 · 감정 입자도 입구와 집중·어휘·논리 → 의미 명료화 · 사고력 엔진</td><td>생각하는 힘</td></tr><tr class="layer-row"><td>학습 방식 및 태도</td><td>상황인식 · 목표의식 · 체계적 수행 · 학습자율성 · CHAMP 학습법</td><td>L3 역할 수행·성취 경험 · 관리력 엔진</td><td>습관과 태도</td></tr><tr class="layer-row"><td>상위 멘탈리티</td><td>주인의식(내적·외적 책임감, 주도성) · 자아정체성(자기이해, 자기서사)</td><td>L4–L5 · 메타인지와 자아 정체성. 아이가 스스로 채워 갈 영역</td><td>돌아보는 힘</td></tr></tbody></table></div>
+        <p class="lead-note" style="margin-top:12px">대응 관계는 상담에서 결과를 읽는 순서를 잡기 위한 해석 틀입니다. 5G 상담 요소를 기초 멘탈 → 감정·이성 처리와 기반 학습 → 상황·목표·체계와 학습 방식·태도 → 상위 상태 순서로 읽는다는 큐브맵 스터디 설명에 맞춘 것이며, 요인별 공식 매핑표는 아닙니다. 상위 멘탈리티가 낮게 나와도 “성찰시키겠습니다”라고 약속하지 않고 앞 단계부터 확인합니다.</p>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>중등·고등 상담에서 특히 볼 것</h2></div></div>
+        <div class="grid2"><article class="mini"><h4>빨간불은 고등에서 드러납니다</h4><p>중학교는 허들이 낮아 사고력만으로도 평균이 나옵니다. 고등에서 성적이 한 번 꺾이면 공부를 좋아하는 태도가 줄어듭니다. 이때 버티게 하는 것이 관리력 엔진입니다.</p></article><article class="mini"><h4>학교 기출이 가장 빨리 귀를 엽니다</h4><p>학교별 문항 난이도, 고난도 문항 위치, 변별력 유형, 서술형·사고력 비중을 학생의 취약 유형과 연결합니다. 기출 특징은 담당 학교군을 숙지한 상태에서만 씁니다.</p></article><article class="mini"><h4>원점수와 등급으로 기대감을 묻습니다</h4><p>취약 유형이 하나씩 채워질 때 다음 시험 원점수가 얼마나 달라질지, 그러면 등급은 어떻게 될지를 학생에게 직접 묻고, 학생의 기대감을 학부모에게 넘깁니다. 숫자는 학생 스스로 추정하게 하고 상담자가 약속하지 않습니다.</p></article><article class="mini"><h4>학원 정리는 과목 하나씩</h4><p>고2·고3, 특히 강사·학원이 정해진 학생은 학원 정리가 전제가 되는 경우가 많습니다. 한 과목씩 빼서 그 과목을 학생 스스로의 공부로 만들고, 그동안 개별지도가 나머지 과목의 방어선이 됩니다.</p></article></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>큐브맵 핵심 8가지</h2><p>매니저가 먼저 이해하고, 학부모에게는 알아듣는 말로 근거를 대는 데 씁니다. 큐브맵 그림을 학부모에게 하나하나 풀어 주지 않습니다.</p></div><span class="badge badge--info">해석 도구</span></div>
+        <div class="grid2"><article class="mini"><span class="badge">진단과 해석</span><h4>피검사와 바운더리</h4><p>검사 수치는 피검사 결과와 같습니다. 볼 것은 두 가지입니다. 어떤 성분이 정상 범위에서 얼마나 벗어났는지, 그리고 성분들의 조합이 지금 상태를 어떻게 설명하는지입니다. 수치만 받아 들면 매니저는 비서·가정교사에 머물고, 해석해 한 문장으로 설명하고 처방 조합을 내야 전문가가 됩니다.</p><p><b>쓰는 때</b> 상담 첫머리에서 검사를 “지금 상태를 잰 것”으로 소개할 때</p></article><article class="mini"><span class="badge">구조도</span><h4>L1–L6, 우리의 무대는 L3</h4><p>외부 세계 → L1 핵심 의식(정동 느낌·과거 경험) → L2 자의식·지능 센터(인지+감정) → L3 역할·상호작용·성취 경험 → L4 메타인지(객관화·유연성) → L5 자아 정체성 → L6(다루지 않음). 에듀플렉스가 주로 돕는 곳은 L3입니다. L3를 잘 다듬으면 L4·L5는 아이가 스스로 채워 갑니다.</p><p><b>쓰는 때</b> 무엇을 우리가 바꾸고 무엇을 기다릴지 구분할 때</p></article><article class="mini"><span class="badge">입구</span><h4>감정 입자도는 모든 정보의 입구</h4><p>감정을 얼마나 잘게 나눠 알아차리고 말하는가입니다. 입자도 자체는 바꾸지 못합니다. 매니저는 번역기가 되어 “짜증” 안의 서운함·억울함·수치·불안·답답함·실망을 나눠 줍니다. 고운 아이는 우선순위 가지치기, 둔한 아이는 원인 구분을 돕습니다.</p><p><b>쓰는 때</b> 감정이 흔들려 공부 기능이 떨어지는 장면을 다룰 때</p></article><article class="mini"><span class="badge">이해의 과정</span><h4>개념 하나가 내 것이 되는 길</h4><p>표상된 세계 → 감정 입자도 → 집중(초점 맞추기·유지·전환)과 단어·어휘력 → 논리력 → 의미 명료화(CHAMP의 C, 이해) → 비교·대조 → 수용·부정 → 해석된 세계 → 의사결정·행동 → 기억·학습. 대부분의 문제는 L3의 의미 명료화에서 생깁니다.</p><p><b>쓰는 때</b> “설명 들으면 아는데 혼자는 못 한다”를 분해할 때</p></article><article class="mini"><span class="badge">두 엔진</span><h4>사고력과 관리력</h4><p>사고력은 지능 센터가 정하는 생각하는 힘이고, 데일리 체크로 명료화를 확인합니다. 관리력은 시간 같은 자원을 다루는 힘이며 살펴보기 → 바꿔 보기 → 겪어 보기 → 결과 받아들이기 → 다시 도전의 과정이 곧 주체성입니다. 관리력은 어떤 사교육도 챙겨 주지 않는 영역이고, 둘의 균형을 보는 것이 5G의 핵심입니다.</p><p><b>쓰는 때</b> 능력과 실행의 차이를 나눌 때</p></article><article class="mini"><span class="badge">변화의 속도</span><h4>경로 의존성과 재귀적 변화</h4><p>쟁반에 모래를 깔고 물을 부으면 물길이 나고 계속 그 길로 흐릅니다. 사춘기 전후로 생긴 경로는 오래 갑니다. 습관은 습관을, 애착은 애착을 강화합니다. 그래서 이미 깔린 판 위에 새 경로를 내 주는 코칭이 우리의 일이고, 먼저 학부모를 이해시키고 그다음 아이를 감쌉니다.</p><p><b>쓰는 때</b> “언제 되나요?”에 답할 때</p></article><article class="mini"><span class="badge">분석법</span><h4>화살표 역추적</h4><p>문제가 보이는 카드에서 멈추지 않고 화살표를 거꾸로 따라가 뿌리를 찾습니다. 메타인지가 막혔다면 유연성·객관화를 거쳐 결국 감정 입자도까지 거슬러 갑니다. 가설은 “이렇게 한 거 아닐까? 확인해 보자”의 형태로 세우고 관찰로 검증합니다. “그래 보여”만으로는 분석이 아닙니다.</p><p><b>쓰는 때</b> 가장 낮은 점수가 아니라 연쇄의 원인을 찾을 때</p></article><article class="mini"><span class="badge">목표</span><h4>주도적 학습 성취 경험</h4><p>학원이 해 주던 것을 하나 정리하고, 아이가 자기 계획을 직접 손보고, 성공이든 실패든 결과를 받아들이고, 그 성과가 성적과 이어질 때 “이게 네 거야”가 됩니다. 이 경험이 생에 대한 애착과 학습 주도성의 순환을 엽니다.</p><p><b>쓰는 때</b> 전략 과목과 학원 정리의 이유를 설명할 때</p></article></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>감정 번역표</h2><p>“짜증 나요” 속에 들어 있는 것을 나눠 주는 질문과 대응입니다. 입자도 자체는 바꾸지 않습니다.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>속내</th><th>예</th><th>대응</th></tr></thead><tbody><tr><td><b>서운해서</b></td><td>열심히 한 것을 아무도 알아주지 않음</td><td>서운함을 먼저 알아주고, 한 일을 구체적으로 짚어 줍니다.</td></tr><tr><td><b>억울해서</b></td><td>잘못한 만큼보다 더 혼남</td><td>사실관계를 나눠 억울한 부분을 풀어 줍니다.</td></tr><tr><td><b>수치스러워서</b></td><td>친구들 앞에서 창피를 당함, 원래 잘하던 과목에서 틀림</td><td>“틀려도 돼. 수치스러운 건 영원하지 않아.” 이야기를 끝까지 들어 줍니다.</td></tr><tr><td><b>불안해서</b></td><td>또 못할까 봐, 시험이 다가옴</td><td>예상하는 실패와 지금 할 과업을 나누고, 지금 더 푸는 것이 실패 가능성을 줄이는 일임을 알려 줍니다.</td></tr><tr><td><b>답답해서</b></td><td>잘하고 싶은데 방법을 모름</td><td>어디서부터 풀지 시작점을 잡아 줍니다.</td></tr><tr><td><b>실망스러워서</b></td><td>노력했는데 결과가 안 나옴</td><td>노력이 아직 성과로 이어지지 않은 부분을 짚어 줍니다.</td></tr></tbody></table></div>
+        <p class="lead-note" style="margin-top:12px">묻는 순서: “뭐 때문에 짜증 났는데?” → “네 짜증에는 어떤 감정이 더 들어 있니?” 상대에 맞춰 눈금을 바꿉니다(3단계, 10점, 100점).</p>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>왜 이 순서인가</h2><p>학생의 말보다 검사 결론이 앞서지 않게 하고, 프로그램 설명보다 인식 변화와 행동 기준을 먼저 남깁니다.</p></div><button class="btn btn--tinted btn--sm" id="printRunbook">전체 플레이북 인쇄</button></div>
+        <div class="grid2" id="trainingSequence"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>16타입 이해 전달 플로우</h2><p>실제 결과를 먼저 공개하지 않고 전체 지도, 두 결과, 색 배지, 숫자의 뜻을 익힌 뒤 사전 선택과 비교합니다.</p></div><span class="badge badge--accent">결과 공개 전 6분</span></div>
+        <div class="grid3" id="typeIntroGrid"></div>
+        <div class="notice notice--info" style="margin-top:12px"><span class="sym" aria-hidden="true">i</span><div>Teach-back 기준: “16타입은 현재 학습 작동 지도”, “메인·히든은 모두 현재의 서로 다른 층”, “색 배지는 닮은 결”, “숫자는 사람의 등급이 아니라 현재 갖춘 학습 역량의 위치”를 학생이 자기 말로 설명한 뒤 실제 결과를 공개합니다.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>3대 부재 진단 프레임</h2><p>세대 환경에서 약해질 수 있는 세 감각을 살피되, 학생 개인에게 “없다”고 판정하지 않고 실제 장면이 확인된 항목만 처방으로 연결합니다.</p></div><span class="badge badge--danger">! 낙인 금지</span></div>
+        <div class="grid3" id="absenceGrid"></div>
+      </article>
+      <article class="card"><div class="card-head"><div><h2>비유·킬링 스크립트</h2><p>비유는 30초 안에 끝내고 반드시 학생의 실제 장면으로 돌아옵니다.</p></div></div><div class="grid2" id="metaphorGrid"></div></article>
+      <article class="card" id="branchLibrary"><div class="card-head"><div><h2>상황별 분기 카드</h2><p>맞고 틀림을 가르기보다, 말이 멈춘 이유와 근거가 충돌하는 조건을 확인합니다.</p></div></div><div class="grid2" id="branchGrid"></div></article>
+      <article class="card"><div class="card-head"><div><h2>좋은 전환과 위험한 전환</h2><p>상담이 설명회나 등록 압박으로 변하는 지점을 빠르게 점검합니다.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>장면</th><th>좋은 전환</th><th>위험한 전환</th></tr></thead><tbody><tr><td><b>작성지·점수</b></td><td>“최근 언제 그랬는지 한 장면만 말해 줄래?”</td><td>문항과 점수를 차례대로 모두 설명</td></tr><tr><td><b>강점</b></td><td>강점이 가능하게 하는 행동과 병목이 막는 지점을 연결</td><td>“머리는 좋은데 안 한다”로 단정</td></tr><tr><td><b>감정</b></td><td>“그러면 네 감정은 어떤데?”로 결론 밑의 감정을 먼저 묻기</td><td>바로 문제 풀이·훈계로 들어감</td></tr><tr><td><b>학원</b></td><td>이해·숙제·성취도 세 기준으로 학습 과정을 분석</td><td>기존 학원·강사를 비판</td></tr><tr><td><b>비유</b></td><td>30초 설명 뒤 학생에게 자기 상황을 대입하게 함</td><td>비유·사례 이야기 자체가 길어짐</td></tr><tr><td><b>타입</b></td><td>현재 작동과 필요한 성장 역량으로 해석</td><td>고정 성격·우열, 다음 타입의 자동 예측</td></tr><tr><td><b>약속</b></td><td>앞 단계를 하나씩 확인해 뿌리를 찾겠다고 말함</td><td>“성찰시키겠습니다”처럼 지금 될 수 없는 결과를 약속</td></tr><tr><td><b>프로그램</b></td><td>병목 → 구체 행동 → 학생 산출물 → 확인 지표 뒤에 제시</td><td>학생 반응을 확인하기 전에 비용·등록부터 설명</td></tr><tr><td><b>결정</b></td><td>선택권을 드리고 결정은 학부모에게</td><td>당일 결정 강요, 압박성 마감</td></tr><tr><td><b>마무리</b></td><td>학생이 선택·첫 행동·성공 기준을 다시 설명</td><td>상담자의 요약만으로 합의 처리</td></tr></tbody></table></div>
+      </article>
+    </section>
+
+    <section class="panel" id="registrationPanel" data-panel="registration" role="tabpanel" aria-labelledby="tab-registration" hidden>
+      <article class="card">
+        <div class="card-head"><div><h2>등록상담 패러다임과 해석상담의 연결</h2><p>우규하 원장의 등록상담 학원 정리 플로우를 해석상담의 각 단계에 연결했습니다. 학부모가 등록해야 하는 이유를 스스로 발견하게 하는 상담입니다.</p></div><span class="badge badge--accent">우규하 원장 패러다임</span></div>
+        <h3 class="section-title" style="margin-top:4px">핵심 공식</h3>
+        <div class="flow"><span>VLT·CHAMP 결과</span><i>→</i><span>학생이 소화하지 못하는 부분 발견</span><i>→</i><span>현재 학습 구조의 부족한 부분 확인</span><i>→</i><span>개별지도 + 상담관리로 해결</span><i>→</i><span>매일의 성장과 변화 확인</span></div>
+        <div class="grid3" style="margin-top:12px"><article class="mini"><span class="badge badge--accent num">STEP 1</span><h4>데이터</h4><p>VLT·CHAMP 결과로 현재 상태를 객관화</p></article><article class="mini"><span class="badge badge--accent num">STEP 2</span><h4>문제 인식</h4><p>막연한 고민을 구체적 학습 문제로 전환</p></article><article class="mini"><span class="badge badge--accent num">STEP 3</span><h4>학습 구조</h4><p>“수업을 들었다”와 “공부했다”의 차이 확인</p></article><article class="mini"><span class="badge badge--accent num">STEP 4</span><h4>해결 방법</h4><p>개별지도 + 상담관리로 재설계</p></article><article class="mini"><span class="badge badge--accent num">STEP 5</span><h4>성장 모습</h4><p>매일의 피드백으로 변화 과정 확인</p></article></div>
+        <div class="grid2" style="margin-top:12px">
+          <section class="tile"><h3><span class="k success">✓</span>한다</h3><ul><li>학생의 학습 과정 분석: 수업 → 이해 → 정리 → 적용 → 피드백 → 개선</li><li>등록 가능 여부보다 적합성을 먼저 판단</li><li>결정은 학부모에게 맡기기</li></ul></section>
+          <section class="tile"><h3><span class="k danger">!</span>하지 않는다</h3><ul><li>기존 학원 비판</li><li>개별지도를 무조건 권하기</li><li>당일 결정 강요</li></ul></section>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>등록상담 10단계와 해석상담 접점</h2><p>파란 배지는 이 플레이북의 실전 단계 중 같은 일을 하는 곳입니다.</p></div></div>
+        <div class="steps10"><article class="step10"><span class="no">01</span><h4>방문 계기 확인</h4><p>에듀플렉스를 알게 된 경로</p></article><article class="step10"><span class="no">02</span><h4>현재 학습환경 확인</h4><p>교과학원 현황·과목별 횟수</p></article><article class="step10"><span class="no">03</span><h4>학습 가능시간 확인</h4><p>전체 학습시간·등원 가능 시간. 자기주도학습 시간을 확보할 수 있는지 함께 판단</p></article><article class="step10"><span class="no">04</span><h4>고민 구체화</h4><p>“성적이 안 나와요”에 바로 해법을 주지 않고 학습 문제로 바꿈</p><span class="badge badge--info">해석상담 2단계</span></article><article class="step10"><span class="no">05</span><h4>학습 과정 분석</h4><p>이해했는가·정리했는가·적용했는가·스스로 풀 수 있는가·틀린 이유를 아는가</p><span class="badge badge--info">해석상담 2단계</span></article><article class="step10"><span class="no">06</span><h4>VLT·CHAMP 데이터 확인</h4><p>학습 이해도 레벨 판정</p><span class="badge badge--info">해석상담 4·5단계</span></article><article class="step10"><span class="no">07</span><h4>개별지도 필요성 제시</h4><p>레벨 기준으로 필요한 학습을 제안. 권하는 것이 아니라 결과가 말하게 함</p><span class="badge badge--info">해석상담 5·6단계</span></article><article class="step10"><span class="no">08</span><h4>차별점 설명</h4><p>관리형 독서실·일반 학원과의 차이: 관찰과 매일의 피드백</p><span class="badge badge--info">선택 모듈</span></article><article class="step10"><span class="no">09</span><h4>학생의 변화 모습 제시</h4><p>기대 가능한 성장 경로. 학생에게서 기대감을 확인한 뒤 학부모에게</p><span class="badge badge--info">선택 모듈</span></article><article class="step10"><span class="no">10</span><h4>결정은 학부모에게</h4><p>선택권을 주어 신뢰를 높이고, 당일 결정을 강요하지 않음</p><span class="badge badge--info">선택 모듈</span></article></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>판정 기준</h2><p>검사 전에 미리 알려 두면, 결과가 나왔을 때 설득이 아니라 확인이 됩니다.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>근거</th><th>결과</th><th>판단과 제안</th></tr></thead><tbody>
+          <tr><td rowspan="2"><b>CHAMP 성취레벨</b></td><td>레벨 3 이하</td><td>교과서 수준까지만 이해하고 그 위 난이도 유형은 놓치고 있다고 보고, 해당 과목 개별지도를 세팅합니다.</td></tr>
+          <tr><td>레벨 4–5</td><td>기존 학원 유지도 괜찮다고 미리 말씀드립니다. 무조건 개별지도로 끌고 가지 않으며, 필요하면 다른 과목으로 전환해 제안합니다.</td></tr>
+          <tr><td rowspan="2"><b>VLT 타입</b></td><td>1–4번</td><td>수업 운영에 대해 학부모·학생 의견을 충분히 조율할 수 있다고 안내합니다.</td></tr>
+          <tr><td>6번 이후(숫자가 큰 쪽)</td><td>개별지도를 하지 않겠다고 하셔도 필요해질 수 있다고 미리 알리고, 권장 강도를 높입니다.</td></tr>
+        </tbody></table></div>
+        <div class="notice notice--info" style="margin-top:12px"><span class="sym" aria-hidden="true">i</span><div>성취레벨은 렌더링 화면의 LV0–LV5 표시값으로 판정합니다. API 원점수 정답률로 레벨을 추정하지 않습니다. 판정은 학원 정리를 강요하는 근거가 아니라, 학생에게 필요한 학습을 데이터로 말하는 근거입니다.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>기존 학원을 보는 3가지 기준</h2><p>여기서 대부분 막힙니다. 답하지 못하면 “확인해 드리겠다”로 연결합니다.</p></div></div>
+        <div class="table-wrap"><table><tbody><tr><td><b>내용 이해도</b></td><td>학원에서 배운 내용을 실제로 이해하고 있는가?</td></tr><tr><td><b>숙제</b></td><td>숙제를 했는가가 아니라, 배운 내용을 활용해 숙제를 하고 있는가?</td></tr><tr><td><b>성취도</b></td><td>수업과 숙제를 통해 실제로 무엇을 할 수 있게 되었는가?</td></tr></tbody></table></div>
+        <p class="lead-note" style="margin-top:12px">“수업을 잘해 준다”, “자료가 좋다”는 답이 나오면 “그걸 통해 무엇이 바뀌었는지”를 묻습니다. 좋은 학원·강사를 부정하지 않고, 소화의 시간이 부족한지를 봅니다.</p>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>현재 위치에 따른 성장 경로</h2></div></div>
+        <div class="table-wrap"><table><thead><tr><th>구분</th><th>성장 경로</th><th>반론 대응</th></tr></thead><tbody><tr><td><b>상위권</b></td><td>문제 유형 분석 → 실수 원인 분석 → 고난도 접근 → 문제 해결 전략 → 자신감 향상</td><td>“하루만 나와도 될 것 같다”는 요청에는 풀이 시작 지점과 증명 과정까지 제시할 수 있는지 확인해 보자고 제안합니다.</td></tr><tr><td><b>하위권</b></td><td>개념 이해 → 내용 정리 → 이해 여부 확인 → 문제 적용 → 작은 성공 경험</td><td>성공 경험을 포인트로 잡습니다. 옆에서 설명하며 끌고 갈 힘이 생기고 진도가 안정됩니다.</td></tr></tbody></table></div>
+        <h3 class="section-title">학부모가 그려야 할 학생의 변화</h3>
+        <div class="flow"><span>이해</span><i>→</i><span>성취감</span><i>→</i><span>자신감</span><i>→</i><span>자기판단</span><i>→</i><span>자기주도성</span></div>
+        <p class="lead-note">“오늘 무엇을 공부해야 할지 알려 줘야 하는 학생”에서 “내가 무엇을 모르는지 알고, 무엇을 공부할지 판단하는 학생”으로. 기대감은 학생에게서 먼저 확인하고 학부모에게 넘깁니다.</p>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>학교 시험으로 개별지도 필요성 완성하기</h2><p>가장 빨리 귀를 여는 지점입니다. 학교 확인 → 기출 특징 제시 → “보완할 유형을 몇 개나 아는가” 역질문 → 개별지도 연결 → 상담관리에서 매일 확인 순서로 씁니다. 담당 학교군을 숙지한 상태에서만 말합니다.</p></div></div>
+        <div class="table-wrap"><table><tbody><tr><td class="num"><b>01</b></td><td>학교 시험은 학교마다 다르다</td></tr><tr><td class="num"><b>02</b></td><td>많은 학생을 동시에 관리하는 구조에서는 한 명의 취약 개념·유형을 매일 찾아 즉시 피드백하기 어렵다</td></tr><tr><td class="num"><b>03</b></td><td>“학교 기출 → 취약점 → 개별지도”로 연결한다. 기출을 많이 안다는 자랑이 아니라 필요한 학습 방향을 구체화하는 것</td></tr><tr><td class="num"><b>04</b></td><td>개별지도의 핵심은 수업이 아니라 피드백: 설명 → 문제풀이 → 사고 → 확인</td></tr><tr><td class="num"><b>05</b></td><td>학교 기출 분석 → 취약 유형 확인 → 개별지도 보완 → 상담관리에서 학습 여부 확인 → 다시 적용 → 성취도 확인</td></tr><tr><td class="num"><b>06</b></td><td>학부모에게는 점수보다 변화 과정을 보여 준다</td></tr><tr><td class="num"><b>07</b></td><td>좋은 학원을 찾는 것만큼 중요한 것은 아이가 다니는 학교의 시험을 이해하고 부족한 부분을 계속 찾아 주는 것</td></tr></tbody></table></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>세팅이 미흡할 때의 후속 연락</h2><p>최대 3회. 강압적인 분위기가 되지 않도록 “충분히 고민하시고 다시 이야기해도 된다”는 여지를 함께 남깁니다. 다만 타입과 CHAMP 두 가지를 본다는 기준은 흔들지 않습니다.</p></div></div>
+        <div class="grid3"><article class="mini"><h4>1차 · 상담 다음 날</h4><p>지금 세팅대로라면 변화가 더 늦게 만들어질 수 있다는 점을 전하고 괜찮으신지 확인합니다. 타입 결과가 낮으면 이해·사고 훈련이 더 필요하다는 설명을 덧붙입니다.</p></article><article class="mini"><h4>2차 · 그다음 날</h4><p>시간대·과목 구성으로 좁혀 다시 확인합니다. “그럼 포기해야 하냐”는 반문에는 포기가 아니라 옆에서 설명하고 그때그때 피드백하며 키워야 하는 단계라고 답합니다.</p></article><article class="mini"><h4>3차 · 매니저 첫 상담 당일</h4><p>원장 상담 내용이 매니저 상담과 공유되었는지 확인하고, 세팅이 부족하면 변화를 깨닫는 시기가 늦어질 수 있음을 한 번 더 전합니다.</p></article></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>상담자가 반드시 기억할 7가지</h2></div></div>
+        <ol><li>기존 학원을 함부로 부정하지 않는다</li><li>개별지도를 무조건 권하지 않는다</li><li>상담자의 말보다 데이터를 활용한다</li><li>“공부량”보다 “학습 과정”을 본다</li><li>학생의 편안함과 성장을 구분한다</li><li>등록을 서두르지 않는다</li><li>마지막에는 프로그램이 아니라 학생의 미래를 이야기한다</li></ol>
+        <h3 class="section-title">운영 기준</h3>
+        <ul>
+          <li>등록상담과 해석상담은 분리합니다. 한 번에 묶으면 등록은 되어도 매니저의 초기 장악이 어려워집니다.</li>
+          <li>학부모와 학생이 함께 참석합니다. 한 분만 오시면 일정을 다시 잡습니다.</li>
+          <li>전화에서는 결론을 내지 않고, 데이터는 얼굴을 보고 시각 자료로 제시합니다.</li>
+          <li>처방 강도는 학생의 에너지 상태를 함께 봅니다. 처음부터 강하게 가는 병원식과 서서히 올리는 헬스클럽식 사이에서, 버틸 에너지가 없는 학생에게 과한 구성을 얹지 않습니다.</li>
+          <li>길음점에서 해석상담은 원장이 진행하고, 담당 매니저는 프로그램 확정 후 운영 구성에 맞춰 배정합니다. 담당 매니저 배정을 가족 결정 항목으로 쓰지 않습니다.</li>
+        </ul>
+        <div class="notice notice--info" style="margin-top:12px"><span class="sym" aria-hidden="true">i</span><div>좋은 수업보다 중요한 것은 학생이 그 수업을 자기 것으로 만드는 것입니다. 원장 혼자 잘해서 등록되는 상담보다, 구성원이 편안하게 초기 장악을 할 수 있는 구조를 만드는 상담이 가장 좋은 상담입니다.</div></div>
+      </article>
+    </section>
+
+    <section class="panel" id="agreementPanel" data-panel="agreement" role="tabpanel" aria-labelledby="tab-agreement" hidden>
+      <article class="card">
+        <div class="card-head"><div><h2>상담 합의문 생성기</h2><p>확인 사실, 진단, 권고, 가족 결정 대기, 최종 합의를 서로 다른 상태로 기록합니다.</p></div><span class="save-status" id="saveStatus">자유 입력은 자동 저장되지 않습니다</span></div>
+        <div class="notice notice--info"><span class="sym" aria-hidden="true">i</span><div>식별자는 선택 입력입니다. 연락처·건강정보·검사지 원문은 기록하지 마세요. 이 기기에 임시 저장을 누르기 전에는 자유 입력이 브라우저 저장소에 남지 않습니다.</div></div>
+        <div class="form">
+          <div class="field"><label for="subjectId">상담 대상 식별자 · 선택</label><input id="subjectId" data-field="subjectId" placeholder="예: 학생 이니셜 또는 내부 식별자"><small>이름 대신 내부에서 구분 가능한 최소 정보 권장</small></div>
+          <div class="field"><label for="reviewDate">다음 점검일</label><input id="reviewDate" data-field="reviewDate" type="date" placeholder=""></div>
+          <div class="field full"><label for="specCheck">검사 규격·신뢰성 확인</label><textarea id="specCheck" data-field="specCheck" placeholder="VLT5G_V3_MIDDLE_HIGH_260729 · 200문항 확인 / 사회적바람직성·응답일치율 화면값과 해석 강도"></textarea></div>
+          <div class="field full"><label for="confirmed">학생·학부모 확인</label><textarea id="confirmed" data-field="confirmed" placeholder="당사자가 직접 말하거나 확인한 현재 장면, 학원 3기준(이해도·숙제·성취도) 답변"></textarea></div>
+          <div class="field full"><label for="typeFrameworkEvidence">16타입 이해·사전 선택</label><textarea id="typeFrameworkEvidence" data-field="typeFrameworkEvidence" placeholder="학생 선택 / 학부모 선택 / 선택 이유 / Teach-back / 실제 결과와의 일치·차이"></textarea><small>결과 공개 전의 독립 선택과 공개 후 바뀐 이해를 구분합니다.</small></div>
+          <div class="field full"><label for="emotionEvidence">감정 번역·3대 부재 · 선택</label><textarea id="emotionEvidence" data-field="emotionEvidence" placeholder="감정 한 장면을 나눈 결과 / 3대 부재 중 실제 장면·반례·보완 행동"></textarea><small>확인되지 않은 항목은 단정하지 않고 탐색 질문으로 남깁니다.</small></div>
+          <div class="field full"><label for="diagnosis">한 문장 진단</label><textarea id="diagnosis" data-field="diagnosis" placeholder="자산 → 병목(뿌리 가설) → 방치 리스크 → 필요한 도움 → 확인 변화"></textarea></div>
+          <div class="field full"><label for="champLevel">CHAMP·APT·학교 시험 연결</label><textarea id="champLevel" data-field="champLevel" placeholder="기초문장이해·과목별 종합·성취레벨(LV)·기초·심화·보완 CHAMP(화면값) / APT 근거 / 학교 시험 특징과 취약 유형"></textarea></div>
+          <div class="field full"><label for="strategySubject">전략 과목·방어선</label><textarea id="strategySubject" data-field="strategySubject" placeholder="학생이 고른 전략 과목과 측정 지표 / 개별지도로 지킬 과목과 역할"></textarea></div>
+          <div class="field full"><label for="recommendation">상담자 권고</label><textarea id="recommendation" data-field="recommendation" placeholder="필요한 도움, 구체 행동, 학생 산출물, 확인 지표"></textarea></div>
+          <div class="field full"><label for="homeRole">가정의 역할</label><textarea id="homeRole" data-field="homeRole" placeholder="집에서 맡을 역할 1가지(예: 정서를 건드리는 말 줄이기, 결정 주체 확인)"></textarea></div>
+          <div class="field full"><label for="pending">가족 결정 대기</label><textarea id="pending" data-field="pending" placeholder="등록 여부, 과목·횟수·시작일, 기존 학원 조정만 기록"></textarea></div>
+          <div class="field full"><label for="agreement">최종 합의</label><textarea id="agreement" data-field="agreement" placeholder="학생·학부모가 명시적으로 동의한 행동과 일정"></textarea></div>
+          <div class="field"><label for="firstAction">첫 실행 행동</label><textarea id="firstAction" data-field="firstAction" placeholder="오늘 또는 다음 학습에서 바로 할 행동"></textarea></div>
+          <div class="field"><label for="successMetric">성공 기준</label><textarea id="successMetric" data-field="successMetric" placeholder="완료량, 산출물, 시작 시각, 자기 설명 등"></textarea></div>
+          <div class="field full"><label for="preemptive">선제 약속</label><textarea id="preemptive" data-field="preemptive" placeholder="흔들리거나 그만두고 싶어질 때의 행동 전략(괜찮을 때 미리 정함)"></textarea></div>
+        </div>
+        <div class="actions"><button class="btn btn--accent" id="makeSummary">합의문 만들기</button><button class="btn" id="copySummary">합의문 복사</button><button class="btn" id="printAgreement">합의문 인쇄</button><button class="btn btn--tinted" id="saveDraft">이 기기에 임시 저장</button><button class="btn btn--plain" id="clearAll">상담 종료·전체 초기화</button></div>
+        <div class="summary" id="summaryBox" aria-live="polite">항목을 입력한 뒤 합의문 만들기를 누르세요.</div>
+      </article>
+    </section>
+  </main>
+
+  <section class="print-flow" id="printFlow" aria-label="인쇄용 전체 상담 흐름"></section>
+  <footer class="footer">에듀플렉스 에듀코치 길음점 · VLT5G V3 중고등 해석상담 플레이북 · 내부 운영용 · 2026-10-16</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>window.PLAYBOOK={"title":"VLT5G V3 중고등 해석상담 플레이북","badge":"V3 중고등","spec":"VLT5G_V3_MIDDLE_HIGH_260729","storage":"vlt5g-v3-upper-playbook","steps":[{"time":"0–5분","title":"관계 형성·피검사 프레임","subtitle":"결론을 정한 설명회가 아니라, 검사 수치를 함께 읽고 처방을 고르는 자리임을 알립니다.","purpose":"학생이 방어하지 않고 말할 수 있게 오늘 확인할 질문과 발언 순서를 정하고, 검사를 피검사처럼 지금 상태를 잰 도구로 소개합니다.","questions":["오늘 결과에서 가장 궁금하거나 맞지 않을 것 같은 부분은?","요즘 공부에서 가장 바꾸고 싶은 한 장면은?","학생이 먼저 말하고 학부모님이 보완하는 순서로 진행해도 괜찮을까요?"],"script":"오늘은 검사로 너를 규정하는 자리가 아니야. 피검사처럼 지금 상태를 잰 거라서, 숫자 하나보다 어디가 기준에서 벗어나 있고 무엇과 무엇이 엮여 있는지가 중요해. 네가 실제로 공부하는 모습과 맞춰 보고, 바꿀 한 가지를 네 말로 정해 보자.","condition":"학생이 오늘 확인할 질문을 한 문장이라도 말했고, 학생 우선 발언 순서가 확인되었다.","avoid":["검사 결과와 프로그램 장점을 첫 문장부터 설명","점수·등급으로 임의 판단을 먼저 전달","학부모의 걱정을 학생의 문제 정의로 대신 사용"],"output":["오늘 확인할 질문 1개","학생 발언권과 진행 순서"],"lens":"큐브맵 · 피검사와 바운더리 / 등록상담 · 영업이 아니라 학습 과정 분석. 중간에 “어떻게 해야 하나요”가 나와도 “검사 결과로 말씀드리겠습니다”로 데이터에 붙들어 둡니다."},{"time":"5–12분","title":"관점 분리·학습 과정 장면","subtitle":"평가어를 장면으로 바꾸고, 수업을 들은 것과 공부한 것을 구분합니다.","purpose":"학생·학부모 관점을 분리하고, 현재 학습환경에서 수업 → 이해 → 정리 → 적용 → 피드백 → 개선 중 어디가 끊기는지 찾습니다.","questions":["최근 계획대로 시작한 날과 미룬 날은 각각 언제였어?","학원에서 배운 걸 실제로 이해했는지, 숙제를 배운 내용으로 했는지, 그래서 무엇을 할 수 있게 됐는지 말해 줄래?","그 학원을 다니며 얻은 의미 있는 피드백은? 그걸로 무엇이 바뀌었어?","학부모님이 보신 장면 중 학생 설명과 같은 점, 다른 점은?"],"script":"학원을 몇 개 다니는지보다, 거기서 배운 걸 네 것으로 만들고 있는지가 중요해. 이해했는지, 정리했는지, 혼자 적용할 수 있는지, 틀린 이유를 아는지 차례로 볼게. 누가 맞는지 정하려는 게 아니라 같은 장면을 두 시선으로 보는 거야.","condition":"학생 관점·학부모 관점·두 관점의 차이와, 학습 과정 중 끊기는 구간이 각각 기록되었다.","avoid":["기존 학원·강사를 비판","성실하다·게으르다 같은 평가어만 반복","진술 차이를 거짓이나 기억 오류로 판정"],"output":["학생이 말한 실제 장면","학원 3기준(이해도·숙제·성취도) 답변","끊기는 학습 과정 구간"],"lens":"등록상담 · 수업 → 이해 → 정리 → 적용 → 피드백 → 개선. 심각성의 기준: 상위권은 자기가 무엇을 틀리는지 유형을 모름, 하위권은 무엇이 부족하고 무엇을 아는지 구분하지 못함."},{"time":"12–20분","title":"두 엔진·감정 입자도·3대 부재","subtitle":"사고력과 관리력을 나누고, 모든 정보가 지나는 입구인 감정 입자도를 확인합니다.","purpose":"병목을 지능이나 의지의 결함으로 보지 않게 하고, 사고력·관리력의 작동 차이, 감정 입자도(입구), 3대 부재의 빈틈으로 구체화합니다.","questions":["이해는 되는데 시작·지속·완료 중 어디에서 가장 자주 끊겨?","일주일 중 스스로 쓰는 시간은 얼마나 되고, 어디에 써?","최근 “짜증 났던” 순간, 그 안에 서운함·억울함·불안·답답함·실망 중 무엇이 더 들어 있었어?","최근 아는 듯했지만 뜻을 정확히 설명하지 못한 교과 단어는?"],"script":"공부에는 생각하는 힘(사고력)과 시간·에너지를 굴리는 힘(관리력), 두 엔진이 필요해. 관리력은 어떤 학원도 챙겨 주지 않는 영역이야. 그리고 모든 정보는 감정이라는 입구를 먼저 지나. 감정을 잘게 나눠 말할 수 있으면 해결책도 깔끔해져. 네게 없다는 뜻이 아니라, 실제 장면이 있는 것만 찾아보자.","condition":"학생이 병목을 이해·시작·지속·완료 중 하나로 말하고, 감정 한 장면을 두 가지 이상으로 나눠 말했으며, 3대 부재의 해당 장면·반례·보완 행동이 구분되었다.","avoid":["“머리는 좋은데 안 한다”","감정 입자도를 바꾸겠다고 약속하거나 “크게 생각해”로 끝냄","3대 부재를 세대 비난·개인 결함으로 단정"],"output":["우선 점검할 엔진","감정 번역 한 장면","3대 부재의 해당 장면·반례·보완 행동"],"lens":"큐브맵 · 두 엔진, 감정 입자도는 입구이고 매니저는 번역기, 지능 센터","panel":"absence"},{"time":"20–38분","title":"16타입 이해 → V3 위계 통합","subtitle":"20–26분은 전체 지도와 사전 선택, 26–38분은 실제 메인·히든과 네 대분류를 장면에 연결합니다.","purpose":"결과를 듣기 전에 16타입 체계를 이해하게 하고, 메인·히든·색 배지·숫자를 현재 작동으로 번역한 뒤, 기초 멘탈리티 → 학습력 → 학습 방식 및 태도 → 상위 멘탈리티 순서로 강점에서 출발해 빨간불의 뿌리를 화살표를 거슬러 찾습니다.","questions":["16개 설명만 보고 고른 가까운 타입 1–2개와 그 이유는?","학부모님이 따로 고르신 타입과 관찰 장면은?","실제 메인·히든은 두 사람의 선택과 어디가 같고 다른가?","가장 높은 요인이 실제로 드러난 최근 장면은?","가장 낮은 요인은 어느 앞 단계 때문일까? (감정 입자도 → 집중·어휘 → 논리 → 명료화 순으로 거슬러 보기)"],"script":"결과를 먼저 말하지 않을게. 16개는 성격표가 아니라 지금 공부가 굴러가는 방식을 보는 지도야. 메인과 히든은 둘 다 지금의 너야. 숫자는 사람의 등급이 아니라 지금 갖춘 자기주도학습 역량의 위치이고, 오르기도 내리기도 해. 따로 골라 본 뒤 실제 결과와 맞춰 보고, 마음의 바탕부터 생각하는 힘, 습관과 태도 순서로 읽어 보자.","condition":"학생이 16타입 체계를 Teach-back하고, 사전 선택과 실제 결과의 일치·차이, 강점 1개와 빨간불 1개, 그 빨간불의 뿌리 가설 1개가 실제 장면에 연결되었다.","avoid":["실제 결과를 먼저 공개해 선택 유도","숫자를 지능·인격 등급으로, 색 배지를 좋고 나쁨으로 표현","히든을 진짜 자아·미래 타입으로 표현","44개 요인을 하나씩 낭독","처음 검사에서 성장 정도·변화율을 말함"],"output":["학생·학부모 독립 선택과 이유","메인·히든과 선택의 일치·차이","강점 요인과 장면","빨간불과 뿌리 가설"],"lens":"큐브맵 · 결과지 읽는 순서(생에 대한 애착부터, 강점에서 출발), 화살표 역추적, 메인·히든 공통 성장축","panel":"type"},{"time":"38–48분","title":"APT·CHAMP·학교 기출 통합","subtitle":"성향과 과목 기능을 분리하고, 성취레벨과 학교 시험 특징으로 필요한 학습을 데이터로 말합니다.","purpose":"과목별 어려움을 시간 부족·방법 부족·구체 기능 결손·독립 재현 가능성으로 나누고, 성취레벨 기준(레벨 3 이하 / 4–5)과 학교 기출 특징을 학생의 취약 유형에 연결합니다.","questions":["점수보다 풀이에서 반복되는 막힘은 어디야? 이해 부족·기억 부족·적용 실패·난이도 중 무엇?","설명을 들으면 되지만 혼자 다시 풀거나 설명할 때 막히는 부분은?","네 학교 시험에서 네가 보완해야 할 유형을 몇 개나 알고 있어?","도움 없이도 계획–풀이–복기가 재현되는 과목은?"],"script":"성향 검사는 공부가 어떻게 굴러가는지를, CHAMP와 APT는 실제로 어떤 기능이 막혔는지를 보여 줘. 성취레벨이 3 이하라면 지금 수업에서도 교과서 수준까지만 소화하고 그 위 유형은 놓치고 있을 가능성이 커. 그걸 같이 확인해 보자. 내가 개별지도를 권하는 게 아니라, 결과가 필요한 학습을 말해 주는 거야.","condition":"렌더링 화면에서 확인한 CHAMP 값과 APT 근거로 과목별 기능 결손 또는 독립 가능 영역이 구분되고, 학교 시험 특징과 연결된 취약 유형 또는 재확인 질문이 남았다.","avoid":["APT·CHAMP 수치를 같은 척도로 취급","API 원점수 정답률을 백분위로 사용","점수 하나로 개별지도·학원 중단을 확정","기출을 많이 안다는 자랑으로 흐름"],"output":["과목별 확인 기능과 결손","성취레벨 판정과 제안 방향","학교 시험 특징 ↔ 취약 유형","지도 동작과 성공 지표 또는 재확인 질문"],"lens":"등록상담 · 판정 기준(레벨 3 이하 → 해당 과목 개별지도 세팅, 레벨 4–5 → 기존 학원 유지 가능·다른 과목 검토), 매일의 피드백(틀린 원인 4분류), 학교 기출 7단 논리"},{"time":"48–55분","title":"한 문장 진단·전략 과목","subtitle":"많은 설명을 한 문장 인과로 압축하고, 함께 정할 전략 과목 하나와 방어선을 세웁니다.","purpose":"학생과 학부모가 같은 한 문장으로 상태를 이해하게 하고, 주도적 학습 성취 경험을 만들 전략 과목 1개와 나머지 과목을 지킬 개별지도 방어선을 설계합니다.","questions":["지금 강점이 결과로 이어지지 못하게 막는 가장 앞단의 문제는?","그대로 두면 고등 학습에서 어떤 장면이 반복될까?","네가 직접 바꿔 보고 싶은 과목 하나는? 그 과목에서 잴 수 있는 목표는?"],"script":"현재 자산은 분명하지만, 가장 앞에서 막는 병목 때문에 그 힘이 실제 공부 시간과 결과물로 이어지지 않고 있어. 과목 하나를 정해서 네가 계획을 손보고, 결과가 나오면 그건 온전히 네 거야. 그동안 나머지 과목은 개별지도가 무너지지 않게 지켜 줄 거야.","condition":"자산 → 병목 → 방치 리스크 → 필요한 도움 → 확인 변화가 한 문장으로 설명되고, 학생이 고른 전략 과목과 측정 지표가 정해졌다.","avoid":["가장 낮은 점수를 자동으로 1차 병목으로 선정","“성찰시키겠습니다”처럼 지금 될 수 없는 결과를 약속","프로그램 이름만 나열하고 학생 행동·결과물을 말하지 않음"],"output":["통합 진단 한 문장","전략 과목 1개와 측정 지표","방어선(개별지도) 과목과 역할","2–4주 확인 변화"],"lens":"큐브맵 · 주도적 학습 성취 경험, 전략 과목·방어선, 근거 없이 약속하지 않기"},{"time":"55–60분","title":"Teach-back·첫 행동·선제 약속","subtitle":"상담자의 요약이 아니라 학생의 자기 설명으로 마치고, 문제가 생기기 전에 대응을 약속합니다.","purpose":"인식 변화와 실행 의향을 확인하고, 첫 행동·성공 기준·점검일과 함께 흔들릴 때의 행동 전략을 괜찮은 지금 미리 정합니다.","questions":["오늘 새롭게 이해한 네 공부 방식은?","오늘 또는 다음 공부에서 가장 먼저 바꿀 행동은? (예: 배운 범위 백지 테스트)","무엇이 남으면 잘 실행했다고 볼까?","버겁거나 그만두고 싶어질 때 어떻게 하기로 약속할까?"],"script":"내가 정리해서 끝내지 않을게. 오늘 이해한 네 상태, 먼저 바꿀 행동, 잘됐다고 판단할 기준을 네 말로 말해 줘. 그리고 지금 괜찮을 때, 힘들어지면 어떻게 할지도 미리 정해 두자.","condition":"학생이 현재 상태·첫 행동·성공 기준을 자기 말로 설명하고, 점검 시점과 선제 약속 1개가 정해졌다.","avoid":["학생의 “네”만 듣고 동의로 기록","권고·미결정·최종 합의를 한 문단에 섞음","이슈가 생긴 뒤에야 대응하겠다고 미룸"],"output":["학생의 인식 변화","첫 행동과 성공 기준","선제 약속","점검일"],"lens":"큐브맵 · 선제 타격(괜찮을 때 미리 약속), 백지 테스트(인출), 감정은 다 받아 주고 가이드는 정확하게"},{"time":"60–75분","title":"선택형 운영·등록 마무리","subtitle":"해석이 끝난 뒤 필요한 경우에만 프로그램·학원 정리·일정을 논의하고, 결정은 가족에게 맡깁니다.","purpose":"학원 정리는 목적이 아니라 익히는 시간을 확보하는 수단임을 설명하고, 학생에게서 기대감을 확인한 뒤 학부모에게 넘기고, 권고·가족 결정 대기·최종 합의를 분리합니다.","questions":["현재 도움 중 혼자 재현되는 부분과 아직 필요한 부분은?","보완할 유형이 채워지면 다음 시험 원점수가 얼마나 달라질 것 같아? 그러면 등급은?","확보한 시간을 어느 과목의 익히는 시간으로 옮길까?","상담·관리·개별지도 중 어떤 조합으로 시작하고 언제 다시 볼까?"],"script":"학원을 그만두게 하려는 게 아니라, 지금 받는 수업을 네 것으로 만들 시간을 확보하려는 거야. (학부모님께) 아이가 기대감을 갖고 있는 것 같습니다. 부모님은 어떠세요? 확인된 병목을 바꾸는 데 필요한 최소 도움을 고르고, 오늘 정한 것과 가족이 더 논의할 것을 나눠 적겠습니다. 지금 당장 결정하지 않으셔도 됩니다.","condition":"학생에게서 기대감을 확인한 뒤 학부모에게 넘겼고, 권고·가족 결정 대기·최종 합의가 분리되었으며 과목·횟수·시작일은 명시적 동의가 있을 때만 확정되었다.","avoid":["타 학원 폄하 또는 즉시 전면 중단 요구","당일 결정 강요","담당 매니저 배정을 가족의 미결정 문제로 기록","학생 반응 확인 전에 비용·등록부터 설명"],"output":["기대감 확인(학생 → 학부모)","학원·사교육 조정 권고","가족 결정 대기 항목","명시적 최종 합의"],"lens":"등록상담 · 결정할 시간을 드리기, 변화의 시기, 학생의 변화 모습 제시, 마지막에는 프로그램이 아니라 학생의 미래","optional":true}],"typeIntro":[{"time":"20:00–20:45","title":"16개 전체 지도를 먼저 펼치기","purpose":"16타입은 사람을 고정하는 성격표가 아니라 지금 자기주도학습이 작동하는 방식을 보는 지도라는 점을 먼저 알립니다.","ask":"이 지도에서 공부할 때의 나를 설명하는 문장은 어떤 것 같아?","script":"16개를 정답처럼 외우는 게 아니라, 지금 공부가 어떻게 굴러가는지 보는 지도로 쓸 거야.","guard":"유형을 성격·지능·인격의 고정표로 설명하지 않기","output":"16타입의 용도에 대한 학생의 한 문장"},{"time":"20:45–21:30","title":"메인·히든 두 층 설명","purpose":"메인은 가장 자주 드러나는 모습, 히든은 조건에 따라 함께 나타나는 모습입니다. 둘 다 지금의 모습이고, 두 유형의 화살표가 겹치는 곳이 공통 성장축입니다.","ask":"겉으로 자주 보이는 방식과 혼자 있을 때 보이는 방식이 다를 수 있을까?","script":"둘 중 하나만 진짜인 게 아니야. 메인과 히든은 서로 다른 조건에서 보이는 지금의 두 층이야.","guard":"히든을 진짜 자아·미래 타입·다음 단계로 단정하지 않기","output":"메인·히든 차이에 대한 학생의 설명"},{"time":"21:30–22:30","title":"학생·학부모 독립 사전 선택","purpose":"결과의 후광 없이 학생과 학부모가 각각 가까운 타입 1–2개를 고르고, 반드시 최근 장면을 근거로 붙입니다.","ask":"서로 상의하지 말고 30초 동안 1–2개를 골라 주세요. 왜 골랐는지 최근 장면도 하나 적어 볼까요?","script":"맞히는 퀴즈가 아니니 실제 결과를 의식하지 말고 지금 보이는 모습에 가장 가까운 것을 따로 골라 주세요.","guard":"정답 힌트, 상의 유도, 선택의 맞고 틀림 평가 금지","output":"학생 선택·학부모 선택·각 선택의 장면 근거"},{"time":"22:30–24:00","title":"색 배지는 닮은 결로 읽기","purpose":"색 배지 5묶음은 좋고 나쁨이 아니라 닮은 성향의 묶음입니다. ① 05·06·10·14 에너지가 바깥으로 활성화되어 밝게 소통 ② 04·11·12·16 기본 기질이 수동적이고 주변이 정한 틀을 따름 ③ 01·02·03 상위 단계의 잠재력과 역량 ④ 07·08·15 자기 기준이 뚜렷해 직접 확인하고 납득해야 움직임 ⑤ 09·13 감도가 높아 반응이 큼(타고난 성향이며 잘못이 아님).","ask":"고른 타입들의 묶음에서 평소 반응 방식과 닮은 부분은 무엇일까?","script":"묶음은 우열이 아니라 에너지가 움직이고 자극에 반응하는 기본 결의 차이야.","guard":"묶음을 우열·성취 가능성·좋은 성격과 나쁜 성격으로 평가하지 않기","output":"학생이 이해한 묶음의 의미와 실제 반응 장면"},{"time":"24:00–25:30","title":"숫자는 현재 역량 위치로 읽기","purpose":"숫자가 작을수록 자기주도학습 역량을 더 갖춘 위치, 클수록 앞으로 채울 역량이 더 보이는 위치입니다. 번호는 오르기만 하지 않고 떨어지기도 하는 지금의 상태입니다.","ask":"이 숫자가 사람의 등급이 아니라면, 앞으로 채울 힘을 찾는 데 어떻게 쓸 수 있을까?","script":"숫자는 사람의 가치나 머리 순서가 아니야. 지금 갖춘 힘과 더 채울 힘을 찾는 위치표야.","guard":"인간 등급·지능 서열로 표현하거나 다음 타입을 자동 예측하지 않기","output":"숫자의 의미·비의미와 우선 성장 역량"},{"time":"25:30–26:00","title":"실제 결과 공개·선택 비교","purpose":"메인·히든을 공개하고 사전 선택과의 일치·차이를 실제 장면으로 확인한 뒤 요인 해석으로 넘어갑니다. 처음 검사에서는 변화를 말하지 않고 4·8·12주 점검과 6개월 재검에서 확인합니다.","ask":"실제 결과와 네 선택, 학부모 선택이 만나는 부분과 다른 부분은 어디일까?","script":"일치하면 이미 알고 있던 작동을 확인한 거고, 다르면 어떤 조건에서 다르게 보이는지 찾을 단서가 생긴 거야.","guard":"불일치를 검사 오류나 자기이해 부족으로 즉시 판정하지 않기","output":"선택과 결과의 일치·차이·발생 조건"}],"absences":[{"title":"결핍의 부재","meaning":"부족함·기다림·불편을 감내한 경험이 적어 “왜 지금 해야 하는가”와 지연 보상이 체감되지 않을 수 있습니다.","ask":"해야 하는 것은 알지만 “굳이 지금?”이 드는 일은? 원하는 생활을 위해 오늘 감수할 수 있는 작은 불편은?","action":"원하는 삶 → 필요한 선택 → 오늘의 시간 투자로 연결하고, 짧은 지연 만족과 완료 경험을 설계합니다.","avoid":"가난·고생 미화, 세대 비난, 게으름 판정"},{"title":"한자 감수성의 부재","meaning":"교과 한자어의 구성과 문맥별 뜻을 뭉뚱그려 이해하면 개념어 처리 비용이 커집니다. 큐브맵에서 단어는 생각을 요리하는 재료이고, 단어는 대부분 한자에서 출발합니다.","ask":"최근 아는 듯했지만 정확히 설명하지 못한 단어는? 그 단어는 문맥에서 어떤 뜻인가?","action":"핵심어의 낱말 구성과 문맥 뜻을 찾아 자기 말로 설명하고 실제 문장에 다시 적용합니다.","avoid":"한자 암기량을 지능·국어 실력으로 환원, 한 단어로 결손 단정"},{"title":"지식의 부재","meaning":"언제든 검색할 수 있는 환경에서 궁금증을 바로 확인하고 배경지식을 머릿속 지식망으로 남기는 과정이 줄어들 수 있습니다.","ask":"모르는 배경지식이 나오면 넘기는가, 검색하는가? 찾은 내용을 자료 없이 한 문장으로 말할 수 있는가?","action":"질문 → 검색 → 출처 확인 → 한 문장 기록 → 다음 날 인출의 짧은 루프를 만듭니다.","avoid":"AI·검색 사용 자체를 문제화, 상식 퀴즈로 교양·인격 평가"}],"metaphors":[{"title":"두 엔진","when":"이해력과 실행 사이의 차이를 분리할 때","script":"공부는 이해하고 판단하는 사고력 엔진과, 시간·에너지·행동을 운용하는 관리력 엔진이 함께 돌아가야 해.","ask":"지금 도움을 더 줘야 하는 엔진은 어느 쪽일까?","avoid":"지능 우열이나 게으름 판정으로 쓸 때"},{"title":"피검사와 바운더리","when":"검사를 처음 소개하거나 숫자 하나에 매달릴 때","script":"피검사 결과처럼 숫자 하나보다, 기준에서 얼마나 벗어났는지와 무엇과 무엇이 엮여 있는지가 중요해.","ask":"기준에서 가장 벗어난 것과 그 옆에 같이 움직이는 것은 뭘까?","avoid":"수치를 하나씩 모두 낭독할 때"},{"title":"자동차·기름·연비","when":"능력은 있으나 출발·지속·완료가 부족할 때","script":"연비가 좋아도 기름을 넣고 출발하지 않으면 도착하지 않아. 지금은 실제 주행 시간을 먼저 확인할 때야.","ask":"기름, 출발, 주행, 도착 중 어디에서 가장 자주 멈출까?","avoid":"건강·정서 문제를 의지 문제로 환원할 때"},{"title":"요리: 재료·칼질·요리","when":"어휘·이해 문제로 개념이 명료해지지 않을 때","script":"단어는 재료, 어휘력은 재료를 다루는 칼질, 논리력은 요리를 내는 힘이야. 냉장고가 비어 있으면 실력 좋은 셰프도 만들 게 없어.","ask":"지금 비어 있는 건 재료일까, 칼질일까, 요리일까?","avoid":"단어 암기량만 늘리는 결론으로 갈 때"},{"title":"볼륨 버튼","when":"학생·학부모가 같은 말에 다르게 반응해 부딪힐 때","script":"볼륨 버튼 한 번에 1칸 움직이는 사람과 30칸 움직이는 사람이 있어. 같은 “줄여”에도 결과가 달라. 시작점이 다른 거지.","ask":"너는 몇 칸씩 움직이는 편이야? 엄마는?","avoid":"누가 예민하다고 판정할 때"},{"title":"쟁반의 물길","when":"변화가 느려 조급할 때","script":"모래 쟁반에 물을 부으면 물길이 나고 계속 그 길로 흘러. 새 길을 내려면 시간이 걸려.","ask":"이번 주에 새 길로 한 번 흘려 볼 행동은 뭘까?","avoid":"“원래 그런 애”라는 체념으로 쓸 때"},{"title":"24시간·한 시간의 가치","when":"목표가 없거나 시간 배분을 객관화할 때","script":"모두에게 하루 24시간은 같지만, 어디에 쓰고 무엇을 남기는지가 앞으로의 선택지를 바꿔.","ask":"스스로 선택할 수 있는 한 시간을 어디에 쓰고 싶어?","avoid":"소득 비교나 유명인 이야기가 본론보다 길어질 때"},{"title":"배우는 시간·익히는 시간","when":"수업은 많지만 독립 재현 시간이 부족할 때","script":"배운 것은 다시 꺼내고 설명하고 풀어 봐야 내 것이 돼. 지금은 수업 추가보다 익히는 시간이 필요할 수 있어.","ask":"이번 주에 배운 것을 혼자 다시 설명할 시간은 언제야?","avoid":"근거 없이 모든 학원을 줄이는 결론으로 쓸 때"},{"title":"사다리","when":"학원 의존과 자기 공부의 차이를 설명할 때","script":"학원은 사다리를 사 주는 곳이고, 우리는 네게 맞는 사다리를 만드는 힘을 길러 주는 곳이야. 사는 게 빠르지만, 만드는 힘이 있어야 더 높이 올라가.","ask":"지금 네 사다리 중 직접 만든 칸은 어디야?","avoid":"학원을 폄하하는 말로 쓸 때"},{"title":"12번의 기회","when":"월말평가·학원 테스트만으로 충분하다고 여길 때","script":"월말평가만 보면 1년에 12번밖에 확인하지 못하고, 그만큼만 변화할 기회가 생겨요. 매번 만날 때마다 확인하면 그 몇 배로 방향을 고칠 수 있어요.","ask":"지금은 1년에 몇 번 피드백을 받고 있을까?","avoid":"다른 기관을 깎아내리는 비교로 쓸 때"},{"title":"플라이휠","when":"여러 문제가 얽혀 있고 작은 시동점이 필요할 때","script":"작은 실행이 성취 경험을 만들고, 그 경험이 다음 실행을 밀어 주는 순환을 만들어야 해.","ask":"가장 먼저 돌리면 다른 부분까지 움직일 작은 행동은?","avoid":"네 영역을 모두 길게 설명해 핵심이 묻힐 때"},{"title":"인출·백지","when":"힌트가 있으면 알지만 혼자 꺼내지 못할 때","script":"힌트를 받고 떠올랐다면 모르는 게 아니라 혼자 꺼내는 연습이 부족한 거야. 빈 종이에 아는 만큼 다 써 보자. 다 쓰면 또 쓰고.","ask":"오늘 배운 것 중 빈 종이에 다 써 볼 범위는?","avoid":"학생을 시험하거나 창피하게 만들 때"},{"title":"사교육은 도구","when":"학원 일정과 자기학습 시간을 조정할 때","script":"학원은 목적이 아니라 도움을 사는 도구야. 혼자 재현되는 부분은 줄이고 확보한 시간을 취약 기능과 익히는 시간으로 옮기자.","ask":"현재 도움 없이도 재현되는 부분과 아직 필요한 부분은?","avoid":"타 학원을 폄하하거나 에듀플렉스 등록을 결론으로 정할 때"}],"branches":[{"title":"학생 침묵","do":"최근 하루의 장면, 선택형 질문, 상대에게 맞춘 작은 눈금으로 답의 크기를 줄입니다.","say":"길게 설명하지 않아도 돼. 시작·지속·마무리 중 제일 어려운 하나만 골라 줘.","rule":"한 문장이라도 학생 관점을 확보한 뒤 다음 단계로 이동"},{"title":"방어·거부","do":"검사에서 맞지 않는 부분부터 고르게 하고 반례를 정상 근거로 보존합니다.","say":"맞지 않는 부분을 먼저 골라 줘. 언제는 다르게 행동하는지도 같이 보자.","rule":"검사와 논쟁하지 않고 맞는 조건·다른 조건을 분리"},{"title":"학부모 발언 독점","do":"학생 선답, 학부모 보완 순서를 명시하고 같은 질문을 각각에게 묻습니다.","say":"학생의 설명을 먼저 끝까지 듣고, 학부모님께서 보신 장면을 보완해 주세요.","rule":"두 관점을 합치지 않고 별도 기록"},{"title":"학생·학부모 진술 충돌","do":"과목·장소·평상시/시험·혼자/관찰 조건을 나눕니다.","say":"두 말이 모두 맞을 수 있는 조건을 찾아보겠습니다. 언제, 어디에서 달라지나요?","rule":"평균내거나 거짓 판정하지 않고 발생 조건 확보"},{"title":"“수학 틀려서 싫어요”","do":"문제 풀이로 들어가기 전에 감정을 먼저 묻습니다. “틀려서 싫다”는 감정이 아니라 결론입니다.","say":"그러면 네 감정은 어떤데? 막막해, 창피해, 실망했어, 불안해?","rule":"감정을 구분한 뒤 감정별 대응(시작점·수치 다독임·노력과 결과의 간격·과업 분리)으로 연결"},{"title":"사고력 대비 실행 부족","do":"시간·시작·완료·복기 증거를 확인하고 전략 과목 하나의 최소 행동을 설계합니다.","say":"할 수 있다는 가능성보다 이번 주에 실제로 남길 결과물을 정하자.","rule":"일주일 재현 가능한 행동과 산출물 확보"},{"title":"과목 기능 결손","do":"실제 문항·풀이·설명에서 막힌 위치와 필요한 지도 동작을 찾습니다. 틀린 원인을 이해·기억·적용·난이도로 나눕니다.","say":"점수보다 어디에서 판단이 끊기는지 보자. 이해, 기억, 적용, 난이도 중 어디일까?","rule":"지도 동작·학생 산출물·성공 지표 연결"},{"title":"검사와 실제 장면 충돌","do":"응답 시점, 최근 변화, 관찰 조건, 검사 신뢰성을 확인하고 가설 강도를 낮춥니다.","say":"검사와 실제가 다르면 틀렸다고 버리지 않고, 언제 달라지는지 확인 질문으로 남기자.","rule":"확인 전 단정하지 않고 탐색 가설로 기록"},{"title":"“목표를 잡아 주세요”","do":"목표 의식은 순서대로 쌓인다는 점을 보여 주고 집에서 정서를 흔들지 말아 달라고 부탁합니다.","say":"목표를 잡으려면 먼저 정서가 안정되고 자신감이 붙어야 합니다. 그래야 자기 공부의 주인이라는 마음이 생기고, 그 위에 목표 의식이 섭니다.","rule":"마음의 안정 → 자신감 → 주인의식 → 목표 의식 순서를 학부모가 이해"},{"title":"“언제 되나요?”","do":"하던 대로 하려는 경로를 바꾸는 데 시간이 걸린다는 점과 그동안 학부모의 역할을 함께 말합니다.","say":"빨리 되기는 어렵습니다. 시간이 필요하고, 어머님께서 맡아 주실 역할이 있습니다.","rule":"기다림 + 가정 역할 1가지 합의"},{"title":"“조금 더 고민해 볼게요”","do":"고민을 막지 않고 변화의 시기를 함께 생각하게 합니다. 압박하지 않습니다.","say":"충분히 고민하셔도 됩니다. 다만 1, 2주가 늦어지면 아이의 변화 시계도 그만큼 늦어집니다. 꼭 등록하지 않으셔도 되니 검사 결과를 기준으로 판단해 보시죠.","rule":"결정은 학부모, 기준은 검사 결과"},{"title":"강사 경력·스펙 질문","do":"스펙으로 답하지 않고 운영 구조와 확인 방식으로 답합니다.","say":"교실장이 학생별 단과표와 목표로 수업을 운영하고, 핵심은 설명 뒤 학생이 스스로 풀어 보며 얼마나 인지했는지 확인하는 데 있습니다.","rule":"“객관화된 과정”으로 설득"},{"title":"“관리형 독서실과 뭐가 달라요?”","do":"공간이 아니라 관찰과 피드백, 책임의 소재로 답합니다.","say":"독서실은 잘 왔는지 확인하는 곳이고, 저희는 담당 매니저와 교실장이 무엇을 이해했고 왜 틀렸고 다음에 무엇을 할지를 매일 봅니다. 학생을 관리하는 게 아니라 학생의 변화를 관리합니다.","rule":"데일리 체크·수업보고서 같은 실제 도구로 연결"},{"title":"단과 추가·전략 거부","do":"요구를 다 맞춰 주면 공부방 관리자가 됩니다. 등록을 지키려고 매달리지 않고 정중히 물러섭니다.","say":"기다리실 수 있도록 설득하는 데 제가 부족했던 것 같습니다. 원하시는 방법을 해 보시고, 상위 단계로 도전하고 싶으실 때 다시 연락 주십시오.","rule":"전략의 기준은 흔들지 않고 다시 올 길을 열어 둠"},{"title":"킹핀(의사결정자) 확인","do":"아이 말의 주체가 누구인지 듣고, 누가 결정하는지 대화에서 말로 정리합니다.","say":"오늘 정한 방향은 어머님과 아버님 중 어느 분과 최종으로 맞추면 될까요?","rule":"상담 후 다른 보호자가 뒤집지 않도록 결정 주체 확인"},{"title":"“하루만 나와도 될 것 같아요” (상위권)","do":"실력 자체를 부정하지 않고, 풀이 시작 지점과 증명 과정까지 설명할 수 있는지 확인해 보자고 제안합니다.","say":"단순 암기로 푸는지, 접근 방식과 증명 과정까지 제시할 수 있는지 한번 확인해 보자. 거기서 고난도 문항의 안정성이 갈려.","rule":"상위권 성장 경로(유형 분석 → 실수 원인 → 고난도 접근 → 전략 → 자신감)로 연결"}],"quickBranches":[0,2,4,6],"cubemapCount":8,"regStepCount":10,"fieldCount":16,"memo":"CHAMP는 렌더링 화면 표시값만 쓰고, 상위 멘탈리티가 낮아도 지금 될 수 없는 결과를 약속하지 않습니다."};</script>
+<script>
+const T=window.PLAYBOOK;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const STATE_KEY=T.storage+'-state-v1',DRAFT_KEY=T.storage+'-draft-v1',THEME_KEY='vlt5g-v3-playbook-theme';
+function store(fn){try{return fn()}catch(e){return null}}
+let state={mode:'live',step:0,completed:[],elapsed:0,running:false,startedAt:null};
+const saved=store(()=>JSON.parse(localStorage.getItem(STATE_KEY)||'{}'));if(saved)state={...state,...saved};
+if(state.running&&state.startedAt){state.elapsed+=Math.max(0,Math.floor((Date.now()-state.startedAt)/1000));state.startedAt=Date.now()}
+const CORE=T.steps.filter(s=>!s.optional).length;
+let toastTimer;
+function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
+function saveState(){store(()=>localStorage.setItem(STATE_KEY,JSON.stringify(state)))}
+function elapsed(){return state.elapsed+(state.running&&state.startedAt?Math.floor((Date.now()-state.startedAt)/1000):0)}
+function fmt(sec){const m=Math.floor(sec/60),s=sec%60;return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function renderTimer(){const sec=elapsed(),el=$('#timer');el.textContent=fmt(sec);el.classList.toggle('over',sec>=3600&&sec<4500);el.classList.toggle('late',sec>=4500);$('#timerToggle').textContent=state.running?'일시정지':'시작';$('#timerToggle').setAttribute('aria-pressed',String(state.running))}
+function renderProgress(){const done=T.steps.filter((s,i)=>!s.optional&&state.completed.includes(i)).length;$('#fill').style.width=(done/CORE*100)+'%';$('#track').setAttribute('aria-valuenow',String(done));const opt=T.steps.findIndex(s=>s.optional);$('#progressCopy').textContent='핵심 단계 '+done+'/'+CORE+(opt>=0&&state.completed.includes(opt)?' · 선택 마무리 완료':'')}
+function setMode(mode){state.mode=mode;$$('.seg button').forEach(b=>{const on=b.dataset.mode===mode;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1});$$('.panel').forEach(p=>p.hidden=p.dataset.panel!==mode);saveState()}
+const list=a=>'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+function typeCards(compact){return T.typeIntro.map((t,i)=>'<article class="mini"><span class="badge badge--accent num">'+t.time+'</span><h4>'+(i+1)+'. '+t.title+'</h4><p>'+t.purpose+'</p><p><b>확인 질문</b> '+t.ask+'</p>'+(compact?'':'<p><b>권장 발화</b> '+t.script+'</p><p><b>금지선</b> '+t.guard+'</p><p><b>산출물</b> '+t.output+'</p>')+'</article>').join('')}
+function absenceCards(compact){return T.absences.map((a,i)=>'<article class="mini"><span class="badge">진단 렌즈 '+(i+1)+'</span><h4>'+a.title+'</h4><p>'+a.meaning+'</p><p><b>확인 질문</b> '+a.ask+'</p>'+(compact?'':'<p><b>연결 처방</b> '+a.action+'</p><p><b>피할 해석</b> '+a.avoid+'</p>')+'</article>').join('')}
+function renderRail(){const rail=$('#rail');rail.innerHTML='<div class="rail-title">60분 핵심 + 15분 선택</div>'+T.steps.map((s,i)=>'<button class="stage'+(state.completed.includes(i)?' done':'')+'" data-step="'+i+'" aria-current="'+(state.step===i?'step':'false')+'"><span class="stage-num">'+(state.completed.includes(i)?'✓':i+1)+'</span><span><span class="stage-name">'+s.title+(s.optional?' <span class="badge">선택</span>':'')+'</span><span class="stage-time num">'+s.time+'</span></span></button>').join('');$$('.stage').forEach(b=>b.addEventListener('click',()=>{state.step=Number(b.dataset.step);saveState();renderRail();renderStep();$('#stepDetail').scrollIntoView({behavior:'smooth',block:'start'})}))}
+function tile(k,title,body,cls,kcls){return '<section class="tile '+(cls||'')+'"><h3><span class="k '+(kcls||'')+'">'+k+'</span>'+title+'</h3>'+body+'</section>'}
+function renderStep(){const s=T.steps[state.step],done=state.completed.includes(state.step);let extra='';
+if(s.panel==='absence')extra=tile('3','3대 부재 빠른 확인','<div class="grid3">'+absenceCards(true)+'</div><p>세 항목을 모두 적용하지 않습니다. 해당 장면과 반례를 함께 확인한 뒤 필요한 항목만 보완 행동으로 연결합니다.</p>','full');
+if(s.panel==='type')extra=tile('16','16타입 이해 전달 플로우','<div class="grid3">'+typeCards(true)+'</div><p>네 가지 뜻을 Teach-back하고 독립 선택을 기록한 뒤에만 실제 메인·히든을 공개합니다.</p>','full');
+$('#stepDetail').innerHTML='<article class="card"><div class="card-head"><div><h2>'+(state.step+1)+'. '+s.title+(s.optional?' <span class="badge">선택 모듈</span>':'')+'</h2><p>'+s.subtitle+'</p></div><span class="time-chip">'+s.time+'</span></div><div class="goal">'+s.purpose+'</div><div class="lens"><b>이론 연결</b> · '+s.lens+'</div><div class="grid2">'+tile('Q','확인 질문',list(s.questions))+tile('S','권장 발화','<div class="script" id="currentScript">'+s.script+'</div><div class="script-row"><button class="btn btn--plain btn--sm" data-copy="#currentScript">복사</button></div>')+tile('→','다음 단계 조건','<p>'+s.condition+'</p>')+tile('!','피해야 할 말·전환',list(s.avoid),'','danger')+tile('✓','남길 산출물',list(s.output),'','success')+extra+tile('↗','막힐 때 바로 보기','<div class="jump">'+T.quickBranches.map(i=>'<button class="btn btn--tinted btn--sm" data-branch="'+i+'">'+T.branches[i].title+'</button>').join('')+'</div>')+'</div><div class="actions"><button class="btn" id="prevStep" '+(state.step===0?'disabled':'')+'>이전 단계</button><button class="btn btn--accent" id="completeStep">'+(done?'완료 취소':'단계 완료')+'</button><button class="btn" id="nextStep" '+(state.step===T.steps.length-1?'disabled':'')+'>다음 단계</button><button class="btn btn--plain" id="openAgreement">합의문 열기</button></div></article>';
+bindCopy();$('#prevStep').addEventListener('click',()=>moveStep(-1));$('#nextStep').addEventListener('click',()=>moveStep(1));$('#completeStep').addEventListener('click',toggleComplete);$('#openAgreement').addEventListener('click',()=>setMode('agreement'));
+$$('[data-branch]').forEach(b=>b.addEventListener('click',()=>{setMode('training');setTimeout(()=>{const card=$$('.branch-card')[Number(b.dataset.branch)];if(card){card.open=true;card.scrollIntoView({behavior:'smooth',block:'center'});card.querySelector('summary').focus()}},30)}))}
+function moveStep(d){state.step=Math.max(0,Math.min(T.steps.length-1,state.step+d));saveState();renderRail();renderStep();$('#stepDetail').scrollIntoView({behavior:'smooth',block:'start'})}
+function toggleComplete(){const i=state.step;state.completed=state.completed.includes(i)?state.completed.filter(x=>x!==i):[...state.completed,i];saveState();renderRail();renderStep();renderProgress()}
+function bindCopy(){$$('[data-copy]').forEach(b=>{if(b.dataset.bound)return;b.dataset.bound='1';b.addEventListener('click',()=>copyText($(b.dataset.copy).innerText.trim()))})}
+async function copyText(text){try{await navigator.clipboard.writeText(text)}catch(e){const a=document.createElement('textarea');a.value=text;document.body.append(a);a.select();document.execCommand('copy');a.remove()}toast('복사했습니다.')}
+function renderTraining(){
+$('#trainingSequence').innerHTML=T.steps.map((s,i)=>'<article class="mini"><span class="badge '+(s.optional?'':'badge--accent')+' num">'+s.time+(s.optional?' · 선택':'')+'</span><h4>'+(i+1)+'. '+s.title+'</h4><p>'+s.purpose+'</p><p><b>이동 기준</b> '+s.condition+'</p></article>').join('');
+$('#typeIntroGrid').innerHTML=typeCards(false);$('#absenceGrid').innerHTML=absenceCards(false);
+$('#metaphorGrid').innerHTML=T.metaphors.map((m,i)=>'<details class="fold"><summary>'+(i+1)+'. '+m.title+'</summary><div class="fold-body"><div class="meta-row"><b>쓰기 좋은 상황</b>'+m.when+'</div><div class="meta-row"><b>30초 압축 발화</b><div class="script" id="metaphor-'+i+'">'+m.script+'</div><div class="script-row"><button class="btn btn--plain btn--sm" data-copy="#metaphor-'+i+'">복사</button></div></div><div class="meta-row"><b>학생에게 되묻기</b>'+m.ask+'</div><div class="meta-row"><b>쓰지 않을 상황</b>'+m.avoid+'</div></div></details>').join('');
+$('#branchGrid').innerHTML=T.branches.map((b,i)=>'<details class="fold branch-card"><summary>분기 '+(i+1)+' · '+b.title+'</summary><div class="fold-body"><div class="meta-row"><b>먼저</b>'+b.do+'</div><div class="meta-row"><b>권장 발화</b><div class="script" id="branch-'+i+'">'+b.say+'</div><div class="script-row"><button class="btn btn--plain btn--sm" data-copy="#branch-'+i+'">복사</button></div></div><div class="meta-row"><b>이동 기준</b>'+b.rule+'</div></div></details>').join('');
+bindCopy();
+$('#printFlow').innerHTML='<article class="card"><h1>'+T.title+'</h1><p>'+T.badge+' · '+T.spec+' · 60분 핵심 + 선택형 15분</p></article>'+T.steps.map((s,i)=>'<article class="card"><h2>'+(i+1)+'. '+s.title+' · '+s.time+'</h2><p><b>목적</b> '+s.purpose+'</p><p><b>이론 연결</b> '+s.lens+'</p><p><b>질문</b> '+s.questions.join(' / ')+'</p><p><b>권장 발화</b> '+s.script+'</p><p><b>이동 기준</b> '+s.condition+'</p><p><b>산출물</b> '+s.output.join(' / ')+'</p></article>').join('')+'<article class="card"><h2>16타입 이해 전달 플로우</h2>'+typeCards(false)+'</article><article class="card"><h2>3대 부재 진단 프레임</h2>'+absenceCards(false)+'</article>'}
+function fieldData(){const d={};$$('[data-field]').forEach(el=>d[el.dataset.field]=el.value.trim());return d}
+function fillFields(d){$$('[data-field]').forEach(el=>{if(d&&d[el.dataset.field]!=null)el.value=d[el.dataset.field]})}
+function makeSummary(){const f=fieldData(),v=x=>x||'상담에서 확인';const parts=[['1. 검사 규격·신뢰성',f.specCheck||'규격·신뢰성 확인 기록 없음'],['2. 학생·학부모 확인',v(f.confirmed)],['3. 16타입 이해·사전 선택',f.typeFrameworkEvidence||'사전 선택·Teach-back 미기록'],['4. 감정 번역·3대 부재',f.emotionEvidence||'확인된 항목 없음 또는 탐색 질문으로 유지'],['5. 한 문장 진단',v(f.diagnosis)],['6. CHAMP·APT·학교 시험',v(f.champLevel)],['7. 전략 과목·방어선',v(f.strategySubject)],['8. 상담자 권고',v(f.recommendation)],['9. 가정의 역할',f.homeRole||'별도 합의 없음'],['10. 가족 결정 대기',f.pending||'없음 또는 별도 논의'],['11. 최종 합의',v(f.agreement)],['12. 첫 실행 행동',v(f.firstAction)],['13. 성공 기준',v(f.successMetric)],['14. 선제 약속',f.preemptive||'미정'],['15. 다음 점검일',f.reviewDate||'일정 협의']];
+const text=T.title+' 합의 기록 · '+(f.subjectId||'상담 대상')+'\n\n'+parts.map(p=>p[0]+'\n'+p[1]).join('\n\n')+'\n\n운영 메모: 타입 결과 공개 전에 16타입 지도와 메인·히든·색 배지·숫자의 뜻을 확인합니다. '+T.memo+' 권고·가족 결정 대기·최종 합의는 서로 다른 상태로 기록합니다. 프로그램 확정 후 운영 구성에 맞춰 담당 매니저를 배정합니다.';$('#summaryBox').textContent=text;return text}
+function loadDraft(){const d=store(()=>JSON.parse(localStorage.getItem(DRAFT_KEY)||'null'));if(d){fillFields(d);$('#saveStatus').textContent='이 기기에 저장된 임시 합의문을 불러왔습니다'}}
+function clearAll(){if(!confirm('단계 진행, 시간, 임시 합의문을 이 기기에서 모두 삭제할까요?'))return;store(()=>{localStorage.removeItem(STATE_KEY);localStorage.removeItem(DRAFT_KEY)});state={mode:'live',step:0,completed:[],elapsed:0,running:false,startedAt:null};$$('[data-field]').forEach(el=>el.value='');$('#summaryBox').textContent='항목을 입력한 뒤 합의문 만들기를 누르세요.';$('#saveStatus').textContent='자유 입력은 자동 저장되지 않습니다';renderAll();toast('이 기기의 기록을 모두 지웠습니다.')}
+const darkQuery=matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(t){if(t!=='light'&&t!=='dark')t=darkQuery.matches?'dark':'light';document.documentElement.dataset.theme=t;$('#themeToggle').textContent=t==='dark'?'밝은 화면':'어두운 화면'}
+darkQuery.addEventListener&&darkQuery.addEventListener('change',()=>{if(!store(()=>localStorage.getItem(THEME_KEY)))applyTheme(null)});
+function renderAll(){setMode(state.mode);renderRail();renderStep();renderProgress();renderTimer()}
+const tabs=$$('.seg button');tabs.forEach((b,i)=>{b.addEventListener('click',()=>setMode(b.dataset.mode));b.addEventListener('keydown',e=>{let n=null;if(e.key==='ArrowRight')n=(i+1)%tabs.length;if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==null){e.preventDefault();tabs[n].focus();setMode(tabs[n].dataset.mode)}})});
+$('#timerToggle').addEventListener('click',()=>{if(state.running){state.elapsed=elapsed();state.running=false;state.startedAt=null}else{state.running=true;state.startedAt=Date.now()}saveState();renderTimer()});
+$('#timerReset').addEventListener('click',()=>{state.elapsed=0;state.running=false;state.startedAt=null;saveState();renderTimer();toast('상담 시간을 초기화했습니다.')});
+$('#makeSummary').addEventListener('click',()=>{makeSummary();toast('합의문을 만들었습니다.')});
+$('#copySummary').addEventListener('click',()=>copyText(makeSummary()));
+$('#saveDraft').addEventListener('click',()=>{store(()=>localStorage.setItem(DRAFT_KEY,JSON.stringify(fieldData())));$('#saveStatus').textContent='이 기기에 임시 저장했습니다';toast('이 기기에 임시 저장했습니다.')});
+$('#clearAll').addEventListener('click',clearAll);
+function printAs(cls){if(cls)document.body.classList.add(cls);window.print();setTimeout(()=>document.body.classList.remove('agreement-print'),300)}
+$('#printAgreement').addEventListener('click',()=>{makeSummary();printAs('agreement-print')});$('#printRunbook').addEventListener('click',()=>printAs(''));
+window.addEventListener('afterprint',()=>document.body.classList.remove('agreement-print'));
+$('#themeToggle').addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';store(()=>localStorage.setItem(THEME_KEY,next));applyTheme(next)});
+applyTheme(store(()=>localStorage.getItem(THEME_KEY)));
+setInterval(()=>{renderTimer();if(state.running&&elapsed()%10===0){state.elapsed=elapsed();state.startedAt=Date.now();saveState()}},1000);
+renderTraining();loadDraft();renderAll();
+if(new URLSearchParams(location.search).get('qa')==='1'){const text=document.body.innerText,checks={steps:T.steps.length===8,core:CORE===7,typeIntro:T.typeIntro.length===6,absences:T.absences.length===3,cubemap:T.cubemapCount===8,metaphors:T.metaphors.length===13,branches:T.branches.length===16,regSteps:T.regStepCount===10,fields:$$('[data-field]').length===T.fieldCount,noindex:document.head.innerHTML.includes('noindex'),admin:!!document.querySelector('a[href="../admin-4ck2v7p3/"]'),versions:$$('.ver').length===3,noPhone:!/(01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(text),storage:STATE_KEY.indexOf('vlt5g-v3-')===0,noOverflow:document.documentElement.scrollWidth<=window.innerWidth+1};console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail'}
+</script>
+</body>
+</html>
