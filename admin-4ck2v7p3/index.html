@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-skin="clarity" data-theme="light">
 <head>
 <link rel="icon" type="image/png" href="../assets/sangsangplex-emblem.png?v=20260812">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>상상플렉스 길음점 — 성장 기록 관리</title>
+<script>
+  /* 테마: Clarity(Kit 06)가 기본. 고른 값은 이 브라우저에만 기억합니다. */
+  (function () {
+    var KEY = "eduplexge-admin-theme";
+    var THEMES = { "clarity": "light", "clarity-dark": "dark", "clarity-auto": "auto", "clarity-light-hc": "light-hc", "clarity-dark-hc": "dark-hc", "spritecraft": null };
+    var root = document.documentElement;
+    function resolveAuto() {
+      var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var more = window.matchMedia && window.matchMedia("(prefers-contrast: more)").matches;
+      return (dark ? "dark" : "light") + (more ? "-hc" : "");
+    }
+    window.adminTheme = {
+      key: KEY,
+      themes: THEMES,
+      current: "clarity",
+      apply: function (value) {
+        if (!Object.prototype.hasOwnProperty.call(THEMES, value)) value = "clarity";
+        this.current = value;
+        var mode = THEMES[value];
+        root.setAttribute("data-skin", mode === null ? "spritecraft" : "clarity");
+        if (mode === null) root.removeAttribute("data-theme");
+        else root.setAttribute("data-theme", mode === "auto" ? resolveAuto() : mode);
+        root.setAttribute("data-theme-choice", value);
+        return value;
+      }
+    };
+    var saved = null;
+    try { saved = window.localStorage.getItem(KEY); } catch (error) { saved = null; }
+    window.adminTheme.apply(saved || "clarity");
+  })();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../assets/clarity/tokens.css">
 <style>
   :root{
     --blue:#0788c7;--blue-deep:#045b8c;--green:#6abd2e;--green-deep:#397c19;
@@ -141,8 +174,15 @@
   .apt-empty{grid-column:1/-1;border:2px dashed var(--line);padding:20px;text-align:center;color:var(--muted)}
   footer{margin-top:30px;padding:18px 0 0;border-top:1px dashed #8f876d;color:#5f5b50;font-size:11px;text-align:center}
 
+  .nav-tools{display:flex;align-items:center;gap:8px}
+  .theme-switch{display:flex;align-items:center;gap:6px}
+  .theme-switch select{width:auto;height:38px;border:2px solid #6d6d64;background:#2b2b28;color:var(--white);padding:0 28px 0 10px;font-size:11.5px;font-weight:850;cursor:pointer}
+  .tool-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .tool-badge{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:4px 11px;border:2px solid var(--ink);background:#fff;color:var(--ink);text-decoration:none;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;font-weight:950;box-shadow:2px 2px 0 var(--ink);white-space:nowrap}
+  .tool-badge:hover{background:var(--green)}
+
   @media(max-width:1080px){
-    .nav-inner{grid-template-columns:auto 1fr}.top-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;border-top:1px solid #3f3f39;padding-top:5px}.nav-action{grid-column:2;grid-row:1;justify-self:end}
+    .nav-inner{grid-template-columns:auto 1fr}.top-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;border-top:1px solid #3f3f39;padding-top:5px}.nav-tools{grid-column:2;grid-row:1;justify-self:end}
     .controls-primary{grid-template-columns:repeat(3,minmax(0,1fr))}.field--search{grid-column:1/-1}.field--secondary,.reset-button{grid-row:auto}
     .apt-grid,.growth-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.control-deck{top:112px}
   }
@@ -154,7 +194,7 @@
     .index-panel{grid-template-columns:1fr}.filter-summary{text-align:left}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media(max-width:680px){
-    .nav-inner{padding:7px 12px;gap:10px}.brand-lockup img{width:36px;height:36px}.brand-word{font-size:16px}.brand-meta{font-size:9px}.nav-action{padding:7px 9px;font-size:11px}
+    .nav-inner{padding:7px 12px;gap:10px}.brand-lockup img{width:36px;height:36px}.brand-word{font-size:16px}.brand-meta{font-size:9px}.nav-action{padding:7px 9px;font-size:11px}.nav-tools{gap:6px}.theme-switch select{height:34px;max-width:118px;padding:0 22px 0 8px;font-size:11px}
     .top-nav a{padding:7px 8px;font-size:11px}.hero h1{font-size:33px}.hero-metrics{grid-template-columns:repeat(2,1fr);overflow:visible}
     .drawer>summary{padding:14px;align-items:flex-start}.drawer-heading p{display:none}.drawer-toggle span{display:none}.drawer-body{padding:14px}.control-deck{margin:-14px -14px 14px;padding:14px}
     .controls-primary{grid-template-columns:1fr}.field--search{grid-column:auto}.pager-shell,.resource-tools{align-items:flex-start;flex-direction:column}.pagination{justify-content:flex-start}
@@ -163,6 +203,166 @@
     a.link,a.manager{width:100%}.session-stack{min-width:0}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+<style id="skin-clarity">
+  /* Clarity(Kit 06) 스킨 — 기본 테마. 값은 ../assets/clarity/tokens.css 변수만 씁니다.
+     콘텐츠 층(면, 그림자 없음) / 기능 층(상단 막대·검색 막대 유리) 두 층으로 정리했습니다. */
+  html[data-skin="clarity"]{color-scheme:light}
+  html[data-skin="clarity"][data-theme^="dark"]{color-scheme:dark}
+  html[data-skin="clarity"] body{background:var(--cl-canvas);background-image:none;color:var(--cl-label);font-family:var(--font-sans);font-size:1rem;line-height:1.6;letter-spacing:-.008em;-webkit-font-smoothing:antialiased}
+  html[data-skin="clarity"] :focus-visible{outline:2px solid var(--cl-info);outline-offset:2px}
+  html[data-skin="clarity"] .skip-link{background:var(--cl-accent);color:var(--cl-on-accent);border:0;border-radius:var(--radius-capsule);font-weight:700}
+  html[data-skin="clarity"] a,html[data-skin="clarity"] button,html[data-skin="clarity"] select,html[data-skin="clarity"] input{transition:background-color var(--dur-fade) var(--ease-standard),color var(--dur-fade) var(--ease-standard),transform var(--dur-press) var(--ease-press)}
+
+  /* 기능 층: 상단 막대 */
+  html[data-skin="clarity"] .app-nav{background:var(--cl-glass);color:var(--cl-label);border-bottom:0;-webkit-backdrop-filter:blur(var(--material-regular)) saturate(var(--material-saturate));backdrop-filter:blur(var(--material-regular)) saturate(var(--material-saturate));box-shadow:inset 0 1px 0 var(--cl-glass-specular),0 1px 0 var(--cl-glass-rim),var(--cl-shadow-float)}
+  html[data-skin="clarity"] .brand-lockup{color:var(--cl-label)}
+  html[data-skin="clarity"] .brand-lockup img{background:var(--brand-plate);border:0;border-radius:var(--radius-xs)}
+  html[data-skin="clarity"] .brand-word{font-weight:800;letter-spacing:-.022em}
+  html[data-skin="clarity"] .brand-word .sangsang{color:var(--cl-accent)}
+  html[data-skin="clarity"] .brand-meta{color:var(--cl-label-3);font-weight:500;letter-spacing:.01em}
+  html[data-skin="clarity"] .top-nav a{color:var(--cl-label-2);border:0;border-radius:var(--radius-capsule);padding:9px 13px;font-size:.8125rem;font-weight:600}
+  html[data-skin="clarity"] .top-nav a:hover{color:var(--cl-label);background:var(--cl-fill);border-color:transparent}
+  html[data-skin="clarity"] .top-nav a[aria-current="location"]{color:var(--cl-accent);background:var(--cl-accent-tint);border-color:transparent}
+  html[data-skin="clarity"] .nav-action{border:0;border-radius:var(--radius-capsule);background:var(--cl-accent-tint);color:var(--cl-accent);min-height:var(--hit-min);padding:0 16px;font-size:.875rem;font-weight:700;box-shadow:none}
+  html[data-skin="clarity"] .nav-action:hover{transform:none;box-shadow:none;background:var(--cl-fill)}
+  html[data-skin="clarity"] .nav-action:active{transform:scale(.96)}
+
+  /* 콘텐츠 층: 첫 화면 */
+  html[data-skin="clarity"] .hero{background:var(--cl-surface);border:0;border-radius:var(--radius-xl);box-shadow:none}
+  html[data-skin="clarity"] .hero::after{display:none}
+  html[data-skin="clarity"] .eyebrow{color:var(--cl-label-3);font-family:var(--font-sans);font-size:.8125rem;font-weight:600;letter-spacing:.02em;text-transform:none}
+  html[data-skin="clarity"] .eyebrow::before{width:8px;height:8px;border:0;border-radius:var(--radius-capsule);background:var(--edu-blue)}
+  html[data-skin="clarity"] h1{font-weight:800;letter-spacing:-.03em;line-height:1.16;color:var(--cl-label)}
+  html[data-skin="clarity"] .hero-copy{color:var(--cl-label-2)}
+  html[data-skin="clarity"] .metric{background:var(--cl-surface-2);border:0;border-radius:16px;box-shadow:none}
+  html[data-skin="clarity"] .metric:nth-child(n){border-top:0}
+  html[data-skin="clarity"] .metric strong{font-family:var(--font-sans);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:var(--cl-label)}
+  html[data-skin="clarity"] .metric:first-child strong{color:var(--cl-accent)}
+  html[data-skin="clarity"] .metric span{color:var(--cl-label-2);font-size:.8125rem;font-weight:500}
+
+  /* 안내(Notice) */
+  html[data-skin="clarity"] .trust-strip{background:var(--cl-danger-tint);border:0;border-radius:var(--radius-lg);box-shadow:none}
+  html[data-skin="clarity"] .trust-icon{background:var(--cl-danger);color:var(--cl-on-danger);border:0;border-radius:var(--radius-capsule)}
+  html[data-skin="clarity"] .trust-copy strong{color:var(--cl-label);font-size:.875rem}
+  html[data-skin="clarity"] .trust-copy span{color:var(--cl-label-2);font-size:.8125rem}
+  html[data-skin="clarity"] .trust-meta{color:var(--cl-label-3);font-family:var(--font-sans);font-size:.75rem;font-variant-numeric:tabular-nums}
+
+  /* 서랍 카드 */
+  html[data-skin="clarity"] .drawer{background:var(--cl-surface);border:0;border-radius:var(--radius-lg);box-shadow:none}
+  html[data-skin="clarity"] .drawer>summary{background:transparent;border-radius:var(--radius-lg)}
+  html[data-skin="clarity"] .drawer[open]>summary{border-bottom:1px solid var(--cl-separator);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+  html[data-skin="clarity"] .drawer-index,html[data-skin="clarity"] .drawer:nth-of-type(n) .drawer-index{background:var(--cl-accent);color:var(--cl-on-accent);border:0;border-radius:var(--radius-sm);font-family:var(--font-sans);font-size:.8125rem;font-weight:700;font-variant-numeric:tabular-nums;box-shadow:none}
+  html[data-skin="clarity"] .drawer-heading h2{font-size:1.25rem;font-weight:700;letter-spacing:-.016em;color:var(--cl-label)}
+  html[data-skin="clarity"] .drawer-heading p{color:var(--cl-label-2);font-size:.875rem}
+  html[data-skin="clarity"] .drawer-toggle{color:var(--cl-label-3);font-family:var(--font-sans);font-size:.8125rem;font-weight:500}
+  html[data-skin="clarity"] .drawer-toggle::after{width:30px;height:30px;border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label-2);font-size:18px}
+  html[data-skin="clarity"] .section-note{color:var(--cl-label-3);font-size:.8125rem}
+
+  /* 기능 층: 검색·필터 막대 */
+  html[data-skin="clarity"] .control-deck{background:var(--cl-glass);-webkit-backdrop-filter:blur(var(--material-regular)) saturate(var(--material-saturate));backdrop-filter:blur(var(--material-regular)) saturate(var(--material-saturate));border-bottom:1px solid var(--cl-separator)}
+  html[data-skin="clarity"] .field-label{color:var(--cl-label-2);font-size:.75rem;font-weight:600;letter-spacing:0}
+  html[data-skin="clarity"] .search-shell::before{color:var(--cl-label-3)}
+  html[data-skin="clarity"] input[type="search"],html[data-skin="clarity"] select{height:var(--hit-min);border:0;border-radius:var(--radius-sm);background:var(--cl-fill);color:var(--cl-label);font-weight:500}
+  html[data-skin="clarity"] input[type="search"]{border-radius:var(--radius-capsule)}
+  html[data-skin="clarity"] input[type="search"]::placeholder{color:var(--cl-label-3);font-weight:400}
+  html[data-skin="clarity"] input[type="search"]:focus-visible,html[data-skin="clarity"] select:focus-visible{outline:0;box-shadow:inset 0 0 0 2px var(--cl-info)}
+  html[data-skin="clarity"] .reset-button{height:var(--hit-min);border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label);padding:0 18px;font-size:.875rem;font-weight:600;box-shadow:none}
+  html[data-skin="clarity"] .reset-button:hover{background:var(--cl-separator);color:var(--cl-label)}
+  html[data-skin="clarity"] .reset-button:active{transform:scale(.96)}
+  html[data-skin="clarity"] .index-panel{border-top:1px solid var(--cl-separator)}
+  html[data-skin="clarity"] .index-label{color:var(--cl-label-2);font-weight:600}
+  html[data-skin="clarity"] .index-button{min-width:34px;height:34px;padding:0 10px;border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label-2);font-family:var(--font-sans);font-size:.8125rem;font-weight:600}
+  html[data-skin="clarity"] .index-button:hover{background:var(--cl-separator);color:var(--cl-label);box-shadow:none}
+  html[data-skin="clarity"] .index-button.is-active{background:var(--cl-accent);color:var(--cl-on-accent);box-shadow:none}
+  html[data-skin="clarity"] .index-button[disabled]{opacity:.4}
+  html[data-skin="clarity"] .filter-summary{color:var(--cl-label-2);font-size:.8125rem}
+  html[data-skin="clarity"] .filter-summary strong{color:var(--cl-accent)}
+
+  /* 표 */
+  html[data-skin="clarity"] .table-scroll{border:1px solid var(--cl-separator);border-radius:16px;background:var(--cl-surface)}
+  html[data-skin="clarity"] table{background:var(--cl-surface)}
+  html[data-skin="clarity"] th,html[data-skin="clarity"] td{border-bottom:1px solid var(--cl-separator);font-size:.875rem}
+  html[data-skin="clarity"] th{background:var(--cl-surface);color:var(--cl-label-2);font-size:.75rem;font-weight:600;letter-spacing:0;box-shadow:inset 0 -1px 0 var(--cl-control)}
+  html[data-skin="clarity"] tbody tr:nth-child(even){background:transparent}
+  html[data-skin="clarity"] tbody tr:hover{background:var(--cl-surface-2)}
+  html[data-skin="clarity"] tbody td:first-child{font-weight:700;font-size:.9375rem;color:var(--cl-label)}
+  html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
+  html[data-skin="clarity"] a.link{background:var(--cl-accent-tint);color:var(--cl-accent)}
+  html[data-skin="clarity"] a.manager{background:var(--cl-fill);color:var(--cl-label)}
+  html[data-skin="clarity"] a.link:hover,html[data-skin="clarity"] a.manager:hover,html[data-skin="clarity"] .preanalysis-link:hover,html[data-skin="clarity"] .mbti-dynamics-link:hover{transform:none;box-shadow:none;filter:none}
+  html[data-skin="clarity"] a.link:hover{background:var(--cl-accent);color:var(--cl-on-accent)}
+  html[data-skin="clarity"] a.manager:hover{background:var(--cl-separator)}
+  html[data-skin="clarity"] a.link:active,html[data-skin="clarity"] a.manager:active,html[data-skin="clarity"] .preanalysis-link:active,html[data-skin="clarity"] .mbti-dynamics-link:active{transform:scale(.96)}
+  html[data-skin="clarity"] .tag{border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label-2);padding:2px 8px;font-size:.6875rem;font-weight:600;white-space:nowrap}
+  html[data-skin="clarity"] .preanalysis-link{background:var(--cl-highlight);color:var(--cl-on-highlight)}
+  html[data-skin="clarity"] .preanalysis-link:hover{background:var(--cl-accent);color:var(--cl-on-accent)}
+  html[data-skin="clarity"] .preanalysis-meta{color:var(--cl-label-3);font-weight:500}
+  html[data-skin="clarity"] .mbti-dynamics-link.parent{background:var(--cl-success-tint);color:var(--cl-success)}
+  html[data-skin="clarity"] .mbti-dynamics-link.manager{background:var(--cl-info-tint);color:var(--cl-info)}
+  html[data-skin="clarity"] .mbti-dynamics-link:hover{background:var(--cl-fill);color:var(--cl-label)}
+  html[data-skin="clarity"] .mbti-dynamics-meta{color:var(--cl-label-3);font-weight:500}
+  html[data-skin="clarity"] .session-link{border:0;border-radius:var(--radius-sm);background:var(--cl-surface-2);color:var(--cl-label)}
+  html[data-skin="clarity"] .session-link:hover{background:var(--cl-fill)}
+  html[data-skin="clarity"] .session-index{border:0;border-radius:var(--radius-capsule);background:var(--cl-accent);color:var(--cl-on-accent);font-family:var(--font-sans);font-size:.6875rem;font-weight:700}
+  html[data-skin="clarity"] .session-copy strong{font-size:.75rem;font-weight:600}
+  html[data-skin="clarity"] .session-copy small{color:var(--cl-label-3)}
+  html[data-skin="clarity"] .session-empty{color:var(--cl-label-3)}
+  html[data-skin="clarity"] .empty-state,html[data-skin="clarity"] .apt-empty{border:1px dashed var(--cl-separator);border-radius:16px;color:var(--cl-label-2)}
+  html[data-skin="clarity"] .empty-state strong{color:var(--cl-label)}
+  html[data-skin="clarity"] .page-status{color:var(--cl-label-2)}
+  html[data-skin="clarity"] .page-status strong{color:var(--cl-label)}
+  html[data-skin="clarity"] .page-button{min-width:36px;height:36px;border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label);font-family:var(--font-sans);font-size:.8125rem;font-weight:600;font-variant-numeric:tabular-nums}
+  html[data-skin="clarity"] .page-button:hover:not(:disabled){background:var(--cl-separator);color:var(--cl-label);box-shadow:none}
+  html[data-skin="clarity"] .page-button[aria-current="page"]{background:var(--cl-accent);color:var(--cl-on-accent);box-shadow:none}
+  html[data-skin="clarity"] .page-button:disabled{opacity:.4}
+
+  /* 도구·APT·성장기록 카드 */
+  html[data-skin="clarity"] .tool-card{background:var(--cl-surface-2);border:0;border-radius:16px;color:var(--cl-label);box-shadow:none}
+  html[data-skin="clarity"] .tool-mark{border:0;border-radius:var(--radius-sm);background:var(--cl-accent);color:var(--cl-on-accent);font-family:var(--font-sans);font-size:.75rem;font-weight:700}
+  html[data-skin="clarity"] .tool-copy strong{font-size:.9375rem;font-weight:700}
+  html[data-skin="clarity"] .tool-copy span{color:var(--cl-label-2);font-size:.8125rem}
+  html[data-skin="clarity"] .tool-link,html[data-skin="clarity"] .growth-link{min-height:var(--hit-min);border:0;border-radius:var(--radius-capsule);background:var(--cl-accent-tint);color:var(--cl-accent);padding:0 16px;font-size:.8125rem;font-weight:600;box-shadow:none}
+  html[data-skin="clarity"] button.growth-link{background:var(--cl-fill);color:var(--cl-label)}
+  html[data-skin="clarity"] .tool-link:hover,html[data-skin="clarity"] .growth-link:hover{background:var(--cl-accent);color:var(--cl-on-accent)}
+  html[data-skin="clarity"] .tool-link:active,html[data-skin="clarity"] .growth-link:active{transform:scale(.96)}
+  html[data-skin="clarity"] .tool-badge{border:0;border-radius:var(--radius-capsule);background:var(--cl-surface);color:var(--cl-accent);font-family:var(--font-sans);font-weight:700;box-shadow:inset 0 0 0 1px var(--cl-separator)}
+  html[data-skin="clarity"] .tool-badge:hover{background:var(--cl-accent);color:var(--cl-on-accent);box-shadow:none}
+  html[data-skin="clarity"] .tool-badge:active{transform:scale(.96)}
+  html[data-skin="clarity"] .apt-card,html[data-skin="clarity"] .growth-card{background:var(--cl-surface-2);border:0;border-radius:16px;box-shadow:none}
+  html[data-skin="clarity"] .apt-card{border-top:0}
+  html[data-skin="clarity"] .growth-card{border-top:0}
+  html[data-skin="clarity"] .apt-name{font-size:.9375rem;font-weight:700;color:var(--cl-label)}
+  html[data-skin="clarity"] .apt-link{border:0;border-radius:var(--radius-capsule);background:var(--cl-surface);color:var(--cl-accent);font-weight:600;font-size:.8125rem;padding:8px 4px}
+  html[data-skin="clarity"] .apt-link:hover{background:var(--cl-accent);color:var(--cl-on-accent)}
+  html[data-skin="clarity"] .growth-meta{color:var(--cl-label-3);font-size:.75rem}
+  html[data-skin="clarity"] .growth-meta strong{color:var(--cl-label);font-size:.9375rem}
+  html[data-skin="clarity"] .growth-summary{color:var(--cl-label-2);font-size:.8125rem}
+  html[data-skin="clarity"] .theme-switch select{height:38px;border:0;border-radius:var(--radius-capsule);background:var(--cl-fill);color:var(--cl-label);padding:0 30px 0 14px;font-size:.8125rem;font-weight:600}
+  html[data-skin="clarity"] footer{border-top:1px solid var(--cl-separator);color:var(--cl-label-3);font-size:.8125rem}
+
+  /* 고대비: 조작 경계 */
+  html[data-skin="clarity"][data-theme$="-hc"] .app-nav,html[data-skin="clarity"][data-theme$="-hc"] .control-deck{background:var(--cl-glass-solid);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1.5px 0 var(--cl-label)}
+  html[data-skin="clarity"][data-theme$="-hc"] input[type="search"],html[data-skin="clarity"][data-theme$="-hc"] select,html[data-skin="clarity"][data-theme$="-hc"] .reset-button,html[data-skin="clarity"][data-theme$="-hc"] .page-button,html[data-skin="clarity"][data-theme$="-hc"] .index-button{box-shadow:inset 0 0 0 1.5px var(--cl-control)}
+  html[data-skin="clarity"][data-theme$="-hc"] .drawer,html[data-skin="clarity"][data-theme$="-hc"] .hero{box-shadow:inset 0 0 0 1.5px var(--cl-separator)}
+  @media (prefers-reduced-transparency:reduce){
+    html[data-skin="clarity"] .app-nav,html[data-skin="clarity"] .control-deck{background:var(--cl-glass-solid);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+
+  @media(max-width:1080px){
+    html[data-skin="clarity"] .top-nav{border-top:1px solid var(--cl-separator)}
+  }
+  @media(max-width:820px){
+    html[data-skin="clarity"] .hero{box-shadow:none}
+  }
+  @media(max-width:680px){
+    html[data-skin="clarity"] .table-scroll{border:0;background:transparent}
+    html[data-skin="clarity"] table{background:transparent}
+    html[data-skin="clarity"] tbody tr{background:var(--cl-surface-2)!important;border:0;border-radius:16px;box-shadow:none;overflow:hidden}
+    html[data-skin="clarity"] tbody td{border-bottom:1px solid var(--cl-separator)}
+    html[data-skin="clarity"] tbody td::before{color:var(--cl-label-3);font-size:.6875rem;font-weight:600;letter-spacing:0}
+    html[data-skin="clarity"] tbody td:first-child{font-size:1.0625rem;border-top:0}
+  }
 </style>
 </head>
 <body>
@@ -184,13 +384,30 @@
       <a href="#mbti-drawer">MBTI</a>
       <a href="#growth-drawer">성장기록</a>
     </nav>
-    <button class="nav-action" type="button" data-focus-search>학생 찾기</button>
+    <div class="nav-tools">
+      <label class="theme-switch" for="theme-select">
+        <span class="sr-only">화면 테마</span>
+        <select id="theme-select" aria-label="화면 테마 선택">
+          <optgroup label="Clarity · Kit 06">
+            <option value="clarity">Clarity</option>
+            <option value="clarity-dark">Clarity 다크</option>
+            <option value="clarity-auto">Clarity 자동</option>
+            <option value="clarity-light-hc">고대비 라이트</option>
+            <option value="clarity-dark-hc">고대비 다크</option>
+          </optgroup>
+          <optgroup label="이전 테마">
+            <option value="spritecraft">Spritecraft</option>
+          </optgroup>
+        </select>
+      </label>
+      <button class="nav-action" type="button" data-focus-search>학생 찾기</button>
+    </div>
   </div>
 </header>
 <main class="wrap" id="main-content">
   <section class="hero" aria-labelledby="page-title">
     <div>
-      <div class="eyebrow">Sangsangplex × Spritecraft</div>
+      <div class="eyebrow">Sangsangplex × <span data-skin-name>Clarity</span></div>
       <h1 id="page-title">성장 기록을 한눈에,<br>다음 행동까지.</h1>
       <p class="hero-copy">상생으로 연결하고, 상상으로 도전하며, 성찰로 성장합니다. 학생의 현재 기록과 후속 실행을 빠르게 찾고 안전하게 전달하세요.</p>
     </div>
@@ -1091,6 +1308,28 @@
   document.getElementById("mbti-drawer-count").textContent = `${mbtiSheets.length}명 · 학생/학부모`;
   document.getElementById("growth-drawer-count").textContent = `${growthHistoryReports.length}명 분석`;
   renderResults();
+
+  // 테마 선택: 값은 head의 adminTheme이 적용하고, 고른 값만 이 브라우저에 기억합니다.
+  const themeSelect = document.getElementById("theme-select");
+  const skinName = document.querySelector("[data-skin-name]");
+  const syncThemeLabel = () => {
+    themeSelect.value = window.adminTheme.current;
+    skinName.textContent = window.adminTheme.current === "spritecraft" ? "Spritecraft" : "Clarity";
+  };
+  themeSelect.addEventListener("change", () => {
+    const value = window.adminTheme.apply(themeSelect.value);
+    try { window.localStorage.setItem(window.adminTheme.key, value); } catch (error) { /* 저장이 막힌 브라우저는 이번 화면에만 적용 */ }
+    syncThemeLabel();
+  });
+  if (window.matchMedia) {
+    ["(prefers-color-scheme: dark)", "(prefers-contrast: more)"].forEach((query) => {
+      const list = window.matchMedia(query);
+      const follow = () => { if (window.adminTheme.current === "clarity-auto") window.adminTheme.apply("clarity-auto"); };
+      if (list.addEventListener) list.addEventListener("change", follow);
+      else if (list.addListener) list.addListener(follow);
+    });
+  }
+  syncThemeLabel();
 </script>
 </body>
 </html>
