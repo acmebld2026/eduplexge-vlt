@@ -1059,7 +1059,12 @@ html[data-text-size="xxl"] { font-size: 150%; }
 .gr-cover .cl-section__inner{gap:var(--space-4)}
 .gr-head{display:grid;gap:var(--space-2)}
 .gr-chips{display:flex;flex-wrap:wrap;gap:var(--space-2)}
-.gr-two{--cols:2}.gr-four{--cols:4}.gr-plan-grid{--cols:3}
+.gr-two{--cols:2}.gr-three{--cols:3}.gr-four{--cols:4}.gr-plan-grid{--cols:3}
+.gr-levels{list-style:none;margin:var(--space-1) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-2)}
+.gr-levels li{display:flex;gap:var(--space-2);align-items:flex-start;padding:var(--space-2) var(--space-3);border-radius:var(--radius-lg);border:1px solid var(--cl-separator);font-size:.875rem;line-height:1.45;color:var(--cl-label-3)}
+.gr-levels li b{font-variant-numeric:tabular-nums}
+.gr-levels li.gr-on{color:var(--cl-label);font-weight:600;border-color:var(--cl-accent);background:var(--cl-accent-tint)}
+.gr-signs{margin:0;padding-left:1.1em;display:grid;gap:var(--space-1)}.gr-signs li{font-size:1rem;line-height:1.6}
 .gr-card{display:grid;gap:var(--space-2);align-content:start}
 .gr-card .cl-badge{justify-self:start}
 .gr-wrap{white-space:normal;overflow-wrap:anywhere}
@@ -1069,6 +1074,7 @@ html[data-text-size="xxl"] { font-size: 150%; }
 .gr-plan{margin:0;display:grid;gap:var(--space-3)}
 .gr-dl{display:grid;gap:2px}.gr-dl dt{font-size:.8125rem;font-weight:600;color:var(--cl-label-3)}.gr-dl dd{margin:0;font-size:1rem;line-height:1.6;color:var(--cl-label)}
 .gr-question{margin:0;font-size:1.25rem;line-height:1.5;font-weight:600}
+.gr-steps{margin:var(--space-2) 0 0}.gr-step .cl-row__body{min-width:0}
 .gr-ladder{list-style:none;margin:var(--space-2) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-1)}
 .gr-ladder li{font-size:.8125rem;line-height:1.35;color:var(--cl-label-3);display:grid;gap:2px}
 .gr-ladder li b{font-variant-numeric:tabular-nums}
@@ -1080,7 +1086,7 @@ html[data-text-size="xxl"] { font-size: 150%; }
 .gr-foot{padding:var(--space-8) var(--margin) var(--space-12);display:grid;gap:var(--space-3);justify-items:start;max-width:var(--layout-max);margin:0 auto}
 .gr-foot img{max-width:100%;height:auto}
 .cl-card__text{white-space:normal}
-@media (max-width:900px){.gr-plan-grid{--cols:1}.gr-four{--cols:2}}
+@media (max-width:900px){.gr-plan-grid{--cols:1}.gr-three{--cols:1}.gr-four{--cols:2}}
 /* Kit 06 bundle.css의 모바일 .cl-section이 정의되지 않은 --space-12를 써서 여백이 0이 되는 문제를 기존 토큰으로 보완한다. */
 @media (max-width:639px){.gr-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.cl-section{padding:var(--space-11) var(--space-4)}.gr-bar{padding:8px var(--space-4)}.gr-bar .cl-lockup__name small,.gr-print-long{display:none}}
 @media print{
@@ -1103,7 +1109,7 @@ html[data-text-size="xxl"] { font-size: 150%; }
   <div class="cl-section__inner">
     <span class="cl-caption">성장기록부 · 2026.08.12 – 10.20</span>
     <h1 class="cl-large-title" id="cover-t">왕건 학생이<br>두 달 동안 지켜 온 약속</h1>
-    <p class="cl-section__lead">8월 해석상담에서 왕건 학생과 몇 가지 약속을 정했습니다. 그 뒤 두 달 동안 약속이 어떻게 지켜졌는지, 어디서 막혔고 어떻게 풀었는지, 앞으로 무엇을 할지를 김범수 매니저의 기록을 바탕으로 차례로 말씀드립니다.</p>
+    <p class="cl-section__lead">8월 해석상담에서 왕건 학생과 몇 가지 약속을 정했습니다. 그 뒤 두 달 동안 약속을 어떻게 지켰는지, 어디서 막혀 어떻게 풀었는지, 점수보다 먼저 달라진 모습과 앞으로의 계획을 차례로 말씀드립니다.</p>
     <div class="gr-chips"><span class="cl-badge">영훈고 1학년</span><span class="cl-badge">담당 · 김범수 매니저</span><span class="cl-badge">프리미엄</span></div>
   </div>
 </section>
@@ -1141,13 +1147,19 @@ html[data-text-size="xxl"] { font-size: 150%; }
     <p class="cl-footnote">8월 14일부터 10월 19일까지의 기록입니다. 공부 시간은 입실부터 퇴실까지에서 등록한 외출 시간을 뺀 값으로, 수업 시간을 포함합니다.</p></div>
   </div>
 </section>
-<section class="cl-section" id="plan" aria-labelledby="plan-t">
+<section class="cl-section" id="unseen" aria-labelledby="unseen-t">
+  <div class="cl-section__inner">
+    <div class="gr-head"><span class="cl-section__eyebrow">점수보다 먼저</span><h2 class="cl-section__title" id="unseen-t">점수보다 먼저 달라진 모습</h2><p class="cl-section__lead">성적은 실천과 생각하는 힘이 함께 자란 뒤에 따라옵니다. 그래서 점수보다 먼저 달라지는 모습이 있고, 이 변화는 말해 주지 않으면 아이도 잘 모릅니다. 처음과 지금을 나란히 놓고 말씀드립니다.</p></div>
+    <div class="cl-grid gr-two"><article class="cl-card cl-card--padded gr-card"><h3 class="cl-card__title">배운 것을 다시 꺼내는 공부</h3><dl class="gr-plan"><div class="gr-dl"><dt>처음</dt><dd>해석상담에서 왕건 학생은 지난 1학기에 배운 내용을 따로 익히는 시간이 거의 없었다고 돌아보았습니다.</dd></div><div class="gr-dl"><dt>지금</dt><dd>8월부터 10월까지 수학 개별지도에서 지난 수업에 막힌 개념을 다음 수업 확인 문제로 다시 꺼내 풀었고, 10월에는 암기 과목을 백지 테스트로 꺼내 쓰기 시작했습니다.</dd></div></dl></article><article class="cl-card cl-card--padded gr-card"><h3 class="cl-card__title">힌트를 받으면 풀이를 스스로 세우는 수학</h3><dl class="gr-plan"><div class="gr-dl"><dt>처음</dt><dd>8월 개별지도 초반에는 내분점 공식처럼 처음 배우는 공식의 계산을 헷갈려, 튜터가 수직선 위에서부터 단계를 짚어 주어야 했습니다.</dd></div><div class="gr-dl"><dt>지금</dt><dd>10월에는 튜터가 역질문으로 개념을 떠올리게 하면, 문제마다 어떤 방식을 쓸지 왕건 학생이 판단해 직선의 방정식을 세웠습니다.</dd></div></dl></article></div>
+  </div>
+</section>
+<section class="cl-section cl-section--raised" id="plan" aria-labelledby="plan-t">
   <div class="cl-section__inner">
     <div class="gr-head"><span class="cl-section__eyebrow">앞으로의 계획</span><h2 class="cl-section__title" id="plan-t">다음 12주에 할 일과 확인 방법</h2></div>
     <div class="cl-grid gr-plan-grid"><article class="cl-card cl-card--padded gr-card"><span class="cl-badge cl-badge--accent">앞으로 4주</span><h3 class="cl-card__title">학교 수업 노트와 귀가 후 마무리를 매일의 습관으로</h3><dl class="gr-plan"><div class="gr-dl"><dt>왕건 학생</dt><dd>왕건 학생은 학교 수업이 있는 날마다 1010 수업 리뷰 노트를 써 오고, 귀가 후에는 그날 끝내지 못한 공부 하나를 마무리합니다.</dd></div><div class="gr-dl"><dt>김범수 매니저</dt><dd>김범수 매니저는 등원할 때 노트와 전날 외운 영어 단어를 확인하고, 자리 잡지 않은 단어는 다음 날 다시 묻습니다.</dd></div><div class="gr-dl"><dt>가정</dt><dd>가정에서는 몇 시간 공부했는지보다 오늘 계획 가운데 무엇을 끝냈는지를 물어봐 주세요.</dd></div><div class="gr-dl"><dt>이렇게 확인합니다</dt><dd>10월 29일 월말 평가와 노트 확인 기록으로 노트를 쓴 날과 귀가 후 마무리한 날이 늘었는지 봅니다.</dd></div></dl></article><article class="cl-card cl-card--padded gr-card"><span class="cl-badge cl-badge--accent">앞으로 8주</span><h3 class="cl-card__title">기말고사에서 꼭 지킬 목표부터 확보하기</h3><dl class="gr-plan"><div class="gr-dl"><dt>왕건 학생</dt><dd>왕건 학생은 과목마다 꼭 지킬 목표와 도전 목표를 나누어 세우고, 암기 과목은 백지 테스트로 외운 내용을 꺼내 씁니다.</dd></div><div class="gr-dl"><dt>김범수 매니저</dt><dd>김범수 매니저와 손호연 교실장은 수학 주 3회와 영어 주 2회 개별지도에서 풀이를 한 줄씩 적고 다시 설명하는 연습을 이어 갑니다.</dd></div><div class="gr-dl"><dt>이렇게 확인합니다</dt><dd>기말고사 성적표와 시험지로 꼭 지킬 목표를 이뤘는지 확인하고, 틀린 문제의 원인을 왕건 학생과 함께 나눕니다.</dd></div></dl></article><article class="cl-card cl-card--padded gr-card"><span class="cl-badge cl-badge--accent">앞으로 12주</span><h3 class="cl-card__title">주간 계획을 왕건 학생이 먼저 세우기</h3><dl class="gr-plan"><div class="gr-dl"><dt>왕건 학생</dt><dd>왕건 학생이 주간 계획 초안을 먼저 써 오고, 밀린 공부를 어디로 옮길지 스스로 정합니다.</dd></div><div class="gr-dl"><dt>김범수 매니저</dt><dd>김범수 매니저는 계획을 대신 짜지 않고 초안을 함께 보며 무리한 부분만 바로잡습니다.</dd></div><div class="gr-dl"><dt>이렇게 확인합니다</dt><dd>학생이 쓴 계획이 3주 넘게 지켜지면 매니저의 도움을 한 단계 줄이고, 지켜지지 않으면 하루 분량을 줄여 다시 시작합니다.</dd></div></dl></article><article class="cl-card cl-card--padded gr-card"><span class="cl-badge cl-badge--accent">겨울방학</span><h3 class="cl-card__title">고등학교 2학년을 준비하는 방학 계획</h3><dl class="gr-plan"><div class="gr-dl"><dt>왕건 학생</dt><dd>왕건 학생은 기말고사에서 부족했던 과목 두 개를 골라 방학 동안 집중해서 보완합니다.</dd></div><div class="gr-dl"><dt>김범수 매니저</dt><dd>김범수 매니저와 손호연 교실장은 선택 과목과 개별지도 과목을 학부모님과 함께 정하고, 기타 연습과 쉬는 시간이 들어간 방학 시간표를 짭니다.</dd></div><div class="gr-dl"><dt>이렇게 확인합니다</dt><dd>방학 첫 두 주를 시범으로 운영하고, 계획이 지켜지는 정도를 보며 방학 전체 시간표를 확정합니다.</dd></div></dl></article></div>
   </div>
 </section>
-<section class="cl-section cl-section--raised" id="family" aria-labelledby="family-t">
+<section class="cl-section" id="family" aria-labelledby="family-t">
   <div class="cl-section__inner">
     <div class="gr-head"><span class="cl-section__eyebrow">가정에서</span><h2 class="cl-section__title" id="family-t">가정에서 함께해 주실 일</h2></div>
 
@@ -1155,26 +1167,26 @@ html[data-text-size="xxl"] { font-size: 150%; }
     <article class="cl-card cl-card--padded gr-card"><span class="cl-card__eyebrow">하루를 마칠 때 건네 볼 질문</span><p class="gr-question">오늘 네가 정한 것 가운데 끝낸 것 하나, 내일 다시 챙길 것 하나는 뭐야?</p></article>
   </div>
 </section>
-<section class="cl-section" id="engines" aria-labelledby="engines-t">
+<section class="cl-section cl-section--raised" id="engines" aria-labelledby="engines-t">
   <div class="cl-section__inner">
-    <div class="gr-head"><span class="cl-section__eyebrow">맺음</span><h2 class="cl-section__title" id="engines-t">자기주도학습의 두 엔진</h2><p class="cl-section__lead">공부는 이해하고 판단하는 사고력 엔진과, 시간·에너지·행동을 운용하는 관리력 엔진이 함께 돌아가야 합니다. 두 엔진이 지금 어디까지 왔는지, 매니저의 도움이 얼마나 줄었는지를 기준으로 정리했습니다.</p></div>
+    <div class="gr-head"><span class="cl-section__eyebrow">맺음</span><h2 class="cl-section__title" id="engines-t">자기주도학습의 두 엔진</h2><p class="cl-section__lead">자기주도학습은 두 엔진이 함께 돌아야 합니다. 사고력 엔진은 학습력을 키우고, 관리력 엔진은 스스로 목표와 방법을 정하는 주체성을 키웁니다. 처음에는 매니저가 상황과 목표와 방법을 함께 정해 주며 움직이고, 엔진이 자라면 스스로 자기 상태와 목표를 알고 움직입니다. 에듀플렉스는 아이를 끌어올리는 곳이 아니라 스스로 올라갈 엔진을 만들어 주는 곳입니다.</p></div>
 
     <div class="cl-grid gr-two">
-      <article class="cl-card cl-card--padded gr-card"><span class="cl-card__eyebrow">이해하고 판단하는 힘</span><h3 class="cl-card__title">사고력 엔진</h3>
-        <div class="cl-progress"><div class="cl-progress__meta"><span>지금 2칸 · 다시 꺼내기</span><span>2 / 4</span></div>
-        <div class="cl-progress__track" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4" aria-label="사고력 엔진 진척"><div class="cl-progress__fill" style="--value:50"></div></div></div>
-        <ol class="gr-ladder"><li class="gr-on"><b>1</b>함께 시작</li><li class="gr-on"><b>2</b>다시 꺼내기</li><li class=""><b>3</b>내 말로 설명</li><li class=""><b>4</b>스스로 이어가기</li></ol>
-        <p class="cl-card__text">지난 수업에서 어려워한 개념을 다음 수업 확인 문제에서 다시 풀어 내는 일이 두 달 내내 이어졌습니다. 지난 내용을 물으면 자기 말로 답하는 날도 늘고 있어, 다음 칸으로 올라가는 길목에 있습니다.</p>
-        <p class="cl-card__text gr-next"><span class="cl-em">다음 칸</span> 며칠 지난 뒤 처음 보는 문제에서도 풀이 이유를 스스로 설명하는지 확인하겠습니다.</p>
+      <article class="cl-card cl-card--padded gr-card"><span class="cl-card__eyebrow">자기 스스로의 사고로 학습 과제를 이해하고 구조화해 습득하는 힘</span><h3 class="cl-card__title">사고력 엔진 · 학습력 증진</h3>
+        <p class="cl-card__text">사고력 엔진은 배운 것을 다음 수업에서 다시 꺼내는 인출이 가장 먼저 자리를 잡았습니다. 이해는 새 단원에서 다시 막히기도 해 함께 다지는 중이고, 시험 때 긴장이 공부를 막지 않게 하는 일이 다음 과제입니다.</p>
+        <ol class="gr-levels" aria-label="두 층위 가운데 지금 단계"><li class="gr-on"><b>1</b><span>매니저와 함께 정하며 움직이는 단계</span></li><li class=""><b>2</b><span>스스로 알고 움직이는 단계</span></li></ol><p class="cl-card__text">수학 개별지도에서 튜터가 역질문으로 막힌 곳을 짚어 주면 개념을 다시 떠올려 풀어 내는 단계입니다.</p>
+        <ul class="cl-list gr-steps"><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">1. 감정이 공부를 막지 않는가</span><span class="cl-row__sub gr-wrap">시험이 다가오면 긴장이 커져 알던 내용도 떠오르지 않을 수 있어, 불안할 때 할 행동을 미리 정해 두었습니다.</span></span><span class="cl-badge">시작</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">2. 집중과 어휘</span><span class="cl-row__sub gr-wrap">영어는 처음부터 단어 기본기가 탄탄했고, 다른 과목의 개념어를 채우는 일은 영어 단어 누적 확인과 함께 살펴보겠습니다.</span></span><span class="cl-badge">확인 예정</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">3. 이해</span><span class="cl-row__sub gr-wrap">수학 개별지도에서 개념을 그림과 식으로 설명 듣고 역질문에 답하며 뜻을 또렷하게 잡아 가고 있습니다.</span></span><span class="cl-badge cl-badge--info">자라는 중</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">4. 인출</span><span class="cl-row__sub gr-wrap">지난 수업에서 막힌 개념을 다음 수업 확인 문제에서 다시 꺼내 푸는 일이 8월부터 10월까지 이어졌고, 암기 과목은 백지 테스트로 꺼내 쓰고 있습니다.</span></span><span class="cl-badge cl-badge--success">작동함</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">5. 학습 친화적 태도</span><span class="cl-row__sub gr-wrap">중간고사가 끝난 뒤 과학에서 스스로 해냈다는 성취감을 이야기했습니다.</span></span><span class="cl-badge">시작</span></div></li></ul>
+
+        <p class="cl-card__text gr-next"><span class="cl-em">다음 단계</span> 기말고사 준비 기간에 처음 보는 수학 문제를 튜터의 힌트 없이 풀고 그 풀이를 처음부터 설명하는지, 시험장에서 미리 정한 행동을 썼는지 확인하겠습니다.</p>
       </article>
-      <article class="cl-card cl-card--padded gr-card"><span class="cl-card__eyebrow">시간·에너지·행동을 운용하는 힘</span><h3 class="cl-card__title">관리력 엔진</h3>
-        <div class="cl-progress"><div class="cl-progress__meta"><span>지금 2칸 · 다시 꺼내기</span><span>2 / 4</span></div>
-        <div class="cl-progress__track" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="4" aria-label="관리력 엔진 진척"><div class="cl-progress__fill" style="--value:50"></div></div></div>
-        <ol class="gr-ladder"><li class="gr-on"><b>1</b>함께 시작</li><li class="gr-on"><b>2</b>다시 꺼내기</li><li class=""><b>3</b>내 말로 설명</li><li class=""><b>4</b>스스로 이어가기</li></ol>
-        <p class="cl-card__text">김범수 매니저가 짠 주간표를 지키면서, 과학 자습 시간이 더 필요하다고 먼저 말하고 시험 기간에는 기타 연습을 스스로 줄였습니다. 계획이 밀렸을 때 다시 세우는 일은 아직 매니저와 함께 하고 있습니다.</p>
-        <p class="cl-card__text gr-next"><span class="cl-em">다음 칸</span> 주간 계획 초안을 왕건 학생이 먼저 써 오고, 밀린 공부를 어디로 옮길지 스스로 정하도록 맡기겠습니다.</p>
+      <article class="cl-card cl-card--padded gr-card"><span class="cl-card__eyebrow">어떤 과목을 왜, 언제 공부할지 스스로 정하고 이끌어 가는 힘</span><h3 class="cl-card__title">관리력 엔진 · 주체성 형성</h3>
+        <p class="cl-card__text">관리력 엔진은 자기 시간을 살펴보고 직접 바꿔 본 뒤, 바꾼 대로 중간고사까지 지내 보는 첫 바퀴를 돌았습니다. 결과를 받아들이고 다시 도전하는 단계는 이제 막 시작했습니다.</p>
+        <ol class="gr-levels" aria-label="두 층위 가운데 지금 단계"><li class="gr-on"><b>1</b><span>매니저와 함께 정하며 움직이는 단계</span></li><li class=""><b>2</b><span>스스로 알고 움직이는 단계</span></li></ol><p class="cl-card__text">김범수 매니저와 함께 짠 주간표와 연휴 일정표에 왕건 학생이 직접 계획을 적고 그대로 지내 보는 단계입니다.</p><p class="cl-card__text"><span class="cl-em">스스로 움직인 장면</span></p><ul class="gr-signs"><li>9월 11일에는 수요일 등원이 어려우니 토요일에 과학 자습 시간이 더 필요하다고 먼저 말했고, 시험을 앞두고 기타 레슨을 한 달 쉬기로 스스로 정해 알려 왔습니다.</li></ul>
+        <ul class="cl-list gr-steps"><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">1. 살펴보기</span><span class="cl-row__sub gr-wrap">8월부터 김범수 매니저와 학교, 이동, 기타 일정까지 넣은 주간표와 한 달 단위 텀 스케줄러로 자기 시간을 함께 들여다보았습니다.</span></span><span class="cl-badge cl-badge--success">작동함</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">2. 바꿔 보기</span><span class="cl-row__sub gr-wrap">중간고사를 앞두고 평일에 못 한 공부를 토요일 낮으로 옮기고, 취미 일정도 시험 일정에 맞춰 조정했습니다.</span></span><span class="cl-badge cl-badge--info">자라는 중</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">3. 겪어 보기</span><span class="cl-row__sub gr-wrap">바꾼 계획으로 중간고사까지 지내며 등원 시간은 자리를 잡았지만, 추석 연휴에는 직접 쓴 계획을 다 해내지 못했습니다.</span></span><span class="cl-badge cl-badge--info">자라는 중</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">4. 결과 받아들이기</span><span class="cl-row__sub gr-wrap">중간고사가 끝난 뒤 과학의 성취와 영어의 아쉬움을 함께 돌아보고, 과목마다 꼭 지킬 목표와 도전 목표를 나누었습니다.</span></span><span class="cl-badge">시작</span></div></li><li><div class="cl-row gr-step"><span class="cl-row__body"><span class="cl-row__title">5. 다시 도전</span><span class="cl-row__sub gr-wrap">기말고사 준비를 평소보다 일찍 시작하기로 했고, 실제로 해낸 결과는 기말고사에서 확인합니다.</span></span><span class="cl-badge">시작</span></div></li></ul>
+        <p class="cl-card__text"><span class="cl-em">전략 과목 · 수학, 영어, 과학 세 과목 집중</span> 9월 말 시험을 앞두고 수학, 영어, 과학을 집중 과목으로 정했습니다. 한 과목에서 확실한 성취 경험을 먼저 만드는 것이 원칙이어서, 기말고사에서는 성취감을 느낀 과목을 중심으로 전략 과목을 왕건 학생과 함께 다시 정하겠습니다.</p>
+        <p class="cl-card__text gr-next"><span class="cl-em">다음 단계</span> 기말고사 준비에서 김범수 매니저가 묻기 전에 왕건 학생이 주간 계획 초안을 먼저 써 오고, 밀린 공부를 어디로 옮길지 스스로 정하는지 확인하겠습니다.</p>
       </article></div>
-    <div class="gr-closing cl-readable"><p>두 달 전 왕건 학생에게는 기타를 혼자 익힌 경험은 있었지만, 그 힘을 공부로 옮기는 길은 아직 없었습니다. 지금 사고력 엔진은 배운 것을 다음 수업에서 다시 꺼내는 칸에, 관리력 엔진은 정해진 계획을 지키며 필요한 시간을 먼저 말하는 칸에 와 있습니다. 두 엔진 모두 다음 칸이 분명히 보이는 자리입니다. 기말고사와 겨울방학을 지나며 왕건 학생이 스스로 계획을 세우고 배운 것을 자기 말로 설명하는 학생이 되도록 끝까지 함께하겠습니다.</p><p class="gr-sign">에듀플렉스 길음점 · 김범수 매니저</p></div>
+    <div class="gr-closing cl-readable"><p>두 달 전 왕건 학생에게는 기타를 혼자 익힌 힘이 있었지만, 그 힘을 공부로 옮기는 길은 아직 없었습니다. 지금 사고력 엔진은 막힌 개념을 다음 수업에서 다시 꺼내는 인출이 자리를 잡았고, 관리력 엔진은 함께 정한 계획대로 지내 보는 첫 바퀴를 돌았습니다. 두 엔진 모두 아직은 매니저와 함께 정하며 움직이는 단계이고, 9월에는 과학 자습 시간을 먼저 청하는 등 스스로 움직인 장면도 보였습니다. 점수보다 먼저 달라진 이 모습이 기말고사와 겨울방학을 지나며 스스로 알고 움직이는 힘이 되도록 끝까지 함께하겠습니다.</p><p class="gr-sign">에듀플렉스 길음점 · 김범수 매니저</p></div>
   </div>
 </section>
 </main>
