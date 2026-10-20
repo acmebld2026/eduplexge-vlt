@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="내부 운영용 · 담당 매니저 내방상담 준비 아젠다">
+<title>왕건 어머님 내방상담 아젠다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --paper: #ffffff;
+    --ink: #1c2330;
+    --ink-2: #4a5566;
+    --ink-3: #7b8595;
+    --line: #e3e7ee;
+    --brand: #1f4e8c;
+    --brand-soft: #eaf1fb;
+    --accent: #0f8a6b;
+    --accent-soft: #e6f5f0;
+    --warn: #c0612b;
+    --warn-soft: #fcefe6;
+    --memo: #6b4fa0;
+    --memo-soft: #f3effa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161d; --paper: #1a2029; --ink: #e8ecf2; --ink-2: #b6bfcc; --ink-3: #8a94a3;
+      --line: #2c3440; --brand: #7fb0ee; --brand-soft: #1d2a3c; --accent: #4cc7a2; --accent-soft: #15302a;
+      --warn: #f0a070; --warn-soft: #36251b; --memo: #b9a2e6; --memo-soft: #262035;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --paper: #1a2029; --ink: #e8ecf2; --ink-2: #b6bfcc; --ink-3: #8a94a3;
+    --line: #2c3440; --brand: #7fb0ee; --brand-soft: #1d2a3c; --accent: #4cc7a2; --accent-soft: #15302a;
+    --warn: #f0a070; --warn-soft: #36251b; --memo: #b9a2e6; --memo-soft: #262035;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 15px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 24px 16px 64px; }
+  header.top {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px 22px 18px; margin-bottom: 16px;
+  }
+  .kicker { font-size: 12px; letter-spacing: .08em; color: var(--brand); font-weight: 700; }
+  h1 { font-size: 24px; line-height: 1.35; margin: 6px 0 12px; }
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 6px 16px; font-size: 14px; color: var(--ink-2); }
+  .meta b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .toolbar label, .toolbar button {
+    display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 13px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink-2);
+    border-radius: 999px; padding: 6px 12px; cursor: pointer;
+  }
+  .toolbar input { accent-color: var(--memo); }
+  .toolbar a.back { display: inline-flex; align-items: center; font-size: 13px; border: 1px solid var(--line); background: var(--bg); color: var(--brand); border-radius: 999px; padding: 6px 12px; text-decoration: none; }
+  .goal-box {
+    background: var(--brand-soft); border-radius: 12px; padding: 14px 16px; margin-top: 14px; font-size: 14.5px;
+  }
+  .goal-box strong { color: var(--brand); }
+  section.card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  h2 { font-size: 18px; margin: 0 0 12px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  h2 .no {
+    display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px;
+    border-radius: 999px; background: var(--brand); color: #fff; font-size: 14px; padding: 0 8px;
+  }
+  :root[data-theme="dark"] h2 .no { color: #10151c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h2 .no { color: #10151c; } }
+  h2 .time { font-size: 12.5px; font-weight: 600; color: var(--ink-3); margin-left: auto; }
+  h3 { font-size: 15px; margin: 16px 0 6px; color: var(--ink); }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  .say {
+    border-left: 3px solid var(--accent); background: var(--accent-soft);
+    padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 10px 0;
+  }
+  .say .lab, .ask .lab, .memo .lab, .req .lab { display: block; font-size: 12px; font-weight: 700; letter-spacing: .04em; margin-bottom: 4px; }
+  .say .lab { color: var(--accent); }
+  .req { border-left: 3px solid var(--warn); background: var(--warn-soft); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 10px 0; }
+  .req .lab { color: var(--warn); }
+  .ask { border: 1px dashed var(--brand); padding: 10px 14px; border-radius: 10px; margin: 10px 0; }
+  .ask .lab { color: var(--brand); }
+  .memo { background: var(--memo-soft); border-radius: 10px; padding: 10px 14px; margin: 10px 0; font-size: 14px; color: var(--ink-2); }
+  .memo .lab { color: var(--memo); }
+  body.hide-memo .memo, body.hide-memo .memo-only { display: none !important; }
+  .table-scroll { overflow-x: auto; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 8px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--bg); font-weight: 600; color: var(--ink-2); font-size: 13px; }
+  td.fill { min-width: 90px; color: var(--ink-3); }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin: 0 2px; white-space: nowrap; }
+  .tag.focus { background: var(--brand); color: #fff; }
+  :root[data-theme="dark"] .tag.focus { color: #10151c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tag.focus { color: #10151c; } }
+  .tag.keep { background: var(--accent-soft); color: var(--accent); }
+  .tag.base { background: var(--warn-soft); color: var(--warn); }
+  .timeline { list-style: none; padding: 0; margin: 8px 0; }
+  .timeline li { display: grid; grid-template-columns: 88px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline .d { font-weight: 700; color: var(--brand); font-size: 13.5px; }
+  .layers { display: grid; gap: 10px; margin-top: 8px; }
+  .layer { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .layer .ln { font-size: 12px; color: var(--memo); font-weight: 700; }
+  .layer h4 { margin: 2px 0 6px; font-size: 15px; }
+  .layer p { font-size: 14px; color: var(--ink-2); }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 13.5px; margin: 10px 0; }
+  .flow span { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 4px 9px; }
+  .flow i { font-style: normal; color: var(--ink-3); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .two > div { border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+  .two .no-go { background: var(--warn-soft); }
+  .two .go { background: var(--accent-soft); }
+  .two h4 { margin: 0 0 4px; font-size: 13.5px; }
+  .check { list-style: none; padding: 0; }
+  .check li { padding: 6px 0 6px 28px; position: relative; border-bottom: 1px dashed var(--line); }
+  .check li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 15px; height: 15px; border: 1.5px solid var(--ink-3); border-radius: 4px; }
+  .small { font-size: 12.5px; color: var(--ink-3); }
+  footer { text-align: center; font-size: 12.5px; color: var(--ink-3); margin-top: 20px; }
+  @media (max-width: 600px) {
+    h1 { font-size: 21px; }
+    section.card, header.top { padding: 16px; }
+    .two { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+    h2 .time { margin-left: 0; width: 100%; }
+  }
+  @media print {
+    body { background: #fff; font-size: 12.5px; }
+    .wrap { max-width: none; padding: 0; }
+    .toolbar { display: none; }
+    section.card, header.top { border: 1px solid #ccc; break-inside: avoid; }
+    table { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">에듀플렉스 길음점 · 내부 운영용 · 내방상담 아젠다</div>
+  <h1>왕건 학생 어머님 내방상담 아젠다</h1>
+  <div class="meta">
+    <div><b>학생</b>왕건 · 영훈고 1학년</div>
+    <div><b>참석</b>어머님 · 담당 매니저</div>
+    <div><b>담당 매니저</b>김범수 매니저</div>
+    <div><b>상담일</b>2026. 10. ___. (약 60분)</div>
+  </div>
+  <div class="goal-box">
+    <strong>오늘 상담의 축</strong> — 8/12 해석상담에서 세운 방향(공부 시간의 절대량 확보, 배운 것을 내 것으로 익히는 과정)이 지금 어디까지 왔는지 보여 드리고, 두 가지를 어머님과 같은 언어로 맞춘다.<br>
+    ① <strong>위로 쌓기</strong>: 집중 과목에서 작은 성공 경험 → 다른 과목으로 확장<br>
+    ② <strong>아래를 지키기</strong>: 불안이 감정의 입구를 흔들지 않도록 가정에서 중심 잡기
+  </div>
+  <div class="toolbar">
+    <label><input type="checkbox" id="toggleMemo"> 어머님과 함께 볼 때: 매니저 메모 숨기기</label>
+    <button type="button" onclick="window.print()">인쇄</button>
+    <a class="back" href="../admin-4ck2v7p3/">관리자 목록으로 돌아가기</a>
+  </div>
+</header>
+
+<section class="card">
+  <h2><span class="no">0</span>지금까지의 흐름 <span class="time">오프닝 3분</span></h2>
+  <ul class="timeline">
+    <li><span class="d">2026. 4.</span><span>첫 문의 통화</span></li>
+    <li><span class="d">8. 7.</span><span>VLT5G 검사 — 메인 TYPE 15 마니아 · 히든 TYPE 11 성실이</span></li>
+    <li><span class="d">8. 12.</span><span>해석상담(김병수 원장). 출발점은 재능 부족이 아니라 <b>공부 시간의 절대량</b>과 <b>배운 뒤 익히는 과정의 단절</b>로 정리. 기타를 1년 반 연습해 실력이 는 경험을 공부로 옮길 가장 강한 근거로 확인.</span></li>
+    <li><span class="d">8. 18.</span><span>프로그램 시작 — 상담·관리, 수학 개별지도(초기 주 4회)</span></li>
+    <li><span class="d">9. 23.</span><span>2학기 시험 목표 선언 — 학생이 과목별 목표 점수, 바꿀 점, 이어갈 점, 3단계 학습 계획을 직접 정함</span></li>
+    <li><span class="d">10월</span><span>2학기 중간고사 → 시험 기간 자습 중심 운영 → 지금은 정규 학습 루틴으로 복귀</span></li>
+  </ul>
+  <div class="say"><span class="lab">여는 말 예시</span>
+    "어머님, 8월 해석상담 때 건이에게 필요하다고 했던 건 공부 시간을 확보하고, 배운 걸 자기 것으로 익히는 과정이었습니다. 오늘은 시험 결과와 함께 그 과정이 지금 어디까지 왔는지, 그리고 집에서 어머님께 꼭 부탁드릴 두 가지를 말씀드리려고 합니다."
+  </div>
+</section>
+
+<section class="card memo-only">
+  <h2><span class="no">M</span>큐브맵으로 본 건이 — 매니저 준비 메모</h2>
+  <p class="small">원칙: 큐브맵 구조도와 레벨 용어는 어머님께 풀어 설명하지 않는다. 매니저가 근거로 쥐고, 어머님께는 아래 4단계 쉬운 말(마음의 바탕 → 생각하는 힘 → 습관과 태도 → 돌아보는 힘)로만 전한다. 검사는 8/7 VLT5G V2 결과다.</p>
+  <div class="layers">
+    <div class="layer">
+      <div class="ln">마음의 바탕 · 감정 입자도(입구) · 생에 대한 애착</div>
+      <h4>감정을 촘촘하게 읽는 아이, 가장 크게 잡히는 감정은 불안</h4>
+      <p>시험안정감 5(낮음), 낙관성 13, 자기긍정 23, 친화성 8. 학업만이 아니라 대인관계에서도 경계와 불안이 드러남. 해석상담 발화: 영어는 성취 압박이 긴장으로, 수학은 "언제 끝나지" 하는 조급함이 집중을 흔듦. 시험 중 이미 푼 문제를 계속 떠올리는 반추도 응답함.<br>
+      <b>자산</b>: 자기존재인정 79, 부모정서지지 77, 기타 연습으로 성장한 경험(삶에 대한 애착의 씨앗).<br>
+      <span class="small">V2 검사에는 감정 입자도 항목이 따로 없어 위 수치와 상담·관리 관찰을 함께 근거로 삼는다.</span></p>
+    </div>
+    <div class="layer">
+      <div class="ln">생각하는 힘 · 인지·감정 센터(집중·어휘 → 논리 → 의미 명료화)</div>
+      <h4>재료(어휘)는 있지만 개념이 또렷해지기까지 오래 걸림</h4>
+      <p>어휘력 72(다소 높음) ↔ 집중력 7, 논리력 15, C학습(이해) 1, P학습(문제해결) 1. 수학 APT 풀이 절차 1.6이 가장 낮음. 관리 중 관찰: 개념 습득은 느리지만 한 번 잡힌 개념을 문제에 적용하는 데는 무리가 없고, 문제 이해력이 좋음 → 병목은 의미 명료화(CHAMP C) 단계.</p>
+    </div>
+    <div class="layer">
+      <div class="ln">습관과 태도 · 매니저가 일하는 무대</div>
+      <h4>외부 확인 없이 하루를 끝까지 운영하기 어려움</h4>
+      <p>학습계획 4, 성실성 4, 학습자립심 8 ↔ 사교육의존 89, 부모학습통제 94. 그래서 스타트체크·데일리체크(DC), 1010 수업 리뷰 노트, 텀 스케줄러, 귀가 후 계획 완수 습관이 지금 훈련의 중심.</p>
+    </div>
+    <div class="layer">
+      <div class="ln">돌아보는 힘 · 메타인지로 가는 관문</div>
+      <h4>스스로 오답을 분석해 본 경험이 아직 적음</h4>
+      <p>학습성찰 12, 자기실력파악 22. 관문을 여는 열쇠는 <b>스스로 정하고 해낸 성취 경험</b>. 그래서 전략 과목(집중 과목)에서 성공 경험을 먼저 만든다. 내적책임감 86은 이 경험이 생겼을 때 붙잡을 수 있는 힘.</p>
+    </div>
+  </div>
+  <h3>화살표를 거꾸로 따라가면</h3>
+  <div class="flow">
+    <span>그날 계획 미완수</span><i>←</i><span>컨디션·집중 저하</span><i>←</i><span>머릿속 언어가 불안에 물듦</span><i>←</i><span>입구: 촘촘한 감정 입자도 + 불안</span>
+  </div>
+  <p>→ 그래서 오늘 상담은 <b>성공 경험으로 위를 쌓고(1·2·4·5번)</b>, <b>가정에서 감정의 입구를 지키는(6·7번)</b> 두 축으로 간다.</p>
+  <h3>두 엔진</h3>
+  <p><b>사고력</b>: 영어·어휘는 살아 있는 끝(여기서 출발), 수학·탐구는 기초 회복 중. <b>관리력</b>: 가장 약한 엔진이자 지금 집중 훈련 대상.</p>
+</section>
+
+<section class="card">
+  <h2><span class="no">1</span>이번 시험 목표와 결과 <span class="time">10분</span></h2>
+  <h3>목표를 세운 원칙</h3>
+  <ul>
+    <li>4등급 과목을 한꺼번에 다 끌어올리는 게 아니라, <b>집중 과목을 골라 3등급 선으로</b> 올린다.</li>
+    <li>지난번에는 두 과목 정도를 잡았고, 이번에는 한 단계 욕심을 내 <b>수학 · 영어 · 과학 세 과목</b>을 집중 관리했다.</li>
+    <li>과목마다 역할이 다르다.
+      <ul>
+        <li><span class="tag focus">수학</span> 개별지도. 풀이 과정을 자기 언어로 꺼내는 훈련으로 끌어올린다(2번).</li>
+        <li><span class="tag keep">영어</span> 바닥에서 끌어올리는 과목이 아니라 <b>원래 강점을 살리는 과목</b>. 강점을 지키고 넓힌다.</li>
+        <li><span class="tag base">과학 · 암기 과목</span> 빈칸·백지 테스트를 철저히 해서 4등급을 없애고, <b>3등급 선에서 기초를 회복</b>한다.</li>
+      </ul>
+    </li>
+    <li>영어를 빼면 기초가 많이 비어 있는 상태라, 한 과목씩 <b>내 말로 정리 → 노트 필기 → 문제로 꺼내기 → 오답 스스로 분석</b> 과정을 먼저 몸에 붙이는 데 집중했다.</li>
+  </ul>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>과목</th><th>직전 시험</th><th>9/23 선언 목표</th><th>이번 결과</th><th>다음 목표</th></tr></thead>
+      <tbody>
+        <tr><td>국어</td><td>76점 · 4등급</td><td>80점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+        <tr><td><span class="tag focus">수학</span> 개별지도</td><td>48점 · 3등급</td><td>65점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+        <tr><td><span class="tag keep">영어</span></td><td>70점 · 2등급</td><td>80점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+        <tr><td>한국사</td><td>3등급</td><td>70점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+        <tr><td>통합사회</td><td>45점 · 3등급</td><td>75점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+        <tr><td><span class="tag base">통합과학</span></td><td>72점 · 4등급</td><td>85점</td><td class="fill">___점 · ___등급</td><td class="fill"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">직전 시험 · 목표는 9/23 시험 목표 선언 자료 기준. 이번 결과와 다음 목표는 상담 전에 채운다.</p>
+  <div class="say"><span class="lab">결과를 읽는 말</span>
+    점수 자체보다 <b>"목표 대비 무엇을 해냈는가"</b>로 읽는다. 오른 과목은 "건이가 해낸 것"이라고 분명히 이름 붙인다. 목표에 못 미친 과목은 과정 지표(1010 노트 작성일, 빈칸·백지 테스트 횟수, 개별지도 숙제 완수)와 함께 보여 드리고 다음 단계로 연결한다.
+  </div>
+  <div class="ask"><span class="lab">어머님께 여쭐 것</span>
+    시험이 끝나고 집에서 건이는 결과를 어떻게 받아들였나요? 스스로 한 말이 있었나요?
+  </div>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거</span>
+    5장 "점수를 보는 법": 20점에서 30·40점을 만드는 과정이어야 하고, 그때 "이번 시험 목표 뭐라 그랬어? 너 해낸 거잖아"라고 말해 준다. 스스로 정하고 해낸 성취여야 아이 것이 된다 — 9/23 목표를 학생이 직접 선언한 것이 바로 그 장치.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">2</span>수학 개별지도: 풀이 과정을 자기 언어로 <span class="time">7분</span></h2>
+  <ul>
+    <li><b>건이의 특징</b>: 문제 이해력은 좋은 편. 개념 하나를 익히는 데는 오래 걸리지만, 익힌 개념을 문제에 스스로 적용하는 데는 무리가 없다.</li>
+    <li>그래서 <b>오래 걸리는 익힘 과정을 확실히</b> 하고, 여러 번 복습시키고, 풀이 과정으로 계속 꺼내게 하는 것을 반복한다.</li>
+    <li>노트에 <b>풀이를 한 줄씩 세로로 정확하게</b> 써 내려가는 습관이 없으면 이 과정이 만들어지지 않는다.</li>
+    <li>목표는 문제 양을 늘려 "풀린다"가 아니라, <b>특정 유형의 풀이 과정을 자기 말로 다시 설명할 수 있는가</b>. 개별지도는 이것을 집중적으로 돕는 시간이다.</li>
+    <li>9/23 선언과 연결: 배운 개념 중 두 문제를 골라 논술형 풀이로 매니저·튜터에게 설명(DC 활용).</li>
+  </ul>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거</span>
+    의미 명료화(C) 훈련. 큐브맵 5-7: 수학은 백지 테스트로 되지 않고, 인출 단계에 닿지 못한 학생을 그 수준까지 끌어올리려고 개별지도를 한다(역질문 → 인출할 때까지 기다림). 확인 지표: 주당 설명 통과 문제 수, 24·72시간 뒤 재풀이 성공.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">3</span>학교 수업과 1010 수업 리뷰 노트 <span class="time">6분</span></h2>
+  <ul>
+    <li>원래 학교 수업 중 졸거나 흘려듣는 시간이 있었다. 이를 막으려고 <b>1010 수업 리뷰 노트</b>를 주었고, 스타트체크 때 확인한다.</li>
+    <li>시험 기간에는 자습 위주로 운영해 노트를 쓰지 못한 날도 있었다. 이제 정규 루틴으로 돌아왔으니 <b>노트를 다시 정기 점검</b>하고, 학교 수업 집중을 계속 독려한다.</li>
+    <li>건이에게 늘 강조하는 것: <b>에듀플렉스에서만 공부하는 게 아니라</b>, 학교 수업까지 포함해 쓸 수 있는 학습 시간을 최대한 성실하게 쓰고 허투루 버리지 않는 것.</li>
+    <li>이 생활 습관은 <b>본인의 의지</b>와 <b>매니저의 꾸준한 관리·점검</b>이 함께 있어야 몸에 붙는다.</li>
+  </ul>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거</span>
+    습관과 태도 층(학습계획 4·성실성 4). 해석상담에서 정리한 "배움(수업) → 익힘(복습)" 연결의 첫 고리가 1010 노트. 스타트체크에서 노트 확인 → DC에서 2차 정리 확인의 하루 흐름을 다시 세운다.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">4</span>영단어 루틴과 교재 <span class="time">6분</span></h2>
+  <ul>
+    <li>단순한 단어장 암기가 아니라, 건이의 영어 강점을 살려 <b>수능 기출 영단어를 미리 외우는 것</b>이 좋다고 판단했다.</li>
+    <li>순서: <b>내신 범위 단어가 먼저</b>, 그 위에 수능 기출 단어를 매일 습관처럼 외워 와서 <b>등원하자마자 점검</b>하는 루틴.</li>
+    <li>어머님께서 전에 말씀하신 <b>영어 듣기</b>도 필요하지만, 지금 모의고사나 내신에서 당장 급한 항목은 아니다. 지금 가장 우선은 단어 암기.</li>
+  </ul>
+  <div class="say"><span class="lab">교재 논의</span>
+    매니저 선정안: <b>해커스 보카 수능 필수 2000+</b>(상담 때 표지를 보여 드린다). 건이에게도 따로 안내해 매일 조금씩 외우게 하고, 하루 분량은 건이와 함께 정한다.
+  </div>
+  <div class="ask"><span class="lab">어머님께 여쭐 것</span>
+    교재 구입은 가정에서 하실지, 듣기는 어느 시점에 붙이기를 원하시는지.
+  </div>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거</span>
+    결과지 읽는 순서 5단계 "강점(파란색)에서 출발". 영어는 사고력 엔진에서 가장 살아 있는 끝이라 성공 경험을 만들기 쉬운 자리. 매일 점검 → 통과 기록이 쌓이는 것 자체가 작은 성공 경험이 된다.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">5</span>한 과목씩 단계적으로: 성공 경험이 먼저 <span class="time">6분</span></h2>
+  <ul>
+    <li>고등 과목 성적을 짧은 기간에 동시에 크게 올리는 것은 현실적으로 어렵다.</li>
+    <li>여기서 공부하는 목적은 단기 성취만이 아니라, <b>긴 시선으로 단계적으로 성장</b>하는 것 — 습관을 고치고, 동기를 끌어올리고, 공부한 것을 내 언어로 꺼내는 훈련.</li>
+    <li>그래서 <b>주력 과목에서 목표를 달성 → 다음 과목으로 범위를 넓히는</b> 방식으로 간다. 해낸 과목의 성취감과 자신감이 다른 과목에도 좋은 영향을 준다.</li>
+    <li>건이는 중학교 때보다 고등학교에서 성취가 크게 떨어졌고, 그 뒤로 공부 의욕과 자신감이 많이 내려와 있다. 그래서 <b>성공 경험을 만들어 주는 것이 가장 중요</b>하다. 다만 처음부터 난이도가 너무 크면 오히려 의욕을 끌어올리기 어렵다.</li>
+  </ul>
+  <div class="req"><span class="lab">어머님께 부탁드릴 것</span>
+    건이에게 목표를 말씀하실 때는 <b>작은 목표</b>로 제시해 주시고, 작은 성공이라도 해냈을 때는 <b>칭찬과 지지를 아끼지 말아</b> 주세요.
+  </div>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 멘트</span>
+    "어머님, 목표를 잡으려면 먼저 아이의 정서가 안정되고 자신감이 커야 합니다. 그래야 삶에 대한 애착이 생기고, 습관과 성찰력을 바탕으로 목표 의식이 올라갑니다." (정서 안정 → 자신감 → 주인의식 → 목표 의식 순서) / 기타 연습 경험을 다시 꺼내 "시간을 들이면 는다"는 건이 자신의 증거로 연결.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">6</span>집에서의 공부: 시간보다 계획 이행률 <span class="time">7분</span></h2>
+  <ul>
+    <li>귀가 후에도 <b>스스로 계획을 끝까지 하고 하루를 마무리하는 습관</b>이 중요하다.</li>
+    <li>지난 상담에서 집에서의 공부를 두고 어머님과 비슷한 갈등이 있었다고 들었다. 어머님께, 아버님께 <b>보여 드리기 위한 공부</b>가 되면 오래 가지 못한다.</li>
+    <li>건이에게는 "누군가에게 보여 주려는 공부가 아니라 <b>내 계획을 완수하려는 공부</b>"를 하자고 코칭했다.</li>
+  </ul>
+  <div class="req"><span class="lab">어머님께 부탁드릴 것</span>
+    <b>판단 기준을 바꿔 주세요.</b> 집에서 몇 시간 했는지, 얼마나 늦게까지 했는지보다 <b>그날 자기 계획을 다 했는지(이행률)</b>를 봐 주세요.
+    <ul>
+      <li><b>계획을 다 했을 때</b>: 추가 공부는 건이의 의지에 맡기고, 하고 싶다면 독려만 해 주세요.</li>
+      <li><b>계획을 다 못 했을 때</b>: 건이가 스스로 필요를 느껴 책상에 앉고 하루를 책임 있게 마무리하도록 — 이 습관은 매니저가 계속 코칭하고 있습니다.</li>
+    </ul>
+  </div>
+  <div class="ask"><span class="lab">어머님께 여쭐 것</span>
+    집에서 건이의 공부를 주로 확인하시는 분은 누구인가요? 아버님과도 같은 기준(이행률)으로 보실 수 있도록 오늘 내용을 함께 나눠 주실 수 있을까요?
+  </div>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거</span>
+    부모학습통제 94·사교육의존 89 — 외부의 시선이 공부의 이유가 되기 쉬운 구조. "보여 주기" 대신 "내 계획"이 이유가 되어야 주도적 성취 경험이 생긴다. 킹핀 확인: "어머님께, 아버님께 보여 드리기"라는 말이 나온 만큼 아버님의 영향력을 대화로 확인하고, 학부모·학생·매니저가 같은 말을 하는 팀십을 만든다.
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">7</span>불안을 다루는 법: 어머님이 중심을 잡아 주세요 <span class="time">8분</span></h2>
+  <ul>
+    <li>건이는 <b>불안이 꽤 큰 친구</b>다. 공부에서만이 아니라 친구·대인관계에서도 불안이 많이 드러난다.</li>
+    <li>건이는 감정을 아주 촘촘하게 읽는 아이라 상대의 감정도 세밀하게 해석하고 예민하게 받아들인다. 그중 가장 예민하게 느끼는 감정이 <b>불안</b>이다.</li>
+    <li>건이의 불안은 <b>한 번 시작되면 쉽게 가시지 않고, 풀리지 않을수록 점점 커지고 길어지는</b> 편이다.</li>
+    <li>불안이 들어오면 정서가 흔들리고, 그것이 공부로 이어진다. 머릿속에서 공부를 꺼내는 언어가 감정에 물들기 때문에, 불안에 물드는 순간 온전히 집중할 수 없고 → 컨디션이 떨어지고 → 그날 계획을 끝내지 못한다.</li>
+  </ul>
+  <div class="req"><span class="lab">어머님께 부탁드릴 것</span>
+    건이가 공부 때문이든 다른 일 때문이든 불안을 호소할 때, <b>어머님께서 같이 흔들리지 마시고 중심을 단단히 잡아</b> 주세요. 어머님까지 함께 불안해하시면 건이의 불안은 더 커지고, 우리가 지향하는 자기주도 학습의 초점이 흐려집니다. <b>적당한 위로와 지지만</b> 표현해 주시는 것이 가장 현명합니다.
+  </div>
+  <div class="two">
+    <div class="no-go"><h4>함께 흔들리는 반응(피할 것)</h4>
+      "큰일이다, 어떡하니" 같이 걱정을 보태기 · 원인을 캐묻거나 "그러게 미리 했어야지" 하고 지적하기 · 해결책을 한꺼번에 쏟아 내기
+    </div>
+    <div class="go"><h4>중심을 잡는 반응(예시)</h4>
+      "불안했구나." (감정은 받아 주기) → "매니저님이랑 정한 네 수칙 중에 지금 뭐 해 볼래?" (가이드는 짧고 정확하게) → 하고 나면 "해냈네." 한마디
+    </div>
+  </div>
+  <h3>건이와 이미 한 약속 — 어머님과 공유</h3>
+  <p>상담 때 건이와 <b>"특정한 원인으로 불안이 느껴질 때, 그 상황에서 할 나의 행동 수칙을 하나씩 정하자"</b>고 약속했다. 정해진 수칙을 어머님께도 알려 드려, 집에서도 같은 말로 그 수칙을 떠올리게 돕는다.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>불안이 오는 상황</th><th>건이의 행동 수칙</th><th>집에서 어머님이 해 줄 한마디</th></tr></thead>
+      <tbody>
+        <tr><td>예) 시험을 앞두고 / 시험 직후</td><td class="fill">(건이와 정한 내용 기입)</td><td class="fill"></td></tr>
+        <tr><td>예) 그날 계획이 밀렸을 때</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>예) 친구·대인관계 일</td><td class="fill"></td><td class="fill"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="memo"><span class="lab">매니저 메모 · 큐브맵 근거·멘트</span>
+    <ul>
+      <li>4-6: 감정이 잔잔하지 않으면 인지 기능이 떨어진다. 입자도를 돌보는 일의 80~90%는 가정.</li>
+      <li>4-5: 입자도가 촘촘해 예민한 아이도 감정을 구분해 해결한 경험이 쌓이면 '섬세한 아이'가 된다. 입자도가 너무 고운 아이는 반응할 정보가 많으므로 가지치기(우선순위) 훈련.</li>
+      <li>5-3 선제 타격: 불안은 가장 불안하지 않을 때 다루는 법을 약속해 둔다 — 행동 수칙이 바로 그것.</li>
+      <li>멘트: "어머님과 건이는 감정 입자도가 다릅니다. 템포의 밸런스는 제가 잡겠습니다. 서로 다른 입자도의 감정을 섞지는 말아 주세요." / "감정은 다 받아 주고, 가이드는 정확하게."</li>
+      <li>다음 시험 제안: 시험 중 반추(이미 푼 문제를 계속 떠올림)가 있으므로 시험 기간 가채점은 매니저가 맡고 학생은 다음 과목에만 집중하도록 미리 약속(5-3 시험 기간 응용).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <h2><span class="no">8</span>어머님 질문 · 합의 정리 <span class="time">4분</span></h2>
+  <div class="ask"><span class="lab">이슈 트래킹</span>
+    "어머님, 궁금하시거나 불편하신 점은 없으세요? 에듀플렉스 일이 아니어도 건이 공부 전반에 대해 말씀해 주셔도 좋습니다." — 바로 답하기 어려운 것은 기록해 두고 다음 통화 때 정리해서 답한다.
+  </div>
+  <h3>오늘 합의할 것</h3>
+  <ul class="check">
+    <li>집중 과목과 다음 시험 목표(작은 목표로)</li>
+    <li>영단어 교재 확정 · 하루 분량 · 등원 직후 점검</li>
+    <li>가정 내 판단 기준 = 그날 계획 이행률 (아버님과 공유)</li>
+    <li>불안할 때 어머님의 대응 원칙 + 건이의 행동 수칙 공유</li>
+    <li>다음 통화·내방 일정: ____________</li>
+  </ul>
+  <h3>다음 점검 때 보여 드릴 지표 (4주)</h3>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>지표</th><th>보는 방법</th></tr></thead>
+      <tbody>
+        <tr><td>1010 수업 리뷰 노트</td><td>주당 작성일 · 스타트체크 확인 횟수</td></tr>
+        <tr><td>영단어</td><td>등원 직후 테스트 통과율 · 누적 Day</td></tr>
+        <tr><td>수학 풀이 설명</td><td>주당 논술형 설명 통과 문제 수 · 재풀이 성공</td></tr>
+        <tr><td>과학 · 암기 과목</td><td>빈칸 · 백지 테스트 횟수와 채워진 정도(사진 공유)</td></tr>
+        <tr><td>귀가 후 계획</td><td>그날 계획 이행률(%)</td></tr>
+        <tr><td>불안 수칙</td><td>불안을 느낀 장면에서 수칙을 쓴 횟수 · 스스로 회복한 경험</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card memo-only">
+  <h2><span class="no">!</span>매니저 체크 — 상담 전·중 유의</h2>
+  <ul>
+    <li>상담 전: 이번 시험 결과·다음 목표 칸, 영단어 교재명, 건이와 정한 불안 수칙을 채워 온다.</li>
+    <li>큐브맵 그림·레벨 용어·검사 수치 원값을 어머님께 그대로 나열하지 않는다. "마음의 바탕 / 생각하는 힘 / 습관과 태도 / 돌아보는 힘"의 쉬운 말로만.</li>
+    <li>불안 이야기는 어머님을 탓하는 말로 들리지 않게 — "어머님이 중심을 잡아 주실 때 건이가 가장 빨리 회복한다"는 협력의 언어로.</li>
+    <li>목표 미달 과목이 있어도 "실패"로 말하지 않는다. 과정 지표와 다음 단계를 함께 제시.</li>
+  </ul>
+</section>
+
+<footer>에듀플렉스 길음점 · 내부 운영용 · 외부 공유 금지</footer>
+</div>
+<script>
+  (function () {
+    var box = document.getElementById('toggleMemo');
+    var key = 'wg10-agenda-hide-memo';
+    try { if (localStorage.getItem(key) === '1') { box.checked = true; document.body.classList.add('hide-memo'); } } catch (e) {}
+    box.addEventListener('change', function () {
+      document.body.classList.toggle('hide-memo', box.checked);
+      try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
