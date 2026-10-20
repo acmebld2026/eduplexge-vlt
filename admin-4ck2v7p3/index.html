@@ -199,7 +199,7 @@
     .drawer>summary{padding:14px;align-items:flex-start}.drawer-heading p{display:none}.drawer-toggle span{display:none}.drawer-body{padding:14px}.control-deck{margin:-14px -14px 14px;padding:14px}
     .controls-primary{grid-template-columns:1fr}.field--search{grid-column:auto}.pager-shell,.resource-tools{align-items:flex-start;flex-direction:column}.pagination{justify-content:flex-start}
     .table-scroll{overflow:visible;border:0;background:transparent}table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:nth-child(6),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
+    tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:nth-child(6),tbody td:nth-child(7),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
     a.link,a.manager{width:100%}.session-stack{min-width:0}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -930,6 +930,16 @@
   // 학생별 에듀큐브 성장 히스토리 분석은 아래 목록에 추가합니다.
   const growthHistoryReports = [
     {
+      student: "왕건10",
+      school: "영훈고1",
+      period: "2026.08.12~2026.10.20",
+      summary: "수학 개념의 다음 수업 재확인 · 학교·가정 복습과 정서 조절의 다음 과제 · 4·8·12주 및 겨울방학 계획",
+      href: "../6lx31q5m/",
+      audience: "학부모 공유용",
+      linkLabel: "학부모용 성장기록 열기",
+      shareMessage: "안녕하세요, 학부모님. 왕건 학생이 배운 내용을 다시 풀고 자기 말로 설명해 온 과정과, 학교·가정에서 이어갈 다음 학습 목표를 성장기록부로 정리했습니다. 앞으로의 4·8·12주와 겨울방학 계획도 함께 확인해 주세요. https://acmebld2026.github.io/eduplexge-vlt/6lx31q5m/"
+    },
+    {
       student: "조서진10",
       school: "영훈고1",
       period: "2025.09~2026.07",
@@ -961,6 +971,9 @@
   ];
 
   const resultTable = document.getElementById("result-table");
+  const growthHeader = document.createElement("th");
+  growthHeader.textContent = "성장기록부";
+  resultTable.tHead.rows[0].appendChild(growthHeader);
   const preAnalysisHeader = document.createElement("th");
   preAnalysisHeader.textContent = "사전보고서";
   resultTable.tHead.rows[0].appendChild(preAnalysisHeader);
@@ -974,8 +987,12 @@
   const preAnalysisByStudent = new Map(preAnalysisReports.map((report) => [report.student, report]));
   const mbtiDynamicsByStudent = new Map(mbtiDynamicsReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
+  const growthByStudent = new Map(growthHistoryReports.map((report) => [report.student, report]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
+    const growth = growthByStudent.get(student) || growthByStudent.get(student.replace(/\d+$/, ""));
+    const growthCell = row.insertCell();
+    growthCell.innerHTML = growth ? `<a class="preanalysis-link" href="${growth.href}">${growth.linkLabel}</a><small class="preanalysis-meta">${growth.audience} · ${growth.period}</small>` : '<span class="muted">—</span>';
     const preAnalysis = preAnalysisByStudent.get(student) || preAnalysisByStudent.get(student.replace(/\d+$/, ""));
     const preAnalysisCell = row.insertCell();
     if (preAnalysis) {
@@ -1131,7 +1148,7 @@
     return value.charAt(0).toUpperCase();
   }
 
-  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "사전보고서", "MBTI 가족 역동", "후속상담"];
+  const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "성장기록부", "사전보고서", "MBTI 가족 역동", "후속상담"];
   Array.from(resultTable.tHead.rows[0].cells).forEach((cell, index) => { cell.textContent = headers[index]; });
 
   resultRows.forEach((row, originalIndex) => {
