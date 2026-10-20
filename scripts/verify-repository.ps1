@@ -52,6 +52,20 @@ foreach ($relativePath in $htmlFiles) {
     }
 }
 
+# 원장 페이지 편집기로 저장한 정본(<html data-page-edited>)을 빌더 산출물이 덮어쓰지 않았는지 확인한다.
+$directorEdited = @(git grep -l -e 'data-page-edited=' HEAD -- '*/index.html' 2>$null | ForEach-Object { $_ -replace '^HEAD:', '' })
+foreach ($relativePath in $directorEdited) {
+    $fullPath = Join-Path $root $relativePath
+    if ((Test-Path -LiteralPath $fullPath) -and -not ((Get-Content -LiteralPath $fullPath -Raw) -match '<html\b[^>]*\sdata-page-edited=')) {
+        $errors.Add("원장이 고친 정본을 덮어씀(되돌리거나 원장 확인 필요): $relativePath")
+    }
+}
+foreach ($asset in @('assets/page-editor/page-editor.js', 'assets/page-editor/page-editor.css', 'assets/page-editor/tiptap.bundle.js')) {
+    if (($tracked -contains $asset) -and -not (Test-Path -LiteralPath (Join-Path $root $asset))) {
+        $errors.Add("원장 페이지 편집기 파일 누락: $asset")
+    }
+}
+
 if ($errors.Count -gt 0) {
     Write-Host '저장소 검증 실패:' -ForegroundColor Red
     $errors | ForEach-Object { Write-Host "- $_" -ForegroundColor Red }
