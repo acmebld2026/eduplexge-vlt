@@ -5,3 +5,4 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 *.png binary
+assets/page-editor/tiptap.bundle.js -text -diff
