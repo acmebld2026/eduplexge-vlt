@@ -207,11 +207,15 @@
 
 ## 원장 페이지 편집기 — 원장 수정본이 정본
 
-- `assets/page-editor/`는 원장이 페이지에서 직접 고쳐 저장하는 편집기다(톱니 → 원장 관리자 모드 → 페이지 수정하기, Tiptap 3.31.4). 페이지 맨 끝의 `<script src="../assets/page-editor/page-editor.js" defer data-page-editor>` 한 줄로 연결한다.
-- 원장이 저장하면 브라우저가 이 저장소 `master`에 `원장 페이지 수정: <슬러그> …` 커밋을 직접 만든다. 그 파일은 `<html data-page-edited>`와 `<script data-page-freeze-guard>`가 든 굳힌 정적 HTML이며 **정본**이다.
+- `assets/page-editor/`는 원장이 페이지에서 직접 고쳐 게시하는 편집기다(톱니 → 원장 관리자 모드 → 페이지 수정하기). 편집 화면은 홈페이지(eduplexge.sangsangplex.com) Tiptap 편집기 원본을 그대로 묶은 `editor.bundle.js`·`editor.css`이고, 로더는 페이지 맨 끝의 `<script src="../assets/page-editor/page-editor.js" defer data-page-editor>` 한 줄이다. 원본·빌드는 비공개 저장소 `결과지/page-editor/`(이 저장소의 `editor.*`·`content.css`는 손으로 고치지 않는다).
+- 원장이 게시하면 브라우저가 이 저장소 `master`에 `원장 페이지 수정: <슬러그> …` 커밋을 직접 만든다. 두 방식이 있다.
+  - 원본 고쳐 쓰기: 원본에 그대로 있던 부분을 고치면 그 요소의 글자만 바꾸고 `<html data-page-edited>`만 더한다(관리자 목록은 이 방식만 쓴다).
+  - 굳혀 저장: 스크립트가 그린 본문을 고치면 `<html data-page-edited>`와 `<script data-page-freeze-guard>`가 든 굳힌 정적 HTML로 저장한다.
 - `data-page-edited`가 있는 페이지는 빌더 산출물로 덮어쓰지 않는다. `scripts/verify-repository.ps1`이 이를 검사한다. 다시 만들어야 하면 원장 수정 내용을 빌더 입력에 옮기고 원장 확인을 받은 뒤에만 덮어쓴다.
+- 관리자 목록에 원장 수정이 있으면 학생 행·배열을 더할 때 원장이 고친 문구와 `data-page-edited` 표시를 그대로 둔다.
+- 원장이 올린 파일은 `assets/uploads/<슬러그>/`에 커밋된다. 지우거나 옮기지 않는다.
 - 작업 시작 때 `git pull --ff-only`로 원장 커밋을 먼저 받는다. 원장 커밋을 되돌리거나 강제 푸시로 지우지 않는다.
-- 관리자 목록(`admin-*`)과 작성기준 기준·참조 페이지(`k6z55rmk`, `ce0pf81k`, `as22at9z`, `ifirlhkv`)에는 편집기를 붙이지 않는다.
+- 작성기준 기준·참조 페이지(`k6z55rmk`, `ce0pf81k`, `as22at9z`, `ifirlhkv`)에는 편집기를 붙이지 않는다(체크섬으로 바이트가 고정되어 있다). 관리자 목록에는 붙인다.
 - 세부 운영 기준·복구 절차: 비공개 저장소 `분석/결과지_원장_페이지편집기_운영기준.md`.
 
 ## 커밋·푸시·배포 검증

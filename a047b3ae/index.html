@@ -181,4 +181,5 @@
   renderIssues();renderDialogue();renderTracker();loadForm();
   if(new URLSearchParams(location.search).get('qa')==='1'){const c={tabs:$$('.tab').length===6,issues:issues.length===10,days:$$('#trackerBody tr').length===14,noindex:document.head.innerHTML.includes('noindex'),admin:!!$('.admin-link'),term:document.body.innerText.includes('에듀플렉스'),noPhone:!document.body.innerText.includes('010')};console.table(c);document.documentElement.dataset.qa=Object.values(c).every(Boolean)?'pass':'fail'}
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body></html>

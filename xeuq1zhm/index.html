@@ -221,5 +221,6 @@ const KEY='xeuq1zhm-next';let saved={};try{saved=JSON.parse(localStorage.getItem
 $$('#nextList input').forEach(c=>{c.checked=!!saved[c.dataset.k];c.addEventListener('change',()=>{saved[c.dataset.k]=c.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}})});
 if(new URLSearchParams(location.search).get('qa')==='1'){const checks={tabs:$$('.tab').length===7,panels:$$('.panel').length===7,noindex:document.head.innerHTML.includes('noindex'),admin:!!$('.admin-link'),noPhone:!/010[-\s]?\d{3,4}/.test(document.body.innerText+Array.from(document.querySelectorAll('.panel')).map(p=>p.textContent).join('')),noCenter:!document.querySelector('main').textContent.includes('센터'),sources:document.body.textContent.includes('uo58fxR192RMn')};console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail'}
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>
