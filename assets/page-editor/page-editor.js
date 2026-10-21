@@ -14,7 +14,7 @@
 (function () {
   "use strict";
   if (window.__VLT_PAGE_EDITOR__) return;
-  var VERSION = "2026-10-21.2";
+  var VERSION = "2026-10-22.1";
   window.__VLT_PAGE_EDITOR__ = { version: VERSION };
 
   var CONFIG = {
