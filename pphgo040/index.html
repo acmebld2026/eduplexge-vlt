@@ -195,5 +195,6 @@ $('#saveTracker').addEventListener('click',save);$('#clearTracker').addEventList
 loadPlan();renderTracker();
 if(new URLSearchParams(location.search).get('qa')==='1'){const checks={tabs:$$('.tab').length===6,panels:$$('.panel').length===6,noindex:document.head.innerHTML.includes('noindex'),admin:!!$('.admin-link'),noPhone:!document.body.innerText.includes('010-'),officialRole:document.body.innerText.includes('김범수 담당 매니저'),sources:document.body.innerText.includes('KGGmEQAzGBSnH'),tracker:$$('#trackerBody tr').length===6};console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail'}
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>

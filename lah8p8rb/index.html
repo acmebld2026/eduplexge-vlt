@@ -668,5 +668,6 @@ applyTheme(store(()=>localStorage.getItem(THEME_KEY)));
 const navLinks=$$('.docnav a');if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.setAttribute('aria-current',String(a.getAttribute('href')==='#'+e.target.id)))}})},{rootMargin:'-30% 0px -65% 0px'});$$('main section.sec').forEach(s=>io.observe(s))}
 if(new URLSearchParams(location.search).get('qa')==='1'){const text=document.body.innerText,c={sections:$$('main section.sec').length===12,parts:$$('.part-card').length===23&&D.parts===23,steps:$$('.step-card').length===10,branches:D.branches===13,checklist:$$('[data-check]').length===D.checks&&D.checks===20,fields:$$('[data-field]').length===D.fields,noindex:document.head.innerHTML.includes('noindex'),admin:!!document.querySelector('a[href="../admin-4ck2v7p3/"]'),links:$$('.ver').length===3,noPhone:!/(01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(text),noPrice:!/\d\s?만\s?원/.test(text),noScarcity:!/만석/.test(text),noOverflow:document.documentElement.scrollWidth<=window.innerWidth+1};console.table(c);document.documentElement.dataset.qa=Object.values(c).every(Boolean)?'pass':'fail'}
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>

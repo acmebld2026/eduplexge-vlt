@@ -285,5 +285,6 @@
   document.getElementById('expandTimeline').addEventListener('click',function(){activateTab('timeline-panel');timelineEvents.forEach(function(event){event.open=true});showToast('타임라인을 모두 펼쳤습니다.');});
   var printState=[];window.addEventListener('beforeprint',function(){printState=timelineEvents.map(function(event){return event.open});timelineEvents.forEach(function(event){event.open=true})});window.addEventListener('afterprint',function(){timelineEvents.forEach(function(event,index){event.open=printState[index]})});
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>

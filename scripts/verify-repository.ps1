@@ -60,7 +60,7 @@ foreach ($relativePath in $directorEdited) {
         $errors.Add("원장이 고친 정본을 덮어씀(되돌리거나 원장 확인 필요): $relativePath")
     }
 }
-foreach ($asset in @('assets/page-editor/page-editor.js', 'assets/page-editor/page-editor.css', 'assets/page-editor/tiptap.bundle.js')) {
+foreach ($asset in @('assets/page-editor/page-editor.js', 'assets/page-editor/page-editor.css', 'assets/page-editor/editor.bundle.js', 'assets/page-editor/editor.css', 'assets/page-editor/content.css', 'assets/page-editor/tiptap.bundle.js')) {
     if (($tracked -contains $asset) -and -not (Test-Path -LiteralPath (Join-Path $root $asset))) {
         $errors.Add("원장 페이지 편집기 파일 누락: $asset")
     }

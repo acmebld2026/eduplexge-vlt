@@ -422,5 +422,6 @@ setInterval(()=>{renderTimer();if(state.running&&elapsed()%10===0){state.elapsed
 renderTraining();loadDraft();renderAll();
 if(new URLSearchParams(location.search).get('qa')==='1'){const text=document.body.innerText,checks={steps:T.steps.length===8,core:CORE===7,typeIntro:T.typeIntro.length===6,absences:T.absences.length===3,cubemap:T.cubemapCount===8,metaphors:T.metaphors.length===13,branches:T.branches.length===16,regSteps:T.regStepCount===10,fields:$$('[data-field]').length===T.fieldCount,noindex:document.head.innerHTML.includes('noindex'),admin:!!document.querySelector('a[href="../admin-4ck2v7p3/"]'),versions:$$('.ver').length===3,noPhone:!/(01[016789])[- ]?\d{3,4}[- ]?\d{4}/.test(text),storage:STATE_KEY.indexOf('vlt5g-v3-')===0,noOverflow:document.documentElement.scrollWidth<=window.innerWidth+1};console.table(checks);document.documentElement.dataset.qa=Object.values(checks).every(Boolean)?'pass':'fail'}
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>

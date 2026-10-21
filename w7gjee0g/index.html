@@ -161,5 +161,6 @@ const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const KEY='w7gjee0g-check';let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 $$('.check-list input').forEach(c=>{c.checked=!!saved[c.dataset.k];c.addEventListener('change',()=>{saved[c.dataset.k]=c.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}})});
 </script>
+<script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
 </html>
