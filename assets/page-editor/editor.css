@@ -9842,3 +9842,31 @@ pe-p + pe-p {
     padding-top: 0;
   }
 }
+
+/* 편집 기록 */
+.vpe-log-note {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+.vpe-log-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.vpe-log-scope {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+  font-size: 13px;
+}
+.vpe-log li.is-warn .vpe-rev-msg b {
+  color: var(--vpe-danger, #c0392b);
+}
+.vpe-log li.is-ok .vpe-rev-msg b {
+  color: var(--vpe-ok, #1e8e3e);
+}
+.vpe-log-path {
+  color: var(--vpe-muted);
+}
