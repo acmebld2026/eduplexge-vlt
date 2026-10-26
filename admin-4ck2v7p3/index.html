@@ -143,6 +143,7 @@
   .preanalysis-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#f39a3c;color:var(--ink);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
   .preanalysis-link:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
   .preanalysis-meta{display:block;margin-top:5px;color:#7a4b1e;font-size:9.5px;font-weight:800}
+  .preanalysis-version{margin-top:8px}
   .mbti-dynamics-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#d9f2ff;color:var(--blue-deep);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
   .mbti-dynamics-link:hover{background:var(--green);transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
   .mbti-dynamics-actions{display:grid;gap:7px}.mbti-dynamics-link.parent{background:var(--green);color:var(--ink)}.mbti-dynamics-link.manager{background:#d9f2ff;color:var(--blue-deep)}
@@ -711,7 +712,7 @@
       </tr>
       <tr>
         <td>김태림10 <span class="tag">삼각산고1</span></td>
-        <td>2026.10.19 · TYPE11 + HIDDEN TYPE12 (재방문 · 2023 4G TYPE10·14 → 5G 변화 추적 · 10/19 등록상담 #1 · 해석상담 별도 예정 · 수학 개별지도 주 4~5회 권고 예정 · 학원 정리 여부 가족 결정 · 사전보고서)</td>
+        <td>2026.10.19 · 10.26 · TYPE11 + HIDDEN TYPE12 (재방문 · 2023 4G TYPE10·14 → 5G 변화 추적 · 10/19 등록상담 #1 · 10/26 학생 해석상담 · 월·수·목·금 등원·수학 주 4회 권고 · 10/28까지 가족 결정 · 어머님 상담 예정 · 사전보고서·학생 상담 반영본)</td>
         <td><span class="session-empty">상담 후 작성</span></td>
         <td><span class="session-empty">상담 후 작성</span></td>
       </tr>
@@ -864,7 +865,8 @@
     { student: "조연우11", date: "2026.09.12", title: "VLT-5G 해석상담 사전 보고서", href: "../hk2rld3d/" },
     { student: "이소윤14", date: "2026.10.05", title: "VLT-5G 해석상담 사전 보고서", href: "../9d40oqx0/" },
     { student: "송지우09", date: "2026.10.15", title: "VLT-5G 해석상담 사전 보고서", href: "../zo3hmy8x/" },
-    { student: "김태림10", date: "2026.10.19", title: "VLT-5G 해석상담 사전 보고서 · 4G→5G 변화 추적", href: "../38zcfk8z/" }
+    { student: "김태림10", date: "2026.10.19", title: "VLT-5G 해석상담 사전 보고서 · 4G→5G 변화 추적", href: "../38zcfk8z/",
+      versions: [{ date: "2026.10.26", title: "학생 해석상담 반영 · 어머님 상담 전", href: "../k549dvzd/", linkLabel: "학생 상담 반영본 열기" }] }
   ];
 
   // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
@@ -1006,7 +1008,7 @@
     const preAnalysis = preAnalysisByStudent.get(student) || preAnalysisByStudent.get(student.replace(/\d+$/, ""));
     const preAnalysisCell = row.insertCell();
     if (preAnalysis) {
-      preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전보고서 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>`;
+      preAnalysisCell.innerHTML = `<a class="preanalysis-link" href="${preAnalysis.href}">사전보고서 열기</a><small class="preanalysis-meta">${preAnalysis.date} · ${preAnalysis.title}</small>` + (preAnalysis.versions || []).map((version) => `<a class="preanalysis-link preanalysis-version" href="${version.href}">${version.linkLabel}</a><small class="preanalysis-meta">${version.date} · ${version.title}</small>`).join("");
     } else {
       preAnalysisCell.innerHTML = '<span class="session-empty">등록 초안 없음</span>';
     }
@@ -1195,7 +1197,7 @@
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,
-      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
+      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""} ${(preAnalysis?.versions || []).map((version) => version.title).join(" ")} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
     });
   });
 
