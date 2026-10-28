@@ -66,6 +66,20 @@ foreach ($asset in @('assets/page-editor/page-editor.js', 'assets/page-editor/pa
     }
 }
 
+# admin 기본 정렬(상담 최신순)은 학생에게 연결된 모든 자료의 가장 최근 날짜로 계산한다(상시 규칙, AGENTS.md "admin 학생 목록 정렬").
+$admin = Get-Content -LiteralPath (Join-Path $root 'admin-4ck2v7p3/index.html') -Raw
+if ($admin -notmatch '<option value="newest" selected>') {
+    $errors.Add('admin 기본 정렬이 상담 최신순(newest)이 아님')
+}
+if ($admin -notmatch 'timestamp:\s*Math\.max\([^\r\n]*activityTimestamps\(\[preAnalysis, mbtiDynamics, growth, sessions\]\)') {
+    $errors.Add('admin 상담 최신순 기준일이 연결된 모든 자료의 최근 날짜(activityTimestamps)로 계산되지 않음')
+}
+foreach ($m in [regex]::Matches($admin, '\b(date|updated):\s*"([^"]*)"')) {
+    if ($m.Groups[2].Value -notmatch '^\d{4}\.\d{2}\.\d{2}$') {
+        $errors.Add("admin 날짜 형식이 YYYY.MM.DD 가 아님(정렬에서 빠짐): $($m.Groups[1].Value): `"$($m.Groups[2].Value)`"")
+    }
+}
+
 if ($errors.Count -gt 0) {
     Write-Host '저장소 검증 실패:' -ForegroundColor Red
     $errors | ForEach-Object { Write-Host "- $_" -ForegroundColor Red }
