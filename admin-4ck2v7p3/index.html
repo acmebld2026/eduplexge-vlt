@@ -1176,14 +1176,31 @@
   const headers = ["학생", "상담일 · TYPE", "학부모용", "매니저 기록", "성장기록부", "사전보고서", "MBTI 가족 역동", "후속상담"];
   Array.from(resultTable.tHead.rows[0].cells).forEach((cell, index) => { cell.textContent = headers[index]; });
 
+  // 상담 최신순(상시 규칙): 학생의 기준일 = 그 학생에게 연결된 모든 자료 가운데 가장 최근 날짜.
+  // 상담일 칸의 날짜, 행의 data-updated, 사전보고서·그 판(versions)·MBTI 가족 역동·성장기록부·후속상담 회차의 date·period·updated 를 모두 본다.
+  // 행을 손으로 옮기지 않는다. 자료를 더하면 계산으로 맨 위로 올라오고, 날짜는 그대로인데 내용만 고쳤으면 그 항목에 updated(YYYY.MM.DD 형식)를 더한다.
+  const ACTIVITY_DATE_KEYS = ["date", "updated", "period"];
+  function toActivityTime(text) {
+    const [year, month, day = 1] = text.split(".").map(Number);
+    return new Date(year, month - 1, day).getTime();
+  }
+  function datesIn(value) {
+    return (String(value ?? "").match(/\d{4}\.\d{1,2}(?:\.\d{1,2})?/g) || []).map(toActivityTime);
+  }
+  function activityTimestamps(value) {
+    if (!value || typeof value !== "object") return [];
+    if (Array.isArray(value)) return value.flatMap(activityTimestamps);
+    return Object.entries(value).flatMap(([key, item]) => ACTIVITY_DATE_KEYS.includes(key) ? datesIn(item) : activityTimestamps(item));
+  }
+
   resultRows.forEach((row, originalIndex) => {
     const name = getStudentName(row.cells[0]);
     const school = row.cells[0].querySelector(".tag")?.textContent.trim() || "";
     const detail = row.cells[1].textContent.trim();
     const typeMatch = detail.match(/TYPE\s*(\d+)/i);
-    const dateMatch = detail.match(/\d{4}\.\d{2}\.\d{2}/);
     const parentLink = row.cells[2].querySelector("a");
     const managerLink = row.cells[3].querySelector("a");
+    const growth = growthByStudent.get(name) || growthByStudent.get(name.replace(/\d+$/, ""));
     const preAnalysis = preAnalysisByStudent.get(name) || preAnalysisByStudent.get(name.replace(/\d+$/, ""));
     const mbtiDynamics = mbtiDynamicsByStudent.get(name) || mbtiDynamicsByStudent.get(name.replace(/\d+$/, ""));
     const sessions = sessionsByStudent.get(name.replace(/\d+$/, "")) || sessionsByStudent.get(name) || [];
@@ -1206,7 +1223,7 @@
       school,
       schoolGroup: school.includes("중") ? "middle" : school.includes("고") ? "high" : "other",
       type: typeMatch ? typeMatch[1] : "",
-      timestamp: dateMatch ? new Date(dateMatch[0].replaceAll(".", "-")).getTime() : 0,
+      timestamp: Math.max(0, ...datesIn(detail), ...datesIn(row.dataset.updated), ...activityTimestamps([preAnalysis, mbtiDynamics, growth, sessions])),
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,

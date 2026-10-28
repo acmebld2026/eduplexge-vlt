@@ -103,6 +103,16 @@
 
 사용자가 `초안`, `로컬만`, `배포하지 말 것`, `디자인만`처럼 범위를 제한하면 그 요청을 우선한다. `noindex`는 접근 제어가 아니므로 연락처·검사지·녹취 원문 등 공개 저장소에 둘 수 없는 개인정보를 세션 HTML에 포함하지 않는다.
 
+## admin 학생 목록 정렬 — 상시 규칙
+
+원장 지시(2026-10-28): admin 학생 목록은 늘 **가장 최근에 자료가 추가·갱신된 학생이 맨 위**다. 한 번 고치고 끝나는 일이 아니라 admin을 만지는 모든 작업이 지킨다.
+
+1. 기본 정렬 `상담 최신순`(`#sort-filter` `newest`)의 학생 기준일은 그 학생에게 연결된 모든 자료 가운데 가장 최근 날짜다: 상담일 칸의 날짜, 행의 `data-updated`, `preAnalysisReports`(그 `versions` 포함)·`mbtiDynamicsReports`·`growthHistoryReports`·`followupSessions[].sessions[]`의 `date`·`period`·`updated`.
+2. 순서는 `activityTimestamps`로 계산한다. 행을 손으로 위로 옮기거나 정렬 기준을 상담일 하나로 되돌리지 않는다.
+3. 자료를 더할 때 날짜를 `YYYY.MM.DD`로 적는다. 날짜는 그대로인데 내용을 고쳐 다시 배포하면 그 항목에 `updated: "YYYY.MM.DD"`를, 학생 행(정적 HTML)만 고쳤으면 `<tr data-updated="YYYY.MM.DD">`를 더한다.
+4. 새 자료 배열을 만들면 `activityTimestamps([...])`에 넣는다. `등록 순서`·`이름순`, 필터, 초성 묶음, 모바일 동작은 그대로 둔다.
+5. `scripts/verify-repository.ps1`이 기본 정렬, 계산식, 날짜 형식을 검사한다.
+
 ## 타입 확인
 
 - 메인 타입과 히든 타입은 원본 보고서·녹취·로컬 타입 기준표를 대조한다.
