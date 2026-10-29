@@ -729,6 +729,12 @@
         <td><span class="session-empty">상담 후 작성</span></td>
       </tr>
       <tr>
+        <td>배가온12 <span class="tag">성일중2</span></td>
+        <td>2026.10.29 · TYPE12 + HIDDEN TYPE11 (10/29 어머님 사전 상담 · 10/30 해석상담 예정 · 해석상담 전 사전보고서 · 수학 APT 수령 대기)</td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+        <td><span class="session-empty">상담 후 작성</span></td>
+      </tr>
+      <tr>
         <td>박서진08 <span class="tag">고3</span></td>
         <td>2026.09.23 · 09.28 · TYPE7 + HIDDEN TYPE10 · 수능 D-50 정시 전략 (9/29 오리엔테이션 시작 · 이하나 부원장 · 상담·관리 + 국어·수학 수업 · 수학 학원 정리 여부 가족 결정)</td>
         <td><a class="link" href="../8n4h0knq/">https://acmebld2026.github.io/eduplexge-vlt/8n4h0knq/</a></td>
@@ -886,7 +892,8 @@
     { student: "김태림10", date: "2026.10.19", title: "VLT-5G 해석상담 사전 보고서 · 4G→5G 변화 추적", href: "../38zcfk8z/",
       versions: [{ date: "2026.10.26", title: "학생 해석상담 반영 · 어머님 상담 전", href: "../k549dvzd/", linkLabel: "학생 상담 반영본 열기" }] },
     { student: "차희수12", date: "2026.10.28", title: "VLT-5G 해석상담 사전 보고서", href: "../x50kv1jj/",
-      versions: [{ date: "2026.10.29", title: "ver2 · 학생 사전 기록지 반영 · 해석상담 전", href: "../w9awjhg2/", linkLabel: "ver2 열기" }] }
+      versions: [{ date: "2026.10.29", title: "ver2 · 학생 사전 기록지 반영 · 해석상담 전", href: "../w9awjhg2/", linkLabel: "ver2 열기" }] },
+    { student: "배가온12", date: "2026.10.30", title: "VLT-5G 해석상담 사전 보고서", href: "../mw8e9zpt/" }
   ];
 
   // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
@@ -1072,6 +1079,7 @@
 
   // 새 링크를 받을 때 아래 배열에 학생 이름과 과목별 URL 한 묶음만 추가합니다.
   const aptSheets = [
+    { name: "배가온12", korean: "https://docs.google.com/spreadsheets/d/1HCk77He7YCScFoKw3C_7wC21_Ubkm1FtuTWYUWrzYzc/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/14ZIg1nPr7gEcyL3xgfpqJHg4vQm7mxWYdQtqkkGbc1I/edit?usp=drive_link" },
     { name: "안혁진12", korean: "https://docs.google.com/spreadsheets/d/1nKvfiv0a66MQ5rlEJ605JrOgXn0mI-55qB5q0dyIZJA/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1Xjf7Dm7Yx6bHNpipwbBTY-8dpjS0s1GGWdes5GhKRoY/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1TlYMkHZbqIAVgKp6N2iG1Gv5455E0U47BXzTBnjWQlk/edit?usp=drive_link" },
     { name: "차희수12", korean: "https://docs.google.com/spreadsheets/d/1dE-pR8L9A7whbPsUgSPzbOakvZmTQq7ETuNBLMs0APU/edit?usp=drive_link", math: "https://docs.google.com/spreadsheets/d/1mfpVv-NH8q0CeiUV8jCSv-1ReU5HxjQIqkUgYElKPgI/edit?usp=drive_link", english: "https://docs.google.com/spreadsheets/d/1tvfFfbO5uZHQzpNpfcMjOU6OaORITOrefW6pRzL0k64/edit?usp=drive_link" },
     { name: "김태림10", korean: "https://docs.google.com/spreadsheets/d/108rlWEiNSoYUd7v9v64SyuCdmmn4lXiJ_6ta7GiBAa0/edit?usp=sharing", math: "https://docs.google.com/spreadsheets/d/1V-57AxuI-_csvEqYfTzSpioxq_DgRYXJjWhHiXTRJUM/edit?usp=sharing", english: "https://docs.google.com/spreadsheets/d/1MKCmuStToxtuwbRbQqjK0SXi0i8dGfPBN7vaMHo4gxE/edit?usp=sharing" },
@@ -1127,9 +1135,9 @@
     <article class="apt-card">
       <div class="apt-name">${name}</div>
       <div class="apt-links">
-        <a class="apt-link" href="${korean}" target="_blank" rel="noopener noreferrer">국어</a>
-        <a class="apt-link" href="${math}" target="_blank" rel="noopener noreferrer">수학</a>
-        <a class="apt-link" href="${english}" target="_blank" rel="noopener noreferrer">영어</a>
+        ${korean ? `<a class="apt-link" href="${korean}" target="_blank" rel="noopener noreferrer">국어</a>` : '<span class="apt-link" aria-disabled="true">국어 수령 대기</span>'}
+        ${math ? `<a class="apt-link" href="${math}" target="_blank" rel="noopener noreferrer">수학</a>` : '<span class="apt-link" aria-disabled="true">수학 수령 대기</span>'}
+        ${english ? `<a class="apt-link" href="${english}" target="_blank" rel="noopener noreferrer">영어</a>` : '<span class="apt-link" aria-disabled="true">영어 수령 대기</span>'}
       </div>
     </article>
   `).join("");
