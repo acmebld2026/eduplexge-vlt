@@ -202,6 +202,7 @@
   </footer>
 </main>
 
+<script src="../assets/vlt-admin-lock/lock.js"></script>
 <script>
 (function () {
   var html = document.documentElement;
@@ -209,10 +210,8 @@
   function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
 
-  var btn = document.getElementById('adminBtn');
-  function setAdmin(on) { html.setAttribute('data-admin', on ? 'on' : 'off'); btn.setAttribute('aria-pressed', String(on)); set('admin', on ? '1' : '0'); }
-  setAdmin(get('admin') === '1' || location.hash === '#admin');
-  btn.addEventListener('click', function () { setAdmin(html.getAttribute('data-admin') !== 'on'); });
+  // 톱니 잠금은 ../assets/vlt-admin-lock/lock.js가 맡는다(에듀큐브 확인, 12시간 유지). 예전 켜짐 기억은 지운다.
+  try { localStorage.removeItem(KEY + 'admin'); } catch (e) {}
 
   var NODES = [
     { t: '마음의 안정', now: '어른에게 인정받고 싶은 마음이 큽니다. 지금은 ‘다 했다, 맞았다’를 보여야 인정받는다고 느껴서 못 한 것과 틀린 것을 말하기 어려워합니다.', help: '못 한 것을 말해도 괜찮다는 경험입니다. 말했을 때 먼저 고맙다고 받아 주시면 마음이 안정되고, 그래야 생각하는 힘이 제대로 일합니다.', map: '자신감 → 인정 욕구 충족 → 정서 안정. 매니지먼트의 첫째.' },
