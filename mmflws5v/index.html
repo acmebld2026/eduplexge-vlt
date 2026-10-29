@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="ko" data-theme="light" data-admin="off">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>권재현 학생 후속상담 01 · 솔루션·맥락판 | 에듀플렉스 에듀코치 길음점</title>
+<link rel="stylesheet" href="../assets/clarity-k06/tokens.css">
+<link rel="stylesheet" href="../assets/clarity-k06/components.css">
+<script src="../assets/clarity-k06/bundle.js"></script>
+<style>
+  .pg { min-height: 100vh; }
+  .bar-wrap { position: sticky; top: 0; z-index: var(--z-bar); padding: var(--space-3) var(--margin); }
+  .bar { max-width: var(--layout-max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-1) var(--space-1) var(--space-1) var(--space-2); border-radius: var(--radius-capsule); }
+  .bar__left { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
+  .bar__title { font-size: 0.9375rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar .cl-lockup__name small { display: none; }
+  main { max-width: var(--layout-max); margin: 0 auto; padding: var(--space-6) var(--margin) var(--space-16); display: grid; gap: var(--space-12); }
+  .sec { display: grid; gap: var(--space-5); scroll-margin-top: 88px; }
+  .sec__head { display: grid; gap: var(--space-2); }
+  .sec__num { font-size: 0.8125rem; font-weight: 700; color: var(--cl-accent); letter-spacing: .02em; }
+  .hero { display: grid; gap: var(--space-4); }
+  .badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .key { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-6); display: grid; gap: var(--space-3); }
+  .key__big { font-size: 1.375rem; line-height: 1.45; font-weight: 700; letter-spacing: -0.012em; margin: 0; }
+  .key__flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .key__flow i { font-style: normal; color: var(--cl-label-3); }
+  .jump { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .card-q { display: grid; gap: var(--space-3); align-content: start; }
+  .card-q .cl-card__title { font-size: 1.0625rem; }
+  .card-q .cl-badge { justify-self: start; }
+  .muted { color: var(--cl-label-2); }
+  p { margin: 0; }
+  .flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-2); }
+  .node { appearance: none; border: 0; font: inherit; color: var(--cl-label); background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); min-height: 132px; display: grid; gap: var(--space-2); align-content: start; text-align: left; cursor: pointer; transition: background var(--dur-fade) var(--ease-standard), transform var(--dur-press) var(--ease-press); }
+  .node:active { transform: scale(.96); }
+  .node[aria-pressed="true"] { background: var(--cl-accent-tint); }
+  .node__no { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
+  .node__name { font-size: 1rem; font-weight: 700; line-height: 1.35; }
+  .node .cl-badge { justify-self: start; }
+  .node .v-now, .node .v-next { display: none; }
+  [data-view="now"] .node .v-now, [data-view="next"] .node .v-next { display: inline-flex; }
+  .loopnote { display: flex; align-items: center; gap: var(--space-2); font-size: 0.875rem; color: var(--cl-label-2); margin-top: var(--space-3); }
+  .detail { display: grid; gap: var(--space-4); }
+  .detail__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .pane { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); display: grid; gap: var(--space-2); align-content: start; }
+  .pane__label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-2); }
+  .who { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+  .who__label { font-size: 0.8125rem; font-weight: 600; color: var(--cl-label-3); margin-right: var(--space-1); }
+  .compare { display: grid; gap: var(--space-3); }
+  .compare__row { display: grid; grid-template-columns: 1fr auto 1.3fr; gap: var(--space-3); align-items: stretch; }
+  .compare__arrow { display: grid; place-items: center; color: var(--cl-label-3); }
+  .compare__cell { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); display: grid; gap: var(--space-1); align-content: start; }
+  .compare__cell b { font-size: 1rem; }
+  .compare__tag { font-size: 0.8125rem; font-weight: 600; color: var(--cl-label-3); }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .step { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); display: grid; grid-template-columns: 40px 1fr auto; gap: var(--space-4); align-items: center; }
+  .step__no { width: 40px; height: 40px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; color: var(--cl-label-2); }
+  .step[data-now="true"] .step__no { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .step__body { display: grid; gap: var(--space-1); }
+  .step__title { font-weight: 700; font-size: 1.0625rem; }
+  .step__side { display: grid; justify-items: end; gap: var(--space-2); }
+  .dont { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .role-panel { display: none; gap: var(--space-4); }
+  .role-panel[data-active="true"] { display: grid; }
+  .role-top { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-4); align-items: start; }
+  .mini-map { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .mini-map span { font-size: 0.8125rem; font-weight: 600; padding: var(--space-1) var(--space-3); border-radius: var(--radius-capsule); background: var(--cl-fill); color: var(--cl-label-3); }
+  .mini-map span[data-on="true"] { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .todo { list-style: none; margin: 0; padding: 0; display: grid; }
+  .todo li + li { border-top: 1px solid var(--cl-separator); }
+  .todo label { display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); padding: var(--space-3) 0; cursor: pointer; align-items: start; min-height: 44px; }
+  .todo input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--cl-accent); }
+  .todo input:checked + span { color: var(--cl-label-3); text-decoration: line-through; }
+  .todo small { display: block; color: var(--cl-label-2); font-size: 0.875rem; margin-top: 2px; }
+  .say { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); display: grid; gap: var(--space-1); }
+  .say__label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-accent); }
+  .say q { quotes: "“" "”"; font-size: 1rem; line-height: 1.6; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: start; }
+  .plain { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); }
+  .acc { display: grid; }
+  .acc details + details { border-top: 1px solid var(--cl-separator); }
+  .acc summary { list-style: none; display: grid; grid-template-columns: 32px 1fr auto; gap: var(--space-3); align-items: center; padding: var(--space-4) 0; cursor: pointer; min-height: 44px; }
+  .acc summary::-webkit-details-marker { display: none; }
+  .acc__no { width: 32px; height: 32px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; color: var(--cl-label-2); }
+  .acc details[open] .acc__no { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .acc__title { font-weight: 600; }
+  .acc__chev { color: var(--cl-label-3); transition: transform var(--dur-snappy) var(--ease-snappy); }
+  .acc details[open] .acc__chev { transform: rotate(90deg); }
+  .acc__body { padding: 0 0 var(--space-4) 44px; display: grid; gap: var(--space-3); }
+  .weeks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+  .adm { display: none !important; }
+  [data-admin="on"] .adm { display: grid !important; }
+  .adm-box { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); gap: var(--space-2); font-size: 0.9375rem; }
+  .adm-box__label { display: flex; align-items: center; gap: var(--space-2); font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-2); }
+  .adm-box ul.plain, .adm-box > ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--space-1); }
+  .adm-sec { gap: var(--space-4); }
+  footer.foot { border-top: 1px solid var(--cl-separator); padding-top: var(--space-6); display: grid; gap: var(--space-3); justify-items: start; }
+  footer.foot img { max-width: 100%; height: auto; }
+  @media (max-width: 900px) {
+    .flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .role-top, .two, .detail__cols { grid-template-columns: 1fr; }
+    .weeks { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .node { min-height: 112px; }
+    .compare__row { grid-template-columns: 1fr; }
+    .compare__arrow { transform: rotate(90deg); height: 20px; }
+    .step { grid-template-columns: 32px 1fr; }
+    .step__no { width: 32px; height: 32px; }
+    .step__side { grid-column: 2; justify-items: start; }
+    .bar__title, .bar .cl-lockup__name { display: none; }
+    .key { padding: var(--space-5); }
+    .key__big { font-size: 1.1875rem; }
+    .acc__body { padding-left: 0; }
+  }
+  @media print {
+    .bar-wrap, .jump, .cl-seg { display: none; }
+    .role-panel { display: grid; break-inside: avoid; }
+  }
+  .role-seg-4 { --n:4; }
+  @media (max-width: 560px) { #roleSeg .cl-seg__item { font-size: 0.8125rem; padding-left: 4px; padding-right: 4px; } }
+</style>
+</head>
+<body class="cl-root">
+<div class="pg">
+
+<div class="bar-wrap">
+  <div class="bar cl-glass">
+    <div class="bar__left">
+      <a class="cl-btn cl-btn--icon" href="../admin-4ck2v7p3/" aria-label="관리자 목록으로 돌아가기"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <span class="cl-lockup"><span class="cl-lockup__symbol"><img src="../assets/clarity-k06/logos/sangsangplex-logo.png" alt="" width="120" height="40"></span><span class="cl-lockup__name"><b>에듀플렉스 에듀코치 길음점</b><small>Eduplex Educoach Gireum</small></span></span>
+      <span class="bar__title">· 권재현 후속상담 01 · 솔루션·맥락판</span>
+    </div>
+    <span class="cl-group">
+      <button class="cl-btn cl-btn--icon" type="button" onclick="window.print()" aria-label="인쇄"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3.5h10V9M7 17.5H5a2 2 0 01-2-2V11a2 2 0 012-2h14a2 2 0 012 2v4.5a2 2 0 01-2 2h-2"/><path d="M7 14h10v6.5H7z"/></svg></button>
+      <button class="cl-btn cl-btn--icon" type="button" id="adminBtn" aria-pressed="false" aria-label="관리자 모드: 근거와 내부 판단 보기"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
+    </span>
+  </div>
+</div>
+
+<main>
+
+  <section class="hero" aria-labelledby="t-hero">
+    <span class="cl-caption">후속상담 01 · 2026. 10. 30. · 큐브맵 흐름(맥락)과 실행(솔루션) · 매니저·교실장 준비 → 어머님 통화 → 내방</span>
+    <h1 class="cl-large-title" id="t-hero">권재현 학생, 학원 한 칸보다 먼저 볼 것</h1>
+    <div class="badges">
+      <span class="cl-badge">길음중 3학년 · 예비고1</span>
+      <span class="cl-badge cl-badge--accent">담당 임지혜 매니저</span>
+      <span class="cl-badge">손호연 교실장</span>
+      <span class="cl-badge">상담·관리 + 영어 개별지도</span>
+      <span class="cl-badge">수학 외부 학원 화·목·토</span>
+      <span class="cl-badge cl-badge--highlight">VLT5G 미실시 · 상담 기록 기반</span>
+    </div>
+    <div class="key">
+      <span class="cl-card__eyebrow">한 줄 진단</span>
+      <p class="key__big">영어 학원은 답이 아닙니다. 재현이에게 비어 있는 것은 강의가 아니라 <span class="cl-em">스스로 운전해 본 시간</span>입니다.</p>
+      <div class="key__flow">
+        <span class="cl-badge cl-badge--highlight">1 결과가 아니라 실천으로 인정</span><i>→</i>
+        <span class="cl-badge cl-badge--info">2 상황·목표·방법을 함께</span><i>→</i>
+        <span class="cl-badge cl-badge--success">3 영어를 직접 운전</span>
+      </div>
+      <p class="muted">영어 개별지도는 잠시 빼고 전략을 세울 수 있습니다. 그 자리를 영어 학원으로 채우면 수학과 함께 한 주가 남이 정한 일정이 되고, 재현이가 스스로 움직이는 단계로 넘어갈 자리가 사라집니다. 이 페이지는 김민준 학생 판과 같은 방식으로, 큐브맵 흐름을 <b>지금의 흐름(맥락)</b>과 <b>바꿀 흐름(솔루션)</b>으로 나눠 누가 무엇을 맡는지까지 정리했습니다.</p>
+    </div>
+    <nav class="jump" aria-label="이 페이지의 순서">
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s1">1 세 가지 질문</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s2">2 큐브맵 흐름</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s3">3 핵심 진단</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s4">4 무엇이 먼저</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s5">5 역할</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s6">6 통화</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s7">7 4·8·12주</a>
+    </nav>
+  </section>
+
+  <section class="sec adm adm-sec" aria-labelledby="t-adm0">
+    <div class="cl-notice cl-notice--info" role="status"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">관리자 모드</span> 근거와 내부 판단이 함께 보입니다. 어머님과 화면을 함께 볼 때는 톱니를 다시 눌러 끕니다.</div></div>
+    <article class="cl-card cl-card--padded">
+      <div class="cl-card__body" style="padding:0;gap:var(--space-3)">
+        <span class="cl-card__eyebrow">원장 지시 · 2026. 10. 29.</span>
+        <h2 class="cl-card__title" id="t-adm0">이 페이지의 중심</h2>
+        <ul class="plain">
+          <li><b>영어가 빠져도 영어 학원에 보내시면 안 된다.</b> 영어는 학원을 가장 먼저 정리해야 하는 과목이라고 여러 차례 말씀드렸다.</li>
+          <li>영어 개별지도를 빼 드리고 전략을 도모하는 시간은 가져도 된다. 영어 학원은 아이를 위해 전략적으로 재고를 요청한다.</li>
+          <li>수학도 외부, 영어도 외부면 상담·관리를 추천할 수 없다. 예비고1에 학원을 늘리는 방식은 절대 안 된다.</li>
+          <li>프로그램 세팅권은 매니저가 갖는다. 통보식으로 정한 점이 아쉽다. 예비고1 세미나에 참석하셨어야 했다.</li>
+          <li>다음 주 영어 개별지도 투입은 빼되 자리는 점유해 두고, 통화 뒤 내방을 잡는다. 포트폴리오를 구상해 간다.</li>
+          <li>월·수·금 체류를 맡길 만큼의 수행도는 아직 아니라는 매니저 판단 → 전반적인 세팅을 다시 논의한 뒤 결정.</li>
+          <li>재현이와도 대화: 영어 학원에서 얻으려는 것과 잃는 것을 구분하게 한다.</li>
+          <li>필요하면 등록상담 재진행 + 예비고1 학부모 상담, 원하시면 원장 상담. <b>눈치 보지 말고 종료 낼 각오로 직언</b>, 제대로 된 진단에 근거해 처방.</li>
+        </ul>
+        <p class="muted">같은 후속상담 01의 다른 판: 포트폴리오·성장기록 상세 <a href="../j70fx9xp/">j70fx9xp</a> · 학부모 전달용 <a href="../p4x4oy4t/">p4x4oy4t</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="s1" aria-labelledby="t-s1">
+    <div class="sec__head">
+      <span class="sec__num">1 · 세 가지 질문</span>
+      <h2 class="cl-title-2" id="t-s1">어머님이 알려 오신 구성, 세 가지로 풀면</h2>
+      <p class="cl-subhead">11월부터 영어 개별지도를 빼고, 월·수·금 상담·관리만 받으며 영어 학원에 다니겠다는 말씀입니다.</p>
+    </div>
+    <div class="cl-grid" style="--cols:3">
+      <article class="cl-card cl-card--padded card-q">
+        <span class="cl-card__eyebrow">질문 1</span>
+        <h3 class="cl-card__title">영어 학원에서 무엇을 얻으려는 걸까요?</h3>
+        <span class="cl-badge cl-badge--info">i 강의는 아닙니다</span>
+        <p class="cl-card__text">내신 영어는 이미 100점입니다. 재현이 영어에서 비어 있는 것은 <b>어휘량, 근거를 끝까지 확인하는 습관, 범위 없는 모의고사 지문</b>입니다. 셋 다 강의를 더 들어서가 아니라 꺼내 보고 설명할 때 늡니다.</p>
+        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>5/21 영어 100점, “내신 위주 암기로 기반 독해력·문법이 다소 저하” 본인 인식</li><li>7/3 영어 오답: 선지와 문제를 끝까지 읽지 않고 성급하게 판단</li><li>10/26 영어: 마더텅, 기반학습 위주(어휘량 증가 필요)</li><li>길음중 영어 A 61.3%(성북구 18교 최고) — 세미나 2부 자료</li></ul></div>
+      </article>
+      <article class="cl-card cl-card--padded card-q">
+        <span class="cl-card__eyebrow">질문 2</span>
+        <h3 class="cl-card__title">영어 개별지도를 빼도 될까요?</h3>
+        <span class="cl-badge cl-badge--success">✓ 기간과 지표를 정하면</span>
+        <p class="cl-card__text">잠시 쉬면서 영어를 <b>재현이가 직접 운전하는 과목</b>으로 세워 볼 수 있습니다. 단, 기간과 확인 지표를 미리 정하고 개별지도 시간 자리는 유지합니다. 12월 점검에서 다시 정합니다.</p>
+        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>영어 개별지도 2024-12~2026-10 월 6~12회 지속(EduCube)</li><li>원장: 영어 개별지도는 빼 드리고 전략을 도모하는 시점은 가져도 된다</li><li>세미나: 운전대는 한 과목부터 넘기고 나머지는 받쳐 둔다</li></ul></div>
+      </article>
+      <article class="cl-card cl-card--padded card-q">
+        <span class="cl-card__eyebrow">질문 3</span>
+        <h3 class="cl-card__title">월·수·금 상담·관리만으로 충분할까요?</h3>
+        <span class="cl-badge cl-badge--danger">! 학원 사이 관리가 됩니다</span>
+        <p class="cl-card__text">수학이 화·목·토를 쓰고 영어 학원까지 들어오면, 상담·관리는 <b>학원 사이 빈 시간을 지키는 일</b>이 됩니다. 아직 매니저가 곁에서 받칠 때 실행이 이어지는 재현이에게 그 구성은 관리가 아닙니다.</p>
+        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>8/28 등원 지연(하교 후 귀가 시 피로·늘어짐), 6/2 일요일 등원·숙제 당일 완료·지각 사전 연락 도입</li><li>6/2·10/5 집에서 공부가 잘 안 됨, 휴대폰, 침대</li><li>9~10월 등원일 평균 체류 4.4~4.6시간(수업 포함)</li><li>10/29 담당 매니저: 월·수·금 체류를 맡길 수행도는 아님</li></ul></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="s2" aria-labelledby="t-s2">
+    <div class="sec__head">
+      <span class="sec__num">2 · 큐브맵 흐름</span>
+      <h2 class="cl-title-2" id="t-s2">생각이 행동이 되기까지, 재현이는 어디서 막히나</h2>
+      <p class="cl-subhead">칸을 누르면 그 단계의 지금 모습, 바꿀 방법, 맡는 사람이 아래에 열립니다. 위의 전환으로 지금의 흐름(맥락)과 바꿀 흐름(솔루션)을 바꿔 봅니다.</p>
+    </div>
+    <div class="cl-seg" role="radiogroup" aria-label="흐름 보기" style="--n:2;--i:0;max-width:360px" id="viewSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">지금의 흐름</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">바꿀 흐름</button></div>
+    <div id="flowWrap" data-view="now">
+      <div class="flow" role="group" aria-label="큐브맵 처리 순서">
+        <button class="node" type="button" aria-pressed="true"><span class="node__no">1</span><span class="node__name">자신감 · 인정 · 정서</span><span class="cl-badge cl-badge--danger v-now">! 결과에 흔들림</span><span class="cl-badge cl-badge--success v-next">✓ 실천으로 인정</span></button>
+        <button class="node" type="button" aria-pressed="false"><span class="node__no">2</span><span class="node__name">감정 · 컨디션</span><span class="cl-badge cl-badge--danger v-now">! 피로·늘어짐</span><span class="cl-badge cl-badge--success v-next">✓ 바로 등원·몸 쓰기</span></button>
+        <button class="node" type="button" aria-pressed="false"><span class="node__no">3</span><span class="node__name">포커싱 · 집중 · 관찰</span><span class="cl-badge cl-badge--danger v-now">! 끝까지 안 읽음</span><span class="cl-badge cl-badge--success v-next">✓ 근거 표시</span></button>
+        <button class="node" type="button" aria-pressed="false"><span class="node__no">4</span><span class="node__name">단어 · 어휘 · 논리</span><span class="cl-badge cl-badge--success v-now">✓ 개념 설명 강점</span><span class="cl-badge cl-badge--success v-next">✓ 어휘 인출·역질문</span></button>
+        <button class="node" type="button" aria-pressed="false"><span class="node__no">5</span><span class="node__name">비교 · 대조 (확인)</span><span class="cl-badge cl-badge--danger v-now">! 혼동·성급</span><span class="cl-badge cl-badge--success v-next">✓ 오답 재풀이</span></button>
+        <button class="node" type="button" aria-pressed="false"><span class="node__no">6</span><span class="node__name">행동 · 성취 경험</span><span class="cl-badge cl-badge--info v-now">i 챙길 때만 실행</span><span class="cl-badge cl-badge--success v-next">✓ 영어를 직접 운전</span></button>
+      </div>
+      <p class="loopnote"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0113.7-5.6L20 8.7M20 4v4.7h-4.7M20 12a8 8 0 01-13.7 5.6L4 15.3M4 20v-4.7h4.7"/></svg>6번의 경험이 다시 1번의 자신감으로 돌아갑니다. 학원 몫의 성취는 1번을 채우지 못하고, 내 힘으로 만든 성취가 채웁니다.</p>
+    </div>
+    <article class="cl-card cl-card--padded detail" aria-live="polite">
+      <div style="display:grid;gap:var(--space-1)">
+        <span class="cl-card__eyebrow" id="dEyebrow">1단계</span>
+        <h3 class="cl-card__title" id="dTitle">자신감 · 인정 · 정서</h3>
+      </div>
+      <div class="detail__cols">
+        <div class="pane"><span class="pane__label">재현이에게 지금 (맥락)</span><p id="dNow"></p></div>
+        <div class="pane"><span class="pane__label">이렇게 바꿉니다 (솔루션)</span><p id="dNext"></p></div>
+      </div>
+      <div class="who"><span class="who__label">맡는 사람</span><span id="dWho" class="who"></span></div>
+      <div class="adm adm-box"><span class="adm-box__label">근거</span><p id="dEvi"></p></div>
+    </article>
+  </section>
+
+  <section class="sec" id="s3" aria-labelledby="t-s3">
+    <div class="sec__head">
+      <span class="sec__num">3 · 핵심 진단</span>
+      <h2 class="cl-title-2" id="t-s3">어른이 보는 장면, 큐브맵으로 보면</h2>
+    </div>
+    <div class="compare">
+      <div class="compare__row"><div class="compare__cell"><span class="compare__tag">보이는 장면</span><b>“영어를 학원에서 공부해 보고 싶다”</b></div><div class="compare__arrow" aria-hidden="true"><svg class="cl-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="compare__cell"><span class="compare__tag">큐브맵으로</span><b>강의가 고파서라기보다 <span class="cl-em">고등 영어를 어떻게 준비할지 길이 안 보여서</span>일 가능성</b><span class="cl-footnote">움직이려면 내 상황 → 목표 → 바뀔 필요 → 구체적 방법이 있어야 합니다. 재현이는 상황은 말로 알지만 방법을 아직 스스로 세우지 못합니다. 이 단계에서는 매니저가 방법을 대신 보여 줍니다. 재현이와 대화로 확인합니다.</span></div></div>
+      <div class="compare__row"><div class="compare__cell"><span class="compare__tag">보이는 장면</span><b>영어 100점, 한국사 100점</b></div><div class="compare__arrow" aria-hidden="true"><svg class="cl-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="compare__cell"><span class="compare__tag">큐브맵으로</span><b>학교 범위를 <span class="cl-em">잘 외워 꺼낸</span> 결과. 고등 영어의 기반이라는 뜻은 아님</b><span class="cl-footnote">길음중 영어 A는 61.3%입니다. 5등급제로 단순 환산하면 A 학생 중 1등급 구간은 16%입니다(예측 아님). 인출하는 공부는 강점이고, 범위 없는 지문을 읽는 힘이 다음입니다.</span></div></div>
+      <div class="compare__row"><div class="compare__cell"><span class="compare__tag">보이는 장면</span><b>계획은 잘 세우는데, 집에서는 안 되고 등원이 늦는다</b></div><div class="compare__arrow" aria-hidden="true"><svg class="cl-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="compare__cell"><span class="compare__tag">큐브맵으로</span><b>관리력이 <span class="cl-em">매니저가 받칠 때 움직이는 단계</span>에 있음</b><span class="cl-footnote">자기 상황을 정확히 말하는 것과, 감시 없이 이어 가는 것은 다른 층입니다. 지금 관여를 줄이면 스스로 움직이는 단계가 아니라 관리가 빠진 자리로 갑니다.</span></div></div>
+      <div class="compare__row"><div class="compare__cell"><span class="compare__tag">보이는 장면</span><b>“월·수·금 상담·관리만”</b></div><div class="compare__arrow" aria-hidden="true"><svg class="cl-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="compare__cell"><span class="compare__tag">큐브맵으로</span><b>상담·관리를 <span class="cl-em">학원 시간표처럼</span> 놓는 구성</b><span class="cl-footnote">학원은 커리큘럼이 정해져 있어 아이가 스스로 정할 것이 숙제 정도입니다. 수학·영어가 모두 그렇게 되면 살펴보기 → 바꿔 보기 → 겪어 보기 → 받아들이기 → 다시 도전의 순환이 돌 자리가 없습니다.</span></div></div>
+    </div>
+    <div class="cl-notice cl-notice--warning"><span class="cl-notice__glyph" aria-hidden="true">◷</span><div><span class="cl-notice__title">시간이 정해진 일</span> 고1 3월까지 약 4개월입니다. 학기 중에는 벌어 둘 시간이 없어서, 이번 겨울이 재현이가 스스로 운전하는 경험을 쌓을 가장 큰 기회입니다. 학원이 늘면 그 겨울 시간이 먼저 사라집니다.</div></div>
+    <div class="adm adm-box"><span class="adm-box__label">근거 · 검사와 한계</span><ul>
+      <li>VLT5G 미실시: 수치·타입 없이 상담 99건의 관찰을 큐브맵 정본 구조(DEV 매니지먼트 순서)에 놓음. 내방 전 VLT5G(재원생은 설문만으로 타입까지) 실시를 권장.</li>
+      <li>“길이 안 보여서”는 가설. 재현이와 대화(얻으려는 것·잃는 것)로 확인 전까지 확정하지 않는다.</li>
+      <li>학원 관련 문장은 정본 4-1 [원문] ST 2-3(학원은 커리큘럼이 정해져 있어 스스로 시도할 것이 숙제 정도뿐)과 세미나 2부(학원은 도구, 학원 요일 테트리스).</li>
+      <li>길음중 A 비율·5등급 환산: 예비고1 세미나 2부 x4·x5(학교알리미 공시, 재조회 대조 완료).</li>
+    </ul></div>
+  </section>
+
+  <section class="sec" id="s4" aria-labelledby="t-s4">
+    <div class="sec__head">
+      <span class="sec__num">4 · 무엇이 먼저</span>
+      <h2 class="cl-title-2" id="t-s4">매니지먼트 순서 — 아래 칸부터</h2>
+      <p class="cl-subhead">자신감이 받쳐야 생각하는 힘이 일하고, 성취 경험이 쌓여야 스스로 움직입니다. 지금 재현이는 1·2단계를 매니저와 함께 하는 중입니다.</p>
+    </div>
+    <ol class="steps">
+      <li class="step" data-now="true"><span class="step__no">1</span><div class="step__body"><span class="step__title">정서 — 점수가 아니라 실천으로 자기를 평가</span><span class="cl-footnote">한 번의 시험에 흔들리지 않게, 계획한 공부를 얼마나 해냈는지로 스스로를 봅니다. 작은 실천을 구체적으로 짚어 줍니다.</span></div><div class="step__side"><span class="cl-badge cl-badge--highlight">지금</span><span class="cl-caption">매니저 · 어머님</span></div></li>
+      <li class="step" data-now="true"><span class="step__no">2</span><div class="step__body"><span class="step__title">움직이게 하기 — 상황·목표·방법을 함께</span><span class="cl-footnote">상황: 길음중 영어 비율, 고1 일정. 목표: 고1 3월에 어떤 영어로 시작할지 재현이 말로. 방법: 11월~3월 포트폴리오와 텀 스케줄러. 이 단계는 매니저가 대신 보여 줍니다.</span></div><div class="step__side"><span class="cl-badge cl-badge--highlight">지금</span><span class="cl-caption">매니저 · 재현이</span></div></li>
+      <li class="step"><span class="step__no">3</span><div class="step__body"><span class="step__title">제대로 공부하기 — 근거·인출·역질문</span><span class="cl-footnote">영어 어휘 누적 테스트, 지문 끊어 읽기와 정답 근거 설명, 모의고사 지문. 수학은 중학교 과정 빈틈 오답 재풀이와 필산.</span></div><div class="step__side"><span class="cl-badge">11월부터</span><span class="cl-caption">교실장 · 매니저</span></div></li>
+      <li class="step"><span class="step__no">4</span><div class="step__body"><span class="step__title">성취 경험 — 영어를 전략 과목으로</span><span class="cl-footnote">학원 없이 재현이가 운영한 영어에서 4주 뒤 바뀐 것(어휘 통과, 근거 설명)을 성취로 짚어 줍니다. 그동안 다른 과목은 무너지지 않게 받쳐 둡니다.</span></div><div class="step__side"><span class="cl-badge">4~8주</span><span class="cl-caption">매니저 · 어머님</span></div></li>
+      <li class="step"><span class="step__no">5</span><div class="step__body"><span class="step__title">스스로 움직이기</span><span class="cl-footnote">윈터스쿨 주간 계획을 재현이가 먼저 짜 오고, 매니저가 챙기지 않은 날에도 계획이 이어집니다.</span></div><div class="step__side"><span class="cl-badge">겨울방학</span><span class="cl-caption">재현이</span></div></li>
+    </ol>
+    <article class="cl-card cl-card--padded">
+      <div style="display:grid;gap:var(--space-3)">
+        <span class="cl-card__eyebrow">지금은 하지 않습니다</span>
+        <div class="dont">
+          <span class="cl-badge cl-badge--danger">! 학원 한 칸 더하기</span>
+          <span class="cl-badge cl-badge--danger">! 상담·관리를 시간표처럼</span>
+          <span class="cl-badge cl-badge--danger">! 통보를 그대로 수락</span>
+          <span class="cl-badge cl-badge--danger">! 점수로 다그치기</span>
+          <span class="cl-badge cl-badge--danger">! 숙제 분량만 늘리기</span>
+          <span class="cl-badge cl-badge--danger">! 선행 욕심</span>
+        </div>
+        <p class="cl-footnote">관리를 줄이는 것이 아닙니다. 관리의 초점을 <b>남이 정한 진도</b>에서 <b>재현이가 직접 운전하는 경험</b>으로 옮깁니다.</p>
+      </div>
+    </article>
+    <div class="adm adm-box"><span class="adm-box__label">판단 메모</span><ul>
+      <li>순서는 본사 필수교육의 매니지먼트 순서(정서 → 움직이게 하기 → 제대로 공부하기 → 성취 경험 → 진짜 자기주도)를 따랐다. 세미나 맺음의 “마음의 안정 → 자신감” 순서는 정본 11-1과 달라 쓰지 않는다.</li>
+      <li>전략 과목 하나를 정해 성취 경험을 만들고 나머지는 방어선을 세운다(정본 4-5, DEV p.48 학습목표 Lv1). 영어를 고른 이유: 이미 내신이 안정적이라 실험 비용이 가장 작고, 스스로 운영 가능성이 높은 과목이다.</li>
+      <li>스스로 운영할 힘이 생기기 전에는 적절한 통제가 필요하다(학습 자율성 해석 기준). 상담·관리 축소는 그 반대 방향.</li>
+    </ul></div>
+  </section>
+
+  <section class="sec" id="s5" aria-labelledby="t-s5">
+    <div class="sec__head">
+      <span class="sec__num">5 · 역할</span>
+      <h2 class="cl-title-2" id="t-s5">누가 큐브맵의 어디를 맡나</h2>
+      <p class="cl-subhead">담당 매니저는 정서와 움직일 방법을, 교실장은 학습실의 집중과 확인을, 재현이는 영어의 운전대를, 어머님은 맨 아래 칸을 맡습니다. 체크한 항목은 이 기기에 남습니다.</p>
+    </div>
+    <div class="cl-seg cl-seg--block role-seg-4" role="radiogroup" aria-label="역할 고르기" style="--n:4;--i:0" id="roleSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">담당 매니저</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">교실장</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">재현이와</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">어머님께</button></div>
+
+    <div class="role-panel" data-active="true" data-role="0">
+      <div class="role-top">
+        <article class="cl-card cl-card--padded">
+          <div style="display:grid;gap:var(--space-3)">
+            <span class="cl-card__eyebrow">임지혜 매니저 · 상담·관리</span>
+            <h3 class="cl-card__title">정서를 받치고, 움직일 방법을 대신 보여 줍니다</h3>
+            <div class="mini-map" aria-label="맡는 큐브맵 자리"><span data-on="true">1 정서</span><span data-on="true">2 컨디션</span><span>3 집중</span><span data-on="true">4 어휘·논리</span><span>5 확인</span><span data-on="true">6 성취 경험</span></div>
+            <ul class="todo" data-store="mgr">
+              <li><label><input type="checkbox"><span>10/30 어머님 통화(6절 순서)<small>다음 주 영어 개별지도는 빼 드리되 자리 유지, 영어 학원은 재고 요청, 내방 제안</small></span></label></li>
+              <li><label><input type="checkbox"><span>재현이와 대화: 영어 학원에서 얻으려는 것·잃는 것<small>‘재현이와’ 탭의 질문으로</small></span></label></li>
+              <li><label><input type="checkbox"><span>11월~3월 포트폴리오를 텀 스케줄러로 확정<small>과목별 주당 시간, 영어 칸은 학원 없이</small></span></label></li>
+              <li><label><input type="checkbox"><span>영어 전략 지표 정하기<small>어휘 누적 테스트 통과, 모의고사 지문 정답 근거 설명</small></span></label></li>
+              <li><label><input type="checkbox"><span>데일리 체크에 영어 지문 근거 역질문 한 개</span></label></li>
+              <li><label><input type="checkbox"><span>엔딩 체크 질문 바꾸기<small>“몇 쪽 했니” → “오늘 계획 중 해낸 것 하나, 밀린 것 하나”</small></span></label></li>
+              <li><label><input type="checkbox"><span>VLT5G 실시 검토(내방 전)</span></label></li>
+              <li><label><input type="checkbox"><span>내방 상담 아젠다와 학부모 전달용 페이지 준비</span></label></li>
+            </ul>
+          </div>
+        </article>
+        <div class="cl-stack">
+          <div class="say"><span class="say__label">재현이에게</span><q>영어는 네가 지금 제일 잘하는 과목이야. 그래서 학원 대신 네가 직접 운전해 보기 제일 좋은 과목이기도 해. 4주 동안 같이 해 보고 뭐가 바뀌었는지 보자.</q></div>
+          <div class="say"><span class="say__label">해냈을 때</span><q>점수보다 이게 먼저야. 오늘 네가 정한 분량을 네 힘으로 끝냈어.</q></div>
+          <article class="cl-card cl-card--padded"><div style="display:grid;gap:var(--space-3)"><span class="cl-card__eyebrow">하지 않습니다</span><div class="dont"><span class="cl-badge cl-badge--danger">! “상담·관리만 해 드릴게요”</span><span class="cl-badge cl-badge--danger">! 학원 폄하</span><span class="cl-badge cl-badge--danger">! 통화에서 확정</span></div></div></article>
+          <div class="adm adm-box"><span class="adm-box__label">메모</span><ul><li>원장 지시: 프로그램 세팅권은 매니저에게. 통보를 결정으로 받지 않는다.</li><li>C 구성(수학·영어 모두 외부 + 상담·관리)을 고수하시면 상담·관리를 권할 수 없다고 정중하고 분명하게 말한다. 종료도 선택지.</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="role-panel" data-role="1">
+      <div class="role-top">
+        <article class="cl-card cl-card--padded">
+          <div style="display:grid;gap:var(--space-3)">
+            <span class="cl-card__eyebrow">손호연 교실장 · 학습실·개별지도 운영</span>
+            <h3 class="cl-card__title">학습실에서 근거 찾기와 확인이 돌게 합니다</h3>
+            <div class="mini-map" aria-label="맡는 큐브맵 자리"><span>1 정서</span><span data-on="true">2 컨디션</span><span data-on="true">3 집중</span><span>4 어휘·논리</span><span data-on="true">5 확인</span><span>6 성취 경험</span></div>
+            <ul class="todo" data-store="room">
+              <li><label><input type="checkbox"><span>다음 주 영어 개별지도 투입은 빼되 시간 자리 유지</span></label></li>
+              <li><label><input type="checkbox"><span>하교 후 바로 등원했는지 확인, 피곤하면 20분 쪽잠 후 깨우기</span></label></li>
+              <li><label><input type="checkbox"><span>영어 어휘 누적 테스트 운영<small>워드마스터, 주 단위 누적</small></span></label></li>
+              <li><label><input type="checkbox"><span>모의고사 지문: 정답 근거에 밑줄, 선지 끝까지 표시<small>재현이 오답 원인을 바로 겨냥</small></span></label></li>
+              <li><label><input type="checkbox"><span>수학 학원 숙제 당일 완료 + 오답 재풀이 확인<small>필산, 풀이 과정 설명</small></span></label></li>
+              <li><label><input type="checkbox"><span>휴대폰 보관 확인</span></label></li>
+            </ul>
+          </div>
+        </article>
+        <div class="cl-stack">
+          <div class="say"><span class="say__label">이렇게 말합니다</span><q>답 맞힌 것보다, 근거 줄을 찾아 표시한 게 더 좋아. 여기 근거가 어디였는지 말해 볼래?</q></div>
+          <div class="say"><span class="say__label">피곤해 보일 때</span><q>20분 자고 시작하자. 깨워 줄게.</q></div>
+          <article class="cl-card cl-card--padded"><div style="display:grid;gap:var(--space-3)"><span class="cl-card__eyebrow">하지 않습니다</span><div class="dont"><span class="cl-badge cl-badge--danger">! 답만 맞추고 넘어가기</span><span class="cl-badge cl-badge--danger">! 영어 공백을 방치</span></div></div></article>
+          <div class="adm adm-box"><span class="adm-box__label">메모</span><ul><li>20분 쪽잠·심박 올리는 활동·카페인 중단은 10/5 상담에서 재현이와 합의한 컨디션 관리.</li><li>영어 개별지도가 쉬는 동안 영어 기반을 학습실에서 굴리는 일이 교실장 몫이다. 역할 배분은 이 페이지의 제안.</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="role-panel" data-role="2">
+      <div class="role-top">
+        <article class="cl-card cl-card--padded">
+          <div style="display:grid;gap:var(--space-3)">
+            <span class="cl-card__eyebrow">재현이 · 영어의 운전대</span>
+            <h3 class="cl-card__title">얻으려는 것과 잃는 것을 스스로 나눠 봅니다</h3>
+            <div class="mini-map" aria-label="맡는 큐브맵 자리"><span data-on="true">1 정서</span><span>2 컨디션</span><span>3 집중</span><span>4 어휘·논리</span><span>5 확인</span><span data-on="true">6 성취 경험</span></div>
+            <div class="two">
+              <div class="pane"><span class="pane__label">얻으려는 것 — 먼저 묻기</span><ul class="plain"><li>영어 학원에서 무엇을 얻고 싶어?<br><span class="muted">강의? 문제량? 친구? 고등 영어가 불안해서?</span></li><li>그건 영어의 어디가 막혀서 필요한 거야?</li><li>강의를 들으면 그 부분이 풀릴까?</li></ul></div>
+              <div class="pane"><span class="pane__label">잃는 것 — 함께 세어 보기</span><ul class="plain"><li>월·수·금 자기 공부 시간</li><li>통합과학·통합사회·한국사·국어를 소화할 자리</li><li>매니저와 함께 짜는 텀</li><li>학원 숙제가 집으로 → 집에서는 잘 안 됨</li><li>“내 힘으로 올린 점수”</li></ul></div>
+            </div>
+          </div>
+        </article>
+        <div class="cl-stack">
+          <div class="say"><span class="say__label">마무리 질문</span><q>고1 3월에 어떤 영어 실력으로 시작하고 싶어? 11월부터 2월까지 영어에서 꼭 해야 할 일 세 가지를 같이 적어 보자.</q></div>
+          <div class="cl-notice cl-notice--info"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">대화 원칙</span> 결론을 먼저 주지 않습니다. 재현이가 에듀플렉스를 계속 다니고 싶어 한다는 마음을 먼저 받습니다. 빈칸은 재현이가 채웁니다.</div></div>
+          <div class="adm adm-box"><span class="adm-box__label">메모</span><ul><li>10/26 학교 선택 상담에서 누나 경험을 “좋은 담임을 만났을 때의 이야기”로 조건부 해석함 — 근거로 따져 보는 대화에 잘 반응한다.</li><li>10/23 “11~12월 여유 시간에도 공부할 것 같다” — 스스로 움직일 조짐.</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="role-panel" data-role="3">
+      <div class="role-top">
+        <article class="cl-card cl-card--padded">
+          <div style="display:grid;gap:var(--space-3)">
+            <span class="cl-card__eyebrow">어머님 · 맨 아래 칸</span>
+            <h3 class="cl-card__title">결과보다 실천을 알아봐 주시는 자리</h3>
+            <div class="mini-map" aria-label="맡는 큐브맵 자리"><span data-on="true">1 정서</span><span data-on="true">2 컨디션</span><span>3 집중</span><span>4 어휘·논리</span><span>5 확인</span><span data-on="true">6 성취 경험</span></div>
+            <p class="cl-card__text">재현이는 기준이 높고 스스로를 믿는 마음이 약합니다. 어머님이 무엇을 알아봐 주시느냐가 재현이가 무엇으로 자기를 평가하느냐를 정합니다. 과목을 더 붙이는 일보다, 재현이가 직접 운전해 볼 시간을 지켜 주시는 것이 지금 가장 큰 도움입니다.</p>
+            <div class="two">
+              <div class="pane"><span class="pane__label">해 주세요</span><ul class="plain"><li>하교 후 바로 등원하도록 응원</li><li>공부 시간에 휴대폰 따로 두기</li><li>점수보다 “계획한 것 중 뭘 해냈어?”</li><li>카페인 음료 줄이기</li><li>걱정되실 때는 매니저에게 먼저</li></ul></div>
+              <div class="pane"><span class="pane__label">잠시 내려놓아 주세요</span><ul class="plain"><li>과목마다 학원 한 칸씩 더하기</li><li>매니저와 상의 없이 일정 정하기</li><li>한 번의 시험 점수로 평가</li></ul></div>
+            </div>
+          </div>
+        </article>
+        <div class="cl-stack">
+          <div class="say"><span class="say__label">어머님께 전하는 말</span><q>영어를 걱정하시는 마음은 저희도 같습니다. 그래서 영어를 학원에 맡기기보다, 재현이가 직접 운전해 보는 과목으로 세워 보고 싶습니다. 4주 뒤 무엇이 바뀌었는지 함께 보시지요.</q></div>
+          <div class="say"><span class="say__label">세미나 이야기</span><q>예비고1 세미나에서 가장 강조해 드린 것이 “학원은 필요할 때 쓰는 도구”, 그리고 “학기는 지키고 겨울에 벌어 둔다”였습니다. 재현이에게 맞춰 정리한 안내를 따로 보내 드리겠습니다.</q></div>
+          <div class="cl-notice cl-notice--info"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">말하는 태도</span> “통보하셨다”가 아니라 “재현이에게 맞는 구성을 같이 정하자”로. 영어를 챙기시려는 마음을 먼저 인정합니다.</div></div>
+          <div class="adm adm-box"><span class="adm-box__label">메모</span><ul><li>원장: 상의 없이 통보식이었던 점, 세미나 미참석이 아쉽다 — 어머님께 그대로 말하지 않는다.</li><li>학부모 전달용 페이지: <a href="../p4x4oy4t/">p4x4oy4t</a>(원장 승인, 통화 뒤 또는 내방 때)</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="s6" aria-labelledby="t-s6">
+    <div class="sec__head">
+      <span class="sec__num">6 · 통화</span>
+      <h2 class="cl-title-2" id="t-s6">어머님 통화 — 말할 순서</h2>
+      <p class="cl-subhead">순서를 누르면 문장이 열립니다. 그대로 읽지 말고 뜻을 전합니다. 통화의 목적은 결정이 아니라 내방 약속입니다.</p>
+    </div>
+    <div class="cl-card cl-card--padded acc">
+      <details open><summary><span class="acc__no">1</span><span class="acc__title">받기 — 말씀 주신 것 확인</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>재현이가 영어를 학원에서 공부해 보고 싶어 하고, 에듀플렉스도 계속 다니고 싶어 한다고 들었습니다. 말씀해 주셔서 감사합니다. 영어 학원은 요일과 시간이 어떻게 되는지 여쭤봐도 될까요?</q></div></div></details>
+      <details><summary><span class="acc__no">2</span><span class="acc__title">조정 — 다음 주 개별지도는 빼 드림</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>다음 주 영어 개별지도는 빼 드리겠습니다. 재현이 시간 자리는 그대로 잡아 두겠습니다. 프로그램을 어떻게 세팅할지는 한번 뵙고 함께 정했으면 합니다.</q></div></div></details>
+      <details><summary><span class="acc__no">3</span><span class="acc__title">맥락 — 재현이의 한 주</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>수학이 이미 화·목·토를 쓰고 있어서, 영어까지 학원이 되면 재현이 한 주가 거의 정해진 수업과 숙제로 채워집니다. 재현이 스스로도 집에서는 공부가 잘 안 된다고 말합니다. 고1까지 소화해야 할 과목이 많은데, 그걸 혼자 할 자리가 남지 않습니다.</q></div></div></details>
+      <details><summary><span class="acc__no">4</span><span class="acc__title">진단 — 재현이 영어에 필요한 것</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>재현이 영어 내신은 지금 가장 좋은 과목입니다. 다만 길음중은 영어 A가 열 명 중 여섯이라, 고등학교 영어가 준비됐다고 보기는 어렵습니다. 재현이에게 필요한 건 강의가 아니라 단어를 쌓고, 지문의 근거를 끝까지 찾고, 모의고사 지문에 익숙해지는 연습입니다.</q></div></div></details>
+      <details><summary><span class="acc__no">5</span><span class="acc__title">솔루션 — 영어를 직접 운전하는 과목으로</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>그래서 영어 개별지도를 잠시 쉬는 동안, 학원 대신 재현이가 직접 영어를 운영해 보도록 하고 싶습니다. 단어 누적 테스트와 지문 근거 설명으로 4주 뒤에 함께 확인하겠습니다. 그 자리를 영어 학원으로 채우시는 것은 재현이를 위해 한 번 더 생각해 주셨으면 합니다.</q></div></div></details>
+      <details><summary><span class="acc__no">6</span><span class="acc__title">제안 — 포트폴리오를 들고 내방</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>11월부터 고1 3월까지 과목별로 무엇을 언제 할지 큰 그림을 준비해서 보여 드리고 싶습니다. 예비고1 학부모 상담으로 시간을 내 주실 수 있을까요? 원하시면 원장님 상담도 함께 잡아 드릴 수 있습니다.</q></div></div></details>
+      <details><summary><span class="acc__no">7</span><span class="acc__title">마무리 — 결정은 내방 뒤</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><div class="say"><q>오늘 말씀 나눈 내용과 세미나에서 드린 이야기를 재현이에게 맞춰 정리해서 보내 드리겠습니다. 보시고 오셔서 함께 정하시면 좋겠습니다.</q></div></div></details>
+    </div>
+    <div class="two">
+      <div class="cl-card cl-card--padded acc">
+        <span class="cl-card__eyebrow">예상 질문</span>
+        <details><summary><span class="acc__no">Q</span><span class="acc__title">학원 하나 더 보내는 건데 왜 안 되나요?</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><p>학원이 나빠서가 아닙니다. 학원은 필요할 때 쓰는 도구인데, 지금 재현이 영어에 필요한 도구가 강의가 아닙니다. 그리고 그 한 칸이 들어오면 혼자 공부할 시간이 먼저 사라집니다.</p></div></details>
+        <details><summary><span class="acc__no">Q</span><span class="acc__title">개별지도도 안 하면 영어는 누가 봐 주나요?</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><p>학습실에서 단어 누적 테스트와 지문 근거 설명을 매니저·교실장이 챙깁니다. 4주 뒤 지표로 확인하고, 필요하면 12월에 개별지도를 다시 엽니다. 자리는 잡아 둡니다.</p></div></details>
+        <details><summary><span class="acc__no">Q</span><span class="acc__title">재현이가 원하는데요?</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><p>재현이와도 이야기를 나눠 보겠습니다. 학원에서 무엇을 얻고 싶은지, 무엇을 잃게 되는지 재현이가 직접 나눠 보게 하고, 그 결과를 내방 때 함께 보시지요.</p></div></details>
+        <details><summary><span class="acc__no">Q</span><span class="acc__title">그래도 학원을 보내고 상담·관리는 하면 안 되나요?</span><svg class="cl-icon acc__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></summary><div class="acc__body"><p>솔직하게 말씀드리면, 수학과 영어가 모두 외부 학원이면 담당 매니저가 시간과 과목을 함께 정할 수 없어 상담·관리를 권해 드리기 어렵습니다. 그 구성이 재현이에게 도움이 되지 않는다고 판단합니다. 그래서 꼭 한번 뵙고 함께 정하고 싶습니다.</p></div></details>
+      </div>
+      <div class="cl-stack">
+        <div class="cl-notice cl-notice--warning"><span class="cl-notice__glyph" aria-hidden="true">◷</span><div><span class="cl-notice__title">함께 정리할 일정</span> 11월 중 주말 등원 어려움(개인 사정), 11/21(토)부터 주말 공부 재개. 평일 월·수·금 자기주도 시간 확보.</div></div>
+        <div class="adm adm-box"><span class="adm-box__label">통화 전 원장–매니저 확인</span><ul class="todo" data-store="align">
+          <li><label><input type="checkbox"><span>“통보 수락 없음 · 학원 재고 요청 · 내방”으로 말 맞추기</span></label></li>
+          <li><label><input type="checkbox"><span>C 구성을 고수하시면: 상담·관리 권할 수 없음을 직언, 종료도 선택지(원장 지시)</span></label></li>
+          <li><label><input type="checkbox"><span>원장 상담 희망 시 일정 신청</span></label></li>
+          <li><label><input type="checkbox"><span>영어 개별지도 시간 자리 유지를 교실장과 확인</span></label></li>
+          <li><label><input type="checkbox"><span>통화 뒤 학부모 전달용 페이지 보내기</span></label></li>
+          <li><label><input type="checkbox"><span>통화 결과 EduCube 상담 일지에 기록</span></label></li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="s7" aria-labelledby="t-s7">
+    <div class="sec__head">
+      <span class="sec__num">7 · 4·8·12주</span>
+      <h2 class="cl-title-2" id="t-s7">무엇이 바뀌면 잘 가고 있는 것인가</h2>
+      <p class="cl-subhead">길음점 점검 시점입니다. 판정 기준은 재현이에게 맞춰 정한 것이며 본사 기준이 아닙니다.</p>
+    </div>
+    <div class="weeks">
+      <article class="cl-card cl-card--padded"><div style="display:grid;gap:var(--space-3)"><span class="cl-badge cl-badge--highlight" style="justify-self:start">4주 · 11월 넷째 주</span><h3 class="cl-card__title">시간이 지켜짐</h3><ul class="todo" data-store="w4">
+        <li><label><input type="checkbox"><span>월·수·금 하교 후 바로 정시 등원</span></label></li>
+        <li><label><input type="checkbox"><span>영어 어휘 누적 테스트 매주 통과</span></label></li>
+        <li><label><input type="checkbox"><span>11/21부터 주말 등원 재개</span></label></li>
+        <li><label><input type="checkbox"><span>점수 대신 실천으로 자기를 말하는 장면</span></label></li>
+      </ul></div></article>
+      <article class="cl-card cl-card--padded"><div style="display:grid;gap:var(--space-3)"><span class="cl-badge" style="justify-self:start">8주 · 12월 넷째 주</span><h3 class="cl-card__title">근거를 말함</h3><ul class="todo" data-store="w8">
+        <li><label><input type="checkbox"><span>모의고사 영어 지문의 정답 근거를 자기 말로</span></label></li>
+        <li><label><input type="checkbox"><span>밀린 분량을 먼저 찾아 보완 계획을 말함</span></label></li>
+        <li><label><input type="checkbox"><span>영어 개별지도 재개 여부를 지표로 결정</span></label></li>
+      </ul></div></article>
+      <article class="cl-card cl-card--padded"><div style="display:grid;gap:var(--space-3)"><span class="cl-badge" style="justify-self:start">12주 · 1월 셋째 주</span><h3 class="cl-card__title">스스로 운전</h3><ul class="todo" data-store="w12">
+        <li><label><input type="checkbox"><span>윈터스쿨 주간 계획을 먼저 짜 옴</span></label></li>
+        <li><label><input type="checkbox"><span>매니저가 챙기지 않은 날에도 계획이 이어짐</span></label></li>
+        <li><label><input type="checkbox"><span>영어에서 “내 힘으로 했다”는 말이 나옴</span></label></li>
+      </ul></div></article>
+    </div>
+  </section>
+
+  <section class="sec adm adm-sec" aria-labelledby="t-adm9">
+    <div class="sec__head"><span class="sec__num">관리자</span><h2 class="cl-title-2" id="t-adm9">근거와 한계</h2></div>
+    <article class="cl-card cl-card--padded">
+      <ul class="plain">
+        <li>EduCube 성장 이력 스냅샷 2026-10-29(`20261029T124458Z`): 상담 99건, 개별지도 276건(이미지 미판독, 월별 건수만), 출결 월별. 기간 2024-09-07~2026-10-29.</li>
+        <li>VLT5G 이력 없음. 큐브맵 해석은 수치·타입 없이 상담 기록 관찰을 큐브맵 정본(DEV 우선)의 구조에 놓은 것. 흐름 6단계는 김민준 학생 판과 같은 틀(자신감·정서 → 감정 → 집중 → 어휘·논리 → 확인 → 행동·성취)을 썼다.</li>
+        <li>원장 지시: 2026-10-29 원장–매니저 미팅 녹음 정리와 이후 원장 메시지·추가 지시(비공개 저장소 보존).</li>
+        <li>예비고1 세미나: 예비고1 세미나 저장소 2부 기획 v0.9·슬라이드 v6. 최종 v7은 로컬에 없어 대조하지 못함.</li>
+        <li>교실장 역할과 영어 전략 과목 지표는 이 페이지의 제안이다. 담당 매니저와 교실장이 확정한다.</li>
+        <li>영어 학원의 요일·시간·학원명은 아직 확인하지 않음.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer class="foot">
+    <span class="cl-plate"><img src="../assets/clarity-k06/logos/gireum-info-logo.png" alt="에듀플렉스 에듀코치 길음점 안내" width="320" height="61"></span>
+    <span class="cl-caption">내부 운영용 · 어머님과 화면을 함께 볼 때는 관리자 모드를 끕니다.</span>
+  </footer>
+</main>
+</div>
+
+<script src="../assets/vlt-admin-lock/lock.js"></script>
+<script>
+(function () {
+  var KEY = 'mmflws5v:';
+  function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+
+  // 톱니 잠금은 ../assets/vlt-admin-lock/lock.js가 맡는다(에듀큐브 확인, 12시간 유지).
+
+  var NODES = [
+    { t: '자신감 · 인정 · 정서', now: '“어떤 과목이든 처음부터 끝까지 완벽하게 설명할 수 있는 것”이 목표일 만큼 기준이 높고, 스스로를 믿는 마음은 약합니다. 한 번의 시험이나 하루의 결과로 자신감을 잃거나 만족합니다.', next: '점수가 아니라 계획한 공부를 얼마나 해냈는지로 스스로를 평가하게 합니다. 작은 실천을 구체적으로 짚어 주고, 집과 에듀플렉스가 같은 말을 합니다.', who: ['담당 매니저', '어머님'], evi: '10/5 스스로에 대한 믿음 부족, 원인을 높은 기준으로 분석. 6/11 결과에 따른 감정 기복을 본인이 인정. 10/23 한국사 100점에도 “더 잘 볼 수 있을 것 같다”.' },
+    { t: '감정 · 컨디션', now: '하교 후 집에 들르면 피곤해서 늘어지고 등원이 늦어집니다. 겨울방학부터 약 4개월 슬럼프가 있었고, 카페인 뒤에는 감정 기복이 커집니다. 몸을 쓰면 회복됩니다.', next: '하교 후 바로 등원, 피곤하면 20분 쪽잠 뒤 시작, 카페인 줄이기, 겨울방학에 몸 쓰는 시간을 넣습니다. 늦을 때는 사전 연락 약속을 지킵니다.', who: ['담당 매니저', '교실장', '어머님'], evi: '8/28 등원 지연 원인 “피곤함·귀가 후 늘어지는 습관”. 5/21 슬럼프 약 4개월, 치어리딩으로 회복. 10/5 카페인 감정 기복, 20분 쪽잠 유형. 3~5월 등원일 절반가량 예정보다 늦음.' },
+    { t: '포커싱 · 집중 · 관찰', now: '문제와 선지, 조건을 끝까지 읽지 않고 서둘러 고릅니다. 영어·사회·과학 오답이 모두 같은 결입니다. 휴대폰을 보면 공부가 끊긴다고 본인이 말합니다.', next: '지문의 정답 근거에 밑줄, 조건에 동그라미를 매 문제 합니다. 공부 시간에는 휴대폰을 따로 둡니다.', who: ['교실장', '담당 매니저'], evi: '7/3 시험 분석: 영어 선지·문제를 끝까지 읽지 않음, 사회·과학 조건 놓침. 6/2 “핸드폰을 보는 순간 공부가 안 된다”.' },
+    { t: '단어 · 어휘 · 논리', now: '개념을 자기 말로 꺼내는 힘은 강점입니다. 덮고 써 보는 공부를 이미 하고, 한국사 흐름을 자료 없이 설명합니다. 다만 영어는 내신 암기 위주로 기반 독해력이 약해졌고 어휘량이 과제입니다.', next: '영어 어휘를 매일 쌓고 누적 테스트로 꺼내 봅니다. 데일리 체크에서 지문 정답 근거를 자기 말로 설명하게 합니다(역질문).', who: ['담당 매니저', '교실장'], evi: '10/14 한국사 구술 점검 정확(직전법·사화·위화도 회군 흐름). 10/5 역사 덮고 쓰기 실천. 5/21 기반 독해력 저하 본인 인식. 10/26 어휘량 증가 필요.' },
+    { t: '비교 · 대조 (확인)', now: '알고 있는 내용끼리 혼동하고, 수학에서는 배점 큰 문제에서 놓칩니다. 자료·그래프를 문제와 연결하는 데서 틀립니다.', next: '오답노트와 재풀이로 같은 실수를 추적합니다. 수학은 필산과 풀이 과정 설명, 중학교 과정 빈틈부터 메웁니다.', who: ['교실장', '담당 매니저'], evi: '7/3 한국사 암기 혼동, 사회 자료 해석. 10/23 수학 88점(5점짜리 3개). 6/11 수학 후행 보완이 최우선 과제. 10/5 암산 지양·필산.' },
+    { t: '행동 · 성취 경험', now: '계획은 스스로 세우지만 등원·숙제·집 공부는 매니저가 챙길 때 이어집니다. 여기에 영어 학원이 들어오면 한 주가 남이 정한 진도로 채워지고, 성취도 학원 몫으로 돌아갑니다.', next: '영어를 전략 과목으로 정해 학원 없이 재현이가 운영하게 합니다. 4주 뒤 바뀐 것을 성취로 짚어 주고, 그 경험이 1번의 자신감을 채웁니다. 다른 과목은 무너지지 않게 받쳐 둡니다.', who: ['재현이', '담당 매니저'], evi: '6/2 한국사 인강 일정을 스스로 날짜별 계획. 8/28 도서관 수행평가 모임 자발 구성. 그러나 6/2 숙제 관리 강화, 8/28 등원 지연, 10/29 매니저 판단(월·수·금을 맡길 수행도 아님).' }
+  ];
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.node'));
+  function showNode(i) {
+    var n = NODES[i];
+    nodes.forEach(function (b, j) { b.setAttribute('aria-pressed', String(i === j)); });
+    document.getElementById('dEyebrow').textContent = (i + 1) + '단계';
+    document.getElementById('dTitle').textContent = n.t;
+    document.getElementById('dNow').textContent = n.now;
+    document.getElementById('dNext').textContent = n.next;
+    document.getElementById('dEvi').textContent = n.evi;
+    var who = document.getElementById('dWho');
+    who.innerHTML = '';
+    n.who.forEach(function (w) { var s = document.createElement('span'); s.className = 'cl-badge' + (w === '어머님' || w === '재현이' ? ' cl-badge--highlight' : ' cl-badge--accent'); s.textContent = w; who.appendChild(s); });
+  }
+  nodes.forEach(function (b, i) { b.addEventListener('click', function () { showNode(i); }); });
+  showNode(0);
+
+  var flowWrap = document.getElementById('flowWrap');
+  document.getElementById('viewSeg').addEventListener('cl-change', function (e) {
+    flowWrap.setAttribute('data-view', e.detail && e.detail.index === 1 ? 'next' : 'now');
+  });
+
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.role-panel'));
+  document.getElementById('roleSeg').addEventListener('cl-change', function (e) {
+    var i = e.detail ? e.detail.index : 0;
+    panels.forEach(function (p) { p.setAttribute('data-active', String(Number(p.getAttribute('data-role')) === i)); });
+    var p = panels[i];
+    if (p && window.SangsangClarity && SangsangClarity.motion && SangsangClarity.motion.enter) SangsangClarity.motion.enter(p, 'rise');
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.todo[data-store]'), function (ul) {
+    var k = 'todo:' + ul.getAttribute('data-store');
+    var boxes = ul.querySelectorAll('input[type=checkbox]');
+    var saved = (get(k) || '').split('');
+    Array.prototype.forEach.call(boxes, function (c, i) {
+      c.checked = saved[i] === '1';
+      c.addEventListener('change', function () {
+        set(k, Array.prototype.map.call(boxes, function (x) { return x.checked ? '1' : '0'; }).join(''));
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
