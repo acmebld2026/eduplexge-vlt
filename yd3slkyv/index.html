@@ -479,6 +479,7 @@
 </main>
 </div>
 
+<script src="../assets/vlt-admin-lock/lock.js"></script>
 <script>
 (function () {
   var html = document.documentElement;
@@ -486,18 +487,8 @@
   function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
 
-  var btn = document.getElementById('adminBtn');
-  function setAdmin(on) {
-    html.setAttribute('data-admin', on ? 'on' : 'off');
-    btn.setAttribute('aria-pressed', String(on));
-    set('admin', on ? '1' : '0');
-  }
-  setAdmin(get('admin') === '1' || location.hash === '#admin');
-  btn.addEventListener('click', function () {
-    var on = html.getAttribute('data-admin') !== 'on';
-    setAdmin(on);
-    if (window.SangsangClarity && SangsangClarity.toast) SangsangClarity.toast(on ? '관리자 모드를 켰습니다.' : '관리자 모드를 껐습니다.');
-  });
+  // 톱니 잠금은 ../assets/vlt-admin-lock/lock.js가 맡는다(에듀큐브 확인, 12시간 유지). 예전 켜짐 기억은 지운다.
+  try { localStorage.removeItem(KEY + 'admin'); } catch (e) {}
 
   var NODES = [
     { t: '인정 욕구 · 정서', now: '인정받고 싶은 마음이 큽니다. 그 인정이 ‘다 했다·맞았다’에 걸려 있어 못 한 것과 틀린 것을 숨깁니다. 집에서 검사·확인이 겹치면 더 숨습니다.', next: '못 했다·틀렸다고 말하면 먼저 고맙다고 받습니다. 인정의 대상을 결과에서 정직함과 과정으로 옮깁니다. 집과 에듀플렉스가 같은 반응을 보입니다.', who: ['어머님', '담당 매니저', '교실장'], evi: '메인 6 인정 욕구·약점 회피. 세컨드 13 가족 감정 반응 패턴. 10/26 “성적이 가족 분위기와 내 자유를 정한다”. 원장 피드백: 오답을 잘 용납하지 못하시는 어머님의 검사·확인 중심 태도.' },
