@@ -1,6 +1,92 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
+<script data-ctx-guard="2026-10-30.1">
+  /* ctx-guard 2026-10-30.1: shortcut menu on right-click (phone, booking badge, homepage). Suppresses devtools and save shortcuts.
+     Inactive while the director editor is active (html.vpe-editing) and inside form fields. */
+  (function () {
+    "use strict";
+    var html = document.documentElement, menu = null, built = false;
+    var HOME = "https://eduplexge.sangsangplex.com/", BOOKING = HOME + "booking/";
+    function editing() { return html.classList.contains("vpe-editing"); }
+    function editable(t) { return !!(t && t.closest && t.closest("input,textarea,select,[contenteditable=''],[contenteditable='true']")); }
+    function closeMenu() { if (menu) { menu.remove(); menu = null; } }
+    function build() {
+      var css = document.createElement("style");
+      css.textContent =
+        ".cg-menu{position:fixed;z-index:2147483000;min-width:248px;max-width:calc(100vw - 8px);padding:6px;margin:0;list-style:none;background:#fff;color:#1f2633;border:1px solid #d3d8df;border-radius:14px;box-shadow:0 12px 32px rgba(15,23,42,.24);font:600 14px/1.4 Pretendard,'Noto Sans KR','Malgun Gothic',sans-serif}" +
+        ".cg-menu li{margin:0;padding:0}" +
+        ".cg-menu a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:11px 12px;border-radius:9px;color:inherit;text-decoration:none}" +
+        ".cg-menu a b{font-weight:800}" +
+        ".cg-menu a span{font-weight:600;font-size:12.5px;color:#5f6b7a}" +
+        ".cg-menu a:hover,.cg-menu a:focus-visible{background:#eef1f5;outline:2px solid #7d8590;outline-offset:-2px}" +
+        ".cg-menu a.cg-badge{justify-content:center;margin:4px 0;padding:12px 14px;border-radius:999px;background:#0054a7;color:#fff;font-weight:800;font-size:14.5px}" +
+        ".cg-menu a.cg-badge:hover,.cg-menu a.cg-badge:focus-visible{background:#00478d;outline:2px solid #0054a7;outline-offset:2px}" +
+        "@media print{.cg-menu{display:none!important}}";
+      document.head.appendChild(css);
+    }
+    function row(href, label, value, blank) {
+      var li = document.createElement("li"), a = document.createElement("a"), s = document.createElement("span"), b = document.createElement("b");
+      li.setAttribute("role", "none");
+      a.setAttribute("role", "menuitem"); a.href = href;
+      if (blank) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+      s.textContent = label; b.textContent = value;
+      a.appendChild(s); a.appendChild(b); li.appendChild(a);
+      return li;
+    }
+    function badge(href, text) {
+      var li = document.createElement("li"), a = document.createElement("a");
+      li.setAttribute("role", "none");
+      a.className = "cg-badge"; a.setAttribute("role", "menuitem"); a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.textContent = text; li.appendChild(a);
+      return li;
+    }
+    function openMenu(x, y) {
+      closeMenu();
+      if (!built) { build(); built = true; }
+      menu = document.createElement("ul");
+      menu.className = "cg-menu"; menu.setAttribute("role", "menu"); menu.setAttribute("aria-label", "에듀플렉스 길음 바로가기");
+      menu.appendChild(row("tel:0221351672", "전화", "02-2135-1672", false));
+      menu.appendChild(badge(BOOKING, "홈페이지 상담 신청 ↗"));
+      menu.appendChild(row(HOME, "홈페이지", "eduplexge.sangsangplex.com", true));
+      document.body.appendChild(menu);
+      var w = menu.offsetWidth, h = menu.offsetHeight;
+      menu.style.left = Math.max(4, Math.min(x, window.innerWidth - w - 4)) + "px";
+      menu.style.top = Math.max(4, Math.min(y, window.innerHeight - h - 4)) + "px";
+      menu.querySelector("a").focus({ preventScroll: true });
+    }
+    document.addEventListener("contextmenu", function (e) {
+      if (editing() || editable(e.target instanceof Element ? e.target : null)) return;
+      e.preventDefault();
+      openMenu(e.clientX, e.clientY);
+    }, true);
+    document.addEventListener("pointerdown", function (e) { if (menu && !menu.contains(e.target)) closeMenu(); }, true);
+    document.addEventListener("click", function (e) { if (menu && menu.contains(e.target)) setTimeout(closeMenu, 0); }, true);
+    window.addEventListener("blur", closeMenu);
+    window.addEventListener("resize", closeMenu);
+    window.addEventListener("scroll", closeMenu, true);
+    document.addEventListener("keydown", function (e) {
+      var k = (e.key || "").toLowerCase();
+      if (menu) {
+        var links = Array.prototype.slice.call(menu.querySelectorAll("a")), i = links.indexOf(document.activeElement);
+        if (k === "escape") { e.preventDefault(); closeMenu(); return; }
+        if (k === "arrowdown" || k === "arrowup") {
+          e.preventDefault();
+          links[(i + (k === "arrowdown" ? 1 : links.length - 1) + links.length) % links.length].focus();
+          return;
+        }
+        if (k === "tab") { closeMenu(); return; }
+      }
+      var mod = e.ctrlKey || e.metaKey, block = false;
+      if (k === "f12") block = true;
+      else if (mod && !e.altKey && !e.shiftKey && k === "u") block = true;
+      else if (e.ctrlKey && e.shiftKey && (k === "i" || k === "j" || k === "c" || k === "k")) block = true;
+      else if (e.metaKey && e.altKey && (k === "i" || k === "j" || k === "c" || k === "u")) block = true;
+      else if (mod && !e.altKey && !e.shiftKey && k === "s" && !editing()) block = true;
+      if (block) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+  })();
+  </script>
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -564,7 +650,15 @@ body[data-layout-contract="vlt5g-14-sections-2026-09-29.1"]{scroll-behavior:smoo
 #closing-contact.closing-badges a.closing-badge:hover{background:#dfe2e7}
 #closing-contact.closing-badges a.closing-badge:focus-visible{outline:3px solid #0054a7;outline-offset:2px}
 @media print{#closing-contact.closing-badges a.closing-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-</style>
+
+  .fee-links{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:10px;margin:4px 0 18px}
+  .fee-links__title{margin-right:auto;font-size:13px;font-weight:800;color:#53687a}
+  .fee-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:14px;background:#e9ebef;color:#1f2633;font-size:15px;font-weight:800;text-decoration:none}
+  .fee-links a:hover{background:#dfe2e7}.fee-links a:focus-visible{outline:3px solid #0054a7;outline-offset:2px}
+  .fee-links svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:700px){.fee-links__title{flex-basis:100%}}
+  @media print{.fee-links a{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  </style>
 
 <meta property="og:site_name" content="에듀플렉스 길음점">
 
@@ -781,6 +875,7 @@ body[data-layout-contract="vlt5g-14-sections-2026-09-29.1"]{scroll-behavior:smoo
     <tbody id="price-rows"></tbody>
   </table>
   <p class="price-note" id="price-note"></p>
+  <div class="fee-links" id="fee-links"></div>
 
   <div class="package-panel">
     <div class="package-head" id="package-title">패키지 세팅</div>
@@ -1771,34 +1866,34 @@ const REPORT_DATA = {
     }
   ],
   "pricing": {
-    "lead": "해석상담에서 안내한 구성과 적용 기준입니다. 실제 등록 구성과 시작일은 가족이 결정하며, 견적 링크에서 조합해 비용을 확인하실 수 있습니다.",
+    "lead": "해석상담에서 안내한 구성과 단가입니다. 실제 등록 구성과 시작일은 가족이 결정하며, 아래 단가 견적표에서 횟수를 조정해 4주 기준 회비를 확인하실 수 있습니다. 시작일에 따라 첫 등록 비용은 줄어들 수 있습니다.",
     "rows": [
       {
         "name": "상담 Coaching",
-        "desc": "담당 매니저와 주기적으로 만나 공부 이유·목표·전략을 조정하고 진행 내용을 공유하는 기본 프로그램. 프로그램 확정 후 담당 매니저 배정",
-        "amt": "월 350,000원",
+        "desc": "담당 매니저와 주기적으로 만나 공부 이유·목표·전략을 조정하고 진행 내용을 공유하는 기본 프로그램(월 8회 기준). 정기상담 월 350,000원(1회 43,750원 × 8회)은 에듀플렉스 심리 상담소 회비이며, 관리하는 날의 문진상담 비용이 더해집니다. 프로그램 확정 후 담당 매니저 배정",
+        "amt": "월 350,000원 + 문진상담",
         "rec": true
       },
       {
         "name": "관리 Training",
-        "desc": "월~금 학교 끝난 뒤 등원해 등원 문진상담→계획서 작성→학습실 자기주도학습→학습 확인→마무리 점검. 하루 단위, 주 5회 월 20회 기준 300,000원, 방학 중 장시간 체류 시 하루 25,000원",
-        "amt": "1일 15,000원",
+        "desc": "월~금 학교 끝난 뒤 등원해 등원 문진상담→계획서 작성→학습실 자기주도학습→학습 확인→마무리 점검. 하루 15,000원은 문진상담 7,500원(상담소 회비, 상담비에 더해짐)과 관리(종합) 7,500원(에듀코치 학원 원비)으로 나뉩니다. 하루 단위, 방학 중 장시간 체류 시 하루 기준이 달라집니다",
+        "amt": "1일 7,500 + 7,500원",
         "rec": true
       },
       {
         "name": "수학 개별지도",
-        "desc": "중등 90분 1:3 순환 수업. 주 3회(월·수·금), 월 12회 기준 360,000원. 수업 편성은 수요일 전 마감",
+        "desc": "중등 90분 1:3 순환 수업. 해석상담에서 제안한 횟수는 주 3회(월·수·금)이며, 수업 편성은 수요일 전에 마감합니다. 에듀코치 학원 원비에 들어갑니다",
         "amt": "1회 30,000원",
         "rec": true
       },
       {
         "name": "공통 비용",
-        "desc": "교재·학습 도구 단체 구독 월비와 플래너(3개월 1권)는 견적 링크에서 확인",
-        "amt": "견적 링크 안내",
+        "desc": "월비(교재·학습 도구 단체 구독)는 에듀코치 학원 원비의 제휴 줄에, 셀프리더(플래너, 3개월 1권)는 첫 구입 때 1회 상담소 회비의 기타에 들어갑니다",
+        "amt": "월비 월 10,000원 · 플래너 7,500원",
         "rec": false
       }
     ],
-    "note": "※ 관리는 상담 프로그램과 함께 운영하며 단독으로 운영하지 않습니다. 상담과 수업·관리는 따로 결제하며, 상담&관리 주 5회 최대 650,000원에 수학 주 3회를 더하면 월 1,010,000원 수준이고 월비·플래너가 별도입니다. 프로그램은 학생의 상태에 따라 매달 조정합니다.",
+    "note": "※ 정기상담·문진상담·셀프리더는 에듀플렉스 심리 상담소 회비, 관리(종합)·개별지도·월비는 에듀코치 학원 원비로 나뉩니다. 관리는 상담 프로그램과 함께 운영하며 단독으로 운영하지 않습니다. 회비는 4주 기준으로 안내하며, 시작일에 따라 첫 등록 비용은 줄어들 수 있습니다. 프로그램은 학생의 상태에 따라 매달 조정합니다.",
     "package": {
       "title": "시작 구성과 다음 확인",
       "note": "가족이 주말에 의논해 월요일까지 알려 주시면 그에 맞춰 편성하며, 시작 후 학생의 적응도를 보고 방학 국어 기반 학습 수업과 나머지 과목 구성을 추천합니다.",
@@ -2037,6 +2132,26 @@ const REPORT_DATA = {
           "조건마다 번호와 식",
           "타이머를 켜고 같은 순서로 풀이"
         ]
+      }
+    ]
+  },
+  "feeLinks": {
+    "title": "회비가 어떻게 계산되는지 더 보기",
+    "items": [
+      {
+        "label": "단가 견적표 열기",
+        "href": "../sumfuvps/#estimate",
+        "icon": "calc"
+      },
+      {
+        "label": "회비 구조 보기",
+        "href": "../sumfuvps/#structure",
+        "icon": "split"
+      },
+      {
+        "label": "회비 용어 풀이",
+        "href": "../sumfuvps/#glossary",
+        "icon": "book"
       }
     ]
   }
@@ -2401,5 +2516,14 @@ const REPORT_DATA = {
   box.classList.add('closing-badges');
 })();
 </script>
+<script data-student-content-renderer="2026-10-30.final-fee-links">
+  (function renderFeeLinks(){
+    const host=document.getElementById('fee-links');const L=(REPORT_DATA||{}).feeLinks;
+    if(!host||!L)return;
+    const icon={calc:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11h1M12 11h1M15.5 11h0M8.5 14.5h1M12 14.5h1M8.5 18h1M12 18h1M15.5 14.5V18"/></svg>',split:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 8h6M14 8h6M4 16h6M14 16h6"/></svg>',book:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5h9a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h9"/></svg>'};
+    const esc=(t)=>String(t==null?'':t).replace(/[&<>"]/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    host.innerHTML='<span class="fee-links__title">'+esc(L.title)+'</span>'+L.items.map((it)=>'<a href="'+esc(it.href)+'" target="_blank" rel="noopener">'+(icon[it.icon]||'')+'<span>'+esc(it.label)+'</span></a>').join('');
+  })();
+  </script>
 </body>
 </html>
