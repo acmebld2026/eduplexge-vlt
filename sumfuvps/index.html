@@ -176,6 +176,41 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
     document.getElementById('fg-time').textContent='개별지도 주 '+(comma*FEE.commaMinutes)+'분 · 관리 한 달 '+mDays+'일';
     document.getElementById('fg-warn').hidden=!(mDays>0&&sessions===0);
   }
+  /* 학생별 견적 세팅 미리 채우기: ?w=주수&g=상담등급&s=상담횟수&m=주 관리 등원&c=개별지도 과정&k=주 콤마&p=월비(1/0)&l=셀프리더&v=방학PG.
+     개인 정보는 담지 않고 횟수·과정만 받는다. 값이 없거나 범위를 벗어나면 기본 예시를 그대로 둔다. 번들이 상태를 읽기 전에 DOM을 먼저 맞춘다. */
+  function applyPreset(){
+    var q;try{q=new URLSearchParams(location.search);}catch(e){return;}
+    var any=false;
+    [['w','weeks'],['g','grade'],['m','mgmt'],['c','course']].forEach(function(m){
+      var v=q.get(m[0]);if(v===null)return;
+      var g=document.querySelector('[data-field="'+m[1]+'"]');if(!g)return;
+      var items=Array.prototype.slice.call(g.querySelectorAll('[role="radio"]')),idx=-1;
+      items.forEach(function(b,i){if(b.getAttribute('data-value')===v)idx=i;});
+      if(idx<0)return;
+      items.forEach(function(b,i){b.setAttribute('aria-checked',i===idx?'true':'false');});
+      g.style.setProperty('--i',idx);any=true;
+    });
+    [['s','sessions'],['k','comma'],['l','selfLeader'],['v','seasonal']].forEach(function(m){
+      var v=q.get(m[0]);if(v===null||!/^\d{1,2}$/.test(v))return;
+      var st=document.querySelector('[data-field="'+m[1]+'"]');if(!st)return;
+      var n=+v,min=+st.getAttribute('data-min'),max=+st.getAttribute('data-max');
+      if(n<min||n>max)return;
+      st.setAttribute('data-value',n);
+      var out=st.querySelector('.cl-stepper__value');if(out)out.textContent=n+(st.getAttribute('data-unit')||'');
+      any=true;
+    });
+    var pv=q.get('p'),t=document.querySelector('[data-field="partner"]');
+    if(t&&(pv==='0'||pv==='1')){
+      t.setAttribute('aria-checked',pv==='1'?'true':'false');
+      var ts=t.querySelector('.cl-toggle__state');if(ts)ts.textContent=pv==='1'?(t.getAttribute('data-on')||'포함'):(t.getAttribute('data-off')||'제외');
+      any=true;
+    }
+    if(any){
+      var sub=document.querySelector('#estimate .cl-subhead');
+      if(sub)sub.textContent='횟수와 과정을 바꾸면 한 달 회비가 바로 계산됩니다. 처음 값은 해석상담에서 제안한 구성이며 4주 기준입니다. 시작일에 따라 첫 등록 비용은 줄어들 수 있고, 실제 구성은 가족과 함께 정합니다.';
+    }
+  }
+  applyPreset();
   document.addEventListener('cl-change',function(){setTimeout(render,0);});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
 })();
