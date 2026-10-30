@@ -7,6 +7,94 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>상상플렉스 길음점 — 성장 기록 관리</title>
 <script>
+/* 우클릭 바로가기 + 소스 열람 억제(admin-guard 2026-10-30.1)
+   브라우저는 페이지를 받아 실행하므로 소스를 완전히 숨길 수는 없다. 이 코드는 우클릭 메뉴(소스 보기·검사)와
+   F12·Ctrl+U·Ctrl+Shift+I/J/C·Ctrl+S 단축키를 막는 억제 장치다. 원장 페이지 편집 중(vpe-editing)과 입력칸에서는 끈다. */
+(function () {
+  "use strict";
+  var html = document.documentElement, menu = null;
+  var HOME = "https://eduplexge.sangsangplex.com/", BOOKING = "https://eduplexge.sangsangplex.com/booking/";
+  var ITEMS = [["지점 홈페이지", HOME, "eduplexge.sangsangplex.com"], ["홈페이지 상담예약", BOOKING, "/booking"]];
+
+  function editing() { return html.classList.contains("vpe-editing"); }
+  function editable(t) {
+    return !!(t && t.closest && t.closest("input,textarea,select,[contenteditable=''],[contenteditable='true']"));
+  }
+  function closeMenu() { if (menu) { menu.remove(); menu = null; } }
+
+  function build() {
+    var css = document.createElement("style");
+    css.textContent =
+      ".ag-menu{position:fixed;z-index:2147483000;min-width:220px;padding:6px;margin:0;list-style:none;background:var(--cl-surface,#fff);color:var(--cl-label,#0f1216);border:1px solid var(--cl-separator,#c9bd91);border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.22);font:600 14px/1.4 Pretendard,'Noto Sans KR','Malgun Gothic',sans-serif}" +
+      ".ag-menu a{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:10px 12px;border-radius:7px;color:inherit;text-decoration:none}" +
+      ".ag-menu a small{font-weight:500;font-size:12px;color:var(--cl-label-3,#5f6672)}" +
+      ".ag-menu a:hover,.ag-menu a:focus-visible{background:var(--cl-fill,#e7e9ed);outline:2px solid var(--cl-control,#7d8590);outline-offset:-2px}";
+    document.head.appendChild(css);
+  }
+  var built = false;
+
+  function openMenu(x, y) {
+    closeMenu();
+    if (!built) { build(); built = true; }
+    menu = document.createElement("ul");
+    menu.className = "ag-menu";
+    menu.setAttribute("role", "menu");
+    menu.setAttribute("aria-label", "바로가기");
+    ITEMS.forEach(function (it) {
+      var li = document.createElement("li"), a = document.createElement("a"), s = document.createElement("small");
+      li.setAttribute("role", "none");
+      a.setAttribute("role", "menuitem");
+      a.href = it[1]; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.appendChild(document.createTextNode(it[0] + " ↗"));
+      s.textContent = it[2]; a.appendChild(s);
+      li.appendChild(a); menu.appendChild(li);
+    });
+    document.body.appendChild(menu);
+    var w = menu.offsetWidth, h = menu.offsetHeight;
+    menu.style.left = Math.max(4, Math.min(x, window.innerWidth - w - 4)) + "px";
+    menu.style.top = Math.max(4, Math.min(y, window.innerHeight - h - 4)) + "px";
+    menu.querySelector("a").focus({ preventScroll: true });
+  }
+
+  document.addEventListener("contextmenu", function (e) {
+    if (editing() || editable(e.target instanceof Element ? e.target : null)) return;
+    e.preventDefault();
+    openMenu(e.clientX, e.clientY);
+  }, true);
+
+  document.addEventListener("pointerdown", function (e) {
+    if (menu && !menu.contains(e.target)) closeMenu();
+  }, true);
+  document.addEventListener("click", function (e) {
+    if (menu && menu.contains(e.target)) setTimeout(closeMenu, 0);
+  }, true);
+  window.addEventListener("blur", closeMenu);
+  window.addEventListener("resize", closeMenu);
+  window.addEventListener("scroll", closeMenu, true);
+
+  document.addEventListener("keydown", function (e) {
+    var k = (e.key || "").toLowerCase();
+    if (menu) {
+      var links = Array.prototype.slice.call(menu.querySelectorAll("a")), i = links.indexOf(document.activeElement);
+      if (k === "escape") { e.preventDefault(); closeMenu(); return; }
+      if (k === "arrowdown" || k === "arrowup") {
+        e.preventDefault();
+        links[(i + (k === "arrowdown" ? 1 : links.length - 1) + links.length) % links.length].focus();
+        return;
+      }
+      if (k === "tab") { closeMenu(); return; }
+    }
+    var mod = e.ctrlKey || e.metaKey, block = false;
+    if (k === "f12") block = true;
+    else if (mod && !e.altKey && !e.shiftKey && k === "u") block = true;                       // 소스 보기
+    else if (e.ctrlKey && e.shiftKey && (k === "i" || k === "j" || k === "c" || k === "k")) block = true; // 개발자 도구
+    else if (e.metaKey && e.altKey && (k === "i" || k === "j" || k === "c" || k === "u")) block = true;  // 맥
+    else if (mod && !e.altKey && !e.shiftKey && k === "s" && !editing()) block = true;         // 페이지 저장(편집 중 Ctrl+S는 편집기 저장)
+    if (block) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+})();
+</script>
+<script>
   /* 테마: Clarity(Kit 06)가 기본. 고른 값은 이 브라우저에만 기억합니다. */
   (function () {
     var KEY = "eduplexge-admin-theme";
