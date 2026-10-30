@@ -217,6 +217,15 @@
   th{position:sticky;top:0;z-index:2;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.025em}
   tbody tr:nth-child(even){background:#fbf6e6}tbody tr:hover{background:#eaf7ff}
   tbody tr:last-child td{border-bottom:none}
+  tbody tr.has-memo td{border-bottom:0}
+  tbody tr.memo-row,tbody tr.memo-row:hover{background:#fff}
+  tbody tr.memo-row td{padding:0 14px 13px}
+  @media(min-width:681px){tbody tr:not(.memo-row) td:nth-child(2){white-space:nowrap}}
+  tbody tr.memo-row td:first-child,html[data-skin="clarity"] tbody tr.memo-row td:first-child{font-weight:400;font-size:13px;color:inherit;border-top:0}
+  .memo-badge{position:sticky;left:14px;box-sizing:border-box;width:calc(var(--tw,100%) - 28px);display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
+  .memo-label{flex:none;padding:3px 10px;background:var(--ink);color:#fff;border-radius:999px;font-size:11px;font-weight:900;line-height:1.5}
+  .memo-chips{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+  .memo-chips li{padding:3px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600;color:#3d3b33;line-height:1.5}
   tbody td:first-child{font-weight:900;font-size:14px}
   a.link,a.manager{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;color:#fff;font-size:11.5px;font-weight:900;text-decoration:none;word-break:keep-all;box-shadow:2px 2px 0 var(--ink)}
   a.link{background:var(--blue)}a.manager{background:var(--green);color:var(--ink)}
@@ -226,7 +235,7 @@
   .session-link{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:8px;padding:7px 8px;border:1px solid var(--ink);background:#fff2f5;color:#6e1e35;text-decoration:none}
   .session-link:hover{background:#ffdbe5}
   .session-index{display:grid;place-items:center;width:24px;height:24px;background:var(--pink);color:#fff;border:1px solid var(--ink);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:9px;font-weight:950}
-  .session-copy{display:grid;line-height:1.25}.session-copy strong{font-size:11px}.session-copy small{margin-top:3px;color:#89596a;font-size:9.5px}
+  .session-copy{display:grid;line-height:1.25;min-width:0}.session-copy strong{font-size:11px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.session-copy small{margin-top:3px;color:#89596a;font-size:9.5px}
   .session-empty{color:#8d8a80;font-size:11px}
   .preanalysis-link{display:inline-flex;align-items:center;justify-content:center;min-height:35px;border:2px solid var(--ink);padding:6px 10px;background:#f39a3c;color:var(--ink);font-size:11.5px;font-weight:950;text-decoration:none;box-shadow:2px 2px 0 var(--ink)}
   .preanalysis-link:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
@@ -288,6 +297,7 @@
     .drawer>summary{padding:14px;align-items:flex-start}.drawer-heading p{display:none}.drawer-toggle span{display:none}.drawer-body{padding:14px}.control-deck{margin:-14px -14px 14px;padding:14px}
     .controls-primary{grid-template-columns:1fr}.field--search{grid-column:auto}.pager-shell,.resource-tools{align-items:flex-start;flex-direction:column}.pagination{justify-content:flex-start}
     .table-scroll{overflow:visible;border:0;background:transparent}table{min-width:0}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    tbody tr.memo-row{display:block;margin-top:-12px;border:2px solid var(--ink);border-top:0;box-shadow:3px 3px 0 #b9ae86}tbody tr.memo-row td,tbody tr.memo-row td:first-child{display:block;padding:10px 12px;border-bottom:0;border-top:0;font-size:13px}tbody tr.memo-row td::before{display:none}.memo-badge{position:static;width:auto;flex-direction:column;gap:8px}.memo-chips{width:100%}
     tbody{display:grid;gap:12px}tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff!important;border:2px solid var(--ink);box-shadow:3px 3px 0 #b9ae86}tbody td{display:block;border-bottom:1px dashed #c9bd91;padding:11px 12px}tbody td::before{content:attr(data-label);display:block;margin-bottom:4px;color:var(--muted);font-size:9.5px;font-weight:900;letter-spacing:.04em}tbody td:first-child,tbody td:nth-child(2),tbody td:nth-child(5),tbody td:nth-child(6),tbody td:nth-child(7),tbody td:last-child{grid-column:1/-1}tbody td:first-child{font-size:17px;border-top:6px solid var(--blue)}tbody td:last-child{border-bottom:0}
     a.link,a.manager{width:100%}.session-stack{min-width:0}.apt-grid,.growth-grid,.tool-grid{grid-template-columns:1fr}.tool-card{grid-template-columns:auto 1fr}.tool-link{grid-column:1/-1}
   }
@@ -374,6 +384,11 @@
   html[data-skin="clarity"] th,html[data-skin="clarity"] td{border-bottom:1px solid var(--cl-separator);font-size:.875rem}
   html[data-skin="clarity"] th{background:var(--cl-surface);color:var(--cl-label-2);font-size:.75rem;font-weight:600;letter-spacing:0;box-shadow:inset 0 -1px 0 var(--cl-control)}
   html[data-skin="clarity"] tbody tr:nth-child(even){background:transparent}
+  html[data-skin="clarity"] tbody tr.memo-row,html[data-skin="clarity"] tbody tr.memo-row:hover{background:var(--cl-surface)}
+  html[data-skin="clarity"] tbody tr.memo-row td{padding:0 14px 14px}
+  html[data-skin="clarity"] .memo-badge{background:var(--cl-surface-2);border:0;border-radius:12px}
+  html[data-skin="clarity"] .memo-label{background:var(--cl-accent-tint);color:var(--cl-accent);font-size:.6875rem;font-weight:700}
+  html[data-skin="clarity"] .memo-chips li{background:var(--cl-surface);border:1px solid var(--cl-separator);color:var(--cl-label-2);font-size:.75rem;font-weight:500}
   html[data-skin="clarity"] tbody tr:hover{background:var(--cl-surface-2)}
   html[data-skin="clarity"] tbody td:first-child{font-weight:700;font-size:.9375rem;color:var(--cl-label)}
   html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
@@ -449,6 +464,11 @@
     html[data-skin="clarity"] table{background:transparent}
     html[data-skin="clarity"] tbody tr{background:var(--cl-surface-2)!important;border:0;border-radius:16px;box-shadow:none;overflow:hidden}
     html[data-skin="clarity"] tbody td{border-bottom:1px solid var(--cl-separator)}
+    html[data-skin="clarity"] tbody tr.memo-row{border:0;border-radius:0 0 16px 16px;box-shadow:none;margin-top:-12px;background:var(--cl-surface-2)!important}
+    html[data-skin="clarity"] tbody tr.has-memo{border-bottom-left-radius:0;border-bottom-right-radius:0}
+    html[data-skin="clarity"] tbody tr.has-memo td:last-child{border-bottom:0}
+    html[data-skin="clarity"] tbody tr.memo-row td{border-bottom:0;padding:0 12px 12px}
+    html[data-skin="clarity"] .memo-badge{background:var(--cl-surface)}
     html[data-skin="clarity"] tbody td::before{color:var(--cl-label-3);font-size:.6875rem;font-weight:600;letter-spacing:0}
     html[data-skin="clarity"] tbody td:first-child{font-size:1.0625rem;border-top:0}
   }
@@ -546,15 +566,15 @@
   <table id="result-table">
     <thead><tr><th>학생</th><th>상담일 · 타입</th><th>학부모 전달 링크</th><th>매니저용 기록지</th></tr></thead>
     <tbody>
-      <tr>
+      <tr data-memo="VLT5G V2 · 김범수 담당 매니저">
         <td>김민준 <span class="tag">상명대사대부초6</span></td>
-        <td>2026.05.06 · TYPE6 + HIDDEN TYPE13 (VLT5G V2 · 김범수 담당 매니저)</td>
+        <td>2026.05.06 · TYPE6 + HIDDEN TYPE13</td>
         <td><span class="tag">초기 결과지 미배포</span></td>
         <td><span class="tag">초기 기록지 미배포</span></td>
       </tr>
-      <tr>
+      <tr data-memo="김범수 담당 매니저">
         <td>김다윤 <span class="tag">영훈고1</span></td>
-        <td>2026.05.26 · TYPE11 (김범수 담당 매니저)</td>
+        <td>2026.05.26 · TYPE11</td>
         <td><span class="tag">초기 결과지 미배포</span></td>
         <td><span class="tag">초기 기록지 미배포</span></td>
       </tr>
@@ -594,261 +614,261 @@
         <td><a class="link" href="../r7jw2m9k/">https://acmebld2026.github.io/eduplexge-vlt/r7jw2m9k/</a></td>
         <td><a class="link manager" href="../qq70yq59/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 미확정">
         <td>안시영 <span class="tag">영훈고1</span></td>
-        <td>2026.07.09 · TYPE13 (등록 미확정)</td>
+        <td>2026.07.09 · TYPE13</td>
         <td><a class="link" href="../58hjth0l/">https://acmebld2026.github.io/eduplexge-vlt/58hjth0l/</a></td>
         <td><a class="link manager" href="../m8sx1uba/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/14 세팅상담 예정">
         <td>이지연 <span class="tag">계성고1</span></td>
-        <td>2026.06.11 · TYPE4 + HIDDEN TYPE7 (7/14 세팅상담 예정)</td>
+        <td>2026.06.11 · TYPE4 + HIDDEN TYPE7</td>
         <td><a class="link" href="../a9bdc32j/">https://acmebld2026.github.io/eduplexge-vlt/a9bdc32j/</a></td>
         <td><a class="link manager" href="../y43zo0c8/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/15 등록 결정 예정">
         <td>이강인 <span class="tag">영훈고2</span></td>
-        <td>2026.07.13 · TYPE11 + HIDDEN TYPE12 (7/15 등록 결정 예정)</td>
+        <td>2026.07.13 · TYPE11 + HIDDEN TYPE12</td>
         <td><a class="link" href="../h0au2d7t/">https://acmebld2026.github.io/eduplexge-vlt/h0au2d7t/</a></td>
         <td><a class="link manager" href="../h7ckqch0/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/22 시작">
         <td>김준현 <span class="tag">계성고2</span></td>
-        <td>2026.07.14 · TYPE5 (7/22 시작)</td>
+        <td>2026.07.14 · TYPE5</td>
         <td><a class="link" href="../ifirlhkv/">https://acmebld2026.github.io/eduplexge-vlt/ifirlhkv/</a></td>
         <td><a class="link manager" href="../gc90fcxy/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 미확정">
         <td>한수빈 <span class="tag">계성고1</span></td>
-        <td>2026.07.14 · TYPE7 (등록 미확정)</td>
+        <td>2026.07.14 · TYPE7</td>
         <td><a class="link" href="../0waqxyed/">https://acmebld2026.github.io/eduplexge-vlt/0waqxyed/</a></td>
         <td><a class="link manager" href="../if7y02gi/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 미확정">
         <td>박시은 <span class="tag">숭곡중3</span></td>
-        <td>2026.07.14 · TYPE8 (등록 미확정)</td>
+        <td>2026.07.14 · TYPE8</td>
         <td><a class="link" href="../yiwlfyc7/">https://acmebld2026.github.io/eduplexge-vlt/yiwlfyc7/</a></td>
         <td><a class="link manager" href="../b1adynze/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/23 시작">
         <td>박시현 <span class="tag">숭곡중2</span></td>
-        <td>2026.07.15 · TYPE6 + HIDDEN TYPE13 (7/23 시작)</td>
+        <td>2026.07.15 · TYPE6 + HIDDEN TYPE13</td>
         <td><a class="link" href="../bc22lc8s/">https://acmebld2026.github.io/eduplexge-vlt/bc22lc8s/</a></td>
         <td><a class="link manager" href="../tqry59gb/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 미확정">
         <td>조영우 <span class="tag">영훈고1</span></td>
-        <td>2026.07.15 · TYPE6 + HIDDEN TYPE15 (등록 미확정)</td>
+        <td>2026.07.15 · TYPE6 + HIDDEN TYPE15</td>
         <td><a class="link" href="../nv33i518/">https://acmebld2026.github.io/eduplexge-vlt/nv33i518/</a></td>
         <td><a class="link manager" href="../wah9rlbg/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/22 시작">
         <td>이다인 <span class="tag">서울국제고1</span></td>
-        <td>2026.07.16 · TYPE2 + HIDDEN TYPE1 (7/22 시작)</td>
+        <td>2026.07.16 · TYPE2 + HIDDEN TYPE1</td>
         <td><a class="link" href="../n7aracv2/">https://acmebld2026.github.io/eduplexge-vlt/n7aracv2/</a></td>
         <td><a class="link manager" href="../p2csfvoj/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 · OT 일정 확정 예정">
         <td>김리안 <span class="tag">계성고1</span></td>
-        <td>2026.07.16 · TYPE8 + HIDDEN TYPE2 (등록 · OT 일정 확정 예정)</td>
+        <td>2026.07.16 · TYPE8 + HIDDEN TYPE2</td>
         <td><a class="link" href="../i613jazd/">https://acmebld2026.github.io/eduplexge-vlt/i613jazd/</a></td>
         <td><a class="link manager" href="../qbc4oaj0/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/20 시작">
         <td>이수민 <span class="tag">이화여고2</span></td>
-        <td>2026.07.16 · TYPE13 + HIDDEN TYPE6 (7/20 시작)</td>
+        <td>2026.07.16 · TYPE13 + HIDDEN TYPE6</td>
         <td><a class="link" href="../s8m1n09a/">https://acmebld2026.github.io/eduplexge-vlt/s8m1n09a/</a></td>
         <td><a class="link manager" href="../s8m1n09m/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="임지혜 담당 매니저 · 방학 주간표 반영">
         <td>박소연 <span class="tag">한성여고3</span></td>
-        <td>2026.07.20 · TYPE6 + HIDDEN TYPE13 (임지혜 담당 매니저 · 방학 주간표 반영)</td>
+        <td>2026.07.20 · TYPE6 + HIDDEN TYPE13</td>
         <td><a class="link" href="../14zouq5e/">https://acmebld2026.github.io/eduplexge-vlt/14zouq5e/</a></td>
         <td><a class="link manager" href="../bsls6rno/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/22 OT·7/23 시작안">
         <td>성연서 <span class="tag">계성고2</span></td>
-        <td>2026.07.20 · VLT4G TYPE1 + HIDDEN TYPE4 (7/22 OT·7/23 시작안)</td>
+        <td>2026.07.20 · VLT4G TYPE1 + HIDDEN TYPE4</td>
         <td><a class="link" href="../e2r9s4yn/">https://acmebld2026.github.io/eduplexge-vlt/e2r9s4yn/</a></td>
         <td><a class="link manager" href="../k7m3v8qa/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 완료 · OT 일정 조율">
         <td>송민준 <span class="tag">고대부고2</span></td>
-        <td>2026.07.20 · TYPE4 + HIDDEN TYPE6 (등록 완료 · OT 일정 조율)</td>
+        <td>2026.07.20 · TYPE4 + HIDDEN TYPE6</td>
         <td><a class="link" href="../7610xd7m/">https://acmebld2026.github.io/eduplexge-vlt/7610xd7m/</a></td>
         <td><a class="link manager" href="../dg2uwdj8/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="7/22 시작 · 2주 초기 세팅">
         <td>양산하 <span class="tag">경신고1</span></td>
-        <td>2026.07.21 · TYPE11 + HIDDEN TYPE12 (7/22 시작 · 2주 초기 세팅)</td>
+        <td>2026.07.21 · TYPE11 + HIDDEN TYPE12</td>
         <td><a class="link" href="../mvjqq8ay/">https://acmebld2026.github.io/eduplexge-vlt/mvjqq8ay/</a></td>
         <td><a class="link manager" href="../gnfqbu40/">초기상담기록지</a></td>
       </tr>
-      <tr>
+      <tr data-memo="학부모 상담 전 초기 진단">
         <td>장하서 <span class="tag">길음중2</span></td>
-        <td>2026.07.23 · TYPE5 + HIDDEN TYPE7 (학부모 상담 전 초기 진단)</td>
+        <td>2026.07.23 · TYPE5 + HIDDEN TYPE7</td>
         <td><a class="link" href="../h5p9t2qk/">https://acmebld2026.github.io/eduplexge-vlt/h5p9t2qk/</a></td>
         <td><span class="tag">학부모 상담 후 작성</span></td>
       </tr>
-      <tr>
+      <tr data-memo="수학 7/27 시작 · 8월 국어 추가">
         <td>고태훈 <span class="tag">숭곡중1</span></td>
-        <td>2026.07.24 · TYPE6 + HIDDEN TYPE4 (수학 7/27 시작 · 8월 국어 추가)</td>
+        <td>2026.07.24 · TYPE6 + HIDDEN TYPE4</td>
         <td><a class="link" href="../1lrgyjc7/">https://acmebld2026.github.io/eduplexge-vlt/1lrgyjc7/</a></td>
         <td><a class="link manager" href="../d2cc8uid/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="상담관리 단독 · 홍지민 매니저">
         <td>남건율 <span class="tag">영훈국제중3</span></td>
-        <td>2026.07.27 · TYPE2 + HIDDEN TYPE7 (상담관리 단독 · 홍지민 매니저)</td>
+        <td>2026.07.27 · TYPE2 + HIDDEN TYPE7</td>
         <td><a class="link" href="../rrftt17m/">https://acmebld2026.github.io/eduplexge-vlt/rrftt17m/</a></td>
         <td><a class="link manager" href="../fvfzb8ie/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="진학·생기부 점검 우선">
         <td>주시현 <span class="tag">신일고2</span></td>
-        <td>2026.07.28 · TYPE4 + HIDDEN TYPE3 (진학·생기부 점검 우선)</td>
+        <td>2026.07.28 · TYPE4 + HIDDEN TYPE3</td>
         <td><a class="link" href="../1viqhtvc/">https://acmebld2026.github.io/eduplexge-vlt/1viqhtvc/</a></td>
         <td><a class="link manager" href="../nmmcgutm/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="가족 논의 후 결정">
         <td>신지민 <span class="tag">길음중3</span></td>
-        <td>2026.07.28 · TYPE9 + HIDDEN TYPE13 (가족 논의 후 결정)</td>
+        <td>2026.07.28 · TYPE9 + HIDDEN TYPE13</td>
         <td><a class="link" href="../yyanm98d/">https://acmebld2026.github.io/eduplexge-vlt/yyanm98d/</a></td>
         <td><a class="link manager" href="../fs7lv9yc/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="수학 시작 여부 가족 논의">
         <td>백예림 <span class="tag">성암여중2</span></td>
-        <td>2026.07.28 · TYPE4 + HIDDEN TYPE13 (수학 시작 여부 가족 논의)</td>
+        <td>2026.07.28 · TYPE4 + HIDDEN TYPE13</td>
         <td><a class="link" href="../10r9c10m/">https://acmebld2026.github.io/eduplexge-vlt/10r9c10m/</a></td>
         <td><a class="link manager" href="../p3ffu4ae/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="학생 직접 해석상담 우선">
         <td>주시윤 <span class="tag">성신여고1</span></td>
-        <td>2026.07.28 · TYPE6 + HIDDEN TYPE13 (학생 직접 해석상담 우선)</td>
+        <td>2026.07.28 · TYPE6 + HIDDEN TYPE13</td>
         <td><a class="link" href="../1gf7yixf/">https://acmebld2026.github.io/eduplexge-vlt/1gf7yixf/</a></td>
         <td><a class="link manager" href="../v5eyhrpd/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="8/3 13시 시작 · 과목 구성 첫 주 확정">
         <td>박승찬 <span class="tag">남대문중3</span></td>
-        <td>2026.07.30 · TYPE6 + HIDDEN TYPE13 (8/3 13시 시작 · 과목 구성 첫 주 확정)</td>
+        <td>2026.07.30 · TYPE6 + HIDDEN TYPE13</td>
         <td><a class="link" href="../pscq7m4x/">https://acmebld2026.github.io/eduplexge-vlt/pscq7m4x/</a></td>
         <td><a class="link manager" href="../psm8k2vd/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="8/5 연락 · 수학 주 3회 × 3주 가안">
         <td>이서현 <span class="tag">개운중3</span></td>
-        <td>2026.08.03 · TYPE13 + HIDDEN TYPE6 (8/5 연락 · 수학 주 3회 × 3주 가안)</td>
+        <td>2026.08.03 · TYPE13 + HIDDEN TYPE6</td>
         <td><a class="link" href="../7rl5qt77/">https://acmebld2026.github.io/eduplexge-vlt/7rl5qt77/</a></td>
         <td><a class="link manager" href="../w49c15uf/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="시간 관리 실험 · 프로그램 가족 결정 대기">
         <td>손주환 <span class="tag">길음중3</span></td>
-        <td>2026.08.06 · TYPE4 + HIDDEN TYPE3 (시간 관리 실험 · 프로그램 가족 결정 대기)</td>
+        <td>2026.08.06 · TYPE4 + HIDDEN TYPE3</td>
         <td><a class="link" href="../ce0pf81k/">https://acmebld2026.github.io/eduplexge-vlt/ce0pf81k/</a></td>
         <td><a class="link manager" href="../as22at9z/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="8/18 시작 · 초기 수학 개별지도 8회">
         <td>왕건10 <span class="tag">영훈고1</span></td>
-        <td>2026.08.12 · TYPE15 + HIDDEN TYPE11 (8/18 시작 · 초기 수학 개별지도 8회)</td>
+        <td>2026.08.12 · TYPE15 + HIDDEN TYPE11</td>
         <td><a class="link" href="../rvvevek2/">https://acmebld2026.github.io/eduplexge-vlt/rvvevek2/</a></td>
         <td><a class="link manager" href="../snboe8tq/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="상담·관리 시작 · 개별지도 2~4주 기준 검토">
         <td>손유찬09 <span class="tag">용문고2</span></td>
-        <td>2026.06.18 · TYPE15 + HIDDEN TYPE11 (상담·관리 시작 · 개별지도 2~4주 기준 검토)</td>
+        <td>2026.06.18 · TYPE15 + HIDDEN TYPE11</td>
         <td><a class="link" href="../rs6oy9gb/">https://acmebld2026.github.io/eduplexge-vlt/rs6oy9gb/</a></td>
         <td><a class="link manager" href="../k1hiitb9/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="8/24 시작 · 김범수 매니저 · 주 5회 상담·관리 · 수학 주 3회">
         <td>임규미12 <span class="tag">개운중2</span></td>
-        <td>2026.08.20 · TYPE10 + HIDDEN TYPE6 (8/24 시작 · 김범수 매니저 · 주 5회 상담·관리 · 수학 주 3회)</td>
+        <td>2026.08.20 · TYPE10 + HIDDEN TYPE6</td>
         <td><a class="link" href="../3da7x0v6/">https://acmebld2026.github.io/eduplexge-vlt/3da7x0v6/</a></td>
         <td><a class="link manager" href="../sp5jjyd4/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="10월 등록 예정 · 주 3회 이상 · 수학 과외 유지 검토">
         <td>조하린15 <span class="tag">매원초5</span></td>
-        <td>2026.08.26 · TYPE6 + HIDDEN TYPE15 (10월 등록 예정 · 주 3회 이상 · 수학 과외 유지 검토)</td>
+        <td>2026.08.26 · TYPE6 + HIDDEN TYPE15</td>
         <td><a class="link" href="../j6h8r2qx/">https://acmebld2026.github.io/eduplexge-vlt/j6h8r2qx/</a></td>
         <td><a class="link manager" href="../m4k7v9zs/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="영어 개별지도 주 2회 · 9월 7회 · 상담·관리 추후 전환">
         <td>유아영11 <span class="tag">길음중3</span></td>
-        <td>2026.09.02 · TYPE11 + HIDDEN TYPE14 (영어 개별지도 주 2회 · 9월 7회 · 상담·관리 추후 전환)</td>
+        <td>2026.09.02 · TYPE11 + HIDDEN TYPE14</td>
         <td><a class="link" href="../k6z55rmk/">https://acmebld2026.github.io/eduplexge-vlt/k6z55rmk/</a></td>
         <td><a class="link manager" href="../csdhmjwz/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="검사 이후 성장 이력 통합 분석">
         <td>조서진 <span class="tag">영훈고1</span></td>
-        <td>2026.09.11 · V2 TYPE6 + HIDDEN TYPE9 (검사 이후 성장 이력 통합 분석)</td>
+        <td>2026.09.11 · V2 TYPE6 + HIDDEN TYPE9</td>
         <td><a class="link" href="../92pn86wu/">https://acmebld2026.github.io/eduplexge-vlt/92pn86wu/</a></td>
         <td><a class="link manager" href="../a6mfg475/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="등록 시점 미정 · 리뉴얼 검사 후 재검사 · 어머님 참석">
         <td>조연호15 <span class="tag">세검정초5</span></td>
-        <td>2026.09.18 · TYPE3 학원키즈 (등록 시점 미정 · 리뉴얼 검사 후 재검사 · 어머님 참석)</td>
+        <td>2026.09.18 · TYPE3 학원키즈</td>
         <td><a class="link" href="../omtfalr5/">https://acmebld2026.github.io/eduplexge-vlt/omtfalr5/</a></td>
         <td><a class="link manager" href="../vnwxe5zu/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="상담&amp;관리 + 수학 개별지도 권고 · 10/25 세미나 후 결정">
         <td>조연우11 <span class="tag">상명부속여중3</span></td>
-        <td>2026.09.18 · TYPE13 + HIDDEN TYPE11 (상담&관리 + 수학 개별지도 권고 · 10/25 세미나 후 결정)</td>
+        <td>2026.09.18 · TYPE13 + HIDDEN TYPE11</td>
         <td><a class="link" href="../m7c5lymd/">https://acmebld2026.github.io/eduplexge-vlt/m7c5lymd/</a></td>
         <td><a class="link manager" href="../ucyy44db/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="상담&amp;관리 중심 권고 · 수학 개별지도는 등원 4주 지표로 연결 · 겨울방학 시작 의향 · 12월 말 세팅">
         <td>이소윤14 <span class="tag">장곡초6</span></td>
-        <td>2026.10.06 · TYPE15 + HIDDEN TYPE10 (상담&관리 중심 권고 · 수학 개별지도는 등원 4주 지표로 연결 · 겨울방학 시작 의향 · 12월 말 세팅)</td>
+        <td>2026.10.06 · TYPE15 + HIDDEN TYPE10</td>
         <td><a class="link" href="../wwp9klee/">https://acmebld2026.github.io/eduplexge-vlt/wwp9klee/</a></td>
         <td><a class="link manager" href="../qdo0wx0j/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="주 4회 정규 등원 · 수학 개별지도 주 5회 · 이하나 부원장 · 10/19 OT · 11월 구성 가족 결정">
         <td>송지우09 <span class="tag">삼각산고2</span></td>
-        <td>2026.10.16 · TYPE9 + HIDDEN TYPE11 (주 4회 정규 등원 · 수학 개별지도 주 5회 · 이하나 부원장 · 10/19 OT · 11월 구성 가족 결정)</td>
+        <td>2026.10.16 · TYPE9 + HIDDEN TYPE11</td>
         <td><a class="link" href="../t048dsps/">https://acmebld2026.github.io/eduplexge-vlt/t048dsps/</a></td>
         <td><a class="link manager" href="../b9w88reh/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="재방문 · 2023 4G TYPE10·14 → 5G 변화 추적 · 10/19 등록상담 #1 · 10/26 학생 해석상담 · 월·수·목·금 등원·수학 주 4회 권고 · 10/28까지 가족 결정 · 어머님 상담 예정 · 사전보고서·학생 상담 반영본">
         <td>김태림10 <span class="tag">삼각산고1</span></td>
-        <td>2026.10.19 · 10.26 · TYPE11 + HIDDEN TYPE12 (재방문 · 2023 4G TYPE10·14 → 5G 변화 추적 · 10/19 등록상담 #1 · 10/26 학생 해석상담 · 월·수·목·금 등원·수학 주 4회 권고 · 10/28까지 가족 결정 · 어머님 상담 예정 · 사전보고서·학생 상담 반영본)</td>
+        <td>2026.10.19 · 10.26 · TYPE11 + HIDDEN TYPE12</td>
         <td><span class="session-empty">상담 후 작성</span></td>
         <td><span class="session-empty">상담 후 작성</span></td>
       </tr>
-      <tr>
+      <tr data-memo="10/26 어머님 사전 상담 · 10/30 해석상담 · 국어·영어·수학 학원 정리 권고 · 상담&amp;관리 주 5회(월~금 17~22시) + 수학 개별지도 주 3회 · 견적 4주 기준 1,027,500원 · 등록·시작일·학원 정리 가족 결정 대기(월요일) · 담당 매니저 프로그램 확정 후 배정 · 사전보고서 ver2·1차는 이력">
         <td>차희수12 <span class="tag">고대부중2</span></td>
-        <td>2026.10.30 · TYPE6 + HIDDEN TYPE4 (10/26 어머님 사전 상담 · 10/30 해석상담 · 국어·영어·수학 학원 정리 권고 · 상담&관리 주 5회(월~금 17~22시) + 수학 개별지도 주 3회 · 견적 4주 기준 1,027,500원 · 등록·시작일·학원 정리 가족 결정 대기(월요일) · 담당 매니저 프로그램 확정 후 배정 · 사전보고서 ver2·1차는 이력)</td>
+        <td>2026.10.30 · TYPE6 + HIDDEN TYPE4</td>
         <td><a class="link" href="../xoweephi/">https://acmebld2026.github.io/eduplexge-vlt/xoweephi/</a></td>
         <td><a class="link manager" href="../fyv6ock5/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="10/30 해석상담 · 국어 1순위·수학 2순위 · 월~금 매일 체류 · 수학 3회·국어 2회 개별지도 · 견적 4주 기준 1,267,500원 · 시작일·기존 학원 정리 가족 결정 · 담당 매니저 프로그램 확정 후 배정 · 사전보고서 ver2·v1은 이력">
         <td>배가온12 <span class="tag">성일중2</span></td>
-        <td>2026.10.30 · TYPE12 + HIDDEN TYPE11 (10/30 해석상담 · 국어 1순위·수학 2순위 · 월~금 매일 체류 · 수학 3회·국어 2회 개별지도 · 견적 4주 기준 1,267,500원 · 시작일·기존 학원 정리 가족 결정 · 담당 매니저 프로그램 확정 후 배정 · 사전보고서 ver2·v1은 이력)</td>
+        <td>2026.10.30 · TYPE12 + HIDDEN TYPE11</td>
         <td><a class="link" href="../pxf4ayhx/">https://acmebld2026.github.io/eduplexge-vlt/pxf4ayhx/</a></td>
         <td><a class="link manager" href="../mw1zhwct/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="10/29 아버님 사전 상담 · 10/30 해석상담 · 상담&amp;관리 월~금 + 수학 개별지도 주 3회 권고 · 국어는 방학 기반 학습 추천 · 등록·시작일·학원 정리 가족 결정 대기(월요일까지) · 담당 매니저 확정 후 배정">
         <td>안혁진12 <span class="tag">성일중2</span></td>
-        <td>2026.10.30 · TYPE4 + HIDDEN TYPE3 (10/29 아버님 사전 상담 · 10/30 해석상담 · 상담&관리 월~금 + 수학 개별지도 주 3회 권고 · 국어는 방학 기반 학습 추천 · 등록·시작일·학원 정리 가족 결정 대기(월요일까지) · 담당 매니저 확정 후 배정)</td>
+        <td>2026.10.30 · TYPE4 + HIDDEN TYPE3</td>
         <td><a class="link" href="../ngj7v3s6/">https://acmebld2026.github.io/eduplexge-vlt/ngj7v3s6/</a></td>
         <td><a class="link manager" href="../d4ptq9we/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="수능 D-50 정시 전략 · 9/29 오리엔테이션 시작 · 이하나 부원장 · 상담·관리 + 국어·수학 수업 · 수학 학원 정리 여부 가족 결정">
         <td>박서진08 <span class="tag">고3</span></td>
-        <td>2026.09.23 · 09.28 · TYPE7 + HIDDEN TYPE10 · 수능 D-50 정시 전략 (9/29 오리엔테이션 시작 · 이하나 부원장 · 상담·관리 + 국어·수학 수업 · 수학 학원 정리 여부 가족 결정)</td>
+        <td>2026.09.23 · 09.28 · TYPE7 + HIDDEN TYPE10</td>
         <td><a class="link" href="../8n4h0knq/">https://acmebld2026.github.io/eduplexge-vlt/8n4h0knq/</a></td>
         <td><a class="link manager" href="../53ym0qgh/">열기</a></td>
       </tr>
-      <tr>
+      <tr data-memo="예비고1 · 영어 개별지도 제외·영어 학원 통보 재상담 · VLT5G 초기상담 없음 · 임지혜 매니저 · 상담·관리 + 영어 개별지도 · 수학 외부 학원">
         <td>권재현 <span class="tag">길음중3</span></td>
-        <td>2026.10.29 · 예비고1 · 영어 개별지도 제외·영어 학원 통보 재상담 (VLT5G 초기상담 없음 · 임지혜 매니저 · 상담·관리 + 영어 개별지도 · 수학 외부 학원)</td>
+        <td>2026.10.29</td>
         <td>—</td>
         <td>—</td>
       </tr>
-      <tr>
+      <tr data-memo="2학기 중간고사 시험대비 AIO 학부모 공유 · VLT5G 초기상담 없음 · 임지혜 매니저">
         <td>김견우 <span class="tag">용문고2</span></td>
-        <td>2026.09.23 · 2학기 중간고사 시험대비 AIO 학부모 공유 (VLT5G 초기상담 없음 · 임지혜 매니저)</td>
+        <td>2026.09.23</td>
         <td>—</td>
         <td>—</td>
       </tr>
-      <tr>
+      <tr data-memo="학습 지속 상담">
         <td>고예현</td>
-        <td>2026.08.11 · 학습 지속 상담</td>
+        <td>2026.08.11</td>
         <td><span class="session-empty">—</span></td>
         <td><span class="session-empty">—</span></td>
       </tr>
@@ -1166,7 +1186,7 @@
     }
 
     cell.innerHTML = `<div class="session-stack">${sessions.map(({ date, title, href }, index) => `
-      <a class="session-link" href="${href}">
+      <a class="session-link" href="${href}" title="${date} · ${title.replace(/"/g, "&quot;")}">
         <span class="session-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="session-copy"><strong>${title}</strong><small>${date}</small></span>
       </a>
@@ -1344,7 +1364,35 @@
     row.cells[2].querySelectorAll(".tag").forEach((tag) => tag.classList.add("status-tag"));
     Array.from(row.cells).forEach((cell, index) => cell.dataset.label = headers[index]);
 
+    // 상담일 칸에는 날짜·TYPE만 둔다. 메모·비고(row.dataset.memo, " · " 로 구분)는 학생 행 바로 아래 가로 뱃지 줄로 옮긴다.
+    let memoRow = null;
+    const memoItems = (row.dataset.memo || "").split(" · ").map((item) => item.trim()).filter(Boolean);
+    if (memoItems.length) {
+      memoRow = document.createElement("tr");
+      memoRow.className = "memo-row";
+      const memoCell = memoRow.insertCell();
+      memoCell.colSpan = row.cells.length;
+      const badge = document.createElement("div");
+      badge.className = "memo-badge";
+      badge.setAttribute("role", "note");
+      badge.setAttribute("aria-label", `${name} 메모`);
+      const label = document.createElement("span");
+      label.className = "memo-label";
+      label.textContent = "메모";
+      const list = document.createElement("ul");
+      list.className = "memo-chips";
+      memoItems.forEach((item) => {
+        const chip = document.createElement("li");
+        chip.textContent = item;
+        list.appendChild(chip);
+      });
+      badge.append(label, list);
+      memoCell.appendChild(badge);
+      row.classList.add("has-memo");
+    }
+
     rowMeta.set(row, {
+      memoRow,
       originalIndex,
       name,
       initial: getInitial(name),
@@ -1355,7 +1403,7 @@
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,
-      searchText: `${name} ${school} ${detail} ${preAnalysis?.title || ""} ${(preAnalysis?.versions || []).map((version) => version.title).join(" ")} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
+      searchText: `${name} ${school} ${detail} ${row.dataset.memo || ""} ${preAnalysis?.title || ""} ${(preAnalysis?.versions || []).map((version) => version.title).join(" ")} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
     });
   });
 
@@ -1431,9 +1479,19 @@
     currentPage = Math.min(currentPage, totalPages);
     const start = (currentPage - 1) * pageSize;
     const visibleRows = new Set(filtered.slice(start, start + pageSize));
-    resultRows.forEach((row) => { row.hidden = !visibleRows.has(row); });
-    filtered.forEach((row) => resultTable.tBodies[0].appendChild(row));
-    resultRows.filter((row) => !filtered.includes(row)).forEach((row) => resultTable.tBodies[0].appendChild(row));
+    resultRows.forEach((row) => {
+      const hidden = !visibleRows.has(row);
+      row.hidden = hidden;
+      const memoRow = rowMeta.get(row).memoRow;
+      if (memoRow) memoRow.hidden = hidden;
+    });
+    const placeRow = (row) => {
+      resultTable.tBodies[0].appendChild(row);
+      const memoRow = rowMeta.get(row).memoRow;
+      if (memoRow) resultTable.tBodies[0].appendChild(memoRow);
+    };
+    filtered.forEach(placeRow);
+    resultRows.filter((row) => !filtered.includes(row)).forEach(placeRow);
 
     document.getElementById("results-empty").hidden = filtered.length !== 0;
     document.getElementById("filter-summary").textContent = filtered.length === resultRows.length ? `전체 ${filtered.length}명` : `조건에 맞는 학생 ${filtered.length}명`;
@@ -1478,6 +1536,12 @@
     createResourcePager(aptLinks, document.getElementById("apt-pagination"), document.getElementById("apt-page-status")),
     createResourcePager(mbtiLinks, document.getElementById("mbti-pagination"), document.getElementById("mbti-page-status"))
   ];
+
+  // 메모 뱃지는 표가 가로로 스크롤돼도 보이는 폭 안에서 줄바꿈되도록, 스크롤 영역의 보이는 폭을 CSS 변수로 전한다.
+  const tableScroll = resultTable.closest(".table-scroll");
+  const syncMemoWidth = () => tableScroll.style.setProperty("--tw", `${tableScroll.clientWidth}px`);
+  syncMemoWidth();
+  if ("ResizeObserver" in window) new ResizeObserver(syncMemoWidth).observe(tableScroll);
 
   Object.values(controls).forEach((control) => control.addEventListener("change", () => { currentPage = 1; renderResults(); }));
   controls.search.addEventListener("input", () => { currentPage = 1; renderResults(); });
