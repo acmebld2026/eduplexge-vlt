@@ -212,8 +212,8 @@
   .filter-summary strong{color:var(--blue-deep)}
 
   .table-scroll{overflow:auto;border:2px solid var(--ink);background:#fff}
-  table{width:100%;min-width:1100px;border-collapse:collapse;background:#fff}
-  th,td{padding:13px 14px;text-align:left;font-size:13px;border-bottom:1px solid #ddd5b9;vertical-align:middle}
+  table{width:100%;border-collapse:collapse;background:#fff}
+  th,td{padding:13px 11px;text-align:left;font-size:13px;border-bottom:1px solid #ddd5b9;vertical-align:middle}
   th{position:sticky;top:0;z-index:2;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.025em}
   tbody tr:nth-child(even){background:#fbf6e6}tbody tr:hover{background:#eaf7ff}
   tbody tr:last-child td{border-bottom:none}
@@ -221,8 +221,12 @@
   tbody tr.memo-row,tbody tr.memo-row:hover{background:#fff}
   tbody tr.memo-row td{padding:0 14px 13px}
   @media(min-width:681px){tbody tr:not(.memo-row) td:nth-child(2){white-space:nowrap}}
+  .consult-cell{line-height:1.3}
+  .consult-date{display:block;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+  .type-pair{display:inline-flex;align-items:center;gap:6px;margin-top:3px;font-weight:800;white-space:nowrap}
+  .type-sep{color:#b9ae86;font-weight:400}.type-hidden{color:var(--blue-deep)}
   tbody tr.memo-row td:first-child,html[data-skin="clarity"] tbody tr.memo-row td:first-child{font-weight:400;font-size:13px;color:inherit;border-top:0}
-  .memo-badge{position:sticky;left:14px;box-sizing:border-box;width:calc(var(--tw,100%) - 28px);display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
+  .memo-badge{box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
   .memo-label{flex:none;padding:3px 10px;background:var(--ink);color:#fff;border-radius:999px;font-size:11px;font-weight:900;line-height:1.5}
   .memo-chips{flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
   .memo-chips li{padding:3px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600;color:#3d3b33;line-height:1.5}
@@ -231,7 +235,7 @@
   a.link{background:var(--blue)}a.manager{background:var(--green);color:var(--ink)}
   a.link:hover,a.manager:hover{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
   .tag{display:inline-block;margin-left:6px;border:1px solid var(--blue-deep);background:#e3f4fc;color:var(--blue-deep);padding:2px 6px;font-size:10px;font-weight:900}
-  .session-stack{display:grid;gap:6px;min-width:195px}
+  .session-stack{display:grid;gap:6px;min-width:170px}
   .session-link{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:8px;padding:7px 8px;border:1px solid var(--ink);background:#fff2f5;color:#6e1e35;text-decoration:none}
   .session-link:hover{background:#ffdbe5}
   .session-index{display:grid;place-items:center;width:24px;height:24px;background:var(--pink);color:#fff;border:1px solid var(--ink);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:9px;font-weight:950}
@@ -391,6 +395,9 @@
   html[data-skin="clarity"] .memo-chips li{background:var(--cl-surface);border:1px solid var(--cl-separator);color:var(--cl-label-2);font-size:.75rem;font-weight:500}
   html[data-skin="clarity"] tbody tr:hover{background:var(--cl-surface-2)}
   html[data-skin="clarity"] tbody td:first-child{font-weight:700;font-size:.9375rem;color:var(--cl-label)}
+  html[data-skin="clarity"] .consult-date{color:var(--cl-label-3);font-size:.75rem}
+  html[data-skin="clarity"] .type-pair{font-weight:600;color:var(--cl-label)}
+  html[data-skin="clarity"] .type-sep{color:var(--cl-separator)}html[data-skin="clarity"] .type-hidden{color:var(--cl-accent)}
   html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
   html[data-skin="clarity"] a.link{background:var(--cl-accent-tint);color:var(--cl-accent)}
   html[data-skin="clarity"] a.manager{background:var(--cl-fill);color:var(--cl-label)}
@@ -842,9 +849,9 @@
         <td><a class="link" href="../pxf4ayhx/">https://acmebld2026.github.io/eduplexge-vlt/pxf4ayhx/</a></td>
         <td><a class="link manager" href="../mw1zhwct/">열기</a></td>
       </tr>
-      <tr data-updated="2026.11.04" data-memo="예비고1 · 10/13·10/30 어머님 통화(설명회·검사 예약) · 11/3 검사 · 해석상담 전 사전보고서 · 원장 제안 초안: 상담&amp;관리 주 5회 + 수학 3·국어 2 개별지도 · 영어는 관리 루틴 4주 뒤 판단 · 학부모 MBTI·사전 기록지 대기">
+      <tr data-updated="2026.11.05" data-memo="예비고1 · 10/13·10/30 어머님 통화(설명회·검사 예약) · 11/3 검사 · 해석상담 전 사전보고서 · 원장 제안 초안: 상담&amp;관리 주 5회 + 수학 3·국어 2 개별지도 · 영어는 관리 루틴 4주 뒤 판단 · 학부모 MBTI·사전 기록지 대기">
         <td>정다원11 <span class="tag">성신여중3</span></td>
-        <td>2026.11.03 · TYPE15 + HIDDEN TYPE14 (11/3 검사 · 해석상담 전 사전보고서)</td>
+        <td>2026.11.03 · TYPE15 + HIDDEN TYPE14</td>
         <td><span class="session-empty">상담 후 작성</span></td>
         <td><span class="session-empty">상담 후 작성</span></td>
       </tr>
@@ -1398,6 +1405,43 @@
       row.classList.add("has-memo");
     }
 
+    // 상담일 · TYPE 칸은 "날짜 / 메인N | 히든N" 두 줄로 줄여 그린다. 원문(detail)은 정렬·필터·검색에 그대로 쓴다.
+    const mainMatch = detail.match(/(?:(VLT\s*4G|V\d+)\s+)?(?<!HIDDEN\s)TYPE\s*(\d+)/i);
+    const hiddenMatch = detail.match(/HIDDEN\s+TYPE\s*(\d+)/i);
+    const typeLabels = [];
+    if (mainMatch) {
+      const cell = row.cells[1];
+      const dateText = detail.slice(0, mainMatch.index).replace(/[\s·]+$/, "").trim();
+      cell.textContent = "";
+      cell.classList.add("consult-cell");
+      cell.title = detail;
+      if (dateText) {
+        const date = document.createElement("span");
+        date.className = "consult-date";
+        date.textContent = dateText;
+        cell.appendChild(date);
+      }
+      const pair = document.createElement("span");
+      pair.className = "type-pair";
+      const main = document.createElement("span");
+      main.className = "type-main";
+      main.textContent = `${mainMatch[1] ? `${mainMatch[1].replace(/\s+/g, "")} ` : ""}메인${mainMatch[2]}`;
+      pair.appendChild(main);
+      typeLabels.push(main.textContent);
+      if (hiddenMatch) {
+        const sep = document.createElement("span");
+        sep.className = "type-sep";
+        sep.setAttribute("aria-hidden", "true");
+        sep.textContent = "|";
+        const hidden = document.createElement("span");
+        hidden.className = "type-hidden";
+        hidden.textContent = `히든${hiddenMatch[1]}`;
+        pair.append(sep, hidden);
+        typeLabels.push(hidden.textContent);
+      }
+      cell.appendChild(pair);
+    }
+
     rowMeta.set(row, {
       memoRow,
       originalIndex,
@@ -1410,7 +1454,7 @@
       hasParent: Boolean(parentLink),
       hasManager: Boolean(managerLink),
       sessionCount: sessions.length,
-      searchText: `${name} ${school} ${detail} ${row.dataset.memo || ""} ${preAnalysis?.title || ""} ${(preAnalysis?.versions || []).map((version) => version.title).join(" ")} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
+      searchText: `${name} ${school} ${detail} ${typeLabels.join(" ")} ${row.dataset.memo || ""} ${preAnalysis?.title || ""} ${(preAnalysis?.versions || []).map((version) => version.title).join(" ")} ${mbtiDynamics?.title || ""}`.toLocaleLowerCase("ko-KR")
     });
   });
 
@@ -1543,12 +1587,6 @@
     createResourcePager(aptLinks, document.getElementById("apt-pagination"), document.getElementById("apt-page-status")),
     createResourcePager(mbtiLinks, document.getElementById("mbti-pagination"), document.getElementById("mbti-page-status"))
   ];
-
-  // 메모 뱃지는 표가 가로로 스크롤돼도 보이는 폭 안에서 줄바꿈되도록, 스크롤 영역의 보이는 폭을 CSS 변수로 전한다.
-  const tableScroll = resultTable.closest(".table-scroll");
-  const syncMemoWidth = () => tableScroll.style.setProperty("--tw", `${tableScroll.clientWidth}px`);
-  syncMemoWidth();
-  if ("ResizeObserver" in window) new ResizeObserver(syncMemoWidth).observe(tableScroll);
 
   Object.values(controls).forEach((control) => control.addEventListener("change", () => { currentPage = 1; renderResults(); }));
   controls.search.addEventListener("input", () => { currentPage = 1; renderResults(); });
