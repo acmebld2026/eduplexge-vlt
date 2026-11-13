@@ -225,6 +225,8 @@
   .consult-date{display:block;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
   .type-pair{display:inline-flex;align-items:center;gap:6px;margin-top:3px;font-weight:800;white-space:nowrap}
   .type-sep{color:#b9ae86;font-weight:400}.type-hidden{color:var(--blue-deep)}
+  .type-mbti{display:block;margin-top:3px;color:var(--muted);font-size:11.5px;font-weight:700;white-space:nowrap;letter-spacing:.02em}
+  .type-mbti-student{color:var(--ink);font-weight:900}.type-mbti-parent{font-weight:600}
   tbody tr.memo-row td:first-child,html[data-skin="clarity"] tbody tr.memo-row td:first-child{font-weight:400;font-size:13px;color:inherit;border-top:0}
   .memo-badge{box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
   .memo-label{flex:none;padding:3px 10px;background:var(--ink);color:#fff;border-radius:999px;font-size:11px;font-weight:900;line-height:1.5}
@@ -398,6 +400,8 @@
   html[data-skin="clarity"] .consult-date{color:var(--cl-label-3);font-size:.75rem}
   html[data-skin="clarity"] .type-pair{font-weight:600;color:var(--cl-label)}
   html[data-skin="clarity"] .type-sep{color:var(--cl-separator)}html[data-skin="clarity"] .type-hidden{color:var(--cl-accent)}
+  html[data-skin="clarity"] .type-mbti{color:var(--cl-label-3);font-size:.75rem;font-weight:500}
+  html[data-skin="clarity"] .type-mbti-student{color:var(--cl-label);font-weight:700}html[data-skin="clarity"] .type-mbti-parent{font-weight:500}
   html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
   html[data-skin="clarity"] a.link{background:var(--cl-accent-tint);color:var(--cl-accent)}
   html[data-skin="clarity"] a.manager{background:var(--cl-fill);color:var(--cl-label)}
@@ -1053,6 +1057,39 @@
     { student: "정아인11", date: "2026.11.12", title: "VLT-5G 해석상담 사전 보고서", href: "../f6rtgi9c/" }
   ];
 
+  // 상담일 · TYPE 칸에 함께 보이는 학생·학부모 MBTI입니다. student 는 결과 표의 학생 이름과 똑같이 씁니다.
+  // tool 이 MMTIC 이면 학생 결과는 어린이용 MMTIC입니다(학부모는 MBTI). 원천: EduCube 검사 MBTI·학생 MBTI, VLT4G 보고서.
+  const studentMbtiTypes = [
+    { student: "김다연11", mbti: "ISFP", parent: "ISFP" },
+    { student: "김경률11", mbti: "ESTP", parent: "ESTJ" },
+    { student: "정아인11", mbti: "ISTP", parent: "ESTP" },
+    { student: "정다원11", mbti: "ENTP" },
+    { student: "신하윤11", mbti: "ISTP", parent: "ESFJ" },
+    { student: "안혁진12", mbti: "ISTP", parent: "ESTJ" },
+    { student: "배가온12", mbti: "ISFP", parent: "ESTJ" },
+    { student: "차희수12", mbti: "INFP", parent: "ESFJ" },
+    { student: "김태림10", mbti: "ESFP", parent: "ESTJ" },
+    { student: "송지우09", mbti: "INTP", parent: "ESTJ" },
+    { student: "이소윤14", mbti: "ESFP", parent: "ISTP", tool: "MMTIC" },
+    { student: "조연우11", mbti: "ISFP", parent: "ESFJ" },
+    { student: "조연호15", mbti: "ENFP", parent: "ESFJ", tool: "MMTIC" },
+    { student: "유아영11", mbti: "ENFP", parent: "ESFJ" },
+    { student: "조하린15", mbti: "ESFP", parent: "ENFJ", tool: "MMTIC" },
+    { student: "임규미12", mbti: "ENFP", parent: "ISTJ" },
+    { student: "손유찬09", mbti: "ESTJ", parent: "ESFP" },
+    { student: "왕건10", mbti: "INTP", parent: "ESTJ" },
+    { student: "손주환", mbti: "ESTP", parent: "ISTJ" },
+    { student: "이수민", mbti: "ESTP", parent: "ESFP" },
+    { student: "송민준", mbti: "ISTJ", parent: "ESFJ" },
+    { student: "박승찬", mbti: "ESFP", parent: "ESFJ" },
+    { student: "조서진", mbti: "ESFJ", parent: "ESTJ" },
+    { student: "권재현", mbti: "INFP", parent: "ISTJ" },
+    { student: "김민준", mbti: "ENFP", parent: "ESTJ" },
+    { student: "장하서", mbti: "ESFP", parent: "ENTJ" },
+    { student: "남건율", mbti: "ESFP", parent: "ISTP" },
+    { student: "성연서", mbti: "INFP", parent: "ESFJ" }
+  ];
+
   // 학생·학부모 GS형 결과를 함께 해석한 내부용 가족 역동·소통매개 페이지입니다.
   const mbtiDynamicsReports = [
     { student: "임규미12", date: "2026.08.24", title: "GS형 가족 역동 · 소통매개", parentHref: "../yhengd7r/", managerHref: "../qqlfj590/" }
@@ -1198,6 +1235,7 @@
   const preAnalysisByStudent = new Map(preAnalysisReports.map((report) => [report.student, report]));
   const mbtiDynamicsByStudent = new Map(mbtiDynamicsReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
+  const mbtiTypeByStudent = new Map(studentMbtiTypes.map((entry) => [entry.student, entry]));
   const growthByStudent = new Map(growthHistoryReports.map((report) => [report.student, report]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
@@ -1472,6 +1510,29 @@
         typeLabels.push(hidden.textContent);
       }
       cell.appendChild(pair);
+    }
+
+    // 학생 MBTI(초등은 MMTIC)와 학부모 MBTI를 TYPE 아래 한 줄로 붙인다.
+    const mbtiType = mbtiTypeByStudent.get(name);
+    if (mbtiType) {
+      const cell = row.cells[1];
+      cell.classList.add("consult-cell");
+      const tool = mbtiType.tool || "MBTI";
+      const line = document.createElement("span");
+      line.className = "type-mbti";
+      const studentType = document.createElement("span");
+      studentType.className = "type-mbti-student";
+      studentType.textContent = mbtiType.mbti;
+      line.append(`${tool} `, studentType);
+      if (mbtiType.parent) {
+        const parentType = document.createElement("span");
+        parentType.className = "type-mbti-parent";
+        parentType.textContent = ` · 학부모 ${mbtiType.parent}`;
+        line.appendChild(parentType);
+      }
+      line.title = `학생 ${tool} ${mbtiType.mbti}${mbtiType.parent ? ` · 학부모 MBTI ${mbtiType.parent}` : ""}`;
+      cell.appendChild(line);
+      typeLabels.push(mbtiType.mbti, mbtiType.parent || "");
     }
 
     rowMeta.set(row, {
