@@ -643,6 +643,37 @@ body[data-layout-contract="vlt5g-14-sections-2026-11-11.2"]{scroll-behavior:smoo
 
 .formula-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:10px 0 0;font-size:12px;font-weight:800;color:#53687a}.formula-legend-item{display:inline-flex;align-items:center;gap:6px}.formula-legend-item i{display:inline-block;width:12px;height:8px;border-radius:4px;background:#7fa7c9}.formula-legend-item.is-focus i{background:#d96850}.formula-legend-item.is-watch i{background:#df9a52}@media print{.formula-legend{break-inside:avoid}}
 
+/* 4G → 5G 변화 추적 블록 */
+.migration-track{margin-top:28px;padding:24px 22px;border:1px solid #cdd8ed;border-radius:18px;background:linear-gradient(180deg,#f7faff,#fff);box-shadow:0 8px 20px rgba(43,69,126,.07)}
+.mig-head .kicker{display:inline-flex;border-radius:999px;padding:4px 11px;background:var(--navy);color:#fff;font-size:10px;font-weight:900;letter-spacing:.12em}
+.mig-head h3{margin:10px 0 6px;color:var(--navy);font-size:20px;line-height:1.45}.mig-head p{margin:0 0 6px;color:var(--sub);font-size:13px;line-height:1.75}
+.mig-scale{margin:8px 0 0;padding:9px 12px;border-left:4px solid var(--accent);border-radius:8px;background:var(--accent-soft);color:#7a4a1f;font-size:12px;font-weight:700;line-height:1.65}
+.mig-types{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin:18px 0 10px}
+.mig-type{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}.mig-type.is-before{background:#f4f6f9}.mig-type.is-after{border-color:#9db9dd;background:var(--sky)}
+.mig-type .when{display:block;color:var(--sub);font-size:11px;font-weight:900;letter-spacing:.02em}.mig-type .main{display:block;margin-top:6px;color:var(--navy);font-size:16px;font-weight:900}.mig-type .second{display:block;margin-top:2px;color:#41556b;font-size:13px;font-weight:800}.mig-type .mood{display:block;margin-top:8px;color:#4b5d70;font-size:12px;line-height:1.6}
+.mig-arrow{align-self:center;color:#6d82b4;font-size:26px;font-weight:900}
+.mig-reading{margin:6px 0 0;color:var(--ink);font-size:13px;line-height:1.8}
+.mig-axis{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 4px}.mig-axis .lbl{color:var(--sub);font-size:11.5px;font-weight:900}.mig-axis .chip{border-radius:999px;padding:5px 11px;background:#eef1ff;color:#354b91;font-size:12px;font-weight:900}.mig-axis .sep{color:#8a9bb5;font-weight:900}
+.mig-layers{display:grid;gap:12px;margin-top:18px}
+.mig-layer{border:1px solid var(--line);border-left-width:6px;border-radius:14px;padding:16px 18px;background:#fff;break-inside:avoid}
+.mig-layer.is-keep{border-left-color:var(--green)}.mig-layer.is-stuck{border-left-color:var(--red)}.mig-layer.is-grow{border-left-color:var(--blue)}.mig-layer.is-watch{border-left-color:var(--accent)}
+.mig-layer-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.mig-step{color:#8a9bb5;font-size:12px;font-weight:900}.mig-layer-head h4{margin:0;color:var(--navy);font-size:16px}.mig-q{flex-basis:100%;color:var(--sub);font-size:12px;font-weight:700}
+.mig-verdict{border-radius:999px;padding:4px 10px;font-size:11px;font-weight:900;color:#fff;background:#6d7f93}.is-keep .mig-verdict{background:var(--green)}.is-stuck .mig-verdict{background:var(--red)}.is-grow .mig-verdict{background:var(--blue)}.is-watch .mig-verdict{background:var(--accent)}
+.mig-bars{display:grid;gap:9px;margin:12px 0}
+.mig-bar-row{display:grid;grid-template-columns:minmax(150px,1.1fr) 2fr;gap:10px;align-items:center}
+.mig-bar-label{color:#33475b;font-size:12px;font-weight:800;line-height:1.4}.mig-bar-label small{display:block;color:#8090a2;font-size:10.5px;font-weight:700}
+.mig-bar-pair{display:grid;gap:4px}
+.mig-bar{display:grid;grid-template-columns:52px 1fr 30px;gap:6px;align-items:center;font-size:10.5px;font-weight:900;color:#5c6d80}
+.mig-bar .track{position:relative;height:10px;border-radius:6px;background:#edf1f6;overflow:hidden}.mig-bar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px}
+.mig-bar.is-before .fill{background:#a9b6c6}.mig-bar.is-after .fill{background:var(--blue)}.mig-bar .val{text-align:right;color:var(--ink)}
+.mig-bar .track::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#c2cddb}
+.mig-body{margin:0;color:var(--ink);font-size:13px;line-height:1.8}.mig-meaning{margin:8px 0 0;padding:9px 12px;border-radius:9px;background:var(--sky2);color:#2d4a6b;font-size:12.5px;font-weight:700;line-height:1.7}
+.mig-engines{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.mig-engine{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}.mig-engine .lbl{color:var(--sub);font-size:11px;font-weight:900}.mig-engine .state{display:block;margin:4px 0 6px;color:var(--navy);font-size:15px;font-weight:900}.mig-engine p{margin:0;color:#41556b;font-size:12.5px;line-height:1.7}
+.mig-conclusion{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--navy);color:#fff;font-size:13px;font-weight:700;line-height:1.75}
+.mig-foot{margin:10px 0 0;color:#657184;font-size:11.5px;font-weight:700;line-height:1.6}
+@media(max-width:700px){.migration-track{padding:18px 14px}.mig-types{grid-template-columns:1fr}.mig-arrow{transform:rotate(90deg);justify-self:center}.mig-bar-row{grid-template-columns:1fr}.mig-engines{grid-template-columns:1fr}}
+@media print{.migration-track{box-shadow:none;break-inside:auto}.mig-layer,.mig-type,.mig-engine{break-inside:avoid}.mig-bar .fill,.mig-verdict,.mig-conclusion,.mig-head .kicker{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 #closing-contact.closing-badges{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap}
 #closing-contact.closing-badges a.closing-badge{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:0;border-radius:14px;background:#e9ebef;color:#1f2633;font-size:15px;font-weight:800;text-decoration:none;box-shadow:none}
 #closing-contact.closing-badges a.closing-badge svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
@@ -709,7 +740,7 @@ body[data-layout-contract="vlt5g-14-sections-2026-11-11.2"]{scroll-behavior:smoo
 <section id="sec-summary">
   <span class="sec-label">SUMMARY</span>
   <h2>한눈에 보는 상담 결과</h2>
-  <p class="lead">VLT-5G 일반·성향·공부공식 보고서, APT·CHAMP TEST, 학생·학부모 사전 기록지와 2026년 11월 13일 해석상담을 종합한 핵심 요약입니다.</p>
+  <p class="lead">VLT-5G 일반·성향·공부공식 보고서, APT·CHAMP TEST, 학생·학부모 사전 기록지, 2024년 VLT 4G 결과와 2026년 11월 13일 해석상담을 종합한 핵심 요약입니다.</p>
   <div class="summary-grid" id="summary-grid"></div>
   <div class="expertise" id="expertise-box"></div>
 </section>
@@ -781,6 +812,7 @@ body[data-layout-contract="vlt5g-14-sections-2026-11-11.2"]{scroll-behavior:smoo
     <div class="pc pros"><div class="t">이 타입의 강점</div><ul id="type-pros"></ul></div>
     <div class="pc cons"><div class="t">주의 깊게 봐야 할 지점</div><ul id="type-cons"></ul></div>
   </div>
+  <div class="migration-track" id="migration-track" aria-label="4G에서 5G로의 변화 추적"></div>
   <div class="type-growth">
     <div class="growth-head"><span class="kicker">TYPE GROWTH MAP</span><h3 id="growth-flow-title"></h3><p id="growth-flow-lead"></p></div>
     <div class="route-network">
@@ -934,7 +966,7 @@ const REPORT_DATA = {
   "summary": [
     {
       "title": "현재 위치",
-      "body": "윤선혜 학생은 수학·과학에서 이미 높은 실력을 보이는 학생입니다. CHAMP TEST 수학은 종합 99·LV5로 20문항 가운데 19문항을 맞혔고, 학교 시험과 모의고사에서도 수학·과학은 좋은 결과를 내고 있습니다. 반면 국어(종합 1·LV0)와 영어(종합 7·LV0)는 크게 비어 있고, 학생은 사전 기록지에 평소 스스로 공부하는 시간을 0분, 시험 기간에는 5분이라고 적었습니다. 해석상담에서 학생은 다시 에듀플렉스에 와 보고 싶었던 이유로 ‘공부하는 것’을 꼽았고, 생명공학 연구원이라는 꿈과, 서울 소재 대학에 가고 싶다는 생각을 말했으며, 알려 주는 방법대로 해 볼 마음을 10점 만점에 6점으로 답했습니다. 지금은 가진 힘을 수학·과학에 주로 쓰고 있어, 국어는 학원에 다니며 신경은 쓰지만 숙제·복습으로 이어지지 않고 영어는 오래 손을 놓은 상태입니다. 수학 외에 한 과목을 정해 성과를 가져오는 것이 첫 과제입니다."
+      "body": "윤선혜 학생은 수학·과학에서 이미 높은 실력을 보이는 학생입니다. CHAMP TEST 수학은 종합 99·LV5로 20문항 가운데 19문항을 맞혔고, 학교 시험과 모의고사에서도 수학·과학은 좋은 결과를 내고 있습니다. 반면 국어(종합 1·LV0)와 영어(종합 7·LV0)는 크게 비어 있고, 학생은 사전 기록지에 평소 스스로 공부하는 시간을 0분, 시험 기간에는 5분이라고 적었습니다. 해석상담에서 학생은 다시 에듀플렉스에 와 보고 싶었던 이유로 ‘공부하는 것’을 꼽았고, 생명공학 연구원이라는 꿈과, 서울 소재 대학에 가고 싶다는 생각을 말했으며, 알려 주는 방법대로 해 볼 마음을 10점 만점에 6점으로 답했습니다. 지금은 가진 힘을 수학·과학에 주로 쓰고 있어, 국어는 학원에 다니며 신경은 쓰지만 숙제·복습으로 이어지지 않고 영어는 오래 손을 놓은 상태입니다. 수학 외에 한 과목을 정해 성과를 가져오는 것이 첫 과제입니다. 중2 겨울의 VLT 4G와 비교하면 수학과 읽는 힘은 오히려 자랐고, 공부가 필요하다는 생각은 그때도 지금도 가장 낮은 자리입니다."
     },
     {
       "title": "CHAMP TEST 기반 과목 역량 체크",
@@ -1059,7 +1091,7 @@ const REPORT_DATA = {
   ],
   "coreSummary": {
     "title": "검사 결과지 기반 핵심 요약",
-    "basis": "검사 결과지 기반 핵심 요약입니다. VLT-5G 일반·성향·공부공식 보고서와 APT·CHAMP TEST, 학생·학부모 사전 기록지를 함께 읽고, 2026년 11월 13일 해석상담에서 어머님·학생과 나눈 장면을 연결했습니다.",
+    "basis": "검사 결과지 기반 핵심 요약입니다. VLT-5G 일반·성향·공부공식 보고서와 APT·CHAMP TEST, 학생·학부모 사전 기록지, 2024년 12월 VLT 4G 결과를 함께 읽고, 2026년 11월 13일 해석상담에서 어머님·학생과 나눈 장면을 연결했습니다.",
     "strengthKeywords": [
       "호기심 98",
       "집요함 96",
@@ -1101,7 +1133,7 @@ const REPORT_DATA = {
       "생명공학 꿈을 구체적으로 그려 보기",
       "늦어도 뒤 일정을 책임지기"
     ],
-    "narrative": "윤선혜 학생의 결과에는 크게 다른 두 모습이 함께 있습니다. 하나는 이미 증명된 힘입니다. CHAMP 수학 99·LV5, 기초 문장이해 86, 호기심 98·집요함 96처럼 생각하고 붙드는 힘은 또래 가운데 매우 높습니다. 다른 하나는 거의 멈춰 있는 공부입니다. 학습필요인식 1·학습계획 2·자가학습시간 2가 매우 낮고, 학생은 평소 스스로 공부하는 시간을 0분이라고 적었습니다. 그래서 공부하는 방법이 필요한 국어(1·LV0)와 일찍부터 손을 놓은 영어(7·LV0)가 크게 비어 있습니다. 해석상담에서는 이 결과를 ‘능력이 부족한 것이 아니라, 가진 힘을 수학·과학에만 쓰고 나머지에는 쓰지 않기로 한 상태’로 다시 읽었습니다. 성적이 떨어지는 것에 대한 걱정(불안경계 79)은 높은데 스트레스를 견디는 힘(2)과 스스로를 인정하는 마음(자기존재인정 5)은 낮아, 걱정을 공부 대신 피하는 쪽으로 처리해 왔던 것으로 보입니다. 그래서 지금 필요한 것은 공부량을 갑자기 늘리는 것이 아니라, 매일 조금씩 학교 수업을 복습하고 말로 설명하는 훈련으로 한 과목씩 성과를 되찾는 경험입니다. 이번 검사에서는 학생이 스스로를 낮게 보고 솔직하게 답한 편이라, 낮게 나온 수치는 해석상담에서 학생과 어머님의 말로 다시 확인했습니다."
+    "narrative": "윤선혜 학생의 결과에는 크게 다른 두 모습이 함께 있습니다. 하나는 이미 증명된 힘입니다. CHAMP 수학 99·LV5, 기초 문장이해 86, 호기심 98·집요함 96처럼 생각하고 붙드는 힘은 또래 가운데 매우 높습니다. 다른 하나는 거의 멈춰 있는 공부입니다. 학습필요인식 1·학습계획 2·자가학습시간 2가 매우 낮고, 학생은 평소 스스로 공부하는 시간을 0분이라고 적었습니다. 그래서 공부하는 방법이 필요한 국어(1·LV0)와 일찍부터 손을 놓은 영어(7·LV0)가 크게 비어 있습니다. 해석상담에서는 이 결과를 ‘능력이 부족한 것이 아니라, 가진 힘을 수학·과학에만 쓰고 나머지에는 쓰지 않기로 한 상태’로 다시 읽었습니다. 중2 겨울의 VLT 4G와 나란히 놓으면 수학(90 → 99)과 기초 문장이해(70 → 86), 끝까지 붙드는 힘은 오히려 자랐고, 스스로 공부하는 시간은 그때 보통이던 자리에서 거의 바닥으로 내려왔으며, 공부가 필요하다는 생각은 2년째 가장 낮은 자리입니다. 성적이 떨어지는 것에 대한 걱정(불안경계 79)은 높은데 스트레스를 견디는 힘(2)과 스스로를 인정하는 마음(자기존재인정 5)은 낮아, 걱정을 공부 대신 피하는 쪽으로 처리해 왔던 것으로 보입니다. 그래서 지금 필요한 것은 공부량을 갑자기 늘리는 것이 아니라, 매일 조금씩 학교 수업을 복습하고 말로 설명하는 훈련으로 한 과목씩 성과를 되찾는 경험입니다. 이번 검사에서는 학생이 스스로를 낮게 보고 솔직하게 답한 편이라, 낮게 나온 수치는 해석상담에서 학생과 어머님의 말로 다시 확인했습니다."
   },
   "temperamentDynamics": null,
   "aptSummary": [
@@ -1569,7 +1601,7 @@ const REPORT_DATA = {
   ],
   "type": {
     "title": "메인 TYPE 9. 유리구슬 × 히든 TYPE 11. 성실이 — 걱정을 피하던 힘을 한 과목의 성과로 바꿀 시점",
-    "desc": "메인 TYPE 9는 생각이 많고 걱정에 에너지를 빼앗기기 쉬워, 부담이 큰 일 앞에서 집중하지 못하고 피하게 되는 작동 방식을, 히든 TYPE 11은 겉으로는 주어진 자리에 앉아 있지만 이해하고 정리하는 과정이 비어 있어 남는 것이 적은 작동 방식을 보여 주는 검사 가설입니다. 윤선혜 학생은 수학·과학에서 높은 실력을 보이지만, 성적이 떨어지는 것에 대한 걱정(불안경계 79)은 높고 스트레스를 견디는 힘(2)은 낮으며, 국어는 숙제·복습으로 이어지지 않고 영어는 오래 손을 놓은 상태입니다. 해석상담에서 어머님은 학생이 본인이 하기 싫으면 하지 않는 아이라고 하셨고, 학생도 공부는 재미가 없다고 말했습니다. 두 타입이 겹치면 잘하는 과목에서는 버티지만 부담이 큰 과목은 아예 시작하지 않기 쉽고, 학교 수업 중 조는 모습도 이 흐름과 맞닿아 있을 수 있습니다. 이번 검사의 타입은 중학교 때 검사보다 아래쪽으로 이동했는데, 성향이 바뀌었다기보다 학업 컨디션이 내려간 결과로 함께 읽었습니다. 해석상담에서는 TYPE 9가 학습에 대한 관심과 성취 경험을 채우면 TYPE 4로, 집중력·학습 효율·자신감을 채우면 TYPE 2·3으로 이어질 수 있다는 점을 설명했습니다. 에듀플렉스에서는 상담으로 학생의 마음을 먼저 열고, 관리로 매일 그날 수업을 복습하며, 개별지도로 수학 외에 한 과목의 성과를 가져오는 방식으로 이 경로를 밟습니다.",
+    "desc": "메인 TYPE 9는 생각이 많고 걱정에 에너지를 빼앗기기 쉬워, 부담이 큰 일 앞에서 집중하지 못하고 피하게 되는 작동 방식을, 히든 TYPE 11은 겉으로는 주어진 자리에 앉아 있지만 이해하고 정리하는 과정이 비어 있어 남는 것이 적은 작동 방식을 보여 주는 검사 가설입니다. 윤선혜 학생은 수학·과학에서 높은 실력을 보이지만, 성적이 떨어지는 것에 대한 걱정(불안경계 79)은 높고 스트레스를 견디는 힘(2)은 낮으며, 국어는 숙제·복습으로 이어지지 않고 영어는 오래 손을 놓은 상태입니다. 해석상담에서 어머님은 학생이 본인이 하기 싫으면 하지 않는 아이라고 하셨고, 학생도 공부는 재미가 없다고 말했습니다. 두 타입이 겹치면 잘하는 과목에서는 버티지만 부담이 큰 과목은 아예 시작하지 않기 쉽고, 학교 수업 중 조는 모습도 이 흐름과 맞닿아 있을 수 있습니다. 이번 검사의 타입은 중2 겨울의 VLT 4G 때보다 아래쪽으로 이동했는데, 해석상담에서는 성향이 바뀌었다기보다 학업 컨디션이 내려간 결과로 함께 읽었습니다(아래 4G → 5G 변화 추적 참고). 해석상담에서는 TYPE 9가 학습에 대한 관심과 성취 경험을 채우면 TYPE 4로, 집중력·학습 효율·자신감을 채우면 TYPE 2·3으로 이어질 수 있다는 점을 설명했습니다. 에듀플렉스에서는 상담으로 학생의 마음을 먼저 열고, 관리로 매일 그날 수업을 복습하며, 개별지도로 수학 외에 한 과목의 성과를 가져오는 방식으로 이 경로를 밟습니다.",
     "insights": [
       {
         "label": "메인 TYPE 9의 작동",
@@ -1781,7 +1813,7 @@ const REPORT_DATA = {
       "programLabel": "개별지도 Tutoring"
     }
   ],
-  "observation": "현재의 1차 병목은 공부가 필요하다고 느끼는 마음과 매일 공부를 이어 가는 습관이 거의 비어 있다는 점, 그리고 성적에 대한 걱정이 공부로 이어지지 않고 회피로 흘러간다는 점입니다. 학생이 사전 기록지에 적은 평소 공부 0분·시험 기간 5분·계획표 미사용, 부모님이 적으신 시간 관리 부족, 공부공식 검사의 수업 듣기·계획 미사용, VLT의 학습필요인식·학습계획·자가학습시간, 그리고 해석상담에서 학생이 직접 말한 ‘학교에서는 졸려요’와 공부가 싫은 이유로 말한 ‘재미가 없어요’가 같은 방향을 가리킵니다. 2차 병목은 공부 방법이 없는 국어와 오래 손을 놓은 영어입니다. 수학·과학의 실력과 기초 문장이해, 호기심·집요함은 이미 있는 자산입니다.",
+  "observation": "현재의 1차 병목은 공부가 필요하다고 느끼는 마음과 매일 공부를 이어 가는 습관이 거의 비어 있다는 점, 그리고 성적에 대한 걱정이 공부로 이어지지 않고 회피로 흘러간다는 점입니다. 학생이 사전 기록지에 적은 평소 공부 0분·시험 기간 5분·계획표 미사용, 부모님이 적으신 시간 관리 부족, 공부공식 검사의 수업 듣기·계획 미사용, VLT의 학습필요인식·학습계획·자가학습시간, 그리고 해석상담에서 학생이 직접 말한 ‘학교에서는 졸려요’와 공부가 싫은 이유로 말한 ‘재미가 없어요’가 같은 방향을 가리킵니다. 2차 병목은 공부 방법이 없는 국어와 오래 손을 놓은 영어입니다. 수학·과학의 실력과 기초 문장이해, 호기심·집요함은 이미 있는 자산입니다. 2024년 VLT 4G와 비교하면 공부가 필요하다는 생각과 스트레스를 견디는 힘은 2년째 같은 가장 낮은 자리이고, 스스로 공부하는 시간은 그 사이 크게 줄었습니다.",
   "roadmap": [
     {
       "when": "2026.11.13 해석상담에서 확인",
@@ -1832,7 +1864,7 @@ const REPORT_DATA = {
   "agreements": [
     "<b>학생 확인</b> 해석상담에서 학생은 다시 에듀플렉스에 와 보고 싶었던 이유로 ‘공부하는 것’을 꼽았습니다. 생명공학 연구원이 되고 싶고, 목표 대학은 아직 정하지 않았지만 서울 소재 대학에 가고 싶다고 말했으며, 알려 주는 방법대로 해 볼 마음을 10점 만점에 6점이라고 답했습니다. 공부는 재미가 없고 학교에서는 졸리다고 했고, 국어 학원에서는 수업은 열심히 듣지만 숙제는 하지 않는다고 말했습니다. 에듀플렉스에서는 학교 끝나고 와서 학교 공부를 하겠다고 했습니다.",
     "<b>학부모 확인</b> 어머님은 학생이 본인이 하기 싫으면 하지 않는 아이라 억지로 학원을 보낼 수 없고, 즐겁게, 끈기 있게 다녀 주기만 하면 크게 바라는 것이 없다고 하셨습니다. 수학은 학원을 그만둔 지 오래되었지만 학교 시험과 모의고사에서 좋은 결과를 내고 있고, 국어는 잘 나올 때와 낮게 나올 때의 차이가 크며, 영어는 일찍부터 손을 놓았다고 하셨습니다. 약속 시간을 지키는 것이 어려워 에듀플렉스의 체계적인 틀로 잡혔으면 하는 바람을 말씀하셨고, 회비는 회차보다 정해진 금액으로 정리되는 방식을 선호하신다고 하셨습니다.",
-    "<b>검사·상담 진단</b> 1차 병목은 공부가 필요하다고 느끼는 마음과 매일 공부를 이어 가는 습관이 거의 비어 있고, 성적에 대한 걱정이 공부 대신 회피로 흘러간다는 점입니다. 2차 병목은 공부 방법이 없는 국어와 오래 손을 놓은 영어입니다. 수학·과학의 실력(CHAMP 수학 99·LV5)과 기초 문장이해 86, 호기심·집요함은 이미 있는 자산입니다.",
+    "<b>검사·상담 진단</b> 1차 병목은 공부가 필요하다고 느끼는 마음과 매일 공부를 이어 가는 습관이 거의 비어 있고, 성적에 대한 걱정이 공부 대신 회피로 흘러간다는 점입니다. 2차 병목은 공부 방법이 없는 국어와 오래 손을 놓은 영어입니다. 수학·과학의 실력(CHAMP 수학 99·LV5)과 기초 문장이해 86, 호기심·집요함은 이미 있는 자산이며, 중2 겨울의 VLT 4G보다 오히려 자랐습니다. 공부가 필요하다는 생각은 그때도 지금도 가장 낮은 자리라, 이번에는 이 층을 먼저 다룹니다.",
     "<b>원장 권고</b> 지금 단계에서는 매일 등원해 그날 학교 수업을 복습하는 훈련이 필요해 주 5회 관리를 권했습니다. 훈련이 익숙해지면 등원 횟수를 줄이고, 처음에 너무 힘들면 바로 조정합니다. 학습 확인은 쓰는 대신 말로 하되, 말로 설명하지 못하면 그때 쓰기로 했습니다. 수학 외에 한 과목을 정해 이번 기말부터 성과를 가져오기를 권했습니다.",
     "<b>원장 권고</b> 국어 학원은 숙제를 하지 않으면 기능하지 않아, 국어 학원을 정리하고 국어 개별지도 주 2회로 공부 방법을 익히는 것을 먼저 권했습니다. 국어 학원(주말)을 유지한다면 평일 영어 개별지도를 주 2~3회 편성해 영어까지 도전하는 구성입니다. 상담은 8회(4주분)가 기본이고, 과학 학원은 이번에는 그대로 다녀 보며, 수학은 학기 중에는 수업 없이 관리로 지키고 겨울방학에 대수·미적분 개념을 확인하는 수업을 편성합니다.",
     "<b>가족 결정</b> 결과지와 회비 안내를 보시고 학생과 이야기를 나누신 뒤, 주 5회로 시작할지와 국어 학원을 정리할지(정리하면 국어 개별지도 주 2회, 유지하면 평일 영어 개별지도 주 2~3회)를 정하시면 됩니다. 시작은 이번 기말 대비부터 할 수 있고, 겨울방학 시간표는 기말 뒤 따로 설계합니다.",
@@ -1928,7 +1960,7 @@ const REPORT_DATA = {
     "note": "※ 정기상담·문진상담·셀프리더는 에듀플렉스 심리 상담소 회비, 관리(종합)·개별지도·방학PG·월비는 에듀코치 학원 원비로 나뉩니다. 관리는 상담 프로그램과 함께 운영하며 단독으로 운영하지 않습니다. 개별지도는 회차로 등록해 차감하며, 과목과 관계없이 1회 90분 33,000원(고등)입니다. 회비는 4주 기준으로 안내하며, 시작일에 따라 첫 등록 비용은 줄어들 수 있습니다. 프로그램은 학생의 상태에 따라 매달 조정합니다.",
     "package": {
       "title": "원장 제안 프로그램 세팅",
-      "note": "검사·APT·CHAMP 결과와 해석상담에서 함께 확인한 내용을 바탕으로, 매일 그날 수업을 복습하는 훈련과 수학 외에 한 과목의 성과를 가져오는 데 맞춘 최소 필요 구성입니다.",
+      "note": "검사·APT·CHAMP 결과와 2024년 VLT 4G 이후의 변화, 해석상담에서 함께 확인한 내용을 바탕으로, 매일 그날 수업을 복습하는 훈련과 수학 외에 한 과목의 성과를 가져오는 데 맞춘 최소 필요 구성입니다.",
       "items": [
         {
           "name": "상담 Coaching",
@@ -2212,6 +2244,209 @@ const REPORT_DATA = {
         ]
       }
     ]
+  },
+  "migration": {
+    "kicker": "4G → 5G CHANGE TRACKER",
+    "beforeLabel": "2024 4G",
+    "afterLabel": "2026 5G",
+    "title": "중2 겨울의 4G 검사에서 고1 가을의 5G 검사까지, 무엇이 이어지고 무엇이 바뀌었나",
+    "lead": "윤선혜 학생은 2024년 12월 중학교 2학년 겨울에 VLT 4G 검사를 받고 중학교 3학년 때 에듀플렉스를 이용했습니다. 이번 고등학교 1학년 VLT-5G 결과를 그때의 결과와 나란히 놓고, 아래 층이 단단해야 위 층이 움직인다는 순서(마음의 바탕 → 생각하는 힘 → 습관과 태도 → 돌아보는 힘)로 따라가 보았습니다. 해석상담에서도 두 결과지를 함께 펼쳐 놓고 비교했습니다.",
+    "scaleNote": "두 검사는 문항과 척도가 다른 세대의 검사입니다. 그래서 숫자 차이를 ‘몇 점 올랐다’는 변화량으로 읽지 않고, 같은 이름의 지표가 같은 0~100 위치에서 어느 쪽으로 움직였는지만 봅니다.",
+    "typeShift": {
+      "before": {
+        "when": "2024년 12월 · 중2 겨울 · VLT 4G",
+        "main": "TYPE 5. 협상이",
+        "second": "TYPE 13. 예민이",
+        "mood": "요령 있게 최소한만 하고, 감정이 예민하게 오르내리는 모습"
+      },
+      "after": {
+        "when": "2026년 10월 · 고1 · VLT-5G",
+        "main": "TYPE 9. 유리구슬",
+        "second": "TYPE 11. 성실이",
+        "mood": "걱정에 에너지를 빼앗기고, 자리에 있어도 남는 것이 적은 모습"
+      },
+      "reading": "2년 사이 타입은 아래쪽으로 이동했습니다. 해석상담에서는 이를 성향이 크게 달라졌다기보다 학업 컨디션이 내려간 결과로 함께 읽었습니다. 중2 때의 TYPE 5는 요령이 있어 적은 시간으로도 성과를 내던 모습이고, 지금은 그 요령으로 지켜 온 수학·과학을 빼면 공부의 손이 거의 놓여 있습니다. 그때 히든에 있던 예민함은 지금 메인 TYPE 9의 걱정으로 바깥에 올라와, 13에서 9로 이어지는 연결선을 따라 움직인 모습입니다. 두 시점의 타입이 다음 성장 방향으로 가리키는 힘은 같은 줄기입니다. 2024년에는 학습 의욕 키우기 → 실천력 키우기 → 자기주도학습, 2026년에는 학습 관심 키우기 → 성취 경험 쌓기 → 집중력·학습 효율·자기주도학습입니다. 공부할 이유를 스스로 찾고 한 과목이라도 끝까지 해내는 단계가 2년째 같은 숙제로 남아 있다는 뜻입니다.",
+      "commonAxis": [
+        "학습 의욕·관심 키우기",
+        "실천력·성취 경험",
+        "자기주도학습"
+      ]
+    },
+    "layers": [
+      {
+        "step": "01",
+        "layer": "마음의 바탕",
+        "question": "걱정과 버티는 힘, 욕구는 어떻게 바뀌었나",
+        "verdict": "버티는 힘은 그대로 · 욕구는 차분해짐",
+        "tone": "watch",
+        "metrics": [
+          {
+            "label": "스트레스를 견디는 힘",
+            "before": 1,
+            "after": 2,
+            "note": ""
+          },
+          {
+            "label": "스스로를 책임지는 마음",
+            "before": 16,
+            "after": 2,
+            "note": ""
+          },
+          {
+            "label": "걱정·예민함",
+            "before": 98,
+            "after": 79,
+            "note": "2024 신경성 → 2026 불안경계"
+          },
+          {
+            "label": "자유에 대한 욕구",
+            "before": 99,
+            "after": 74,
+            "note": ""
+          },
+          {
+            "label": "즐거움에 대한 욕구",
+            "before": 75,
+            "after": 93,
+            "note": ""
+          },
+          {
+            "label": "가족의 정서적 지지",
+            "before": 25,
+            "after": 37,
+            "note": ""
+          }
+        ],
+        "body": "스트레스를 견디는 힘은 중2 때도 지금도 가장 낮은 자리이고, 스스로를 책임지려는 마음은 오히려 더 내려왔습니다. 걱정과 예민함은 그때 매우 높았다가 지금은 조금 내려왔지만 여전히 높은 편입니다. 욕구에서는 자유에 대한 욕구가 줄고 즐거움에 대한 욕구가 커졌으며, 인정받고 앞서려는 욕구는 줄었습니다. 해석상담에서는 이를 고등학생이 되며 어릴 때 뾰족했던 것들이 조금 뭉툭해지고 자신을 객관적으로 보기 시작한 변화로 읽었습니다.",
+        "meaning": "걱정을 줄이라고 말하기보다, 손에 잡히는 것부터 하나씩 해내 ‘생각보다 할 만하다’는 경험을 쌓는 것이 버티는 힘을 키우는 순서입니다. 재미가 있어야 움직이는 만큼 공부의 과정에서 즐거움을 찾도록 돕습니다."
+      },
+      {
+        "step": "02",
+        "layer": "생각하는 힘",
+        "question": "읽고 푸는 힘은 자랐나",
+        "verdict": "수학·읽기는 자라고 · 국어·영어는 비어 있음",
+        "tone": "watch",
+        "metrics": [
+          {
+            "label": "기초 문장이해(CHAMP)",
+            "before": 70,
+            "after": 86,
+            "note": ""
+          },
+          {
+            "label": "국어 종합(CHAMP)",
+            "before": 50,
+            "after": 1,
+            "note": ""
+          },
+          {
+            "label": "영어 종합(CHAMP)",
+            "before": 19,
+            "after": 7,
+            "note": ""
+          },
+          {
+            "label": "수학 종합(CHAMP)",
+            "before": 90,
+            "after": 99,
+            "note": ""
+          }
+        ],
+        "body": "같은 계열의 CHAMP TEST로 본 학년 안 위치는 기초 문장이해와 수학이 중2 때보다 올라왔습니다. 학원 없이 학교 공부만으로 수학을 지켜 온 힘이 보입니다. 반면 영어는 그때도 지금도 낮은 자리이고, 국어는 그때 중간이던 위치에서 크게 내려왔습니다. 다만 학생은 이번 테스트가 어려워 보여 국어·영어를 끝까지 풀지 않았다고 말해, 국어의 낙폭에는 실제보다 낮게 나온 영향이 섞여 있을 수 있습니다.",
+        "meaning": "읽는 힘은 오히려 자랐으므로, 국어·영어는 능력보다 공부 방법과 투자 시간의 문제입니다. 첫 수업에서 짧은 지문으로 실제 위치를 다시 확인하고, 국어 또는 영어 한 과목부터 방법을 익힙니다."
+      },
+      {
+        "step": "03",
+        "layer": "습관과 태도",
+        "question": "스스로 공부하는 시간과 붙드는 힘은 어떻게 바뀌었나",
+        "verdict": "붙드는 힘은 생기고 · 공부 시간은 거의 사라짐",
+        "tone": "stuck",
+        "metrics": [
+          {
+            "label": "스스로 공부하는 시간",
+            "before": 48,
+            "after": 2,
+            "note": ""
+          },
+          {
+            "label": "유혹을 끊는 절제력",
+            "before": 8,
+            "after": 1,
+            "note": ""
+          },
+          {
+            "label": "계획 세우기",
+            "before": 1,
+            "after": 2,
+            "note": ""
+          },
+          {
+            "label": "끝까지 붙드는 힘(집요함)",
+            "before": 1,
+            "after": 96,
+            "note": ""
+          },
+          {
+            "label": "집중력",
+            "before": 3,
+            "after": 30,
+            "note": ""
+          }
+        ],
+        "body": "가장 크게 달라진 층입니다. 중2 때 또래와 비슷하던 스스로 공부하는 시간은 지금 거의 바닥으로 내려왔고, 유혹을 끊는 절제력과 계획 세우기는 그때도 지금도 가장 낮은 자리입니다. 사전 기록지에도 평소 스스로 공부하는 시간을 0분이라고 적었습니다. 반대로 어려우면 바로 그만두던 모습은 한번 붙든 일은 끝까지 하는 쪽으로 크게 바뀌었고, 집중력도 올라왔습니다. 수학을 물고 늘어져 끝까지 푸는 힘이 이 변화로 보입니다.",
+        "meaning": "끝까지 붙드는 힘은 이미 생긴 자산입니다. 이제 그 힘이 수학 밖의 과목에도 쓰이도록, 매일 그날 수업을 복습하는 짧은 시간을 먼저 되찾는 것이 다음 단계입니다."
+      },
+      {
+        "step": "04",
+        "layer": "돌아보는 힘",
+        "question": "공부할 이유와 꿈은 어떻게 바뀌었나",
+        "verdict": "꿈은 자라고 · 공부할 이유는 2년째 비어 있음",
+        "tone": "watch",
+        "metrics": [
+          {
+            "label": "공부가 필요하다는 생각",
+            "before": 1,
+            "after": 1,
+            "note": ""
+          },
+          {
+            "label": "진로를 생각하는 성숙도",
+            "before": 30,
+            "after": 57,
+            "note": ""
+          },
+          {
+            "label": "내 생각을 세우는 힘(주관·주도)",
+            "before": 96,
+            "after": 65,
+            "note": "2024 자기 주관 → 2026 주도성"
+          },
+          {
+            "label": "공부에 대한 자신감",
+            "before": 93,
+            "after": 62,
+            "note": "2024 학습 효능감 → 2026 자신감"
+          }
+        ],
+        "body": "공부가 필요하다는 생각은 중2 때도 지금도 가장 낮은 자리로, 2년째 같은 자리에 있는 핵심 병목입니다. 반면 진로를 생각하는 힘은 자라, 이번 해석상담에서는 생명공학 연구원이라는 꿈을 처음 말했습니다. 공부 자신감은 그때 매우 높았다가 지금은 보통으로 내려왔고, 자기 생각을 세우는 힘은 여전히 보통 이상입니다. 하면 잘할 수 있다는 믿음이, 실제로 해낸 경험이 쌓이지 않은 채 줄어든 모습입니다.",
+        "meaning": "공부할 이유는 설명으로 생기지 않습니다. 생명공학이라는 꿈과 지금의 과목을 잇고, 한 과목에서 작은 성과를 직접 가져올 때 비로소 생깁니다."
+      }
+    ],
+    "engines": {
+      "title": "두 개의 엔진으로 보면",
+      "think": {
+        "label": "생각하는 엔진",
+        "state": "오히려 좋아짐",
+        "body": "기초 문장이해와 수학, 궁금한 것을 파고드는 힘은 중2 때보다 올라왔습니다. 능력이 문제가 아니라는 근거입니다."
+      },
+      "manage": {
+        "label": "관리하는 엔진",
+        "state": "2년 사이 멈춤",
+        "body": "스스로 공부하는 시간이 사라지고 공부할 이유는 그대로 비어 있어, 좋은 생각하는 힘을 수학·과학에만 쓰고 있습니다."
+      },
+      "conclusion": "그래서 이번에는 공부량을 갑자기 늘리기보다 순서를 바꿉니다. 매일 그날 수업을 복습하는 짧은 시간을 되찾는 일 → 국어 또는 영어 한 과목에서 공부 방법을 익히는 일 → 그 과목에서 작은 성과를 가져오는 일 → 공부할 이유를 스스로 말하는 일 순서입니다."
+    },
+    "foot": "2024년과 2026년 검사는 세대가 달라 변화 정도나 성장 단계를 매기지 않습니다. 6개월 뒤 같은 VLT-5G로 다시 검사하면 그때부터 같은 기준의 변화를 말씀드릴 수 있습니다."
   }
 };
 
@@ -2551,6 +2786,26 @@ const REPORT_DATA = {
 (function renderDesireLabel(){
   const el=document.getElementById('v3-tendency-desire-label');
   if(el)el.textContent=((REPORT_DATA||{}).tendencyDynamics||{}).desireLabel||'';
+})();
+(function renderMigration(){
+  const host=document.getElementById('migration-track');
+  const M=(REPORT_DATA||{}).migration;
+  if(!host||!M)return;
+  const esc=(t)=>String(t==null?'':t).replace(/[&<>"]/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const clamp=(v)=>Math.max(0,Math.min(100,Number(v)||0));
+  const typeCard=(t,cls)=>'<div class="mig-type '+cls+'"><span class="when">'+esc(t.when)+'</span><span class="main">'+esc(t.main)+'</span><span class="second">'+esc(t.second)+'</span><span class="mood">'+esc(t.mood)+'</span></div>';
+  const bar=(label,v,cls)=>'<div class="mig-bar '+cls+'"><span>'+label+'</span><span class="track" role="img" aria-label="'+label+' '+clamp(v)+' / 100"><span class="fill" style="width:'+clamp(v)+'%"></span></span><span class="val">'+esc(v)+'</span></div>';
+  const T=M.typeShift;
+  let out='<div class="mig-head"><span class="kicker">'+esc(M.kicker)+'</span><h3>'+esc(M.title)+'</h3><p>'+esc(M.lead)+'</p><p class="mig-scale">'+esc(M.scaleNote)+'</p></div>';
+  out+='<div class="mig-types">'+typeCard(T.before,'is-before')+'<div class="mig-arrow" aria-hidden="true">→</div>'+typeCard(T.after,'is-after')+'</div>';
+  out+='<p class="mig-reading">'+esc(T.reading)+'</p>';
+  out+='<div class="mig-axis"><span class="lbl">두 시점이 같이 가리키는 성장축</span>'+T.commonAxis.map((a,i)=>(i?'<span class="sep">→</span>':'')+'<span class="chip">'+esc(a)+'</span>').join('')+'</div>';
+  out+='<div class="mig-layers">'+M.layers.map((L)=>'<article class="mig-layer is-'+esc(L.tone)+'"><div class="mig-layer-head"><span class="mig-step">'+esc(L.step)+'</span><h4>'+esc(L.layer)+'</h4><span class="mig-verdict">'+esc(L.verdict)+'</span><span class="mig-q">'+esc(L.question)+'</span></div><div class="mig-bars">'+L.metrics.map((x)=>'<div class="mig-bar-row"><span class="mig-bar-label">'+esc(x.label)+(x.note?'<small>'+esc(x.note)+'</small>':'')+'</span><div class="mig-bar-pair">'+bar(esc(M.beforeLabel),x.before,'is-before')+bar(esc(M.afterLabel),x.after,'is-after')+'</div></div>').join('')+'</div><p class="mig-body">'+esc(L.body)+'</p><p class="mig-meaning">'+esc(L.meaning)+'</p></article>').join('')+'</div>';
+  const E=M.engines;
+  out+='<div class="mig-engines"><div class="mig-engine"><span class="lbl">'+esc(E.think.label)+'</span><span class="state">'+esc(E.think.state)+'</span><p>'+esc(E.think.body)+'</p></div><div class="mig-engine"><span class="lbl">'+esc(E.manage.label)+'</span><span class="state">'+esc(E.manage.state)+'</span><p>'+esc(E.manage.body)+'</p></div></div>';
+  out+='<p class="mig-conclusion">'+esc(E.conclusion)+'</p>';
+  out+='<p class="mig-foot">'+esc(M.foot)+'</p>';
+  host.innerHTML=out;
 })();
 </script>
 
