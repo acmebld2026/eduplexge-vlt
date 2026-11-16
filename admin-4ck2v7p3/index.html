@@ -227,6 +227,7 @@
   .type-sep{color:#b9ae86;font-weight:400}.type-hidden{color:var(--blue-deep)}
   .type-mbti{display:block;margin-top:3px;color:var(--muted);font-size:11.5px;font-weight:700;white-space:nowrap;letter-spacing:.02em}
   .type-mbti-student{color:var(--ink);font-weight:900}.type-mbti-parent{font-weight:600}
+  .type-contact{display:block;width:fit-content;margin-top:4px;color:var(--muted);font-size:11.5px;font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}.type-contact:hover,.type-contact:focus-visible{color:var(--ink)}
   tbody tr.memo-row td:first-child,html[data-skin="clarity"] tbody tr.memo-row td:first-child{font-weight:400;font-size:13px;color:inherit;border-top:0}
   .memo-badge{box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
   .memo-label{flex:none;padding:3px 10px;background:var(--ink);color:#fff;border-radius:999px;font-size:11px;font-weight:900;line-height:1.5}
@@ -402,6 +403,7 @@
   html[data-skin="clarity"] .type-sep{color:var(--cl-separator)}html[data-skin="clarity"] .type-hidden{color:var(--cl-accent)}
   html[data-skin="clarity"] .type-mbti{color:var(--cl-label-3);font-size:.75rem;font-weight:500}
   html[data-skin="clarity"] .type-mbti-student{color:var(--cl-label);font-weight:700}html[data-skin="clarity"] .type-mbti-parent{font-weight:500}
+  html[data-skin="clarity"] .type-contact{color:var(--cl-label-3);font-size:.75rem;font-weight:500}html[data-skin="clarity"] .type-contact:hover,html[data-skin="clarity"] .type-contact:focus-visible{color:var(--cl-label)}
   html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
   html[data-skin="clarity"] a.link{background:var(--cl-accent-tint);color:var(--cl-accent)}
   html[data-skin="clarity"] a.manager{background:var(--cl-fill);color:var(--cl-label)}
@@ -1243,6 +1245,7 @@
   const mbtiDynamicsByStudent = new Map(mbtiDynamicsReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
   const mbtiTypeByStudent = new Map(studentMbtiTypes.map((entry) => [entry.student, entry]));
+  const studentContactsBase = "https://guide.sangsangplex.com/_assessment/staff/contacts?student=";
   const growthByStudent = new Map(growthHistoryReports.map((report) => [report.student, report]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
@@ -1541,6 +1544,21 @@
       line.title = `학생 ${tool} ${mbtiType.mbti}${mbtiType.parent ? ` · 학부모 MBTI ${mbtiType.parent}` : ""}`;
       cell.appendChild(line);
       typeLabels.push(mbtiType.mbti, mbtiType.parent || "");
+    }
+
+    // 학생·학부모 전화번호는 이 공개 페이지에 두지 않는다. guide 서버가 에듀큐브 직원 로그인을 확인한 뒤에만 보여 준다.
+    if (name) {
+      const cell = row.cells[1];
+      cell.classList.add("consult-cell");
+      const contact = document.createElement("a");
+      contact.className = "type-contact";
+      contact.href = `${studentContactsBase}${encodeURIComponent(name)}`;
+      contact.target = "_blank";
+      contact.rel = "noopener noreferrer";
+      contact.textContent = "연락처 보기";
+      contact.title = `${name} 학생·학부모 연락처 (guide 직원 로그인 필요)`;
+      contact.addEventListener("click", (event) => event.stopPropagation());
+      cell.appendChild(contact);
     }
 
     rowMeta.set(row, {
