@@ -227,7 +227,16 @@
   .type-sep{color:#b9ae86;font-weight:400}.type-hidden{color:var(--blue-deep)}
   .type-mbti{display:block;margin-top:3px;color:var(--muted);font-size:11.5px;font-weight:700;white-space:nowrap;letter-spacing:.02em}
   .type-mbti-student{color:var(--ink);font-weight:900}.type-mbti-parent{font-weight:600}
-  .type-contact{display:block;width:fit-content;margin-top:4px;color:var(--muted);font-size:11.5px;font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}.type-contact:hover,.type-contact:focus-visible{color:var(--ink)}
+  .type-contact{display:block;margin-top:6px;color:var(--muted);font-size:11.5px;font-weight:700;line-height:1.45}
+  .type-contact .tc-muted{font-weight:600;color:var(--muted)}.type-contact .tc-cand{display:block;margin-top:4px;font-size:11px;color:var(--muted)}
+  .type-contact .tc-line{display:flex;gap:6px;align-items:baseline;white-space:nowrap}.type-contact .tc-role{min-width:3em;color:var(--muted);font-weight:600}
+  .type-contact a.tc-tel{display:inline-flex;align-items:center;min-height:28px;color:var(--ink);font-variant-numeric:tabular-nums;text-decoration:underline;text-underline-offset:2px}.type-contact .tc-none{color:var(--muted);font-weight:500}.type-contact .tc-src{font-size:10.5px;color:var(--muted);font-weight:500}
+  .contacts-panel{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 12px;padding:12px 14px;border:2px solid var(--ink);background:var(--white);font-size:13px}
+  .contacts-panel[hidden]{display:none}.contacts-panel .cp-title{font-weight:900}.contacts-panel .cp-status{flex:1 1 240px;color:var(--muted);font-weight:600}
+  .contacts-panel form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0}.contacts-panel input,.contacts-panel select{height:40px;min-width:0;width:11em;padding:0 10px;border:2px solid var(--ink);background:var(--white);color:var(--ink);font:inherit}
+  .contacts-panel button,.contacts-panel a.cp-button{display:inline-flex;align-items:center;height:40px;padding:0 14px;border:2px solid var(--ink);background:var(--ink);color:var(--white);font:inherit;font-weight:800;cursor:pointer;text-decoration:none}.contacts-panel button.cp-secondary{background:var(--white);color:var(--ink)}
+  .contacts-panel button:disabled{opacity:.55;cursor:progress}
+  @media (max-width:640px){.contacts-panel form{width:100%}.contacts-panel input,.contacts-panel select{flex:1 1 9em;width:auto}.type-contact a.tc-tel{min-height:40px}}
   tbody tr.memo-row td:first-child,html[data-skin="clarity"] tbody tr.memo-row td:first-child{font-weight:400;font-size:13px;color:inherit;border-top:0}
   .memo-badge{box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:8px 10px;background:#fff8dc;border:1px solid var(--line);border-radius:10px}
   .memo-label{flex:none;padding:3px 10px;background:var(--ink);color:#fff;border-radius:999px;font-size:11px;font-weight:900;line-height:1.5}
@@ -403,7 +412,14 @@
   html[data-skin="clarity"] .type-sep{color:var(--cl-separator)}html[data-skin="clarity"] .type-hidden{color:var(--cl-accent)}
   html[data-skin="clarity"] .type-mbti{color:var(--cl-label-3);font-size:.75rem;font-weight:500}
   html[data-skin="clarity"] .type-mbti-student{color:var(--cl-label);font-weight:700}html[data-skin="clarity"] .type-mbti-parent{font-weight:500}
-  html[data-skin="clarity"] .type-contact{color:var(--cl-label-3);font-size:.75rem;font-weight:500}html[data-skin="clarity"] .type-contact:hover,html[data-skin="clarity"] .type-contact:focus-visible{color:var(--cl-label)}
+  html[data-skin="clarity"] .type-contact{color:var(--cl-label-2);font-size:.75rem;font-weight:500}
+  html[data-skin="clarity"] .type-contact .tc-role,html[data-skin="clarity"] .type-contact .tc-none,html[data-skin="clarity"] .type-contact .tc-muted,html[data-skin="clarity"] .type-contact .tc-src,html[data-skin="clarity"] .type-contact .tc-cand{color:var(--cl-label-3)}
+  html[data-skin="clarity"] .type-contact a.tc-tel{color:var(--cl-label);font-weight:600}html[data-skin="clarity"] .type-contact a.tc-tel:hover,html[data-skin="clarity"] .type-contact a.tc-tel:focus-visible{color:var(--cl-accent)}
+  html[data-skin="clarity"] .contacts-panel{border:0;border-radius:var(--radius-sm,12px);background:var(--cl-surface-2,var(--cl-fill));color:var(--cl-label)}
+  html[data-skin="clarity"] .contacts-panel .cp-status{color:var(--cl-label-2)}
+  html[data-skin="clarity"] .contacts-panel input,html[data-skin="clarity"] .contacts-panel select{height:var(--hit-min,44px);border:0;border-radius:var(--radius-sm,10px);background:var(--cl-fill);color:var(--cl-label)}
+  html[data-skin="clarity"] .contacts-panel button,html[data-skin="clarity"] .contacts-panel a.cp-button{height:var(--hit-min,44px);border:0;border-radius:var(--radius-capsule,999px);background:var(--cl-accent);color:var(--cl-on-accent);font-weight:600}
+  html[data-skin="clarity"] .contacts-panel button.cp-secondary{background:var(--cl-fill);color:var(--cl-label)}
   html[data-skin="clarity"] a.link,html[data-skin="clarity"] a.manager,html[data-skin="clarity"] .preanalysis-link,html[data-skin="clarity"] .mbti-dynamics-link{min-height:36px;border:0;border-radius:var(--radius-capsule);padding:6px 14px;font-size:.8125rem;font-weight:600;white-space:nowrap;box-shadow:none}
   html[data-skin="clarity"] a.link{background:var(--cl-accent-tint);color:var(--cl-accent)}
   html[data-skin="clarity"] a.manager{background:var(--cl-fill);color:var(--cl-label)}
@@ -556,6 +572,7 @@
       <span class="drawer-toggle"><span id="result-drawer-count">학생 목록</span></span>
     </summary>
     <div class="drawer-body">
+      <section class="contacts-panel" id="contacts-panel" aria-label="학생·학부모 연락처" aria-live="polite" data-pe-ui data-live hidden></section>
       <section class="control-deck" aria-label="학생 목록 검색과 필터">
         <div class="controls-primary">
           <label class="field field--search" for="results-search">
@@ -1266,7 +1283,6 @@
   const mbtiDynamicsByStudent = new Map(mbtiDynamicsReports.map((report) => [report.student, report]));
   const sessionsByStudent = new Map(followupSessions.map(({ student, sessions }) => [student, sessions]));
   const mbtiTypeByStudent = new Map(studentMbtiTypes.map((entry) => [entry.student, entry]));
-  const studentContactsBase = "https://guide.sangsangplex.com/_assessment/staff/contacts?student=";
   const growthByStudent = new Map(growthHistoryReports.map((report) => [report.student, report]));
   Array.from(resultTable.tBodies[0].rows).forEach((row) => {
     const student = row.cells[0].textContent.trim().split(/\s+/)[0];
@@ -1569,17 +1585,16 @@
       typeLabels.push(mbtiType.mbti, mbtiType.parent || "");
     }
 
-    // 학생·학부모 전화번호는 이 공개 페이지에 두지 않는다. guide 서버가 에듀큐브 직원 로그인을 확인한 뒤에만 보여 준다.
+    // 학생·학부모 전화번호는 이 공개 페이지(소스·raw)에 두지 않는다. 아래 연락처 모듈이 에듀큐브 직원 로그인 뒤
+    // guide 서버 응답으로만 이 자리에 채우고, 탭을 숨기거나 로그아웃하면 지운다.
     if (name) {
       const cell = row.cells[1];
       cell.classList.add("consult-cell");
-      const contact = document.createElement("a");
+      const contact = document.createElement("div");
       contact.className = "type-contact";
-      contact.href = `${studentContactsBase}${encodeURIComponent(name)}`;
-      contact.target = "_blank";
-      contact.rel = "noopener noreferrer";
-      contact.textContent = "연락처 보기";
-      contact.title = `${name} 학생·학부모 연락처 (guide 직원 로그인 필요)`;
+      contact.dataset.contactName = name;
+      contact.setAttribute("data-pe-ui", "");
+      contact.setAttribute("data-live", "");
       contact.addEventListener("click", (event) => event.stopPropagation());
       cell.appendChild(contact);
     }
@@ -1698,6 +1713,7 @@
     });
     resultsPagination.hidden = filtered.length === 0 || totalPages <= 1;
     resourcePagers.forEach((pager) => pager.render(query, true));
+    document.dispatchEvent(new Event("admin-results-rendered"));
   }
 
   function createResourcePager(container, pagination, status) {
@@ -1789,6 +1805,189 @@
     });
   }
   syncThemeLabel();
+</script>
+<script>
+/* 학생·학부모 연락처(admin-contacts 2026-11-18.1)
+   이 공개 페이지와 저장소에는 번호가 없다. guide 주소(/eduplexge/…)로 열었을 때만 같은 출처의 guide 서버
+   (/_assessment/api)에 에듀큐브 직원 로그인을 하고, 화면에 보이는 학생 행의 번호를 서버 응답으로 받아 표시한다.
+   번호는 이 탭의 메모리와 화면에만 있고 저장하지 않는다. 탭을 숨기거나 떠날 때·로그아웃·다른 탭 잠금·
+   원장 페이지 편집 중에는 지운다. 편집기 저장에서 빠지도록 모든 연락처 노드에 data-pe-ui·data-live를 단다. */
+(function () {
+  "use strict";
+  var GUIDE_ADMIN = "https://guide.sangsangplex.com/eduplexge/admin-4ck2v7p3/";
+  var onGuide = /^\/eduplexge\//.test(location.pathname);
+  var panel = document.getElementById("contacts-panel");
+  var html = document.documentElement;
+  if (!panel) return;
+  var MESSAGES = {
+    staff_required: "로그인 시간이 지났습니다. 다시 로그인해 주세요.",
+    educube_staff_required: "에듀큐브 계정으로 로그인해야 번호를 볼 수 있습니다.",
+    educube_branch_required: "조회할 지점을 먼저 선택해 주세요.",
+    educube_profile_unavailable: "에듀큐브의 본인·지점 정보를 확인하지 못했습니다. 잠시 뒤 다시 로그인해 주세요.",
+    wrong_credentials: "아이디 또는 비밀번호가 틀렸습니다.",
+    staff_disabled: "이 직원 계정은 이용이 중지되었습니다.",
+    rate_limited: "조회가 많습니다. 1분 뒤 다시 시도해 주세요.",
+    origin_rejected: "guide 주소에서 열어야 번호를 볼 수 있습니다.",
+    platform_unavailable: "에듀큐브 연결을 확인하지 못했습니다. 잠시 뒤 다시 시도해 주세요."
+  };
+  var say = function (code) { return MESSAGES[code] || MESSAGES.platform_unavailable; };
+  var staff = null, cache = new Map(), revision = 0, loading = false, message = "", wasEditing = false;
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function slots() { return Array.prototype.slice.call(document.querySelectorAll("#result-table .type-contact[data-contact-name]")); }
+  function visibleNames() {
+    var seen = new Set();
+    slots().forEach(function (slot) { var row = slot.closest("tr"); if (row && !row.hidden) seen.add(slot.dataset.contactName); });
+    return Array.from(seen);
+  }
+  function editing() { return html.classList.contains("vpe-editing"); }
+  function signedIn() { return !!staff && staff.authProvider === "educube" && (!!staff.branchCode || (staff.branches || []).length === 1); }
+
+  async function api(payload) {
+    var response = await fetch("/_assessment/api", { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "same-origin", cache: "no-store", body: JSON.stringify(payload) });
+    var data = {}; try { data = await response.json(); } catch (e) { /* 아래에서 처리 */ }
+    if (!response.ok || !data.ok) { var error = new Error(data.error || "platform_unavailable"); error.code = data.error || "platform_unavailable"; error.status = response.status; throw error; }
+    return data;
+  }
+  async function readContext() {
+    var response = await fetch("/_assessment/context", { credentials: "same-origin", cache: "no-store" });
+    if (!response.ok) throw Object.assign(new Error("platform_unavailable"), { code: "platform_unavailable" });
+    return (await response.json()).staff || null;
+  }
+
+  // ── 학생 행 ──
+  function note(slot, text) { slot.replaceChildren(el("span", "tc-muted", text)); }
+  function phoneLine(role, value, source) {
+    var line = el("span", "tc-line"); line.appendChild(el("span", "tc-role", role));
+    if (value) {
+      var a = el("a", "tc-tel", value); a.href = "tel:" + value.replace(/-/g, ""); line.appendChild(a);
+      if (source === "consultation") { var src = el("span", "tc-src", "상담 기록"); src.title = "에듀큐브에 학생 번호가 없어 상담 기록의 번호를 표시합니다."; line.appendChild(src); }
+    } else line.appendChild(el("span", "tc-none", "없음"));
+    return line;
+  }
+  function renderSlot(slot) {
+    var name = slot.dataset.contactName;
+    slot.removeAttribute("title");
+    if (!onGuide || editing() || !signedIn()) { slot.replaceChildren(); return; }
+    var found = cache.get(name);
+    if (!found) { if (loading) note(slot, "번호 확인 중…"); else slot.replaceChildren(); return; }
+    if (found.error) { note(slot, found.error === "too_many_matches" ? "같은 이름이 많아 에듀큐브에서 확인" : "번호를 불러오지 못함"); return; }
+    if (!found.students.length) { note(slot, "에듀큐브에서 찾지 못함"); slot.title = "이름 표기가 다를 수 있습니다. 번호를 추측하지 말고 에듀큐브에서 확인해 주세요."; return; }
+    var nodes = [];
+    found.students.forEach(function (s) {
+      if (found.students.length > 1) nodes.push(el("span", "tc-cand", [s.name, s.status, s.school, s.grade].filter(Boolean).join(" · ")));
+      if (!s.available) { nodes.push(el("span", "tc-muted", "권한으로 볼 수 없음")); return; }
+      nodes.push(phoneLine("학생", s.student, s.studentSource), phoneLine("어머님", s.mother), phoneLine("아버님", s.father));
+    });
+    slot.replaceChildren.apply(slot, nodes);
+  }
+  function renderSlots() { slots().forEach(renderSlot); }
+
+  // ── 상단 패널 ──
+  function field(type, name, label, auto) {
+    var input = el("input"); input.type = type; input.name = name; input.autocomplete = auto; input.required = true; input.placeholder = label; input.setAttribute("aria-label", label);
+    return input;
+  }
+  function submitting(form, run) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      var button = form.querySelector("button[type=submit]"); if (button) button.disabled = true;
+      try { await run(); } catch (error) { message = say(error.code); await refresh(); }
+      finally { if (button) button.disabled = false; }
+    });
+  }
+  function renderPanel() {
+    panel.hidden = false;
+    var title = el("strong", "cp-title", "연락처");
+    if (!onGuide) {
+      var link = el("a", "cp-button", "guide 주소에서 열기"); link.href = GUIDE_ADMIN;
+      panel.replaceChildren(title, el("span", "cp-status", "학생·학부모 번호는 guide 주소로 연 admin에서 에듀큐브 로그인 후 표시됩니다."), link);
+      return;
+    }
+    if (editing()) { panel.replaceChildren(title, el("span", "cp-status", "페이지 편집 중에는 번호를 표시하지 않습니다.")); return; }
+    if (!staff || staff.authProvider !== "educube") {
+      var form = el("form");
+      var user = field("text", "username", "에듀큐브 아이디", "username");
+      var pass = field("password", "password", "비밀번호", "current-password");
+      var go = el("button", null, "로그인하고 번호 보기"); go.type = "submit";
+      form.append(user, pass, go);
+      submitting(form, async function () {
+        var password = pass.value; pass.value = "";
+        await api({ action: "login_educube", username: user.value.trim(), password: password });
+        message = ""; await refresh();
+      });
+      panel.replaceChildren(title, el("span", "cp-status", message || (staff ? say("educube_staff_required") : "에듀큐브로 로그인하면 이 화면에 보이는 학생의 학생·어머님·아버님 번호가 표시됩니다.")), form);
+      return;
+    }
+    var branches = staff.branches || [];
+    if (!signedIn()) {
+      var bform = el("form"), select = el("select"); select.setAttribute("aria-label", "지점");
+      branches.forEach(function (b, i) { var o = el("option", null, b.name); o.value = String(i); select.appendChild(o); });
+      var pick = el("button", null, "지점 선택"); pick.type = "submit";
+      bform.append(select, pick);
+      submitting(bform, async function () { var b = branches[Number(select.value)]; await api({ action: "select_branch", branchCode: b.code, branchStartDate: b.startDate }); message = ""; await refresh(); });
+      panel.replaceChildren(title, el("span", "cp-status", message || (staff.label + " 님 · 조회할 지점을 선택해 주세요.")), bform);
+      return;
+    }
+    var branch = branches.find(function (b) { return b.code === staff.branchCode; }) || branches[0] || {};
+    var out = el("button", "cp-secondary", "로그아웃"); out.type = "button";
+    out.title = "번호를 지우고 로그인을 끝냅니다. guide 입장도 함께 끝나므로 다음에 열 때 다시 입장합니다.";
+    out.addEventListener("click", async function () {
+      wipe(); out.disabled = true;
+      try { await api({ action: "logout" }); } catch (e) { /* 이미 끝난 세션 */ }
+      staff = null; message = "로그아웃했습니다. 화면의 번호를 지웠습니다."; renderPanel(); renderSlots();
+    });
+    panel.replaceChildren(title, el("span", "cp-status", message || (staff.label + " 님 · " + (branch.name || staff.branch || "") + " · 화면에 보이는 학생의 번호를 표시합니다.")), out);
+  }
+
+  // ── 조회 ──
+  function wipe() { revision++; cache.clear(); loading = false; slots().forEach(function (slot) { slot.replaceChildren(); slot.removeAttribute("title"); }); }
+  async function loadVisible() {
+    if (!onGuide || editing() || !signedIn() || document.visibilityState !== "visible") { renderSlots(); return; }
+    var wanted = visibleNames().filter(function (n) { return !cache.has(n); });
+    if (!wanted.length) { renderSlots(); return; }
+    var stamp = ++revision; loading = true; renderSlots();
+    try {
+      for (var i = 0; i < wanted.length; i += 20) {
+        var data = await api({ action: "student_contacts_batch", names: wanted.slice(i, i + 20) });
+        if (stamp !== revision) return;
+        data.results.forEach(function (r) { cache.set(r.query, r); });
+      }
+      if (message) { message = ""; renderPanel(); }
+    } catch (error) {
+      if (stamp !== revision) return;
+      if (error.code === "staff_required" || error.code === "educube_staff_required") { wipe(); staff = null; message = say(error.code); renderPanel(); return; }
+      message = say(error.code);
+      if (error.code === "educube_branch_required") { loading = false; return refresh(); }
+      renderPanel();
+    } finally { if (stamp === revision) { loading = false; renderSlots(); } }
+  }
+  var refreshing = 0;
+  async function refresh() {
+    if (!onGuide) { renderPanel(); return; }
+    var stamp = ++refreshing, before = staff, fresh;
+    try { fresh = await readContext(); } catch (e) { if (stamp !== refreshing) return; wipe(); staff = null; message = say("platform_unavailable"); renderPanel(); return; }
+    if (stamp !== refreshing || document.visibilityState !== "visible") return;
+    // 다른 계정·지점이면 이전 번호를 잇지 않는다.
+    if (!fresh || !before || fresh.id !== before.id || fresh.branchCode !== before.branchCode) wipe();
+    staff = fresh; renderPanel(); await loadVisible();
+  }
+
+  document.addEventListener("admin-results-rendered", function () { void loadVisible(); });
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState !== "visible") { refreshing++; wipe(); return; } void refresh(); });
+  window.addEventListener("pagehide", wipe);
+  window.addEventListener("pageshow", function (event) { if (event.persisted) { wipe(); void refresh(); } });
+  if (typeof BroadcastChannel === "function") {
+    try { new BroadcastChannel("guide-access-state").onmessage = function (event) { if (event.data === "locked") { wipe(); staff = null; void refresh(); } }; } catch (e) { /* 지원하지 않는 브라우저 */ }
+  }
+  new MutationObserver(function () {
+    var now = editing(); if (now === wasEditing) return; wasEditing = now;
+    if (now) { wipe(); renderPanel(); } else void refresh();
+  }).observe(html, { attributes: true, attributeFilter: ["class"] });
+  wasEditing = editing();
+  renderPanel();
+  void refresh();
+})();
 </script>
 <script src="../assets/page-editor/page-editor.js" defer data-page-editor></script>
 </body>
