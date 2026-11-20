@@ -57,6 +57,9 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
 .fg-break tr.is-sub td:first-child{padding-left:18px}
 .fg-break tr.is-group td{font-weight:700;color:var(--cl-label);padding-top:14px}
 .fg-break tr.is-total td{font-weight:700;border-bottom:0;font-size:15px}
+.fg-adj{display:inline;margin-left:4px;padding:0;border:0;background:none;color:var(--cl-accent);font:inherit;font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.fg-context{margin-top:var(--space-4)}
+.fg-context ul{margin:var(--space-2) 0 0;padding-left:18px;display:grid;gap:4px}
 .fg-break caption{caption-side:bottom;text-align:left;color:var(--cl-label-3);font-size:12px;padding-top:8px}
 .fg-group-title{margin:var(--space-2) 0 0}
 .fg-gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3)}
@@ -86,7 +89,7 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
   <section class="fg-sec" id="structure" aria-labelledby="structure-title">
     <div class="fg-sec__head"><span class="cl-section__eyebrow">PROGRAM STRUCTURE</span><h2 class="cl-title-2" id="structure-title">회비 안내서의 두 카드</h2><p class="cl-subhead">매달 받으시는 회비 안내서는 에듀플렉스 심리 상담소 회비와 에듀코치 학원 원비, 두 카드로 나뉩니다. 상담은 상담소, 개별지도는 에듀코치에 있고, 매일의 관리는 두 카드에 반씩 나뉘어 들어갑니다.</p></div>
     <div class="fg-structure">
-      <div class="fg-place"><span class="fg-place__name">에듀플렉스 심리 상담소 회비</span><div class="fg-place__prog"><b>정기상담</b><span>25분 1:1 상담. 주 2회 기준 한 달 8회, 일반 등급 350,000원</span></div><div class="fg-place__prog"><b>문진상담</b><span>관리 하루마다 7,500원</span></div><div class="fg-place__prog"><b>기타1</b><span>셀프리더 1권 7,500원 등</span></div></div>
+      <div class="fg-place"><span class="fg-place__name">에듀플렉스 심리 상담소 회비</span><div class="fg-place__prog"><b>정기상담</b><span>25분 1:1 상담. 주 2회 · 상담 8회(4주분), 일반 등급 350,000원</span></div><div class="fg-place__prog"><b>문진상담</b><span>관리 하루마다 7,500원</span></div><div class="fg-place__prog"><b>기타1</b><span>셀프리더 1권 7,500원 등</span></div></div>
       <div class="fg-place"><span class="fg-place__name">에듀코치 학원 원비</span><div class="fg-place__prog"><b>관리(종합)</b><span>관리 하루마다 7,500원</span></div><div class="fg-place__prog"><b>개별지도(단과)</b><span>1:3 90분 수업. 1콤마 초등 27,000원 · 중등 30,000원 · 고등 33,000원</span></div><div class="fg-place__prog"><b>방학PG+제휴</b><span>제휴프로그램 월 10,000원, 방학PG 1회 10,000원</span></div></div>
       <div class="fg-bridge"><span class="cl-badge cl-badge--highlight">두 카드에 걸친 프로그램</span><b class="cl-headline">관리 Training · 하루 15,000원</b>
         <div class="fg-bridge__split"><div class="fg-bridge__half"><span>에듀플렉스 심리 상담소</span><b>7,500원</b><span>문진상담</span></div><span class="fg-bridge__plus" aria-hidden="true">+</span><div class="fg-bridge__half"><span>에듀코치 학원</span><b>7,500원</b><span>관리(종합)</span></div></div>
@@ -109,24 +112,32 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
         </ul></section>
         <section class="cl-list-section"><h3 class="cl-list-header">상담 Coaching</h3><ul class="cl-list">
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">상담 등급</span><span class="cl-row__sub">회당 단가가 달라집니다</span></span><div class="cl-seg cl-seg--block" role="radiogroup" aria-label="상담 등급" data-field="grade" style="--n:4;--i:0"><span class="cl-seg__thumb" aria-hidden="true"></span><button type="button" class="cl-seg__item" role="radio" data-value="일반" aria-checked="true">일반</button><button type="button" class="cl-seg__item" role="radio" data-value="프라임1" aria-checked="false">프라임1</button><button type="button" class="cl-seg__item" role="radio" data-value="프라임2" aria-checked="false">프라임2</button><button type="button" class="cl-seg__item" role="radio" data-value="프라임3" aria-checked="false">프라임3</button></div></div></li>
-          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">한 달 상담 횟수</span><span class="cl-row__sub">주 2회 기준 8회</span></span><div class="cl-stepper" role="group" aria-label="한 달 상담 횟수" data-field="sessions" data-min="0" data-max="12" data-value="8" data-unit="회"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="한 달 상담 횟수 줄이기">−</button><span class="cl-stepper__value">8회</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="한 달 상담 횟수 늘리기">+</button></div></div></li>
+          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">한 달 상담 횟수</span><span class="cl-row__sub">주 2회 · 상담 8회(4주분)가 기본, 10회는 5주인 달 예외</span></span><div class="cl-stepper" role="group" aria-label="한 달 상담 횟수" data-field="sessions" data-min="0" data-max="10" data-step="2" data-value="8" data-unit="회"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="한 달 상담 횟수 줄이기">−</button><span class="cl-stepper__value">8회</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="한 달 상담 횟수 늘리기">+</button></div></div></li>
         </ul></section>
         <section class="cl-list-section"><h3 class="cl-list-header">관리 Training</h3><ul class="cl-list">
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">주 등원 횟수</span><span class="cl-row__sub">관리 하루 15,000원 = 문진상담 7,500원 + 관리(종합) 7,500원</span></span><div class="cl-seg cl-seg--block" role="radiogroup" aria-label="주 관리 등원 횟수" data-field="mgmt" style="--n:5;--i:4"><span class="cl-seg__thumb" aria-hidden="true"></span><button type="button" class="cl-seg__item" role="radio" data-value="0" aria-checked="false">없음</button><button type="button" class="cl-seg__item" role="radio" data-value="2" aria-checked="false">주 2회</button><button type="button" class="cl-seg__item" role="radio" data-value="3" aria-checked="false">주 3회</button><button type="button" class="cl-seg__item" role="radio" data-value="4" aria-checked="false">주 4회</button><button type="button" class="cl-seg__item" role="radio" data-value="5" aria-checked="true">주 5회</button></div></div></li>
+          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">이번 달 관리 횟수</span><span class="cl-row__sub"><span id="fg-mgmt-sub">기본 20회(주 5회 × 4주)</span> · 공휴일·휴원·중간 시작은 실제 등원일로 조정</span></span><div class="cl-stepper" role="group" aria-label="이번 달 관리 횟수" data-field="mgmtAdj" data-cl-bound-stepper="1" data-adj="0" data-unit="회"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="이번 달 관리 횟수 줄이기">−</button><span class="cl-stepper__value" aria-live="polite">20회</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="이번 달 관리 횟수 늘리기">+</button></div></div></li>
         </ul></section>
         <section class="cl-list-section"><h3 class="cl-list-header">개별지도 Tutoring</h3><ul class="cl-list">
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">과정</span><span class="cl-row__sub">1콤마 = 90분 1:3 수업 1회</span></span><div class="cl-seg cl-seg--block" role="radiogroup" aria-label="개별지도 과정" data-field="course" style="--n:3;--i:2"><span class="cl-seg__thumb" aria-hidden="true"></span><button type="button" class="cl-seg__item" role="radio" data-value="초등" aria-checked="false">초등</button><button type="button" class="cl-seg__item" role="radio" data-value="중등" aria-checked="false">중등</button><button type="button" class="cl-seg__item" role="radio" data-value="고등" aria-checked="true">고등</button></div></div></li>
-          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">주 콤마 수</span><span class="cl-row__sub">한 달 콤마 = 주 콤마 × 주 수</span></span><div class="cl-stepper" role="group" aria-label="주 콤마 수" data-field="comma" data-min="0" data-max="10" data-value="4" data-unit="콤마"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="주 콤마 수 줄이기">−</button><span class="cl-stepper__value">4콤마</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="주 콤마 수 늘리기">+</button></div></div></li>
+          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">주 콤마 수</span><span class="cl-row__sub">한 달 콤마 = 주 콤마 × 주 수에서 출발</span></span><div class="cl-stepper" role="group" aria-label="주 콤마 수" data-field="comma" data-min="0" data-value="4" data-unit="콤마"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="주 콤마 수 줄이기">−</button><span class="cl-stepper__value">4콤마</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="주 콤마 수 늘리기">+</button></div></div></li>
+          <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">이번 달 콤마</span><span class="cl-row__sub"><span id="fg-comma-sub">기본 16콤마(주 4콤마 × 4주)</span> · 시험 일정·진도에 맞춰 조정</span></span><div class="cl-stepper" role="group" aria-label="이번 달 콤마" data-field="commaAdj" data-cl-bound-stepper="1" data-adj="0" data-unit="콤마"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="이번 달 콤마 줄이기">−</button><span class="cl-stepper__value" aria-live="polite">16콤마</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="이번 달 콤마 늘리기">+</button></div></div></li>
         </ul></section>
         <section class="cl-list-section"><h3 class="cl-list-header">기타</h3><ul class="cl-list">
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">제휴프로그램 월비</span><span class="cl-row__sub">월 10,000원</span></span><button type="button" class="cl-toggle" role="switch" data-field="partner" aria-checked="true" aria-label="제휴프로그램 월비" data-on="포함" data-off="제외"><span class="cl-toggle__track"><span class="cl-toggle__thumb"></span></span><span class="cl-toggle__state">포함</span></button></div></li>
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">셀프리더(플래너)</span><span class="cl-row__sub">1권 7,500원 · 3개월 1권</span></span><div class="cl-stepper" role="group" aria-label="셀프리더 권수" data-field="selfLeader" data-min="0" data-max="2" data-value="1" data-unit="권"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="셀프리더 권수 줄이기">−</button><span class="cl-stepper__value">1권</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="셀프리더 권수 늘리기">+</button></div></div></li>
           <li><div class="cl-row"><span class="cl-row__body"><span class="cl-row__title">방학PG 횟수</span><span class="cl-row__sub">방학 중 관리 1회당 10,000원</span></span><div class="cl-stepper" role="group" aria-label="방학PG 횟수" data-field="seasonal" data-min="0" data-max="25" data-value="0" data-unit="회"><button type="button" class="cl-stepper__btn" data-dir="-1" aria-label="방학PG 횟수 줄이기">−</button><span class="cl-stepper__value">0회</span><button type="button" class="cl-stepper__btn" data-dir="1" aria-label="방학PG 횟수 늘리기">+</button></div></div></li>
         </ul></section>
+        <div class="cl-notice cl-notice--info fg-context"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">회비 안내서의 횟수는 그달의 실제 횟수입니다</span>
+          <ul>
+            <li>관리와 개별지도는 ‘주 횟수 × 주 수’에서 출발해, 공휴일·휴원·시작일·시험 일정을 반영한 실제 횟수로 적힙니다. 위의 ‘이번 달’ 칸에서 ± 로 맞춰 보실 수 있습니다.</li>
+            <li>관리 하루는 문진상담과 관리(종합)로 반씩 나뉘므로, 관리 횟수를 하루 줄이면 두 카드에서 7,500원씩 함께 줄어듭니다.</li>
+            <li>상담은 8회(4주분)가 기본이라 5주인 달에도 보통 그대로입니다.</li>
+          </ul></div></div>
       </div>
       <aside class="fg-result" aria-live="polite">
         <div class="cl-stat cl-stat--hero"><span class="cl-stat__label">한 달 예상 회비</span><span class="cl-stat__value" id="fg-total">1,195,500원</span><span class="cl-stat__delta" id="fg-time">개별지도 주 360분</span></div>
-        <div class="cl-notice cl-notice--warning" id="fg-warn" hidden><span class="cl-notice__glyph" aria-hidden="true">!</span><div><span class="cl-notice__title">확인 필요</span> 관리는 상담과 함께만 운영합니다. 상담 횟수를 넣어 주세요.</div></div>
+        <div class="cl-notice cl-notice--warning" id="fg-warn" hidden><span class="cl-notice__glyph" aria-hidden="true">!</span><div><span class="cl-notice__title">확인 필요</span> <span id="fg-warn-text"></span></div></div>
         <table class="fg-break"><tbody id="fg-rows"></tbody><caption>회비 안내서와 같은 두 카드로 나눠 계산한 예상 금액입니다(2026년 7월 단가). 실제 회비는 상담 뒤 확정합니다.</caption></table>
         <a class="cl-btn cl-btn--gray cl-btn--sm" href="#glossary">용어 풀이 보기</a>
       </aside>
@@ -135,12 +146,12 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
 
   <section class="fg-sec" id="glossary" aria-labelledby="glossary-title">
     <div class="fg-sec__head"><span class="cl-section__eyebrow">GLOSSARY</span><h2 class="cl-title-2" id="glossary-title">회비 용어 풀이</h2><p class="cl-subhead">회비 안내와 납부 내역에 나오는 말을 풀었습니다.</p></div>
-    <h3 class="cl-title-3 fg-group-title">프로그램</h3><div class="fg-gloss"><article id="term-상담-Coaching"><h4>상담 Coaching</h4><p>매니저가 학생의 정신·학습·행동 세 측면을 1:1로 코칭하는 에듀플렉스의 핵심 프로그램입니다. 학습법, 시간 관리, 계획 수립, 학습 동기를 다루며 VLT 검사 해석상담도 여기에 속합니다.</p></article><article id="term-관리-Training"><h4>관리 Training</h4><p>학생이 자기주도 학습실에 등원해 실제로 공부하는 시간을 관리하는 프로그램입니다. 전자기기를 멀리하고 분량을 시간 단위로 나눠 실천하는 습관을 만듭니다. 관리는 상담 없이 단독으로 운영하지 않습니다.</p></article><article id="term-개별지도-Tutoring"><h4>개별지도 Tutoring</h4><p>에듀코치의 1:3 순회지도 수업입니다. 튜터가 설명한 뒤 역질문으로 학생이 스스로 설명하게 하며, 배움(學)과 익힘(習)이 90분 안에 함께 이루어지도록 설계되어 있습니다.</p></article><article id="term-데일리-체크-DC-"><h4>데일리 체크(DC)</h4><p>등원할 때마다 매니저가 그날 계획을 실제로 해냈는지와 이해도를 역질문으로 확인하는 일일 점검입니다.</p></article></div><h3 class="cl-title-3 fg-group-title">회비 구조</h3><div class="fg-gloss"><article id="term-에듀플렉스-심리-상담소-회비"><h4>에듀플렉스 심리 상담소 회비</h4><p>회비 안내서의 첫 번째 카드입니다. 정기상담, 문진상담, 셀프리더 같은 상담소 항목이 들어갑니다.</p></article><article id="term-에듀코치-학원-원비"><h4>에듀코치 학원 원비</h4><p>회비 안내서의 두 번째 카드입니다. 관리(종합), 개별지도(단과), 방학PG·제휴가 들어갑니다.</p></article><article id="term-정기상담"><h4>정기상담</h4><p>매니저와 진행하는 25분 1:1 상담입니다. 주 2회 기준 한 달 8회로 계산하며, 회당 단가는 상담 등급에 따라 다릅니다.</p></article><article id="term-문진상담"><h4>문진상담</h4><p>문진상담이란 등원 시 학생의 정서 및 신체 컨디션을 확인하고 학습에 잘 몰입할 수 있도록 돕는 일상적인 상담입니다. 학생의 관리 횟수에 맞춰 매일 이루어집니다. 관리 하루 15,000원 가운데 7,500원이 문진상담으로 에듀플렉스 심리 상담소 회비에 들어갑니다.</p></article><article id="term-관리-종합-"><h4>관리(종합)</h4><p>관리 하루 15,000원 가운데 7,500원이 관리(종합)로 에듀코치 학원 원비에 들어갑니다. 회비 안내서에는 ‘관리 N회’로 표시됩니다.</p></article><article id="term-관리-하루-15-000원"><h4>관리 하루 15,000원</h4><p>관리 하루 회비 15,000원은 문진상담 7,500원과 관리(종합) 7,500원의 합입니다. 그래서 같은 관리 횟수가 두 카드에 한 번씩 나옵니다. 4주 기준 주 5회면 20회, 주 4회면 16회, 주 3회면 12회, 주 2회면 8회입니다.</p></article><article id="term-상담-등급-일반-프라임-"><h4>상담 등급(일반·프라임)</h4><p>상담 회당 단가 구분입니다. 일반 43,750원, 프라임1 48,750원, 프라임2 53,750원, 프라임3 58,750원입니다. 어떤 등급이 적용되는지는 상담에서 안내합니다.</p></article><article id="term-콤마"><h4>콤마</h4><p>개별지도 수업 1회(90분)를 세는 단위입니다. 한 달 개별지도 회비는 콤마 수 × 과정별 1콤마 단가입니다.</p></article><article id="term-과정-초등-중등-고등-"><h4>과정(초등·중등·고등)</h4><p>개별지도 1콤마 단가 구분입니다. 초등 27,000원, 중등 30,000원, 고등 33,000원이며, 회비 안내서에는 ‘16콤마 (고등과금 적용)’처럼 표시됩니다.</p></article><article id="term-처방식-편성"><h4>처방식 편성</h4><p>개별지도는 일주일에 몇 번을 정해 두고 계속 듣는 방식이 아니라, 시험까지 필요한 진도와 첫 수업의 결과를 보고 총 몇 회가 필요한지 정한 뒤 매달 늘리거나 줄이는 방식입니다. 스스로 할 수 있는 부분이 늘수록 개별지도는 줄어듭니다.</p></article></div><h3 class="cl-title-3 fg-group-title">기타 비용</h3><div class="fg-gloss"><article id="term-기타1"><h4>기타1</h4><p>에듀플렉스 심리 상담소 쪽 부가 항목입니다. 셀프리더, 검사, 초기 물품 등이 여기에 속합니다.</p></article><article id="term-기타2"><h4>기타2</h4><p>에듀코치 학원 쪽 부가 항목입니다. 제휴프로그램 월비, 방학PG, 교재비 등이 여기에 속합니다.</p></article><article id="term-셀프리더-플래너-"><h4>셀프리더(플래너)</h4><p>학생이 매일 계획과 실행을 적는 에듀플렉스 플래너입니다. 1권 7,500원이며 기타1로 상담소 회비에 들어갑니다.</p></article><article id="term-제휴프로그램-월비-"><h4>제휴프로그램(월비)</h4><p>유료 제휴 학습 사이트 이용과 자체 교재·프린트에 대한 월 10,000원의 월비입니다. 회비 안내서의 ‘방학PG+제휴’ 줄에 들어갑니다.</p></article><article id="term-방학PG"><h4>방학PG</h4><p>썸머·윈터스쿨처럼 방학 중 장시간 학습할 때의 추가 점검과 체류에 대한 비용입니다. 관리 1회당 10,000원입니다.</p></article></div><h3 class="cl-title-3 fg-group-title">납부와 규약</h3><div class="fg-gloss"><article id="term-5주인-달"><h4>5주인 달</h4><p>상담과 달리 관리 일수와 개별지도 수업은 등록 기간이 5주인 달에 회비가 늘어날 수 있으며, 다음 달 등록 전에 미리 안내합니다.</p></article><article id="term-납부-시기"><h4>납부 시기</h4><p>회비는 가급적 매월 첫 주 안에 납부를 부탁드립니다. 납부 방법과 계좌는 매달 보내드리는 회비 안내서에 적혀 있습니다.</p></article><article id="term-개별지도-신청-마감"><h4>개별지도 신청 마감</h4><p>다음 주 개별지도 수업 시간 신청은 매주 수요일 오후 10시까지, 학생이 직접 담당 매니저나 교실장에게 신청하는 것이 원칙입니다.</p></article><article id="term-개별지도-보충"><h4>개별지도 보충</h4><p>개별지도 수업은 단순 배탈, 개인 일정, 피곤함 같은 이유로는 보충하지 않습니다. 자세한 기준은 개별지도 회원등록규약을 따릅니다.</p></article><article id="term-회비-반환-기준"><h4>회비 반환 기준</h4><p>회비 반환은 법률에 근거한 기준을 따르며, 세부 내용은 회원등록규약에 있습니다.</p></article></div><h3 class="cl-title-3 fg-group-title">첫 한 달</h3><div class="fg-gloss"><article id="term-텀-스케줄러-포트폴리오"><h4>텀 스케줄러 · 포트폴리오</h4><p>텀 스케줄러는 1개월 단위의 단기 계획, 포트폴리오는 6개월 단위의 장기 계획입니다. 등록 후 첫 한 달 동안 학생과 함께 만듭니다.</p></article><article id="term-VLT-검사-해석상담"><h4>VLT 검사 해석상담</h4><p>VLT 검사 결과를 학생, 그리고 학부모님과 함께 읽고 전략을 정하는 상담입니다. 첫 한 달 안에 학생 해석상담과 학부모님 방문 해석상담을 진행합니다.</p></article></div>
+    <h3 class="cl-title-3 fg-group-title">프로그램</h3><div class="fg-gloss"><article id="term-상담-Coaching"><h4>상담 Coaching</h4><p>매니저가 학생의 정신·학습·행동 세 측면을 1:1로 코칭하는 에듀플렉스의 핵심 프로그램입니다. 학습법, 시간 관리, 계획 수립, 학습 동기를 다루며 VLT 검사 해석상담도 여기에 속합니다.</p></article><article id="term-관리-Training"><h4>관리 Training</h4><p>학생이 자기주도 학습실에 등원해 실제로 공부하는 시간을 관리하는 프로그램입니다. 전자기기를 멀리하고 분량을 시간 단위로 나눠 실천하는 습관을 만듭니다. 관리는 상담 없이 단독으로 운영하지 않습니다.</p></article><article id="term-개별지도-Tutoring"><h4>개별지도 Tutoring</h4><p>에듀코치의 1:3 순회지도 수업입니다. 튜터가 설명한 뒤 역질문으로 학생이 스스로 설명하게 하며, 배움(學)과 익힘(習)이 90분 안에 함께 이루어지도록 설계되어 있습니다.</p></article><article id="term-데일리-체크-DC-"><h4>데일리 체크(DC)</h4><p>등원할 때마다 매니저가 그날 계획을 실제로 해냈는지와 이해도를 역질문으로 확인하는 일일 점검입니다.</p></article></div><h3 class="cl-title-3 fg-group-title">회비 구조</h3><div class="fg-gloss"><article id="term-에듀플렉스-심리-상담소-회비"><h4>에듀플렉스 심리 상담소 회비</h4><p>회비 안내서의 첫 번째 카드입니다. 정기상담, 문진상담, 셀프리더 같은 상담소 항목이 들어갑니다.</p></article><article id="term-에듀코치-학원-원비"><h4>에듀코치 학원 원비</h4><p>회비 안내서의 두 번째 카드입니다. 관리(종합), 개별지도(단과), 방학PG·제휴가 들어갑니다.</p></article><article id="term-정기상담"><h4>정기상담</h4><p>매니저와 진행하는 25분 1:1 상담입니다. 주 2회, 상담 8회(4주분)가 기본이며 회비 안내서에는 ‘정기상담(8회/4주분)’처럼 적힙니다. 회당 단가는 상담 등급에 따라 다릅니다.</p></article><article id="term-문진상담"><h4>문진상담</h4><p>문진상담이란 등원 시 학생의 정서 및 신체 컨디션을 확인하고 학습에 잘 몰입할 수 있도록 돕는 일상적인 상담입니다. 학생의 관리 횟수에 맞춰 매일 이루어집니다. 관리 하루 15,000원 가운데 7,500원이 문진상담으로 에듀플렉스 심리 상담소 회비에 들어갑니다.</p></article><article id="term-관리-종합-"><h4>관리(종합)</h4><p>관리 하루 15,000원 가운데 7,500원이 관리(종합)로 에듀코치 학원 원비에 들어갑니다. 회비 안내서에는 ‘관리 N회’로 표시됩니다.</p></article><article id="term-관리-하루-15-000원"><h4>관리 하루 15,000원</h4><p>관리 하루 회비 15,000원은 문진상담 7,500원과 관리(종합) 7,500원의 합입니다. 그래서 같은 관리 횟수가 두 카드에 한 번씩 나옵니다. 4주 기준 주 5회면 20회, 주 4회면 16회, 주 3회면 12회, 주 2회면 8회입니다.</p></article><article id="term-관리-횟수"><h4>관리 횟수</h4><p>한 달 관리 횟수는 주 등원 횟수 × 등록기간 주 수에서 출발합니다. 공휴일이나 휴원일이 끼거나 등록기간 중간에 시작하면 실제로 등원할 날 수로 조정하고, 회비 안내서에는 조정된 횟수가 ‘관리 N회’로 적힙니다. 문진상담과 관리(종합)는 언제나 같은 횟수입니다.</p></article><article id="term-등록기간"><h4>등록기간</h4><p>회비는 주 단위로 정한 등록기간마다 냅니다. 대부분 4주이고 달에 따라 5주가 되며, 회비 안내서 위쪽에 ‘4주 · 11/2(월)~11/29(일)’처럼 적힙니다.</p></article><article id="term-상담-등급-일반-프라임-"><h4>상담 등급(일반·프라임)</h4><p>상담 회당 단가 구분입니다. 일반 43,750원, 프라임1 48,750원, 프라임2 53,750원, 프라임3 58,750원입니다. 어떤 등급이 적용되는지는 상담에서 안내합니다.</p></article><article id="term-콤마"><h4>콤마</h4><p>개별지도 수업 1회(90분)를 세는 단위입니다. 한 달 개별지도 회비는 콤마 수 × 과정별 1콤마 단가입니다. 한 달 콤마 수는 주 콤마 × 주 수에서 출발해 시험 일정과 진도에 맞춰 달마다 조정합니다.</p></article><article id="term-과정-초등-중등-고등-"><h4>과정(초등·중등·고등)</h4><p>개별지도 1콤마 단가 구분입니다. 초등 27,000원, 중등 30,000원, 고등 33,000원이며, 회비 안내서에는 ‘16콤마 (고등과금 적용)’처럼 표시됩니다.</p></article><article id="term-처방식-편성"><h4>처방식 편성</h4><p>개별지도는 일주일에 몇 번을 정해 두고 계속 듣는 방식이 아니라, 시험까지 필요한 진도와 첫 수업의 결과를 보고 총 몇 회가 필요한지 정한 뒤 매달 늘리거나 줄이는 방식입니다. 스스로 할 수 있는 부분이 늘수록 개별지도는 줄어듭니다.</p></article></div><h3 class="cl-title-3 fg-group-title">기타 비용</h3><div class="fg-gloss"><article id="term-기타1"><h4>기타1</h4><p>에듀플렉스 심리 상담소 쪽 부가 항목입니다. 셀프리더, 검사, 초기 물품 등이 여기에 속합니다.</p></article><article id="term-기타2"><h4>기타2</h4><p>에듀코치 학원 쪽 부가 항목입니다. 제휴프로그램 월비, 방학PG, 교재비 등이 여기에 속합니다.</p></article><article id="term-셀프리더-플래너-"><h4>셀프리더(플래너)</h4><p>학생이 매일 계획과 실행을 적는 에듀플렉스 플래너입니다. 1권 7,500원이며 기타1로 상담소 회비에 들어갑니다.</p></article><article id="term-제휴프로그램-월비-"><h4>제휴프로그램(월비)</h4><p>유료 제휴 학습 사이트 이용과 자체 교재·프린트에 대한 월 10,000원의 월비입니다. 회비 안내서의 ‘방학PG+제휴’ 줄에 들어갑니다.</p></article><article id="term-방학PG"><h4>방학PG</h4><p>썸머·윈터스쿨처럼 방학 중 장시간 학습할 때의 추가 점검과 체류에 대한 비용입니다. 관리 1회당 10,000원입니다.</p></article></div><h3 class="cl-title-3 fg-group-title">납부와 규약</h3><div class="fg-gloss"><article id="term-5주인-달"><h4>5주인 달</h4><p>상담과 달리 관리 일수와 개별지도 수업은 등록 기간이 5주인 달에 회비가 늘어날 수 있으며, 다음 달 등록 전에 미리 안내합니다. 상담은 5주인 달에도 8회(4주분)가 기본이고, 10회는 상담에서 따로 정할 때만 적용합니다.</p></article><article id="term-납부-시기"><h4>납부 시기</h4><p>회비는 매달 5일 이내 납부를 부탁드립니다. 카드결제 또는 온라인이체가 가능하며, 계좌는 매달 보내드리는 회비 안내서에 적혀 있습니다. 온라인 이체 시 현금영수증을 발급해 드립니다.</p></article><article id="term-개별지도-신청-마감"><h4>개별지도 신청 마감</h4><p>다음 주 개별지도 수업 시간 신청은 매주 수요일 오후 10시까지, 학생이 직접 담당 매니저나 교실장에게 신청하는 것이 원칙입니다.</p></article><article id="term-개별지도-보충"><h4>개별지도 보충</h4><p>개별지도 수업은 단순 배탈, 개인 일정, 피곤함 같은 이유로는 보충하지 않습니다. 자세한 기준은 개별지도 회원등록규약을 따릅니다.</p></article><article id="term-회비-반환-기준"><h4>회비 반환 기준</h4><p>회비 반환은 법률에 근거한 기준을 따르며, 세부 내용은 회원등록규약에 있습니다.</p></article></div><h3 class="cl-title-3 fg-group-title">첫 한 달</h3><div class="fg-gloss"><article id="term-텀-스케줄러-포트폴리오"><h4>텀 스케줄러 · 포트폴리오</h4><p>텀 스케줄러는 1개월 단위의 단기 계획, 포트폴리오는 6개월 단위의 장기 계획입니다. 등록 후 첫 한 달 동안 학생과 함께 만듭니다.</p></article><article id="term-VLT-검사-해석상담"><h4>VLT 검사 해석상담</h4><p>VLT 검사 결과를 학생, 그리고 학부모님과 함께 읽고 전략을 정하는 상담입니다. 첫 한 달 안에 학생 해석상담과 학부모님 방문 해석상담을 진행합니다.</p></article></div>
   </section>
 
   <section class="fg-sec" id="rules" aria-labelledby="rules-title">
     <div class="fg-sec__head"><span class="cl-section__eyebrow">MEMBERSHIP</span><h2 class="cl-title-2" id="rules-title">회원 등록 규약 주요 사항</h2></div>
-    <ol class="fg-rules"><li>상담과 달리 관리 일수나 개별지도 수업은 등록 기간이 5주인 달에 회비가 추가될 수 있으며, 다음 달 등록 전에 미리 안내드립니다.</li><li>학생들의 관리와 성장에 더 집중할 수 있도록 회비 납부는 가급적 매월 첫 주 안에 부탁드립니다.</li><li>회비 반환 기준은 법률에 근거합니다(세부 내용은 회원등록규약 참고).</li><li>다음 주 개별지도 수업 시간 신청은 매주 수요일 오후 10시까지, 학생이 직접 담당 매니저나 교실장에게 신청하는 것을 원칙으로 합니다.</li><li>개별지도 수업은 단순 배탈, 개인 일정, 피곤함 등의 이유로 보충을 실시하지 않습니다(개별지도 회원등록규약 참고).</li><li>급한 용무가 아닌 경우 평일 오후 1시~10시 사이에 연락을 부탁드립니다.</li><li>학생·학부모님 상담은 미리 세워 둔 계획대로 운영됩니다. 조정이 필요하면 최소 하루 전에 연락을 부탁드립니다.</li></ol>
+    <ol class="fg-rules"><li>상담과 달리 관리 일수나 개별지도 수업은 등록 기간이 5주인 달에 회비가 추가될 수 있으며, 다음 달 등록 전에 미리 안내드립니다.</li><li>학생들의 관리와 성장에 더 집중할 수 있도록 회비 납부는 매달 5일 이내에 부탁드립니다.</li><li>회비 반환 기준은 법률에 근거합니다(세부 내용은 회원등록규약 참고).</li><li>다음 주 개별지도 수업 시간 신청은 매주 수요일 오후 10시까지, 학생이 직접 담당 매니저나 교실장에게 신청하는 것을 원칙으로 합니다.</li><li>개별지도 수업은 단순 배탈, 개인 일정, 피곤함 등의 이유로 보충을 실시하지 않습니다(개별지도 회원등록규약 참고).</li><li>급한 용무가 아닌 경우 평일 오후 1시~10시 사이에 연락을 부탁드립니다.</li><li>학생·학부모님 상담은 미리 세워 둔 계획대로 운영됩니다. 조정이 필요하면 최소 하루 전에 연락을 부탁드립니다.</li></ol>
   </section>
 
   <footer class="fg-foot"><a class="cl-btn cl-btn--gray" href="https://eduplexge.sangsangplex.com" target="_blank" rel="noopener"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5L12 5l8 6.5"/><path d="M6.5 10v9h11v-9"/></svg>에듀플렉스 길음 홈페이지</a></footer>
@@ -153,31 +164,64 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
   function stepVal(name){var s=document.querySelector('[data-field="'+name+'"]');return s?+s.getAttribute('data-value'):0;}
   function toggleVal(name){var t=document.querySelector('[data-field="'+name+'"]');return t&&t.getAttribute('aria-checked')==='true';}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function adjOf(name){var s=document.querySelector('[data-field="'+name+'"]');return s?(+s.getAttribute('data-adj')||0):0;}
+  function signed(n){return (n>0?'+':'−')+Math.abs(n);}
+  /* 이번 달 실제 횟수 = 기본(주 횟수 × 주 수) + 조정. 조정값은 기본이 바뀌어도 유지하되 0 아래·상한 위로는 넘지 않게 자른다. */
+  function syncAdj(name,base,cap,unit,subId,subText){
+    var st=document.querySelector('[data-field="'+name+'"]');if(!st)return base;
+    var adj=+st.getAttribute('data-adj')||0;
+    if(base+adj<0)adj=-base;
+    if(cap!=null&&base+adj>cap)adj=cap-base;
+    st.setAttribute('data-adj',adj);
+    var n=base+adj;
+    st.querySelector('.cl-stepper__value').textContent=n+unit;
+    var b=st.querySelectorAll('.cl-stepper__btn');b[0].disabled=n<=0;b[1].disabled=cap!=null&&n>=cap;
+    var sub=document.getElementById(subId);
+    if(sub)sub.innerHTML=esc(subText)+(adj?' → <b>'+signed(adj)+unit+' 조정</b><button type="button" class="fg-adj" data-reset="'+name+'">기본으로</button>':'');
+    return n;
+  }
   function render(){
     var weeks=+segVal('weeks'),grade=segVal('grade'),sessions=stepVal('sessions'),mgmt=+segVal('mgmt'),course=segVal('course'),comma=stepVal('comma'),partner=toggleVal('partner'),self=stepVal('selfLeader'),seasonal=stepVal('seasonal');
-    var cPer=FEE.counselingPerSession[grade],mDays=mgmt*weeks,commas=comma*weeks,cPrice=FEE.commaPrice[course];
+    var cPer=FEE.counselingPerSession[grade],cPrice=FEE.commaPrice[course];
+    var mBase=mgmt*weeks,kBase=comma*weeks;
+    var mDays=syncAdj('mgmtAdj',mBase,weeks*7,'회','fg-mgmt-sub','기본 '+mBase+'회(주 '+mgmt+'회 × '+weeks+'주)');
+    var commas=syncAdj('commaAdj',kBase,null,'콤마','fg-comma-sub','기본 '+kBase+'콤마(주 '+comma+'콤마 × '+weeks+'주)');
+    var mAdj=mDays-mBase,kAdj=commas-kBase;
     var rows=[],total=0;
     function add(label,calc,amt,cls){rows.push('<tr'+(cls?' class="'+cls+'"':'')+'><td>'+esc(label)+(calc?'<br><span style="color:var(--cl-label-3);font-size:12px">'+esc(calc)+'</span>':'')+'</td><td class="num">'+won(amt)+'</td></tr>');}
     function head(label,amt){rows.push('<tr class="is-group"><td>'+esc(label)+'</td><td class="num">'+won(amt)+'</td></tr>');}
     var c=cPer*sessions,mj=mDays*FEE.managementSplit.counseling,s=self*FEE.selfLeaderPerBook;
     var mg=mDays*FEE.managementSplit.academy,t=commas*cPrice,p=seasonal*FEE.seasonalPerDay,pt=partner?FEE.partnerMonthly:0;
     var cTot=c+mj+s,aTot=mg+t+p+pt;total=cTot+aTot;
+    var mCalc=(mAdj?'주 '+mgmt+'회 × '+weeks+'주 = '+mBase+'회, '+signed(mAdj)+'회 조정 → ':'')+'관리 '+mDays+'회';
+    /* 표기는 회비 안내서와 같게: 정기상담(8회/4주분) · 문진상담(N회) · 관리 N회 · N콤마 (고등과금 적용) · 방학PG+제휴(종합+단과) */
     head(FEE.cName+' 회비',cTot);
-    add('정기상담',grade+' '+won(cPer)+' × '+sessions+'회',c,'is-sub');
-    add('문진상담','관리 '+mDays+'회 × '+won(FEE.managementSplit.counseling),mj,'is-sub');
-    if(self>0)add('셀프리더(기타1)',self+'권 × '+won(FEE.selfLeaderPerBook),s,'is-sub');
+    add('정기상담('+sessions+'회'+(sessions>0&&sessions<=8&&sessions%2===0?'/'+(sessions/2)+'주분':'')+')',grade+' '+won(cPer)+' × '+sessions+'회',c,'is-sub');
+    add('문진상담('+mDays+'회)',mCalc+' × '+won(FEE.managementSplit.counseling),mj,'is-sub');
+    if(self>0)add('기타 · 셀프리더 '+self+'권',self+'권 × '+won(FEE.selfLeaderPerBook),s,'is-sub');
     head(FEE.aName+' 원비',aTot);
-    add('관리(종합)','주 '+mgmt+'회 × '+weeks+'주 = 관리 '+mDays+'회 × '+won(FEE.managementSplit.academy),mg,'is-sub');
-    add('개별지도(단과)',course+' 주 '+comma+'콤마 × '+weeks+'주 = '+commas+'콤마 × '+won(cPrice),t,'is-sub');
-    if(pt||p)add('방학PG+제휴',[pt?'제휴프로그램 월비 '+won(pt):'',p?'방학PG '+seasonal+'회 × '+won(FEE.seasonalPerDay):''].filter(Boolean).join(' + '),pt+p,'is-sub');
+    add('관리(종합) · 관리 '+mDays+'회',mCalc+' × '+won(FEE.managementSplit.academy),mg,'is-sub');
+    add('개별지도(단과) · '+commas+'콤마 ('+course+'과금 적용)',(kAdj?'주 '+comma+'콤마 × '+weeks+'주 = '+kBase+'콤마, '+signed(kAdj)+'콤마 조정 → ':'주 '+comma+'콤마 × '+weeks+'주 = ')+commas+'콤마 × '+won(cPrice),t,'is-sub');
+    if(pt||p)add('방학PG+제휴(종합+단과)',[p?'방학PG '+seasonal+'회 × '+won(FEE.seasonalPerDay):'',pt?'제휴프로그램 '+won(pt):''].filter(Boolean).join(' + '),pt+p,'is-sub');
     add('합계','',total,'is-total');
     document.getElementById('fg-rows').innerHTML=rows.join('');
     document.getElementById('fg-total').textContent=won(total);
-    document.getElementById('fg-time').textContent='개별지도 주 '+(comma*FEE.commaMinutes)+'분 · 관리 한 달 '+mDays+'일';
-    document.getElementById('fg-warn').hidden=!(mDays>0&&sessions===0);
+    document.getElementById('fg-time').textContent='개별지도 한 달 '+commas+'콤마 · 관리 한 달 '+mDays+'일';
+    var warn=mDays>0&&sessions===0?'관리는 상담과 함께만 운영합니다. 상담 횟수를 넣어 주세요.':(weeks===4&&sessions>8?'상담 10회는 5주인 달에 상담에서 따로 정할 때만 적용합니다.':'');
+    document.getElementById('fg-warn-text').textContent=warn;
+    document.getElementById('fg-warn').hidden=!warn;
   }
-  /* 학생별 견적 세팅 미리 채우기: ?w=주수&g=상담등급&s=상담횟수&m=주 관리 등원&c=개별지도 과정&k=주 콤마&p=월비(1/0)&l=셀프리더&v=방학PG.
-     개인 정보는 담지 않고 횟수·과정만 받는다. 값이 없거나 범위를 벗어나면 기본 예시를 그대로 둔다. 번들이 상태를 읽기 전에 DOM을 먼저 맞춘다. */
+  document.addEventListener('click',function(ev){
+    var r=ev.target.closest&&ev.target.closest('[data-reset]');
+    if(r){var st=document.querySelector('[data-field="'+r.getAttribute('data-reset')+'"]');if(st){st.setAttribute('data-adj',0);render();}return;}
+    var b=ev.target.closest&&ev.target.closest('[data-field$="Adj"] .cl-stepper__btn');
+    if(!b||b.disabled)return;
+    var s=b.closest('[data-field]');s.setAttribute('data-adj',(+s.getAttribute('data-adj')||0)+(+b.getAttribute('data-dir')));
+    render();
+  });
+  /* 학생별 견적 세팅 미리 채우기: ?w=주수&g=상담등급&s=상담횟수&m=주 관리 등원&c=개별지도 과정&k=주 콤마&p=월비(1/0)&l=셀프리더&v=방학PG
+     &ma=관리 횟수 조정(±)&ka=콤마 조정(±). 개인 정보는 담지 않고 횟수·과정만 받는다. 값이 없거나 범위를 벗어나면 기본 예시를 그대로 둔다.
+     번들이 상태를 읽기 전에 DOM을 먼저 맞춘다. */
   function applyPreset(){
     var q;try{q=new URLSearchParams(location.search);}catch(e){return;}
     var any=false;
@@ -193,11 +237,16 @@ main{max-width:1040px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--
     [['s','sessions'],['k','comma'],['l','selfLeader'],['v','seasonal']].forEach(function(m){
       var v=q.get(m[0]);if(v===null||!/^\d{1,2}$/.test(v))return;
       var st=document.querySelector('[data-field="'+m[1]+'"]');if(!st)return;
-      var n=+v,min=+st.getAttribute('data-min'),max=+st.getAttribute('data-max');
+      var n=+v,min=+st.getAttribute('data-min'),max=st.hasAttribute('data-max')?+st.getAttribute('data-max'):Infinity;
       if(n<min||n>max)return;
       st.setAttribute('data-value',n);
       var out=st.querySelector('.cl-stepper__value');if(out)out.textContent=n+(st.getAttribute('data-unit')||'');
       any=true;
+    });
+    [['ma','mgmtAdj'],['ka','commaAdj']].forEach(function(m){
+      var v=q.get(m[0]);if(v===null||!/^-?\d{1,2}$/.test(v))return;
+      var st=document.querySelector('[data-field="'+m[1]+'"]');if(!st)return;
+      st.setAttribute('data-adj',+v);any=true;
     });
     var pv=q.get('p'),t=document.querySelector('[data-field="partner"]');
     if(t&&(pv==='0'||pv==='1')){
