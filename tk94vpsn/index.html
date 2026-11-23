@@ -34,6 +34,15 @@
   .panel { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
   .panel__eyebrow { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
   .panel__title { font-size: 1.0625rem; font-weight: 700; line-height: 1.4; }
+  .path { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2); }
+  .path__step { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3); display: grid; gap: 2px; align-content: start; }
+  .path__step[data-key="true"] { background: var(--cl-accent-tint); }
+  .path__when { font-size: 0.75rem; font-weight: 700; color: var(--cl-label-3); }
+  .path__what { font-weight: 700; line-height: 1.4; }
+  .path__note { font-size: 0.8125rem; color: var(--cl-label-2); line-height: 1.45; }
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  @media (max-width: 900px) { .path { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .path, .calc { grid-template-columns: 1fr; } }
   .stat { display: flex; flex-wrap: wrap; gap: var(--space-4); }
   .stat div { display: grid; gap: 2px; }
   .stat b { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
@@ -243,12 +252,26 @@
         <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>5/26 해석상담: 공부에서 가장 힘든 단계는 시작이라고 본인이 답함. 일단 시작하면 집중은 높음</li><li>5/26: 강의만으로 하기 어려운 과목으로 수학을 직접 고름</li><li>8/27 후속상담 01: 비용·숙제 시간을 이유로 수학 주 5회→4회. 이번이 두 번째 비용 신호</li><li>5/26 CHAMP: 기초문장이해 44%, 국어·영어·수학 성취레벨 모두 LV0(종합 각 12%)</li><li>큐브맵 정본 [원문]: 스스로 움직이는 단계의 아이는 매니저 에너지가 그만큼 들어가지 않아도 움직인다. “관리 에너지를 100 썼다 하면 예전에 한 20 정도를 줄여도 움직입니다.” 이 단계까지 가야 한다(WS 065). 다윤이는 아직 이 단계 전이라는 원장 판단(중심 축)과 이어짐. ‘추진력’은 정본 척도가 아니라 원장 지시(2026.11.23)의 일상어</li></ul></div>
       </div>
     </div>
+    <div class="panel">
+      <span class="panel__eyebrow">학기 중 주 4회를 살리는 방학</span>
+      <span class="panel__title">8월에 학기 중 수학을 주 4회로 맞췄으니, 방학에 미리 당겨 두는 것이 일반적인 전략입니다</span>
+      <div class="path" aria-label="수학 개별지도 흐름">
+        <div class="path__step"><span class="path__when">여름방학</span><span class="path__what">수학 주 8 · 영어 주 3</span><span class="path__note">수학 1회독 마무리, 숙제 거의 모두 수행</span></div>
+        <div class="path__step"><span class="path__when">2학기 시작</span><span class="path__what">수학 주 5</span><span class="path__note">학기 중으로 줄임</span></div>
+        <div class="path__step"><span class="path__when">8월 말 · 어머님 요청</span><span class="path__what">수학 주 4</span><span class="path__note">비용·숙제 시간. 11월에도 주 4로 운영</span></div>
+        <div class="path__step" data-key="true"><span class="path__when">겨울방학</span><span class="path__what">수학 주 5 · 물리 3 · 영어 2</span><span class="path__note">시간이 넉넉할 때 진도를 당겨 둠</span></div>
+        <div class="path__step"><span class="path__when">다시 학기 중</span><span class="path__what">적은 횟수로도 효과</span><span class="path__note">방학에 당겨 둔 진도가 학기 중 주 4회를 받쳐 줌</span></div>
+      </div>
+      <div class="say"><div class="say__head"><span class="say__label">상냥하게 이렇게</span><button class="copy" type="button">복사</button></div><q>어머님, 8월에 말씀 주셔서 학기 중 수학은 주 4회로 맞춰 드렸습니다. 학기 중 주 4회가 충분히 효과를 내려면, 시간이 넉넉한 방학에 진도를 미리 당겨 두는 것이 일반적인 방법입니다. 방학에 조금 더 들이시는 것은 학기 중 주 4회를 든든하게 받쳐 주기 위한 준비라고 생각해 주시면 됩니다.</q></div>
+      <p class="ruleline">8월에 줄인 일을 탓하는 말로 들리지 않게 합니다. “그때 줄이셔서”가 아니라 “말씀 주셔서 맞춰 드렸습니다”로 말합니다. 방학 투자는 학기 중 부담을 덜기 위한 준비라는 점을 강조합니다.</p>
+      <div class="adm adm-box"><span class="adm-box__label">근거 · 2026.08.27 김범수 매니저 미팅 녹취</span><ul><li>방학 수학 8콤마 → 학기 중 5콤마 → 4콤마 요청. “마지노선이 고등학생 네 콤마”</li><li>“여덟 콤마 하던 거를 네 콤마로 했으면 출력이 얘가 방학 때 보였던 거의 30%로 줄어들어요”</li><li>“꾸준히 다섯 콤마씩 내야 돼? 이게 아니고 필요한 콤마가 총 몇 콤마인지, 이 개념으로 이제 설명을”</li><li>“네 콤마로 하면 일주일이 느려지는 거죠”</li><li>“다섯 콤마 늘 하는 건가 보다. 그럼 부담되니까 조금 줄이자.” — 총량 설명이 없어 신뢰가 생기지 않은 결과라는 원장 판단</li><li>방학에 투자해 학기 중 주 4회가 잘 기능하게 하는 것이 일반적 전략: 원장 지시 2026.11.23</li></ul></div>
+    </div>
   </section>
 
   <section class="sec" id="s2" aria-labelledby="t-s2">
     <div class="sec__head">
       <span class="sec__num">2 · 기법 카드</span>
-      <h2 class="cl-title-2" id="t-s2">통화에 쓸 열두 가지 기법</h2>
+      <h2 class="cl-title-2" id="t-s2">통화에 쓸 열네 가지 기법</h2>
       <p class="cl-subhead">원리 한 줄, 이 통화에서 쓸 문장, 지나치면 역효과가 나는 지점을 함께 적었습니다. 단계를 고르면 해당 카드만 보입니다.</p>
     </div>
     <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="통화 단계로 거르기" style="--n:5;--i:0" id="stageSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">전체</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">시작</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">관점 전환</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">제안</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">마무리</button></div>
@@ -259,7 +282,7 @@
     <div class="sec__head">
       <span class="sec__num">3 · 통화 대본</span>
       <h2 class="cl-title-2" id="t-s3">어머님 반응을 고르면 대본이 바뀝니다</h2>
-      <p class="cl-subhead">문장마다 쓰인 기법을 표시했습니다. 그대로 읽기보다 매니저님 말투로 하시되, 문장 끝은 다나까로 맺습니다.</p>
+      <p class="cl-subhead">문장마다 쓰인 기법을 표시했습니다. 그대로 읽기보다 매니저님 말투로 하셔요.</p>
     </div>
     <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="어머님 반응 고르기" style="--n:5;--i:0" id="reactSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">기본</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">종료 의사</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">과외로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">학원으로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">예산 조정</button></div>
     <div class="script-tools"><span class="muted" id="scriptLead"></span><button class="cl-btn cl-btn--gray cl-btn--sm" type="button" id="copyAll">대본 전체 복사</button></div>
@@ -298,6 +321,17 @@
         <span class="panel__eyebrow" style="margin-top:var(--space-2)">상한 안에 들어오는 구성</span>
         <ul class="fit" id="fit"><li><span class="muted">상한을 입력하면 운영원칙을 지키는 구성이 수업이 많은 순서로 나옵니다.</span></li></ul>
       </div>
+    </div>
+    <div class="panel">
+      <span class="panel__eyebrow">마무리까지 총 콤마</span>
+      <span class="panel__title">목표 진도를 마무리하는 데 몇 주가 걸리나</span>
+      <div class="calc">
+        <div class="field"><label for="need">수학 마무리까지 필요한 총 콤마(단원표로 계산)</label><input id="need" inputmode="numeric" placeholder="예: 24" autocomplete="off"></div>
+        <div class="field"><label for="vweeks">방학 기간(주)</label><input id="vweeks" inputmode="numeric" placeholder="예: 5" autocomplete="off"></div>
+      </div>
+      <ul class="fit" id="totalOut"></ul>
+      <div class="say" id="totalSayBox" hidden><div class="say__head"><span class="say__label">계산대로 이렇게</span><button class="copy" type="button">복사</button></div><q id="totalSay"></q></div>
+      <p class="ruleline">주당 횟수가 아니라 마무리까지 필요한 총 콤마로 설명합니다(8월 원칙). 목표 진도와 남은 단원은 담당 매니저가 단원표로 계산해 넣습니다.</p>
     </div>
     <div class="adm adm-box"><span class="adm-box__label">계산 근거</span><ul><li>단가: 지점 회비 단가 견적표(sumfuvps, 2026년 7월 단가) — 관리 1일 15,000원, 고등 개별지도 1콤마 33,000원, 상담 회당 일반 43,750원(다윤이 상담 등급 일반: 원장 확인 2026.11.23)</li><li>상담 8회(4주분), 관리 주 5회 × 4주 = 20일, 개별지도 주 콤마 × 4주</li><li>11월 실제: 관리 18일, 공통수학2 14콤마(11월 등원관리 안내)</li><li>개별지도 편성 원칙(지점·법인 운영원칙): 수학 고등 최소 주 4회(2타입 이상이면서 수학 레벨 4~5면 주 3회 — 다윤이는 5/26 CHAMP 수학 LV0이라 해당 없음), 국어·영어 최소 주 2회, 과학 최소 주 3회(다른 과목과 함께면 2회), 주 1회 편성 없음</li><li>원장 조언: 과목 하나 정도 걷어내기까지. 물리·영어를 모두 빼는 구성은 편성기가 ‘원장님 확인’으로 표시함</li></ul></div>
   </section>
@@ -411,7 +445,9 @@
     { id: 'future', name: '목표 먼저 여쭙기', stage: 1, why: '어머님이 직접 목표를 말씀하시면, 그 목표가 이후 판단의 기준이 됩니다. 기준을 매니저가 아니라 어머님이 정하시게 합니다.', say: '어머님, 방학이 끝난 3월에 다윤이가 어떤 모습이면 좋겠다고 생각하십니까?', warn: '답을 <b>그대로 메모</b>합니다(6번 메모 칸). 매니저가 답을 대신 정리해 드리지 않습니다.' },
     { id: 'reframe', name: '비교 기준 바꾸기 · 잃는 것 보여 드리기', stage: 1, why: '금액으로 비교하면 저렴한 쪽이 이깁니다. 비교 기준을 “다윤이에게 무엇이 빠지는가”로 바꿉니다. 사람은 얻는 것보다 잃는 것에 더 크게 반응합니다. 과외·학원으로 바꾸면 빠지는 것은 상담과 관리, 곧 추진력과 에너지입니다.', say: '비용만 보면 과외나 더 저렴한 방법은 분명히 있습니다. 다만 다윤이에게 지금 더 필요한 것은 수업 한 과목보다 상담과 관리입니다. 상담은 공부를 밀고 나가는 추진력을, 관리는 매일 이어 가는 에너지를 만들어 줍니다. 다윤이는 아직 이 힘을 스스로 만들기보다 상담과 관리에서 채워 가는 단계입니다.', warn: '겁을 주는 말이 되지 않도록, 다윤이의 실제 상황까지만 말합니다.' },
     { id: 'social', name: '다들 하는 선택(사회적 증거)', stage: 1, why: '다른 가정도 같은 선택을 한다는 사실을 알면, 혼자만의 선택이 아니라는 안심이 생깁니다.', say: '겨울방학은 학원을 보내시는 가정도 보강을 하는 시기입니다. 1년 중 가장 크게 성장할 수 있는 기간입니다.', warn: '누구나 아는 사실까지만 말합니다. 다른 학생 이름이나 지어낸 숫자는 쓰지 않습니다.' },
+    { id: 'year', name: '방학과 학기를 이어서 보기', stage: 1, why: '방학 비용만 따로 보면 커 보입니다. 8월에 학기 중 수학을 주 4회로 맞춘 것과 이어서 보면, 방학 투자는 학기 중 주 4회가 제대로 효과를 내게 하는 준비입니다. 시간이 넉넉한 방학에 더 하고 학기 중에는 덜 하는 것이 일반적인 전략입니다.', say: '어머님, 8월에 말씀 주셔서 학기 중 수학은 주 4회로 맞춰 드렸습니다. 학기 중 주 4회가 충분히 효과를 내려면, 시간이 넉넉한 방학에 진도를 미리 당겨 두는 것이 일반적인 방법입니다. 방학에 조금 더 들이시는 것은 학기 중 주 4회를 든든하게 받쳐 주기 위한 준비라고 생각해 주시면 됩니다.', warn: '8월에 줄인 일을 탓하는 말로 들리지 않게 합니다. “그때 줄이셔서”가 아니라 “말씀 주셔서 맞춰 드렸습니다”로 말합니다.' },
     { id: 'consistency', name: '이미 정하신 우선순위 잇기(일관성)', stage: 2, why: '사람은 자신이 이미 내린 판단과 어긋나지 않게 결정하려 합니다. 방학 구성에서 수학을 주 5회로 가장 많이 두신 것은 수학을 가장 중요하게 보신다는 뜻입니다. 금액을 줄여야 할 때 그 우선순위를 근거로 무엇을 지키고 무엇을 조정할지 정합니다.', say: '방학 구성을 정하실 때 수학을 주 5회로 가장 많이 두셨습니다. 수학을 가장 중요하게 보신 만큼, 금액을 맞춰야 한다면 수학은 지키고 물리나 영어 중 한 과목을 조정하는 쪽으로 준비하겠습니다. 어머님께서 보시기에도 수학이 가장 중요하십니까?', warn: '구성을 그대로 지키면서 금액을 맞출 수는 없습니다. 무엇을 조정할지 우선순위로 정한다는 점을 분명히 하고, 그 우선순위는 어머님께 확인받습니다. “그때 이렇게 정하지 않으셨습니까”처럼 따지는 말투는 역효과가 납니다.' },
+    { id: 'total', name: '마무리까지 필요한 총 콤마로 말하기', stage: 2, why: '“주 5회”처럼 주당 횟수로만 말하면 늘 하는 횟수로 들려 줄이고 싶어집니다. 목표한 진도를 마무리하는 데 모두 몇 콤마가 필요한지로 말하면 횟수마다 이유가 생깁니다. 8월에 수학을 줄일 때도 원장님이 강조하신 설명 방식입니다.', say: '수학은 ‘주 몇 회’보다, 목표한 진도를 마무리하는 데 모두 몇 번이 필요한지로 보시면 정확합니다. 방학 동안 목표 진도를 마무리하려면 총 ○콤마가 필요합니다. 주 5회면 방학 안에 마무리되고, 주 4회면 ○주가 더 걸립니다.', warn: '○ 자리의 숫자는 담당 매니저가 단원표와 현재 진도로 계산한 값만 씁니다(4번 계산기). 어림한 숫자를 말하지 않습니다.' },
     { id: 'cap', name: '상한 먼저 여쭙기', stage: 2, why: '매니저가 먼저 금액을 깎아 제시하면 흥정이 시작됩니다. 상한을 먼저 여쭈면 대화가 “무엇을 유지할지”로 바뀝니다.', say: '방학 동안 생각하시는 예산 상한을 말씀해 주시겠습니까? 그 안에서 다윤이에게 꼭 필요한 것부터 유지하겠습니다.', warn: '비용이 정말 문제라고 하실 때만 꺼냅니다. 먼저 꺼내면 할인 제안처럼 들립니다.' },
     { id: 'anchor', name: '기준점과 세 가지 안(앵커링·타협 효과)', stage: 2, why: '처음 본 구성이 기준점이 되고, 세 가지를 보면 사람은 가운데를 고르기 쉽습니다. 처음에는 다윤이에게 맞는 전체 구성을, 다음으로 원칙을 지키는 조정안을 보여 드립니다.', say: '세 가지 안으로 준비하겠습니다. 상담과 관리는 그대로 두고, 지금 구성과 수업 과목을 하나 정리한 구성 두 가지입니다. 주 1회 차이가 4주에 얼마인지까지 숫자로 보여 드리겠습니다.', warn: '세 안 모두 주 5회 등원과 최소 횟수를 지킵니다. 일부러 나쁜 안을 끼워 넣지 않습니다.' },
     { id: 'foot', name: '작은 약속부터(문간에 발 들여놓기)', stage: 3, why: '작은 요청에 먼저 “네”라고 하시면 다음 약속도 쉬워집니다. 이 통화의 작은 약속은 재검사 한 번과 내방 한 번입니다.', say: '오늘 무엇을 정하시지 않으셔도 됩니다. 시험이 끝나고 검사 한 번만 해 보시는 것은 괜찮으시겠습니까?', warn: '작은 약속을 받자마자 큰 요청을 이어 붙이지 않습니다.' },
@@ -439,7 +475,9 @@
       ['reciprocity', '다윤이가 다닌 지 6개월이 지났습니다. 시험이 끝나면 5월에 했던 검사를 한 번 더 해서, 그동안 무엇이 자랐는지 정리해 드리겠습니다.'],
       ['future', '어머님, 방학이 끝난 3월에 다윤이가 어떤 모습이면 좋겠다고 생각하십니까?', '답을 메모 칸에 그대로 적습니다.'],
       ['reframe|social', '말씀하신 모습이 되려면 이번 방학이 가장 중요합니다. 겨울방학은 학원을 보내시는 가정도 보강을 하는 시기입니다. 다만 다윤이는 지금 수업보다, 상담으로 공부를 밀고 나갈 추진력을 만들고 관리로 매일 이어 갈 에너지를 채우는 것이 먼저인 단계입니다. 이 두 가지가 빠지면 방학에는 늦잠과 빈 시간으로 하루를 보내기 쉽습니다.', '상담만 또는 관리만 따로 말하지 않습니다. 둘을 함께 말씀드립니다.'],
+      ['year', '어머님, 8월에 말씀 주셔서 학기 중 수학은 주 4회로 맞춰 드렸습니다. 학기 중 주 4회가 충분히 효과를 내려면, 시간이 넉넉한 방학에 진도를 미리 당겨 두는 것이 일반적인 방법입니다. 방학에 조금 더 들이시는 것은 학기 중 주 4회를 든든하게 받쳐 주기 위한 준비라고 생각해 주시면 됩니다.', '어머님 결정을 존중하는 말투로 합니다. 방학 투자는 학기 중 부담을 덜기 위한 준비라는 점이 핵심입니다.'],
       ['consistency', '방학 구성을 정하실 때 수학을 주 5회로 가장 많이 두셨습니다. 수학을 가장 중요하게 보신 만큼, 금액을 맞춰야 한다면 수학은 지키고 물리나 영어 중 한 과목을 조정하는 쪽으로 준비하겠습니다. 어머님께서 보시기에도 수학이 가장 중요하십니까?', '어머님이 다른 과목을 더 중요하게 보시면 그 답을 메모하고 그대로 따릅니다. 수학은 최소 주 4회 아래로 내리지 않습니다.'],
+      ['total', '수학은 ‘주 몇 회’보다, 목표한 진도를 마무리하는 데 모두 몇 번이 필요한지로 보시면 정확합니다. 방학 동안 목표 진도를 마무리하려면 총 ○콤마가 필요합니다. 주 5회면 방학 안에 마무리되고, 주 4회면 ○주가 더 걸립니다.', '○ 자리는 4번 계산기에서 나온 숫자로 채웁니다.'],
       ['cap', '방학 동안 생각하시는 예산 상한을 말씀해 주시겠습니까? 그 안에서 다윤이에게 꼭 필요한 것부터 유지하겠습니다.', '상한을 들으면 4번 편성기에 바로 넣어 봅니다. 금액은 통화에서 확정하지 않습니다.'],
       ['anchor', '세 가지 안으로 준비하겠습니다. 상담과 관리는 지금처럼 유지하고, 수업 과목을 하나 정도 조정하는 방식입니다. 주 1회 차이가 4주에 얼마인지까지 숫자로 보여 드리겠습니다.'],
       ['choice', DATES]
@@ -454,6 +492,7 @@
     { lead: '과외로 바꾸시겠다고 하실 때입니다. 과외의 장점은 인정하고, 수업이 없는 나머지 시간을 짚어 드립니다.', lines: [
       ['empathy', '과외도 좋은 방법입니다. 비용도 덜 드십니다.', '먼저 동의합니다. 반박하지 않습니다.'],
       ['reframe', '과외는 수업 시간만 책임집니다. 다윤이에게 지금 더 필요한 것은 상담과 관리에서 나오는 추진력과 에너지입니다. 무엇을 왜 공부할지 정해 밀고 나가는 힘, 그리고 수업이 없는 날에도 공부를 이어 가는 힘입니다. 방학에는 특히 그렇습니다.'],
+      ['year', '그리고 8월에 말씀 주셔서 학기 중 수학은 주 4회로 맞춰 드렸습니다. 학기 중 주 4회가 효과를 내려면 방학에 진도를 미리 당겨 두는 것이 일반적인 방법이라, 이번 방학은 그 준비 기간으로 보시면 됩니다.'],
       ['future', '과외를 하시면 수업이 없는 날 다윤이가 하루를 어떻게 보낼 것 같으십니까?', '어머님이 직접 답하시도록 기다립니다.'],
       ['consistency|cap', '방학 구성을 정하실 때 수학을 가장 많이 두셨습니다. 예산 상한을 말씀해 주시면 수학은 지키고 다른 과목을 조정해 그 안에 맞춰 보겠습니다.'],
       ['choice', DATES]
@@ -468,6 +507,8 @@
     { lead: '“얼마까지 줄일 수 있습니까?”처럼 금액부터 물으실 때입니다. 먼저 깎아 드리지 말고 상한을 여쭙니다.', lines: [
       ['cap', '생각하시는 상한을 먼저 말씀해 주시겠습니까? 그 안에서 맞추겠습니다.', '매니저가 먼저 금액을 제시하지 않습니다.'],
       ['consistency', '방학 구성을 정하실 때 수학을 주 5회로 가장 많이 두셨습니다. 상담과 관리는 지금처럼 유지하고, 수학은 지키되 물리나 영어 중 한 과목을 조정하는 방식으로 맞추겠습니다.', '상담·관리는 추진력과 에너지에 해당하므로 조정 대상으로 꺼내지 않습니다.'],
+      ['year', '어머님, 8월에 말씀 주셔서 학기 중 수학은 주 4회로 맞춰 드렸습니다. 학기 중 주 4회가 충분히 효과를 내려면, 시간이 넉넉한 방학에 진도를 미리 당겨 두는 것이 일반적인 방법입니다. 방학에 조금 더 들이시는 것은 학기 중 주 4회를 든든하게 받쳐 주기 위한 준비라고 생각해 주시면 됩니다.'],
+      ['total', '수학은 ‘주 몇 회’보다, 목표한 진도를 마무리하는 데 모두 몇 번이 필요한지로 보시면 정확합니다. 방학 동안 목표 진도를 마무리하려면 총 ○콤마가 필요합니다. 주 5회면 방학 안에 마무리되고, 주 4회면 ○주가 더 걸립니다.', '안마다 마무리까지 몇 주가 걸리는지 4번 계산기로 함께 보여 드립니다.'],
       ['anchor', '지금 구성과, 한 과목을 정리한 구성 두 가지를 더해 세 가지 안으로 준비하겠습니다. 주 1회 차이가 4주에 얼마인지까지 보여 드리겠습니다.', '편성기에 상한을 넣어 본 결과만 말합니다. 원칙에서 벗어난 안은 꺼내지 않습니다.'],
       ['reciprocity', '그때 5월 검사와 이번 재검사 결과도 함께 보여 드리겠습니다.'],
       ['choice', DATES]
@@ -513,6 +554,24 @@
   function inRule(p) { return (p.phys > 0) || (p.eng > 0); }
   function parseCap() { var n = +String(capEl.value).replace(/[^0-9]/g, ''); return n > 0 ? n : 0; }
   function signed(n) { return (n > 0 ? '+' : n < 0 ? '−' : '') + won(Math.abs(n)); }
+  var needEl = document.getElementById('need'), vwEl = document.getElementById('vweeks');
+  needEl.value = get('need') || ''; vwEl.value = get('vweeks') || '';
+  function num(el) { var n = +String(el.value).replace(/[^0-9]/g, ''); return n > 0 ? n : 0; }
+  function renderTotal() {
+    var need = num(needEl), w = num(vwEl), out = document.getElementById('totalOut'), box = document.getElementById('totalSayBox');
+    if (!need) { out.innerHTML = '<li><span class="muted">총 콤마를 넣으면 수학 주 4·5·6회별로 마무리까지 걸리는 주 수가 나옵니다.</span></li>'; box.hidden = true; return; }
+    var wk = {};
+    out.innerHTML = [4, 5, 6].map(function (m) {
+      var n = Math.ceil(need / m); wk[m] = n;
+      var tail = w ? (n <= w ? '방학 ' + w + '주 안에 마무리' : '방학 ' + w + '주로는 ' + (n - w) + '주 모자람') : '방학 기간을 넣으면 방학 안에 끝나는지 보입니다';
+      return '<li' + (m === st.math ? ' data-best="true"' : '') + '><span>수학 주 ' + m + '회' + (m === st.math ? ' · 지금 고른 횟수' : '') + '</span><span class="num">' + n + '주</span><small>' + tail + '</small></li>';
+    }).join('');
+    var t = '방학 동안 목표 진도를 마무리하려면 총 ' + need + '콤마가 필요합니다. 주 5회면 ' + wk[5] + '주, 주 4회면 ' + wk[4] + '주가 걸립니다.';
+    if (w) t += wk[5] <= w ? (wk[4] <= w ? ' 두 경우 모두 방학 안에 마무리됩니다.' : ' 주 5회면 방학 안에 마무리되고, 주 4회면 ' + (wk[4] - w) + '주가 학기로 넘어갑니다.') : ' 주 5회로도 방학 안에는 ' + (wk[5] - w) + '주가 모자랍니다.';
+    document.getElementById('totalSay').textContent = t; box.hidden = false;
+  }
+  needEl.addEventListener('input', function () { var n = num(needEl); needEl.value = n || ''; set('need', needEl.value); renderTotal(); });
+  vwEl.addEventListener('input', function () { var n = num(vwEl); vwEl.value = n || ''; set('vweeks', vwEl.value); renderTotal(); });
   function renderPlan() {
     ['math', 'phys', 'eng'].forEach(function (k) {
       var box = document.querySelector('.stepper[data-s="' + k + '"]'), arr = RULE[k], i = arr.indexOf(st[k]);
@@ -553,6 +612,7 @@
         return '<li' + (j === 0 ? ' data-best="true"' : '') + '><button type="button" data-pick="' + [x.p.math, x.p.phys, x.p.eng].join(',') + '">' + esc(label(x.p)) + ' · 주 ' + x.c.wk + '콤마</button><span class="num">' + won(x.c.total) + '</span><small>' + (j === 0 ? '상한 안에서 수업이 가장 많이 유지되는 구성 · ' : '') + '상한까지 ' + won(cap - x.c.total) + ' 여유</small></li>';
       }).join('');
     }
+    renderTotal();
     set('plan', JSON.stringify(st));
   }
   document.querySelector('.planner').addEventListener('click', function (e) {
