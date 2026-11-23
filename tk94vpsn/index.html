@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>김다윤 학생 후속상담 02 · 어머님 통화 바인딩 기법 | 에듀플렉스 에듀코치 길음점</title>
+<title>김다윤 학생 후속상담 02 · 어머님 통화 기법 툴 | 에듀플렉스 에듀코치 길음점</title>
 <link rel="stylesheet" href="../assets/clarity-k06/tokens.css">
 <link rel="stylesheet" href="../assets/clarity-k06/components.css">
 <script src="../assets/clarity-k06/bundle.js"></script>
@@ -26,51 +26,87 @@
   .key__flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
   .key__flow i { font-style: normal; color: var(--cl-label-3); }
   .jump { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-  .card-q { display: grid; gap: var(--space-3); align-content: start; }
-  .card-q .cl-card__title { font-size: 1.0625rem; }
-  .card-q .cl-badge { justify-self: start; }
   .muted { color: var(--cl-label-2); }
   p { margin: 0; }
-  .bind { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2); }
-  .bind__item { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4); display: grid; gap: var(--space-2); align-content: start; }
-  .bind__item[data-last="true"] { background: var(--cl-accent-tint); }
-  .bind__no { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
-  .bind__name { font-size: 1.0625rem; font-weight: 700; line-height: 1.35; }
-  .bind__text { font-size: 0.9375rem; color: var(--cl-label-2); line-height: 1.55; }
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
-  .step { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; grid-template-columns: 40px 1fr; gap: var(--space-4); align-items: start; }
-  .step__no { width: 40px; height: 40px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; color: var(--cl-label-2); }
-  .step[data-goal="true"] .step__no { background: var(--cl-accent); color: var(--cl-on-accent); }
-  .step__body { display: grid; gap: var(--space-3); min-width: 0; }
-  .step__top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
-  .step__title { font-weight: 700; font-size: 1.0625rem; }
-  .say { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); display: grid; gap: var(--space-2); }
+  .plain { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: start; }
+  .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); align-items: stretch; }
+  .panel { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+  .panel__eyebrow { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
+  .panel__title { font-size: 1.0625rem; font-weight: 700; line-height: 1.4; }
+  .stat { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+  .stat div { display: grid; gap: 2px; }
+  .stat b { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
+  .stat span { font-size: 0.8125rem; color: var(--cl-label-2); }
+  .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+  .week span { font-size: 0.75rem; font-weight: 600; text-align: center; padding: 6px 0; border-radius: var(--radius-sm); background: var(--cl-fill); color: var(--cl-label-2); }
+  .week span[data-k="m"] { background: var(--cl-accent-tint); color: var(--cl-accent); }
+  .tech-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+  .tech { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+  .tech[hidden] { display: none; }
+  .tech__top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+  .tech__no { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
+  .tech__name { font-size: 1.0625rem; font-weight: 700; line-height: 1.35; }
+  .tech__why { font-size: 0.9375rem; color: var(--cl-label-2); line-height: 1.55; }
+  .tech__warn { font-size: 0.8125rem; color: var(--cl-label-2); border-top: 1px solid var(--cl-separator); padding-top: var(--space-2); }
+  .tech__warn b { color: var(--cl-label); }
+  .say { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; gap: var(--space-1); }
   .say__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
-  .say__label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-accent); }
-  .say q { quotes: "“" "”"; font-size: 1rem; line-height: 1.65; }
+  .say__label { font-size: 0.75rem; font-weight: 700; color: var(--cl-accent); }
+  .say q { quotes: "“" "”"; font-size: 0.9875rem; line-height: 1.65; }
   .copy { appearance: none; border: 0; background: transparent; color: var(--cl-label-3); font: inherit; font-size: 0.8125rem; font-weight: 600; cursor: pointer; padding: var(--space-1) var(--space-2); border-radius: var(--radius-capsule); min-height: 32px; }
   .copy:hover { background: var(--cl-surface); color: var(--cl-label); }
   .copy[data-done="true"] { color: var(--cl-accent); }
-  .why { font-size: 0.9375rem; color: var(--cl-label-2); line-height: 1.55; }
-  .react-panel { display: none; gap: var(--space-4); }
-  .react-panel[data-active="true"] { display: grid; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: start; }
-  .plain { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); }
-  .col { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); align-content: start; }
-  .col__title { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; font-size: 1.0625rem; }
+  .script { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); counter-reset: ln; }
+  .line { counter-increment: ln; background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); display: grid; grid-template-columns: 32px 1fr; gap: var(--space-3); align-items: start; }
+  .line::before { content: counter(ln); width: 32px; height: 32px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; color: var(--cl-label-2); }
+  .line[data-goal="true"]::before { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .line__body { display: grid; gap: var(--space-2); min-width: 0; }
+  .line__tags { display: flex; flex-wrap: wrap; gap: var(--space-1); align-items: center; }
+  .line__text { font-size: 1rem; line-height: 1.7; }
+  .line__note { font-size: 0.875rem; color: var(--cl-label-2); }
+  .script-tools { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; justify-content: space-between; }
+  .planner { display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--space-4); align-items: start; }
+  .subj { display: grid; grid-template-columns: 1fr auto; gap: var(--space-2) var(--space-3); align-items: center; padding: var(--space-3) 0; }
+  .subj + .subj { border-top: 1px solid var(--cl-separator); }
+  .subj__name { font-weight: 700; }
+  .subj__rule { grid-column: 1 / -1; font-size: 0.8125rem; color: var(--cl-label-2); }
+  .stepper { display: inline-flex; align-items: center; gap: var(--space-1); background: var(--cl-fill); border-radius: var(--radius-capsule); padding: 2px; }
+  .stepper button { appearance: none; border: 0; width: 40px; height: 40px; border-radius: var(--radius-capsule); background: var(--cl-surface); color: var(--cl-label); font: inherit; font-size: 1.125rem; font-weight: 700; cursor: pointer; }
+  .stepper button:disabled { opacity: .35; cursor: default; }
+  .stepper output { min-width: 64px; text-align: center; font-weight: 700; }
+  .presets { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .presets button[aria-pressed="true"] { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .field { display: grid; gap: var(--space-1); }
+  .field label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-2); }
+  .field input, .field select { font: inherit; font-size: 1rem; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--cl-separator); background: var(--cl-surface); color: var(--cl-label); min-height: 44px; width: 100%; box-sizing: border-box; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .total { display: grid; gap: var(--space-1); }
+  .total__num { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.015em; }
+  .rows { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+  .rows td { padding: var(--space-2) 0; border-top: 1px solid var(--cl-separator); vertical-align: top; }
+  .rows td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: var(--space-3); }
+  .rows tr.is-strong td { font-weight: 700; }
+  .rows small { color: var(--cl-label-3); font-size: 0.8125rem; font-weight: 400; }
+  .fit { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .fit li { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; grid-template-columns: 1fr auto; gap: var(--space-1) var(--space-3); align-items: center; }
+  .fit li[data-best="true"] { background: var(--cl-accent-tint); }
+  .fit li small { grid-column: 1 / -1; color: var(--cl-label-2); font-size: 0.8125rem; }
+  .fit li .num { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .fit button { appearance: none; border: 0; background: transparent; font: inherit; text-align: left; padding: 0; color: inherit; cursor: pointer; font-weight: 600; }
+  .ruleline { font-size: 0.875rem; color: var(--cl-label-2); }
   .dont { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
   .dont li { background: var(--cl-surface); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start; }
-  .dont__x { width: 24px; height: 24px; border-radius: var(--radius-capsule); background: var(--cl-danger-tint, var(--cl-fill)); color: var(--cl-danger, var(--cl-label-2)); display: grid; place-items: center; font-weight: 700; font-size: 0.8125rem; }
+  .dont__x { width: 24px; height: 24px; border-radius: var(--radius-capsule); background: var(--cl-fill); color: var(--cl-label-2); display: grid; place-items: center; font-weight: 700; font-size: 0.8125rem; }
+  .memo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .memo textarea { font: inherit; font-size: 0.9375rem; line-height: 1.55; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--cl-separator); background: var(--cl-surface); color: var(--cl-label); min-height: 92px; width: 100%; box-sizing: border-box; resize: vertical; }
   .todo { list-style: none; margin: 0; padding: 0; display: grid; }
   .todo li + li { border-top: 1px solid var(--cl-separator); }
   .todo label { display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); padding: var(--space-3) 0; cursor: pointer; align-items: start; min-height: 44px; }
   .todo input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--cl-accent); }
   .todo input:checked + span { color: var(--cl-label-3); text-decoration: line-through; }
   .todo small { display: block; color: var(--cl-label-2); font-size: 0.875rem; margin-top: 2px; }
-  .agenda { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); counter-reset: ag; }
-  .agenda li { counter-increment: ag; background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); display: grid; grid-template-columns: 32px 1fr; gap: var(--space-3); align-items: start; }
-  .agenda li::before { content: counter(ag); width: 32px; height: 32px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; color: var(--cl-label-2); }
-  .agenda b { display: block; margin-bottom: 2px; }
+  .agenda { margin: 0; padding-left: 1.3em; display: grid; gap: var(--space-2); }
   .adm { display: none !important; }
   [data-admin="on"] .adm { display: grid !important; }
   .adm-box { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); gap: var(--space-2); font-size: 0.9375rem; }
@@ -80,23 +116,23 @@
   footer.foot { border-top: 1px solid var(--cl-separator); padding-top: var(--space-6); display: grid; gap: var(--space-3); justify-items: start; }
   footer.foot img { max-width: 100%; height: auto; }
   @media (max-width: 900px) {
-    .bind { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .bind__item[data-last="true"] { grid-column: 1 / -1; }
-    .two { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three, .planner, .two, .memo { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
-    .bind { grid-template-columns: 1fr; }
-    .step { grid-template-columns: 32px 1fr; padding: var(--space-4); gap: var(--space-3); }
-    .step__no { width: 32px; height: 32px; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .line { grid-template-columns: 28px 1fr; padding: var(--space-4); }
+    .line::before { width: 28px; height: 28px; }
     .bar__title, .bar .cl-lockup__name { display: none; }
     .key { padding: var(--space-5); }
     .key__big { font-size: 1.1875rem; }
-    #reactSeg .cl-seg__item { font-size: 0.8125rem; padding-left: 4px; padding-right: 4px; }
+    .fields { grid-template-columns: 1fr; }
+    .cl-seg .cl-seg__item { font-size: 0.8125rem; padding-left: 4px; padding-right: 4px; }
   }
   @media print {
-    .bar-wrap, .jump, .cl-seg, .copy { display: none; }
-    .react-panel { display: grid; break-inside: avoid; }
-    .step, .col { break-inside: avoid; }
+    .bar-wrap, .jump, .cl-seg, .copy, .presets, .script-tools button { display: none; }
+    .tech, .line, .panel { break-inside: avoid; }
+    .tech[hidden] { display: grid; }
   }
 </style>
 </head>
@@ -108,7 +144,7 @@
     <div class="bar__left">
       <a class="cl-btn cl-btn--icon" href="../admin-4ck2v7p3/" aria-label="관리자 목록으로 돌아가기"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
       <span class="cl-lockup"><span class="cl-lockup__symbol"><img src="../assets/clarity-k06/logos/sangsangplex-logo.png" alt="" width="120" height="40"></span><span class="cl-lockup__name"><b>에듀플렉스 에듀코치 길음점</b><small>Eduplex Educoach Gireum</small></span></span>
-      <span class="bar__title">· 김다윤 후속상담 02 · 어머님 통화 바인딩</span>
+      <span class="bar__title">· 김다윤 후속상담 02 · 어머님 통화 기법 툴</span>
     </div>
     <span class="cl-group">
       <button class="cl-btn cl-btn--icon" type="button" onclick="window.print()" aria-label="인쇄"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3.5h10V9M7 17.5H5a2 2 0 01-2-2V11a2 2 0 012-2h14a2 2 0 012 2v4.5a2 2 0 01-2 2h-2"/><path d="M7 14h10v6.5H7z"/></svg></button>
@@ -120,63 +156,59 @@
 <main>
 
   <section class="hero" aria-labelledby="t-hero">
-    <span class="cl-caption">후속상담 02 · 2026. 11. 23. · 매니저용 · 어머님 통화 준비 → 시험 후 5G 재검사 → 겨울방학 내방</span>
-    <h1 class="cl-large-title" id="t-hero">김다윤 학생, 어머님 통화는 내방으로 묶습니다</h1>
+    <span class="cl-caption">후속상담 02 · 2026. 11. 23. · 매니저용 · 어머님 통화 → 시험 후 5G 재검사 → 겨울방학 내방</span>
+    <h1 class="cl-large-title" id="t-hero">김다윤 학생, 어머님 통화 기법 툴</h1>
     <div class="badges">
       <span class="cl-badge">영훈고 1학년</span>
       <span class="cl-badge cl-badge--accent">담당 김범수 매니저</span>
-      <span class="cl-badge">등원 6개월 차 · 5/26 해석상담</span>
-      <span class="cl-badge">5/26 TYPE 11 성실이</span>
+      <span class="cl-badge">등원 6개월 차 · 5/26 TYPE 11 성실이</span>
+      <span class="cl-badge">방학 구성: 수학 5 · 물리 3 · 영어 2</span>
       <span class="cl-badge cl-badge--highlight">종료 가능성 · 주된 이유 비용</span>
     </div>
     <div class="key">
       <span class="cl-card__eyebrow">이 통화의 목표</span>
-      <p class="key__big">통화에서 설득하지 않습니다. 결정은 <span class="cl-em">시험 후 5G 재검사와 겨울방학 내방</span>에서 합니다.</p>
+      <p class="key__big">통화에서 설득하려 하지 않습니다. 어머님이 <span class="cl-em">방학 계획을 직접 다시 정하실 수 있도록</span> 기준과 금액을 알려 드리고, 결정은 내방 상담에서 합니다.</p>
       <div class="key__flow">
-        <span class="cl-badge cl-badge--highlight">1 마음 받기</span><i>→</i>
-        <span class="cl-badge cl-badge--info">2 성장으로 묶기</span><i>→</i>
-        <span class="cl-badge cl-badge--info">3 관리로 묶기</span><i>→</i>
-        <span class="cl-badge cl-badge--info">4 겨울방학으로 묶기</span><i>→</i>
-        <span class="cl-badge cl-badge--info">5 예산으로 묶기</span><i>→</i>
-        <span class="cl-badge cl-badge--success">6 내방 날짜</span>
+        <span class="cl-badge cl-badge--highlight">시작 · 마음 읽기와 공감</span><i>→</i>
+        <span class="cl-badge cl-badge--info">관점 전환 · 성장·관리·방학</span><i>→</i>
+        <span class="cl-badge cl-badge--info">제안 · 예산 상한과 세 가지 안</span><i>→</i>
+        <span class="cl-badge cl-badge--success">마무리 · 내방 날짜</span>
       </div>
-      <p class="muted">바인딩은 통화 한 번을 결정의 자리로 두지 않고, <b>성장·관리·겨울방학·예산</b>이라는 네 가지 기준과 <b>내방 날짜</b> 하나에 묶는 방법입니다. 비용 부담은 당연한 고민입니다. 이 페이지는 어머님이 불편하지 않게 그 고민을 받으면서, 다윤이에게 지금 무엇이 필요한지 이야기할 순서를 정리했습니다.</p>
+      <p class="muted">심리·영업 기법을 통화 단계에 맞게 넣었습니다. 어머님 반응을 고르면 그 순서에 맞는 대본(다나까체)이 나옵니다. 방학 편성기는 어머님이 정하신 <b>수학 5 · 물리 3 · 영어 2</b>에서 시작하며, 예산 상한 안에서 운영원칙을 지키는 구성만 보여 줍니다.</p>
     </div>
     <nav class="jump" aria-label="이 페이지의 순서">
       <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s1">1 지금 상황</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s2">2 네 가지 묶기</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s3">3 통화 순서</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s4">4 반응별 대응</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s5">5 변주 범위</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s6">6 하지 말 것</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s7">7 통화 뒤</a>
-      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s8">8 내방 아젠다</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s2">2 기법 카드</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s3">3 통화 대본</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s4">4 방학 편성기</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s5">5 넘지 않는 선</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s6">6 통화 메모</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s7">7 통화 후 · 내방</a>
     </nav>
   </section>
 
   <section class="sec adm adm-sec" aria-labelledby="t-adm0">
-    <div class="cl-notice cl-notice--info" role="status"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">관리자 모드</span> 원장 지시와 근거가 함께 보입니다. 화면을 다른 분과 함께 볼 때는 톱니를 다시 눌러 끕니다.</div></div>
+    <div class="cl-notice cl-notice--info" role="status"><span class="cl-notice__glyph" aria-hidden="true">i</span><div><span class="cl-notice__title">관리자 모드</span> 원장 지시와 근거가 함께 보입니다. 다른 분과 화면을 함께 볼 때는 톱니를 다시 눌러 끕니다.</div></div>
     <article class="cl-card cl-card--padded">
       <div class="cl-card__body" style="padding:0;gap:var(--space-3)">
         <span class="cl-card__eyebrow">김범수 매니저 보고 · 2026. 11. 23.</span>
-        <h2 class="cl-card__title" id="t-adm0">들어온 신호</h2>
+        <h2 class="cl-card__title" id="t-adm0">들어온 신호와 원장 지시</h2>
         <ul class="plain">
-          <li>다윤이가 종료 가능성이 있다. 주된 원인은 비용 부담으로 보인다.</li>
-          <li>오늘 아니면 내일 어머님께서 말씀 주실 수 있다.</li>
-          <li>다윤이에게는 담당 매니저가 어머님과 이야기 나눠 보겠다고 했다.</li>
+          <li>다윤이가 종료 가능성이 있다. 주된 원인은 비용 부담으로 보인다. 오늘 아니면 내일 어머님께서 말씀 주실 수 있다. 다윤이에게는 담당 매니저가 어머님과 이야기 나눠 보겠다고 했다.</li>
+          <li>이번 방학 구성(원장 전달): “네 말씀해주신대로 진행해주시면 될 것 같습니다. 물리 3, 영어 2, 수학 5.” 학기 중에는 11월 등원관리 안내대로 운영했다.</li>
         </ul>
         <span class="cl-card__eyebrow" style="margin-top:var(--space-2)">원장 조언 · 2026. 11. 23.</span>
         <ul class="plain">
           <li>윈터 / 시험 후속 내방을 잡는다. 전략적으로 대화한다.</li>
-          <li>다닌 지 6개월이 지났다. 시험 끝나고 5G 재검사를 진행하고 성장 이야기를 나눈다. 타입이 올랐는지 확인한다.</li>
+          <li>다닌 지 6개월이 지났다. 시험 끝나고 5G 재검사, 성장 이야기, 타입이 올랐는지 확인.</li>
           <li>비용이 정말 문제라고 하시면 과금 상한을 그어 달라고 말씀드린다.</li>
           <li>겨울방학은 굉장히 중요한 기간이며, 일반적으로 학원을 보내셔도 증강이 이루어지는 시기다.</li>
-          <li>비용만 비교하면 과외나 다른 저렴한 수단은 있을 수 있다. 그러나 다윤이는 현재 매니지먼트가 필요한 상황이다. 저렴한 대안은 금전적 절약은 되어도 다윤이의 성장과는 다른 부분이다.</li>
-          <li>어머님께서 그런 생각을 하시는 것도 전혀 잘못된 것이 아니다. 전략이 그런 것임을 이야기하고, 방중 예산 상한이 있으면 고려해 프로그램을 변주하겠다고 말씀드린다.</li>
-          <li>단, 콤마를 다 빼거나 주 등원 횟수가 줄어서는 안 된다. 주 5회에 과목 하나 정도 걷어내는 경우를 고려한다.</li>
-          <li>예산 이야기는 자연스럽게, 어머님 불편하시지 않게.</li>
-          <li>찬희 때와 비슷한 흐름이다.</li>
-          <li><b>다윤이는 과외나 학원으로 가면 중심 축 자체가 없어진다. 잠에 든다거나, 방학 중 시간 관리 면에서 대안을 가지기 어려운 단계다.</b></li>
+          <li>비용만 비교하면 과외나 저렴한 수단은 있을 수 있다. 그러나 다윤이는 매니지먼트가 필요한 상황이다. 저렴한 대안은 금전적 절약은 되어도 성장과는 다른 부분이다.</li>
+          <li>어머님께서 그런 생각을 하시는 것도 전혀 잘못이 아니다. 방중 예산 상한이 있으면 고려해 프로그램을 변주하겠다고 말씀드린다.</li>
+          <li>단, 콤마를 다 빼거나 주 등원 횟수가 줄면 안 된다. 주 5회에 과목 하나 정도 걷어내는 경우를 고려한다.</li>
+          <li>예산 이야기는 자연스럽게, 어머님 불편하시지 않게. 찬희 때와 비슷한 흐름이다.</li>
+          <li><b>다윤이는 과외나 학원으로 가면 중심 축 자체가 없어진다. 잠에 든다거나 방학 중 시간 관리 면에서 대안을 가지기 어려운 단계다.</b></li>
+          <li>2026. 11. 23. 추가 지시: 말투는 다나까. 심리·마케팅적 영업 기법을 녹인 툴로 만든다.</li>
         </ul>
       </div>
     </article>
@@ -185,263 +217,151 @@
   <section class="sec" id="s1" aria-labelledby="t-s1">
     <div class="sec__head">
       <span class="sec__num">1 · 지금 상황</span>
-      <h2 class="cl-title-2" id="t-s1">무엇이 걸려 있나</h2>
-      <p class="cl-subhead">어머님 연락은 오늘이나 내일 올 수 있습니다. 먼저 전화를 드려도 되지만, 목표는 같습니다.</p>
+      <h2 class="cl-title-2" id="t-s1">학기 중 11월과 이번 방학 구성</h2>
+      <p class="cl-subhead">방학 구성은 학기 중보다 수업이 훨씬 많습니다. 비용 부담이 커지는 이유가 여기에 있으므로, 금액을 미리 파악하고 통화합니다.</p>
     </div>
-    <div class="cl-grid" style="--cols:3">
-      <article class="cl-card cl-card--padded card-q">
-        <span class="cl-card__eyebrow">신호</span>
-        <h3 class="cl-card__title">종료 가능성, 이유는 비용</h3>
-        <span class="cl-badge cl-badge--danger">! 오늘·내일 연락 예상</span>
-        <p class="cl-card__text">다윤이를 통해 들어온 이야기입니다. 다윤이에게는 <b>어머님과 이야기 나눠 보겠다</b>고 해 두었으니, 통화 뒤 다윤이에게도 짧게 돌려줍니다.</p>
-      </article>
-      <article class="cl-card cl-card--padded card-q">
-        <span class="cl-card__eyebrow">이력</span>
-        <h3 class="cl-card__title">비용 신호는 두 번째</h3>
-        <span class="cl-badge cl-badge--info">i 8/27 수학 주 5회→4회</span>
-        <p class="cl-card__text">8월에 비용과 숙제 시간을 이유로 수학 개별지도를 주 4회로 줄였습니다. 그때도 결론은 <b>줄이되 설명과 조건을 붙인다</b>였습니다. 이번에는 횟수가 아니라 등록 자체가 걸려 있습니다.</p>
-        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>후속상담 01(2026.08.27) 김범수 매니저 미팅: 주 5회→4회 요청, 이유는 한 과목 비용 부담과 숙제 시간</li><li>방학 중 수학 8콤마·영어 3콤마 운영, 수학 1회독 완료, 방학 숙제 거의 수행</li></ul></div>
-      </article>
-      <article class="cl-card cl-card--padded card-q">
-        <span class="cl-card__eyebrow">다윤이 단계</span>
-        <h3 class="cl-card__title">아직 중심 축이 필요한 단계</h3>
-        <span class="cl-badge cl-badge--highlight">관리가 빠지면 하루가 흐른다</span>
-        <p class="cl-card__text">과외나 학원으로 바뀌면 수업은 채워져도 <b>하루를 잡아 주는 축</b>이 사라집니다. 방학이면 잠으로, 비는 시간으로 흘러가기 쉽고, 다윤이는 아직 혼자 대안을 세우기 어렵습니다.</p>
-        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>원장 조언 2026.11.23: 중심 축이 없어져 잠에 들거나 방학 중 시간 관리 대안을 갖기 어려운 단계</li><li>5/26 해석상담: 공부에서 가장 힘든 단계는 시작이라고 본인이 답함. 시작한 뒤의 집중은 높음</li><li>5/26 해석상담: 강의만으로 하기 어려운 과목으로 학생이 수학을 직접 고름</li></ul></div>
-      </article>
+    <div class="three">
+      <div class="panel">
+        <span class="panel__eyebrow">학기 중 · 11월 등원관리 안내</span>
+        <span class="panel__title">관리 월~금 + 공통수학2</span>
+        <div class="stat"><div><b>18일</b><span>관리(11/4·5 결석)</span></div><div><b>14콤마</b><span>공통수학2 주 4회(첫 주 2회)</span></div></div>
+        <div class="week" aria-label="학기 중 한 주"><span data-k="m">월</span><span data-k="m">화</span><span data-k="m">수</span><span data-k="m">목</span><span data-k="m">금</span><span>토 셀프</span><span>일</span></div>
+        <p class="ruleline">토·일은 셀프스터디, 휴무 11/8·11/15.</p>
+      </div>
+      <div class="panel">
+        <span class="panel__eyebrow">이번 방학 · 어머님이 정하신 구성</span>
+        <span class="panel__title">관리 주 5회 + 수학 5 · 물리 3 · 영어 2</span>
+        <div class="stat"><div><b>주 10콤마</b><span>4주면 40콤마</span></div><div><b>+26콤마</b><span>11월 대비(4주 기준)</span></div></div>
+        <p class="ruleline">어머님께서 “말씀해 주신 대로 진행해 주시면 될 것 같습니다”라고 이미 답하신 구성입니다. 통화는 이 구성에서 시작합니다(일관성).</p>
+      </div>
+      <div class="panel">
+        <span class="panel__eyebrow">다윤이의 현재 단계</span>
+        <span class="panel__title">아직 생활의 중심을 잡아 줄 관리가 필요한 단계</span>
+        <p>과외나 학원으로 바꾸면 수업은 들을 수 있어도, 생활의 중심을 잡아 주는 관리가 빠집니다. 방학에는 늦잠과 빈 시간으로 하루를 보내기 쉽고, 다윤이는 아직 스스로 대안을 세우기 어렵습니다.</p>
+        <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>5/26 해석상담: 공부에서 가장 힘든 단계는 시작이라고 본인이 답함. 일단 시작하면 집중은 높음</li><li>5/26: 강의만으로 하기 어려운 과목으로 수학을 직접 고름</li><li>8/27 후속상담 01: 비용·숙제 시간을 이유로 수학 주 5회→4회. 이번이 두 번째 비용 신호</li></ul></div>
+      </div>
     </div>
   </section>
 
   <section class="sec" id="s2" aria-labelledby="t-s2">
     <div class="sec__head">
-      <span class="sec__num">2 · 네 가지 묶기</span>
-      <h2 class="cl-title-2" id="t-s2">통화를 무엇에 묶나</h2>
-      <p class="cl-subhead">비용 이야기에 비용으로만 답하면 금액 비교가 됩니다. 네 가지 기준으로 대화를 옮기고, 마지막은 늘 내방 날짜입니다.</p>
+      <span class="sec__num">2 · 기법 카드</span>
+      <h2 class="cl-title-2" id="t-s2">통화에 쓸 열두 가지 기법</h2>
+      <p class="cl-subhead">원리 한 줄, 이 통화에서 쓸 문장, 지나치면 역효과가 나는 지점을 함께 적었습니다. 단계를 고르면 해당 카드만 보입니다.</p>
     </div>
-    <div class="bind">
-      <div class="bind__item">
-        <span class="bind__no">묶기 1</span>
-        <span class="bind__name">성장</span>
-        <span class="bind__text">6개월이 지났습니다. 시험 뒤 5G 재검사로 5월과 무엇이 달라졌는지 숫자로 함께 봅니다.</span>
-      </div>
-      <div class="bind__item">
-        <span class="bind__no">묶기 2</span>
-        <span class="bind__name">관리</span>
-        <span class="bind__text">과외·저렴한 수단은 있을 수 있습니다. 다만 다윤이에게 지금 필요한 것은 수업보다 매니지먼트입니다.</span>
-      </div>
-      <div class="bind__item">
-        <span class="bind__no">묶기 3</span>
-        <span class="bind__name">겨울방학</span>
-        <span class="bind__text">학원을 보내는 가정도 보강하는 시기입니다. 가장 크게 늘 수 있고, 중심이 없으면 가장 크게 흐트러집니다.</span>
-      </div>
-      <div class="bind__item">
-        <span class="bind__no">묶기 4</span>
-        <span class="bind__name">예산</span>
-        <span class="bind__text">방중 예산 상한을 말씀받고, 그 안에서 프로그램을 다시 짭니다. 금액은 통화에서 정하지 않습니다.</span>
-      </div>
-      <div class="bind__item" data-last="true">
-        <span class="bind__no">마무리</span>
-        <span class="bind__name">내방 날짜</span>
-        <span class="bind__text">재검사 결과를 보며 이야기할 날을 통화 안에서 정합니다. 날짜 두 개를 드리고 고르시게 합니다.</span>
-      </div>
-    </div>
+    <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="통화 단계로 거르기" style="--n:5;--i:0" id="stageSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">전체</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">시작</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">관점 전환</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">제안</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">마무리</button></div>
+    <div class="tech-grid" id="techGrid"></div>
   </section>
 
   <section class="sec" id="s3" aria-labelledby="t-s3">
     <div class="sec__head">
-      <span class="sec__num">3 · 통화 순서</span>
-      <h2 class="cl-title-2" id="t-s3">여섯 단계로 말합니다</h2>
-      <p class="cl-subhead">문장은 예시입니다. 그대로 읽기보다 매니저님 말투로 바꿔 쓰세요. 복사 단추로 메모에 옮길 수 있습니다.</p>
+      <span class="sec__num">3 · 통화 대본</span>
+      <h2 class="cl-title-2" id="t-s3">어머님 반응을 고르면 대본이 바뀝니다</h2>
+      <p class="cl-subhead">문장마다 쓰인 기법을 표시했습니다. 그대로 읽기보다 매니저님 말투로 하시되, 문장 끝은 다나까로 맺습니다.</p>
     </div>
-    <ol class="steps">
-      <li class="step">
-        <span class="step__no">1</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">먼저 듣고, 고민을 인정합니다</span><span class="cl-badge cl-badge--highlight">마음 받기</span></div>
-          <p class="why">반박부터 하면 비용 이야기가 방어전이 됩니다. 어머님이 말씀을 다 하시게 두고, 그 생각이 틀리지 않았다는 것부터 분명히 합니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>네, 어머님. 비용 생각하시는 거 당연하세요. 그렇게 고민하시는 게 전혀 잘못된 게 아니에요. 말씀 편하게 해 주세요.</q></div>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__no">2</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">6개월의 성장으로 화제를 옮깁니다</span><span class="cl-badge cl-badge--info">성장으로 묶기</span></div>
-          <p class="why">결정 전에 확인할 것을 하나 제안합니다. 시험이 끝나면 5G 재검사를 하고, 5월 결과와 비교해 타입이 올랐는지 봅니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>다윤이 다닌 지 벌써 6개월이 지났어요. 시험 끝나면 5월에 했던 검사를 한 번 더 해서, 그동안 뭐가 자랐는지 같이 보시면 좋겠어요. 결정은 그걸 보시고 하셔도 늦지 않으세요.</q></div>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__no">3</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">대안 비교의 기준을 바꿉니다</span><span class="cl-badge cl-badge--info">관리로 묶기</span></div>
-          <p class="why">과외·학원을 깎아내리지 않습니다. 더 저렴한 수단이 있다는 것은 인정하고, 비교 기준을 금액에서 다윤이에게 필요한 것으로 옮깁니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>비용만 놓고 보시면 과외나 더 저렴한 방법은 분명히 있어요. 그런데 다윤이는 지금 수업 한 과목보다, 공부를 시작하게 하고 하루를 잡아 주는 관리가 더 필요한 단계예요. 아끼시는 건 되겠지만, 그게 다윤이 성장과는 또 다른 이야기라서요.</q></div>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__no">4</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">겨울방학의 무게를 전합니다</span><span class="cl-badge cl-badge--info">겨울방학으로 묶기</span></div>
-          <p class="why">방학은 늘릴 수 있는 시간이 가장 많은 기간이자, 중심이 없을 때 생활 리듬이 가장 먼저 무너지는 기간입니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>겨울방학이 1년 중에 제일 중요한 기간이에요. 학원 보내시는 집도 보통 이때 더 보강을 하시고요. 다윤이는 방학에 중심이 없으면 잠이나 빈 시간으로 하루가 흘러가기 쉬워서, 이 시기를 어떻게 보내느냐가 커요.</q></div>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__no">5</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">예산 상한을 여쭙니다</span><span class="cl-badge cl-badge--info">예산으로 묶기</span></div>
-          <p class="why">비용이 정말 문제라고 하실 때만 꺼냅니다. 금액을 깎아 드리는 제안이 아니라, 정해 주신 상한 안에서 다윤이에게 필요한 것을 먼저 남기겠다는 약속입니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>혹시 방학 동안 생각하시는 예산 상한이 있으시면 편하게 말씀해 주세요. 그 안에서 다윤이한테 꼭 필요한 걸 먼저 남기는 쪽으로 프로그램을 다시 짜 보겠습니다.</q></div>
-        </div>
-      </li>
-      <li class="step" data-goal="true">
-        <span class="step__no">6</span>
-        <div class="step__body">
-          <div class="step__top"><span class="step__title">내방 날짜로 마무리합니다</span><span class="cl-badge cl-badge--success">바인딩 완료</span></div>
-          <p class="why">“생각해 보고 연락드릴게요”로 끝나면 결정이 통화 밖으로 나갑니다. 날짜 두 개를 드리고 고르시게 해서 다음 만남을 통화 안에서 정합니다.</p>
-          <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>시험 끝나고 검사 결과 나오면 한번 오셔서 같이 보시죠. 겨울방학 계획도 그때 예산에 맞춰 같이 정하시면 돼요. ○일이나 ○일 중에 언제가 편하세요?</q></div>
-        </div>
-      </li>
-    </ol>
+    <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="어머님 반응 고르기" style="--n:5;--i:0" id="reactSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">기본</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">종료 의사</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">과외로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">학원으로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">예산 조정</button></div>
+    <div class="script-tools"><span class="muted" id="scriptLead"></span><button class="cl-btn cl-btn--gray cl-btn--sm" type="button" id="copyAll">대본 전체 복사</button></div>
+    <ol class="script" id="script"></ol>
   </section>
 
   <section class="sec" id="s4" aria-labelledby="t-s4">
     <div class="sec__head">
-      <span class="sec__num">4 · 반응별 대응</span>
-      <h2 class="cl-title-2" id="t-s4">어머님이 이렇게 말씀하시면</h2>
-      <p class="cl-subhead">어떤 말씀이든 받는 것이 먼저이고, 마지막은 내방 날짜입니다.</p>
+      <span class="sec__num">4 · 방학 편성기</span>
+      <h2 class="cl-title-2" id="t-s4">예산 상한 안에서 어떤 수업을 유지할까</h2>
+      <p class="cl-subhead">어머님이 상한을 말씀하시면 바로 입력합니다. 주 5회 등원과 과목별 최소 주 횟수를 지키는 구성만 계산합니다. 4주 기준이며, 구성 간 차이는 콤마 수에서만 생기므로 정확합니다.</p>
     </div>
-    <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="어머님 반응 고르기" style="--n:4;--i:0" id="reactSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">종료 의사</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">과외로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">학원으로</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">예산 조정</button></div>
-
-    <div class="react-panel" data-react="0" data-active="true">
-      <div class="two">
-        <div class="col">
-          <span class="col__title">받는 법</span>
-          <ul class="plain">
-            <li>결정을 존중한다고 먼저 말합니다. 붙잡는 말부터 하지 않습니다.</li>
-            <li>그만두시더라도 6개월을 정리해 보여 드리는 자리를 한 번 갖자고 제안합니다. 재검사가 그 근거입니다.</li>
-            <li>그만둘지 말지는 그 자리에서 정하셔도 된다고 열어 둡니다.</li>
-          </ul>
+    <div class="planner">
+      <div class="panel">
+        <span class="panel__eyebrow">세 가지 안</span>
+        <div class="presets" id="presets">
+          <button class="cl-btn cl-btn--gray cl-btn--sm" type="button" data-p="5,3,2">지금 구성 · 주 10</button>
+          <button class="cl-btn cl-btn--gray cl-btn--sm" type="button" data-p="5,3,0">영어 정리 · 주 8</button>
+          <button class="cl-btn cl-btn--gray cl-btn--sm" type="button" data-p="5,0,2">물리 정리 · 주 7</button>
         </div>
-        <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>네, 어머님 생각 존중해요. 다만 6개월 동안 다윤이가 해 온 걸 정리해서 한 번은 보여 드리고 싶어요. 시험 끝나고 검사 한 번 더 해서, 결과 보시면서 정하셔도 괜찮으실까요?</q></div>
+        <div>
+          <div class="subj"><span class="subj__name">수학</span><span class="stepper" data-s="math"><button type="button" data-d="-1" aria-label="수학 줄이기">−</button><output>주 5</output><button type="button" data-d="1" aria-label="수학 늘리기">+</button></span><span class="subj__rule">고등 최소 주 4회. 빼지 않습니다(다윤이가 직접 고른 과목).</span></div>
+          <div class="subj"><span class="subj__name">물리</span><span class="stepper" data-s="phys"><button type="button" data-d="-1" aria-label="물리 줄이기">−</button><output>주 3</output><button type="button" data-d="1" aria-label="물리 늘리기">+</button></span><span class="subj__rule">과학 최소 주 3회, 다른 과목과 함께 들으면 주 2회. ‘정리’는 과목을 뺀다는 뜻입니다.</span></div>
+          <div class="subj"><span class="subj__name">영어</span><span class="stepper" data-s="eng"><button type="button" data-d="-1" aria-label="영어 줄이기">−</button><output>주 2</output><button type="button" data-d="1" aria-label="영어 늘리기">+</button></span><span class="subj__rule">최소 주 2회. 주 1회는 편성하지 않습니다.</span></div>
+          <div class="subj"><span class="subj__name">관리</span><span class="cl-badge cl-badge--accent">주 5회 고정</span><span class="subj__rule">등원 횟수는 줄이지 않습니다.</span></div>
+        </div>
+        <div class="fields">
+          <div class="field"><label for="grade">상담 등급</label><select id="grade"><option value="43750">일반</option><option value="48750">프라임1</option><option value="53750">프라임2</option><option value="58750">프라임3</option></select></div>
+          <div class="field"><label for="cap">어머님 예산 상한(4주, 원)</label><input id="cap" inputmode="numeric" placeholder="예: 1,600,000" autocomplete="off"></div>
+        </div>
+        <p class="ruleline">상담 등급은 다윤이 회비 안내서를 보고 고릅니다. 셀프리더·방학PG·제휴는 넣지 않았습니다.</p>
+      </div>
+      <div class="panel">
+        <span class="panel__eyebrow">이 구성의 4주 예상 금액</span>
+        <div class="total"><span class="total__num" id="tot">—</span><span class="muted" id="totSub"></span></div>
+        <table class="rows"><tbody id="rows"></tbody></table>
+        <a class="cl-btn cl-btn--gray cl-btn--sm" id="feeLink" href="../sumfuvps/#estimate" style="justify-self:start">단가 견적표에서 이 구성 열기</a>
+        <span class="panel__eyebrow" style="margin-top:var(--space-2)">상한 안에 들어오는 구성</span>
+        <ul class="fit" id="fit"><li><span class="muted">상한을 입력하면 운영원칙을 지키는 구성이 수업이 많은 순서로 나옵니다.</span></li></ul>
       </div>
     </div>
-
-    <div class="react-panel" data-react="1" data-active="false">
-      <div class="two">
-        <div class="col">
-          <span class="col__title">받는 법</span>
-          <ul class="plain">
-            <li>과외가 비용 면에서 나은 선택일 수 있다는 것을 인정합니다.</li>
-            <li>과외는 한 과목 수업을 채웁니다. 비는 것은 수업 밖의 하루, 특히 방학의 시간 관리입니다.</li>
-            <li>그 차이를 재검사 결과와 함께 내방에서 보여 드리겠다고 합니다.</li>
-          </ul>
-        </div>
-        <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>과외도 좋은 방법이에요, 비용도 덜 드시고요. 그런데 과외는 그 시간 수업을 채워 주는 거고, 다윤이는 나머지 하루를 어떻게 쓰느냐가 지금 제일 중요한 단계예요. 방학엔 특히 더요. 결과 보시면서 한번 같이 보시죠.</q></div>
-      </div>
-    </div>
-
-    <div class="react-panel" data-react="2" data-active="false">
-      <div class="two">
-        <div class="col">
-          <span class="col__title">받는 법</span>
-          <ul class="plain">
-            <li>학원도 방학에 보강하는 시기라는 점은 같다고 인정합니다.</li>
-            <li>학원은 진도를 채워도 다윤이의 하루를 잡아 주는 축은 아닙니다. 학원 시간 밖이 비게 됩니다.</li>
-            <li>예산 상한 안에서 축을 남기는 편성을 먼저 보시자고 합니다.</li>
-          </ul>
-        </div>
-        <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>방학에 학원으로 보강하시는 것도 많이들 하세요. 다만 학원은 진도를 채워 주고, 학원 끝난 뒤 하루는 다윤이 혼자 남아요. 다윤이는 아직 그 시간을 혼자 잡기 어려운 단계라서, 예산 안에서 그 축을 남기는 계획을 먼저 보여 드리고 싶어요.</q></div>
-      </div>
-    </div>
-
-    <div class="react-panel" data-react="3" data-active="false">
-      <div class="two">
-        <div class="col">
-          <span class="col__title">받는 법</span>
-          <ul class="plain">
-            <li>통화에서 금액을 정하지 않습니다. 상한을 먼저 말씀받습니다.</li>
-            <li>방향만 미리 말씀드립니다: 등원은 주 5회를 지키고, 개별지도 과목 하나 정도를 걷어내는 방식.</li>
-            <li>편성안은 내방 때 두 가지(지금 유지안 · 예산 상한 반영안)로 비교해 드립니다.</li>
-          </ul>
-        </div>
-        <div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>생각하시는 상한을 먼저 말씀해 주시면, 그 안에서 맞춰 볼게요. 매일 오는 건 지키고, 수업 과목을 하나 정도 조정하는 쪽으로요. 두 가지로 짜서 오시는 날 비교해 드릴게요.</q></div>
-      </div>
-    </div>
+    <div class="adm adm-box"><span class="adm-box__label">계산 근거</span><ul><li>단가: 지점 회비 단가 견적표(sumfuvps, 2026년 7월 단가) — 관리 1일 15,000원, 고등 개별지도 1콤마 33,000원, 상담 회당 일반 43,750 · 프라임1 48,750 · 프라임2 53,750 · 프라임3 58,750원</li><li>상담 8회(4주분), 관리 주 5회 × 4주 = 20일, 개별지도 주 콤마 × 4주</li><li>11월 실제: 관리 18일, 공통수학2 14콤마(11월 등원관리 안내)</li><li>개별지도 편성 원칙(지점·법인 운영원칙): 수학 고등 최소 주 4회(2타입 이상이면서 수학 레벨 4~5면 주 3회 — 다윤이 레벨 미확인이라 4로 둠), 국어·영어 최소 주 2회, 과학 최소 주 3회(다른 과목과 함께면 2회), 주 1회 편성 없음</li><li>원장 조언: 과목 하나 정도 걷어내기까지. 물리·영어를 모두 빼는 구성은 편성기가 ‘원장님 확인’으로 표시함</li></ul></div>
   </section>
 
   <section class="sec" id="s5" aria-labelledby="t-s5">
     <div class="sec__head">
-      <span class="sec__num">5 · 변주 범위</span>
-      <h2 class="cl-title-2" id="t-s5">바꿀 수 있는 것과 지키는 것</h2>
-      <p class="cl-subhead">예산에 맞춰 변주하되, 다윤이의 중심 축은 남깁니다.</p>
+      <span class="sec__num">5 · 넘지 않는 선</span>
+      <h2 class="cl-title-2" id="t-s5">기법이 압박으로 바뀌는 순간</h2>
+      <p class="cl-subhead">기법은 어머님이 판단하시기 쉽게 돕는 도구입니다. 아래 선을 넘으면 신뢰를 잃고 종료가 오히려 빨라집니다.</p>
     </div>
-    <div class="two">
-      <div class="col">
-        <span class="col__title"><span class="cl-badge cl-badge--success">바꿀 수 있음</span></span>
-        <ul class="plain">
-          <li><b>개별지도 과목 하나 정도 걷어내기.</b> 다윤이가 혼자 끌고 갈 수 있는 과목부터 봅니다.</li>
-          <li><b>방학 콤마 배분.</b> 예산 상한 안에서 과목별 비중을 다시 나눕니다.</li>
-          <li><b>편성안 두 가지</b>를 내방에서 비교합니다: 지금 유지안 · 예산 상한 반영안.</li>
-        </ul>
-      </div>
-      <div class="col">
-        <span class="col__title"><span class="cl-badge cl-badge--danger">지키는 것</span></span>
-        <ul class="plain">
-          <li><b>주 5회 등원.</b> 등원 횟수를 줄이면 축이 먼저 무너집니다.</li>
-          <li><b>콤마를 다 빼지 않습니다.</b> 관리만 남기는 구성은 이번 변주 범위가 아닙니다.</li>
-          <li><b>남기는 과목은 최소 주 횟수 이상.</b> 고등 수학은 주 4회, 국어·영어는 주 2회가 최소입니다. 줄여야 하면 횟수를 깎지 않고 과목을 뺍니다.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="adm adm-box"><span class="adm-box__label">근거</span><ul><li>원장 조언 2026.11.23: 콤마를 다 빼거나 주 등원 횟수가 줄면 안 됨, 주 5회에 과목 하나 정도 걷어내는 경우 고려</li><li>개별지도 편성 원칙(지점·법인 운영원칙): 수학 고등 최소 주 4회(2타입 이상이면서 수학 레벨 4~5면 주 3회), 국어·영어 최소 주 2회, 주 1회 편성 없음, 필요 없다고 본 과목은 횟수를 줄이지 않고 뺌</li><li>현재 편성(과목·주 횟수)은 이 페이지 작성 시점에 확인하지 않음 — 담당 매니저가 등록현황에서 확인</li></ul></div>
+    <ul class="dont">
+      <li><span class="dont__x">✕</span><span><b>없는 마감이나 희소성을 만들지 않습니다.</b> “이번 주 안에 정하셔야 자리가 있습니다” 같은 말은 사실일 때만 합니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>다른 가정 사례를 지어내지 않습니다.</b> 사회적 증거는 누구나 아는 사실(방학은 보강하는 시기)까지만 씁니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>불안감을 부추기지 않습니다.</b> 잃는 것을 말할 때는 다윤이의 실제 상황(시작이 어렵다, 방학 시간 관리)까지만 말합니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>“버거우시면 줄여 드리겠습니다” 같은 감축 약속을 하지 않습니다.</b> 해 보면서 늘리는 것이 아니라 성장해서 줄이는 방식입니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>통화에서 종료나 금액을 확정하지 않습니다.</b> 결정은 재검사 결과를 함께 보는 내방 상담에서 합니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>과외·학원을 깎아내리지 않습니다.</b> 더 저렴한 방법이 있다는 것은 먼저 인정합니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>등원 횟수 줄이기, 콤마 전부 빼기, 주 1회 편성은 선택지로 내놓지 않습니다.</b></span></li>
+    </ul>
   </section>
 
   <section class="sec" id="s6" aria-labelledby="t-s6">
     <div class="sec__head">
-      <span class="sec__num">6 · 하지 말 것</span>
-      <h2 class="cl-title-2" id="t-s6">통화에서 피할 것</h2>
+      <span class="sec__num">6 · 통화 메모</span>
+      <h2 class="cl-title-2" id="t-s6">통화하면서 바로 적습니다</h2>
+      <p class="cl-subhead">어머님 말씀은 다듬지 말고 그대로 적습니다. 내방 상담에서 그 말씀을 그대로 다시 짚어 드리는 것이 일관성 기법의 재료가 됩니다. 이 브라우저에만 저장됩니다.</p>
     </div>
-    <ul class="dont">
-      <li><span class="dont__x">✕</span><span><b>통화에서 종료나 금액을 확정하지 않습니다.</b> 결정은 재검사 결과를 본 내방에서 합니다.</span></li>
-      <li><span class="dont__x">✕</span><span><b>“버거우시면 줄여 드릴게요” 같은 감축 약속을 하지 않습니다.</b> 원칙은 해 보면서 늘리는 것이 아니라 성장해서 줄이는 방식입니다.</span></li>
-      <li><span class="dont__x">✕</span><span><b>비용 설득처럼 몰아가지 않습니다.</b> 어머님이 불편하지 않게, 예산 이야기는 자연스럽게 꺼냅니다.</span></li>
-      <li><span class="dont__x">✕</span><span><b>과외·학원을 깎아내리지 않습니다.</b> 저렴한 대안이 있다는 것은 인정하고, 기준을 다윤이의 단계로 옮깁니다.</span></li>
-      <li><span class="dont__x">✕</span><span><b>콤마 전부 빼기, 등원 횟수 줄이기를 선택지로 내놓지 않습니다.</b></span></li>
-    </ul>
+    <div class="memo">
+      <div class="field"><label for="m1">어머님 말씀(걱정·이유)</label><textarea id="m1" data-memo="worry"></textarea></div>
+      <div class="field"><label for="m2">방학이 끝난 3월에 바라시는 다윤이 모습</label><textarea id="m2" data-memo="future"></textarea></div>
+      <div class="field"><label for="m3">예산 상한 · 조건</label><textarea id="m3" data-memo="budget"></textarea></div>
+      <div class="field"><label for="m4">내방 날짜 · 재검사 날짜</label><textarea id="m4" data-memo="date"></textarea></div>
+    </div>
   </section>
 
   <section class="sec" id="s7" aria-labelledby="t-s7">
     <div class="sec__head">
-      <span class="sec__num">7 · 통화 뒤</span>
-      <h2 class="cl-title-2" id="t-s7">끊고 나서 바로 할 일</h2>
-      <p class="cl-subhead">체크한 항목은 이 브라우저에 남습니다.</p>
+      <span class="sec__num">7 · 통화 후 · 내방</span>
+      <h2 class="cl-title-2" id="t-s7">통화 후 할 일과 내방 상담 순서</h2>
     </div>
-    <article class="cl-card cl-card--padded">
-      <ul class="todo" data-store="after-call">
-        <li><label><input type="checkbox"><span>내방 날짜·시간 확정, 일정 등록<small>시험 직후, 재검사 결과가 나온 뒤로 잡습니다.</small></span></label></li>
-        <li><label><input type="checkbox"><span>기말고사 마지막 날 확인 → 5G 재검사 날짜 잡기<small>다윤이에게도 날짜를 알려 줍니다.</small></span></label></li>
-        <li><label><input type="checkbox"><span>어머님이 말씀하신 예산 상한·걱정을 메모<small>어머님 표현 그대로 적어 둡니다.</small></span></label></li>
-        <li><label><input type="checkbox"><span>원장님께 통화 결과 공유</span></label></li>
-        <li><label><input type="checkbox"><span>다윤이에게 짧게 돌려주기<small>“어머님과 이야기했고, 시험 끝나고 검사 한 번 더 하자” 정도로.</small></span></label></li>
-        <li><label><input type="checkbox"><span>내방 준비: 5월 결과와 재검사 비교, 6개월 등원·체류·시험 결과 정리</span></label></li>
-        <li><label><input type="checkbox"><span>겨울방학 편성안 두 가지 준비<small>지금 유지안 · 예산 상한 반영안(주 5회 등원 유지, 과목 하나 정도 조정).</small></span></label></li>
-      </ul>
-    </article>
-  </section>
-
-  <section class="sec" id="s8" aria-labelledby="t-s8">
-    <div class="sec__head">
-      <span class="sec__num">8 · 내방 아젠다</span>
-      <h2 class="cl-title-2" id="t-s8">시험 후 내방에서 이야기할 순서</h2>
+    <div class="two">
+      <article class="cl-card cl-card--padded">
+        <ul class="todo" data-store="after-call">
+          <li><label><input type="checkbox"><span>내방 날짜·시간 확정, 일정 등록<small>시험이 끝나고 재검사 결과가 나온 뒤로 잡습니다.</small></span></label></li>
+          <li><label><input type="checkbox"><span>기말고사 마지막 날 확인 → 5G 재검사 날짜 잡기</span></label></li>
+          <li><label><input type="checkbox"><span>원장님께 통화 결과 보고<small>메모 칸에 적은 어머님 말씀 그대로.</small></span></label></li>
+          <li><label><input type="checkbox"><span>다윤이에게 통화 결과 간단히 알려 주기<small>“어머님과 이야기 나눴고, 시험 끝나고 검사 한 번 더 하자” 정도로.</small></span></label></li>
+          <li><label><input type="checkbox"><span>내방 준비: 5월 결과와 재검사 비교, 6개월 등원·시험 결과 정리</span></label></li>
+          <li><label><input type="checkbox"><span>편성기의 세 가지 안을 회비 안내서 형식으로 출력</span></label></li>
+        </ul>
+      </article>
+      <article class="cl-card cl-card--padded">
+        <div class="cl-card__body" style="padding:0;gap:var(--space-3)">
+          <span class="cl-card__eyebrow">시험 후 내방 상담 순서</span>
+          <ol class="agenda">
+            <li><b>재검사 결과로 6개월간의 성장 확인</b> — 5월 TYPE 11과 비교해 타입이 올랐는지부터 봅니다(상호성: 먼저 드리는 것).</li>
+            <li><b>통화 때 말씀하신 3월의 모습</b>을 다시 짚어 드리고, 그 목표에 방학이 왜 중요한지 이어서 설명합니다.</li>
+            <li><b>다윤이의 현재 단계</b> — 아직 생활의 중심을 잡아 줄 관리가 필요합니다.</li>
+            <li><b>세 가지 안 비교</b> — 지금 구성 · 영어 정리 · 물리 정리. 주 5회 등원은 세 안 모두 같습니다.</li>
+            <li><b>가족이 정하실 것</b> — 유지할 과목과 횟수, 시작일.</li>
+          </ol>
+        </div>
+      </article>
     </div>
-    <ol class="agenda">
-      <li><span><b>재검사 결과로 6개월의 성장 확인</b>5월 TYPE 11과 비교해 타입이 올랐는지, 무엇이 자랐는지부터 봅니다.</span></li>
-      <li><span><b>다윤이가 지금 있는 단계</b>아직 하루를 잡아 주는 관리가 필요한 단계라는 것을 결과와 실제 장면으로 짚습니다.</span></li>
-      <li><span><b>겨울방학 전략</b>방학에 무엇을 끝낼지, 생활 리듬을 어떻게 지킬지.</span></li>
-      <li><span><b>예산 안의 편성안 두 가지 비교</b>지금 유지안과 예산 상한 반영안. 주 5회 등원은 두 안 모두 같습니다.</span></li>
-      <li><span><b>가족이 정하실 것</b>프로그램 등록 여부, 남길 과목과 횟수, 시작일.</span></li>
-    </ol>
   </section>
 
   <section class="sec adm adm-sec" aria-labelledby="t-adm9">
@@ -450,11 +370,10 @@
         <span class="cl-card__eyebrow">근거와 확인 필요</span>
         <h2 class="cl-card__title" id="t-adm9">이 페이지가 기댄 자료</h2>
         <ul class="plain">
-          <li>김범수 매니저 보고와 원장 조언(2026.11.23, 원문은 비공개 저장소 보존).</li>
-          <li>후속상담 01 <a href="../pphgo040/">pphgo040</a>(2026.08.27 김범수 매니저 미팅, 수학 개별지도 주 5회→4회).</li>
-          <li>2026.05.26 VLT 해석상담 녹취: 시작이 가장 힘든 단계, 시작 후 높은 집중, 수학 직접 선택.</li>
-          <li>통화 문장은 원장 조언을 통화 순서로 옮긴 예시다. 반응별 대응 중 ‘종료 의사’의 정리 자리 제안은 이 페이지의 제안이다.</li>
-          <li>확인하지 않은 것: 기말고사 일정, 현재 개별지도 과목·주 횟수, 방중 예상 금액. 담당 매니저가 확인한다.</li>
+          <li>김범수 매니저 보고와 원장 조언(2026.11.23, 원문은 비공개 저장소 보존), 같은 날 원장 추가 지시(다나까체, 기법 툴, 방학 물리 3·영어 2·수학 5, 학기 중 11월 등원관리 안내).</li>
+          <li>후속상담 01 <a href="../pphgo040/">pphgo040</a>(2026.08.27 수학 개별지도 주 5회→4회), 2026.05.26 VLT 해석상담 녹취.</li>
+          <li>기법 카드와 대본 문장은 원장 조언을 널리 알려진 설득·협상 기법(감정 읽어 주기, 일관성, 앵커링, 타협 효과, 문간에 발 들여놓기, 상호성, 자율성 강조, 양자택일 질문 등)에 맞춰 옮긴 것이다.</li>
+          <li>확인하지 않은 것: 기말고사 일정, 다윤이 상담 등급, 방학 기간(주 수), 셀프리더·방학PG·제휴 여부, 수학 성취 레벨.</li>
         </ul>
       </div>
     </article>
@@ -473,33 +392,198 @@
   var KEY = 'tk94vpsn:';
   function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
   function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function won(n) { return Math.round(n).toLocaleString('ko-KR') + '원'; }
+  function copyText(text, btn) {
+    function done() { if (!btn) return; var t = btn.textContent; btn.textContent = '복사됨'; btn.setAttribute('data-done', 'true'); setTimeout(function () { btn.textContent = t; btn.removeAttribute('data-done'); }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+  }
 
-  var panels = Array.prototype.slice.call(document.querySelectorAll('.react-panel'));
-  document.getElementById('reactSeg').addEventListener('cl-change', function (e) {
+  /* 기법 카드 */
+  var STAGES = ['시작', '관점 전환', '제안', '마무리'];
+  function badge(stage) { return stage === 3 ? ' cl-badge--success' : stage === 0 ? ' cl-badge--highlight' : ' cl-badge--info'; }
+  var TECH = [
+    { id: 'label', name: '감정 읽어 주기(라벨링)', stage: 0, why: '상대가 느끼는 감정을 먼저 말로 짚어 드리면, 상대는 더 설명하거나 방어할 필요를 덜 느낍니다.', say: '어머님, 방학을 앞두고 비용이 많이 부담되시는 것 같습니다.', warn: '말한 뒤 <b>3초 정도 기다립니다.</b> 곧바로 설명을 덧붙이면 효과가 사라집니다.' },
+    { id: 'empathy', name: '공감 · 당연한 고민으로 인정', stage: 0, why: '그 생각이 틀리지 않았다고 먼저 인정하면, 이후 제안을 반박이 아니라 정보로 받아들이십니다.', say: '그렇게 생각하시는 것은 전혀 잘못된 것이 아닙니다. 당연히 고민하실 부분입니다.', warn: '“그런데”로 바로 넘어가지 않습니다. 잠시 쉬고 다음 질문으로 갑니다.' },
+    { id: 'autonomy', name: '결정권 존중(자율성 강조)', stage: 0, why: '“결정은 어머님께서 하십니다”라는 말을 덧붙이면 부담이 줄고, 오히려 제안을 받아들일 가능성이 높아집니다.', say: '결정은 어머님께서 하시는 것입니다. 저는 판단하시는 데 필요한 자료를 정확히 말씀드리겠습니다.', warn: '말로만 그치지 않습니다. 실제로 통화에서 결정을 재촉하지 않습니다.' },
+    { id: 'reciprocity', name: '먼저 드리기(상호성)', stage: 1, why: '먼저 도움이 되는 것을 받으면, 사람은 그만큼 응하고 싶어집니다. 이번에 먼저 드릴 것은 6개월간의 성장 정리입니다.', say: '다윤이가 다닌 지 6개월이 지났습니다. 시험이 끝나면 5월에 했던 검사를 한 번 더 해서, 그동안 무엇이 자랐는지 정리해 드리겠습니다.', warn: '재검사를 조건처럼 말하지 않습니다. 그만두시더라도 드리는 정리입니다.' },
+    { id: 'future', name: '목표 먼저 여쭙기', stage: 1, why: '어머님이 직접 목표를 말씀하시면, 그 목표가 이후 판단의 기준이 됩니다. 기준을 매니저가 아니라 어머님이 정하시게 합니다.', say: '어머님, 방학이 끝난 3월에 다윤이가 어떤 모습이면 좋겠다고 생각하십니까?', warn: '답을 <b>그대로 메모</b>합니다(6번 메모 칸). 매니저가 답을 대신 정리해 드리지 않습니다.' },
+    { id: 'reframe', name: '비교 기준 바꾸기 · 잃는 것 보여 드리기', stage: 1, why: '금액으로 비교하면 저렴한 쪽이 이깁니다. 비교 기준을 “다윤이에게 무엇이 빠지는가”로 바꿉니다. 사람은 얻는 것보다 잃는 것에 더 크게 반응합니다.', say: '비용만 보면 과외나 더 저렴한 방법은 분명히 있습니다. 다만 다윤이는 지금 수업 한 과목보다 생활의 중심을 잡아 주는 관리가 필요한 단계입니다. 방학에 관리가 빠지면 늦잠과 빈 시간으로 하루를 보내기 쉽습니다.', warn: '겁을 주는 말이 되지 않도록, 다윤이의 실제 상황까지만 말합니다.' },
+    { id: 'social', name: '다들 하는 선택(사회적 증거)', stage: 1, why: '다른 가정도 같은 선택을 한다는 사실을 알면, 혼자만의 선택이 아니라는 안심이 생깁니다.', say: '겨울방학은 학원을 보내시는 가정도 보강을 하는 시기입니다. 1년 중 가장 크게 성장할 수 있는 기간입니다.', warn: '누구나 아는 사실까지만 말합니다. 다른 학생 이름이나 지어낸 숫자는 쓰지 않습니다.' },
+    { id: 'consistency', name: '이미 하신 말씀 잇기(일관성)', stage: 2, why: '사람은 자신이 이미 한 말과 어긋나지 않게 행동하려 합니다. 어머님이 정하신 방학 구성에서 이야기를 시작합니다.', say: '방학은 수학 5회, 물리 3회, 영어 2회로 진행하자고 말씀 주셨습니다. 그 방향은 지키면서 금액을 맞출 방법을 찾아보겠습니다.', warn: '“그때 하신다고 하지 않으셨습니까”처럼 따지는 말투가 되면 역효과가 납니다.' },
+    { id: 'cap', name: '상한 먼저 여쭙기', stage: 2, why: '매니저가 먼저 금액을 깎아 제시하면 흥정이 시작됩니다. 상한을 먼저 여쭈면 대화가 “무엇을 유지할지”로 바뀝니다.', say: '방학 동안 생각하시는 예산 상한을 말씀해 주시겠습니까? 그 안에서 다윤이에게 꼭 필요한 것부터 유지하겠습니다.', warn: '비용이 정말 문제라고 하실 때만 꺼냅니다. 먼저 꺼내면 할인 제안처럼 들립니다.' },
+    { id: 'anchor', name: '기준점과 세 가지 안(앵커링·타협 효과)', stage: 2, why: '처음 본 구성이 기준점이 되고, 세 가지를 보면 사람은 가운데를 고르기 쉽습니다. 처음에는 다윤이에게 맞는 전체 구성을, 다음으로 원칙을 지키는 조정안을 보여 드립니다.', say: '세 가지 안으로 준비하겠습니다. 지금 구성과, 한 과목을 정리한 구성 두 가지입니다. 주 1회 차이가 4주에 얼마인지까지 숫자로 보여 드리겠습니다.', warn: '세 안 모두 주 5회 등원과 최소 횟수를 지킵니다. 일부러 나쁜 안을 끼워 넣지 않습니다.' },
+    { id: 'foot', name: '작은 약속부터(문간에 발 들여놓기)', stage: 3, why: '작은 요청에 먼저 “네”라고 하시면 다음 약속도 쉬워집니다. 이 통화의 작은 약속은 재검사 한 번과 내방 한 번입니다.', say: '오늘 무엇을 정하시지 않으셔도 됩니다. 시험이 끝나고 검사 한 번만 해 보시는 것은 괜찮으시겠습니까?', warn: '작은 약속을 받자마자 큰 요청을 이어 붙이지 않습니다.' },
+    { id: 'choice', name: '둘 중 고르시게 하기(양자택일 질문)', stage: 3, why: '“오시겠습니까?” 대신 “언제가 편하십니까?”로 여쭈면, 통화를 끊기 전에 다음 만남이 정해집니다.', say: '시험이 끝나고 결과가 나오면 한번 오셔서 함께 보시겠습니까? ○일과 ○일 중 언제가 편하십니까?', warn: '“생각해 보고 연락드리겠습니다”로 끝나면 날짜 하나라도 가안으로 잡아 둡니다.' }
+  ];
+  var tMap = {}; TECH.forEach(function (t, i) { t.no = i + 1; tMap[t.id] = t; });
+  var grid = document.getElementById('techGrid');
+  grid.innerHTML = TECH.map(function (t) {
+    return '<article class="tech" data-stage="' + t.stage + '"><div class="tech__top"><span class="tech__no">기법 ' + t.no + '</span><span class="cl-badge' + badge(t.stage) + '">' + STAGES[t.stage] + '</span></div>' +
+      '<span class="tech__name">' + esc(t.name) + '</span><p class="tech__why">' + esc(t.why) + '</p>' +
+      '<div class="say"><div class="say__head"><span class="say__label">이렇게</span><button class="copy" type="button">복사</button></div><q>' + esc(t.say) + '</q></div>' +
+      '<p class="tech__warn"><b>주의</b> · ' + t.warn + '</p></article>';
+  }).join('');
+  document.getElementById('stageSeg').addEventListener('cl-change', function (e) {
     var i = e.detail ? e.detail.index : 0;
-    panels.forEach(function (p) { p.setAttribute('data-active', String(Number(p.getAttribute('data-react')) === i)); });
-    var p = panels[i];
-    if (p && window.SangsangClarity && SangsangClarity.motion && SangsangClarity.motion.enter) SangsangClarity.motion.enter(p, 'rise');
+    Array.prototype.forEach.call(grid.children, function (c) { c.hidden = i > 0 && Number(c.getAttribute('data-stage')) !== i - 1; });
   });
 
-  Array.prototype.forEach.call(document.querySelectorAll('.copy'), function (b) {
-    b.addEventListener('click', function () {
-      var q = b.closest('.say').querySelector('q');
-      var text = q ? q.textContent : '';
-      function done() { b.textContent = '복사됨'; b.setAttribute('data-done', 'true'); setTimeout(function () { b.textContent = '복사'; b.removeAttribute('data-done'); }, 1600); }
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+  /* 통화 대본 */
+  var DATES = '시험이 끝나고 결과가 나오면 한번 오셔서 함께 보시겠습니까? ○일과 ○일 중 언제가 편하십니까?';
+  var SCRIPTS = [
+    { lead: '어머님이 비용 이야기를 꺼내시거나, 먼저 전화를 드릴 때의 기본 순서입니다.', lines: [
+      ['label', '어머님, 방학을 앞두고 비용이 많이 부담되시는 것 같습니다.', '말한 뒤 기다립니다. 어머님이 말씀을 마치실 때까지 끼어들지 않습니다.'],
+      ['empathy|autonomy', '그렇게 생각하시는 것은 전혀 잘못된 것이 아닙니다. 결정은 어머님께서 하시는 것이고, 저는 판단하시는 데 필요한 자료를 정확히 말씀드리겠습니다.'],
+      ['reciprocity', '다윤이가 다닌 지 6개월이 지났습니다. 시험이 끝나면 5월에 했던 검사를 한 번 더 해서, 그동안 무엇이 자랐는지 정리해 드리겠습니다.'],
+      ['future', '어머님, 방학이 끝난 3월에 다윤이가 어떤 모습이면 좋겠다고 생각하십니까?', '답을 메모 칸에 그대로 적습니다.'],
+      ['reframe|social', '말씀하신 모습이 되려면 이번 방학이 가장 중요합니다. 겨울방학은 학원을 보내시는 가정도 보강을 하는 시기입니다. 다만 다윤이는 지금 수업보다 생활의 중심을 잡아 주는 관리가 필요한 단계라, 관리가 빠지면 늦잠과 빈 시간으로 하루를 보내기 쉽습니다.'],
+      ['consistency', '방학은 수학 5회, 물리 3회, 영어 2회로 진행하자고 말씀 주셨습니다. 그 방향은 지키면서 금액을 맞출 방법을 찾아보겠습니다.'],
+      ['cap', '방학 동안 생각하시는 예산 상한을 말씀해 주시겠습니까? 그 안에서 다윤이에게 꼭 필요한 것부터 유지하겠습니다.', '상한을 들으면 4번 편성기에 바로 넣어 봅니다. 금액은 통화에서 확정하지 않습니다.'],
+      ['anchor', '세 가지 안으로 준비하겠습니다. 등원은 지금처럼 매일 하고, 수업 과목을 하나 정도 조정하는 방식입니다. 주 1회 차이가 4주에 얼마인지까지 숫자로 보여 드리겠습니다.'],
+      ['choice', DATES]
+    ] },
+    { lead: '“이번 달까지만 하겠습니다”처럼 종료를 먼저 말씀하실 때입니다. 붙잡지 말고, 6개월을 정리하는 내방 약속을 잡습니다.', lines: [
+      ['autonomy', '네, 어머님 뜻 존중합니다. 결정은 어머님께서 하시는 것입니다.', '붙잡는 말부터 하지 않습니다.'],
+      ['label', '많이 고민하시고 말씀 주신 것 같습니다. 혹시 가장 크게 걸리시는 부분이 비용이십니까?', '이유를 어머님 말씀으로 듣습니다.'],
+      ['reciprocity', '그만두시더라도 6개월 동안 다윤이가 해 온 것은 정리해서 한 번 보여 드리고 싶습니다. 시험이 끝나면 검사를 한 번 더 하겠습니다.'],
+      ['foot', '오늘 무엇을 정하시지 않으셔도 됩니다. 결과를 보시고 정하셔도 늦지 않습니다. 검사 한 번은 괜찮으시겠습니까?'],
+      ['choice', DATES]
+    ] },
+    { lead: '과외로 바꾸시겠다고 하실 때입니다. 과외의 장점은 인정하고, 수업이 없는 나머지 시간을 짚어 드립니다.', lines: [
+      ['empathy', '과외도 좋은 방법입니다. 비용도 덜 드십니다.', '먼저 동의합니다. 반박하지 않습니다.'],
+      ['reframe', '과외는 수업 시간만 책임집니다. 다윤이는 지금 수업이 없는 나머지 시간을 어떻게 보내느냐가 가장 중요한 단계입니다. 방학에는 특히 그렇습니다.'],
+      ['future', '과외를 하시면 수업이 없는 날 다윤이가 하루를 어떻게 보낼 것 같으십니까?', '어머님이 직접 답하시도록 기다립니다.'],
+      ['consistency|cap', '방학 구성은 어머님께서 정하신 대로 두고, 예산 상한을 말씀해 주시면 그 안에서 맞춰 보겠습니다.'],
+      ['choice', DATES]
+    ] },
+    { lead: '방학에 학원을 보내시겠다고 하실 때입니다. 학원의 장점은 인정하고, 학원 수업 외 시간을 짚어 드립니다.', lines: [
+      ['social|empathy', '방학에 학원으로 보강하시는 가정도 많습니다. 충분히 생각하실 수 있는 방법입니다.'],
+      ['reframe', '다만 학원은 진도를 책임지고, 학원이 끝난 뒤의 시간은 다윤이 혼자 보내야 합니다. 다윤이는 아직 그 시간을 혼자 관리하기 어려운 단계입니다.'],
+      ['future', '방학이 끝난 3월에 다윤이가 어떤 모습이면 좋겠다고 생각하십니까?'],
+      ['cap|anchor', '예산 상한을 말씀해 주시면, 그 안에서 관리를 유지하는 구성을 세 가지로 준비해 보여 드리겠습니다.'],
+      ['choice', DATES]
+    ] },
+    { lead: '“얼마까지 줄일 수 있습니까?”처럼 금액부터 물으실 때입니다. 먼저 깎아 드리지 말고 상한을 여쭙니다.', lines: [
+      ['cap', '생각하시는 상한을 먼저 말씀해 주시겠습니까? 그 안에서 맞추겠습니다.', '매니저가 먼저 금액을 제시하지 않습니다.'],
+      ['consistency', '방학은 수학 5회, 물리 3회, 영어 2회로 말씀 주셨습니다. 등원은 지금처럼 매일 하고, 수업 과목을 하나 정도 조정하는 방식으로 맞추겠습니다.'],
+      ['anchor', '지금 구성과, 한 과목을 정리한 구성 두 가지를 더해 세 가지 안으로 준비하겠습니다. 주 1회 차이가 4주에 얼마인지까지 보여 드리겠습니다.', '편성기에 상한을 넣어 본 결과만 말합니다. 원칙에서 벗어난 안은 꺼내지 않습니다.'],
+      ['reciprocity', '그때 5월 검사와 이번 재검사 결과도 함께 보여 드리겠습니다.'],
+      ['choice', DATES]
+    ] }
+  ];
+  var scriptEl = document.getElementById('script'), leadEl = document.getElementById('scriptLead'), current = 0;
+  function renderScript(i) {
+    current = i; var s = SCRIPTS[i];
+    leadEl.textContent = s.lead;
+    scriptEl.innerHTML = s.lines.map(function (l, j) {
+      var tags = l[0].split('|').map(function (id) { var t = tMap[id]; return '<span class="cl-badge' + badge(t.stage) + '">' + esc(t.name) + '</span>'; }).join('');
+      return '<li class="line"' + (j === s.lines.length - 1 ? ' data-goal="true"' : '') + '><div class="line__body"><div class="line__tags">' + tags + '<button class="copy" type="button">복사</button></div><p class="line__text">' + esc(l[1]) + '</p>' + (l[2] ? '<p class="line__note">' + esc(l[2]) + '</p>' : '') + '</div></li>';
+    }).join('');
+  }
+  renderScript(0);
+  document.getElementById('reactSeg').addEventListener('cl-change', function (e) { renderScript(e.detail ? e.detail.index : 0); });
+  document.getElementById('copyAll').addEventListener('click', function () {
+    copyText(SCRIPTS[current].lines.map(function (l, j) { return (j + 1) + '. ' + l[1]; }).join('\n'), this);
+  });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.copy'); if (!b) return;
+    var box = b.closest('.say') || b.closest('.line__body');
+    var q = box && (box.querySelector('q') || box.querySelector('.line__text'));
+    if (q) copyText(q.textContent, b);
+  });
+
+  /* 방학 편성기 */
+  var PRICE = { mgmtDay: 15000, comma: 33000, sessions: 8, weeks: 4, mgmtPerWeek: 5 };
+  var NOV = { mgmtDays: 18, commas: 14 };
+  var RULE = { math: [4, 5, 6], phys: [0, 2, 3, 4], eng: [0, 2, 3] };
+  var NAME = { math: '수학', phys: '물리', eng: '영어' };
+  var BASE = { math: 5, phys: 3, eng: 2 };
+  var st = { math: 5, phys: 3, eng: 2 };
+  try { var sv = JSON.parse(get('plan') || 'null'); if (sv && RULE.math.indexOf(sv.math) >= 0 && RULE.phys.indexOf(sv.phys) >= 0 && RULE.eng.indexOf(sv.eng) >= 0) st = sv; } catch (e) {}
+  var gradeEl = document.getElementById('grade'), capEl = document.getElementById('cap');
+  var g0 = get('grade'); if (g0) gradeEl.value = g0;
+  var c0 = get('cap'); if (c0) capEl.value = c0;
+  function cost(p) {
+    var wk = p.math + p.phys + p.eng, commas = wk * PRICE.weeks, mDays = PRICE.mgmtPerWeek * PRICE.weeks;
+    var c = +gradeEl.value * PRICE.sessions, m = mDays * PRICE.mgmtDay, t = commas * PRICE.comma;
+    return { wk: wk, commas: commas, mDays: mDays, c: c, m: m, t: t, total: c + m + t };
+  }
+  function label(p) { return ['math', 'phys', 'eng'].filter(function (k) { return p[k] > 0; }).map(function (k) { return NAME[k] + ' ' + p[k]; }).join(' · '); }
+  function inRule(p) { return (p.phys > 0) || (p.eng > 0); }
+  function parseCap() { var n = +String(capEl.value).replace(/[^0-9]/g, ''); return n > 0 ? n : 0; }
+  function signed(n) { return (n > 0 ? '+' : n < 0 ? '−' : '') + won(Math.abs(n)); }
+  function renderPlan() {
+    ['math', 'phys', 'eng'].forEach(function (k) {
+      var box = document.querySelector('.stepper[data-s="' + k + '"]'), arr = RULE[k], i = arr.indexOf(st[k]);
+      box.querySelector('output').textContent = st[k] === 0 ? '정리' : '주 ' + st[k];
+      box.querySelector('[data-d="-1"]').disabled = i <= 0;
+      box.querySelector('[data-d="1"]').disabled = i >= arr.length - 1;
     });
+    Array.prototype.forEach.call(document.querySelectorAll('#presets button'), function (b) {
+      var v = b.getAttribute('data-p').split(',').map(Number);
+      b.setAttribute('aria-pressed', String(v[0] === st.math && v[1] === st.phys && v[2] === st.eng));
+    });
+    var r = cost(st), base = cost(BASE);
+    var novPart = NOV.mgmtDays * PRICE.mgmtDay + NOV.commas * PRICE.comma;
+    var gName = gradeEl.options[gradeEl.selectedIndex].text;
+    document.getElementById('tot').textContent = won(r.total);
+    document.getElementById('totSub').textContent = label(st) + ' · 주 ' + r.wk + '콤마' + (inRule(st) ? '' : ' · 물리·영어 모두 정리 — 원장님 확인');
+    var diffWk = r.wk - base.wk;
+    document.getElementById('rows').innerHTML = [
+      ['정기상담 8회(4주분)', gName + ' 기준', won(r.c), false],
+      ['관리 ' + r.mDays + '일', '주 5회 × 4주 × 15,000원', won(r.m), false],
+      ['개별지도 ' + r.commas + '콤마', '주 ' + r.wk + '콤마 × 4주 × 33,000원(고등)', won(r.t), false],
+      ['지금 구성 대비', diffWk === 0 ? '어머님이 정하신 구성' : '주 ' + (diffWk > 0 ? '+' : '−') + Math.abs(diffWk) + '콤마', signed(r.total - base.total), true],
+      ['11월 학기 중 대비(관리+개별지도)', '11월 관리 18일 · 14콤마 = ' + won(novPart), signed(r.m + r.t - novPart), true]
+    ].map(function (x) { return '<tr' + (x[3] ? ' class="is-strong"' : '') + '><td>' + esc(x[0]) + '<br><small>' + esc(x[1]) + '</small></td><td class="num">' + x[2] + '</td></tr>'; }).join('');
+    document.getElementById('feeLink').href = '../sumfuvps/?w=4&g=' + encodeURIComponent(gName) + '&s=8&m=5&c=' + encodeURIComponent('고등') + '&k=' + r.wk + '&p=0&l=0&v=0#estimate';
+    var cap = parseCap(), fit = document.getElementById('fit');
+    if (!cap) { fit.innerHTML = '<li><span class="muted">상한을 입력하면 운영원칙을 지키는 구성이 수업이 많은 순서로 나옵니다.</span></li>'; }
+    else {
+      var ok = [];
+      RULE.math.forEach(function (m) { RULE.phys.forEach(function (ph) { RULE.eng.forEach(function (en) {
+        var p = { math: m, phys: ph, eng: en };
+        if (m > BASE.math || ph > BASE.phys || en > BASE.eng || !inRule(p)) return;
+        var cc = cost(p); if (cc.total <= cap) ok.push({ p: p, c: cc });
+      }); }); });
+      ok.sort(function (a, b) { return ((b.p.phys > 0) + (b.p.eng > 0)) - ((a.p.phys > 0) + (a.p.eng > 0)) || b.c.wk - a.c.wk || b.p.math - a.p.math; });
+      if (!ok.length) fit.innerHTML = '<li><span><b>운영원칙을 지키는 구성으로는 이 상한에 맞출 수 없습니다.</b></span><small>원칙을 지키는 가장 작은 구성(수학 4 · 영어 2)은 ' + won(cost({ math: 4, phys: 0, eng: 2 }).total) + '입니다. 통화에서 확정하지 말고 원장님과 상의합니다.</small></li>';
+      else fit.innerHTML = ok.slice(0, 5).map(function (x, j) {
+        return '<li' + (j === 0 ? ' data-best="true"' : '') + '><button type="button" data-pick="' + [x.p.math, x.p.phys, x.p.eng].join(',') + '">' + esc(label(x.p)) + ' · 주 ' + x.c.wk + '콤마</button><span class="num">' + won(x.c.total) + '</span><small>' + (j === 0 ? '상한 안에서 수업이 가장 많이 유지되는 구성 · ' : '') + '상한까지 ' + won(cap - x.c.total) + ' 여유</small></li>';
+      }).join('');
+    }
+    set('plan', JSON.stringify(st));
+  }
+  document.querySelector('.planner').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.hasAttribute('data-d')) {
+      var k = b.closest('.stepper').getAttribute('data-s'), arr = RULE[k], i = arr.indexOf(st[k]) + Number(b.getAttribute('data-d'));
+      if (i >= 0 && i < arr.length) st[k] = arr[i];
+    } else if (b.hasAttribute('data-p') || b.hasAttribute('data-pick')) {
+      var v = (b.getAttribute('data-p') || b.getAttribute('data-pick')).split(',').map(Number);
+      st = { math: v[0], phys: v[1], eng: v[2] };
+    } else return;
+    renderPlan();
   });
+  gradeEl.addEventListener('change', function () { set('grade', gradeEl.value); renderPlan(); });
+  capEl.addEventListener('input', function () {
+    var n = parseCap(); capEl.value = n ? n.toLocaleString('ko-KR') : ''; set('cap', capEl.value); renderPlan();
+  });
+  renderPlan();
 
+  /* 메모·체크 */
+  Array.prototype.forEach.call(document.querySelectorAll('textarea[data-memo]'), function (t) {
+    var k = 'memo:' + t.getAttribute('data-memo'); t.value = get(k) || '';
+    t.addEventListener('input', function () { set(k, t.value); });
+  });
   Array.prototype.forEach.call(document.querySelectorAll('.todo[data-store]'), function (ul) {
     var k = 'todo:' + ul.getAttribute('data-store');
     var boxes = ul.querySelectorAll('input[type=checkbox]');
     var saved = (get(k) || '').split('');
     Array.prototype.forEach.call(boxes, function (c, i) {
       c.checked = saved[i] === '1';
-      c.addEventListener('change', function () {
-        set(k, Array.prototype.map.call(boxes, function (x) { return x.checked ? '1' : '0'; }).join(''));
-      });
+      c.addEventListener('change', function () { set(k, Array.prototype.map.call(boxes, function (x) { return x.checked ? '1' : '0'; }).join('')); });
     });
   });
 })();
