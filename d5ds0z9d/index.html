@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ko" data-theme="light" data-admin="off">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>김다윤 학생 후속상담 03 · 마지막 상담 플로우 | 에듀플렉스 에듀코치 길음점</title>
+<link rel="stylesheet" href="../assets/clarity-k06/tokens.css">
+<link rel="stylesheet" href="../assets/clarity-k06/components.css">
+<script src="../assets/clarity-k06/bundle.js"></script>
+<style>
+  .pg { min-height: 100vh; }
+  .bar-wrap { position: sticky; top: 0; z-index: var(--z-bar); padding: var(--space-3) var(--margin); }
+  .bar { max-width: var(--layout-max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-1) var(--space-1) var(--space-1) var(--space-2); border-radius: var(--radius-capsule); }
+  .bar__left { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
+  .bar__title { font-size: 0.9375rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar .cl-lockup__name small { display: none; }
+  main { max-width: var(--layout-max); margin: 0 auto; padding: var(--space-6) var(--margin) var(--space-16); display: grid; gap: var(--space-12); }
+  p { margin: 0; }
+  .muted { color: var(--cl-label-2); }
+  .sec { display: grid; gap: var(--space-5); scroll-margin-top: 88px; }
+  .sec__head { display: grid; gap: var(--space-2); }
+  .sec__num { font-size: 0.8125rem; font-weight: 700; color: var(--cl-accent); letter-spacing: .02em; }
+  .hero { display: grid; gap: var(--space-4); }
+  .badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .key { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-6); display: grid; gap: var(--space-3); }
+  .key__big { font-size: 1.375rem; line-height: 1.45; font-weight: 700; letter-spacing: -0.012em; }
+  .key__flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .key__flow i { font-style: normal; color: var(--cl-label-3); }
+  .jump { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: start; }
+  .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); align-items: stretch; }
+  .panel { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); align-content: start; min-width: 0; }
+  .panel__eyebrow { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-3); }
+  .panel__title { font-size: 1.0625rem; font-weight: 700; line-height: 1.4; }
+  .plain { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); line-height: 1.6; }
+  .msg { margin: 0; background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); line-height: 1.7; }
+  .msg small { display: block; font-size: 0.75rem; font-weight: 700; color: var(--cl-label-3); margin-bottom: var(--space-1); }
+  .path { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-2); }
+  .path__step { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3); display: grid; gap: 2px; align-content: start; }
+  .path__step[data-key="true"] { background: var(--cl-accent-tint); }
+  .path__when { font-size: 0.75rem; font-weight: 700; color: var(--cl-label-3); }
+  .path__what { font-weight: 700; line-height: 1.4; }
+  .path__note { font-size: 0.8125rem; color: var(--cl-label-2); line-height: 1.45; }
+  .todo { list-style: none; margin: 0; padding: 0; display: grid; }
+  .todo li + li { border-top: 1px solid var(--cl-separator); }
+  .todo label { display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); padding: var(--space-3) 0; cursor: pointer; align-items: start; min-height: 44px; }
+  .todo input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--cl-accent); }
+  .todo input:checked + span { color: var(--cl-label-3); text-decoration: line-through; }
+  .todo small { display: block; color: var(--cl-label-2); font-size: 0.875rem; margin-top: 2px; }
+  .timebar { display: flex; height: 36px; border-radius: var(--radius-sm); overflow: hidden; gap: 2px; }
+  .timebar span { display: grid; place-items: center; font-size: 0.75rem; font-weight: 700; color: var(--cl-label-2); background: var(--cl-fill); white-space: nowrap; overflow: hidden; }
+  .timebar span[data-k="core"] { background: var(--cl-accent-tint); color: var(--cl-accent); }
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); counter-reset: st; }
+  .step { counter-increment: st; background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; grid-template-columns: 36px 1fr; gap: var(--space-4); align-items: start; }
+  .step::before { content: counter(st); width: 36px; height: 36px; border-radius: var(--radius-capsule); background: var(--cl-fill); display: grid; place-items: center; font-weight: 700; color: var(--cl-label-2); }
+  .step[data-core="true"]::before { background: var(--cl-accent); color: var(--cl-on-accent); }
+  .step__body { display: grid; gap: var(--space-3); min-width: 0; }
+  .step__top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+  .step__name { font-size: 1.125rem; font-weight: 700; }
+  .step__aim { color: var(--cl-label-2); line-height: 1.6; }
+  .says { display: grid; gap: var(--space-2); }
+  .say { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; grid-template-columns: 1fr auto; gap: var(--space-1) var(--space-2); align-items: start; }
+  .say q { quotes: "“" "”"; font-size: 0.9875rem; line-height: 1.65; }
+  .say small { grid-column: 1 / -1; font-size: 0.8125rem; color: var(--cl-label-2); }
+  .copy { appearance: none; border: 0; background: transparent; color: var(--cl-label-3); font: inherit; font-size: 0.8125rem; font-weight: 600; cursor: pointer; padding: var(--space-1) var(--space-2); border-radius: var(--radius-capsule); min-height: 32px; }
+  .copy:hover { background: var(--cl-surface); color: var(--cl-label); }
+  .copy[data-done="true"] { color: var(--cl-accent); }
+  .tip { font-size: 0.875rem; color: var(--cl-label-2); border-top: 1px solid var(--cl-separator); padding-top: var(--space-2); line-height: 1.55; }
+  .tip b { color: var(--cl-label); }
+  .qgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .qcard { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; gap: 2px; }
+  .qcard b { line-height: 1.5; }
+  .qcard span { font-size: 0.8125rem; color: var(--cl-label-2); line-height: 1.5; }
+  .fork { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+  .fork div { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; gap: var(--space-1); align-content: start; }
+  .fork div[data-k="a"] { background: var(--cl-accent-tint); }
+  .fork b { font-size: 0.9375rem; }
+  .fork span { font-size: 0.875rem; line-height: 1.55; }
+  .react { display: grid; gap: var(--space-3); }
+  .react__card { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-5); display: grid; gap: var(--space-3); }
+  .react__said { font-size: 1.125rem; font-weight: 700; }
+  .react__read { color: var(--cl-label-2); line-height: 1.6; }
+  .dont { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+  .dont li { background: var(--cl-surface); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start; line-height: 1.6; }
+  .dont__x { width: 24px; height: 24px; border-radius: var(--radius-capsule); background: var(--cl-fill); color: var(--cl-label-2); display: grid; place-items: center; font-weight: 700; font-size: 0.8125rem; }
+  .memo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .field { display: grid; gap: var(--space-1); }
+  .field label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-2); }
+  .memo textarea { font: inherit; font-size: 0.9375rem; line-height: 1.55; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--cl-separator); background: var(--cl-surface); color: var(--cl-label); min-height: 92px; width: 100%; box-sizing: border-box; resize: vertical; }
+  .coach { background: var(--cl-surface); border-radius: var(--radius-lg); padding: var(--space-6); display: grid; gap: var(--space-4); }
+  .coach__big { font-size: 1.25rem; font-weight: 700; line-height: 1.5; }
+  .adm { display: none !important; }
+  [data-admin="on"] .adm { display: grid !important; }
+  .adm-box { background: var(--cl-fill); border-radius: var(--radius-sm); padding: var(--space-4); gap: var(--space-2); font-size: 0.875rem; line-height: 1.6; }
+  .adm-box__label { font-size: 0.8125rem; font-weight: 700; color: var(--cl-label-2); }
+  .adm-box ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--space-1); }
+  footer.foot { border-top: 1px solid var(--cl-separator); padding-top: var(--space-6); display: grid; gap: var(--space-3); justify-items: start; }
+  footer.foot img { max-width: 100%; height: auto; }
+  @media (max-width: 900px) {
+    .path { grid-template-columns: 1fr 1fr; }
+    .two, .memo, .three, .fork { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .path, .qgrid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 1fr; padding: var(--space-4); }
+    .bar__title, .bar .cl-lockup__name { display: none; }
+    .key { padding: var(--space-5); }
+    .key__big { font-size: 1.1875rem; }
+    .timebar span { font-size: 0.6875rem; }
+    .timebar .lg { display: none; }
+    .cl-seg .cl-seg__item { font-size: 0.8125rem; padding-left: 4px; padding-right: 4px; }
+  }
+  @media print {
+    .bar-wrap, .jump, .cl-seg, .copy { display: none; }
+    .step, .panel, .react__card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body class="cl-root">
+<div class="pg">
+
+<div class="bar-wrap">
+  <div class="bar cl-glass">
+    <div class="bar__left">
+      <a class="cl-btn cl-btn--icon" href="../admin-4ck2v7p3/" aria-label="관리자 목록으로 돌아가기"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+      <span class="cl-lockup"><span class="cl-lockup__symbol"><img src="../assets/clarity-k06/logos/sangsangplex-logo.png" alt="" width="120" height="40"></span><span class="cl-lockup__name"><b>에듀플렉스 에듀코치 길음점</b><small>Eduplex Educoach Gireum</small></span></span>
+      <span class="bar__title">· 김다윤 후속상담 03 · 마지막 상담 플로우</span>
+    </div>
+    <span class="cl-group">
+      <button class="cl-btn cl-btn--icon" type="button" onclick="window.print()" aria-label="인쇄"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3.5h10V9M7 17.5H5a2 2 0 01-2-2V11a2 2 0 012-2h14a2 2 0 012 2v4.5a2 2 0 01-2 2h-2"/><path d="M7 14h10v6.5H7z"/></svg></button>
+      <button class="cl-btn cl-btn--icon" type="button" id="adminBtn" aria-pressed="false" aria-label="관리자 모드: 원장 원문과 근거 보기"><svg class="cl-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
+    </span>
+  </div>
+</div>
+
+<main>
+
+  <section class="hero" aria-labelledby="t-hero">
+    <span class="cl-caption">후속상담 03 · 2026. 11. 24. · 매니저용 · 어머님 종료 의사 → 다윤이와 마지막 상담 → 어머님 회신</span>
+    <h1 class="cl-large-title" id="t-hero">김다윤 학생, 마지막 상담 플로우</h1>
+    <div class="badges">
+      <span class="cl-badge">영훈고 1학년 · 5/26 TYPE 11 성실이</span>
+      <span class="cl-badge cl-badge--accent">담당 김범수 매니저</span>
+      <span class="cl-badge">등원 6개월 차 · 재검사 시즌</span>
+      <span class="cl-badge cl-badge--highlight">11/23 밤 어머님 “마무리하도록 할게요”</span>
+      <span class="cl-badge">이번 주까지 등원·과금</span>
+    </div>
+    <div class="key">
+      <span class="cl-card__eyebrow">이번 상담의 상대</span>
+      <p class="key__big">이번에 마주할 사람은 어머님이 아니라 <span class="cl-em">다윤이</span>입니다. 결정은 다윤이에게 있습니다.</p>
+      <p>어머님은 늘 다윤이 뜻을 따라 주시는 분이고, 이번에도 “선생님께 따로 연락한다고 합니다”라며 다윤이에게 미루셨습니다. 아직 문이 닫힌 게 아닙니다. 이번 주 안에 한 시간에서 한 시간 반을 비워 다윤이와 마지막 상담을 합니다. 다윤이가 자기 판단을 마주하게 하고, 그래도 떠난다면 잘 보내서 돌아올 자리를 남깁니다.</p>
+      <p class="muted">원장님 말씀: 종료는 납니다. 그런데 최악도 종료까지입니다. 그다음 최악은 없습니다.</p>
+      <div class="key__flow">
+        <span class="cl-badge cl-badge--highlight">오늘 · 어머님 회신</span><i>→</i>
+        <span class="cl-badge cl-badge--info">준비 · 교실장 확인·시간 잡기</span><i>→</i>
+        <span class="cl-badge cl-badge--info">이번 주 · 마지막 상담 60~90분</span><i>→</i>
+        <span class="cl-badge cl-badge--info">직후 · 원장 보고·어머님 연락</span><i>→</i>
+        <span class="cl-badge cl-badge--success">갈림길 · 남기 / 2주와 재검사 / 잘 보내기</span>
+      </div>
+      <p><a class="cl-btn cl-btn--filled cl-btn--sm" href="../efbe9gzp/">상담 때 함께 볼 페이지: 다윤이의 6개월 →</a></p>
+    </div>
+    <nav class="jump" aria-label="이 페이지의 순서">
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s0">0 지금 상황</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s1">1 준비</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s2">2 상담 플로우</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s3">3 이렇게 말하면</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s4">4 넘지 않는 선</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s5">5 어머님 회신</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s6">6 상담 기록</a>
+      <a class="cl-btn cl-btn--gray cl-btn--sm" href="#s7">7 매니저님께</a>
+    </nav>
+  </section>
+
+  <div class="adm adm-box">
+    <span class="adm-box__label">원장 원문 · 2026-11-24 MSC(TIRO ZrJsJr62D22T9, A=김범수 매니저 · B=김병수 원장)</span>
+    <ul>
+      <li>"애를 데려다가 … 따뜻하게 잘 대화를 하는 시간을 가져주세요. 얘 어차피 이번 주까지는 과금이 들어간 거잖아요. 그렇게 해서 마무리를 짓자." (04:27~04:28Z)</li>
+      <li>"제일 좋은 건 정말 솔직한 얘기를 한번 들어보는 거야." (04:28Z)</li>
+      <li>"시간 비워놓고 한 시간 내지 한 시간 반 … 커피나 … 까까랑 달달이 같은 거 놓은 다음에 … 마지막 상담, 최후의 상담" (04:31Z)</li>
+      <li>"이 엄마는 지금 대화 안 되는 거잖아요. 그리고 엄마가 힘도 없고. … 킹핀이 김다윤이니까" (04:32Z)</li>
+      <li>"매니저님이 이 다윤이를 좀 이제 직면을 해보는 시간. 다윤이도 자기 자신을 직면해 보는 시간. 너의 탈출은 본인을 위한 탈출이 아니다" (04:33Z)</li>
+      <li>"너무 디테일하게 논리적으로 얘기를 하면 아 몰랑 하고 뒤집어지니까 생극하게 하는 질문들을 좀 하는 게 중요해요." (04:33Z, "생극하게"는 STT 그대로)</li>
+      <li>"잘 보내라. 잘 보내야 나중에 온다." · "굴러먹다 다시 돌아오게 판 짜놓는 것도 필요해요." (04:43Z·04:45Z)</li>
+      <li>"종료는 납니다. 근데 최악도 종료까지예요. 그다음 최악이 없어요." (04:45~04:46Z)</li>
+      <li>"좋은 상황입니다, 아직까지. 엄마가 미루잖아요. 애한테." (04:47Z)</li>
+    </ul>
+  </div>
+
+  <section class="sec" id="s0" aria-labelledby="t-s0">
+    <div class="sec__head">
+      <span class="sec__num">0 · 지금 상황</span>
+      <h2 class="cl-title-2" id="t-s0">어머님이 보내신 말과, 그 안에 있는 것</h2>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <span class="panel__eyebrow">11/23 밤 10시 30분께 · 어머님 개인톡 (매니저 낭독 그대로)</span>
+        <p class="msg"><small>원문</small>선생님, 다윤이는 이미 의지가 확고합니다. 그냥 마무리하도록 할게요. 개별지도 해주시는 선생님들이 계속 바뀌고 이번에 바뀐 선생님들과 잘 맞지 않는가 봐요. 선생님께 따로 연락한다고 합니다. 퇴근하셔야 되니 답하지 않으셔도 되고 내일 연락 주세요.</p>
+        <p class="muted">그 앞에 “어쩔 수 없을 것 같습니다”라는 말이 있었습니다.</p>
+      </div>
+      <div class="panel">
+        <span class="panel__eyebrow">읽어 낼 것</span>
+        <ul class="plain">
+          <li><b>겉 이유</b>는 개별지도 튜터 교체입니다. 11/23 매니저님이 들은 <b>속 이유</b>는 비용 부담이었습니다. 원장님은 오빠와 하는 과외를 대안으로 짚으셨습니다.</li>
+          <li><b>결정권은 다윤이</b>에게 넘어가 있습니다. 어머님은 8월 주 4회 요청, 10월 수련회 주 조정 때처럼 다윤이가 버거워하면 맞춰 주시는 분입니다.</li>
+          <li><b>열린 문</b>: 다윤이가 “따로 연락한다”고 했습니다. 기다리지 말고 먼저 얼굴을 보자고 합니다.</li>
+          <li><b>튜터 교체 문제</b>와 <b>다윤이 매니지먼트</b>는 별개입니다. 교체는 맞춰 줄 수 있는 문제고, 그만둘 이유가 되지 않습니다.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel">
+      <span class="panel__eyebrow">이번이 처음이 아닌 흐름 · 5/26 해석상담에서 어머님이 하신 말씀</span>
+      <ul class="plain">
+        <li>“과외 숙제 이런 거 미루다가 못 하는 경우 있었고 그렇게 되면은 이제 수업하기 싫어하고 회피를 하는.”</li>
+        <li>“그냥 수업을 빼버리고 싶어하고 그게 너무 반복되니까 네, 이번에 그냥 탁 그만뒀거든요.”</li>
+        <li>“잘 맞으면 또 엄청 잘 지내요. 네. 근데 또 그게 안 되면 또 그렇게 되니까”</li>
+      </ul>
+      <p class="tip"><b>매니저님이 쥐고 있을 그림</b> · 튜터가 안 맞는다 → 수업을 빼고 싶다 → 그만둔다. 다윤이가 에듀플렉스에 오기 전에 겪은 흐름이 지금 다시 돌고 있습니다. 다윤이 스스로도 5월 문진표에 “잘 되지 않으면 포기하려고 한다”를 고치고 싶은 점으로 적었습니다. 이것을 따지듯 설명하지 말고, 질문 하나로 비춰 줍니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s1" aria-labelledby="t-s1">
+    <div class="sec__head">
+      <span class="sec__num">1 · 준비</span>
+      <h2 class="cl-title-2" id="t-s1">상담 전에 끝낼 일</h2>
+      <p class="cl-subhead">체크하면 이 기기에 저장됩니다.</p>
+    </div>
+    <div class="path">
+      <div class="path__step" data-key="true"><span class="path__when">오늘</span><span class="path__what">어머님 회신</span><span class="path__note">짧게. 설득·비용 얘기 없이, 다윤이와 직접 이야기하겠다는 것만.</span></div>
+      <div class="path__step"><span class="path__when">오늘~내일</span><span class="path__what">교실장 확인 · 다윤이 약속</span><span class="path__note">튜터 교체 사정을 알고 들어갑니다. 날짜를 정합니다.</span></div>
+      <div class="path__step" data-key="true"><span class="path__when">이번 주</span><span class="path__what">마지막 상담</span><span class="path__note">60~90분. 다과. 다윤이의 6개월 페이지를 띄워 둡니다.</span></div>
+      <div class="path__step"><span class="path__when">상담 직후</span><span class="path__what">원장 보고 · 어머님 연락</span><span class="path__note">다윤이가 전해도 된다고 한 말만 전합니다.</span></div>
+      <div class="path__step"><span class="path__when">그다음</span><span class="path__what">갈림길대로</span><span class="path__note">남으면 기말 → 재검사 → 내방 → 윈터 세팅. 떠나면 잘 보내기.</span></div>
+    </div>
+    <div class="panel">
+      <ul class="todo" data-store="prep">
+        <li><label><input type="checkbox" data-k="p1"><span>어머님께 회신 보내기<small>문안은 아래 5번. 어머님이 “내일 연락 주세요”라고 하셨으니 오늘 안에 보냅니다.</small></span></label></li>
+        <li><label><input type="checkbox" data-k="p2"><span>손호연 교실장님과 개별지도 튜터 사정 확인<small>누가 언제 바뀌었는지, 다윤이가 무엇을 불편해했는지, 남는다면 겨울에 고정해 줄 수 있는 튜터가 있는지. 6/2 첫 수업 때 교실장님이 “잘 맞지 않는 튜터는 매칭하지 않을 것”이라고 안내한 적이 있습니다.</small></span></label></li>
+        <li><label><input type="checkbox" data-k="p3"><span>다윤이에게 먼저 연락해 시간 잡기<small>“엄마한테 네가 나한테 직접 얘기한다고 들었어. 얼굴 보고 얘기하자.” 이번 주 등원일 중 다른 상담이 없는 시간으로.</small></span></label></li>
+        <li><label><input type="checkbox" data-k="p4"><span>상담실·다과 준비<small>커피나 음료, 과자, 달달한 것. 휴대폰 무음. 시간에 쫓기지 않게 뒤 일정을 비웁니다.</small></span></label></li>
+        <li><label><input type="checkbox" data-k="p5"><span>다윤이의 6개월 페이지를 태블릿이나 모니터에 띄우기<small>질문 칸에 다윤이가 직접 적을 수도 있습니다.</small></span></label></li>
+        <li><label><input type="checkbox" data-k="p6"><span>오늘 원장님과 한 미팅 녹음 한 번 더 듣기</span></label></li>
+        <li><label><input type="checkbox" data-k="p7"><span>기말고사 일정과 재검사 가능한 날 확인<small>“기말까지 2주와 재검사”를 제안할 때 날짜가 있어야 합니다.</small></span></label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="s2" aria-labelledby="t-s2">
+    <div class="sec__head">
+      <span class="sec__num">2 · 상담 플로우</span>
+      <h2 class="cl-title-2" id="t-s2">마지막 상담, 일곱 단계</h2>
+      <p class="cl-subhead">예시는 그대로 읽기보다 매니저님 말투로 하셔요. 길게 설명하면 다윤이는 “몰라요” 하고 닫힙니다. 짧게 묻고, 기다립니다.</p>
+    </div>
+    <div class="timebar" aria-label="시간 배분">
+      <span style="flex:5">열기</span>
+      <span style="flex:15">이유 듣기</span>
+      <span style="flex:15">6개월 보기</span>
+      <span style="flex:20" data-k="core">직면 질문</span>
+      <span style="flex:10" data-k="core">진심</span>
+      <span style="flex:10">갈림길</span>
+      <span style="flex:5"><span class="lg">마무리</span></span>
+    </div>
+    <ol class="flow">
+      <li class="step">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">자리 열기</span><span class="cl-badge">5분</span></div>
+          <p class="step__aim">혼내는 자리가 아니라 마지막일 수도 있는 상담이라는 걸 먼저 알립니다. 솔직하게 들어 보고, 그래도 가겠다면 보내 주겠다고 약속합니다. 그래야 다윤이가 방어를 내려놓습니다.</p>
+          <div class="says">
+            <div class="say"><q>다윤아, 오늘은 우리 마지막 상담일 수도 있어서 일부러 시간 비워 뒀어. 과자도 좀 사 왔고. 혼내려는 거 아니야.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>6개월 동안 너랑 제일 많이 얘기한 사람이 나잖아. 그러니까 마지막은 진짜 솔직하게 주고받자. 네 얘기 다 듣고 나서, 그래도 가겠다고 하면 그때는 보내 줄게.</q><button class="copy" type="button">복사</button></div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">진짜 이유 듣기</span><span class="cl-badge">10~15분</span></div>
+          <p class="step__aim">끊지 않고 끝까지 듣습니다. 반박은 이 단계에서 하지 않습니다. 들은 이유를 세 갈래로 나눠 둡니다: ① 튜터·수업 ② 힘듦·쉬고 싶음 ③ 돈·가족 안의 대안(오빠 과외 등).</p>
+          <div class="says">
+            <div class="say"><q>그만두고 싶은 이유, 엄마 말 말고 네 입으로 듣고 싶어.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>튜터 바뀐 거, 구체적으로 뭐가 제일 힘들었어?</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>그 얘기를 왜 나한테 먼저 안 했어? 말해 줬으면 바꿀 수 있는 거였는데.</q><button class="copy" type="button">복사</button><small>원망이 아니라 아쉬움으로. 5월에 다윤이는 “계획이 너무 많이 바뀌지 않았으면 좋겠다”고 했습니다. 튜터가 자꾸 바뀐 게 그래서 더 힘들었을 수 있다고 먼저 알아줍니다.</small></div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">6개월 함께 보기</span><span class="cl-badge">15분</span></div>
+          <p class="step__aim">다윤이의 6개월 페이지를 같이 넘깁니다. 확인시켜 주지 않으면 아이는 자기가 자란 줄 모릅니다. 특히 5월에 자기가 쓴 말, 매일 오기로 스스로 정한 약속, 6월 어머님 말씀을 오래 보여 줍니다.</p>
+          <div class="says">
+            <div class="say"><q>5월에 너 이렇게 썼다. “마음을 먹으면 꼭 하려고 한다.” 그리고 고치고 싶은 점에 “잘 되지 않으면 포기하려고 한다.”</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>매일 5시부터 10시까지 오겠다고 한 거, 내가 정한 거 아니다. 네가 정했어.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>프로그램 나 혼자 짰어? 아니잖아. 너랑 같이 짰어. 방학 계획도 너랑 엄마가 같이 정했고.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>6월에 엄마가 그러셨어. 네가 공부하고 오면 스스로 만족하는지 기분이 더 좋아 보인다고. 그거 너 맞잖아.</q><button class="copy" type="button">복사</button></div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-core="true">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">직면 질문</span><span class="cl-badge cl-badge--accent">15~20분 · 핵심</span></div>
+          <p class="step__aim">논리로 설득하지 않습니다. 찌르는 질문 하나를 던지고, 다윤이가 답할 때까지 기다립니다. 침묵을 매니저님이 먼저 깨지 않습니다. 아래에서 서너 개만 고릅니다.</p>
+          <div class="qgrid">
+            <div class="qcard"><b>“그 선택, 누구를 위한 거야?”</b><span>원장님이 가장 먼저 던지라고 한 질문입니다.</span></div>
+            <div class="qcard"><b>“5월에 고치고 싶다던 그 ‘포기’, 지금 이건 아니야?”</b><span>다윤이가 쓴 말로 비춥니다.</span></div>
+            <div class="qcard"><b>“너는 편해지고 싶은 거야, 성적을 올리고 싶은 거야, 성장하고 싶은 거야?”</b><span>셋 중 하나를 고르게 합니다.</span></div>
+            <div class="qcard"><b>“이번 겨울 보내고 3월에, 어떤 김다윤이 돼 있고 싶어?”</b><span>답이 나오면 “그럼 그 김다윤은 이번 겨울에 뭘 하고 있을까?”로 잇습니다.</span></div>
+            <div class="qcard"><b>“불편해서 그만두면, 불편하지 않은 공부가 어디 있을까?”</b><span>낯선 튜터와의 불편함도 성장의 일부라는 원장님 뜻입니다.</span></div>
+            <div class="qcard"><b>“오빠랑 하면 돈은 아낄 수 있어. 근데 그게 네가 크는 길일까?”</b><span>오빠 과외가 대안으로 나왔을 때만 씁니다.</span></div>
+            <div class="qcard"><b>“엄마는 바쁘게 일하시면서 너한테 시간과 돈을 쓰셨어. 그걸 넌 어떻게 생각해?”</b><span>탓하는 말이 아니라 돌아보게 하는 말로.</span></div>
+            <div class="qcard"><b>“지금 너를 제일 잘 아는 사람이 누구야?”</b><span>원장님 시연에서 매니저님이 바로 답한 그 질문입니다.</span></div>
+          </div>
+          <p class="tip"><b>답이 “몰라요”일 때</b> · 설명을 보태지 말고 질문을 한 번만 다시 묻습니다. 그래도 막히면 페이지 8번 질문 칸에 직접 적어 보게 합니다.</p>
+        </div>
+      </li>
+      <li class="step" data-core="true">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">매니저의 진심과 판단</span><span class="cl-badge cl-badge--accent">10분 · 핵심</span></div>
+          <p class="step__aim">질문으로 흔든 뒤에 매니저님의 판단을 짧고 단단하게 말합니다. 전문가로서의 판단, 그리고 함께 가자는 약속입니다.</p>
+          <div class="says">
+            <div class="say"><q>나는 네가 잘되게 하는 게 일이야. 너 같은 친구들 많이 봤는데, 이 시점에 나가서 잘된 경우를 거의 못 봤어. 그걸 아는데 “그래, 잘 가”라고 어떻게 하겠어.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>지난 6개월은 공부가 덜 싫어지고 마음이 편해지는 시간이었어. 그건 우리 해냈어. 이제부터가 달리는 시간이야. 편해졌으면 이제 단단해져야 해.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>지금 너는 내가 옆에서 계획 같이 보고 챙길 때 움직이는 단계야. 부끄러운 거 아니고 다들 거치는 단계야. 근데 여기서 손 놓으면 예전으로 돌아가기 쉬워. 혼자 움직이는 단계로 넘어가는 문이 이번 겨울이야.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>12년 중에 10년이 지나갔어. 6개월로 10년을 다 채울 순 없어. 1, 2년만 더 같이 가자. 고3까지 네 최고점 만들어 줄 자신 있어. 믿고 따라와.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>지금 나가는 100명 중에 90명은 무너져. 우리는 버텨서 그 10명이 되자. 그거 하려고 여기 온 거잖아.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>넘어지고 자더라도 다시 올 곳이 있어야 해. 그게 여기야.</q><button class="copy" type="button">복사</button></div>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">갈림길 정리</span><span class="cl-badge">10분</span></div>
+          <p class="step__aim">다윤이가 고르게 합니다. 매니저님이 대신 정하지 않습니다.</p>
+          <div class="fork">
+            <div data-k="a"><b>A · 남는다</b><span>“그럼 기말 끝나고 재검사 받고, 엄마랑 같이 겨울 계획 다시 맞추자. 튜터 문제는 교실장님이랑 바로 이야기할게.” 튜터 조정은 교실장님과 확인한 것만 약속합니다.</span></div>
+            <div><b>B · 아직 모르겠다</b><span>“그럼 기말까지 2주는 하고 정해. 시험 앞두고 나가는 건 너한테 손해야. 그리고 6개월 재검사는 받고 가. 네가 얼마나 컸는지는 알고 가야지.” 이번 주 뒤의 등원은 어머님 동의가 필요하니 상담 뒤 바로 여쭙니다.</span></div>
+            <div><b>C · 그래도 그만둔다</b><span>“알았어. 네 선택 존중할게. 대신 한 달 쉬어 보고 다시 오고 싶으면 언제든 와. 혼자 해 보다 막히면 나한테 연락해.” 잘 보내야 나중에 옵니다.</span></div>
+          </div>
+          <p class="tip"><b>A일 때 다음</b> · 기말 → 5G 재검사 → 어머님 내방(어머님 퇴근 후 저녁 또는 매니저 주말 출근일, 재검사 결과와 윈터스쿨~2027 포트폴리오) → 최종 윈터 세팅. 비용 조정이 필요하면 지키는 선은 방학 주 5회 등원 + 수학까지입니다. 자세한 편성은 <a href="../tk94vpsn/#s4">후속상담 02 방학 편성기</a>.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__body">
+          <div class="step__top"><span class="step__name">마무리</span><span class="cl-badge">5분</span></div>
+          <p class="step__aim">어떤 결론이든 고마움과 다윤이의 장점 하나로 끝냅니다. 엄마께 무엇을 어떻게 전할지 다윤이에게 먼저 묻습니다.</p>
+          <div class="says">
+            <div class="say"><q>오늘 솔직하게 얘기해 줘서 고마워. 넌 시작하면 끝까지 붙잡는 사람이야. 단어 시험 연속 만점, 그거 아무나 하는 거 아니다.</q><button class="copy" type="button">복사</button></div>
+            <div class="say"><q>오늘 얘기한 거, 엄마께는 이렇게 전해도 될까?</q><button class="copy" type="button">복사</button></div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec" id="s3" aria-labelledby="t-s3">
+    <div class="sec__head">
+      <span class="sec__num">3 · 이렇게 말하면</span>
+      <h2 class="cl-title-2" id="t-s3">다윤이 반응별 받는 말</h2>
+      <p class="cl-subhead">다윤이 말을 고르면 읽을 거리와 받는 말이 나옵니다.</p>
+    </div>
+    <div class="cl-seg cl-seg--block" role="radiogroup" aria-label="다윤이 반응 고르기" style="--n:6;--i:0" id="reactSeg"><span class="cl-seg__thumb" aria-hidden="true"></span><button class="cl-seg__item" role="radio" aria-checked="true" type="button">튜터</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">오빠</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">혼자</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">힘들어</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">돈</button><button class="cl-seg__item" role="radio" aria-checked="false" type="button">침묵</button></div>
+    <div class="react" id="react"></div>
+  </section>
+
+  <section class="sec" id="s4" aria-labelledby="t-s4">
+    <div class="sec__head">
+      <span class="sec__num">4 · 넘지 않는 선</span>
+      <h2 class="cl-title-2" id="t-s4">상담에서 하지 않을 것</h2>
+    </div>
+    <ul class="dont">
+      <li><span class="dont__x">✕</span><span><b>길게 논리로 몰아붙이지 않습니다.</b> 설명이 길어지면 다윤이는 닫힙니다. 질문 하나, 기다림 하나.</span></li>
+      <li><span class="dont__x">✕</span><span><b>서운함이나 배신감을 드러내지 않습니다.</b> 아이가 그만두는 건 배신이 아니라 그만큼 힘들었다는 뜻이고, 자기 딴에는 더 나은 길이라고 믿는 판단입니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>붙잡으려고 수업을 빼 주거나 줄여 주겠다고 약속하지 않습니다.</b> 겨울 구성은 재검사와 내방에서 정합니다. 튜터 조정은 교실장님과 확인한 것만 말합니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>다윤이와 금액 이야기를 하지 않습니다.</b> 비용은 어머님과 나눌 이야기입니다.</span></li>
+      <li><span class="dont__x">✕</span><span><b>어머님을 탓하는 말을 하지 않습니다.</b> 어머님의 수고와 투자를 돌아보게 하는 것까지만.</span></li>
+      <li><span class="dont__x">✕</span><span><b>다른 학생 이야기나 이름을 꺼내지 않습니다.</b></span></li>
+      <li><span class="dont__x">✕</span><span><b>차갑게 끝내지 않습니다.</b> 결론이 C여도 마지막 인상은 따뜻하게. 잘 보내야 나중에 옵니다.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="s5" aria-labelledby="t-s5">
+    <div class="sec__head">
+      <span class="sec__num">5 · 어머님 회신</span>
+      <h2 class="cl-title-2" id="t-s5">오늘 보낼 회신 문안</h2>
+      <p class="cl-subhead">설득하지 않습니다. 다윤이와 직접 이야기하겠다는 것과 이번 주 등원만 전합니다. 매니저님 말투로 다듬어 보내셔요.</p>
+    </div>
+    <div class="panel">
+      <div class="say"><q id="replyText">어머님, 늦은 시간에 말씀 주셔서 감사합니다. 보내 주신 말씀 잘 읽었습니다. 다윤이가 저에게 직접 이야기하겠다고 했다고 하셔서, 이번 주 안에 다윤이와 얼굴 보고 충분히 이야기 나눠 보겠습니다. 개별지도 튜터 부분도 교실장님과 함께 살펴보겠습니다. 반년 동안 함께해 온 만큼 다윤이 생각을 끝까지 들어 보고, 정리되는 대로 다시 연락드리겠습니다. 이번 주 등원은 평소대로 챙기겠습니다.</q><button class="copy" type="button">복사</button></div>
+      <p class="tip"><b>상담 뒤 연락</b> · 다윤이가 동의한 말만 전합니다. B(기말까지 2주와 재검사)를 골랐다면 그 기간 등원을 어머님께 여쭙고, A라면 재검사 뒤 내방 날짜(어머님 퇴근 후 저녁 또는 매니저 주말 출근일)를 함께 잡습니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="s6" aria-labelledby="t-s6">
+    <div class="sec__head">
+      <span class="sec__num">6 · 상담 기록</span>
+      <h2 class="cl-title-2" id="t-s6">상담하면서 적을 칸</h2>
+      <p class="cl-subhead">이 기기에만 저장됩니다. 원장님 보고 때 그대로 옮기셔요.</p>
+    </div>
+    <div class="memo">
+      <div class="field"><label for="m1">다윤이가 말한 진짜 이유</label><textarea id="m1" data-k="m1"></textarea></div>
+      <div class="field"><label for="m2">직면 질문에 대한 다윤이의 답</label><textarea id="m2" data-k="m2"></textarea></div>
+      <div class="field"><label for="m3">결론 (A 남기 / B 2주와 재검사 / C 잘 보내기)</label><textarea id="m3" data-k="m3"></textarea></div>
+      <div class="field"><label for="m4">어머님께 전해도 된다고 한 말</label><textarea id="m4" data-k="m4"></textarea></div>
+      <div class="field"><label for="m5">교실장님과 확인한 튜터 사정</label><textarea id="m5" data-k="m5"></textarea></div>
+      <div class="field"><label for="m6">원장님께 보고할 것 · 다음 행동</label><textarea id="m6" data-k="m6"></textarea></div>
+    </div>
+  </section>
+
+  <section class="sec" id="s7" aria-labelledby="t-s7">
+    <div class="sec__head">
+      <span class="sec__num">7 · 매니저님께</span>
+      <h2 class="cl-title-2" id="t-s7">첫 겨울을 맞은 매니저님께 · 오늘 원장님 말씀</h2>
+    </div>
+    <div class="coach">
+      <p class="coach__big">허탈하시다는 건, 매니저님이 다윤이를 진짜로 매니지먼트했다는 뜻입니다.</p>
+      <div class="three">
+        <div class="panel"><span class="panel__eyebrow">종료를 대하는 법</span><p>종료는 납니다. 최악도 종료까지입니다. S그레이드 매니저 한 명이 나오기까지 보통 100번의 종료를 겪습니다. 지금까지 여덟 번. 아까운 케이스일수록 배움이 큽니다. 모두 매니저님의 임상 경험이 됩니다.</p></div>
+        <div class="panel"><span class="panel__eyebrow">아이가 떠날 때</span><p>통수가 아닙니다. 그만큼 힘들었다는 뜻이고, 우리 전달이 덜 됐다는 뜻입니다. 매니저님이 다윤이와 공감하고 교감한 건 사실이고, 다윤이도 그렇게 느낍니다.</p></div>
+        <div class="panel"><span class="panel__eyebrow">무기가 생기는 순간</span><p>성과를 낸 아이 한 명의 성장 과정이 그대로 매니저님의 커리어가 됩니다. 처음 오셨을 때보다 지금 퍼포먼스는 아득하게 좋아졌습니다. 다른 아이들도 많습니다.</p></div>
+      </div>
+      <div class="panel">
+        <span class="panel__eyebrow">이번 일의 교훈 · 다른 담당 학생에게 지금 할 일(선제 타격)</span>
+        <ul class="todo" data-store="winter">
+          <li><label><input type="checkbox" data-k="w1"><span>윈터스쿨 전에 담당 학생 한 명 한 명에게 미리 말하기<small>“이번 겨울이 제일 중요해. 다들 그만두고 싶어지는 때야. 탈주하고 싶으면 솔직하게 말해. 내가 잡아 줄게. 그때 잡혀.”</small></span></label></li>
+          <li><label><input type="checkbox" data-k="w2"><span>윈터 세팅을 “어떻게 해 볼까” 묻는 자리로 만들지 않기<small>겨울이 왜 중요한지 기점을 세우는 자리입니다. 시험보다 이 겨울이 중요하다는 것을 학생과 학부모에게 먼저 말합니다.</small></span></label></li>
+          <li><label><input type="checkbox" data-k="w3"><span>지금 시점에 학부모 내방 잡기<small>원장님은 이 시기에 다른 일정을 미루고서라도 내방을 꼭 잡으셨습니다. 겨울 퍼포먼스의 도움닫기입니다.</small></span></label></li>
+          <li><label><input type="checkbox" data-k="w4"><span>어머님이 바쁘고 성향이 부드러운 가정, 아이가 늘어지기 쉬운 조합을 따로 표시해 두기<small>이런 집은 아이 판단이 그대로 결정이 되기 쉽습니다. 먼저 챙깁니다.</small></span></label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="adm adm-box"><span class="adm-box__label">근거</span><ul>
+      <li>원장 코칭: 2026-11-24 MSC 04:37~04:47Z(허탈함·100번의 종료·8명·통수 아님·왕건 사례·퍼포먼스, 윈터 선제타격·내방, 마일드한 가정 조합)</li>
+      <li>5/26 어머님 발언(과외 회피·그만둠·잘 맞으면 잘 지냄): 10:52:15Z·10:52:46Z·12:21:55Z. 다윤 "계획이 너무 많이 바뀌지 않았으면" 12:03:53Z</li>
+      <li>6/2 교실장 안내 "잘 맞지 않는 튜터는 매칭하지 않을거고": 학생 소통방</li>
+      <li>마지노선(방학 주 5회 + 수학)·내방 시간: 2026-11-23 원장 답변(후속상담 02 원문 md)</li>
+      <li>두 층위·확인시켜 주기: 큐브맵 정본 4-2, 6절(XCM3 120~123)</li>
+    </ul></div>
+  </section>
+
+  <footer class="foot">
+    <span class="cl-plate"><img src="../assets/clarity-k06/logos/gireum-info-logo.png" alt="에듀플렉스 에듀코치 길음점 안내" width="320" height="61"></span>
+    <span class="cl-caption">내부 운영용 · 학생·학부모에게 공유하지 않습니다. 다윤이와 볼 페이지는 따로 있습니다.</span>
+  </footer>
+</main>
+</div>
+
+<script src="../assets/vlt-admin-lock/lock.js"></script>
+<script>
+(function () {
+  var KEY = 'd5ds0z9d:';
+  function get(k) { try { return localStorage.getItem(KEY + k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  var REACT = [
+    { said: '“이번 선생님이랑 안 맞아요.”',
+      read: '가장 먼저 나올 이유입니다. 맞춰 줄 수 있는 문제라는 걸 분명히 하고, 그만둘 이유와 떼어 놓습니다. 교실장님과 확인한 것만 약속합니다.',
+      lines: ['어떤 점이 제일 안 맞았어? 구체적으로 말해 주면 바꿀 수 있어. 처음 왔을 때 교실장님이 안 맞는 튜터는 매칭 안 한다고 했잖아.',
+              '그건 말해서 고칠 일이지, 그만둘 이유는 아니야. 그리고 낯선 튜터랑 하는 게 불편한 만큼 너는 크고 있는 거야. 편한 사람하고만 하면 안 늘어.'] },
+    { said: '“오빠한테 배우면 돼요.”',
+      read: '원장님이 짚은 대안입니다. 돈을 아끼는 건 사실로 인정하고, 수업이 아니라 하루 전체를 같이 봐 줄 사람이 있는지를 묻습니다.',
+      lines: ['돈은 아낄 수 있어. 그건 맞아.',
+              '근데 오빠가 매일 네 계획 보고, 안 오는 날 연락하고, 시험 전략 같이 짜 줄 수 있을까? 수업 한 시간이 아니라 네 하루 전체를 같이 봐 줄 사람이 있느냐가 문제야.',
+              '오빠한테 배우는 게 네가 크는 길인지, 집에서 돈 아끼는 방법인지, 그건 네가 정직하게 생각해 봐.'] },
+    { said: '“이제 혼자 할 수 있어요. 공부법 배웠어요.”',
+      read: '배운 건 인정합니다. 다만 지금은 매니저가 챙길 때 움직이는 단계라는 걸 다윤이 경험으로 확인시킵니다. 다그치지 않습니다.',
+      lines: ['배운 거 맞아. 6개월 동안 진짜 많이 배웠어.',
+              '근데 혼자 움직이는 단계였다면 성적이 먼저 말해 줬을 거야. 지금은 내가 옆에서 계획 같이 보고 챙길 때 되는 단계야.',
+              '여름에 혼자 있던 날 생각해 봐. 아침에 일어나는 게 어땠어? 넘어져 자더라도 다시 올 곳이 있어야 해.'] },
+    { said: '“그냥 쉬고 싶어요. 힘들어요.”',
+      read: '가장 솔직한 이유일 수 있습니다. 그 마음을 정상으로 받아 주되, 그만두는 것과는 떼어 놓습니다. 쉬는 날을 따로 약속하지 않습니다.',
+      lines: ['힘든 거 알아. 겨울엔 누구나 늘어지고 싶어. 나도 쉬고 싶을 때 많아.',
+              '그 마음 가지고도 나오는 게 하는 거야. 그만두고 싶은 마음 드는 거 정상이야. 대신 그럴 때 나한테 먼저 말해. 그때 내가 잡아 줄게.',
+              '지난 6개월은 마음 편해지는 시간이었고, 이제 달릴 때야. 단단해지자.'] },
+    { said: '“엄마가 돈 많이 든대요.”',
+      read: '금액 이야기로 들어가지 않습니다. 어른끼리 풀 일이라고 선을 긋고, 다윤이는 자기에게 무엇이 필요한지만 생각하게 합니다.',
+      lines: ['그건 엄마랑 내가 이야기할 일이야. 너는 네가 크는 데 뭐가 필요한지만 생각해.',
+              '네가 남겠다고 하면, 엄마랑 방법은 내가 같이 찾아볼게.'] },
+    { said: '말이 없거나 “몰라요”, 혹은 울 때',
+      read: '설명을 보태지 않습니다. 기다립니다. 울면 그만큼 힘들었다는 뜻입니다. 휴지를 건네고 시간을 줍니다. 오늘 결론이 안 나도 괜찮습니다.',
+      lines: ['괜찮아. 천천히 해. 기다릴게.',
+              '오늘 다 정하지 않아도 돼. 대신 하루만 생각해 보고 내일 나한테 한 줄만 보내 줘. 남을지, 2주만 더 해 볼지, 그만둘지.'] }
+  ];
+  var reactEl = document.getElementById('react');
+  function renderReact(i) {
+    var r = REACT[i];
+    reactEl.innerHTML = '<div class="react__card"><span class="react__said">' + esc(r.said) + '</span><p class="react__read">' + esc(r.read) + '</p><div class="says">' +
+      r.lines.map(function (l) { return '<div class="say"><q>' + esc(l) + '</q><button class="copy" type="button">복사</button></div>'; }).join('') + '</div></div>';
+  }
+  renderReact(0);
+  document.getElementById('reactSeg').addEventListener('cl-change', function (e) { renderReact(e.detail ? e.detail.index : 0); });
+  document.getElementById('reactSeg').addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.cl-seg__item'); if (!b) return;
+    var items = Array.prototype.slice.call(this.querySelectorAll('.cl-seg__item'));
+    var i = items.indexOf(b); if (i >= 0) setTimeout(function () { renderReact(i); }, 0);
+  });
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.copy'); if (!b) return;
+    var q = b.parentElement.querySelector('q'); if (!q) return;
+    var text = q.textContent;
+    function done() { b.dataset.done = 'true'; b.textContent = '복사됨'; setTimeout(function () { b.dataset.done = ''; b.textContent = '복사'; }, 1400); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+  });
+
+  document.querySelectorAll('.todo input[type=checkbox]').forEach(function (c) {
+    var store = c.closest('.todo').dataset.store;
+    if (get(store + ':' + c.dataset.k) === '1') c.checked = true;
+    c.addEventListener('change', function () { set(store + ':' + c.dataset.k, c.checked ? '1' : '0'); });
+  });
+  document.querySelectorAll('.memo textarea').forEach(function (t) {
+    var v = get('memo:' + t.dataset.k); if (v) t.value = v;
+    t.addEventListener('input', function () { set('memo:' + t.dataset.k, t.value); });
+  });
+})();
+</script>
+</body>
+</html>
