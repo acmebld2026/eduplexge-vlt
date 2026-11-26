@@ -970,6 +970,85 @@ body.cl-root{background:var(--cl-canvas);color:var(--cl-label);font:400 .9375rem
 @media (prefers-reduced-transparency:reduce){.cl-root .cx-board{background:var(--cl-glass-solid);-webkit-backdrop-filter:none;backdrop-filter:none}}
 @media print{.cl-root .cx-board{display:none}.cl-root .m-nav{display:none!important}body.cl-root{background:var(--cl-surface)}}
 
+/* ── 2026-11-26 원장 요청: 공간을 넓게, 카드는 여유 있게, 색 강조는 살려서(회색 일색 금지) ── */
+html:root{
+  --cx-wide:1400px;
+  /* 노랑은 면으로 쓰지 않으므로 '대기·다음'은 에듀플렉스 노랑을 흰 면에 아주 옅게 섞은 면 */
+  --cx-yellow-tint:color-mix(in oklab, var(--edu-yellow) 16%, var(--cl-surface));
+}
+.cl-root .wrap{max-width:var(--cx-wide);padding-left:var(--space-8);padding-right:var(--space-8)}
+.cl-root .m-nav{max-width:calc(var(--cx-wide) - 2 * var(--space-8))}
+.cl-root .card{padding:var(--space-5)}
+.cl-root .sec>h2{font-size:1.5rem;margin-bottom:var(--space-5)}
+
+/* 결정 보드: 다섯 열을 넓게, 열마다 색 면 */
+.cl-root .decision-board{gap:var(--space-4)}
+.cl-root .decision-col{padding:var(--space-4);gap:var(--space-3)}
+.cl-root .col--student{background:var(--cl-surface)}
+.cl-root .col--parent{background:var(--cl-info-tint)}
+.cl-root .col--advice{background:var(--cl-accent-tint)}
+.cl-root .col--pending{background:var(--cx-yellow-tint)}
+.cl-root .col--agreed{background:var(--cl-success-tint)}
+.cl-root .decision-col:not(.col--student) .dec-item{background:var(--cl-surface)}
+.cl-root .dec-item{padding:var(--space-4) var(--space-4) var(--space-3)}
+.cl-root .dec-text{font-size:.9375rem;line-height:1.55}
+.cl-root .dec-head .badge{min-height:28px;padding:0 var(--space-3);font-size:.875rem;font-weight:700}
+.cl-root .dec-n{min-height:24px;display:inline-grid;place-items:center;background:var(--cl-surface)}
+@media (max-width:1240px) and (min-width:701px){.cl-root .decision-board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* 상담 여정: 상태별 색 면 */
+.cl-root .journey{gap:var(--space-3)}
+.cl-root .js-card{padding:var(--space-4);gap:var(--space-2)}
+.cl-root .js--done .js-card{background:var(--cl-success-tint)}
+.cl-root .js--now .js-card{background:var(--cl-accent-tint)}
+.cl-root .js--next .js-card{background:var(--cx-yellow-tint)}
+.cl-root .js-date{font-size:.875rem}
+.cl-root .js-title{font-size:1rem}
+
+/* 한눈에 보는 진단: 자산·위험·중립 색 면 */
+.cl-root .kpi-grid{gap:var(--space-4)}
+.cl-root .kpi{padding:var(--space-5)}
+.cl-root .kpi--asset{background:var(--cl-success-tint)}
+.cl-root .kpi--risk{background:var(--cl-danger-tint)}
+.cl-root .kpi--neutral{background:var(--cl-accent-tint)}
+.cl-root .kpi-value{font-size:2rem}
+
+/* 병목 인과: 번호 카드 색, 결과 노드 강조 */
+.cl-root .cause-chain{gap:var(--space-4)}
+.cl-root .cause-item{padding:var(--space-5)}
+.cl-root .node{padding:var(--space-3) var(--space-4)}
+.cl-root .node--cause{background:var(--cl-surface-2)}
+.cl-root .node--scene{background:var(--cl-accent-tint)}
+.cl-root .dyn-card{padding:var(--space-5)}
+
+/* 과목 작전: 핵심 과목 카드 강조 */
+.cl-root .subject-list{gap:var(--space-4)}
+.cl-root .subject-row{gap:var(--space-6);padding:var(--space-5)}
+.cl-root .subject-row:has(.badge--core) .prog-lbl .to b{color:var(--cl-danger)}
+.cl-root .tactic li{padding:var(--space-2) var(--space-3);background:var(--cl-accent-tint)}
+
+/* 프로그램: 프로그램 색 면(상담 accent · 관리 info · 개별지도 success) */
+.cl-root .program-grid{gap:var(--space-4)}
+.cl-root .program-tile{padding:var(--space-5)}
+.cl-root .program-tile:has(.badge--coaching){background:var(--cl-accent-tint)}
+.cl-root .program-tile:has(.badge--training){background:var(--cl-info-tint)}
+.cl-root .program-tile:has(.badge--tutoring){background:var(--cl-success-tint)}
+
+/* 확인 지표·지금 할 일 */
+.cl-root .checkpoint-rail{gap:var(--space-4)}
+.cl-root .checkpoint{padding:var(--space-5)}
+.cl-root .checkpoint:first-child{background:var(--cl-accent-tint)}
+.cl-root .action-list{padding:var(--space-2) var(--space-5)}
+.cl-root .action:has(.badge--now){background:var(--cl-accent-tint);border-radius:var(--radius-sm);border-bottom-color:transparent}
+.cl-root .action:has(.badge--now){margin:0 calc(var(--space-5) * -1);padding-left:var(--space-5);padding-right:var(--space-5)}
+
+@media (max-width:700px){
+  .cl-root .wrap{padding-left:var(--space-4);padding-right:var(--space-4)}
+  .cl-root .m-nav{max-width:calc(100% - 2 * var(--space-4))}
+  .cl-root .subject-row{padding:var(--space-4)}
+  .cl-root .action:has(.badge--now){margin:0 calc(var(--space-5) * -1)}
+}
+
 </style>
 </head>
 <body class="cl-root" data-clarity-skin="2026-11-26.1">
