@@ -785,7 +785,9 @@ body.cl-root{background:var(--cl-canvas);color:var(--cl-label);font:400 .9375rem
 .cl-root :is(.badge--owner-manager,.badge--owner-director,.badge--owner-desk,.badge--owner-family,.badge--owner-student){background:transparent;color:var(--cl-label);box-shadow:inset 0 0 0 1px var(--cl-control)}
 .cl-root .badge--private{background:var(--cl-danger-tint);color:var(--cl-danger)}
 .cl-root .chip{min-height:26px;padding:2px 10px;border:0;border-radius:var(--radius-capsule);background:var(--cl-surface-2);color:var(--cl-label);font-size:.8125rem;line-height:1.45;justify-content:center;text-align:center}
-.cl-root .chip--evidence{background:var(--cl-fill);color:var(--cl-label-2);font-size:.8125rem;padding:1px 8px;white-space:nowrap}
+.cl-root .chip--evidence{background:var(--cl-fill);color:var(--cl-label-2);font-size:.8125rem;padding:1px 8px}
+/* 짧은 근거 칩이 모인 칸에서만 한 줄 고정(긴 근거 칩은 줄을 바꾼다) */
+.cl-root :is(.dec-ev,.js-ev,.ci-ev,.alert-ev,.sr-ev) .chip--evidence{white-space:nowrap;max-width:100%}
 .cl-root .chip--note{border-radius:var(--radius-xs);background:var(--cl-surface-2);justify-content:flex-start;text-align:start}
 .cl-root .chip--due{background:var(--cl-accent-tint);color:var(--cl-accent);font-weight:700}
 
@@ -1048,6 +1050,11 @@ html:root{
   .cl-root .subject-row{padding:var(--space-4)}
   .cl-root .action:has(.badge--now){margin:0 calc(var(--space-5) * -1)}
 }
+
+/* 옛 매니저 페이지: 이동 막대에 가로 스크롤 감싸개(m-nav-in)가 없는 경우 */
+.cl-root .m-nav{overflow-x:auto;scrollbar-width:none}
+.cl-root .m-nav::-webkit-scrollbar{display:none}
+.cl-root .m-nav:not(:has(.m-nav-in)){display:flex;flex-wrap:nowrap;gap:2px;padding:6px}
 
 </style>
 </head>
@@ -1319,6 +1326,7 @@ html:root{
     });
 
     var bar = visual("div", "cx-board");
+    bar.setAttribute("data-live", "clarity-board");
     bar.setAttribute("role", "status");
     var count = el("span", "cx-board__count", "체크 0/" + items.size);
     var meter = el("span", "cx-board__bar"); var fill = el("i"); fill.style.width = "0%"; meter.appendChild(fill);
@@ -1371,13 +1379,132 @@ html:root{
     document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") load(); });
   }
 
+  /* 편집 고정 장치(data-page-freeze-guard)가 있는 페이지: 보강하는 동안만 body에 data-live를 단다.
+     하단 체크 막대는 계속 글자가 바뀌므로 그 자체에 data-live를 둔다. */
   function run() {
-    sectionIcons();
-    chunks();
-    publicChecks();
-    document.documentElement.setAttribute("data-cx-enhanced", "manager-2026-11-26.1");
+    var B = document.body, unlocked = !B.hasAttribute("data-live");
+    if (unlocked) B.setAttribute("data-live", "clarity-enhance");
+    try {
+      sectionIcons();
+      chunks();
+      publicChecks();
+      document.documentElement.setAttribute("data-cx-enhanced", "manager-2026-11-26.1");
+    } finally { if (unlocked) B.removeAttribute("data-live"); }
   }
   if (document.readyState === "complete") run(); else window.addEventListener("load", run, { once: true });
+})();
+
+</script>
+<script data-clarity-normalize="2026-11-26.1">
+/* VLT-5G Clarity 공통 안전장치 2026-11-26.1 — 학부모용·매니저용 공통, 보강 스크립트 다음에 실행
+   스킨이 모르는 옛 구성요소(예전 템플릿 전용 클래스)를 Clarity 규칙 안으로 들인다. 글자는 바꾸지 않는다.
+   1) 색: 토큰 밖 글자·면·테두리 색을 같은 역할의 가장 가까운 토큰으로 맞춘다(색상 계열 유지 — 초록은 success, 붉은·주황은 danger,
+      파랑은 accent·info, 노랑은 highlight 계열). 그라데이션 면은 첫 색의 토큰 면으로 바꾼다.
+   2) 글자 크기: 보이는 글자 13px 미만은 13px(.8125rem)로 올린다(Clarity 최소 글자).
+   편집 고정 장치(data-page-freeze-guard)는 style 속성 변경을 막지 않는다. */
+(function () {
+  "use strict";
+  if (window.__vlt5gClarityNormalize) return;
+  window.__vlt5gClarityNormalize = true;
+
+  var TEXT = ["--cl-label", "--cl-label-2", "--cl-label-3", "--cl-accent", "--cl-info", "--cl-success", "--cl-danger", "--cl-on-highlight", "--cl-on-accent"];
+  var FACE = ["--cl-surface", "--cl-surface-2", "--cl-canvas", "--cl-fill", "--cl-separator", "--cl-accent-tint", "--cl-info-tint", "--cl-success-tint", "--cl-danger-tint",
+    "--cl-highlight", "--cx-yellow-tint", "--chart-context", "--cl-accent", "--cl-info", "--cl-success", "--cl-danger", "--cl-label"];
+  var LINE = ["--cl-separator", "--cl-control", "--cl-accent", "--cl-info", "--cl-success", "--cl-danger", "--cl-on-highlight", "--cl-highlight"];
+
+  function parse(c) {
+    var m = /rgba?\(([^)]+)\)/.exec(c || ""); if (!m) return null;
+    var p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number);
+    return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 };
+  }
+  function lab(c) {
+    function lin(v) { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }
+    var r = lin(c.r), g = lin(c.g), b = lin(c.b);
+    var x = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047, y = r * 0.2126 + g * 0.7152 + b * 0.0722, z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883;
+    function f(t) { return t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116; }
+    var L = 116 * f(y) - 16, A = 500 * (f(x) - f(y)), B = 200 * (f(y) - f(z));
+    var C = Math.sqrt(A * A + B * B), H = (Math.atan2(B, A) * 180 / Math.PI + 360) % 360;
+    return { L: L, A: A, B: B, C: C, H: H };
+  }
+  /* 색상 계열: 무채 / 파랑 / 초록 / 붉은·주황 / 노랑 */
+  function family(l) {
+    if (l.C < 12) return "neutral";
+    if (l.H >= 200 && l.H < 320) return "blue";
+    if (l.H >= 110 && l.H < 200) return "green";
+    if (l.H >= 75 && l.H < 110) return "yellow";
+    return "red";
+  }
+  function over(c, base) { /* 반투명은 흰 면 위에 얹은 색으로 본다 */
+    if (c.a >= 1) return c;
+    return { r: c.r * c.a + base.r * (1 - c.a), g: c.g * c.a + base.g * (1 - c.a), b: c.b * c.a + base.b * (1 - c.a), a: 1 };
+  }
+
+  var probe = document.createElement("span");
+  var tokens = {}, allowed = {};
+  function resolve(list) {
+    var root = getComputedStyle(document.documentElement);
+    return list.map(function (name) {
+      var raw = root.getPropertyValue(name).trim(); if (!raw) return null;
+      probe.style.color = ""; probe.style.color = raw;
+      var css = getComputedStyle(probe).color, c = parse(css);
+      if (!c) return null;
+      allowed[css] = 1;
+      var l = lab(c);
+      return { name: name, css: css, l: l, fam: family(l) };
+    }).filter(Boolean);
+  }
+  function nearest(css, pool, white) {
+    var c = parse(css); if (!c) return null;
+    if (c.a === 0) return null;
+    var l = lab(over(c, white)), fam = family(l);
+    var same = pool.filter(function (t) { return t.fam === fam || (fam === "yellow" && t.name === "--cl-on-highlight"); });
+    var cand = same.length ? same : pool;
+    var best = null, bd = 1e9;
+    cand.forEach(function (t) {
+      var d = Math.pow(t.l.L - l.L, 2) + Math.pow(t.l.A - l.A, 2) + Math.pow(t.l.B - l.B, 2);
+      if (d < bd) { bd = d; best = t; }
+    });
+    return best;
+  }
+
+  function run() {
+    document.body.appendChild(probe);
+    var text = resolve(TEXT), face = resolve(FACE), line = resolve(LINE);
+    resolve(["--cl-glass", "--cl-glass-rim", "--cl-glass-solid", "--cl-thumb", "--cl-control", "--cx-track", "--chart-ink", "--brand-plate", "--brand-pink", "--brand-green", "--brand-blue", "--edu-blue-deep", "--edu-yellow", "--brand-ink", "--chart-seq-1", "--chart-seq-2", "--chart-seq-3", "--chart-seq-4", "--chart-4"]);
+    probe.remove();
+    allowed["rgba(0, 0, 0, 0)"] = 1;
+    var white = parse(getComputedStyle(document.body).backgroundColor) || { r: 255, g: 255, b: 255, a: 1 };
+    white = { r: 255, g: 255, b: 255, a: 1 };
+    var fixed = { color: 0, face: 0, line: 0, gradient: 0, font: 0 };
+    var scope = document.querySelector(".wrap") || document.body;
+    scope.querySelectorAll("*").forEach(function (el) {
+      if (el.closest("svg,script,style")) return;
+      var cs = getComputedStyle(el);
+      if (cs.display === "none") return;
+      var hasText = false;
+      for (var n = el.firstChild; n; n = n.nextSibling) if (n.nodeType === 3 && n.nodeValue.trim()) { hasText = true; break; }
+      if (cs.backgroundImage && cs.backgroundImage !== "none" && /gradient/.test(cs.backgroundImage)) {
+        var first = /rgba?\([^)]+\)/.exec(cs.backgroundImage);
+        var t0 = first && nearest(first[0], face, white);
+        el.style.backgroundImage = "none";
+        if (t0 && !(cs.backgroundColor in allowed && cs.backgroundColor !== "rgba(0, 0, 0, 0)")) el.style.backgroundColor = "var(" + t0.name + ")";
+        fixed.gradient++;
+      }
+      var bg = getComputedStyle(el).backgroundColor;
+      if (!(bg in allowed)) { var tb = nearest(bg, face, white); if (tb) { el.style.backgroundColor = "var(" + tb.name + ")"; fixed.face++; } }
+      if (hasText && !(cs.color in allowed)) { var tc = nearest(cs.color, text, white); if (tc) { el.style.color = "var(" + tc.name + ")"; fixed.color++; } }
+      ["Top", "Right", "Bottom", "Left"].forEach(function (side) {
+        if (parseFloat(cs["border" + side + "Width"]) > 0 && cs["border" + side + "Style"] !== "none") {
+          var bc = cs["border" + side + "Color"];
+          if (!(bc in allowed)) { var tl = nearest(bc, line, white); if (tl) { el.style["border" + side + "Color"] = "var(" + tl.name + ")"; fixed.line++; } }
+        }
+      });
+      if (hasText && parseFloat(cs.fontSize) < 13 && !el.matches(".state .icon")) { el.style.fontSize = ".8125rem"; fixed.font++; }
+    });
+    document.documentElement.setAttribute("data-cx-normalized", JSON.stringify(fixed));
+  }
+  function start() { setTimeout(run, 0); }
+  if (document.readyState === "complete") start(); else window.addEventListener("load", start, { once: true });
 })();
 
 </script>
