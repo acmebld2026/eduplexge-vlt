@@ -66,6 +66,17 @@ main{padding:0}
 .issue-leaves article,#rehearse details,.sequence li,.scene{break-inside:avoid}
 h2,h3,h4{break-after:avoid}
 }
+
+.brief-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--space-3);margin-block:var(--space-4)}
+.brief-grid .cl-card,.reading-card{background:var(--cl-surface-2)}
+.brief-grid h3,.reading-card h3{margin-top:var(--space-2)}
+.brief-grid p:last-child{margin-bottom:0}
+.issue-map{margin-block-start:var(--space-3)}
+.issue-leaves h4{line-height:1.45}
+.review-plan{padding-inline-start:1.35em}
+.review-plan li{padding-inline-start:var(--space-1)}
+.source-refs{font-size:.875rem;color:var(--cl-label-2)}
+@media print{.brief-grid{display:block}.brief-grid article,.reading-card{break-inside:avoid;margin-block-end:var(--space-2)}}
 </style>
 </head>
 <body class="cl-root">
@@ -75,19 +86,19 @@ h2,h3,h4{break-after:avoid}
 <p class="meta">내부 운영용 · 외부 공유 금지 · 후속상담 02</p>
 <h1 class="cl-large-title">겨울 수학 증강과 재검사 후 내방</h1>
 <p>매니저가 부모님께 설명할 판단 근거와 상담에서 정할 사항</p>
-</header>
+<p class="scene"><strong>상담의 출발점</strong> · 수학을 늘린 이유부터 설명하십시오. 확보하려던 시간은 개념을 듣는 시간과 함께, 배운 내용을 혼자 풀고 막힌 문제에 다시 도전하는 시간입니다.</p></header>
 <nav class="navline cl-glass" aria-label="본문 탐색"><div class="navlinks"><a class="cl-btn cl-btn--plain" href="#background">배경과 현재 판단</a><a class="cl-btn cl-btn--plain" href="#carry">1회차에서 이어갈 것</a><a class="cl-btn cl-btn--plain" href="#tree">이슈트리</a><a class="cl-btn cl-btn--plain" href="#meeting">통화와 내방</a><a class="cl-btn cl-btn--plain" href="#rehearse">질문별 응답</a><a class="cl-btn cl-btn--plain" href="#check">상담 준비</a></div><div class="read-progress cl-progress"><div class="cl-progress__track" role="progressbar" aria-label="읽기 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="cl-progress__fill"></div></div><div class="cl-progress__meta" aria-hidden="true"><span>0%</span></div></div></nav>
 <section class="cl-card cl-card--padded" id="background"><h2 class="cl-title-2">처음 합의에서 다시 내방하기까지</h2><ol class="sequence"><li><h3>처음 합의 · 풀어내는 힘을 보며 속도를 정합니다</h3><p>선행 속도는 설명을 들은 분량보다 혼자 풀고 설명할 수 있는 범위에 맞춥니다. 먼저 조건을 읽고 식을 쓰며 막힌 곳을 말하는 루틴을 잡습니다.</p></li><li><h3>증강 검토 · 선행을 앞당길 때 풀어 볼 시간도 확보합니다</h3><p>기말 뒤 일찍 시작해 중1 전 범위를 다루고 1학기를 다시 보고 싶다면, 진도표와 함께 오답·독립 풀이 시간표를 제시해야 합니다.</p></li><li><h3>가족 재논의 · 수업이 늘면 혼자 공부할 시간은 어디에 있나요?</h3><p>이 질문이 나오면 구성 변경부터 권하지 않고, 앞 시간과 뒤 시간에 학생이 무엇을 하는지 보여드립니다. 같은 분량을 외부에서 배우더라도 그 풀이가 다음 과제와 다른 과목 시간에 이어지는지 확인합니다.</p></li><li><h3>다음 상담 · 첫 주와 겨울 전체를 따로 정합니다</h3><p>첫 주 편성을 확인하고 내방을 예약합니다. 내방 때 재검사와 풀이 한 장을 놓고 선행 속도, 독립 도전 시간, 타과목 배치와 다시 볼 날짜를 함께 정합니다.</p></li></ol></section>
 <section class="cl-card cl-card--padded" id="carry">
-<h2 class="cl-title-2">1회차에서 이어갈 점검</h2><p>소수 나눗셈, 연산 오답, 공부 루틴은 실제 풀이로 확인합니다. 4주에는 막힌 곳 말하기와 개념 확인, 8주에는 식 쓰기와 오답 질문, 12주에는 스스로 다시 보기를 점검 기준으로 삼습니다.</p>
+<h2 class="cl-title-2">1회차 점검을 겨울 계획으로 잇기</h2><p>정답 수를 먼저 묻기보다 어떤 조건에서 멈췄고, 식을 써 보니 무엇이 달라졌는지 확인합니다. 최근 풀이에서 <strong>소수 나눗셈 개념, 반복 연산 오답, 시작부터 검토까지의 루틴</strong>을 각각 찾습니다.</p><div class="brief-grid"><article class="cl-card cl-card--padded"><span class="cl-badge cl-badge--accent">4주</span><h3 class="cl-card__title">막힌 곳 말하기</h3><p>소수 ÷ 소수에서 왜 두 수의 소수점을 함께 옮기는지 자기 말로 설명할 수 있는지 봅니다. 막힌 곳을 말하면 그 지점부터 함께 살핍니다.</p></article><article class="cl-card cl-card--padded"><span class="cl-badge cl-badge--accent">8주</span><h3 class="cl-card__title">식 쓰기와 오답 질문</h3><p>발문에 표시하고, 식을 쓰고, 문제에서 요구한 것과 답을 비교합니다. 비슷한 오답에서 어느 단계가 빠졌는지 질문합니다.</p></article><article class="cl-card cl-card--padded"><span class="cl-badge cl-badge--accent">12주</span><h3 class="cl-card__title">혼자 풀고 다시 보기</h3><p>유사 문제를 도움 없이 푼 뒤, 스스로 답을 다시 살피는지 확인합니다. 도움 범위는 실제 풀이를 보고 조정합니다.</p></article></div><p class="source-note">위 항목은 점검 기준입니다. 달성 여부는 최근 풀이와 과제 기록으로 확인합니다.</p>
 </section>
 <section class="cl-card cl-card--padded" id="tree" aria-labelledby="issue-root">
 <h2 class="issue-root cl-title-2" id="issue-root">왜 에듀플렉스 수학 증강은 되고 외부 과외로 바꾸면 안 되나?</h2>
-<p class="scene"><strong>판단의 연결</strong> · 선행을 앞당기려면 직접 풀 시간을 확보해야 합니다. 풀이에서 확인한 결과로 다음 미션을 정하고, 그 미션을 끝낼 시간은 다른 과목과 함께 배치합니다.</p><ul class="issue-map">
+<p class="scene"><strong>판단의 연결</strong> · 선행을 앞당기려면 직접 풀 시간을 확보해야 합니다. 풀이에서 확인한 결과로 다음 미션을 정하고, 그 미션을 끝낼 시간은 다른 과목과 함께 배치합니다.</p><ul class="issue-map" aria-label="수학 증강과 외부 과외를 비교하는 두 갈래">
 <li><h3>선행을 소화할 조건</h3><ul class="issue-leaves">
-<li><article class="cl-card cl-card--padded"><h4>개념을 질문과 응답으로 확인</h4><p>앞 콤마에서 개념을 자기 말로 설명하고 홀수 문제에 적용합니다. 왜 그렇게 풀었는지 묻고 조건을 바꿔도 설명할 수 있는지 확인합니다.</p></article></li>
-<li><article class="cl-card cl-card--padded"><h4>혼자 풀고 어려운 문제에 도전할 시간</h4><p>다음 콤마에서는 홀수 오답을 확인한 뒤 짝수 문제를 직접 풉니다. 숙제를 내준 뒤 결과를 받기까지, 혼자 풀고 막힌 문제를 다시 시도할 시간을 확보합니다.</p></article></li>
-<li><article class="cl-card cl-card--padded"><h4>실제 풀이에서 다음 미션으로</h4><p>튜터는 실제 풀이를 관찰하고, 질문·힌트·기다리기 중 필요한 도움을 고릅니다. 오답 재풀이·조건을 바꾼 문제·풀이 설명을 다음 미션으로 정하고, 혼자 해내는지 확인해 진도를 조정합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>① 개념을 질문과 응답으로 확인</h4><p>앞 콤마에서 개념을 자기 말로 설명하고 홀수 문제에 적용합니다. 왜 그렇게 풀었는지 묻고 조건을 바꿔도 설명할 수 있는지 확인합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>② 혼자 풀고 어려운 문제에 도전할 시간</h4><p>다음 콤마에서는 홀수 오답을 확인한 뒤 짝수 문제를 직접 풉니다. 숙제를 내준 뒤 결과를 받기까지, 혼자 풀고 막힌 문제를 다시 시도할 시간을 확보합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>③ 실제 풀이에서 다음 미션으로</h4><p>기본 연습은 에듀플렉스에서 소화하고 집에서는 남은 오답을 다시 풉니다. 튜터는 실제 풀이를 관찰하고, 질문·힌트·기다리기 중 필요한 도움을 고릅니다. 오답 재풀이·조건을 바꾼 문제·풀이 설명을 다음 미션으로 정하고, 혼자 해내는지 확인해 진도를 조정합니다.</p></article></li>
 </ul></li>
 <li><h3>타과목까지 맞물린 겨울 전체 전략</h3><ul class="issue-leaves">
 <li><article class="cl-card cl-card--padded"><h4>한 문제에 10분 더 도전한 뒤</h4><p>학생이 남은 시간에 끝낼 과제와 미룰 과제, 다른 과목에 쓸 시간을 직접 정합니다. 매니저는 판단의 근거와 실제 실행을 확인합니다. 이 과정에서 중학교 공부에 필요한 사고력과 자원관리력을 함께 연습합니다.</p></article></li>
@@ -99,10 +110,10 @@ h2,h3,h4{break-after:avoid}
 <p class="decision">상담 결론 · 현재 외부 수학 과외 병행을 권하지 않습니다. 수학은 과외로 하고 에듀플렉스에서 영어 개별지도만 하는 구성은 진행할 수 없습니다.</p>
 </section>
 <section class="cl-card cl-card--padded" id="meeting">
-<h2 class="cl-title-2">통화와 내방에서 정할 사항</h2><h3>통화 · 첫 주 편성 확인과 내방 예약</h3><p>첫 주에 가능한 배치를 확인하고, 두 분이 함께 내방하실 일정을 잡습니다.</p><h3>내방 · 재검사와 실제 풀이를 주간 계획으로</h3><p>6개월 재검사와 실제 수학 풀이 기록을 함께 봅니다. 선행 범위와 속도, 혼자 도전할 시간, 다른 과목 배치, 다음 점검 시점을 큐브맵 주간 계획에 담습니다.</p>
+<h2 class="cl-title-2">통화에서 확인하고, 내방에서 결정할 것</h2><h3>통화 · 첫 주 시간표와 내방 예약</h3><p>먼저 가족의 희망을 듣고, 첫 주 일정 유지·기존 편성으로 조정·수학 일정 제외 가운데 어떤 답을 주셨는지 확인합니다. 답이 오면 부원장님과 조정할 범위를 확인합니다. 두 분이 함께 오실 수 있는 날을 잡고, 내방 전까지 시범수업과 과외 확정은 잠시 보류를 부탁드립니다.</p><h3>내방 · 아버님 질문에서 주간 계획까지</h3><ol class="review-plan"><li><strong>질문부터 받습니다.</strong> “수학을 늘리면 혼자 공부할 시간은 어디에 있나요?” 앞 콤마의 개념 확인과 뒤 콤마의 직접 풀이로 그 시간을 보여드립니다.</li><li><strong>같은 문제의 풀이를 함께 봅니다.</strong> 첫 검사와 6개월 재검사를 비교하고 최근 오답 한 장을 놓습니다. 설명이 필요한 문제, 시간을 주면 푸는 문제, 이미 혼자 푸는 문제를 구분합니다.</li><li><strong>큐브맵을 주간 계획표로 옮깁니다.</strong> 어느 단원을 언제 배우고, 무엇을 혼자 풀고, 막히면 얼마나 더 시도할지 적습니다. 영어·다른 과목의 시간도 같은 표에서 조정합니다.</li><li><strong>다시 볼 날짜를 정합니다.</strong> 선행 범위·속도, 독립 도전 시간, 타과목 우선순위, 점검 시점을 두 분과 함께 정합니다. 이후에는 독립 수행이 확인된 범위에 맞춰 지원 시간을 조정합니다.</li></ol>
 </section>
 <section class="cl-card cl-card--padded" id="rehearse">
-<h2 class="cl-title-2">질문별 상담 응답</h2><button class="qa-toggle cl-btn cl-btn--tinted" type="button" hidden></button><details class="cl-card cl-card--padded"><summary>수학은 과외에서 배우고 영어만 개별지도를 받으면요?</summary><p>수학의 개념 확인과 실제 풀이가 다음 과제와 다른 과목 시간으로 이어지는 구조입니다. 현재 외부 수학 과외 병행은 권하지 않습니다. 수학을 과외로 옮기고 영어 개별지도만 유지하는 구성은 진행할 수 없습니다.</p></details><details class="cl-card cl-card--padded"><summary>수업이 늘면 혼자 공부하는 시간이 줄지 않나요?</summary><p>앞 시간에 확인한 개념을 뒤 시간에 직접 적용합니다. 막힌 문제에 다시 도전할 시간까지 주간 계획에 표시해 보여드리겠습니다.</p></details><details class="cl-card cl-card--padded"><summary>선행 분량은 어떻게 정하나요?</summary><p>재검사와 최근 풀이를 함께 보고, 혼자 풀 수 있는 범위와 다시 확인할 범위를 나눠 진도를 정합니다.</p></details><details class="cl-card cl-card--padded"><summary>지금 무엇부터 정하면 되나요?</summary><p>첫 주 편성을 확인하고 내방을 예약합니다. 겨울 계획은 재검사와 풀이를 함께 본 뒤 정합니다.</p></details>
+<h2 class="cl-title-2">질문별 상담 응답</h2><button class="qa-toggle cl-btn cl-btn--tinted" type="button" hidden></button><details class="cl-card cl-card--padded"><summary>“수학을 늘리면 혼자 풀 시간은 어디에 있나요?”</summary><p>앞 시간에는 개념을 말로 설명하고 홀수 문제에 써 봅니다. 뒤 시간에는 그 오답을 짚고 짝수 문제를 혼자 풉니다. 언제 혼자 풀고, 막혔을 때 얼마나 더 도전하는지 시간표와 실제 풀이로 보여드리겠습니다.</p></details><details class="cl-card cl-card--padded"><summary>“과외에서 먼저 배우고 영어만 개별지도를 받으면요?”</summary><p>현재 외부 수학 과외 병행을 권하지 않습니다. 수학을 외부 과외로 하고 영어 개별지도만 유지하는 구성은 운영할 수 없습니다. 수학 풀이에서 확인한 다음 과제와 다른 과목의 시간을 함께 조정하는 운영 방식이 달라지므로, 외부 과외를 선택하신다면 겨울 전체 계획을 다시 논의해야 합니다.</p></details><details class="cl-card cl-card--padded"><summary>“원한 선행 분량은 어떻게 되나요?”</summary><p>중1 전 범위를 다루고 1학기를 다시 보고 싶으신 목표를 먼저 확인하겠습니다. 재검사와 풀이에서 어디까지 혼자 소화하는지 본 뒤 중1-1을 다시 보는 구간과 중1-2 시작 시점을 정하겠습니다.</p></details><details class="cl-card cl-card--padded"><summary>“지금 바로 무엇을 정하면 되나요?”</summary><p>첫 주 시간표를 어떻게 조정할지와 두 분이 내방하실 날을 먼저 정합니다. 겨울 전체 계획은 내방에서 함께 정할 수 있도록 과외 확정과 시범수업은 잠시 보류를 부탁드립니다.</p></details>
 </section>
 <section class="cl-card cl-card--padded" id="check">
 <h2 class="cl-title-2">상담 준비</h2><ul><li>이전 점검 기준과 최근 풀이 기록 준비</li><li>첫 주 편성 확인과 재검사·내방 예약</li><li>선행 속도, 도전 시간, 타과목 우선순위와 다음 점검일 정리</li></ul>
