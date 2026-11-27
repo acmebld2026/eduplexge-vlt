@@ -165,11 +165,20 @@ h2,h3,h4{break-after:avoid}
 .week-grid [contenteditable]:focus-visible,.week-scroll:focus-visible{outline:2px solid var(--cl-accent);outline-offset:-2px}
 #visit-week,#visit-tradeoff{scroll-margin-top:8rem}
 @media print{.week-scroll{overflow:visible}.week-grid{min-width:0;font-size:8pt}.week-grid th:first-child{position:static;width:5rem}}
+
+.strategy-slide{background:var(--cl-surface-2);border:1px solid var(--cl-separator);border-radius:var(--radius-lg);padding:clamp(1rem,4vw,2.5rem);margin-block:var(--space-3)}
+.strategy-slide h3{font-size:clamp(1.3rem,3.6vw,2.25rem);line-height:1.25;margin:0 0 var(--space-3);word-break:keep-all}
+.slide-points{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:var(--space-3)}
+.slide-points>div{background:var(--cl-surface);padding:var(--space-3);border-radius:var(--space-2)}
+.slide-points h4{color:var(--cl-accent);margin:0 0 var(--space-2)}
+.slide-points p{margin:0}
+.slide-controls:not([hidden]){display:flex;align-items:center;justify-content:center;gap:var(--space-3)}
+@media print{.slide-controls:not([hidden]){display:none}.strategy-slide[hidden]{display:block!important}.strategy-slide{break-inside:avoid}}
 </style>
 </head>
 <body class="cl-root">
 <main>
-<div class="consult-modes" hidden role="group" aria-label="상담 단계"><button type="button" class="cl-btn cl-btn--tinted" data-mode="call" aria-pressed="true">내방 유도 통화</button><button type="button" class="cl-btn cl-btn--tinted" data-mode="visit" aria-pressed="false">두 분 내방 상담</button><a class="cl-btn cl-btn--tinted" href="https://chatgpt.com/space/page_073e332f0480819192a7a16eea4f438b" target="_blank" rel="noopener noreferrer">학습 전략 PPT 열기</a></div>
+<div class="consult-modes" hidden role="group" aria-label="상담 단계"><button type="button" class="cl-btn cl-btn--tinted" data-mode="call" aria-pressed="true">내방 유도 통화</button><button type="button" class="cl-btn cl-btn--tinted" data-mode="visit" aria-pressed="false">두 분 내방 상담</button><button type="button" class="cl-btn cl-btn--tinted" data-mode="slides" aria-pressed="false" aria-controls="strategy-slides">학습 전략 PPT</button></div>
 <header class="cl-card cl-card--padded">
 <a href="../admin-4ck2v7p3/">관리자 목록으로 돌아가기</a>
 <p class="meta">내부 운영용 · 외부 공유 금지 · 후속상담 02</p>
@@ -177,6 +186,16 @@ h2,h3,h4{break-after:avoid}
 <p>매니저가 부모님께 설명할 판단 근거와 상담에서 정할 사항</p>
 <div class="call-start cl-card cl-card--padded"><h2 class="cl-title-2">이번 통화의 목표 · VLT 5G 재검사와 두 분 내방 예약</h2><ol class="review-plan"><li>담당 김범수 매니저가 아버님께 과외에서 기대하시는 이점을 먼저 여쭙고, 그 기대에 맞춰 민준이의 현재 풀이와 겨울 계획이 만들어진 이유를 설명합니다.</li><li>이미 요청한 첫 주 편성 회신을 확인하고, VLT 5G 재검사와 두 분이 함께 오실 결과 상담 일정을 잡습니다. 재측정 뒤 수학·영어·다른 사교육을 포함한 겨울 계획을 다시 제안합니다.</li></ol><a class="cl-btn cl-btn--tinted" href="#consult-desk">부모님 반응별 대화 열기</a></div></header>
 <nav class="navline cl-glass" aria-label="본문 탐색"><div class="navlinks"><a class="cl-btn cl-btn--plain" href="#visit">두 분 내방 상담</a><a class="cl-btn cl-btn--plain" href="#consult-desk">상담 응답</a><a class="cl-btn cl-btn--plain" href="#diagnosis">큐브맵·VLT 5G 재검사</a><a class="cl-btn cl-btn--plain" href="#background">배경과 현재 판단</a><a class="cl-btn cl-btn--plain" href="#carry">1회차에서 이어갈 것</a><a class="cl-btn cl-btn--plain" href="#tree">이슈트리</a><a class="cl-btn cl-btn--plain" href="#meeting">VLT 5G 재검사·내방 예약</a><a class="cl-btn cl-btn--plain" href="#rehearse">질문별 응답</a><a class="cl-btn cl-btn--plain" href="#check">상담 준비</a></div><div class="read-progress cl-progress"><div class="cl-progress__track" role="progressbar" aria-label="읽기 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="cl-progress__fill"></div></div><div class="cl-progress__meta" aria-hidden="true"><span>0%</span></div></div></nav>
+<section class="cl-card cl-card--padded" id="strategy-slides" aria-labelledby="strategy-heading">
+<h2 class="cl-title-2" id="strategy-heading">겨울방학 학습 전략 이슈트리</h2>
+<div class="slide-controls" hidden role="group" aria-label="슬라이드 이동"><button class="cl-btn cl-btn--tinted" type="button" data-step="-1">이전</button><span aria-live="polite" data-slide-count></span><button class="cl-btn cl-btn--tinted" type="button" data-step="1">다음</button></div>
+<article class="strategy-slide" aria-label="1 / 6"><h3>겨울방학 학습 전략</h3><p class="scene">중등 수학을 일찍 시작하면서 배운 내용을 혼자 소화할 힘도 기르려면?</p><div class="slide-points"><div><h4>내방에서 정할 것</h4><p>VLT 5G 재검사와 최근 풀이를 바탕으로 선행 속도와 겨울 전체 계획을 함께 정합니다.</p></div></div></article>
+<article class="strategy-slide" aria-label="2 / 6"><h3>겨울 계획을 결정하는 네 질문</h3><p class="scene">선행 진도와 독립 풀이 시간을 함께 편성합니다.</p><div class="slide-points"><div><h4>출발점</h4><p>어떤 조건에서 혼자 풀 수 있나요?</p></div><div><h4>수학 증강</h4><p>직접 풀고 다시 시도할 시간을 어떻게 확보하나요?</p></div><div><h4>과외 판단</h4><p>방식을 바꾸면 어떤 시간이 비고 누가 채우나요?</p></div><div><h4>내방 결정</h4><p>재검사 뒤 무엇을 유지하고 무엇을 바꾸나요?</p></div></div></article>
+<article class="strategy-slide" aria-label="3 / 6"><h3>선행의 속도는 소화할 수 있는 범위에 맞춥니다</h3><p class="scene">진도를 앞당길수록 직접 풀어 볼 시간도 함께 확보합니다.</p><div class="slide-points"><div><h4>첫 상담</h4><p>조건을 끝까지 읽고, 풀이 근거를 설명하고, 막혔을 때 다른 방법을 시도합니다.</p></div><div><h4>겨울 목표</h4><p>기말 뒤 중1 과정을 시작하고 1학기 내용을 다시 점검합니다.</p></div><div><h4>주 8콤마 제안</h4><p>앞뒤 콤마를 이어 설명을 듣고 직접 적용할 시간을 편성한 제안입니다.</p></div></div></article>
+<article class="strategy-slide" aria-label="4 / 6"><h3>연속 콤마에서 배우고, 풀고, 다시 계획합니다</h3><p class="scene">한 문제에 10분을 더 썼다면 학생이 남은 과제의 순서를 다시 정합니다.</p><div class="slide-points"><div><h4>앞 콤마</h4><p>개념을 질문하고 답하며 확인한 뒤 홀수 문제에 적용합니다.</p></div><div><h4>뒤 콤마</h4><p>홀수 오답을 짚고 짝수 문제를 직접 풉니다. 튜터는 언제 질문하고 언제 기다릴지 판단합니다.</p></div><div><h4>다음 미션</h4><p>남은 오답과 독립 풀이를 확인하고, 매니저가 타과목 재배치와 실행을 점검합니다.</p></div></div></article>
+<article class="strategy-slide" aria-label="5 / 6"><h3>과외 전환 전에 세 가지 공백을 확인합니다</h3><p class="scene">현재 권고는 에듀플렉스 수학을 유지하면서 재검사 후 속도를 조정하는 것입니다.</p><div class="slide-points"><div><h4>독립 풀이 시간</h4><p>과외 진도가 나가도 조건을 바꾼 문제를 혼자 해결할 시간을 확보해야 합니다.</p></div><div><h4>관찰과 다음 미션</h4><p>누가 힌트 없이 푼 결과를 보고 다음 진도를 조정할지 정해야 합니다.</p></div><div><h4>타과목 시간</h4><p>과외·숙제·이동을 넣고도 영어와 다른 과목의 시간이 유지되는지 같은 표에서 확인해야 합니다.</p></div></div></article>
+<article class="strategy-slide" aria-label="6 / 6"><h3>VLT 5G 재검사 후 겨울 전체 계획을 합의합니다</h3><p class="scene">과외 여부와 관계없이 두 분과 한 주 전체를 다시 잡습니다.</p><div class="slide-points"><div><h4>재측정</h4><p>초기 검사와 비교할 수 있는 항목, 최근 풀이에서 도움을 받아 푼 문제와 혼자 푼 문제를 함께 봅니다.</p></div><div><h4>시간표</h4><p>수학·영어·타과목에 독립 풀이와 오답 시간을 넣습니다.</p></div><div><h4>합의</h4><p>선행 범위와 속도, 개별지도 콤마, 학생이 관리할 시간과 다음 점검일을 정합니다.</p></div></div></article>
+</section>
 <section class="cl-card cl-card--padded" id="visit"><h2 class="cl-title-2">두 분이 오셨을 때 · VLT 5G 재검사 결과로 겨울 계획 다시 제안하기</h2><p class="scene"><strong>내방 전 준비</strong> · 담당 김범수 매니저가 VLT 5G 재검사 일정과 두 분이 함께 오실 시간을 잡습니다. 초기 검사, VLT 5G 재검사 결과, 최근 풀이·오답, 현재 주간표와 외부 수업 목록을 준비합니다. VLT 5G 재검사가 아직 끝나지 않았다면 실시 일정을 먼저 잡고 결과 상담일을 이어 정합니다.</p><p class="meeting-sheets-jump"><a class="cl-btn cl-btn--tinted" href="#visit-comparison">초기 검사·재검사 비교표 열기</a> <a class="cl-btn cl-btn--plain" href="#visit-tradeoff">두 선택 비교표 열기</a> <a class="cl-btn cl-btn--plain" href="#visit-week">겨울 주간계획표 열기</a></p><div class="visit-sheet">
 <article class="cl-card cl-card--padded visit-step"><span class="cl-badge cl-badge--accent">1 · 같은 출발점 만들기</span><h3 class="cl-card__title">먼저 두 분께 지금의 학습 상황을 보여드립니다</h3><p><strong>보여드릴 자료와 설명</strong> · 첫 상담의 학습 목표와 1회차에 본 소수 나눗셈·연산 오답·루틴을 한 장으로 준비합니다. 최근 풀이에서 발문 표시, 식 쓰기, 요구와 답 대조가 실제로 어떻게 나타났는지 한 문제로 설명합니다.</p><div class="dialogue"><p><strong>김범수 매니저 · 상담 예시</strong>“아버님도 같은 자료부터 보시면 좋겠습니다. 민준이는 생각해서 설명하는 힘이 있습니다. 여기서는 조건을 어디서 놓쳤고, 식을 써 보니 무엇이 달라졌는지 함께 보시죠.”</p></div></article>
 <article class="cl-card cl-card--padded visit-step"><span class="cl-badge cl-badge--accent">2 · 재측정 결과 설명</span><h3 class="cl-card__title">초기 검사와 VLT 5G 재검사를 나란히 놓습니다</h3><p><strong>보여드릴 자료와 설명</strong> · 같은 규격에서 비교할 수 있는 항목과 당시 상황을 먼저 확인합니다. 사고력은 배운 개념을 자기 말로 설명하고 낯선 문제에 적용하는지, 자원관리력은 남은 시간과 과제를 스스로 다시 정하고 실행하는지 봅니다. 검사에서 읽힌 변화는 최근 오답, 독립 풀이, 주간 실행 기록과 대조합니다.</p><div class="dialogue"><p><strong>김범수 매니저 · 상담 예시</strong>“검사에서 달라진 부분과 이 풀이에서 확인되는 행동을 같이 보여드리겠습니다. 설명이 필요한 문제, 시간을 주면 스스로 푸는 문제, 이미 혼자 풀고 검토하는 문제를 구분하겠습니다.”</p></div></article>
@@ -321,16 +340,16 @@ h2,h3,h4{break-after:avoid}
   const pageSections=[...document.querySelectorAll("main > section")];
   const visitSections=new Set(["diagnosis","carry","visit","visit-comparison","visit-tradeoff","visit-week"]);
   const sharedSections=new Set(["background","tree"]);
-  const modeFor=id=>visitSections.has(id)?"visit":"call";
+  const modeFor=id=>id==="strategy-slides"?"slides":visitSections.has(id)?"visit":"call";
   let mode;
   function showMode(next){
     mode=next;
     modeControl.querySelectorAll("button").forEach(button=>{
       button.setAttribute("aria-pressed",String(button.dataset.mode===mode));
     });
-    callHero.hidden=mode==="visit";
+    callHero.hidden=mode!=="call";
     pageSections.forEach(section=>{
-      section.hidden=!!section.id&&!sharedSections.has(section.id)&&modeFor(section.id)!==mode;
+      section.hidden=!!section.id&&(mode==="slides"||!sharedSections.has(section.id))&&modeFor(section.id)!==mode;
     });
     links.forEach((link,index)=>{link.hidden=!!sections[index]?.hidden;});
     queue();
@@ -342,10 +361,35 @@ h2,h3,h4{break-after:avoid}
       target.scrollIntoView({block:"start"});
     }
   }
+
+  const deck=document.getElementById("strategy-slides");
+  const slides=[...deck.querySelectorAll(".strategy-slide")];
+  const slideControls=deck.querySelector(".slide-controls");
+  const previous=slideControls.querySelector('[data-step="-1"]');
+  const next=slideControls.querySelector('[data-step="1"]');
+  let slideIndex=0;
+  function showSlide(index){
+    slideIndex=Math.max(0,Math.min(index,slides.length-1));
+    slides.forEach((slide,i)=>{slide.hidden=i!==slideIndex;});
+    slideControls.querySelector("[data-slide-count]").textContent=(slideIndex+1)+" / "+slides.length;
+    previous.disabled=slideIndex===0;
+    next.disabled=slideIndex===slides.length-1;
+    queue();
+  }
+  previous.addEventListener("click",()=>showSlide(slideIndex-1));
+  next.addEventListener("click",()=>showSlide(slideIndex+1));
+  deck.addEventListener("keydown",event=>{
+    if(event.key==="ArrowLeft"||event.key==="ArrowRight"){
+      event.preventDefault();
+      showSlide(slideIndex+(event.key==="ArrowLeft"?-1:1));
+    }
+  });
+  slideControls.hidden=false;
+  showSlide(0);
   modeControl.hidden=false;
   modeControl.querySelectorAll("button").forEach(button=>button.addEventListener("click",()=>{
     showMode(button.dataset.mode);
-    history.replaceState(null,"",location.pathname+location.search+(mode==="visit"?"#visit":""));
+    history.replaceState(null,"",location.pathname+location.search+(mode==="slides"?"#strategy-slides":mode==="visit"?"#visit":""));
     window.scrollTo({top:0,behavior:"instant"});
   }));
   showMode(modeFor(location.hash.slice(1)));
