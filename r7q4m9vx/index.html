@@ -1,101 +1,118 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="light" data-cl-palette="strict" data-clarity-version="6.6">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>매니저 준비 · 겨울 수학 증강과 과외 병행 판단 · 재검사 후 내방 | 에듀플렉스 길음점</title>
-<link rel="stylesheet" href="../assets/clarity-k06/tokens.css">
+<link rel="stylesheet" href="../assets/clarity-k06-v66/tokens.css">
+<link rel="stylesheet" href="../assets/clarity-k06-v66/components.css">
+<script defer src="../assets/clarity-k06-v66/bundle.js"></script>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#192d3a;font:16px/1.7 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:28px 20px 60px}header,section{background:white;border:1px solid #dae4e9;border-radius:16px;padding:clamp(18px,4vw,36px);margin:14px 0}header{background:#123246;color:#fff}header a{color:#c6eaf4}h1,h2,h3{line-height:1.3}h1{font-size:clamp(25px,5vw,40px);margin:.4em 0}h2{font-size:1.45rem;margin-top:0}h3{font-size:1.1rem}p{margin:.7em 0}li+li{margin-top:.45em}ul,ol{padding-left:1.35em}.meta{font-size:.9rem}.tree{border-left:3px solid #177172;padding-left:1.3em}.tree>li{padding-bottom:12px}blockquote{margin:1em 0;padding:10px 18px;border-left:4px solid #177172;background:#edf7f6}nav a{display:inline-block;margin:0 1em .25em 0;color:#175b70}@media print{body{background:white}main{padding:0}header,section{border-radius:0}header{background:white;color:#192d3a}header a{color:#175b70}h2,h3{break-after:avoid}blockquote{break-inside:avoid}}
 
-body{font-family:var(--font-sans,system-ui),sans-serif}.callout{border-left:4px solid #17817a;background:#eaf7f3;padding:14px 18px;border-radius:8px}.navline{display:flex;flex-wrap:wrap;gap:6px;padding:6px 0}.navline a{border:1px solid #d2e0e5;border-radius:999px;padding:4px 12px;margin:0;background:white;text-decoration:none}summary{font-weight:700;cursor:pointer;padding:6px 0}details ul{margin-top:.4em}details{margin:.5em 0;padding:.4em .7em;border:1px solid #d5e2e6;border-radius:8px}details[open]{background:#f8fbfc}.branch{list-style:none;border-left:2px solid #a3c8c7;padding-left:18px}.branch>li{position:relative}.branch>li::before{content:"";position:absolute;left:-18px;top:1.35rem;width:16px;border-top:2px solid #a3c8c7}.branch .branch{margin:0 0 0 .6em}.source-note{font-size:.9rem;color:#425966}.checks{list-style:none;padding:0}.checks label{display:flex;gap:.65em;align-items:flex-start}.checks input{margin-top:.44em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}.grid article{border:1px solid #d5e2e6;border-radius:10px;padding:12px}.grid h3{margin:.25em 0}.decision{font-weight:700;color:#075b52}@media print{nav,.tree-controls{display:none}}
-
-.issue-root{margin:0;padding:1rem;background:var(--cl-accent-tint,#e3edf8);color:var(--cl-label,#0f1216);border-radius:12px;text-align:center}
-.issue-map,.issue-leaves{list-style:none;margin:0;padding:0}
-.issue-map{--line:var(--cl-control,#7d8590);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding-top:24px;position:relative}
+main{width:min(100%,var(--layout-max));margin-inline:auto;padding:var(--space-6) var(--margin) var(--space-16)}
+header,section{margin-block-end:var(--space-5)}
+header.cl-card,section.cl-card{--cl-pad:clamp(var(--space-4),4vw,var(--space-8))}
+h1,h2,h3,h4,p{margin:0}
+p{margin-block:var(--space-3)}
+h2{margin-block-end:var(--space-3)}
+h3{margin-block-start:var(--space-4)}
+li+li{margin-block-start:var(--space-2)}
+a{color:var(--cl-accent)}
+.meta,.source-note{color:var(--cl-label-2)}
+nav.navline{position:sticky;top:0;z-index:var(--z-bar);margin-block-end:var(--space-5);padding:var(--space-2);border-radius:var(--radius-lg)}
+.navlinks{display:flex;gap:var(--space-1);overflow-x:auto;overscroll-behavior-inline:contain}
+.navlinks a{flex:none;text-decoration:none;white-space:nowrap}
+.navlinks a[aria-current="location"]{background:var(--cl-accent-tint);color:var(--cl-accent);font-weight:750}
+.read-progress{padding:0 var(--space-2);margin-block-start:var(--space-1);gap:var(--space-1)}
+.read-progress .cl-progress__track{height:var(--space-1)}
+.read-progress .cl-progress__meta{justify-content:end}
+section[id]{scroll-margin-top:112px}
+.sequence,.issue-map,.issue-leaves,.checks{list-style:none;margin:0;padding:0}
+.sequence{margin-inline-start:var(--space-2);padding-inline-start:var(--space-5);border-inline-start:2px solid var(--cl-separator)}
+.sequence li{position:relative;margin-block-end:var(--space-4)}
+.sequence li::before{content:"";position:absolute;inset-inline-start:calc(-1 * var(--space-5) - 5px);top:.5em;width:8px;height:8px;background:var(--cl-accent);border-radius:50%}
+.issue-root{padding:var(--space-4);border-radius:var(--radius-sm);background:var(--cl-accent-tint);color:var(--cl-accent);text-align:center}
+.issue-map{--line:var(--cl-control);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);padding-top:24px;position:relative}
 .issue-map::before{content:"";position:absolute;top:0;left:50%;height:12px;border-left:2px solid var(--line)}
 .issue-map>li{position:relative;margin:0;min-width:0}
 .issue-map>li::before{content:"";position:absolute;top:-12px;height:12px;width:calc(50% + .5rem);border-top:2px solid var(--line)}
 .issue-map>li:first-child::before{left:50%;border-left:2px solid var(--line)}
 .issue-map>li:last-child::before{right:50%;border-right:2px solid var(--line)}
-.issue-map h3{margin:0;padding:.85rem;background:var(--cl-surface-2,#f7f8fa);border:1px solid var(--line);border-radius:10px}
-.issue-leaves{margin-left:.8rem;padding-left:1rem;border-left:2px solid var(--line)}
-.issue-leaves li{position:relative;padding-top:.8rem;margin:0}
-.issue-leaves li::before{content:"";position:absolute;left:-1rem;top:1.9rem;width:1rem;border-top:2px solid var(--line)}
-.issue-leaves article{padding:.75rem .85rem;border:1px solid var(--cl-separator,#e1e3e8);border-radius:10px}
-.issue-leaves h4,.issue-leaves p{margin:0}.issue-leaves p{margin-top:.35rem}
-#rehearse article{border-bottom:1px solid var(--cl-separator,#e1e3e8);padding:.6rem 0}
-@media(max-width:650px){.issue-map{grid-template-columns:minmax(0,1fr);margin-left:.5rem;padding:1rem 0 0 1rem;border-left:2px solid var(--line)}.issue-map::before{display:none}.issue-map>li:first-child::before,.issue-map>li:last-child::before{left:-1rem;right:auto;top:1.25rem;width:1rem;height:0;border-inline:0}.issue-root{text-align:left}}
-@media print{.issue-map{display:block;border-left:2px solid var(--line);margin-left:.5rem;padding:0 0 0 .8rem}.issue-map::before,.issue-map>li::before{display:none}.issue-map>li{margin-top:.75rem}.issue-leaves article,#rehearse article{break-inside:avoid}.issue-map h3,.issue-leaves h4{break-after:avoid}}
-
-:root{color-scheme:light;--paper:var(--cl-surface,#fff);--ink:var(--cl-label,#0f1216);--accent:var(--cl-accent,#0054a7);--rule:var(--cl-separator,#e1e3e8)}
-body{background:var(--cl-canvas,#f2f3f5);color:var(--ink)}
-main{max-width:1040px}
-header{background:var(--paper);color:var(--ink);padding-block:clamp(24px,5vw,56px)}
-header a,nav a{color:var(--accent)}
-nav.navline{position:sticky;top:0;z-index:10;display:block;padding:0;background:var(--paper);border:1px solid var(--rule);border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #17253c12}
-.navlinks{display:flex;gap:.25rem;overflow-x:auto;padding:.4rem;overscroll-behavior-inline:contain}
-.navlinks a{flex:none;white-space:nowrap;padding:.48rem .7rem;border:0;border-radius:8px}
-.navlinks a[aria-current="location"]{background:var(--cl-accent-tint,#e3edf8);font-weight:750}
-.read-progress{display:block;width:100%;height:4px;appearance:none;border:0;background:var(--rule);color:var(--accent)}
-.read-progress::-webkit-progress-bar{background:var(--rule)}.read-progress::-webkit-progress-value{background:var(--accent)}.read-progress::-moz-progress-bar{background:var(--accent)}
-section[id]{scroll-margin-top:83px}
-.sequence{list-style:none;margin:1rem 0;padding:0 0 0 1rem;border-left:2px solid var(--rule)}
-.sequence li{position:relative;margin:0 0 1.1rem;padding:0 0 0 .45rem}
-.sequence li::before{content:"";position:absolute;left:-1.3rem;top:.5em;width:.55rem;height:.55rem;background:var(--accent);border-radius:50%}
-.sequence h3,.sequence p{margin:.2rem 0}
-.scene{background:var(--cl-surface-2,#f7f8fa);border:1px solid var(--rule);border-radius:12px;padding:1rem}
-.qa-toggle{font:inherit;color:var(--accent);background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:.5rem .8rem;cursor:pointer}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-#rehearse details{padding:.65rem 1rem}#rehearse details summary{min-height:38px}
-@media print{nav.navline,.qa-toggle{display:none}.sequence li,.scene{break-inside:avoid}}
+.issue-map h3{margin:0;padding:var(--space-3);background:var(--cl-fill);border-radius:var(--radius-sm)}
+.issue-leaves{margin-inline-start:.8rem;padding-inline-start:var(--space-4);border-inline-start:2px solid var(--line)}
+.issue-leaves li{position:relative;padding-block-start:var(--space-3);margin:0}
+.issue-leaves li::before{content:"";position:absolute;inset-inline-start:calc(-1 * var(--space-4));top:1.9rem;width:var(--space-4);border-top:2px solid var(--line)}
+.issue-leaves .cl-card,#rehearse details,.grid .cl-card{background:var(--cl-surface-2)}
+.issue-leaves p{margin-block-end:0}
+.scene,.decision,blockquote{padding:var(--space-4);border-radius:var(--radius-sm);background:var(--cl-info-tint)}
+.decision{font-weight:700}
+#rehearse details{margin-block-start:var(--space-2)}
+#rehearse summary{font-weight:700;cursor:pointer;min-height:var(--hit-min)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:var(--space-3)}
+.checks label{display:flex;align-items:baseline;gap:var(--space-2)}
+@media(max-width:650px){
+.issue-map{grid-template-columns:minmax(0,1fr);margin-inline-start:var(--space-2);padding:var(--space-3) 0 0 var(--space-4);border-inline-start:2px solid var(--line)}
+.issue-map::before{display:none}
+.issue-map>li:first-child::before,.issue-map>li:last-child::before{left:calc(-1 * var(--space-4));right:auto;top:1.25rem;width:var(--space-4);height:0;border-inline:0}
+.issue-root{text-align:start}
+}
+@media print{
+nav.navline,.qa-toggle{display:none}
+main{padding:0}
+.issue-map{display:block;padding-top:0}
+.issue-map::before,.issue-map>li::before{display:none}
+.issue-map>li{margin-top:var(--space-3)}
+.issue-leaves article,#rehearse details,.sequence li,.scene{break-inside:avoid}
+h2,h3,h4{break-after:avoid}
+}
 </style>
 </head>
-<body>
+<body class="cl-root">
 <main>
-<header>
+<header class="cl-card cl-card--padded">
 <a href="../admin-4ck2v7p3/">관리자 목록으로 돌아가기</a>
 <p class="meta">내부 운영용 · 외부 공유 금지 · 후속상담 02</p>
-<h1>겨울 수학 증강과 재검사 후 내방</h1>
+<h1 class="cl-large-title">겨울 수학 증강과 재검사 후 내방</h1>
 <p>매니저가 부모님께 설명할 판단 근거와 상담에서 정할 사항</p>
 </header>
-<nav class="navline" aria-label="본문 탐색"><progress class="read-progress" max="100" value="0" aria-label="읽기 진행률"></progress><div class="navlinks"><a href="#background">배경과 현재 판단</a><a href="#carry">1회차에서 이어갈 것</a><a href="#tree">이슈트리</a><a href="#meeting">통화와 내방</a><a href="#rehearse">질문별 응답</a><a href="#check">상담 준비</a></div></nav>
-<section id="background"><h2>처음 합의에서 다시 내방하기까지</h2><ol class="sequence"><li><h3>처음 합의 · 풀어내는 힘을 보며 속도를 정합니다</h3><p>선행 속도는 설명을 들은 분량보다 혼자 풀고 설명할 수 있는 범위에 맞춥니다. 먼저 조건을 읽고 식을 쓰며 막힌 곳을 말하는 루틴을 잡습니다.</p></li><li><h3>증강 검토 · 선행을 앞당길 때 풀어 볼 시간도 확보합니다</h3><p>기말 뒤 일찍 시작해 중1 전 범위를 다루고 1학기를 다시 보고 싶다면, 진도표와 함께 오답·독립 풀이 시간표를 제시해야 합니다.</p></li><li><h3>가족 재논의 · 수업이 늘면 혼자 공부할 시간은 어디에 있나요?</h3><p>이 질문이 나오면 구성 변경부터 권하지 않고, 앞 시간과 뒤 시간에 학생이 무엇을 하는지 보여드립니다. 같은 분량을 외부에서 배우더라도 그 풀이가 다음 과제와 다른 과목 시간에 이어지는지 확인합니다.</p></li><li><h3>다음 상담 · 첫 주와 겨울 전체를 따로 정합니다</h3><p>첫 주 편성을 확인하고 내방을 예약합니다. 내방 때 재검사와 풀이 한 장을 놓고 선행 속도, 독립 도전 시간, 타과목 배치와 다시 볼 날짜를 함께 정합니다.</p></li></ol></section>
-<section id="carry">
-<h2>1회차에서 이어갈 점검</h2><p>소수 나눗셈, 연산 오답, 공부 루틴은 실제 풀이로 확인합니다. 4주에는 막힌 곳 말하기와 개념 확인, 8주에는 식 쓰기와 오답 질문, 12주에는 스스로 다시 보기를 점검 기준으로 삼습니다.</p>
+<nav class="navline cl-glass" aria-label="본문 탐색"><div class="navlinks"><a class="cl-btn cl-btn--plain" href="#background">배경과 현재 판단</a><a class="cl-btn cl-btn--plain" href="#carry">1회차에서 이어갈 것</a><a class="cl-btn cl-btn--plain" href="#tree">이슈트리</a><a class="cl-btn cl-btn--plain" href="#meeting">통화와 내방</a><a class="cl-btn cl-btn--plain" href="#rehearse">질문별 응답</a><a class="cl-btn cl-btn--plain" href="#check">상담 준비</a></div><div class="read-progress cl-progress"><div class="cl-progress__track" role="progressbar" aria-label="읽기 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="cl-progress__fill"></div></div><div class="cl-progress__meta" aria-hidden="true"><span>0%</span></div></div></nav>
+<section class="cl-card cl-card--padded" id="background"><h2 class="cl-title-2">처음 합의에서 다시 내방하기까지</h2><ol class="sequence"><li><h3>처음 합의 · 풀어내는 힘을 보며 속도를 정합니다</h3><p>선행 속도는 설명을 들은 분량보다 혼자 풀고 설명할 수 있는 범위에 맞춥니다. 먼저 조건을 읽고 식을 쓰며 막힌 곳을 말하는 루틴을 잡습니다.</p></li><li><h3>증강 검토 · 선행을 앞당길 때 풀어 볼 시간도 확보합니다</h3><p>기말 뒤 일찍 시작해 중1 전 범위를 다루고 1학기를 다시 보고 싶다면, 진도표와 함께 오답·독립 풀이 시간표를 제시해야 합니다.</p></li><li><h3>가족 재논의 · 수업이 늘면 혼자 공부할 시간은 어디에 있나요?</h3><p>이 질문이 나오면 구성 변경부터 권하지 않고, 앞 시간과 뒤 시간에 학생이 무엇을 하는지 보여드립니다. 같은 분량을 외부에서 배우더라도 그 풀이가 다음 과제와 다른 과목 시간에 이어지는지 확인합니다.</p></li><li><h3>다음 상담 · 첫 주와 겨울 전체를 따로 정합니다</h3><p>첫 주 편성을 확인하고 내방을 예약합니다. 내방 때 재검사와 풀이 한 장을 놓고 선행 속도, 독립 도전 시간, 타과목 배치와 다시 볼 날짜를 함께 정합니다.</p></li></ol></section>
+<section class="cl-card cl-card--padded" id="carry">
+<h2 class="cl-title-2">1회차에서 이어갈 점검</h2><p>소수 나눗셈, 연산 오답, 공부 루틴은 실제 풀이로 확인합니다. 4주에는 막힌 곳 말하기와 개념 확인, 8주에는 식 쓰기와 오답 질문, 12주에는 스스로 다시 보기를 점검 기준으로 삼습니다.</p>
 </section>
-<section id="tree" aria-labelledby="issue-root">
-<h2 class="issue-root" id="issue-root">왜 에듀플렉스 수학 증강은 되고 외부 과외로 바꾸면 안 되나?</h2>
+<section class="cl-card cl-card--padded" id="tree" aria-labelledby="issue-root">
+<h2 class="issue-root cl-title-2" id="issue-root">왜 에듀플렉스 수학 증강은 되고 외부 과외로 바꾸면 안 되나?</h2>
 <p class="scene"><strong>판단의 연결</strong> · 선행을 앞당기려면 직접 풀 시간을 확보해야 합니다. 풀이에서 확인한 결과로 다음 미션을 정하고, 그 미션을 끝낼 시간은 다른 과목과 함께 배치합니다.</p><ul class="issue-map">
 <li><h3>선행을 소화할 조건</h3><ul class="issue-leaves">
-<li><article><h4>개념을 질문과 응답으로 확인</h4><p>앞 콤마에서 개념을 자기 말로 설명하고 홀수 문제에 적용합니다. 왜 그렇게 풀었는지 묻고 조건을 바꿔도 설명할 수 있는지 확인합니다.</p></article></li>
-<li><article><h4>혼자 풀고 어려운 문제에 도전할 시간</h4><p>다음 콤마에서는 홀수 오답을 확인한 뒤 짝수 문제를 직접 풉니다. 숙제를 내준 뒤 결과를 받기까지, 혼자 풀고 막힌 문제를 다시 시도할 시간을 확보합니다.</p></article></li>
-<li><article><h4>실제 풀이에서 다음 미션으로</h4><p>튜터는 실제 풀이를 관찰하고, 질문·힌트·기다리기 중 필요한 도움을 고릅니다. 오답 재풀이·조건을 바꾼 문제·풀이 설명을 다음 미션으로 정하고, 혼자 해내는지 확인해 진도를 조정합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>개념을 질문과 응답으로 확인</h4><p>앞 콤마에서 개념을 자기 말로 설명하고 홀수 문제에 적용합니다. 왜 그렇게 풀었는지 묻고 조건을 바꿔도 설명할 수 있는지 확인합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>혼자 풀고 어려운 문제에 도전할 시간</h4><p>다음 콤마에서는 홀수 오답을 확인한 뒤 짝수 문제를 직접 풉니다. 숙제를 내준 뒤 결과를 받기까지, 혼자 풀고 막힌 문제를 다시 시도할 시간을 확보합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>실제 풀이에서 다음 미션으로</h4><p>튜터는 실제 풀이를 관찰하고, 질문·힌트·기다리기 중 필요한 도움을 고릅니다. 오답 재풀이·조건을 바꾼 문제·풀이 설명을 다음 미션으로 정하고, 혼자 해내는지 확인해 진도를 조정합니다.</p></article></li>
 </ul></li>
 <li><h3>타과목까지 맞물린 겨울 전체 전략</h3><ul class="issue-leaves">
-<li><article><h4>한 문제에 10분 더 도전한 뒤</h4><p>학생이 남은 시간에 끝낼 과제와 미룰 과제, 다른 과목에 쓸 시간을 직접 정합니다. 매니저는 판단의 근거와 실제 실행을 확인합니다. 이 과정에서 중학교 공부에 필요한 사고력과 자원관리력을 함께 연습합니다.</p></article></li>
-<li><article><h4>수학 진도와 타과목 시간을 함께 조정</h4><p>외부 과외에서 진도와 과제가 따로 정해지면 수학 미션과 타과목 시간 배치를 같은 기준으로 조정하기 어렵습니다. 이동에 드는 시간도 편성에 영향을 줍니다.</p></article></li>
-<li><article><h4>같은 횟수·비용으로 바꾸기 어려운 이유</h4><p>수업 횟수와 비용이 같아도 직접 도전할 시간, 다음 미션, 타과목 배치, 결과를 확인하는 방식이 달라집니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>한 문제에 10분 더 도전한 뒤</h4><p>학생이 남은 시간에 끝낼 과제와 미룰 과제, 다른 과목에 쓸 시간을 직접 정합니다. 매니저는 판단의 근거와 실제 실행을 확인합니다. 이 과정에서 중학교 공부에 필요한 사고력과 자원관리력을 함께 연습합니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>수학 진도와 타과목 시간을 함께 조정</h4><p>외부 과외에서 진도와 과제가 따로 정해지면 수학 미션과 타과목 시간 배치를 같은 기준으로 조정하기 어렵습니다. 이동에 드는 시간도 편성에 영향을 줍니다.</p></article></li>
+<li><article class="cl-card cl-card--padded"><h4>같은 횟수·비용으로 바꾸기 어려운 이유</h4><p>수업 횟수와 비용이 같아도 직접 도전할 시간, 다음 미션, 타과목 배치, 결과를 확인하는 방식이 달라집니다.</p></article></li>
 </ul></li>
 </ul>
 <p class="scene"><strong>내방에서 보여드릴 장면</strong> · 예를 들어 짝수 문제에서 막히면, 풀이를 바로 알려주기 전에 10분 더 시도하게 합니다. 학생이 남은 시간에 할 과제와 미룰 과제를 정하면 매니저는 근거와 다음 날 실행을 확인합니다. 이 장면을 주간 계획의 수학·타과목 배치와 함께 보여드립니다.</p>
 <p class="decision">상담 결론 · 현재 외부 수학 과외 병행을 권하지 않습니다. 수학은 과외로 하고 에듀플렉스에서 영어 개별지도만 하는 구성은 진행할 수 없습니다.</p>
 </section>
-<section id="meeting">
-<h2>통화와 내방에서 정할 사항</h2><h3>통화 · 첫 주 편성 확인과 내방 예약</h3><p>첫 주에 가능한 배치를 확인하고, 두 분이 함께 내방하실 일정을 잡습니다.</p><h3>내방 · 재검사와 실제 풀이를 주간 계획으로</h3><p>6개월 재검사와 실제 수학 풀이 기록을 함께 봅니다. 선행 범위와 속도, 혼자 도전할 시간, 다른 과목 배치, 다음 점검 시점을 큐브맵 주간 계획에 담습니다.</p>
+<section class="cl-card cl-card--padded" id="meeting">
+<h2 class="cl-title-2">통화와 내방에서 정할 사항</h2><h3>통화 · 첫 주 편성 확인과 내방 예약</h3><p>첫 주에 가능한 배치를 확인하고, 두 분이 함께 내방하실 일정을 잡습니다.</p><h3>내방 · 재검사와 실제 풀이를 주간 계획으로</h3><p>6개월 재검사와 실제 수학 풀이 기록을 함께 봅니다. 선행 범위와 속도, 혼자 도전할 시간, 다른 과목 배치, 다음 점검 시점을 큐브맵 주간 계획에 담습니다.</p>
 </section>
-<section id="rehearse">
-<h2>질문별 상담 응답</h2><button class="qa-toggle" type="button" hidden></button><details><summary>수학은 과외에서 배우고 영어만 개별지도를 받으면요?</summary><p>수학의 개념 확인과 실제 풀이가 다음 과제와 다른 과목 시간으로 이어지는 구조입니다. 현재 외부 수학 과외 병행은 권하지 않습니다. 수학을 과외로 옮기고 영어 개별지도만 유지하는 구성은 진행할 수 없습니다.</p></details><details><summary>수업이 늘면 혼자 공부하는 시간이 줄지 않나요?</summary><p>앞 시간에 확인한 개념을 뒤 시간에 직접 적용합니다. 막힌 문제에 다시 도전할 시간까지 주간 계획에 표시해 보여드리겠습니다.</p></details><details><summary>선행 분량은 어떻게 정하나요?</summary><p>재검사와 최근 풀이를 함께 보고, 혼자 풀 수 있는 범위와 다시 확인할 범위를 나눠 진도를 정합니다.</p></details><details><summary>지금 무엇부터 정하면 되나요?</summary><p>첫 주 편성을 확인하고 내방을 예약합니다. 겨울 계획은 재검사와 풀이를 함께 본 뒤 정합니다.</p></details>
+<section class="cl-card cl-card--padded" id="rehearse">
+<h2 class="cl-title-2">질문별 상담 응답</h2><button class="qa-toggle cl-btn cl-btn--tinted" type="button" hidden></button><details class="cl-card cl-card--padded"><summary>수학은 과외에서 배우고 영어만 개별지도를 받으면요?</summary><p>수학의 개념 확인과 실제 풀이가 다음 과제와 다른 과목 시간으로 이어지는 구조입니다. 현재 외부 수학 과외 병행은 권하지 않습니다. 수학을 과외로 옮기고 영어 개별지도만 유지하는 구성은 진행할 수 없습니다.</p></details><details class="cl-card cl-card--padded"><summary>수업이 늘면 혼자 공부하는 시간이 줄지 않나요?</summary><p>앞 시간에 확인한 개념을 뒤 시간에 직접 적용합니다. 막힌 문제에 다시 도전할 시간까지 주간 계획에 표시해 보여드리겠습니다.</p></details><details class="cl-card cl-card--padded"><summary>선행 분량은 어떻게 정하나요?</summary><p>재검사와 최근 풀이를 함께 보고, 혼자 풀 수 있는 범위와 다시 확인할 범위를 나눠 진도를 정합니다.</p></details><details class="cl-card cl-card--padded"><summary>지금 무엇부터 정하면 되나요?</summary><p>첫 주 편성을 확인하고 내방을 예약합니다. 겨울 계획은 재검사와 풀이를 함께 본 뒤 정합니다.</p></details>
 </section>
-<section id="check">
-<h2>상담 준비</h2><ul><li>이전 점검 기준과 최근 풀이 기록 준비</li><li>첫 주 편성 확인과 재검사·내방 예약</li><li>선행 속도, 도전 시간, 타과목 우선순위와 다음 점검일 정리</li></ul>
+<section class="cl-card cl-card--padded" id="check">
+<h2 class="cl-title-2">상담 준비</h2><ul><li>이전 점검 기준과 최근 풀이 기록 준비</li><li>첫 주 편성 확인과 재검사·내방 예약</li><li>선행 속도, 도전 시간, 타과목 우선순위와 다음 점검일 정리</li></ul>
 </section>
 </main>
 
 <script>
 (() => {
-  const progress=document.querySelector(".read-progress");
+  const progress=document.querySelector(".cl-progress__track");
+  const progressLabel=document.querySelector(".cl-progress__meta span");
   const links=[...document.querySelectorAll(".navlinks a")];
   const sections=links.map(link=>document.getElementById(link.hash.slice(1)));
   const nav=document.querySelector(".navline");
@@ -103,10 +120,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   function update(){
     frame=0;
     const max=document.documentElement.scrollHeight-innerHeight;
-    progress.value=max>0?Math.round(Math.min(1,Math.max(0,scrollY/max))*100):100;
+    const percent=max>0?Math.round(Math.min(1,Math.max(0,scrollY/max))*100):100;
+    progress.setAttribute("aria-valuenow",String(percent));
+    progress.style.setProperty("--value",percent);
+    progressLabel.textContent=percent+"%";
     let active=0;
     sections.forEach((section,i)=>{if(section.getBoundingClientRect().top<=nav.offsetHeight+36) active=i;});
-    if(progress.value===100) active=sections.length-1;
+    if(percent===100) active=sections.length-1;
     links.forEach((link,i)=>i===active?link.setAttribute("aria-current","location"):link.removeAttribute("aria-current"));
   }
   function queue(){if(!frame) frame=requestAnimationFrame(update);}
